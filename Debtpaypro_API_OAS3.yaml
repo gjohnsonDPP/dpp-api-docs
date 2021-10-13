@@ -40,9 +40,7 @@ paths:
   /calls:
     post:
       summary: Create a call record
-      description: >-
-        Allows a record to be created and logged for any call made to or by a
-        client.
+      description: Allows a record to be created and logged for any call made to or by a client
       operationId: callCreate
       tags:
         - Calls
@@ -1295,9 +1293,7 @@ paths:
       tags:
         - Auth
       summary: Get API Authorization Token
-      description: >-
-        Receive an API Authorization Token. The Token that is returned can be
-        entered for any API Request that requires an *Api-Key*.
+      description: Receive an API Authorization Token. The Token that is returned can be entered for any API Request that requires an *Api-Key*.
       operationId: authGetToken
       requestBody:
         content:
