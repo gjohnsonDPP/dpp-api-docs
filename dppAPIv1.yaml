@@ -2,11 +2,13 @@ openapi: 3.0.0
 info:
   title: DebtPayPro API
   version: 1.0.0
-  description: This is the latest version of the DebtPayPro API.
+  description: ' '
   contact:
     name: Support
     email: support@debtpaypro.com
 tags:
+  - name: Authentication
+    description: Authentication
   - name: Auth
     description: All available actions for Auth
   - name: Calls
@@ -1976,7 +1978,7 @@ components:
         duration:
           type: string
           format: duration
-          example: hh:mm:ss
+          example: 'hh:mm:ss'
         event_id:
           type: integer
           example: 8179

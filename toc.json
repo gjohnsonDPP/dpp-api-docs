@@ -1,6 +1,11 @@
 {
   "items": [
     {
+      "type":"item",
+      "title": "Authentication",
+      "uri":"docs/authentication/Authentication.md"
+    },
+    {
       "type": "item",
       "title": "DebtPayPro API",
       "uri": "dppAPIv1.yaml"
