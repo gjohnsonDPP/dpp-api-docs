@@ -3037,9 +3037,9 @@ components:
             $ref: models/Team.yaml
       required: true
   securitySchemes:
-    Api-Key:
+    API-Key:
       type: apiKey
       name: Api-Key
       in: header
 security:
-  - Api-Key: []
+  - API-Key: []

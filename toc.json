@@ -2,8 +2,8 @@
   "items": [
     {
       "type":"item",
-      "title": "Authentication",
-      "uri":"docs/authentication/Authentication.md"
+      "title": "Introduction",
+      "uri":"docs/Introduction.md"
     },
     {
       "type": "item",
