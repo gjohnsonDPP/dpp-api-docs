@@ -1,0 +1,93 @@
+title: Debt
+type: object
+description: Debt Record
+properties:
+  id:
+    type: integer
+    readOnly: true
+  acctID:
+    type: integer
+    readOnly: true
+  created_at:
+    type: string
+    format: date-time
+    readOnly: true
+  created_by:
+    type: array
+    items:
+      $ref: ../models/User.yaml
+    readOnly: true
+  modified_at:
+    type: string
+    format: date-time
+    readOnly: true
+  modified_by:
+    type: integer
+    readOnly: true
+  original_debt_amount:
+    type: number
+  current_debt_amount:
+    type: number
+  current_payment:
+    type: number
+  current_rate:
+    type: number
+  verified_debt_amount:
+    type: number
+  creditor:
+    type: array
+    items:
+      $ref: ../models/Creditor.yaml
+  debt_buyer:
+    type: string
+  poa_sent_date:
+    type: string
+    format: date
+  legal_account:
+    type: string
+  last_payment_date:
+    type: string
+    format: date
+  last_payment_amount:
+    type: number
+  opened_date:
+    type: string
+    format: date
+  available_balance:
+    type: number
+  enrolled:
+    type: integer
+  enrolled_date:
+    type: string
+    format: date
+  debt_type:
+    type: integer
+  debt_status:
+    type: string
+  locked:
+    type: integer
+  og_account_num:
+    type: string
+  creditor_account_num:
+    type: string
+  settled:
+    type: integer
+  settlement_id:
+    type: integer
+  client_id:
+    type: integer
+  settlement_offers:
+    type: array
+    items:
+      type: string
+  customs:
+    type: array
+    items:
+      type: string
+required:
+  - original_debt_amount
+  - current_debt_amount
+  - client_id
+  - creditor
+x-tags:
+  - Debt

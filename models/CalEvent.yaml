@@ -1,0 +1,87 @@
+title: CalEvent
+type: object
+description: Calendar Event Record
+properties:
+  id:
+    type: integer
+    readOnly: true
+  acctID:
+    type: integer
+    readOnly: true
+  created:
+    type: string
+    format: date-time
+    readOnly: true
+  created_by:
+    type: integer
+    readOnly: true
+  modified:
+    type: string
+    format: date-time
+    readOnly: true
+  modified_by:
+    type: integer
+    readOnly: true
+  assigned_to:
+    type: integer
+  contact_id:
+    type: integer
+  event_type:
+    type: string
+  title:
+    type: string
+  description:
+    type: string
+  location:
+    type: string
+  location_id:
+    type: integer
+  start_date:
+    type: string
+    format: date-time
+  end_date:
+    type: string
+    format: date-time
+  timezone:
+    type: string
+  utc_start:
+    type: string
+    format: date-time
+  utc_end:
+    type: string
+    format: date-time
+  allday:
+    type: integer
+  repeats:
+    type: integer
+  repeatswhen:
+    type: string
+  repeatends:
+    type: string
+  reminder:
+    type: string
+  notify_part:
+    type: integer
+  auto_dismiss:
+    type: integer
+  public:
+    type: integer
+  dismissed:
+    type: integer
+    readOnly: true
+  dismissed_at:
+    type: string
+    format: date-time
+    readOnly: true
+  hidden:
+    type: integer
+  event_result:
+    type: integer
+  userfield1:
+    type: string
+  userfield2:
+    type: string
+  userfield3:
+    type: string
+x-tags:
+  - CalEvent

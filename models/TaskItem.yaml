@@ -1,0 +1,16 @@
+title: TaskItem
+type: object
+description: Task Item
+properties:
+  task_category:
+    type: integer
+  items:
+    type: array
+    items:
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+x-tags:
+  - TaskItem

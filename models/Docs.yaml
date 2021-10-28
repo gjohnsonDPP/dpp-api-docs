@@ -1,0 +1,21 @@
+title: Docs
+type: object
+description: Documentation
+properties:
+  clixsign:
+    type: array
+    items: {}
+  esigns:
+    type: array
+    items: {}
+  docusign:
+    type: array
+    items: {}
+  uploads:
+    type: array
+    items: {}
+  generated:
+    type: array
+    items: {}
+x-tags:
+  - Docs

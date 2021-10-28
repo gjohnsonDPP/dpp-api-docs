@@ -1,0 +1,103 @@
+title: Company
+type: object
+description: Company Record Object
+properties:
+  id:
+    type: integer
+    readOnly: true
+  acctID:
+    type: integer
+    readOnly: true
+  name:
+    type: string
+  company_code:
+    type: string
+  phone:
+    type: string
+  parent_id:
+    type: integer
+  company_type:
+    type: integer
+  created_at:
+    type: string
+    format: date-time
+    readOnly: true
+  created_by:
+    type: integer
+    readOnly: true
+  contactname:
+    type: string
+  address:
+    type: string
+  address2:
+    type: string
+  city:
+    type: string
+  state:
+    type: string
+  zip:
+    type: string
+  phone2:
+    type: string
+  fax:
+    type: string
+  email:
+    type: string
+  timezone:
+    type: string
+  ein:
+    type: string
+  esign:
+    type: integer
+  domain:
+    type: string
+  gcs_account_num:
+    type: string
+  gcs_policy_group_id:
+    type: string
+  account_num:
+    type: string
+  routing_num:
+    type: string
+  bank_name:
+    type: string
+  account_type:
+    type: string
+  active:
+    type: integer
+  theme:
+    type: string
+  logo_url:
+    type: string
+  additional1:
+    type: string
+  additional2:
+    type: string
+  additional3:
+    type: string
+  additional4:
+    type: string
+  additional5:
+    type: string
+  additional6:
+    type: string
+  account_exec:
+    type: integer
+  docusign_acct:
+    type: string
+  docusign_pass:
+    type: string
+  docusign_user:
+    type: string
+  enroll_charge:
+    type: number
+  charge_payee:
+    type: integer
+required:
+  - name
+  - company_code
+  - company_type
+  - contactname
+  - email
+x-tags:
+  - Company

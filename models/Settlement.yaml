@@ -1,0 +1,60 @@
+title: Settlement
+type: object
+description: Settlement
+properties:
+  id:
+    type: integer
+    readOnly: true
+  contact_id:
+    type: integer
+  creditor:
+    $ref: ../models/Creditor.yaml
+  debt_id:
+    type: integer
+  created_at:
+    type: string
+    format: date-time
+    readOnly: true
+  created_by:
+    type: integer
+    readOnly: true
+  modified_at:
+    type: string
+    format: date-time
+    readOnly: true
+  modified_by:
+    type: integer
+    readOnly: true
+  neg_id:
+    type: integer
+  madeby:
+    type: string
+  offer_status:
+    properties:
+      status_id:
+        type: string
+      label:
+        type: string
+    type: object
+  offer_status_date:
+    type: string
+    format: date
+  offer_valid_date:
+    type: string
+    format: date
+  settlement_type:
+    type: integer
+  debt_amount:
+    type: number
+  settlement_amount:
+    type: number
+  settlement_fee:
+    type: number
+  notes:
+    type: string
+  cred_cont_id:
+    type: integer
+  json:
+    type: object
+x-tags:
+  - Settlement

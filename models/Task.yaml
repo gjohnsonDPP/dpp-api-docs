@@ -1,0 +1,56 @@
+title: Task
+type: object
+description: Task Record
+properties:
+  acctID:
+    type: integer
+    readOnly: true
+  id:
+    type: integer
+    readOnly: true
+  contact_id:
+    type: integer
+  task_created_date:
+    type: string
+    format: date-time
+    readOnly: true
+  task_name:
+    type: string
+  defined_task:
+    type: integer
+  created_by:
+    type: integer
+    readOnly: true
+  task_due_date:
+    type: string
+    format: date
+  task_note:
+    type: string
+  list_id:
+    type: integer
+  team_id:
+    type: integer
+  task_completed:
+    type: integer
+    readOnly: true
+  task_completed_by:
+    type: integer
+    readOnly: true
+  task_completed_date:
+    type: string
+    format: date-time
+    readOnly: true
+  task_completion_percentage:
+    type: integer
+  task_status:
+    type: integer
+  title:
+    type: string
+  assigned_to_id:
+    type: integer
+  task_type:
+    type: integer
+  assigned_to:
+    type: string
+x-tags:
+  - Task
