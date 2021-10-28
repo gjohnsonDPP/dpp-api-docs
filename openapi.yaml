@@ -1,18 +1,16 @@
 openapi: 3.0.0
 info:
   title: DebtPayPro API
-  description: " "
-  version: 1.0.1
+  description: ' '
+  version: 1.0.0
   contact:
     name: Support
     email: support@debtpaypro.com
-
 servers:
-  - url: https://api.debtpaypro.com/v1
+  - url: 'https://api.debtpaypro.com/v1'
     description: Production Server
   - description: Staging16
-    url: https://staging16-api.debtpaypro.com/v1
-
+    url: 'https://staging16-api.debtpaypro.com/v1'
 tags:
   - name: Authentication
     description: Authentication
@@ -42,7 +40,6 @@ tags:
     description: All available actions for Teams
   - name: Users
     description: All available actions for Users
-
 paths:
   /calls:
     post:
@@ -2980,6 +2977,17 @@ components:
       in: query
       schema:
         type: integer
+    version:
+      name: version
+      in: header
+      schema:
+        type: string
+        pattern: '^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(-[a-zA-Z\d][-a-zA-Z.\d]*)?(\+[a-zA-Z\d][-a-zA-Z.\d]*)?$'
+        minLength: 5
+        maxLength: 12
+        format: uri
+      required: true
+      description: Current API Version Number
   requestBodies:
     Contact:
       content:
