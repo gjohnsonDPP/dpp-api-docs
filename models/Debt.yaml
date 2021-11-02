@@ -1,6 +1,8 @@
 title: Debt
 type: object
 description: Debt Record
+x-tags:
+  - Debt
 properties:
   id:
     type: integer
@@ -34,6 +36,8 @@ properties:
     type: number
   verified_debt_amount:
     type: number
+  creditor_id:
+    type: integer
   creditor:
     type: array
     items:
@@ -88,6 +92,4 @@ required:
   - original_debt_amount
   - current_debt_amount
   - client_id
-  - creditor
-x-tags:
-  - Debt
+  - creditor_id
