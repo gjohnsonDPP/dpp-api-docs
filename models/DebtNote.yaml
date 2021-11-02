@@ -1,0 +1,27 @@
+title: DebtNote
+type: object
+properties:
+  note_id:
+    type: integer
+    readOnly: 'true'
+  acctID:
+    type: integer
+    readOnly: 'true'
+    example: 4490
+  note_created_date:
+    type: string
+    readOnly: 'true'
+  client_id:
+    type: integer
+  debt_id:
+    type: integer
+  title:
+    type: string
+  created_by:
+    type: object
+    readOnly: 'true'
+    $ref: ../models/User.yaml
+  content:
+    type: string
+x-tags:
+  - DebtNote

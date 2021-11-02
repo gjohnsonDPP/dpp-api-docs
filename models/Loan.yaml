@@ -1,0 +1,95 @@
+title: Loan
+type: object
+description: Loan Record
+properties:
+  id:
+    type: integer
+    readOnly: true
+  acctID:
+    type: integer
+    readOnly: true
+  tp_id:
+    type: integer
+  created_at:
+    type: string
+    format: date-time
+    readOnly: true
+  created_by:
+    type: integer
+    readOnly: true
+  modified_at:
+    type: string
+    format: date-time
+    readOnly: true
+  modified_by:
+    type: integer
+    readOnly: true
+  client_id:
+    type: integer
+  advance_type:
+    type: string
+  advance_date:
+    type: string
+    format: date
+  paid_in_full_date:
+    type: string
+    format: date
+  defaulted_date:
+    type: string
+    format: date
+  type_id:
+    type: integer
+  program_id:
+    type: integer
+  loan_class:
+    type: integer
+  loan_amount:
+    type: number
+  payback_amount:
+    type: number
+  rate:
+    type: number
+  payment:
+    type: number
+  holdback_percent:
+    type: number
+  payback_period:
+    type: integer
+  frequency:
+    type: string
+  freq_int:
+    type: string
+  period_amount:
+    type: number
+  fees:
+    type: number
+  conf_num:
+    type: string
+  underwrite_notes:
+    type: string
+  contract_date:
+    type: string
+    format: date
+  contract_number:
+    type: string
+  funded:
+    type: integer
+  status:
+    type: integer
+  lien_pos:
+    type: integer
+  ach_start_date:
+    type: string
+    format: date
+  ach_on:
+    type: integer
+  pricing_lock:
+    type: integer
+  offer_set:
+    type: integer
+required:
+  - client_id
+  - loan_amount
+  - payback_amount
+x-tags:
+  - Loan

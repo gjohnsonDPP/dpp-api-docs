@@ -1,0 +1,26 @@
+title: Stat
+type: object
+description: ''
+properties:
+  gateway:
+    type: integer
+  num_payments_made:
+    type: integer
+  total_num_payments:
+    type: integer
+  total_fees_paid:
+    type: integer
+  total_fees_owed:
+    type: integer
+  num_returns:
+    type: integer
+  num_fees_taken:
+    type: integer
+  total_num_fees:
+    type: integer
+  sum_of_cleared_payments:
+    type: integer
+  sum_of_payments:
+    type: integer
+x-tags:
+  - Stat

@@ -1,12 +1,19 @@
 openapi: 3.0.0
 info:
   title: DebtPayPro API
-  description: This is the latest version of the DebtPayPro API.
+  description: ' '
   version: 1.0.0
   contact:
     name: Support
     email: support@debtpaypro.com
+servers:
+  - url: 'https://api.debtpaypro.com/v1'
+    description: Production Server
+  - description: Staging16
+    url: 'https://staging16-api.debtpaypro.com/v1'
 tags:
+  - name: Authentication
+    description: Authentication
   - name: Auth
     description: All available actions for Auth
   - name: Calls
@@ -33,13 +40,10 @@ tags:
     description: All available actions for Teams
   - name: Users
     description: All available actions for Users
-servers:
-  - url: 'https://api.debtpaypro.com/v1'
-    description: Production Server
 paths:
   /calls:
     post:
-      summary: Create a call record
+      summary: Create a Call Record
       description: Allows a record to be created and logged for any call made to or by a client
       operationId: callCreate
       tags:
@@ -52,7 +56,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Call'
+              $ref: models/Call.yaml
       responses:
         '200':
           description: Successfully created Call Record
@@ -61,7 +65,7 @@ paths:
               schema:
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
+                    $ref: models/Status.yaml
                   response:
                     type: object
                 type: object
@@ -74,7 +78,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
+                    $ref: models/Status.yaml
   '/calls/{id}':
     get:
       tags:
@@ -95,9 +99,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Call'
+                $ref: models/Call.yaml
         '400':
-          description: Successfully retrieved Call Record
+          description: Error
           content:
             application/json:
               schema:
@@ -105,7 +109,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
+                    $ref: models/Status.yaml
     put:
       tags:
         - Calls
@@ -125,18 +129,18 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Call'
+                $ref: models/Call.yaml
         '400':
           description: Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Status'
+                $ref: models/Status.yaml
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Call-Update'
+              $ref: models/Call.yaml
           application/xml:
             schema:
               type: object
@@ -168,7 +172,7 @@ paths:
               schema:
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
+                    $ref: models/Status.yaml
                   response:
                     type: object
                 type: object
@@ -181,7 +185,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
+                    $ref: models/Status.yaml
   /campaigns/e-mail:
     post:
       tags:
@@ -199,7 +203,7 @@ paths:
               schema:
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
+                    $ref: models/Status.yaml
                   response:
                     type: object
                 type: object
@@ -212,7 +216,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
+                    $ref: models/Status.yaml
   '/campaigns/e-mail/{id}':
     get:
       tags:
@@ -235,7 +239,7 @@ paths:
               schema:
                 properties:
                   response:
-                    $ref: '#/components/schemas/Campaign'
+                    $ref: models/Campaign.yaml
                 type: object
         '400':
           description: Error
@@ -246,7 +250,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
+                    $ref: models/Status.yaml
     put:
       tags:
         - Campaigns
@@ -270,7 +274,7 @@ paths:
               schema:
                 properties:
                   response:
-                    $ref: '#/components/schemas/Campaign'
+                    $ref: models/Campaign.yaml
                 type: object
         '400':
           description: Error
@@ -281,7 +285,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
+                    $ref: models/Status.yaml
     delete:
       tags:
         - Campaigns
@@ -303,7 +307,7 @@ paths:
               schema:
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
+                    $ref: models/Status.yaml
                   response:
                     type: object
                 type: object
@@ -316,142 +320,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
-  /companies:
-    post:
-      tags:
-        - Companies
-      summary: Create a Company Record
-      description: Create a new Company Record object
-      operationId: companyCreate
-      requestBody:
-        $ref: '#/components/requestBodies/Company'
-      responses:
-        '200':
-          description: Successfully created Company
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: '#/components/schemas/Status'
-                  response:
-                    type: object
-                type: object
-        '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                required:
-                  - status
-                properties:
-                  status:
-                    $ref: '#/components/schemas/Status'
-  '/companies/{id}':
-    get:
-      tags:
-        - Companies
-      summary: Get a Company Record by ID
-      description: Returns a single Company Record object
-      operationId: companyRead
-      parameters:
-        - name: id
-          in: path
-          description: Id of Company to return
-          required: true
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                properties:
-                  response:
-                    $ref: '#/components/schemas/Company'
-                type: object
-        '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                required:
-                  - status
-                properties:
-                  status:
-                    $ref: '#/components/schemas/Status'
-    put:
-      tags:
-        - Companies
-      summary: Update a Company Record by ID
-      description: Update a single Company Record object
-      operationId: companyUpdate
-      parameters:
-        - name: id
-          in: path
-          description: Id of Company Record to update
-          required: true
-          schema:
-            type: integer
-      requestBody:
-        $ref: '#/components/requestBodies/Company'
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                properties:
-                  response:
-                    $ref: '#/components/schemas/Call'
-                type: object
-        '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                required:
-                  - status
-                properties:
-                  status:
-                    $ref: '#/components/schemas/Status'
-    delete:
-      tags:
-        - Companies
-      summary: Delete a Company Record by ID
-      description: Deletes a single Company Record object
-      operationId: companyDelete
-      parameters:
-        - name: id
-          in: path
-          description: Id of Company Object to delete
-          required: true
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: '#/components/schemas/Status'
-                  response:
-                    type: object
-                type: object
-        '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                required:
-                  - status
-                properties:
-                  status:
-                    $ref: '#/components/schemas/Status'
+                    $ref: models/Status.yaml
   /contacts:
     post:
       tags:
@@ -469,7 +338,7 @@ paths:
               schema:
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
+                    $ref: models/Status.yaml
                   response:
                     type: object
                 type: object
@@ -482,12 +351,12 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
+                    $ref: models/Status.yaml
   '/contacts/{id}':
     get:
       tags:
         - Contacts
-      summary: Get a Contact Record by ID
+      summary: Find a Contact Record by ID
       description: Returns a Contact Record object
       operationId: contactRead
       parameters:
@@ -505,7 +374,7 @@ paths:
               schema:
                 properties:
                   response:
-                    $ref: '#/components/schemas/Contact'
+                    $ref: models/Contact.yaml
                 type: object
         '400':
           description: Error
@@ -516,7 +385,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
+                    $ref: models/Status.yaml
     put:
       tags:
         - Contacts
@@ -540,7 +409,7 @@ paths:
               schema:
                 properties:
                   response:
-                    $ref: '#/components/schemas/Contact'
+                    $ref: models/Contact.yaml
                 type: object
         '400':
           description: Error
@@ -551,7 +420,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
+                    $ref: models/Status.yaml
     delete:
       tags:
         - Contacts
@@ -573,7 +442,7 @@ paths:
               schema:
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
+                    $ref: models/Status.yaml
                   response:
                     type: object
                 type: object
@@ -586,708 +455,53 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
-  '/contacts/search_by_phone/{phone}':
-    get:
+                    $ref: models/Status.yaml
+  '/contacts/{id}/form_request':
+    post:
       tags:
         - Contacts
-      summary: Searches for contacts based on a phone number
-      operationId: searchByPhone
-      parameters:
-        - name: phone
-          in: path
-          description: Phone number of the contacts to be returned
-          required: true
-          schema:
-            type: string
-      responses:
-        default:
-          description: default
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: '#/components/schemas/Status'
-                  response:
-                    description: Searches for contacts based on a phone number
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Contact'
-                type: object
-  '/contacts/{contact_id}/debts':
-    get:
-      tags:
-        - Contacts
-      summary: Get Contact Debt Accounts
-      operationId: contactDebts
-      parameters:
-        - name: contact_id
-          in: path
-          description: Id of contact
-          required: true
-          schema:
-            type: integer
-      responses:
-        default:
-          description: default
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: '#/components/schemas/Status'
-                  response:
-                    description: Get Contact Debt Accounts
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Debt'
-                type: object
-  '/contacts/{id}/coapp':
-    get:
-      tags:
-        - Contacts
-      summary: Gets the contact Co-Applicant
-      operationId: contactCoapp
+      summary: Send Form to Contact Email by ID
+      description: Sends a Form to a Contact Email Address by ContactID
+      operationId: sendForm
       parameters:
         - name: id
           in: path
-          description: Id of contact
+          description: Id of Contact Record to send Form to
           required: true
           schema:
             type: integer
-      responses:
-        default:
-          description: default
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: '#/components/schemas/Status'
-                  response:
-                    description: Gets the contact Co-Applicant
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Contact'
-                type: object
-  '/contacts/{contact_id}/debts/enrolled':
-    get:
-      tags:
-        - Contacts
-      summary: Get Enrolled Debts
-      operationId: contactDebtsEnrolled
-      parameters:
-        - name: contact_id
-          in: path
-          description: Id of contact
-          required: true
-          schema:
-            type: integer
-      responses:
-        default:
-          description: default
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: '#/components/schemas/Status'
-                  response:
-                    description: Get Enrolled Debts
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Debt'
-                type: object
-  '/contacts/{contact_id}/debts/notenrolled':
-    get:
-      tags:
-        - Contacts
-      summary: Get Debts Not Enrolled
-      operationId: contactDebtsNotEnrolled
-      parameters:
-        - name: contact_id
-          in: path
-          description: Id of contact
-          required: true
-          schema:
-            type: integer
-      responses:
-        default:
-          description: default
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: '#/components/schemas/Status'
-                  response:
-                    description: Get Debts Not Enrolled
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Debt'
-                type: object
-  '/contacts/{contact_id}/debts/settled':
-    get:
-      tags:
-        - Contacts
-      summary: Get Settled Debts
-      operationId: contactDebtsSettled
-      parameters:
-        - name: contact_id
-          in: path
-          description: Id of contact
-          required: true
-          schema:
-            type: integer
-      responses:
-        default:
-          description: default
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: '#/components/schemas/Status'
-                  response:
-                    description: Get Settled Debts
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Debt'
-                type: object
-  '/contacts/{contact_id}/debts/notsettled':
-    get:
-      tags:
-        - Contacts
-      summary: Get Un-Settled Debts
-      operationId: contactDebtsNotSettled
-      parameters:
-        - name: contact_id
-          in: path
-          description: Id of contact
-          required: true
-          schema:
-            type: integer
-      responses:
-        default:
-          description: default
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: '#/components/schemas/Status'
-                  response:
-                    description: Get Un-Settled Debts
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Debt'
-                type: object
-  '/contacts/{contact_id}/enrollment/stats':
-    get:
-      tags:
-        - Contacts
-      summary: Get Enrollment Statistics
-      operationId: contactEnrollmentStats
-      parameters:
-        - name: contact_id
-          in: path
-          description: Id of contact
-          required: true
-          schema:
-            type: integer
-      responses:
-        default:
-          description: default
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: '#/components/schemas/Status'
-                  response:
-                    description: Get Enrollment Statistics
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Stat'
-                type: object
-  '/contacts/{contact_id}/documents':
-    get:
-      tags:
-        - Contacts
-      summary: Get Contact Documents
-      operationId: contactDocuments
-      parameters:
-        - name: contact_id
-          in: path
-          description: Id of contact
-          required: true
-          schema:
-            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                form_id:
+                  type: integer
+              required:
+                - form_id
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Docs'
-  '/contacts/{contact_id}/notes':
-    get:
-      tags:
-        - Contacts
-      summary: Get notes of a contact
-      operationId: contactNotes
-      parameters:
-        - name: contact_id
-          in: path
-          description: Id of contact
-          required: true
-          schema:
-            type: integer
-      responses:
-        default:
-          description: default
-          content:
-            application/json:
-              schema:
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
-                  response:
-                    description: Get notes of a contact
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Note'
-                type: object
-  '/contacts/{contact_id}/tasks':
-    get:
-      tags:
-        - Contacts
-      summary: Get Tasks of a contact
-      operationId: contactTasks
-      parameters:
-        - name: contact_id
-          in: path
-          description: Id of contact
-          required: true
-          schema:
-            type: integer
-      responses:
-        default:
-          description: default
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: '#/components/schemas/Status'
-                  response:
-                    description: Get Tasks of a contact
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Task'
-                type: object
-  '/contacts/{contact_id}/settlement_offers':
-    get:
-      tags:
-        - Contacts
-      summary: Get contact settlement offers
-      operationId: contactSettlementOffers
-      parameters:
-        - name: contact_id
-          in: path
-          description: Id of contact
-          required: true
-          schema:
-            type: integer
-      responses:
-        default:
-          description: default
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: '#/components/schemas/Status'
-                  response:
-                    description: Get contact settlement offers
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Settlement'
-                type: object
-  /contacts/getLists:
-    post:
-      tags:
-        - Contacts
-      summary: Get lists
-      operationId: contactLists
-      requestBody:
-        content:
-          application/json:
-            schema:
-              properties:
-                contact_info:
-                  description: contact_info
-                  type: integer
-                contact_id:
-                  description: contact_id
-                  type: integer
-              type: object
-      responses:
-        default:
-          description: default
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: '#/components/schemas/Status'
+                    $ref: models/Status.yaml
                   response:
                     type: object
                 type: object
-  '/contacts/{contact_id}/pull_credit/{provider}':
-    post:
-      tags:
-        - Contacts
-      summary: Pull Credit Report on a contact
-      operationId: contactPullCredit
-      parameters:
-        - name: contact_id
-          in: path
-          description: contact_id
-          required: true
-          schema:
-            type: integer
-        - name: provider
-          in: path
-          description: provider
-          required: true
-          schema:
-            type: string
-      responses:
-        default:
-          description: default
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: '#/components/schemas/Status'
-                  response:
-                    description: Pull Credit Report on a contact
-                    properties:
-                      report_id:
-                        description: Pull Credit Report on a contact
-                        type: integer
-                      message:
-                        description: Pull Credit Report on a contact
-                        type: string
-                    type: object
-                type: object
-  '/contacts/{contact_id}/get_credit_report':
-    get:
-      tags:
-        - Contacts
-      summary: Get Last Credit Report
-      operationId: contactCreditReport
-      parameters:
-        - name: contact_id
-          in: path
-          description: Id of contact
-          required: true
-          schema:
-            type: integer
-      responses:
-        default:
-          description: default
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: '#/components/schemas/Status'
-                  response:
-                    description: Get Last Credit Report
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Debt'
-                type: object
-  '/contacts/{contact_id}/submit_to_lender/{lender}':
-    post:
-      tags:
-        - Contacts
-      summary: Submit contact to lender
-      operationId: contactSubmitLender
-      parameters:
-        - name: contact_id
-          in: path
-          description: Id of contact to be submited
-          required: true
-          schema:
-            type: integer
-        - name: lender
-          in: path
-          description: Id of lender
-          required: true
-          schema:
-            type: integer
-      responses:
-        default:
-          description: default
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: '#/components/schemas/Status'
-                  response:
-                    type: object
-                type: object
-  '/contacts/{id}/ref':
-    post:
-      tags:
-        - Contacts
-      summary: change or update Account Contacts Ref
-      operationId: contactRefUpdate
-      parameters:
-        - name: id
-          in: path
-          description: Id of contact to be updated
-          required: true
-          schema:
-            type: integer
-      requestBody:
-        content:
-          application/json:
-            schema:
-              properties:
-                type:
-                  description: type of contact
-                  type: integer
-                authorized:
-                  description: contact authorized (1/0)
-                  type: integer
-                link:
-                  description: link account contact
-                  type: integer
-                unlink:
-                  description: unlink account contact
-                  type: integer
-              type: object
-      responses:
-        default:
-          description: default
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: '#/components/schemas/Status'
-                  response:
-                    type: object
-                type: object
-  /contacts/logcall:
-    post:
-      tags:
-        - Contacts
-      summary: Logs a call
-      requestBody:
-        content:
-          application/json:
-            schema:
-              properties:
-                from:
-                  description: from
-                  type: integer
-                to:
-                  description: to
-                  type: integer
-                giid:
-                  description: giid
-                  type: string
-                iid:
-                  description: iid
-                  type: string
-                dialer_id:
-                  description: dialer_id
-                  type: integer
-                contact_phone:
-                  description: contact_phone
-                  type: string
-                disposition:
-                  description: disposition
-                  type: string
-                login_id:
-                  description: login_id
-                  type: integer
-              type: object
-      responses:
-        '200':
-          description: ''
-          content:
-            application/json:
-              schema:
-                properties:
-                  response:
-                    description: Logs a call
-                    type: array
-                    items:
-                      properties:
-                        id:
-                          description: Logs a call
-                          type: integer
-                        acctID:
-                          description: Logs a call
-                          type: integer
-                        contactID:
-                          description: Logs a call
-                          type: integer
-                        userID:
-                          description: Logs a call
-                          type: integer
-                        activity_id:
-                          description: Logs a call
-                          type: integer
-                        sdate:
-                          description: Logs a call
-                          type: string
-                        created_at:
-                          description: Logs a call
-                          type: string
-                        call_type:
-                          description: Logs a call
-                          type: string
-                        call_result:
-                          description: Logs a call
-                          type: string
-                        call_dis_id:
-                          description: Logs a call
-                          type: integer
-                        notes:
-                          description: Logs a call
-                          type: string
-                        status_change:
-                          description: Logs a call
-                          type: string
-                        duration:
-                          description: Logs a call
-                          type: string
-                        event_id:
-                          description: Logs a call
-                          type: integer
-                        dialer_id:
-                          description: Logs a call
-                          type: integer
-                        recording_id:
-                          description: Logs a call
-                          type: integer
-                        data:
-                          description: Logs a call
-                          type: string
-  '/contacts/list/download/{export_id}':
-    get:
-      tags:
-        - Contacts
-      summary: get status of the CSV file
-      parameters:
-        - name: export_id
-          in: path
-          description: export_id
-          required: true
-          schema:
-            type: integer
-      responses:
-        '201':
-          description: ''
-          content:
-            application/json:
-              schema:
-                properties:
-                  response:
-                    description: get status of the CSV file
-                    type: array
-                    items:
-                      properties:
-                        file_url:
-                          description: get status of the CSV file
-                          type: string
         '400':
-          description: ''
+          description: Error
           content:
             application/json:
               schema:
+                required:
+                  - status
                 properties:
-                  response:
-                    description: get status of the CSV file
-                    type: array
-                    items:
-                      properties:
-                        timestamp:
-                          description: get status of the CSV file
-                          type: string
-                          example: '2016-01-01'
-                        message:
-                          description: get status of the CSV file
-                          type: string
-  /contacts/list:
-    post:
-      tags:
-        - Contacts
-      summary: Create a job to make a CSV of the given list id.
-      description: create CSV from list id
-      requestBody:
-        content:
-          application/json:
-            schema:
-              properties:
-                list_id:
-                  description: list_id
-                  type: integer
-                email_on_ready:
-                  description: email_on_ready
-                  type: string
-              type: object
-      responses:
-        '202':
-          description: ''
-          content:
-            application/json:
-              schema:
-                properties:
-                  response:
-                    description: Create a job to make a CSV of the given list id.
-                    type: array
-                    items:
-                      properties:
-                        msg:
-                          description: Create a job to make a CSV of the given list id.
-                          type: string
-                        url:
-                          description: Create a job to make a CSV of the given list id.
-                          type: string
-                        file_name:
-                          description: Create a job to make a CSV of the given list id.
-                          type: string
-                        file_id:
-                          description: Create a job to make a CSV of the given list id.
-                          type: integer
-        '400':
-          description: ''
-          content:
-            application/json:
-              schema:
-                properties:
-                  response:
-                    description: Create a job to make a CSV of the given list id.
-                    type: array
-                    items:
-                      properties:
-                        trace:
-                          description: Create a job to make a CSV of the given list id.
-                          type: string
-                        message:
-                          description: Create a job to make a CSV of the given list id.
-                          type: string
+                  status:
+                    $ref: models/Status.yaml
   /auth/token:
     post:
       tags:
@@ -1335,7 +549,7 @@ paths:
     post:
       tags:
         - Debts
-      summary: Create a Debt Record by ID
+      summary: Create a Debt Record
       description: Creates a new Debt Record object
       operationId: debtCreate
       requestBody:
@@ -1348,7 +562,7 @@ paths:
               schema:
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
+                    $ref: models/Status.yaml
                   response:
                     type: object
                 type: object
@@ -1361,13 +575,13 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
+                    $ref: models/Status.yaml
   '/debts/{id}':
     get:
       tags:
         - Debts
-      summary: Get a Debt Record by ID
-      description: Returns a single Debt Record object
+      summary: Find a Debt Record by ID
+      description: Returns a single Debt Record
       operationId: debtRead
       parameters:
         - name: id
@@ -1384,7 +598,7 @@ paths:
               schema:
                 properties:
                   response:
-                    $ref: '#/components/schemas/Debt'
+                    $ref: models/Debt.yaml
                 type: object
         '400':
           description: error
@@ -1395,12 +609,12 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
+                    $ref: models/Status.yaml
     put:
       tags:
         - Debts
       summary: Update a Debt Record by ID
-      description: Updates a single Debt Record object
+      description: Updates a single Debt Record
       operationId: debtUpdate
       parameters:
         - name: id
@@ -1419,7 +633,7 @@ paths:
               schema:
                 properties:
                   response:
-                    $ref: '#/components/schemas/Debt'
+                    $ref: models/Debt.yaml
                 type: object
         '400':
           description: Error
@@ -1430,7 +644,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
+                    $ref: models/Status.yaml
     delete:
       tags:
         - Debts
@@ -1452,7 +666,7 @@ paths:
               schema:
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
+                    $ref: models/Status.yaml
                   response:
                     type: object
                 type: object
@@ -1465,17 +679,18 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
+                    $ref: models/Status.yaml
   '/debts/{id}/notes':
     post:
       tags:
         - Debts
-      summary: save Debt Notes
-      operationId: debtNotesSave
+      summary: Create a Debt Note using DebtID
+      description: Creates a new Debt Note object
+      operationId: debtNoteCreate
       parameters:
         - in: path
           name: id
-          description: Id of debt
+          description: Id of debtnote
           required: true
           schema:
             type: integer
@@ -1492,22 +707,33 @@ paths:
                   type: string
               type: object
       responses:
-        default:
-          description: default
+        '200':
+          description: Success
           content:
             application/json:
               schema:
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
+                    $ref: models/Status.yaml
                   response:
                     type: object
                 type: object
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                required:
+                  - status
+                properties:
+                  status:
+                    $ref: models/Status.yaml
   '/debts/notes/{id}':
     delete:
       tags:
         - Debts
-      summary: delete Debt Notes
+      summary: Delete a Debt Note by ID
+      description: Deletes a single Debt Note object
       operationId: debtNoteDelete
       parameters:
         - name: id
@@ -1524,158 +750,15 @@ paths:
               schema:
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
+                    $ref: models/Status.yaml
                   response:
-                    type: object
-                type: object
-  '/debts/{id}/tasks':
-    get:
-      tags:
-        - Debts
-      summary: get tasks by debt ID
-      operationId: debtTasksGet
-      parameters:
-        - name: id
-          in: path
-          description: Id of debt
-          required: true
-          schema:
-            type: integer
-      responses:
-        default:
-          description: default
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: '#/components/schemas/Status'
-                  response:
-                    description: get tasks by debt ID
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Task'
-                type: object
-  '/debts/{id}/task':
-    post:
-      tags:
-        - Debts
-      summary: add Debt Task
-      operationId: debtTaskAdd
-      parameters:
-        - name: id
-          in: path
-          description: Id of debt
-          required: true
-          schema:
-            type: integer
-      requestBody:
-        content:
-          application/json:
-            schema:
-              properties:
-                assigned_to:
-                  description: add Debt Task
-                  properties:
-                    id:
-                      description: add Debt Task
-                      type: integer
-                    type:
-                      description: add Debt Task
-                      type: string
-                  type: object
-                defined_task:
-                  description: add Debt Task
-                  type: integer
-                task_name:
-                  description: add Debt Task
-                  type: string
-              type: object
-      responses:
-        default:
-          description: default
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: '#/components/schemas/Status'
-                  response:
-                    description: add Debt Task
-                    properties:
-                      debt:
-                        $ref: '#/components/schemas/Debt'
-                      debt_task_id:
-                        description: add Debt Task
-                        type: integer
-                      task:
-                        $ref: '#/components/schemas/Task'
-                    type: object
-                type: object
-  '/debts/{id}/settlement_offers':
-    get:
-      tags:
-        - Debts
-      summary: get settlement offers by debt
-      operationId: debtSettlementOffers
-      parameters:
-        - name: id
-          in: path
-          description: Id of debt
-          required: true
-          schema:
-            type: integer
-      responses:
-        default:
-          description: default
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: '#/components/schemas/Status'
-                  response:
-                    description: get settlement offers by debt
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Settlement'
-                type: object
-  /debts/getLists:
-    post:
-      tags:
-        - Debts
-      summary: get lists
-      operationId: debtListsGet
-      requestBody:
-        content:
-          application/json:
-            schema:
-              properties:
-                debt_id:
-                  description: get lists
-                  type: integer
-                debt_info:
-                  description: get lists
-                  type: string
-              type: object
-      responses:
-        default:
-          description: default
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: '#/components/schemas/Status'
-                  response:
-                    description: get lists
                     type: object
                 type: object
   /loans:
     post:
       tags:
         - Loans
-      summary: Create a Loan Record by ID
+      summary: Create a Loan Record
       description: Creates a new Loan Record object
       operationId: loanCreate
       requestBody:
@@ -1688,7 +771,7 @@ paths:
               schema:
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
+                    $ref: models/Status.yaml
                   response:
                     type: object
                 type: object
@@ -1701,12 +784,12 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
+                    $ref: models/Status.yaml
   '/loans/{id}':
     get:
       tags:
         - Loans
-      summary: Get a Loan Record by ID
+      summary: Find a Loan Record by ID
       description: Returns a single Loan Record object
       operationId: loanRead
       parameters:
@@ -1724,7 +807,7 @@ paths:
               schema:
                 properties:
                   response:
-                    $ref: '#/components/schemas/Loan'
+                    $ref: models/Loan.yaml
                 type: object
         '400':
           description: Error
@@ -1735,7 +818,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
+                    $ref: models/Status.yaml
     put:
       tags:
         - Loans
@@ -1759,7 +842,7 @@ paths:
               schema:
                 properties:
                   response:
-                    $ref: '#/components/schemas/Loan'
+                    $ref: models/Loan.yaml
                 type: object
         '400':
           description: Error
@@ -1770,7 +853,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
+                    $ref: models/Status.yaml
     delete:
       tags:
         - Loans
@@ -1792,7 +875,7 @@ paths:
               schema:
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
+                    $ref: models/Status.yaml
                   response:
                     type: object
                 type: object
@@ -1805,192 +888,47 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
-  /notes:
-    post:
-      tags:
-        - Notes
-      summary: Create a Note Record
-      description: Creates a new Note Record object
-      operationId: noteCreate
-      requestBody:
-        $ref: '#/components/requestBodies/Note'
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: '#/components/schemas/Status'
-                  response:
-                    type: object
-                type: object
-        '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                required:
-                  - status
-                properties:
-                  status:
-                    $ref: '#/components/schemas/Status'
-  '/notes/{id}':
-    get:
-      tags:
-        - Notes
-      summary: Get a Note Record by ID
-      description: Returns a single Note Record object
-      operationId: noteRead
-      parameters:
-        - name: id
-          in: path
-          description: Id of Note Record to Return
-          required: true
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                properties:
-                  response:
-                    $ref: '#/components/schemas/Note'
-                type: object
-        '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                required:
-                  - status
-                properties:
-                  status:
-                    $ref: '#/components/schemas/Status'
-    put:
-      tags:
-        - Notes
-      summary: Update a Note Record by ID
-      description: Updates a single Note Record object
-      operationId: noteUpdate
-      parameters:
-        - name: id
-          in: path
-          description: Id of Note Record to update
-          required: true
-          schema:
-            type: integer
-      requestBody:
-        $ref: '#/components/requestBodies/Note'
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                properties:
-                  response:
-                    $ref: '#/components/schemas/Note'
-                type: object
-        '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                required:
-                  - status
-                properties:
-                  status:
-                    $ref: '#/components/schemas/Status'
-    delete:
-      tags:
-        - Notes
-      summary: Delete a Note Record by ID
-      description: Deletes a single Note Record object
-      operationId: noteDelete
-      parameters:
-        - name: id
-          in: path
-          description: Id of Note Record to delete
-          required: true
-          schema:
-            type: integer
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: '#/components/schemas/Status'
-                  response:
-                    type: object
-                type: object
-        '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                required:
-                  - status
-                properties:
-                  status:
-                    $ref: '#/components/schemas/Status'
+                    $ref: models/Status.yaml
   /settlement_offers:
     post:
       tags:
         - Settlement_Offers
-      summary: Create a Settlement Offer record
+      summary: Create a Settlement Offer Record
       description: Creates a new Settlement Offer object
       operationId: settlementOfferCreate
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Settlementoffer'
+              $ref: models/Settlementoffer.yaml
         required: true
       responses:
         '200':
-          description: after creation
+          description: Success
           content:
             application/json:
               schema:
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
+                    $ref: models/Status.yaml
                   response:
-                    properties:
-                      id:
-                        type: integer
-                        example: 123
                     type: object
                 type: object
         '400':
-          description: some error
+          description: Error
           content:
             application/json:
               schema:
+                required:
+                  - status
                 properties:
                   status:
-                    properties:
-                      code:
-                        type: integer
-                        example: 404
-                      message:
-                        type: string
-                        example: not found
-                    type: object
-                type: object
+                    $ref: models/Status.yaml
   '/settlement_offers/{id}':
     get:
       tags:
         - Settlement_Offers
-      summary: Get a Settlement Offer Record by ID
+      summary: Find a Settlement Offer Record by ID
       description: Returns a single Settlement Offer object
       operationId: settlementOfferRead
       parameters:
@@ -2008,26 +946,20 @@ paths:
               schema:
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
+                    $ref: models/Status.yaml
                   response:
-                    $ref: '#/components/schemas/Settlement'
+                    $ref: models/Settlement.yaml
                 type: object
         '400':
-          description: some error
+          description: Error
           content:
             application/json:
               schema:
+                required:
+                  - status
                 properties:
                   status:
-                    properties:
-                      code:
-                        type: integer
-                        example: 404
-                      message:
-                        type: string
-                        example: not found
-                    type: object
-                type: object
+                    $ref: models/Status.yaml
     put:
       tags:
         - Settlement_Offers
@@ -2045,7 +977,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Settlementoffer'
+              $ref: models/Settlementoffer.yaml
         description: Settlement offer object that needs to be updated
         required: true
       responses:
@@ -2056,31 +988,25 @@ paths:
               schema:
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
+                    $ref: models/Status.yaml
                   response:
                     type: object
                 type: object
         '400':
-          description: some error
+          description: Error
           content:
             application/json:
               schema:
+                required:
+                  - status
                 properties:
                   status:
-                    properties:
-                      code:
-                        type: integer
-                        example: 404
-                      message:
-                        type: string
-                        example: not found
-                    type: object
-                type: object
+                    $ref: models/Status.yaml
     delete:
       tags:
         - Settlement_Offers
       summary: Delete a Settlement Offer Record by ID
-      description: Deletes a single Settlement Offer object.
+      description: Deletes a single Settlement Offer object
       operationId: settlementOfferDelete
       parameters:
         - name: id
@@ -2097,26 +1023,20 @@ paths:
               schema:
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
+                    $ref: models/Status.yaml
                   response:
                     type: object
                 type: object
         '400':
-          description: some error
+          description: Error
           content:
             application/json:
               schema:
+                required:
+                  - status
                 properties:
                   status:
-                    properties:
-                      code:
-                        type: integer
-                        example: 404
-                      message:
-                        type: string
-                        example: not found
-                    type: object
-                type: object
+                    $ref: models/Status.yaml
   /tasks:
     post:
       tags:
@@ -2128,18 +1048,18 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Task'
+              $ref: models/Task.yaml
         description: Task object to be created
         required: true
       responses:
         '200':
-          description: after creation
+          description: default
           content:
             application/json:
               schema:
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
+                    $ref: models/Status.yaml
                   response:
                     properties:
                       id:
@@ -2148,26 +1068,20 @@ paths:
                     type: object
                 type: object
         '400':
-          description: some error
+          description: Error
           content:
             application/json:
               schema:
+                required:
+                  - status
                 properties:
                   status:
-                    properties:
-                      code:
-                        type: integer
-                        example: 404
-                      message:
-                        type: string
-                        example: not found
-                    type: object
-                type: object
+                    $ref: models/Status.yaml
   '/tasks/{id}':
     get:
       tags:
         - Tasks
-      summary: Get a Task Record by ID
+      summary: Find a Task Record by ID
       description: Returns a single Task Record object
       operationId: taskRead
       parameters:
@@ -2185,26 +1099,20 @@ paths:
               schema:
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
+                    $ref: models/Status.yaml
                   response:
-                    $ref: '#/components/schemas/Task'
+                    $ref: models/Task.yaml
                 type: object
         '400':
-          description: some error
+          description: Error
           content:
             application/json:
               schema:
+                required:
+                  - status
                 properties:
                   status:
-                    properties:
-                      code:
-                        type: integer
-                        example: 404
-                      message:
-                        type: string
-                        example: not found
-                    type: object
-                type: object
+                    $ref: models/Status.yaml
     put:
       tags:
         - Tasks
@@ -2222,7 +1130,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Task'
+              $ref: models/Task.yaml
         description: Task object that needs to be updated
         required: true
       responses:
@@ -2233,26 +1141,20 @@ paths:
               schema:
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
+                    $ref: models/Status.yaml
                   response:
-                    type: object
+                    $ref: models/Task.yaml
                 type: object
         '400':
-          description: some error
+          description: Error
           content:
             application/json:
               schema:
+                required:
+                  - status
                 properties:
                   status:
-                    properties:
-                      code:
-                        type: integer
-                        example: 404
-                      message:
-                        type: string
-                        example: not found
-                    type: object
-                type: object
+                    $ref: models/Status.yaml
     delete:
       tags:
         - Tasks
@@ -2267,270 +1169,6 @@ paths:
           schema:
             type: integer
       responses:
-        '400':
-          description: some error
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    properties:
-                      code:
-                        type: integer
-                        example: 404
-                      message:
-                        type: string
-                        example: not found
-                    type: object
-                type: object
-        default:
-          description: default
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: '#/components/schemas/Status'
-                  response:
-                    type: object
-                type: object
-  '/tasks/{id}/complete':
-    put:
-      tags:
-        - Tasks
-      summary: mark task Complete
-      operationId: taskMarkComplete
-      parameters:
-        - name: id
-          in: path
-          description: Id of task
-          required: true
-          schema:
-            type: string
-      responses:
-        default:
-          description: default
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: '#/components/schemas/Status'
-                  response:
-                    $ref: '#/components/schemas/Task'
-                type: object
-  /task_items:
-    get:
-      tags:
-        - Tasks
-      summary: get task items
-      operationId: taskItemsGet
-      responses:
-        default:
-          description: default
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: '#/components/schemas/Status'
-                  response:
-                    description: get task items
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/TaskItem'
-                type: object
-  /teams:
-    get:
-      tags:
-        - Teams
-      summary: get teams
-      operationId: teamsGet
-      responses:
-        default:
-          description: default
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: '#/components/schemas/Status'
-                  response:
-                    description: get teams
-                    type: array
-                    items:
-                      properties:
-                        team_id:
-                          description: get teams
-                          type: integer
-                        team_name:
-                          description: get teams
-                          type: string
-                type: object
-    post:
-      tags:
-        - Teams
-      summary: Create team record
-      description: this request creates a team
-      operationId: teamCreate
-      requestBody:
-        $ref: '#/components/requestBodies/Team'
-      responses:
-        '200':
-          description: after creation
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: '#/components/schemas/Status'
-                  response:
-                    properties:
-                      id:
-                        type: integer
-                        example: 123
-                    type: object
-                type: object
-        '400':
-          description: some error
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    properties:
-                      code:
-                        type: integer
-                        example: 404
-                      message:
-                        type: string
-                        example: not found
-                    type: object
-                type: object
-  '/teams/{id}':
-    get:
-      tags:
-        - Teams
-      summary: Get team record by id
-      description: this request gets the team
-      operationId: teamRead
-      parameters:
-        - name: id
-          in: path
-          description: Id of team to be returned
-          required: true
-          schema:
-            type: integer
-      responses:
-        default:
-          description: default
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: '#/components/schemas/Status'
-                  response:
-                    $ref: '#/components/schemas/Team'
-                type: object
-    put:
-      tags:
-        - Teams
-      summary: Update team record by id
-      description: this request updates the team
-      operationId: teamUpdate
-      parameters:
-        - name: id
-          in: path
-          description: Id of team to be updated
-          required: true
-          schema:
-            type: integer
-      requestBody:
-        $ref: '#/components/requestBodies/Team'
-      responses:
-        '400':
-          description: some error
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    properties:
-                      code:
-                        type: integer
-                        example: 404
-                      message:
-                        type: string
-                        example: not found
-                    type: object
-                type: object
-        default:
-          description: default
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: '#/components/schemas/Status'
-                  response:
-                    type: object
-                type: object
-    delete:
-      tags:
-        - Teams
-      summary: Delete team record by id
-      description: this request deletes the team
-      operationId: teamDelete
-      parameters:
-        - name: id
-          in: path
-          description: Id of team
-          required: true
-          schema:
-            type: integer
-      responses:
-        '400':
-          description: some error
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    properties:
-                      code:
-                        type: integer
-                        example: 404
-                      message:
-                        type: string
-                        example: not found
-                    type: object
-                type: object
-        default:
-          description: default
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: '#/components/schemas/Status'
-                  response:
-                    type: object
-                type: object
-  /users:
-    post:
-      tags:
-        - Users
-      summary: Create a User Record
-      operationId: userCreate
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/User'
-        description: User Object
-        required: true
-      responses:
         '200':
           description: Success
           content:
@@ -2538,7 +1176,7 @@ paths:
               schema:
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
+                    $ref: models/Status.yaml
                   response:
                     type: object
                 type: object
@@ -2551,12 +1189,230 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
+                    $ref: models/Status.yaml
+  /teams:
+    get:
+      tags:
+        - Teams
+      summary: Find All Existing Team Records
+      description: Returns a List of Every Team Record object
+      operationId: teamsGet
+      responses:
+        '200':
+          description: default
+          content:
+            application/json:
+              schema:
+                properties:
+                  status:
+                    $ref: models/Status.yaml
+                  response:
+                    description: ''
+                    type: array
+                    items:
+                      properties:
+                        team_id:
+                          description: ''
+                          type: integer
+                        team_name:
+                          description: ''
+                          type: string
+                type: object
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                required:
+                  - status
+                properties:
+                  status:
+                    $ref: models/Status.yaml
+    post:
+      tags:
+        - Teams
+      summary: Create a Team Record
+      description: Creates a new Team Record Object
+      operationId: teamCreate
+      requestBody:
+        $ref: '#/components/requestBodies/Team'
+      responses:
+        '200':
+          description: after creation
+          content:
+            application/json:
+              schema:
+                properties:
+                  status:
+                    $ref: models/Status.yaml
+                  response:
+                    properties:
+                      id:
+                        type: integer
+                        example: 123
+                    type: object
+                type: object
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                required:
+                  - status
+                properties:
+                  status:
+                    $ref: models/Status.yaml
+  '/teams/{id}':
+    get:
+      tags:
+        - Teams
+      summary: Find a Team Record by ID
+      description: Returns a single Team Record object
+      operationId: teamRead
+      parameters:
+        - name: id
+          in: path
+          description: Id of team to be returned
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: default
+          content:
+            application/json:
+              schema:
+                properties:
+                  status:
+                    $ref: models/Status.yaml
+                  response:
+                    $ref: models/Team.yaml
+                type: object
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                required:
+                  - status
+                properties:
+                  status:
+                    $ref: models/Status.yaml
+    put:
+      tags:
+        - Teams
+      summary: Update a Team Record by ID
+      description: Updates a single Team Record object
+      operationId: teamUpdate
+      parameters:
+        - name: id
+          in: path
+          description: Id of team to be updated
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        $ref: '#/components/requestBodies/Team'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                properties:
+                  status:
+                    $ref: models/Status.yaml
+                  response:
+                    type: object
+                type: object
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                required:
+                  - status
+                properties:
+                  status:
+                    $ref: models/Status.yaml
+    delete:
+      tags:
+        - Teams
+      summary: Delete a Team Record by ID
+      description: Deletes a single Team Record object
+      operationId: teamDelete
+      parameters:
+        - name: id
+          in: path
+          description: Id of team
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                properties:
+                  status:
+                    $ref: models/Status.yaml
+                  response:
+                    type: object
+                type: object
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                required:
+                  - status
+                properties:
+                  status:
+                    $ref: models/Status.yaml
+  /users:
+    post:
+      tags:
+        - Users
+      summary: Create a User Record
+      description: Creates a new User Record object
+      operationId: userCreate
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: models/User.yaml
+        description: User Object
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                properties:
+                  status:
+                    $ref: models/Status.yaml
+                  response:
+                    type: object
+                type: object
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                properties:
+                  status:
+                    $ref: models/Status.yaml
+                  response:
+                    type: object
+                type: object
   '/users/{id}':
     get:
       tags:
         - Users
-      summary: Get a User Record
+      summary: Find a User Record by ID
+      description: Returns a single User Record object
       operationId: userRead
       parameters:
         - name: id
@@ -2573,7 +1429,7 @@ paths:
               schema:
                 properties:
                   response:
-                    $ref: '#/components/schemas/User'
+                    $ref: models/User.yaml
                 type: object
         '400':
           description: Error
@@ -2584,11 +1440,12 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
+                    $ref: models/Status.yaml
     put:
       tags:
         - Users
-      summary: Update a User Record
+      summary: Update a User Record by ID
+      description: Updates a single User Record object
       operationId: userUpdate
       parameters:
         - name: id
@@ -2601,7 +1458,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/User'
+              $ref: models/User.yaml
         required: true
       responses:
         '200':
@@ -2611,7 +1468,7 @@ paths:
               schema:
                 properties:
                   response:
-                    $ref: '#/components/schemas/User'
+                    $ref: models/User.yaml
                 type: object
         '400':
           description: Error
@@ -2622,11 +1479,12 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
+                    $ref: models/Status.yaml
     delete:
       tags:
         - Users
-      summary: Delete a User Record
+      summary: Delete a User Record by ID
+      description: Deletes a single User Record object
       operationId: userDelete
       parameters:
         - name: id
@@ -2643,7 +1501,7 @@ paths:
               schema:
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
+                    $ref: models/Status.yaml
                   response:
                     type: object
                 type: object
@@ -2656,13 +1514,13 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
+                    $ref: models/Status.yaml
   /users/current:
     get:
       tags:
         - Users
-      summary: Get current user record
-      description: this request gets the current user
+      summary: Find User Record of Current User
+      description: Returns the User Record of the Current Active User
       operationId: userCurrent
       responses:
         '400':
@@ -2696,8 +1554,8 @@ paths:
     post:
       tags:
         - Users
-      summary: Get task records for user
-      description: this request gets the tasks for user
+      summary: Find Task Records for User by ID
+      description: Returns All Existing Task Records for a single User
       operationId: userTasks
       parameters:
         - name: id
@@ -2756,8 +1614,8 @@ paths:
     post:
       tags:
         - Users
-      summary: Get event records for user
-      description: this request gets the events for user
+      summary: Find Event Records for User by ID
+      description: Returns All Existing Event Records for a single User
       operationId: userEvents
       parameters:
         - name: id
@@ -2808,7 +1666,7 @@ paths:
               schema:
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
+                    $ref: models/Status.yaml
                   response:
                     description: Get event records for user
                     type: array
@@ -2985,8 +1843,7 @@ components:
         duration:
           type: string
           format: duration
-          pattern: 'hh:mm:ss'
-          example: '00:01:15'
+          example: 'hh:mm:ss'
         event_id:
           type: integer
           example: 8179
@@ -3967,27 +2824,6 @@ components:
         recording_id:
           type: integer
   responses:
-    ErrorResponse:
-      description: Error Response
-      content:
-        application/json:
-          schema:
-            type: object
-    create:
-      description: after creation
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                $ref: '#/components/schemas/Status'
-              response:
-                type: object
-                properties:
-                  id:
-                    type: integer
-                    example: 123
     default:
       description: default
       content:
@@ -3996,48 +2832,27 @@ components:
             type: object
             properties:
               status:
-                $ref: '#/components/schemas/Status'
+                $ref: models/Status.yaml
               response:
                 type: object
                 properties: {}
-    error:
-      description: some error
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                type: object
-                properties:
-                  code:
-                    type: integer
-                    example: 404
-                  message:
-                    type: string
-                    example: not found
-    success:
-      description: after creation
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                $ref: '#/components/schemas/Status'
-              response:
-                type: object
-                properties:
-                  id:
-                    type: integer
-                    example: 123
   parameters:
     id:
       name: id
       in: query
-      description: Id of SMS campaign to be returned
       schema:
         type: integer
+    version:
+      name: version
+      in: header
+      schema:
+        type: string
+        pattern: '^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(-[a-zA-Z\d][-a-zA-Z.\d]*)?(\+[a-zA-Z\d][-a-zA-Z.\d]*)?$'
+        minLength: 5
+        maxLength: 12
+        format: uri
+      required: true
+      description: Current API Version Number
   requestBodies:
     Contact:
       content:
@@ -4064,42 +2879,40 @@ components:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Call'
+            $ref: models/Call.yaml
       description: ''
       required: true
     Campaign:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Campaign'
+            $ref: models/Campaign.yaml
       description: Campaign Object
       required: true
     Company:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Company'
+            $ref: models/Company.yaml
       description: Company Object
       required: true
     Debt:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Debt'
+            $ref: models/Debt.yaml
       description: Debt Object
       required: true
     Team:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Team'
+            $ref: models/Team.yaml
       required: true
   securitySchemes:
-    Api-Key:
+    API-Key:
       type: apiKey
       name: Api-Key
       in: header
-      description: ''
-  examples: {}
 security:
-  - Api-Key: []
+  - API-Key: []

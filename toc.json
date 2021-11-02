@@ -1,0 +1,113 @@
+{
+  "items": [
+    {
+      "type":"item",
+      "title": "Introduction",
+      "uri":"docs/Introduction.md"
+    },
+    {
+      "type": "item",
+      "title": "DebtPayPro API",
+      "uri": "openapi.yaml"
+    },
+    {
+      "type": "divider",
+      "title": "models"
+    },
+    {
+      "type": "item",
+      "title": "Address",
+      "uri": "models/Address.yaml"
+    },
+    {
+      "type": "item",
+      "title": "CalEvent",
+      "uri": "models/CalEvent.yaml"
+    },
+    {
+      "type": "item",
+      "title": "Call",
+      "uri": "models/Call.yaml"
+    },
+    {
+      "type": "item",
+      "title": "Campaign",
+      "uri": "models/Campaign.yaml"
+    },
+    {
+      "type": "item",
+      "title": "Company",
+      "uri": "models/Company.yaml"
+    },
+    {
+      "type": "item",
+      "title": "Contact",
+      "uri": "models/Contact.yaml"
+    },
+    {
+      "type": "item",
+      "title": "Creditor",
+      "uri": "models/Creditor.yaml"
+    },
+    {
+      "type": "item",
+      "title": "Debt",
+      "uri": "models/Debt.yaml"
+    },
+    {
+      "type": "item",
+      "title": "DebtNote",
+      "uri": "models/DebtNote.yaml"
+    },
+    {
+      "type": "item",
+      "title": "Docs",
+      "uri": "models/Docs.yaml"
+    },
+    {
+      "type": "item",
+      "title": "Loan",
+      "uri": "models/Loan.yaml"
+    },
+    {
+      "type": "item",
+      "title": "Settlement",
+      "uri": "models/Settlement.yaml"
+    },
+    {
+      "type": "item",
+      "title": "Settlementoffer",
+      "uri": "models/Settlementoffer.yaml"
+    },
+    {
+      "type": "item",
+      "title": "Stat",
+      "uri": "models/Stat.yaml"
+    },
+    {
+      "type": "item",
+      "title": "Status",
+      "uri": "models/Status.yaml"
+    },
+    {
+      "type": "item",
+      "title": "Task",
+      "uri": "models/Task.yaml"
+    },
+    {
+      "type": "item",
+      "title": "TaskItem",
+      "uri": "models/TaskItem.yaml"
+    },
+    {
+      "type": "item",
+      "title": "Team",
+      "uri": "models/Team.yaml"
+    },
+    {
+      "type": "item",
+      "title": "User",
+      "uri": "models/User.yaml"
+    }
+  ]
+}

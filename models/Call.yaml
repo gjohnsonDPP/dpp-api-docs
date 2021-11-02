@@ -1,0 +1,64 @@
+title: Call
+type: object
+description: Call Record Object
+properties:
+  id:
+    type: integer
+    description: ID of the call record
+    readOnly: true
+  acctID:
+    type: integer
+    readOnly: true
+  contactID:
+    type: integer
+    example: 487800700
+  userID:
+    type: integer
+    readOnly: true
+  activity_id:
+    type: integer
+    example: 608125717
+  sdate:
+    type: string
+    format: date
+    pattern: YYYY-mm-dd
+  created_at:
+    type: string
+    format: date-time
+    readOnly: true
+  call_type:
+    type: string
+    enum:
+      - Outgoing
+      - Incoming
+    example: Outgoing
+  call_result:
+    type: string
+    example: Busy
+  call_dis_id:
+    type: integer
+    example: 2
+  notes:
+    type: string
+    example: Lorem Ipsum
+  status_change:
+    type: string
+    example: '274158'
+  duration:
+    type: string
+    format: duration
+    example: 'hh:mm:ss'
+  event_id:
+    type: integer
+    example: 8179
+  dialer_id:
+    type: integer
+    example: 2
+  recording_id:
+    type: integer
+required:
+  - contactID
+  - call_type
+  - call_result
+x-tags:
+  - Call
