@@ -36,12 +36,9 @@ properties:
     type: number
   verified_debt_amount:
     type: number
-  creditor_id:
-    type: integer
   creditor:
-    type: array
-    items:
-      $ref: ../models/Creditor.yaml
+    type: integer
+    description: Creditor ID
   debt_buyer:
     type: string
   poa_sent_date:
@@ -91,5 +88,5 @@ properties:
 required:
   - original_debt_amount
   - current_debt_amount
+  - creditor
   - client_id
-  - creditor_id
