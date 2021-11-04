@@ -1,15 +1,13 @@
 title: SMS
 type: object
 description: SMS Log
+x-tags:
+  - Contact
 properties:
   start:
     type: integer
-    format: int64
   limit:
     type: integer
-    format: int64
 required:
   - start
   - limit
-x-tags:
-  - Contact

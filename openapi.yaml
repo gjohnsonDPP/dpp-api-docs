@@ -9,8 +9,8 @@ info:
 servers:
   - url: 'https://api.debtpaypro.com/v1'
     description: Production Server
-  - description: Staging1
-    url: 'https://staging1-api.debtpaypro.com/v1'
+  - url: 'https://staging1-api.debtpaypro.com/v1'
+    description: Staging1
 tags:
   - name: Authentication
     description: Authentication
@@ -515,7 +515,20 @@ paths:
           schema:
             type: integer
       requestBody:
-        $ref: '#/components/requestBodies/SMS'
+        content:
+          application/json:
+            schema:
+              $ref: models/SMS.yaml
+          application/xml:
+            schema:
+              type: object
+              properties: {}
+          multipart/form-data:
+            schema:
+              type: object
+              properties: {}
+        description: Return SMS Log Record object
+        required: true
       responses:
         '200':
           description: Successfully retrieved SMS Log
@@ -528,8 +541,6 @@ paths:
                     $ref: models/Status.yaml
                   response:
                     type: array
-                    uniqueItems: true
-                    items: {}
         '400':
           description: Error
           content:
@@ -2861,6 +2872,17 @@ components:
           example: 0
         recording_id:
           type: integer
+    SMS:
+      title: SMS
+      type: object
+      properties:
+        start:
+          type: integer
+        limit:
+          type: integer
+      required:
+        - start
+        - limit
   responses:
     default:
       description: default
