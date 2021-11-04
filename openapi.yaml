@@ -514,6 +514,8 @@ paths:
           required: true
           schema:
             type: integer
+      requestBody:
+        $ref: '#/components/requestBodies/SMS'
       responses:
         '200':
           description: Successfully retrieved SMS Log
@@ -524,7 +526,7 @@ paths:
                   status:
                     $ref: models/Status.yaml
                   response:
-                      type: object
+                    type: object
                 type: object
         '400':
           description: Error
@@ -536,12 +538,6 @@ paths:
                 properties:
                   status:
                     $ref: models/Status.yaml
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: ./models/SMS.yaml
-        description: ''
   /auth/token:
     post:
       tags:
@@ -2948,6 +2944,12 @@ components:
         application/json:
           schema:
             $ref: models/Team.yaml
+      required: true
+    SMS:
+      content:
+        application/json:
+          schema:
+            $ref: models/SMS.yaml
       required: true
   securitySchemes:
     API-Key:
