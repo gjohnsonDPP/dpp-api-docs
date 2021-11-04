@@ -501,7 +501,7 @@ paths:
                   status:
                     $ref: models/Status.yaml
   '/contacts/{id}/smslog':
-    post:
+    get:
       tags:
         - Contacts
       summary: Find SMS Messages Log Record for a Contact by ID
@@ -515,7 +515,11 @@ paths:
           schema:
             type: integer
       requestBody:
-        $ref: '#/components/requestBodies/SMS'
+        content:
+          application/json:
+            schema:
+              $ref: models/SMS.yaml
+        required: true
       responses:
         '200':
           description: Successfully retrieved SMS Log
@@ -2950,12 +2954,7 @@ components:
         application/json:
           schema:
             $ref: models/Team.yaml
-      required: true
-    SMS:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/SMS'
+      description: ''
       required: true
   securitySchemes:
     API-Key:
