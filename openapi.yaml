@@ -514,12 +514,18 @@ paths:
           required: true
           schema:
             type: integer
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: models/SMS.yaml
-        required: true
+        - schema:
+            type: integer
+          in: query
+          name: offset
+          description: Offset Value
+          required: true
+        - schema:
+            type: integer
+          in: query
+          name: limit
+          description: Limit Value
+          required: true
       responses:
         '200':
           description: Successfully retrieved SMS Log
