@@ -501,7 +501,7 @@ paths:
                   status:
                     $ref: models/Status.yaml
   '/contacts/{id}/smslog':
-    get:
+    post:
       tags:
         - Contacts
       summary: Find SMS Messages Log Record for a Contact by ID
@@ -522,9 +522,7 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  anyOf: []
+                type: object
         '400':
           description: Error
           content:
