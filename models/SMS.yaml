@@ -1,0 +1,35 @@
+title: SMS
+type: object
+description: SMS Log
+properties:
+  id:
+    type: integer
+    description: ID of Contact
+  sdate:
+    type: string
+  body:
+    type: string
+  status:
+    type: string
+  receiver:
+    type: string
+  sender:
+    type: string
+  flag:
+    type: string
+  schedule_id:
+    type: integer
+  receiver_phone_number:
+    type: string
+  title:
+    type: string
+  from_number:
+    type: string
+  start:
+    type: integer
+    minimum: 1
+  limit:
+    type: integer
+required:
+  - start
+  - limit

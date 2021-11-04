@@ -9,8 +9,8 @@ info:
 servers:
   - url: 'https://api.debtpaypro.com/v1'
     description: Production Server
-  - description: Staging16
-    url: 'https://staging16-api.debtpaypro.com/v1'
+  - description: Staging1
+    url: 'https://staging1-api.debtpaypro.com/v1'
 tags:
   - name: Authentication
     description: Authentication
@@ -481,6 +481,47 @@ paths:
       responses:
         '200':
           description: Success
+          content:
+            application/json:
+              schema:
+                properties:
+                  status:
+                    $ref: models/Status.yaml
+                  response:
+                    type: object
+                type: object
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                required:
+                  - status
+                properties:
+                  status:
+                    $ref: models/Status.yaml
+  '/contacts/{id}/smslog':
+    get:
+      tags:
+        - Contacts
+      summary: Find Every SMS Message Record logged for a Contact by ID
+      description: Returns a List of Every SMS Message logged for a Contact
+      operationId: getContactSMSlog
+      parameters:
+        - name: id
+          in: path
+          description: Id of Client whose SMS Messages are to be returned
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: models/SMS.yaml
+      responses:
+        '200':
+          description: Successfully retrieved SMS Log
           content:
             application/json:
               schema:
