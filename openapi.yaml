@@ -515,18 +515,7 @@ paths:
           schema:
             type: integer
       requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                start:
-                  type: integer
-                limit:
-                  type: integer
-              required:
-                - start
-                - limit
+        $ref: '#/components/requestBodies/SMS'
       responses:
         '200':
           description: Successfully retrieved SMS Log
@@ -2968,7 +2957,7 @@ components:
       content:
         application/json:
           schema:
-            $ref: models/SMS.yaml
+            $ref: '#/components/schemas/SMS'
       required: true
   securitySchemes:
     API-Key:
