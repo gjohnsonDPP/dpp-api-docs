@@ -514,34 +514,18 @@ paths:
           required: true
           schema:
             type: integer
-      requestBody:
-        content:
-          application/json:
-            schema:
-              properties:
-                start:
-                  type: integer
-                limit:
-                  type: integer
-              required:
-                - start
-                - limit
       responses:
         '200':
           description: Successfully retrieved SMS Log
           content:
             application/json:
               schema:
-                type: object
                 properties:
                   status:
                     $ref: models/Status.yaml
                   response:
-                    type: array
-                    items:
                       type: object
-                      properites:
-                        $ref: models/SMS.yaml
+                type: object
         '400':
           description: Error
           content:
@@ -552,6 +536,12 @@ paths:
                 properties:
                   status:
                     $ref: models/Status.yaml
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/SMS.yaml
+        description: ''
   /auth/token:
     post:
       tags:

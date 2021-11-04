@@ -2,26 +2,12 @@ title: SMS
 type: object
 description: SMS Log
 properties:
-  id:
+  start:
     type: integer
-    description: ID of Contact
-  sdate:
-    type: string
-  body:
-    type: string
-  status:
-    type: string
-  receiver:
-    type: string
-  sender:
-    type: string
-  flag:
-    type: string
-  schedule_id:
+  limit:
     type: integer
-  receiver_phone_number:
-    type: string
-  title:
-    type: string
-  from_number:
-    type: string
+required:
+  - start
+  - limit
+x-tags:
+  - Contact
