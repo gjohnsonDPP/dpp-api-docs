@@ -4,8 +4,10 @@ description: SMS Log
 properties:
   start:
     type: integer
+    format: int64
   limit:
     type: integer
+    format: int64
 required:
   - start
   - limit

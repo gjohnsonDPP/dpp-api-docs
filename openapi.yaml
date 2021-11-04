@@ -504,7 +504,7 @@ paths:
     get:
       tags:
         - Contacts
-      summary: Find Every SMS Message Record logged for a Contact by ID
+      summary: Find SMS Messages Log Record for a Contact by ID
       description: Returns a List of Every SMS Message logged for a Contact
       operationId: getContactSMSlog
       parameters:
@@ -522,12 +522,14 @@ paths:
           content:
             application/json:
               schema:
+                type: object
                 properties:
                   status:
                     $ref: models/Status.yaml
                   response:
-                    type: object
-                type: object
+                    type: array
+                    uniqueItems: true
+                    items: {}
         '400':
           description: Error
           content:
