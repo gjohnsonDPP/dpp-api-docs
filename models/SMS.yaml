@@ -25,11 +25,3 @@ properties:
     type: string
   from_number:
     type: string
-  start:
-    type: integer
-    minimum: 1
-  limit:
-    type: integer
-required:
-  - start
-  - limit

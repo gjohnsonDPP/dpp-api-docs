@@ -518,19 +518,30 @@ paths:
         content:
           application/json:
             schema:
-              $ref: models/SMS.yaml
+              properties:
+                start:
+                  type: string
+                limit:
+                  type: string
+              required:
+                - start
+                - limit
       responses:
         '200':
           description: Successfully retrieved SMS Log
           content:
             application/json:
               schema:
+                type: object
                 properties:
                   status:
                     $ref: models/Status.yaml
                   response:
-                    type: object
-                type: object
+                    type: array
+                    items:
+                      type: object
+                      properites:
+                        $ref: models/SMS.yaml
         '400':
           description: Error
           content:
