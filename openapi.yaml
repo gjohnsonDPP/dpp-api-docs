@@ -520,9 +520,9 @@ paths:
             schema:
               properties:
                 start:
-                  type: string
+                  type: integer
                 limit:
-                  type: string
+                  type: integer
               required:
                 - start
                 - limit
