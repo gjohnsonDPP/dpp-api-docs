@@ -517,11 +517,13 @@ paths:
         - in: query
           name: _offset
           description: (Optional) This value dictates which SMS Message in the ordered SMS Log to start the Request at.
+          required: true
           schema:
             type: integer
         - in: query
           name: _limit
           description: (Optional) This value represents the maximum number of SMS Messages your Request to contain.
+          required: true
           schema:
             type: integer
       responses:
