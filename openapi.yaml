@@ -504,8 +504,8 @@ paths:
     get:
       tags:
         - Contacts
-      summary: Find SMS Messages Log Record for a Contact by ID
-      description: Returns a List of Every SMS Message logged for a Contact
+      summary: Get SMS Log Record for a Contact by ID
+      description: Returns a List of Every SMS Message logged for a Contact. By default the SMS Messages are returned in the order Newest to Oldest.
       operationId: getContactSMSlog
       parameters:
         - name: id
@@ -517,15 +517,15 @@ paths:
         - schema:
             type: integer
           in: query
-          name: offset
-          description: Offset Value
-          required: true
+          name: _offset
+          description: (Optional) This value dictates which SMS Message in the ordered SMS Log to start the Request at.
+          required: false
         - schema:
             type: integer
           in: query
-          name: limit
-          description: Limit Value
-          required: true
+          name: _limit
+          description: (Optional) This value represents the maximum number of SMS Messages your Request to contain.
+          required: false
       responses:
         '200':
           description: Successfully retrieved SMS Log
