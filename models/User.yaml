@@ -1,6 +1,8 @@
 title: User
 type: object
 description: User Record
+x-tags:
+  - User
 properties:
   user_id:
     title: User ID
@@ -56,9 +58,10 @@ properties:
     type: string
     example: mail@debtpaypro.com
   active:
-    title: Active Indicator
     type: boolean
+    title: Active Indicator
     example: true
+    default: true
   role:
     title: Role
     type: integer
@@ -95,6 +98,7 @@ properties:
     type: boolean
     example: true
 required:
+  - user_type
+  - user_name
   - email
-x-tags:
-  - User
+  - active
