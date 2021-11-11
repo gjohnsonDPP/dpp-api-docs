@@ -1,6 +1,8 @@
 title: Debt
 type: object
 description: Debt Record
+x-tags:
+  - Debt
 properties:
   id:
     type: integer
@@ -35,9 +37,8 @@ properties:
   verified_debt_amount:
     type: number
   creditor:
-    type: array
-    items:
-      $ref: ../models/Creditor.yaml
+    type: integer
+    description: Creditor ID
   debt_buyer:
     type: string
   poa_sent_date:
@@ -87,7 +88,5 @@ properties:
 required:
   - original_debt_amount
   - current_debt_amount
-  - client_id
   - creditor
-x-tags:
-  - Debt
+  - client_id

@@ -9,8 +9,8 @@ info:
 servers:
   - url: 'https://api.debtpaypro.com/v1'
     description: Production Server
-  - description: Staging16
-    url: 'https://staging16-api.debtpaypro.com/v1'
+  - url: 'https://staging1-api.debtpaypro.com/v1'
+    description: Staging1
 tags:
   - name: Authentication
     description: Authentication
@@ -489,6 +489,47 @@ paths:
                     $ref: models/Status.yaml
                   response:
                     type: object
+                type: object
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                required:
+                  - status
+                properties:
+                  status:
+                    $ref: models/Status.yaml
+  '/contacts/{id}/smslog':
+    get:
+      tags:
+        - Contacts
+      summary: Get SMS Log Record for a Contact by ID
+      description: Returns a List of Every SMS Message logged for a Contact. By default the SMS Messages are returned in the order Newest to Oldest.
+      operationId: getContactSMSlog
+      parameters:
+        - name: id
+          in: path
+          description: Id of Client whose SMS Messages are to be returned
+          required: true
+          schema:
+            type: integer
+        - in: query
+          name: _offset
+          description: (Optional) This value dictates which SMS Message in the ordered SMS Log to start the Request at.
+          schema:
+            type: integer
+        - in: query
+          name: _limit
+          description: (Optional) This value represents the maximum number of SMS Messages your Request to contain.
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully retrieved SMS Log
+          content:
+            application/json:
+              schema:
                 type: object
         '400':
           description: Error
@@ -2821,6 +2862,17 @@ components:
           example: 0
         recording_id:
           type: integer
+    SMS:
+      title: SMS
+      type: object
+      properties:
+        start:
+          type: integer
+        limit:
+          type: integer
+      required:
+        - start
+        - limit
   responses:
     default:
       description: default
@@ -2906,6 +2958,7 @@ components:
         application/json:
           schema:
             $ref: models/Team.yaml
+      description: ''
       required: true
   securitySchemes:
     API-Key:
