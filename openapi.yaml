@@ -1712,6 +1712,37 @@ paths:
                     items:
                       $ref: '#/components/schemas/CalEvent'
                 type: object
+  '/lenders/monevo/{contact_id}/offers':
+    get:
+      tags:
+        - Lenders
+      summary: Get all Monevo Lenders
+      description: Returns a List of Lenders
+      operationId: getLendersMonevo
+      parameters:
+        - name: contact_id
+          in: path
+          description: Id of Monevo Client
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully retrieved Lenders
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                required:
+                  - status
+                properties:
+                  status:
+                    $ref: models/Status.yaml
 components:
   schemas:
     Status:
