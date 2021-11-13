@@ -69,6 +69,6 @@ properties:
     type: integer
     example: 3
 required:
-  - contactID
-  - call_type
-  - call_result
+- contactID
+- call_type
+- call_result

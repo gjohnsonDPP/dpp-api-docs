@@ -64,9 +64,6 @@ paths:
                 properties:
                   status:
                     $ref: models/Status.yaml
-                  response:
-                    type: object
-                type: object
         '400':
           description: Error
           content:
@@ -97,102 +94,26 @@ paths:
           content:
             application/json:
               schema:
-                description: ''
                 type: object
-                x-examples:
-                  example-1:
-                    response:
-                      object: 'call'
-                      id: 385319179
-                      acctID: 2715
-                      contactID: 516553837
-                      userID: 3028014
-                      activity_id: 608125717
-                      sdate: '2021-11-13'
-                      created_at: '2021-11-13 14:36:56'
-                      call_type: 'Outgoing'
-                      call_result: 'Busy'
-                      call_dis_id: 2
-                      notes: 'Lorem Ipsum'
-                      status_change: '274158'
-                      duration: '00:01:15'
-                      event_id: 8179
-                      dialer_id: 2
-                      recording_id: 3
-                    status:
-                      code: 200
                 properties:
                   response:
-                    type: object
-                    properties:
-                      object:
-                        type: string
-                        minLength: 1
-                        readOnly: true
-                      id:
-                        type: integer
-                        minLength: 1
-                        readOnly: true
-                      acctID:
-                        type: integer
-                        minLength: 1
-                        readOnly: true
-                      contactID:
-                        type: integer
-                        minLength: 1
-                      userID:
-                        type: integer
-                        minLength: 1
-                        readOnly: true
-                      activity_id:
-                        type: integer
-                        minLength: 1
-                      sdate:
-                        type: string
-                        format: date
-                        pattern: YYYY-MM-DD
-                      created_at:
-                        type: string
-                        format: date-time
-                        readOnly: true
-                      call_type:
-                        type: string
-                        enum:
-                          - Outgoing
-                          - Incoming
-                      call_result:
-                        type: string
-                      call_dis_id:
-                        type: integer
-                        minLength: 1
-                      notes:
-                        type: string
-                      status_change:
-                        type: string
-                      duration:
-                        type: string
-                        format: duration
-                      event_id:
-                        type: integer
-                      dialer_id:
-                        type: integer
-                      recording_id:
-                        type: integer
+                    $ref: '#/components/schemas/Call'
                   status:
-                    type: object
-                    properties:
-                      code:
-                        type: number
+                    $ref: ./models/Status.yaml
+                required:
+                  - response
+                  - status
         '400':
           description: Error
           content:
             application/json:
               schema:
-                required:
-                  - status
+                type: object
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: ./models/Status.yaml
+                required:
+                  - status
     put:
       tags:
         - Calls
@@ -208,32 +129,31 @@ paths:
             type: integer
       responses:
         '200':
-          description: Successfully updated Call Record
+          description: Successfully Updated Call Record
           content:
             application/json:
               schema:
-                $ref: models/Call.yaml
+                type: object
+                properties:
+                  response:
+                    $ref: '#/components/schemas/Call'
+                  status:
+                    $ref: ./models/Status.yaml
+                required:
+                  - response
+                  - status
         '400':
           description: Error
           content:
             application/json:
               schema:
-                $ref: models/Status.yaml
+                $ref: ./models/Status.yaml
       requestBody:
         content:
           application/json:
             schema:
-              $ref: models/Call.yaml
-          application/xml:
-            schema:
-              type: object
-              properties: {}
-          multipart/form-data:
-            schema:
-              type: object
-              properties: {}
-        description: Update Call Record object
-        required: true
+              $ref: '#/components/schemas/Call'
+        description: ''
     delete:
       tags:
         - Calls
@@ -249,26 +169,25 @@ paths:
             type: integer
       responses:
         '200':
-          description: Success
+          description: Successfully Deleted Call Record
           content:
             application/json:
               schema:
+                type: object
                 properties:
                   status:
-                    $ref: models/Status.yaml
-                  response:
-                    type: object
-                type: object
+                    $ref: ./models/Status.yaml
         '400':
           description: Error
           content:
             application/json:
               schema:
-                required:
-                  - status
+                type: object
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: ./models/Status.yaml
+                required:
+                  - status
   /campaigns/e-mail:
     post:
       tags:
@@ -2208,10 +2127,6 @@ components:
           example: 2
         recording_id:
           type: integer
-      required:
-        - contactID
-        - call_type
-        - call_result
     Campaign:
       type: object
       description: ''
@@ -3203,6 +3118,15 @@ components:
               response:
                 type: object
                 properties: {}
+    call:
+      description: Example response
+      content:
+        application/json:
+          schema:
+            properties:
+              id:
+                type: string
+      headers: {}
   parameters:
     id:
       name: id
@@ -3246,8 +3170,8 @@ components:
       content:
         application/json:
           schema:
-            $ref: models/Call.yaml
-      description: ''
+            $ref: ./models/Call.yaml
+      description: Call Object
       required: true
     Campaign:
       content:
