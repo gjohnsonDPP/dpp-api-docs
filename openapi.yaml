@@ -97,7 +97,92 @@ paths:
           content:
             application/json:
               schema:
-                $ref: models/Call.yaml
+                description: ''
+                type: object
+                x-examples:
+                  example-1:
+                    response:
+                      object: call
+                      id: '385319179'
+                      acctID: '2715'
+                      contactID: '516553837'
+                      userID: '3028014'
+                      activity_id: '0'
+                      sdate: '2021-11-13'
+                      created_at: '2021-11-13 14:36:56'
+                      call_type: null
+                      call_result: null
+                      call_dis_id: '0'
+                      notes: null
+                      status_change: null
+                      duration: null
+                      event_id: '0'
+                      dialer_id: '0'
+                      recording_id: null
+                    status:
+                      code: 200
+                properties:
+                  response:
+                    type: object
+                    properties:
+                      object:
+                        type: string
+                        minLength: 1
+                        readOnly: true
+                      id:
+                        type: integer
+                        minLength: 1
+                        readOnly: true
+                      acctID:
+                        type: integer
+                        minLength: 1
+                        readOnly: true
+                      contactID:
+                        type: integer
+                        minLength: 1
+                      userID:
+                        type: integer
+                        minLength: 1
+                        readOnly: true
+                      activity_id:
+                        type: integer
+                        minLength: 1
+                      sdate:
+                        type: string
+                        format: date
+                        pattern: YYYY-MM-DD
+                      created_at:
+                        type: string
+                        format: date-time
+                        readOnly: true
+                      call_type:
+                        type: string
+                        enum:
+                          - Outgoing
+                          - Incoming
+                      call_result:
+                        type: string
+                      call_dis_id:
+                        type: integer
+                        minLength: 1
+                      notes:
+                        type: string
+                      status_change:
+                        type: string
+                      duration:
+                        type: string
+                        format: duration
+                      event_id:
+                        type: integer
+                      dialer_id:
+                        type: integer
+                      recording_id:
+                        type: integer
+                  status:
+                    type: object
+                    properties:
+                      code:
+                        type: number
         '400':
           description: Error
           content:
