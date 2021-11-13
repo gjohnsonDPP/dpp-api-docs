@@ -1717,7 +1717,7 @@ paths:
       tags:
         - Lenders
       summary: Get all Monevo Lenders
-      description: Returns a List of Lenders
+      description: Returns a List of all Loan Offers associated with a Contact
       operationId: getLendersMonevo
       parameters:
         - name: contact_id
