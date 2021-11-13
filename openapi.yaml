@@ -1732,7 +1732,260 @@ paths:
           content:
             application/json:
               schema:
+                description: ''
                 type: object
+                properties:
+                  id:
+                    type: string
+                    minLength: 1
+                  acctID:
+                    type: string
+                    minLength: 1
+                  loan_id: {}
+                  created_at:
+                    type: string
+                    minLength: 1
+                  created_by:
+                    type: string
+                    minLength: 1
+                  status_id:
+                    type: string
+                    minLength: 1
+                  loan_amount:
+                    type: string
+                    minLength: 1
+                  rate:
+                    type: number
+                  apr:
+                    type: number
+                  term:
+                    type: string
+                    minLength: 1
+                  payment_amt:
+                    type: string
+                    minLength: 1
+                  payback_amt: {}
+                  frequency: {}
+                  active: {}
+                  type: {}
+                  label: {}
+                  term_unit:
+                    type: string
+                    minLength: 1
+                  amortization: {}
+                  amortization_unit: {}
+                  amortization_method: {}
+                  compounding: {}
+                  initial_date: {}
+                  first_payment_date: {}
+                  last_payment_date: {}
+                  increment_type: {}
+                  increment_value: {}
+                  sequence_order: {}
+                  meta_data:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        minLength: 1
+                      offer_number:
+                        type: string
+                        minLength: 1
+                      redirect_url:
+                        type: string
+                        minLength: 1
+                      loan:
+                        type: object
+                        properties:
+                          loan_amount:
+                            type: string
+                            minLength: 1
+                          apr:
+                            type: string
+                            minLength: 1
+                          term:
+                            type: string
+                            minLength: 1
+                          fees:
+                            type: string
+                            minLength: 1
+                          monthly_repayment:
+                            type: string
+                            minLength: 1
+                          total_repayment:
+                            type: string
+                            minLength: 1
+                          cost_of_credit:
+                            type: string
+                            minLength: 1
+                          type:
+                            type: string
+                            minLength: 1
+                          rapr:
+                            type: string
+                            minLength: 1
+                          features:
+                            type: object
+                            properties:
+                              feature:
+                                type: array
+                                items:
+                                  required: []
+                                  properties: {}
+                            required:
+                              - feature
+                          terms:
+                            type: string
+                            minLength: 1
+                          prequalified:
+                            type: string
+                            minLength: 1
+                          preapproved:
+                            type: string
+                            minLength: 1
+                          secured:
+                            type: string
+                            minLength: 1
+                        required:
+                          - loan_amount
+                          - apr
+                          - term
+                          - fees
+                          - monthly_repayment
+                          - total_repayment
+                          - cost_of_credit
+                          - type
+                          - rapr
+                          - features
+                          - terms
+                          - prequalified
+                          - preapproved
+                          - secured
+                      lender:
+                        type: object
+                        properties:
+                          id:
+                            type: string
+                            minLength: 1
+                          name:
+                            type: string
+                            minLength: 1
+                          description:
+                            type: string
+                            minLength: 1
+                          url:
+                            type: string
+                            minLength: 1
+                          phone_number:
+                            type: object
+                            properties: {}
+                            required: []
+                          logo_url:
+                            type: string
+                            minLength: 1
+                          review:
+                            type: object
+                            properties:
+                              service:
+                                type: string
+                                minLength: 1
+                              id:
+                                type: object
+                                properties: {}
+                                required: []
+                            required:
+                              - service
+                              - id
+                        required:
+                          - id
+                          - name
+                          - description
+                          - url
+                          - phone_number
+                          - logo_url
+                          - review
+                    required:
+                      - id
+                      - offer_number
+                      - redirect_url
+                      - loan
+                      - lender
+                required:
+                  - id
+                  - acctID
+                  - created_at
+                  - created_by
+                  - status_id
+                  - loan_amount
+                  - rate
+                  - apr
+                  - term
+                  - payment_amt
+                  - term_unit
+                  - meta_data
+                x-examples:
+                  example-1:
+                    id: '37939'
+                    acctID: '2715'
+                    loan_id: null
+                    created_at: '2021-11-10 13:59:39'
+                    created_by: '3028014'
+                    status_id: '2'
+                    loan_amount: '$18,000.00'
+                    rate: 0
+                    apr: 14.8
+                    term: '36'
+                    payment_amt: $622.21
+                    payback_amt: null
+                    frequency: null
+                    active: null
+                    type: null
+                    label: null
+                    term_unit: months
+                    amortization: null
+                    amortization_unit: null
+                    amortization_method: null
+                    compounding: null
+                    initial_date: null
+                    first_payment_date: null
+                    last_payment_date: null
+                    increment_type: null
+                    increment_value: null
+                    sequence_order: null
+                    meta_data:
+                      id: '17629247'
+                      offer_number: '2'
+                      redirect_url: 'https://usa.monevo.com/redirect?p=YTE4YWJkMjhhMzlhY2ExZDZiN2MxZjcxMzc3OThkNWZiMGI1MDkzNDRlNGJmZGY1ZGE0M2JjN2NkYTdiNGEzYzgyMjUyYzJjZjIyZTU3OGFkYjExN2MwOTcyMjg4YmM1YjBiOTU1MWY1MWUwZjE1NTI2YjVmOTg2ZjM0YmY1MWRiYzVmODNiZjRmMWZmOTk1NmNiOTMwN2YxOTA3OGY3Mw'
+                      loan:
+                        loan_amount: '18000'
+                        apr: '14.80'
+                        term: '36'
+                        fees: '0'
+                        monthly_repayment: '622.21'
+                        total_repayment: '$22,399.00'
+                        cost_of_credit: '4399.56'
+                        type: PERSONAL_LOAN
+                        rapr: 'Our view "With no origination fees, late fees or overdraft fees, as well as very competitive rates, SoFi is a great option."'
+                        features:
+                          feature:
+                            - No origination fees
+                            - ' No pre-payment penalties'
+                            - A+ Better Business Bureau rating
+                            - $30 Billion in funded loans
+                        terms: 'Fixed rates from 5.99% APR to 19.63% APR (with AutoPay). SoFi rate ranges are current as of July 30, 2021 and are subject to change without notice. Not all rates and amounts available in all states. See Personal Loan eligibility details. Not all applicants qualify for the lowest rate. Lowest rates reserved for the most creditworthy borrowers. Your actual rate will be within the range of rates listed above and will depend on a variety of factors, including evaluation of your credit worthiness, income, and other factors. See APR examples and terms. The SoFi 0.25% AutoPay interest rate reduction requires you to agree to make monthly principal and interest payments by an automatic monthly deduction from a savings or checking account. The benefit will discontinue and be lost for periods in which you do not pay by automatic deduction from a savings or checking account.'
+                        prequalified: 'true'
+                        preapproved: 'false'
+                        secured: 'false'
+                      lender:
+                        id: '85'
+                        name: SoFi
+                        description: 'SoFi is a new kind of finance company taking a radical approach to lending and wealth management. From unprecedented products and tools to faster service and open conversations, we’re all about helping our members get ahead and find success. Whether they’re looking to buy a home, save money on student loans, ascend in their careers, or invest in the future, the SoFi community works to empower our members to accomplish the goals they set and achieve financial greatness as a result.'
+                        url: www.sofi.com
+                        phone_number: {}
+                        logo_url: 'https://images.monevo.com/ptusa/lender/pr_sofi-logo1.png'
+                        review:
+                          service: TRUSTPILOT
+                          id: {}
         '400':
           description: Error
           content:
