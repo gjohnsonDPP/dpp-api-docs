@@ -61,15 +61,22 @@ paths:
           content:
             application/json:
               schema:
+                type: object
                 properties:
+                  response:
+                    type: object
                   status:
                     $ref: models/Status.yaml
+                required:
+                  - status
+                  - response
               examples:
                 Call Example 200 POST Response:
                   value:
+                    response:
+                      id: '385319179'
                     status:
                       code: 200
-                      message: string
         '400':
           description: Error
           content:
