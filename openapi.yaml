@@ -87,6 +87,12 @@ paths:
                 properties:
                   status:
                     $ref: models/Status.yaml
+              examples:
+                Call Example 400 Response:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   '/calls/{id}':
     get:
       tags:
