@@ -151,6 +151,11 @@ paths:
                     $ref: ./models/Status.yaml
                 required:
                   - status
+              examples:
+                example-1:
+                  value:
+                    status:
+                      code: 400
     put:
       tags:
         - Calls
