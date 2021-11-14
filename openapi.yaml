@@ -74,7 +74,7 @@ paths:
                 Call Example 200 POST Response:
                   value:
                     response:
-                      id: '385319179'
+                      id: 385319179
                     status:
                       code: 200
         '400':
