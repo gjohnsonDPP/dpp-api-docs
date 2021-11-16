@@ -66,7 +66,7 @@ paths:
                   response:
                     type: object
                   status:
-                    $ref: models/PostStatus.yaml
+                    $ref: models/ResponseStatus.yaml
               examples:
                 Call Example 200 POST Response:
                   value:
@@ -106,7 +106,7 @@ paths:
             type: integer
       responses:
         '200':
-          description: Successfully retrieved Call Record
+          description: Successfully retrieved a Call Record
           content:
             application/json:
               schema:
@@ -115,10 +115,7 @@ paths:
                   response:
                     $ref: '#/components/schemas/Call'
                   status:
-                    $ref: ./models/Status.yaml
-                required:
-                  - response
-                  - status
+                    $ref: models/ResponseStatus.yaml
               examples:
                 Call GET 200 Response Example:
                   value:
@@ -142,7 +139,6 @@ paths:
                       recording_id: 3
                     status:
                       code: 200
-                      message: string
         '400':
           description: Error
           content:
@@ -155,10 +151,11 @@ paths:
                 required:
                   - status
               examples:
-                example-1:
+                Call GET 400 Response Example:
                   value:
                     status:
                       code: 400
+                      message: 'Input Parsing Error: unexpected character'
     put:
       tags:
         - Calls
