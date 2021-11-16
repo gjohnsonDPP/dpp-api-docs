@@ -668,8 +668,13 @@ paths:
       tags:
         - Contacts
       summary: Update a Contact Record by ID
-      description: Updates a single Contact Record object
+      description: Updates a Contact Record
       operationId: contactUpdate
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: models/ContactUpdate.yaml
       parameters:
         - name: id
           in: path
@@ -677,28 +682,101 @@ paths:
           required: true
           schema:
             type: integer
-      requestBody:
-        $ref: '#/components/requestBodies/Contact'
       responses:
         '200':
-          description: Success
+          description: Successfully Updated a Contact Record
           content:
             application/json:
               schema:
+                type: object
                 properties:
                   response:
-                    $ref: models/Contact.yaml
-                type: object
+                    $ref: models/ContactUpdate.yaml
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Contact PUT 200 Response Example:
+                  value:
+                    response:
+                      object: contact
+                      client_id: '382760691'
+                      acctID: '3863'
+                      company_id: '42128'
+                      file_type: '1'
+                      form_id: '18626'
+                      created: '2020-07-01 00:00:00'
+                      created_by: '4950368'
+                      modified: '2021-11-16 04:29:36'
+                      modified_by: '4950368'
+                      assigned_to: '6045085'
+                      campaign_id: '128312'
+                      attorney: '0'
+                      attorney_id: '0'
+                      attorney_id2: '0'
+                      first_name: John
+                      middle_name: null
+                      last_name: Doe
+                      salutation: null
+                      title: null
+                      phone_number: '12242525887'
+                      phone_extension: null
+                      cell_phone: '12242525887'
+                      cell_extension: null
+                      work_phone: '13123839986'
+                      work_extension: null
+                      address:
+                        address1: 1000 North Rd.
+                        address2: Apt 217
+                        address3: null
+                        city: Chicago
+                        state: IL
+                        zip: '60614'
+                      email: test@debtpaypro.com
+                      social_security_number: '551192922'
+                      date_of_birth: '1941-03-12'
+                      language: '1'
+                      submitted: '1'
+                      submitted_by: '4949471'
+                      submitted_at: '2020-02-21 16:23:00'
+                      approved_by2: '4949471'
+                      approved_date2: '2020-02-21'
+                      rejected_by: '0'
+                      rejected_notes: ''
+                      paused_notes: ''
+                      dropped_reason: '0'
+                      grad_date: '0000-00-00'
+                      total_debt: '41337.50'
+                      welcome_sent: '2020-02-21 16:23:29'
+                      paper_statements: '0'
+                      paper_welcome: '0'
+                      gateway_id: '1'
+                      gateway_approved_by: '0'
+                      gateway_hold: '1'
+                      gateway_hold_reason: '15'
+                      gateway_hold_notes: ''
+                      gateway_auth_received: '1'
+                      gateway_auth_file: 66c29015-debtpaypro_Greg's_Test_Template_-_Chase_(xxxx4444).pdf
+                      iscoapp: '0'
+                      customs: []
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
             application/json:
               schema:
-                required:
-                  - status
+                type: object
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+                required:
+                  - status
+              examples:
+                Contact PUT 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
     delete:
       tags:
         - Contacts
