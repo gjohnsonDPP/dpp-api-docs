@@ -280,7 +280,11 @@ paths:
       description: Creates a Campaign Record
       operationId: campaignCreate
       requestBody:
-        $ref: '#/components/requestBodies/Campaign'
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: models/Campaign.yaml
       responses:
         '200':
           description: Successfully created a Campaign Record
@@ -399,7 +403,10 @@ paths:
           schema:
             type: integer
       requestBody:
-        $ref: '#/components/requestBodies/Campaign'
+        content:
+          application/json:
+            schema:
+              $ref: models/CampaignUpdate.yaml
       responses:
         '200':
           description: Successfully updated a Campaign Record
@@ -409,7 +416,7 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: models/Campaign.yaml
+                    $ref: models/CampaignUpdate.yaml
                   status:
                     $ref: models/SuccessStatus.yaml
               examples:

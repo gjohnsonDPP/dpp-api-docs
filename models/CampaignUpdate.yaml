@@ -1,0 +1,72 @@
+title: Campaign
+type: object
+description: Campaign Record Object
+properties:
+  id:
+    type: integer
+    readOnly: true
+  acctID:
+    type: integer
+    readOnly: true
+  company_id:
+    type: integer
+    readOnly: true
+  active:
+    type: boolean
+    default: true
+  created_at:
+    type: string
+    format: date-time
+    readOnly: true
+  created_by:
+    type: integer
+    readOnly: true
+  token:
+    type: string
+    readOnly: true
+  title:
+    type: string
+    example: Campaign Title
+  start_date:
+    type: string
+    format: date
+    pattern: YYYY-mm-dd
+  end_date:
+    type: string
+    format: date
+    pattern: YYYY-mm-dd
+  source_id:
+    type: integer
+    example: 3184
+  cost:
+    type: number
+    example: 1984.25
+    format: double
+  cost_type:
+    type: integer
+    example: 1
+  priority:
+    type: integer
+    example: 4
+  external_id:
+    type: integer
+    readOnly: true
+  media_type:
+    type: integer
+    example: 1
+  purchase_amount:
+    type: number
+    example: 42
+  del:
+    type: boolean
+    default: false
+    readOnly: true
+  del_by:
+    type: integer
+    readOnly: true
+  deltime:
+    type: string
+    format: date-time
+    readOnly: true
+x-tags:
+  - Campaign
