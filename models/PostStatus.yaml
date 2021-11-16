@@ -1,4 +1,4 @@
-title: PostStatus
+title: Status
 type: object
 description: Response Status
 properties:
