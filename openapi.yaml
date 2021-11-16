@@ -113,7 +113,7 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: '#/components/schemas/Call'
+                    $ref: models/CallUpdate.yaml
                   status:
                     $ref: models/ResponseStatus.yaml
               examples:
