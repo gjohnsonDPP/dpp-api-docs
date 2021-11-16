@@ -214,7 +214,12 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ./models/Status.yaml
+                type: object
+                properties:
+                  status:
+                    $ref: ./models/Status.yaml
+                required:
+                  - status
               examples:
                 Call PUT 400 Response Example:
                   value:
