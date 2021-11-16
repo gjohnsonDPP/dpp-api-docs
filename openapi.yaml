@@ -44,7 +44,7 @@ paths:
   /calls:
     post:
       summary: Create a Call Record
-      description: Creates a Call Record and logs the call to a client.
+      description: Creates a Call Record and log the call to a client.
       operationId: callCreate
       tags:
         - Calls
@@ -277,22 +277,29 @@ paths:
       tags:
         - Campaigns
       summary: Create a Campaign Record
-      description: Creates a new Campaign Record
+      description: Creates a Campaign Record
       operationId: campaignCreate
       requestBody:
         $ref: '#/components/requestBodies/Campaign'
       responses:
         '200':
-          description: Successfully created Campaign Record
+          description: Successfully created a Campaign Record
           content:
             application/json:
               schema:
+                type: object
                 properties:
-                  status:
-                    $ref: models/Status.yaml
                   response:
                     type: object
-                type: object
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Campaign POST 200 Response Example:
+                  value:
+                    response:
+                      id: 152283
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
@@ -302,13 +309,19 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Campaigns POST 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   '/campaigns/e-mail/{id}':
     get:
       tags:
         - Campaigns
       summary: Find a Campaign Record by ID
-      description: Returns a single Campaign Record object
+      description: Returns a single Campaign Record
       operationId: campaignRead
       parameters:
         - name: id
@@ -319,14 +332,43 @@ paths:
             type: integer
       responses:
         '200':
-          description: Successfully retrieved Campaign Record
+          description: Successfully retrieved a Campaign Record
           content:
             application/json:
               schema:
+                type: object
                 properties:
                   response:
                     $ref: models/Campaign.yaml
-                type: object
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Campaign GET 200 Response Example:
+                  value:
+                    response:
+                      object: campaign
+                      id: 177286
+                      acctID: 2715
+                      company_id: 21752
+                      active: true
+                      created_at: '2019-08-24T14:15:22Z'
+                      created_by: 3028014
+                      token: string
+                      title: Campaign Title
+                      start_date: '2019-08-24'
+                      end_date: '2019-08-24'
+                      source_id: 3184
+                      cost: 1984.25
+                      cost_type: 1
+                      priority: 4
+                      external_id: 0
+                      media_type: 1
+                      purchase_amount: 42
+                      del: false
+                      del_by: 0
+                      deltime: '2019-08-24T14:15:22Z'
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
@@ -336,12 +378,18 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Campaign GET 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
     put:
       tags:
         - Campaigns
       summary: Update a Campaign Record by ID
-      description: Updates a single Campaign Record object
+      description: Updates a single Campaign Record
       operationId: campaignUpdate
       parameters:
         - name: id
@@ -354,14 +402,43 @@ paths:
         $ref: '#/components/requestBodies/Campaign'
       responses:
         '200':
-          description: Successfully updated Campaign Record
+          description: Successfully updated a Campaign Record
           content:
             application/json:
               schema:
+                type: object
                 properties:
                   response:
                     $ref: models/Campaign.yaml
-                type: object
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Campaign PUT 200 Response Example:
+                  value:
+                    response:
+                      object: campaign
+                      id: 177286
+                      acctID: 2715
+                      company_id: 21752
+                      active: true
+                      created_at: '2019-08-24T14:15:22Z'
+                      created_by: 3028014
+                      token: string
+                      title: Campaign Title
+                      start_date: '2019-08-24'
+                      end_date: '2019-08-24'
+                      source_id: 3184
+                      cost: 1984.25
+                      cost_type: 1
+                      priority: 4
+                      external_id: 0
+                      media_type: 1
+                      purchase_amount: 42
+                      del: false
+                      del_by: 0
+                      deltime: '2019-08-24T14:15:22Z'
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
@@ -371,12 +448,18 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Campaign PUT 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
     delete:
       tags:
         - Campaigns
       summary: Delete a Campaign Record by ID
-      description: Deletes a single Campaign Record object
+      description: Deletes a single Campaign Record
       operationId: campaignDelete
       parameters:
         - name: id
@@ -393,10 +476,7 @@ paths:
               schema:
                 properties:
                   status:
-                    $ref: models/Status.yaml
-                  response:
-                    type: object
-                type: object
+                    $ref: models/SuccessStatus.yaml
         '400':
           description: Error
           content:
@@ -406,7 +486,13 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Campaign DELETE 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   /contacts:
     post:
       tags:
