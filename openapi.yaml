@@ -511,22 +511,35 @@ paths:
       tags:
         - Contacts
       summary: Create a Contact Record
-      description: Creates a new Contact Record object
+      description: Creates a Contact Record
       operationId: contactCreate
+      parameters: []
       requestBody:
-        $ref: '#/components/requestBodies/Contact'
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: models/Contact.yaml
       responses:
         '200':
-          description: Success
+          description: Successfully created a Contact Record
           content:
             application/json:
               schema:
+                type: object
                 properties:
-                  status:
-                    $ref: models/Status.yaml
                   response:
                     type: object
-                type: object
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Contact POST 200 Response Example:
+                  value:
+                    response:
+                      id: 418304227
+                    status:
+                      code: 200
+                      message: Client Record Created
         '400':
           description: Error
           content:
@@ -536,13 +549,19 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Contact POST 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   '/contacts/{id}':
     get:
       tags:
         - Contacts
       summary: Find a Contact Record by ID
-      description: Returns a Contact Record object
+      description: Returns a Contact Record
       operationId: contactRead
       parameters:
         - name: id
@@ -553,14 +572,18 @@ paths:
             type: integer
       responses:
         '200':
-          description: Success
+          description: Successfully retrieved a Contact Record
           content:
             application/json:
               schema:
+                type: object
                 properties:
                   response:
-                    $ref: models/Contact.yaml
-                type: object
+                    $ref: models/ContactUpdate.yaml
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                $ref: '#/components/examples/Contact'
         '400':
           description: Error
           content:
@@ -570,7 +593,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
     put:
       tags:
         - Contacts
@@ -3403,5 +3426,71 @@ components:
       type: apiKey
       name: Api-Key
       in: header
+  examples:
+    Contact:
+      value:
+        response:
+          object: contact
+          client_id: '518304652'
+          acctID: '2715'
+          company_id: '21752'
+          file_type: '0'
+          form_id: '0'
+          created: '2021-11-16 04:06:09'
+          created_by: '3028014'
+          modified: null
+          modified_by: null
+          assigned_to: '0'
+          campaign_id: '0'
+          attorney: '0'
+          attorney_id: '0'
+          attorney_id2: '0'
+          first_name: ''
+          middle_name: ''
+          last_name: ''
+          salutation: null
+          title: null
+          phone_number: ''
+          phone_extension: null
+          cell_phone: null
+          cell_extension: null
+          work_phone: null
+          work_extension: null
+          address:
+            address1: null
+            address2: null
+            address3: null
+            city: null
+            state: null
+            zip: null
+          email: null
+          social_security_number: ''
+          date_of_birth: null
+          language: '0'
+          submitted: '0'
+          submitted_by: '0'
+          submitted_at: '0000-00-00 00:00:00'
+          approved_by2: '0'
+          approved_date2: '0000-00-00'
+          rejected_by: '0'
+          rejected_notes: ''
+          paused_notes: ''
+          dropped_reason: '0'
+          grad_date: '0000-00-00'
+          total_debt: '0.00'
+          welcome_sent: '0000-00-00 00:00:00'
+          paper_statements: '0'
+          paper_welcome: '0'
+          gateway_id: '0'
+          gateway_approved_by: '0'
+          gateway_hold: '0'
+          gateway_hold_reason: '0'
+          gateway_hold_notes: ''
+          gateway_auth_received: '0'
+          gateway_auth_file: ''
+          iscoapp: '0'
+          customs: []
+        status:
+          code: 200
 security:
   - API-Key: []
