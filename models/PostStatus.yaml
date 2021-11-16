@@ -1,0 +1,8 @@
+title: PostStatus
+type: object
+description: Response Status
+properties:
+  code:
+    type: integer
+x-tags:
+  - PostStatus

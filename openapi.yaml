@@ -44,7 +44,7 @@ paths:
   /calls:
     post:
       summary: Create a Call Record
-      description: Allows a record to be created and logged for any call made to or by a client
+      description: Creates a Call Record and logs the call to a client.
       operationId: callCreate
       tags:
         - Calls
@@ -57,7 +57,7 @@ paths:
               $ref: models/Call.yaml
       responses:
         '200':
-          description: Successfully created Call Record
+          description: Successfully created a Call Record
           content:
             application/json:
               schema:
@@ -66,7 +66,7 @@ paths:
                   response:
                     type: object
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/PostStatus.yaml
                 required:
                   - status
                   - response
