@@ -2,6 +2,9 @@ title: Contact
 type: object
 description: Contact Record
 properties:
+  object:
+    type: string
+    readOnly: true
   id:
     type: integer
     readOnly: true
