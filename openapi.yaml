@@ -140,22 +140,7 @@ paths:
                     status:
                       code: 200
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    $ref: models/ErrorStatus.yaml
-                required:
-                  - status
-              examples:
-                Call GET 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/400'
     put:
       tags:
         - Calls
@@ -3289,6 +3274,20 @@ components:
         - start
         - limit
   responses:
+    '400':
+      description: Error
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                $ref: models/ErrorStatus.yaml
+          examples:
+            400 Error Response:
+              status:
+                code: 400
+                message: 'Input Parsing Error: unexpected character'
     default:
       description: default
       content:
