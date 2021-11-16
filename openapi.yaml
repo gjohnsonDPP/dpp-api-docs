@@ -957,22 +957,26 @@ paths:
       tags:
         - Debts
       summary: Create a Debt Record
-      description: Creates a new Debt Record object
+      description: Creates a Debt Record
       operationId: debtCreate
       requestBody:
-        $ref: '#/components/requestBodies/Debt'
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: models/Debt.yaml
       responses:
         '200':
-          description: Success
+          description: Successfully created a Debt Record
           content:
             application/json:
               schema:
+                type: object
                 properties:
-                  status:
-                    $ref: models/Status.yaml
                   response:
                     type: object
-                type: object
+                  status:
+                    $ref: models/SuccessStatus.yaml
         '400':
           description: Error
           content:
@@ -982,7 +986,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
   '/debts/{id}':
     get:
       tags:
