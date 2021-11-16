@@ -160,8 +160,13 @@ paths:
       tags:
         - Calls
       summary: Update a Call Record by ID
-      description: Updates a single Call Record Object
+      description: Updates a single Call Record
       operationId: callUpdate
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: models/CallUpdate.yaml
       parameters:
         - name: id
           in: path
@@ -171,19 +176,16 @@ paths:
             type: integer
       responses:
         '200':
-          description: Successfully Updated Call Record
+          description: Successfully Updated a Call Record
           content:
             application/json:
               schema:
                 type: object
                 properties:
                   response:
-                    $ref: '#/components/schemas/Call'
+                    $ref: models/CallUpdate.yaml
                   status:
-                    $ref: ./models/Status.yaml
-                required:
-                  - response
-                  - status
+                    $ref: models/ResponseStatus.yaml
               examples:
                 Call PUT 200 Response Example:
                   value:
@@ -207,19 +209,18 @@ paths:
                       recording_id: 3
                     status:
                       code: 200
-                      message: string
         '400':
           description: Error
           content:
             application/json:
               schema:
                 $ref: ./models/Status.yaml
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Call'
-        description: ''
+              examples:
+                Call PUT 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
     delete:
       tags:
         - Calls
