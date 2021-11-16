@@ -66,7 +66,7 @@ paths:
                   response:
                     type: object
                   status:
-                    $ref: models/ResponseStatus.yaml
+                    $ref: models/SuccessStatus.yaml
               examples:
                 Call Example 200 POST Response:
                   value:
@@ -83,7 +83,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/ErrorResponseStatus.yaml
+                    $ref: models/ErrorStatus.yaml
               examples:
                 Call Example 400 Response:
                   value:
@@ -115,7 +115,7 @@ paths:
                   response:
                     $ref: models/CallUpdate.yaml
                   status:
-                    $ref: models/ResponseStatus.yaml
+                    $ref: models/SuccessStatus.yaml
               examples:
                 Call GET 200 Response Example:
                   value:
@@ -147,7 +147,7 @@ paths:
                 type: object
                 properties:
                   status:
-                    $ref: models/ErrorResponseStatus.yaml
+                    $ref: models/ErrorStatus.yaml
                 required:
                   - status
               examples:
@@ -185,7 +185,7 @@ paths:
                   response:
                     $ref: models/CallUpdate.yaml
                   status:
-                    $ref: models/ResponseStatus.yaml
+                    $ref: models/SuccessStatus.yaml
               examples:
                 Call PUT 200 Response Example:
                   value:
@@ -217,7 +217,7 @@ paths:
                 type: object
                 properties:
                   status:
-                    $ref: models/ErrorResponseStatus.yaml
+                    $ref: models/ErrorStatus.yaml
                 required:
                   - status
               examples:
@@ -248,7 +248,7 @@ paths:
                 type: object
                 properties:
                   status:
-                    $ref: models/ResponseStatus.yaml
+                    $ref: models/SuccessStatus.yaml
               examples:
                 Calls DELETE 200 Response Example:
                   value:
@@ -263,7 +263,7 @@ paths:
                 type: object
                 properties:
                   status:
-                    $ref: models/ErrorResponseStatus.yaml
+                    $ref: models/ErrorStatus.yaml
                 required:
                   - status
               examples:
@@ -277,7 +277,7 @@ paths:
       tags:
         - Campaigns
       summary: Create a Campaign Record
-      description: Creates a new Campaign Record object
+      description: Creates a new Campaign Record
       operationId: campaignCreate
       requestBody:
         $ref: '#/components/requestBodies/Campaign'

@@ -5,4 +5,4 @@ properties:
   code:
     type: integer
 x-tags:
-  - PostStatus
+  - SuccessStatus
