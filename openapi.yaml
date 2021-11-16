@@ -466,7 +466,7 @@ paths:
       tags:
         - Campaigns
       summary: Delete a Campaign Record by ID
-      description: Deletes a single Campaign Record
+      description: Deletes a Campaign Record
       operationId: campaignDelete
       parameters:
         - name: id
@@ -484,6 +484,12 @@ paths:
                 properties:
                   status:
                     $ref: models/SuccessStatus.yaml
+              examples:
+                Campaign DELETE 200 Response Example:
+                  value:
+                    status:
+                      code: 200
+                      message: Successfully deleted object
         '400':
           description: Error
           content:
