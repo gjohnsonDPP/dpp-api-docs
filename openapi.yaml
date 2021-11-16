@@ -83,7 +83,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorResponseStatus.yaml
               examples:
                 Call Example 400 Response:
                   value:
@@ -147,7 +147,7 @@ paths:
                 type: object
                 properties:
                   status:
-                    $ref: ./models/Status.yaml
+                    $ref: models/ErrorResponseStatus.yaml
                 required:
                   - status
               examples:
@@ -217,7 +217,7 @@ paths:
                 type: object
                 properties:
                   status:
-                    $ref: ./models/Status.yaml
+                    $ref: models/ErrorResponseStatus.yaml
                 required:
                   - status
               examples:
@@ -230,7 +230,7 @@ paths:
       tags:
         - Calls
       summary: Delete Call Record by ID
-      description: Deletes a single Call Record Object
+      description: Deletes a single Call Record
       operationId: callDelete
       parameters:
         - name: id
@@ -241,14 +241,14 @@ paths:
             type: integer
       responses:
         '200':
-          description: Successfully Deleted Call Record
+          description: Successfully Deleted a Call Record
           content:
             application/json:
               schema:
                 type: object
                 properties:
                   status:
-                    $ref: ./models/Status.yaml
+                    $ref: models/ResponseStatus.yaml
         '400':
           description: Error
           content:
@@ -257,9 +257,15 @@ paths:
                 type: object
                 properties:
                   status:
-                    $ref: ./models/Status.yaml
+                    $ref: models/ErrorResponseStatus.yaml
                 required:
                   - status
+              examples:
+                Call DELETE 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   /campaigns/e-mail:
     post:
       tags:
