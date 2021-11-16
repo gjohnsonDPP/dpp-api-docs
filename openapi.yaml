@@ -781,7 +781,7 @@ paths:
       tags:
         - Contacts
       summary: Delete a Contact Record by ID
-      description: Deletes a single Contact Record object
+      description: Deletes a Contact Record
       operationId: contactDelete
       parameters:
         - name: id
@@ -792,16 +792,20 @@ paths:
             type: integer
       responses:
         '200':
-          description: Success
+          description: Successfully Deleted Contact Record
           content:
             application/json:
               schema:
+                type: object
                 properties:
                   status:
-                    $ref: models/Status.yaml
-                  response:
-                    type: object
-                type: object
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Contact DELETE 200 Response Example:
+                  value:
+                    status:
+                      code: 200
+                      message: Successfully deleted object
         '400':
           description: Error
           content:
@@ -812,6 +816,12 @@ paths:
                 properties:
                   status:
                     $ref: models/Status.yaml
+              examples:
+                Contact DELETE 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   '/contacts/{id}/form_request':
     post:
       tags:
