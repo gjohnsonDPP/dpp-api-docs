@@ -1,5 +1,5 @@
-type: object
 title: Loan
+type: object
 description: Loan Record
 properties:
   object:
@@ -8,12 +8,13 @@ properties:
   id:
     type: integer
     readOnly: true
+    example: 1863358
   acctID:
     type: integer
     readOnly: true
+    example: 3863
   tp_id:
     type: integer
-    readOnly: true
   created_at:
     type: string
     format: date-time
@@ -30,28 +31,30 @@ properties:
     readOnly: true
   client_id:
     type: integer
+    example: 382760691
   advance_type:
     type: string
+    example: "ACH"
   advance_date:
     type: string
     format: date
-    readOnly: true
   paid_in_full_date:
     type: string
     format: date
-    readOnly: true
   defaulted_date:
     type: string
     format: date
-    readOnly: true
   type_id:
     type: integer
+    example: "1"
   program_id:
     type: integer
   loan_class:
     type: integer
+    example: "1"
   loan_amount:
     type: number
+    example: 4550.72
   payback_amount:
     type: number
   rate:
@@ -64,6 +67,7 @@ properties:
     type: integer
   frequency:
     type: string
+    example: "D"
   freq_int:
     type: string
   period_amount:
@@ -74,70 +78,32 @@ properties:
     type: string
   underwrite_notes:
     type: string
+    example: "Lorem Ipsum"
   contract_date:
     type: string
     format: date
-    readOnly: true
   contract_number:
     type: string
-    readOnly: true
   funded:
     type: integer
   status:
     type: integer
+    example: 10
   lien_pos:
     type: integer
   ach_start_date:
     type: string
     format: date
-    readOnly: true
   ach_on:
     type: integer
   pricing_lock:
     type: integer
   offer_set:
     type: integer
+    example: 1043077
 required:
   - client_id
   - loan_amount
   - payback_amount
 x-tags:
   - Loan
-examples:
-  - object: loan
-    id: 1863358
-    acctID: 3863
-    tp_id: '0'
-    created_at: '2021-11-18 21:23:07'
-    created_by: 4950368
-    modified_at: null
-    modified_by: null
-    client_id: 382760691
-    advance_type: ACH
-    advance_date: '2019-08-24'
-    paid_in_full_date: '2019-08-24'
-    defaulted_date: '2019-08-24'
-    type_id: '1'
-    program_id: '0'
-    loan_class: '1'
-    loan_amount: 4545
-    payback_amount: 0
-    rate: '0'
-    payment: '0.00'
-    holdback_percent: '0'
-    payback_period: '0.00'
-    frequency: D
-    freq_int: string
-    period_amount: '0'
-    fees: '0.00'
-    conf_num: string
-    underwriter_notes: ''
-    contract_date: '2019-08-24'
-    contract_number: string
-    funded: '0'
-    status: '10'
-    lien_pos: '0'
-    ach_start_date: '2019-08-24'
-    ach_on: '0'
-    pricing_lock: '0'
-    offer_set: '1043077'
