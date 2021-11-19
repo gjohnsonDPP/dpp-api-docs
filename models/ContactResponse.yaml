@@ -1,10 +1,10 @@
 title: Contact
 type: object
 description: Contact Record
+x-tags:
+  - Contact
+examples: []
 properties:
-  object:
-    type: string
-    readOnly: true
   id:
     type: integer
     readOnly: true
@@ -16,6 +16,7 @@ properties:
     readOnly: true
   file_type:
     type: integer
+    default: 1
   form_id:
     type: integer
   created:
@@ -34,8 +35,10 @@ properties:
     readOnly: true
   assigned_to:
     type: integer
+    default: 6515056
   campaign_id:
     type: integer
+    default: 158227
   attorney:
     type: boolean
   attorney_id:
@@ -44,43 +47,58 @@ properties:
     type: integer
   first_name:
     type: string
-    required: true
+    default: Test
   middle_name:
     type: string
+    default: A
   last_name:
     type: string
-    required: true
+    default: User
   salutation:
     type: string
+    default: Hello
   title:
     type: string
+    default: Mr.
   phone_number:
     type: string
+    default: '13123831234'
   phone_extension:
     type: integer
+    default: 123
   cell_phone:
     type: string
+    default: '13123835678'
   cell_extension:
     type: integer
+    default: 123
   work_phone:
     type: string
+    default: '13123839753'
   work_extension:
     type: integer
+    default: 123
   address:
     $ref: ../models/Address.yaml
   email:
     type: string
+    default: test@test.com
   social_security_number:
     type: string
+    default: 123-45-6789
   date_of_birth:
     type: string
     format: date
+    default: '1970-01-01'
   language:
     type: integer
+    default: 1
   submitted:
     type: boolean
+    default: false
   submitted_by:
     type: integer
+    default: 0
   submitted_at:
     type: string
     format: date-time
@@ -136,5 +154,3 @@ properties:
           type: string
         label:
           type: string
-x-tags:
-  - Contact
