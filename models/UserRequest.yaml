@@ -97,8 +97,3 @@ properties:
     title: Billable Indicator
     type: boolean
     example: true
-required:
-  - user_type
-  - user_name
-  - email
-  - active
