@@ -15,8 +15,7 @@ properties:
     format: date-time
     readOnly: true
   created_by:
-    $ref: ./UserResponse.yaml
-    readOnly: true
+    $ref: ./UserRequest.yaml
   modified_at:
     type: string
     format: date-time
