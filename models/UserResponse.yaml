@@ -4,6 +4,9 @@ description: User Record
 x-tags:
   - User
 properties:
+  object:
+    type: string
+    readOnly: true
   user_id:
     title: User ID
     type: integer

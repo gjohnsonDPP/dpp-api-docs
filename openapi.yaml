@@ -1668,7 +1668,7 @@ paths:
       tags:
         - Settlement_Offers
       summary: Create a Settlement Offer Record
-      description: Creates a new Settlement Offer object
+      description: Creates a Settlement Offer
       operationId: settlementOfferCreate
       requestBody:
         content:

@@ -7,72 +7,97 @@ properties:
   object:
     type: string
     readOnly: true
-    example: "settlement_offer"
   offer_id:
     type: integer
-    example: 3319980
+    title: Offer ID
+    example: 4036117
+    readOnly: true
   acctID:
     type: integer
+    title: Account ID
     example: 3863
     readOnly: true
   contact_id:
+    title: Contact ID
     type: integer
-    example: 382760691
+    example: 485599270
   creditor:
     type: integer
-    title: Original Creditor ID
+    example: 540
   debt_id:
+    title: Debt ID
     type: integer
-    example: 124504794
+    example: 12345
   created_at:
     type: string
+    title: Created Date
     format: date-time
     readOnly: true
   created_by:
     $ref: ../models/UserResponse.yaml
   modified_at:
     type: string
+    title: Modified Date
     format: date-time
     readOnly: true
   modified_by:
-    $ref: ../models/UserResponse.yaml
+    type: integer
+    title: Modified By
     readOnly: true
   neg_id:
-    $ref: ../models/UserResponse.yaml
+    title: Neg ID
+    type: integer
   madeby:
+    title: Made By
     type: string
-    readOnly: true
+    example: Negotiator
   offer_status:
+    title: Offer Status
+    example: 3
     type: integer
   offer_status_date:
+    title: Offer Status Date
+    format: date
+    example: '2022-03-07'
     type: string
-    format: date-time
   offer_valid_date:
+    title: Offer Valid Date
     type: string
     format: date
+    example: '2021-10-24'
   settlement_type:
+    title: Settlement Type
     type: integer
   debt_amount:
-    type: integer
-    example: 8500.55
+    title: Debt Amount
+    type: number
+    example: 0
   settlement_amount:
-    type: integer
+    title: Settlement Amount
+    type: number
+    example: 0
   settlement_fee:
-    type: integer
+    title: Settlement Fee
+    type: number
+    example: 0
   notes:
+    title: Notes
     type: string
-    example: "Lorem Ipsum"
+    example: Lorem Ipsum
   cred_cont_id:
+    title: Cred Cont ID
     type: integer
+    example: 0
   json:
     type: object
 required:
   - contact_id
+  - creditor
   - debt_id
+  - offer_status
+  - offer_status_date
+  - offer_valid_date
+  - settlement_type
   - debt_amount
   - settlement_amount
-  - offer_valid_date
-
-
-
-
+  - settlement_fee
