@@ -1829,7 +1829,7 @@ paths:
       tags:
         - Settlement_Offers
       summary: Update a Settlement Offer Record by ID
-      description: Updates a single Settlement Offer Record object
+      description: Updates a Settlement Offer Record
       operationId: settlementOfferUpdate
       parameters:
         - name: id
@@ -1842,21 +1842,21 @@ paths:
         content:
           application/json:
             schema:
-              $ref: models/Settlementoffer.yaml
-        description: Settlement offer object that needs to be updated
+              $ref: models/SettlementofferResponse.yaml
+        description: Settlement offer object that will be updated
         required: true
       responses:
         '200':
-          description: default
+          description: Successfully Updated Settlement Offer
           content:
             application/json:
               schema:
-                properties:
-                  status:
-                    $ref: models/Status.yaml
-                  response:
-                    type: object
                 type: object
+                properties:
+                  response:
+                    $ref: models/SettlementofferResponse.yaml
+                  status:
+                    $ref: models/SuccessStatus.yaml
         '400':
           description: Error
           content:
@@ -1866,7 +1866,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
     delete:
       tags:
         - Settlement_Offers
