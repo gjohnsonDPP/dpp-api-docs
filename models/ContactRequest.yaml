@@ -16,7 +16,8 @@ properties:
     readOnly: true
   file_type:
     type: integer
-    default: 1
+    default: 0
+    example: 1
   form_id:
     type: integer
   created:
@@ -35,7 +36,8 @@ properties:
     readOnly: true
   assigned_to:
     type: integer
-    default: 6515056
+    default: 0
+    example: 6515056
   campaign_id:
     type: integer
     default: 158227
@@ -47,52 +49,56 @@ properties:
     type: integer
   first_name:
     type: string
-    default: Test
+    example: Test
   middle_name:
     type: string
-    default: A
+    example: A
   last_name:
     type: string
-    default: User
+    example: User
   salutation:
     type: string
-    default: Hello
+    example: Hello
   title:
     type: string
-    default: Mr.
+    example: Mr.
   phone_number:
     type: string
-    default: '13123831234'
+    example: '13123831234'
   phone_extension:
     type: integer
-    default: 123
+    default: 0
+    example: 123
   cell_phone:
     type: string
-    default: '13123835678'
+    example: '13123835678'
   cell_extension:
     type: integer
-    default: 123
+    default: 0
+    example: 123
   work_phone:
     type: string
-    default: '13123839753'
+    example: '13123839753'
   work_extension:
     type: integer
-    default: 123
+    default: 0
+    example: 123
   address:
     $ref: ../models/Address.yaml
   email:
     type: string
-    default: test@test.com
+    example: test@test.com
   social_security_number:
     type: string
-    default: 123-45-6789
+    example: 123-45-6789
   date_of_birth:
     type: string
     format: date
-    default: '1970-01-01'
+    example: '1970-01-01'
   language:
     type: integer
-    default: 1
+    default: 0
+    example: 1
   submitted:
     type: boolean
     default: false
