@@ -1867,6 +1867,12 @@ paths:
                 properties:
                   status:
                     $ref: models/ErrorStatus.yaml
+              examples:
+                SettlementOffer PUT 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
     delete:
       tags:
         - Settlement_Offers
