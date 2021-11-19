@@ -4,85 +4,64 @@ description: Settlment Offer Record
 x-tags:
   - Settlementoffer
 properties:
+  object:
+    type: string
+    readOnly: true
+    example: "settlement_offer"
   offer_id:
     type: integer
-    title: Offer ID
-    example: 4036117
-    readOnly: true
+    example: 3319980
   acctID:
     type: integer
-    title: Account ID
     example: 3863
     readOnly: true
   contact_id:
-    title: Contact ID
     type: integer
-    example: 485599270
+    example: 382760691
   creditor:
-    $ref: ../models/ContactResponse.yaml
+    $ref: ../models/CreditorResponse.yaml
   debt_id:
-    title: Debt ID
     type: integer
-    example: 12345
+    example: 124504794
   created_at:
     type: string
-    title: Created Date
     format: date-time
     readOnly: true
   created_by:
     $ref: ../models/UserResponse.yaml
   modified_at:
     type: string
-    title: Modified Date
     format: date-time
     readOnly: true
   modified_by:
-    type: integer
-    title: Modified By
+    $ref: ../models/UserResponse.yaml
     readOnly: true
   neg_id:
-    title: Neg ID
-    type: integer
+    $ref: ../models/UserResponse.yaml
   madeby:
-    title: Made By
     type: string
-    example: Negotiator
+    readOnly: true
   offer_status:
-    title: Offer Status
-    example: 3
     type: integer
   offer_status_date:
-    title: Offer Status Date
-    format: date
-    example: '2022-03-07'
     type: string
+    format: date-time
   offer_valid_date:
-    title: Offer Valid Date
     type: string
     format: date
-    example: '2021-10-24'
   settlement_type:
-    title: Settlement Type
     type: integer
   debt_amount:
-    title: Debt Amount
-    type: number
-    example: 0
-  settlement_amount:
-    title: Settlement Amount
-    type: number
-    example: 0
-  settlement_fee:
-    title: Settlement Fee
-    type: number
-    example: 0
-  notes:
-    title: Notes
-    type: string
-    example: Lorem Ipsum
-  cred_cont_id:
-    title: Cred Cont ID
     type: integer
-    example: 0
+    example: 8500.55
+  settlement_amount:
+    type: integer
+  settlement_fee:
+    type: integer
+  notes:
+    type: string
+    example: "Lorem Ipsum"
+  cred_cont_id:
+    type: integer
   json:
     type: object
