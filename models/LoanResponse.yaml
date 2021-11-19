@@ -1,5 +1,5 @@
-title: Loan
 type: object
+title: Loan
 description: Loan Record
 properties:
   object:
@@ -13,6 +13,7 @@ properties:
     readOnly: true
   tp_id:
     type: integer
+    readOnly: true
   created_at:
     type: string
     format: date-time
@@ -34,12 +35,15 @@ properties:
   advance_date:
     type: string
     format: date
+    readOnly: true
   paid_in_full_date:
     type: string
     format: date
+    readOnly: true
   defaulted_date:
     type: string
     format: date
+    readOnly: true
   type_id:
     type: integer
   program_id:
@@ -73,8 +77,10 @@ properties:
   contract_date:
     type: string
     format: date
+    readOnly: true
   contract_number:
     type: string
+    readOnly: true
   funded:
     type: integer
   status:
@@ -84,6 +90,7 @@ properties:
   ach_start_date:
     type: string
     format: date
+    readOnly: true
   ach_on:
     type: integer
   pricing_lock:
