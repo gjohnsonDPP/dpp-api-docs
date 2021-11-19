@@ -54,7 +54,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: models/Call.yaml
+              $ref: models/CallRequest.yaml
       responses:
         '200':
           description: Successfully created a Call Record
@@ -113,7 +113,7 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: models/CallUpdate.yaml
+                    $ref: models/CallResponse.yaml
                   status:
                     $ref: models/SuccessStatus.yaml
               examples:
@@ -166,7 +166,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: models/CallUpdate.yaml
+              $ref: models/CallResponse.yaml
       parameters:
         - name: id
           in: path
@@ -183,7 +183,7 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: models/CallUpdate.yaml
+                    $ref: models/CallResponse.yaml
                   status:
                     $ref: models/SuccessStatus.yaml
               examples:
@@ -284,7 +284,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: models/Campaign.yaml
+              $ref: models/CampaignRequest.yaml
       responses:
         '200':
           description: Successfully created a Campaign Record
@@ -343,7 +343,7 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: models/CampaignUpdate.yaml
+                    $ref: models/CampaignResponse.yaml
                   status:
                     $ref: models/SuccessStatus.yaml
               examples:
@@ -406,7 +406,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: models/CampaignUpdate.yaml
+              $ref: models/CampaignResponse.yaml
       responses:
         '200':
           description: Successfully updated a Campaign Record
@@ -416,7 +416,7 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: models/CampaignUpdate.yaml
+                    $ref: models/CampaignResponse.yaml
                   status:
                     $ref: models/SuccessStatus.yaml
               examples:
@@ -519,7 +519,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: models/Contact.yaml
+              $ref: models/ContactRequest.yaml
       responses:
         '200':
           description: Successfully created a Contact Record
@@ -579,7 +579,7 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: models/ContactUpdate.yaml
+                    $ref: models/ContactResponse.yaml
                   status:
                     $ref: models/SuccessStatus.yaml
               examples:
@@ -674,7 +674,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: models/ContactUpdate.yaml
+              $ref: models/ContactUResponse.yaml
       parameters:
         - name: id
           in: path
@@ -691,7 +691,7 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: models/ContactUpdate.yaml
+                    $ref: models/ContactResponse.yaml
                   status:
                     $ref: models/SuccessStatus.yaml
               examples:
@@ -964,7 +964,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: models/Debt.yaml
+              $ref: models/DebtRequest.yaml
       responses:
         '200':
           description: Successfully created a Debt Record
@@ -1024,7 +1024,7 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: models/DebtUpdate.yaml
+                    $ref: models/DebtResponse.yaml
                   status:
                     $ref: models/SuccessStatus.yaml
               examples:
@@ -1132,7 +1132,7 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: models/DebtUpdate.yaml
+                    $ref: models/DebtResponse.yaml
                   status:
                     $ref: models/SuccessStatus.yaml
               examples:
@@ -1340,7 +1340,7 @@ paths:
       tags:
         - Loans
       summary: Create a Loan Record
-      description: Creates a new Loan Record object
+      description: Creates a Loan Record
       operationId: loanCreate
       requestBody:
         $ref: '#/components/requestBodies/Loan'
@@ -3722,14 +3722,14 @@ components:
       content:
         application/json:
           schema:
-            $ref: ./models/Call.yaml
+            $ref: ./models/CallRequest.yaml
       description: Call Object
       required: true
     Campaign:
       content:
         application/json:
           schema:
-            $ref: models/Campaign.yaml
+            $ref: models/CampaignRequest.yaml
       description: Campaign Object
       required: true
     Company:
@@ -3743,7 +3743,7 @@ components:
       content:
         application/json:
           schema:
-            $ref: models/DebtUpdate.yaml
+            $ref: models/DebtResponse.yaml
       description: Debt Object
       required: true
     Team:
