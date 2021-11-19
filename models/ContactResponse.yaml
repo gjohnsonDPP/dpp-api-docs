@@ -40,7 +40,8 @@ properties:
     example: 6515056
   campaign_id:
     type: integer
-    default: 158227
+    default: 0
+    example: 158227
   attorney:
     type: boolean
   attorney_id:
