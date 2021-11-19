@@ -1877,7 +1877,7 @@ paths:
       tags:
         - Settlement_Offers
       summary: Delete a Settlement Offer Record by ID
-      description: Deletes a single Settlement Offer object
+      description: Deletes a Settlement Offer
       operationId: settlementOfferDelete
       parameters:
         - name: id
@@ -1888,16 +1888,14 @@ paths:
             type: integer
       responses:
         '200':
-          description: default
+          description: Successfully Deleted Settlement Offer
           content:
             application/json:
               schema:
+                type: object
                 properties:
                   status:
-                    $ref: models/Status.yaml
-                  response:
-                    type: object
-                type: object
+                    $ref: models/SuccessStatus.yaml
         '400':
           description: Error
           content:
@@ -1907,7 +1905,13 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                SettlementOffer Delete 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   /tasks:
     post:
       tags:
