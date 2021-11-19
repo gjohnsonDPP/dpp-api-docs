@@ -513,7 +513,6 @@ paths:
       summary: Create a Contact Record
       description: Creates a Contact Record
       operationId: contactCreate
-      parameters: []
       requestBody:
         required: true
         content:
@@ -1343,19 +1342,30 @@ paths:
       description: Creates a Loan Record
       operationId: loanCreate
       requestBody:
-        $ref: '#/components/requestBodies/Loan'
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: models/LoanRequest.yaml
       responses:
         '200':
-          description: Success
+          description: Successfully created a Loan Record
           content:
             application/json:
               schema:
+                type: object
                 properties:
-                  status:
-                    $ref: models/Status.yaml
                   response:
                     type: object
-                type: object
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Loan POST 200 Response Example:
+                  value:
+                    response:
+                      id: 1863358
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
@@ -1365,13 +1375,19 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Loans POST 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   '/loans/{id}':
     get:
       tags:
         - Loans
       summary: Find a Loan Record by ID
-      description: Returns a single Loan Record object
+      description: Returns a single Loan Record
       operationId: loanRead
       parameters:
         - name: id
@@ -1382,14 +1398,59 @@ paths:
             type: integer
       responses:
         '200':
-          description: Success
+          description: Successfully retrieved a Loan Record
           content:
             application/json:
               schema:
+                type: object
                 properties:
                   response:
-                    $ref: models/Loan.yaml
-                type: object
+                    $ref: models/LoanResponse.yaml
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Loan GET 200 Response Example:
+                  value:
+                    response:
+                      object: loan
+                      loan_id: '1863358'
+                      acctID: '3863'
+                      tp_id: '0'
+                      created_at: '2021-11-18 21:23:07'
+                      created_by: '4950368'
+                      modified_at: null
+                      modified_by: null
+                      client_id: '0'
+                      advance_type: string
+                      advance_date: '2019-08-24'
+                      paid_in_full_date: '2019-08-24'
+                      defaulted_date: '2019-08-24'
+                      type_id: '0'
+                      program_id: '0'
+                      loan_class: '0'
+                      loan_amount: '0.00'
+                      payback_amount: '0.00'
+                      rate: '0'
+                      payment: '0.00'
+                      holdback_percent: '0'
+                      payback_period: '0.00'
+                      frequency: string
+                      freq_int: string
+                      period_amount: '0'
+                      fees: '0.00'
+                      conf_num: string
+                      underwriter_notes: ''
+                      contract_date: '2019-08-24'
+                      contract_number: string
+                      funded: '0'
+                      status: '0'
+                      lien_pos: '0'
+                      ach_start_date: '2019-08-24'
+                      ach_on: '0'
+                      pricing_lock: '0'
+                      offer_set: '1043077'
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
@@ -1399,12 +1460,18 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Loan GET 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
     put:
       tags:
         - Loans
       summary: Update a Loan Record by ID
-      description: Updates a single Loan Record object
+      description: Updates a single Loan Record
       operationId: loanUpdate
       parameters:
         - name: id
@@ -1414,17 +1481,65 @@ paths:
           schema:
             type: integer
       requestBody:
-        $ref: '#/components/requestBodies/Loan'
+        content:
+          application/json:
+            schema:
+              $ref: models/LoanResponse.yaml
       responses:
         '200':
-          description: Success
+          description: Successfully updated a Loan Record
           content:
             application/json:
               schema:
+                type: object
                 properties:
                   response:
-                    $ref: models/Loan.yaml
-                type: object
+                    $ref: models/LoanResponse.yaml
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Loan PUT 200 Response Example:
+                  value:
+                    response:
+                      object: loan
+                      loan_id: '1863361'
+                      acctID: '3863'
+                      tp_id: '0'
+                      created_at: '2021-11-18 21:35:36'
+                      created_by: '4950368'
+                      modified_at: null
+                      modified_by: null
+                      client_id: '0'
+                      advance_type: string
+                      advance_date: '2019-08-24'
+                      paid_in_full_date: '2019-08-24'
+                      defaulted_date: '2019-08-24'
+                      type_id: '0'
+                      program_id: '0'
+                      loan_class: '0'
+                      loan_amount: '0.00'
+                      payback_amount: '0.00'
+                      rate: '0'
+                      payment: '0.00'
+                      holdback_percent: '0'
+                      payback_period: '0.00'
+                      frequency: string
+                      freq_int: string
+                      period_amount: '0'
+                      fees: '0.00'
+                      conf_num: string
+                      underwriter_notes: ''
+                      contract_date: '2019-08-24'
+                      contract_number: string
+                      funded: '0'
+                      status: '0'
+                      lien_pos: '0'
+                      ach_start_date: '2019-08-24'
+                      ach_on: '0'
+                      pricing_lock: '0'
+                      offer_set: '1043080'
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
@@ -1434,12 +1549,18 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Loan PUT 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
     delete:
       tags:
         - Loans
       summary: Delete a Loan Record by ID
-      description: Deletes a single Loan Record object
+      description: Deletes a Loan Record
       operationId: loanDelete
       parameters:
         - name: id
@@ -1450,16 +1571,19 @@ paths:
             type: integer
       responses:
         '200':
-          description: Success
+          description: Successfully deleted Loan Record
           content:
             application/json:
               schema:
                 properties:
                   status:
-                    $ref: models/Status.yaml
-                  response:
-                    type: object
-                type: object
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Loan DELETE 200 Response Example:
+                  value:
+                    status:
+                      code: 200
+                      message: Successfully deleted object
         '400':
           description: Error
           content:
@@ -1469,7 +1593,13 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Loan DELETE 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   /settlement_offers:
     post:
       tags:
