@@ -1027,71 +1027,7 @@ paths:
                     $ref: models/DebtUpdate.yaml
                   status:
                     $ref: models/SuccessStatus.yaml
-              examples:
-                Debt GET 200 Response Example:
-                  value:
-                    response:
-                      object: debt
-                      debt_id: '163173412'
-                      acctID: '3863'
-                      created_at: '2021-11-18 19:20:52'
-                      created_by:
-                        object: user
-                        user_id: '4950368'
-                        acctID: '3863'
-                        guid: 1d7564d6-c57a-0a3a-9e18-adfe6ff22c01
-                        company_id: '42128'
-                        parent_id: '0'
-                        user_type: '1'
-                        created: '2019-10-02 02:41:18'
-                        user_name: Greg
-                        firstname: Greg
-                        lastname: Johnson
-                        company: ''
-                        email: g.johnson@debtpaypro.com
-                        active: '1'
-                        role: '29399'
-                        attorney: '0'
-                        payee_id: '0'
-                        del: '0'
-                        delTime: null
-                        pass_reset: '0'
-                        master: '0'
-                        billable: '1'
-                      modified_at: null
-                      modified_by: null
-                      original_debt_amount: '2205.77'
-                      current_debt_amount: '1905.77'
-                      current_payment: null
-                      current_rate: null
-                      notes: null
-                      verified_debt_amount: null
-                      creditor: '0'
-                      debt_buyer: null
-                      poa_sent_date: null
-                      legal_account: 'No'
-                      last_payment_date: null
-                      last_payment_amount: null
-                      opened_date: null
-                      available_balance: null
-                      enrolled: '0'
-                      enrolled_date: null
-                      debt_type: null
-                      cash_advance: '0'
-                      balance_transfer: '0'
-                      heavy_usage: '0'
-                      has_summons: '0'
-                      debt_status: null
-                      locked: '0'
-                      og_account_num: null
-                      creditor_account_num: null
-                      settled: '0'
-                      settlement_id: null
-                      client_id: '382760691'
-                      settlement_offers: []
-                      customs: []
-                    status:
-                      code: 200
+              examples: {}
         '400':
           description: Error
           content:
