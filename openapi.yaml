@@ -1145,7 +1145,7 @@ paths:
       description: Updates a Debt Record
       operationId: debtUpdate
       requestBody:
-        $ref: '#/components/requestBodies/Debt'
+        $ref: models/DebtResponse.yaml
       parameters:
         - name: id
           in: path
