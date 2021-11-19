@@ -601,16 +601,16 @@ paths:
                       attorney_id: '0'
                       attorney_id2: '0'
                       first_name: John
-                      middle_name: null
+                      middle_name: E.
                       last_name: Doe
-                      salutation: null
-                      title: null
+                      salutation: Salutation
+                      title: Mr.
                       phone_number: '12242525887'
-                      phone_extension: null
+                      phone_extension: 123
                       cell_phone: '12242525887'
-                      cell_extension: null
+                      cell_extension: 123
                       work_phone: '13123839986'
-                      work_extension: null
+                      work_extension: 123
                       address:
                         address1: 1000 North Rd.
                         address2: Apt 217
@@ -713,16 +713,16 @@ paths:
                       attorney_id: '0'
                       attorney_id2: '0'
                       first_name: John
-                      middle_name: null
+                      middle_name: E.
                       last_name: Doe
-                      salutation: null
-                      title: null
+                      salutation: Salutation
+                      title: Mr.
                       phone_number: '12242525887'
-                      phone_extension: null
+                      phone_extension: 123
                       cell_phone: '12242525887'
-                      cell_extension: null
+                      cell_extension: 123
                       work_phone: '13123839986'
-                      work_extension: null
+                      work_extension: 123
                       address:
                         address1: 1000 North Rd.
                         address2: Apt 217
