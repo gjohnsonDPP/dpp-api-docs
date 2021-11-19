@@ -95,7 +95,7 @@ paths:
       tags:
         - Calls
       summary: Find a Call Record by ID
-      description: Returns a single Call Record
+      description: Returns a Call Record
       operationId: callRead
       parameters:
         - name: id
@@ -160,7 +160,7 @@ paths:
       tags:
         - Calls
       summary: Update a Call Record by ID
-      description: Updates a single Call Record
+      description: Updates a Call Record
       operationId: callUpdate
       requestBody:
         content:
