@@ -19,7 +19,8 @@ properties:
     type: integer
     example: 382760691
   creditor:
-    $ref: ../models/CreditorResponse.yaml
+    type: integer
+    example: 540
   debt_id:
     type: integer
     example: 124504794
