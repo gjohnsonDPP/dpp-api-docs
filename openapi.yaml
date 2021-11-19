@@ -673,7 +673,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: models/ContactUResponse.yaml
+              $ref: models/ContactResponse.yaml
       parameters:
         - name: id
           in: path
