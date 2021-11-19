@@ -325,7 +325,7 @@ paths:
       tags:
         - Campaigns
       summary: Find a Campaign Record by ID
-      description: Returns a single Campaign Record
+      description: Returns a Campaign Record
       operationId: campaignRead
       parameters:
         - name: id
@@ -393,7 +393,7 @@ paths:
       tags:
         - Campaigns
       summary: Update a Campaign Record by ID
-      description: Updates a single Campaign Record
+      description: Updates a Campaign Record
       operationId: campaignUpdate
       parameters:
         - name: id
