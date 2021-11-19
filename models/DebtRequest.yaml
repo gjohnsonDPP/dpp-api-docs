@@ -15,10 +15,7 @@ properties:
     format: date-time
     readOnly: true
   created_by:
-    type: array
-    items:
-      $ref: ../models/User.yaml
-    readOnly: true
+    $ref: ./UserResponse.yaml
   modified_at:
     type: string
     format: date-time
@@ -38,9 +35,12 @@ properties:
     type: number
   creditor:
     type: integer
-    description: Creditor ID
+    example: 540
+    description: ID of Original Creditor
   debt_buyer:
-    type: string
+    type: integer
+    example: 17576331
+    description: ID of Debt Buyer
   poa_sent_date:
     type: string
     format: date

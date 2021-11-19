@@ -963,6 +963,70 @@ paths:
           application/json:
             schema:
               $ref: models/DebtRequest.yaml
+            examples:
+              Debt POST Example:
+                value:
+                  original_debt_amount: '3000.00'
+                  current_debt_amount: '2985.00'
+                  current_payment: '153.00'
+                  current_rate: '0.00'
+                  verified_debt_amount: '0.00'
+                  creditor:
+                    object: creditor
+                    creditor_id: '540'
+                    acctID: '0'
+                    tp_id: '0'
+                    is_active: '1'
+                    company_name: Chase
+                    first_name: null
+                    last_name: null
+                    address:
+                      address1: P O Box 15919
+                      address2: ''
+                      address3: null
+                      city: Wilmington
+                      state: Delaware
+                      zip: 19850-0464
+                    phone: 800-444-9370
+                  debt_buyer:
+                    object: creditor
+                    creditor_id: '17576331'
+                    acctID: '3863'
+                    tp_id: '0'
+                    is_active: '1'
+                    company_name: Bob's Debt Co.
+                    first_name: Bob
+                    last_name: Villa
+                    address:
+                      address1: 101 Debt Way
+                      address2: ''
+                      address3: null
+                      city: Chicago
+                      state: IL
+                      zip: '60614'
+                    phone: '3123839994'
+                  poa_sent_date: '0000-00-00'
+                  legal_account: 'No'
+                  last_payment_date: '2022-07-03'
+                  last_payment_amount: '0.00'
+                  opened_date: null
+                  available_balance: '0.00'
+                  enrolled: '1'
+                  enrolled_date: '2020-09-10 07:33:18'
+                  debt_type: null
+                  cash_advance: '0'
+                  balance_transfer: '0'
+                  heavy_usage: '0'
+                  has_summons: '0'
+                  debt_status: null
+                  locked: '0'
+                  og_account_num: '12345674445'
+                  creditor_account_num: null
+                  settled: '0'
+                  settlement_id: null
+                  client_id: '382760691'
+                  settlement_offers: []
+                  customs: []
       responses:
         '200':
           description: Successfully created a Debt Record

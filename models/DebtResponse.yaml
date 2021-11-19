@@ -15,10 +15,7 @@ properties:
     format: date-time
     readOnly: true
   created_by:
-    type: array
-    items:
-      $ref: UserUpdate.yaml
-    readOnly: true
+    $ref: ./UserResponse.yaml
   modified_at:
     type: string
     format: date-time
@@ -37,10 +34,9 @@ properties:
   verified_debt_amount:
     type: number
   creditor:
-    type: integer
-    description: Creditor ID
+    $ref: ./CreditorResponse.yaml
   debt_buyer:
-    type: string
+    $ref: ./CreditorResponse.yaml
   poa_sent_date:
     type: string
     format: date
