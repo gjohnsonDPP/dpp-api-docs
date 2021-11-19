@@ -230,7 +230,7 @@ paths:
       tags:
         - Calls
       summary: Delete Call Record by ID
-      description: Deletes a single Call Record
+      description: Deletes a Call Record
       operationId: callDelete
       parameters:
         - name: id
