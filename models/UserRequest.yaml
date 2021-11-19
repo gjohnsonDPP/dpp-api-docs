@@ -1,5 +1,5 @@
-title: User
 type: object
+title: User
 description: User Record
 x-tags:
   - User
@@ -97,3 +97,4 @@ properties:
     title: Billable Indicator
     type: boolean
     example: true
+readOnly: true
