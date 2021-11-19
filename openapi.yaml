@@ -959,7 +959,6 @@ paths:
       summary: Create a Debt Record
       description: Creates a Debt Record
       operationId: debtCreate
-      parameters: []
       requestBody:
         required: true
         content:
