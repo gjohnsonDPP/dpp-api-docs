@@ -1,0 +1,88 @@
+title: Settlementoffer
+type: object
+description: Settlment Offer Record
+x-tags:
+  - Settlementoffer
+properties:
+  offer_id:
+    type: integer
+    title: Offer ID
+    example: 4036117
+    readOnly: true
+  acctID:
+    type: integer
+    title: Account ID
+    example: 3863
+    readOnly: true
+  contact_id:
+    title: Contact ID
+    type: integer
+    example: 485599270
+  creditor:
+    $ref: ../models/ContactResponse.yaml
+  debt_id:
+    title: Debt ID
+    type: integer
+    example: 12345
+  created_at:
+    type: string
+    title: Created Date
+    format: date-time
+    readOnly: true
+  created_by:
+    $ref: ../models/UserResponse.yaml
+  modified_at:
+    type: string
+    title: Modified Date
+    format: date-time
+    readOnly: true
+  modified_by:
+    type: integer
+    title: Modified By
+    readOnly: true
+  neg_id:
+    title: Neg ID
+    type: integer
+  madeby:
+    title: Made By
+    type: string
+    example: Negotiator
+  offer_status:
+    title: Offer Status
+    example: 3
+    type: integer
+  offer_status_date:
+    title: Offer Status Date
+    format: date
+    example: '2022-03-07'
+    type: string
+  offer_valid_date:
+    title: Offer Valid Date
+    type: string
+    format: date
+    example: '2021-10-24'
+  settlement_type:
+    title: Settlement Type
+    type: integer
+  debt_amount:
+    title: Debt Amount
+    type: number
+    example: 0
+  settlement_amount:
+    title: Settlement Amount
+    type: number
+    example: 0
+  settlement_fee:
+    title: Settlement Fee
+    type: number
+    example: 0
+  notes:
+    title: Notes
+    type: string
+    example: Lorem Ipsum
+  cred_cont_id:
+    title: Cred Cont ID
+    type: integer
+    example: 0
+  json:
+    type: object

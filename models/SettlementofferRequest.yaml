@@ -1,6 +1,8 @@
 title: Settlementoffer
 type: object
 description: Settlment Offer Record
+x-tags:
+  - Settlementoffer
 properties:
   offer_id:
     type: integer
@@ -17,7 +19,7 @@ properties:
     type: integer
     example: 485599270
   creditor:
-    $ref: ../models/Creditor.yaml
+    $ref: ./CreditorRequest.yaml
   debt_id:
     title: Debt ID
     type: integer
@@ -28,7 +30,7 @@ properties:
     format: date-time
     readOnly: true
   created_by:
-    $ref: ../models/User.yaml
+    $ref: ../models/UserRequest.yaml
   modified_at:
     type: string
     title: Modified Date
@@ -95,5 +97,3 @@ required:
   - debt_amount
   - settlement_amount
   - settlement_fee
-x-tags:
-  - Settlementoffer
