@@ -3,8 +3,10 @@ type: object
 description: Contact Record
 x-tags:
   - Contact
-examples: []
 properties:
+  object:
+    type: string
+    readOnly: true
   id:
     type: integer
     readOnly: true
