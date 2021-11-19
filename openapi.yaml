@@ -959,6 +959,7 @@ paths:
       summary: Create a Debt Record
       description: Creates a Debt Record
       operationId: debtCreate
+      parameters: []
       requestBody:
         required: true
         content:
@@ -977,6 +978,14 @@ paths:
                     type: object
                   status:
                     $ref: models/SuccessStatus.yaml
+              examples:
+                Debt POST 200 Response Example:
+                  value:
+                    response:
+                      id: 0
+                    status:
+                      code: 200
+                      message: Debt Record Created
         '400':
           description: Error
           content:
@@ -987,12 +996,18 @@ paths:
                 properties:
                   status:
                     $ref: models/ErrorStatus.yaml
+              examples:
+                Debt POST 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   '/debts/{id}':
     get:
       tags:
         - Debts
       summary: Find a Debt Record by ID
-      description: Returns a single Debt Record
+      description: Returns a Debt Record
       operationId: debtRead
       parameters:
         - name: id
@@ -1003,16 +1018,83 @@ paths:
             type: integer
       responses:
         '200':
-          description: success
+          description: Successfully retrieved a Debt Record
           content:
             application/json:
               schema:
+                type: object
                 properties:
                   response:
-                    $ref: models/Debt.yaml
-                type: object
+                    $ref: models/DebtUpdate.yaml
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Debt GET 200 Response Example:
+                  value:
+                    response:
+                      object: debt
+                      debt_id: '163173412'
+                      acctID: '3863'
+                      created_at: '2021-11-18 19:20:52'
+                      created_by:
+                        object: user
+                        user_id: '4950368'
+                        acctID: '3863'
+                        guid: 1d7564d6-c57a-0a3a-9e18-adfe6ff22c01
+                        company_id: '42128'
+                        parent_id: '0'
+                        user_type: '1'
+                        created: '2019-10-02 02:41:18'
+                        user_name: Greg
+                        firstname: Greg
+                        lastname: Johnson
+                        company: ''
+                        email: g.johnson@debtpaypro.com
+                        active: '1'
+                        role: '29399'
+                        attorney: '0'
+                        payee_id: '0'
+                        del: '0'
+                        delTime: null
+                        pass_reset: '0'
+                        master: '0'
+                        billable: '1'
+                      modified_at: null
+                      modified_by: null
+                      original_debt_amount: '2205.77'
+                      current_debt_amount: '1905.77'
+                      current_payment: null
+                      current_rate: null
+                      notes: null
+                      verified_debt_amount: null
+                      creditor: '0'
+                      debt_buyer: null
+                      poa_sent_date: null
+                      legal_account: 'No'
+                      last_payment_date: null
+                      last_payment_amount: null
+                      opened_date: null
+                      available_balance: null
+                      enrolled: '0'
+                      enrolled_date: null
+                      debt_type: null
+                      cash_advance: '0'
+                      balance_transfer: '0'
+                      heavy_usage: '0'
+                      has_summons: '0'
+                      debt_status: null
+                      locked: '0'
+                      og_account_num: null
+                      creditor_account_num: null
+                      settled: '0'
+                      settlement_id: null
+                      client_id: '382760691'
+                      settlement_offers: []
+                      customs: []
+                    status:
+                      code: 200
         '400':
-          description: error
+          description: Error
           content:
             application/json:
               schema:
@@ -1020,12 +1102,18 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Debt GET 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
     put:
       tags:
         - Debts
       summary: Update a Debt Record by ID
-      description: Updates a single Debt Record
+      description: Updates a Debt Record
       operationId: debtUpdate
       parameters:
         - name: id
@@ -1035,17 +1123,87 @@ paths:
           schema:
             type: integer
       requestBody:
-        $ref: '#/components/requestBodies/Debt'
+        content:
+          application/json:
+            schema:
+              $ref: models/DebtUpdate.yaml
       responses:
         '200':
-          description: Success
+          description: Successfully Updated a Debt Record
           content:
             application/json:
               schema:
+                type: object
                 properties:
                   response:
-                    $ref: models/Debt.yaml
-                type: object
+                    $ref: models/DebtUpdate.yaml
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Debt PUT 200 Response Example:
+                  value:
+                    response:
+                      object: debt
+                      debt_id: '163173412'
+                      acctID: '3863'
+                      created_at: '2021-11-18 19:20:52'
+                      created_by:
+                        object: user
+                        user_id: '4950368'
+                        acctID: '3863'
+                        guid: 1d7564d6-c57a-0a3a-9e18-adfe6ff22c01
+                        company_id: '42128'
+                        parent_id: '0'
+                        user_type: '1'
+                        created: '2019-10-02 02:41:18'
+                        user_name: Greg
+                        firstname: Greg
+                        lastname: Johnson
+                        company: ''
+                        email: g.johnson@debtpaypro.com
+                        active: '1'
+                        role: '29399'
+                        attorney: '0'
+                        payee_id: '0'
+                        del: '0'
+                        delTime: null
+                        pass_reset: '0'
+                        master: '0'
+                        billable: '1'
+                      modified_at: null
+                      modified_by: null
+                      original_debt_amount: '2205.77'
+                      current_debt_amount: '1905.77'
+                      current_payment: null
+                      current_rate: null
+                      notes: null
+                      verified_debt_amount: null
+                      creditor: '0'
+                      debt_buyer: null
+                      poa_sent_date: null
+                      legal_account: 'No'
+                      last_payment_date: null
+                      last_payment_amount: null
+                      opened_date: null
+                      available_balance: null
+                      enrolled: '0'
+                      enrolled_date: null
+                      debt_type: null
+                      cash_advance: '0'
+                      balance_transfer: '0'
+                      heavy_usage: '0'
+                      has_summons: '0'
+                      debt_status: null
+                      locked: '0'
+                      og_account_num: null
+                      creditor_account_num: null
+                      settled: '0'
+                      settlement_id: null
+                      client_id: '382760691'
+                      settlement_offers: []
+                      customs: []
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
@@ -1056,11 +1214,17 @@ paths:
                 properties:
                   status:
                     $ref: models/Status.yaml
+              examples:
+                Debt PUT 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
     delete:
       tags:
         - Debts
       summary: Delete a Debt Record by ID
-      description: Deletes a single Debt Record object
+      description: Deletes a Debt Record object
       operationId: debtDelete
       parameters:
         - name: id
@@ -1071,16 +1235,20 @@ paths:
             type: integer
       responses:
         '200':
-          description: Success
+          description: Successfully Deleted Debt Record
           content:
             application/json:
               schema:
+                type: object
                 properties:
                   status:
-                    $ref: models/Status.yaml
-                  response:
-                    type: object
-                type: object
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Debt DELETE 200 Response Example:
+                  value:
+                    status:
+                      code: 200
+                      message: Successfully deleted object
         '400':
           description: Error
           content:
@@ -1090,7 +1258,13 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Debt DELETE 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   '/debts/{id}/notes':
     post:
       tags:

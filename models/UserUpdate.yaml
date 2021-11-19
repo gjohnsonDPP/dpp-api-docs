@@ -1,0 +1,99 @@
+title: User
+type: object
+description: User Record
+x-tags:
+  - User
+properties:
+  user_id:
+    title: User ID
+    type: integer
+    example: 6033912
+    readOnly: true
+  acctID:
+    title: Account ID
+    type: integer
+    example: 3863
+    readOnly: true
+  guid:
+    title: Group ID
+    type: string
+    example: ba2a29ca-f1d7-f58d-f670-fb92f716e513
+  company_id:
+    title: Company ID
+    type: integer
+    example: 42128
+    readOnly: true
+  parent_id:
+    title: Parent ID
+    type: integer
+    example: 4950368
+  user_type:
+    title: User Type
+    type: integer
+    example: 1
+  created:
+    title: Created Date
+    type: string
+    format: date-time
+    example: '2021-01-13 12:47:25'
+    readOnly: true
+  user_name:
+    title: User Name
+    type: string
+    example: QAuser
+  firstname:
+    title: First Name
+    type: string
+    example: QA
+  lastname:
+    title: Last Name
+    type: string
+    example: Tester
+  company:
+    title: Company Name
+    type: string
+    example: Acme
+  email:
+    title: Company Email
+    type: string
+    example: mail@debtpaypro.com
+  active:
+    type: boolean
+    title: Active Indicator
+    example: true
+    default: true
+  role:
+    title: Role
+    type: integer
+    example: 29399
+  attorney:
+    title: Attorney Indicator
+    type: boolean
+    example: true
+  payee_id:
+    title: Payee ID
+    type: integer
+    example: 23006
+  del:
+    title: Del
+    type: integer
+    example: 0
+    readOnly: true
+  delTime:
+    title: Delete Date
+    type: string
+    format: date-time
+    example: '2021-01-13 12:47:25'
+    readOnly: true
+  pass_reset:
+    title: Password Reset
+    type: boolean
+    example: false
+  master:
+    title: Master Indicator
+    type: boolean
+    example: false
+  billable:
+    title: Billable Indicator
+    type: boolean
+    example: true
