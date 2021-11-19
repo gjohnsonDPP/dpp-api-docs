@@ -1410,6 +1410,7 @@ paths:
           application/json:
             schema:
               $ref: models/LoanRequest.yaml
+            examples: {}
       responses:
         '200':
           description: Successfully created a Loan Record
