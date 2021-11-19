@@ -1115,10 +1115,7 @@ paths:
       description: Updates a Debt Record
       operationId: debtUpdate
       requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: models/DebtUpdate.yaml
+        $ref: '#/components/requestBodies/Debt'
       parameters:
         - name: id
           in: path
@@ -3746,7 +3743,7 @@ components:
       content:
         application/json:
           schema:
-            $ref: models/Debt.yaml
+            $ref: models/DebtUpdate.yaml
       description: Debt Object
       required: true
     Team:
