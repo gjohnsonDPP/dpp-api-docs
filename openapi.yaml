@@ -1410,7 +1410,6 @@ paths:
           application/json:
             schema:
               $ref: models/LoanRequest.yaml
-            examples: {}
       responses:
         '200':
           description: Successfully created a Loan Record
@@ -1477,28 +1476,28 @@ paths:
                   value:
                     response:
                       object: loan
-                      id: 1863358
-                      acctID: 3863
+                      loan_id: '1863358'
+                      acctID: '3863'
                       tp_id: '0'
                       created_at: '2021-11-18 21:23:07'
-                      created_by: 4950368
+                      created_by: '4950368'
                       modified_at: null
                       modified_by: null
-                      client_id: 382760691
-                      advance_type: ACH
+                      client_id: '0'
+                      advance_type: string
                       advance_date: '2019-08-24'
                       paid_in_full_date: '2019-08-24'
                       defaulted_date: '2019-08-24'
-                      type_id: '1'
+                      type_id: '0'
                       program_id: '0'
-                      loan_class: '1'
-                      loan_amount: 4545
-                      payback_amount: 0
+                      loan_class: '0'
+                      loan_amount: '0.00'
+                      payback_amount: '0.00'
                       rate: '0'
                       payment: '0.00'
                       holdback_percent: '0'
                       payback_period: '0.00'
-                      frequency: D
+                      frequency: string
                       freq_int: string
                       period_amount: '0'
                       fees: '0.00'
@@ -1507,7 +1506,7 @@ paths:
                       contract_date: '2019-08-24'
                       contract_number: string
                       funded: '0'
-                      status: '10'
+                      status: '0'
                       lien_pos: '0'
                       ach_start_date: '2019-08-24'
                       ach_on: '0'
@@ -1535,7 +1534,7 @@ paths:
       tags:
         - Loans
       summary: Update a Loan Record by ID
-      description: Updates a single Loan Record
+      description: Updates a Loan Record
       operationId: loanUpdate
       parameters:
         - name: id
@@ -1549,7 +1548,6 @@ paths:
           application/json:
             schema:
               $ref: models/LoanResponse.yaml
-            examples: {}
       responses:
         '200':
           description: Successfully updated a Loan Record
@@ -1567,28 +1565,28 @@ paths:
                   value:
                     response:
                       object: loan
-                      id: 1863358
-                      acctID: 3863
+                      loan_id: '1863361'
+                      acctID: '3863'
                       tp_id: '0'
-                      created_at: '2021-11-18 21:23:07'
-                      created_by: 4950368
+                      created_at: '2021-11-18 21:35:36'
+                      created_by: '4950368'
                       modified_at: null
                       modified_by: null
-                      client_id: 382760691
-                      advance_type: ACH
+                      client_id: '0'
+                      advance_type: string
                       advance_date: '2019-08-24'
                       paid_in_full_date: '2019-08-24'
                       defaulted_date: '2019-08-24'
-                      type_id: '1'
+                      type_id: '0'
                       program_id: '0'
-                      loan_class: '1'
-                      loan_amount: 4545
-                      payback_amount: 0
+                      loan_class: '0'
+                      loan_amount: '0.00'
+                      payback_amount: '0.00'
                       rate: '0'
                       payment: '0.00'
                       holdback_percent: '0'
                       payback_period: '0.00'
-                      frequency: D
+                      frequency: string
                       freq_int: string
                       period_amount: '0'
                       fees: '0.00'
@@ -1597,12 +1595,12 @@ paths:
                       contract_date: '2019-08-24'
                       contract_number: string
                       funded: '0'
-                      status: '10'
+                      status: '0'
                       lien_pos: '0'
                       ach_start_date: '2019-08-24'
                       ach_on: '0'
                       pricing_lock: '0'
-                      offer_set: '1043077'
+                      offer_set: '1043080'
                     status:
                       code: 200
         '400':
