@@ -2,6 +2,9 @@ title: Loan
 type: object
 description: Loan Record
 properties:
+  object:
+    type: string
+    readOnly: true
   id:
     type: integer
     readOnly: true
