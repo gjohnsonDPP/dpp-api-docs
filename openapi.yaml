@@ -791,11 +791,10 @@ paths:
             type: integer
       responses:
         '200':
-          description: Successfully Deleted Contact Record
+          description: Successfully deleted Contact Record
           content:
             application/json:
               schema:
-                type: object
                 properties:
                   status:
                     $ref: models/SuccessStatus.yaml
@@ -814,7 +813,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
               examples:
                 Contact DELETE 400 Response Example:
                   value:
