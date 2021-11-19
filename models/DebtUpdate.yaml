@@ -17,7 +17,7 @@ properties:
   created_by:
     type: array
     items:
-      $ref: ../models/UserUpdate.yaml
+      $ref: UserUpdate.yaml
     readOnly: true
   modified_at:
     type: string
