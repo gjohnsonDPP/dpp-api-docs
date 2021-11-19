@@ -6,13 +6,18 @@ x-tags:
 properties:
   address1:
     type: string
+    default: 123 Main St.
   address2:
     type: string
+    default: Apt. 4008
   address3:
     type: string
   city:
     type: string
+    default: Chicago
   state:
     type: string
+    default: IL
   zip:
     type: string
+    default: '60612'
