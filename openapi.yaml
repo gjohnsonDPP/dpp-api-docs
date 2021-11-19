@@ -1220,7 +1220,7 @@ paths:
       tags:
         - Debts
       summary: Delete a Debt Record by ID
-      description: Deletes a Debt Record object
+      description: Deletes a Debt Record
       operationId: debtDelete
       parameters:
         - name: id
