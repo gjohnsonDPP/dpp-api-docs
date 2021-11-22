@@ -1082,7 +1082,10 @@ paths:
       tags:
         - Debts
       summary: Create a Debt Record
-      description: Creates a Debt Record
+      description: |-
+        Creates a Debt Record
+
+        <span><i class="fa fa-info-circle"></i><i style="font-size:12px"> Select the `'Examples'` option to change the content of the request's Body to ONLY contain the required POST Parameters.</i></span>
       operationId: debtCreate
       requestBody:
         required: true

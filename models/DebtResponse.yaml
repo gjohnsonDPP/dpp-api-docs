@@ -4,18 +4,25 @@ description: Debt Record
 x-tags:
   - Debt
 properties:
+  object:
+    type: string
+    example: debt
+    readOnly: true
   id:
     type: integer
+    example: 124507509
     readOnly: true
   acctID:
     type: integer
+    example: 3863
     readOnly: true
   created_at:
     type: string
     format: date-time
     readOnly: true
   created_by:
-    $ref: ./UserResponse.yaml
+    $ref: ../models/UserResponse.yaml
+    readOnly: true
   modified_at:
     type: string
     format: date-time
@@ -25,54 +32,75 @@ properties:
     readOnly: true
   original_debt_amount:
     type: number
+    example: 10500.00
   current_debt_amount:
     type: number
+    example: 9499.50
   current_payment:
     type: number
+    example: 153.00
   current_rate:
     type: number
+    example: 0.00
   verified_debt_amount:
     type: number
+    example: 0.00
   creditor:
-    $ref: ./CreditorResponse.yaml
+    type: integer
+    example: 540
+    description: ID of Original Creditor
   debt_buyer:
-    $ref: ./CreditorResponse.yaml
+    type: integer
+    example: 17576331
+    description: ID of Debt Buyer
   poa_sent_date:
     type: string
     format: date
   legal_account:
     type: string
+    example: "No"
   last_payment_date:
     type: string
     format: date
   last_payment_amount:
     type: number
+    example: 0.00
   opened_date:
     type: string
     format: date
   available_balance:
     type: number
+    example: 0.00
   enrolled:
     type: integer
+    default: false
   enrolled_date:
     type: string
     format: date
   debt_type:
     type: integer
+    example: 0
   debt_status:
     type: string
+    example: ""
   locked:
-    type: integer
+    type: boolean
+    default: false
   og_account_num:
     type: string
+    example: "12345674445"
   creditor_account_num:
     type: string
+    example: ""
   settled:
-    type: integer
+    type: boolean
+    default: false
   settlement_id:
     type: integer
+    example: 0
   client_id:
     type: integer
+    example: 382760691
   settlement_offers:
     type: array
     items:
@@ -81,3 +109,4 @@ properties:
     type: array
     items:
       type: string
+
