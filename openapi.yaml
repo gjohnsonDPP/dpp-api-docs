@@ -2705,27 +2705,26 @@ paths:
             examples:
               Request:
                 value:
-                  guid: ba2a29ca-f1d7-f58d-f670-fb92f716e513
                   parent_id: 4950368
                   user_type: 1
-                  user_name: QAuser
-                  firstname: QA
-                  lastname: Tester
-                  company: Acme
+                  user_name: API_User123
+                  firstname: John
+                  lastname: Doe
+                  company: API Test Company
                   email: mail@debtpaypro.com
                   active: true
                   role: 29399
                   attorney: true
                   payee_id: 23006
-                  pass_reset: false
-                  master: false
-                  billable: true
               Required Parameters Only:
                 value:
                   user_type: 1
-                  user_name: QAuser
+                  user_name: API_User123
+                  firstname: John
+                  lastname: Doe
                   email: mail@debtpaypro.com
                   active: true
+                  role: 29399
         description: User Object
       responses:
         '200':
