@@ -1,0 +1,22 @@
+title: Call (Required)
+type: object
+description: Call Record Object
+x-tags:
+  - Call
+properties:
+  contactID:
+    type: integer
+    example: 516553837
+  call_type:
+    type: string
+    enum:
+      - Outgoing
+      - Incoming
+    example: Outgoing
+  call_result:
+    type: string
+    example: Busy
+required:
+- contactID
+- call_type
+- call_result

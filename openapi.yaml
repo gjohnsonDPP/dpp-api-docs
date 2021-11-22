@@ -55,7 +55,7 @@ paths:
             schema:
               oneOf:
                 - $ref: models/CallRequest.yaml
-                - $ref: models/CampaignRequest.yaml
+                - $ref: models/CallRequestRequiredOnly.yaml
       responses:
         '200':
           description: Successfully created a Call Record
