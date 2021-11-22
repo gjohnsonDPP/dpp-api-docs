@@ -797,7 +797,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/requestBodies/Contact'
+              $ref: ./models/DebtResponse.yaml
       parameters:
         - name: id
           in: path
