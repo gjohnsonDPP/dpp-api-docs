@@ -4,6 +4,7 @@ description: Loan Record
 properties:
   object:
     type: string
+    example: loan
     readOnly: true
   id:
     type: integer
@@ -15,6 +16,8 @@ properties:
     example: 3863
   tp_id:
     type: integer
+    example: 0
+    readOnly: true
   created_at:
     type: string
     format: date-time
@@ -38,66 +41,88 @@ properties:
   advance_date:
     type: string
     format: date
+    readOnly: true
   paid_in_full_date:
     type: string
     format: date
+    readOnly: true
   defaulted_date:
     type: string
     format: date
+    readOnly: true
   type_id:
     type: integer
-    example: "1"
+    example: 1
   program_id:
     type: integer
+    example: 0
   loan_class:
     type: integer
-    example: "1"
+    example: 1
   loan_amount:
     type: number
     example: 4550.72
   payback_amount:
     type: number
+    example: 0.00
   rate:
     type: number
+    example: 0.00
   payment:
     type: number
+    example: 0.00
   holdback_percent:
     type: number
+    example: .02%
   payback_period:
     type: integer
+    example: 0
   frequency:
     type: string
     example: "D"
   freq_int:
     type: string
+    example: ""
   period_amount:
     type: number
+    example: 0.00
   fees:
     type: number
+    example: 0.00
   conf_num:
     type: string
+    example: "12345"
   underwrite_notes:
     type: string
     example: "Lorem Ipsum"
   contract_date:
     type: string
     format: date
+    readOnly: true
   contract_number:
     type: string
+    readOnly: true
   funded:
-    type: integer
+    type: boolean
+    default: false
   status:
     type: integer
     example: 10
   lien_pos:
     type: integer
+    example: 0
   ach_start_date:
     type: string
     format: date
+    readOnly: true
   ach_on:
-    type: integer
+    type: boolean
+    default: false
   pricing_lock:
-    type: integer
+    type: boolean
+    default: false
   offer_set:
     type: integer
     example: 1043077
+x-tags:
+  - Loan
