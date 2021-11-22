@@ -918,7 +918,7 @@ paths:
             type: integer
       responses:
         '200':
-          description: Successfully deleted Contact Record
+          description: Successfully deleted a Contact Record
           content:
             application/json:
               schema:
