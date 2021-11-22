@@ -6,7 +6,7 @@ x-tags:
 properties:
   object:
     type: string
-    example: "user"
+    example: user
     readOnly: true
   user_id:
     title: User ID
