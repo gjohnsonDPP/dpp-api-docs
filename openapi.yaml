@@ -1929,7 +1929,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: models/Task.yaml
+              $ref: models/TaskRequest.yaml
         description: Task object to be created
         required: true
       responses:
