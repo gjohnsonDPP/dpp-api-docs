@@ -8,7 +8,7 @@ properties:
     type: string
     example: user
     readOnly: true
-  user_id:
+  id:
     title: User ID
     type: integer
     example: 6033912

@@ -4,7 +4,11 @@ description: User Record
 x-tags:
   - User
 properties:
-  user_id:
+  object:
+    type: string
+    example: user
+    readOnly: true
+  id:
     title: User ID
     type: integer
     example: 6033912
