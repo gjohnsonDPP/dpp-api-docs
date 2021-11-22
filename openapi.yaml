@@ -1877,6 +1877,31 @@ paths:
           application/json:
             schema:
               $ref: models/SettlementofferRequest.yaml
+            examples:
+              Request:
+                value:
+                  offer_id: 3319980
+                  contact_id: 382760691
+                  creditor: 0
+                  debt_id: 124504794
+                  offer_status: 0
+                  offer_status_date: '2019-08-24T14:15:22Z'
+                  offer_valid_date: '2019-08-24'
+                  settlement_type: 0
+                  debt_amount: 8500.55
+                  settlement_amount: 0
+                  settlement_fee: 0
+                  notes: Lorem Ipsum
+                  cred_cont_id: 0
+                  json: {}
+              Required Parameters Only:
+                value:
+                  contact_id: 382760691
+                  debt_id: 124504794
+                  offer_valid_date: '2019-08-24'
+                  settlement_type: 0
+                  debt_amount: 8500.55
+                  settlement_amount: 0
         required: true
       responses:
         '200':

@@ -8,7 +8,7 @@ properties:
     type: string
     readOnly: true
     example: "settlement_offer"
-  offer_id:
+  id:
     type: integer
     example: 3319980
   acctID:
