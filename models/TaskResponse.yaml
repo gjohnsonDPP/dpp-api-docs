@@ -25,18 +25,17 @@ properties:
     readOnly: true
   task_name:
     type: string
-    example: "Task Name"
+    example: Task Name
   defined_task:
     type: integer
   created_by:
-    type: integer
-    readOnly: true
+    $ref: ./UserResponse.yaml
   task_due_date:
     type: string
     format: date
   task_note:
     type: string
-    example: "Task Note"
+    example: Task Note
   list_id:
     type: integer
   team_id:
@@ -57,7 +56,7 @@ properties:
     type: integer
   title:
     type: string
-    example: "Title"
+    example: Title
   assigned_to_id:
     type: integer
   task_type:
