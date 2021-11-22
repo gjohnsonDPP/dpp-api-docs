@@ -74,7 +74,7 @@ paths:
                   contactID: 516553837
                   call_type: Outgoing
                   call_result: Busy
-        description: 'blah blah blah'
+        description: 'Toggle the "Examples" option to set the Request body to contain ONLY the required POST Parameters.'
       responses:
         '200':
           description: Successfully created a Call Record
