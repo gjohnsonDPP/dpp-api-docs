@@ -2558,7 +2558,7 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: models/ResponseTeam.yaml
+                    $ref: models/TeamResponse.yaml
                   status:
                     $ref: models/SuccessStatus.yaml
               examples:
