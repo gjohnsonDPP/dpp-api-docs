@@ -2498,8 +2498,6 @@ paths:
       summary: Create a Team Record
       description: Creates a Team Record
       operationId: teamCreate
-      requestBody:
-        $ref: models/TeamRequest.yaml
       responses:
         '200':
           description: Successfully created a Team Record
@@ -2535,6 +2533,15 @@ paths:
                     status:
                       code: 400
                       message: 'Input Parsing Error: unexpected character'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/TeamRequest.yaml
+            examples:
+              Request:
+                value:
+                  name: Test
   '/teams/{id}':
     get:
       tags:
