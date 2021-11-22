@@ -28,17 +28,10 @@ properties:
     type: string
     format: date-time
     readOnly: true
-  created_by:
-    $ref: ../models/UserResponse.yaml
   modified_at:
     type: string
     format: date-time
     readOnly: true
-  modified_by:
-    $ref: ../models/UserResponse.yaml
-    readOnly: true
-  neg_id:
-    $ref: ../models/UserResponse.yaml
   madeby:
     type: string
     readOnly: true
