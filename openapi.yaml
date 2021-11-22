@@ -2757,9 +2757,37 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: models/ResponseUser.yaml
+                    $ref: models/UserResponse.yaml
                   status:
                     $ref: models/SuccessStatus.yaml
+              examples:
+                Users GET 200 Response Example:
+                  value:
+                    response:
+                      object: user
+                      id: 6033912
+                      acctID: 3863
+                      guid: ba2a29ca-f1d7-f58d-f670-fb92f716e513
+                      company_id: 42128
+                      parent_id: 4950368
+                      user_type: 1
+                      created: '2021-01-13 12:47:25'
+                      user_name: QAuser
+                      firstname: QA
+                      lastname: Tester
+                      company: Acme
+                      email: mail@debtpaypro.com
+                      active: true
+                      role: 29399
+                      attorney: true
+                      payee_id: 23006
+                      del: 0
+                      delTime: '2021-01-13 12:47:25'
+                      pass_reset: false
+                      master: false
+                      billable: true
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
@@ -2770,6 +2798,12 @@ paths:
                 properties:
                   status:
                     $ref: models/ErrorStatus.yaml
+              examples:
+                User GET 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
     put:
       tags:
         - Users
@@ -2801,6 +2835,34 @@ paths:
                     $ref: models/UserResponse.yaml
                   status:
                     $ref: models/SuccessStatus.yaml
+              examples:
+                Users PUT 200 Response Example:
+                  value:
+                    response:
+                      object: user
+                      id: 6033912
+                      acctID: 3863
+                      guid: ba2a29ca-f1d7-f58d-f670-fb92f716e513
+                      company_id: 42128
+                      parent_id: 4950368
+                      user_type: 1
+                      created: '2021-01-13 12:47:25'
+                      user_name: QAuser
+                      firstname: QA
+                      lastname: Tester
+                      company: Acme
+                      email: mail@debtpaypro.com
+                      active: true
+                      role: 29399
+                      attorney: true
+                      payee_id: 23006
+                      del: 0
+                      delTime: '2021-01-13 12:47:25'
+                      pass_reset: false
+                      master: false
+                      billable: true
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
@@ -2811,6 +2873,12 @@ paths:
                 properties:
                   status:
                     $ref: models/ErrorStatus.yaml
+              examples:
+                User PUT 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
     delete:
       tags:
         - Users
@@ -2844,6 +2912,12 @@ paths:
                 properties:
                   status:
                     $ref: models/ErrorStatus.yaml
+              examples:
+                Users Delete 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   /users/current:
     get:
       tags:
