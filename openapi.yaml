@@ -2713,6 +2713,13 @@ paths:
                     type: object
                   status:
                     $ref: models/SuccessStatus.yaml
+              examples:
+                Users Post 200 Response Example:
+                  value:
+                    response:
+                      id: 6664975
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
@@ -2721,6 +2728,12 @@ paths:
                 properties:
                   status:
                     $ref: models/ErrorStatus.yaml
+              examples:
+                Users Post 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   '/users/{id}':
     get:
       tags:
