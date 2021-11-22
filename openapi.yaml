@@ -1567,7 +1567,10 @@ paths:
       tags:
         - Loans
       summary: Create a Loan Record
-      description: Creates a Loan Record
+      description: |-
+        Creates a Loan Record
+
+        <span><i class="fa fa-info-circle"></i><i style="font-size:12px"> Select the `'Examples'` option to change the content of the request's Body to ONLY contain the required POST Parameters.</i></span>
       operationId: loanCreate
       requestBody:
         required: true
@@ -1575,6 +1578,37 @@ paths:
           application/json:
             schema:
               $ref: models/LoanRequest.yaml
+            examples:
+              Request:
+                value:
+                  client_id: 382760691
+                  advance_type: ACH
+                  type_id: 1
+                  program_id: 0
+                  loan_class: 1
+                  loan_amount: 4550.72
+                  payback_amount: 0
+                  rate: 0
+                  payment: 0
+                  holdback_percent: .02%
+                  payback_period: 0
+                  frequency: D
+                  freq_int: ''
+                  period_amount: 0
+                  fees: 0
+                  conf_num: '12345'
+                  underwrite_notes: Lorem Ipsum
+                  funded: false
+                  status: 10
+                  lien_pos: 0
+                  ach_on: false
+                  pricing_lock: false
+                  offer_set: 1043077
+              Required Parameters Only:
+                value:
+                  client_id: 382760691
+                  loan_amount: 4550.72
+                  payback_amount: 0
       responses:
         '200':
           description: Successfully created a Loan Record
@@ -1641,42 +1675,42 @@ paths:
                   value:
                     response:
                       object: loan
-                      loan_id: '1863358'
+                      loan_id: '1868335'
                       acctID: '3863'
-                      tp_id: '0'
-                      created_at: '2021-11-18 21:23:07'
+                      tp_id: null
+                      created_at: '2021-11-22 05:02:09'
                       created_by: '4950368'
                       modified_at: null
                       modified_by: null
-                      client_id: '0'
-                      advance_type: string
-                      advance_date: '2019-08-24'
-                      paid_in_full_date: '2019-08-24'
-                      defaulted_date: '2019-08-24'
-                      type_id: '0'
+                      client_id: '382760691'
+                      advance_type: ACH
+                      advance_date: null
+                      paid_in_full_date: null
+                      defaulted_date: null
+                      type_id: '1'
                       program_id: '0'
-                      loan_class: '0'
-                      loan_amount: '0.00'
+                      loan_class: '1'
+                      loan_amount: '4550.72'
                       payback_amount: '0.00'
                       rate: '0'
                       payment: '0.00'
-                      holdback_percent: '0'
+                      holdback_percent: '0.02'
                       payback_period: '0.00'
-                      frequency: string
-                      freq_int: string
+                      frequency: D
+                      freq_int: ''
                       period_amount: '0'
                       fees: '0.00'
-                      conf_num: string
+                      conf_num: '12345'
                       underwriter_notes: ''
-                      contract_date: '2019-08-24'
-                      contract_number: string
+                      contract_date: null
+                      contract_number: ''
                       funded: '0'
-                      status: '0'
+                      status: '10'
                       lien_pos: '0'
-                      ach_start_date: '2019-08-24'
+                      ach_start_date: null
                       ach_on: '0'
                       pricing_lock: '0'
-                      offer_set: '1043077'
+                      offer_set: '1048066'
                     status:
                       code: 200
         '400':
@@ -1730,42 +1764,42 @@ paths:
                   value:
                     response:
                       object: loan
-                      loan_id: '1863361'
+                      loan_id: '1868335'
                       acctID: '3863'
-                      tp_id: '0'
-                      created_at: '2021-11-18 21:35:36'
+                      tp_id: null
+                      created_at: '2021-11-22 05:02:09'
                       created_by: '4950368'
                       modified_at: null
                       modified_by: null
-                      client_id: '0'
-                      advance_type: string
-                      advance_date: '2019-08-24'
-                      paid_in_full_date: '2019-08-24'
-                      defaulted_date: '2019-08-24'
-                      type_id: '0'
+                      client_id: '382760691'
+                      advance_type: ACH
+                      advance_date: null
+                      paid_in_full_date: null
+                      defaulted_date: null
+                      type_id: '1'
                       program_id: '0'
-                      loan_class: '0'
-                      loan_amount: '0.00'
+                      loan_class: '1'
+                      loan_amount: '4550.72'
                       payback_amount: '0.00'
                       rate: '0'
                       payment: '0.00'
-                      holdback_percent: '0'
+                      holdback_percent: '0.02'
                       payback_period: '0.00'
-                      frequency: string
-                      freq_int: string
+                      frequency: D
+                      freq_int: ''
                       period_amount: '0'
                       fees: '0.00'
-                      conf_num: string
+                      conf_num: '12345'
                       underwriter_notes: ''
-                      contract_date: '2019-08-24'
-                      contract_number: string
+                      contract_date: null
+                      contract_number: ''
                       funded: '0'
-                      status: '0'
+                      status: '10'
                       lien_pos: '0'
-                      ach_start_date: '2019-08-24'
+                      ach_start_date: null
                       ach_on: '0'
                       pricing_lock: '0'
-                      offer_set: '1043080'
+                      offer_set: '1048066'
                     status:
                       code: 200
         '400':
