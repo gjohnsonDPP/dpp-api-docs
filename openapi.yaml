@@ -2404,6 +2404,12 @@ paths:
                 properties:
                   status:
                     $ref: models/SuccessStatus.yaml
+              examples:
+                Task Delete 200 Response Example:
+                  value:
+                    status:
+                      code: 200
+                      message: Successfully deleted object
         '400':
           description: Error
           content:
