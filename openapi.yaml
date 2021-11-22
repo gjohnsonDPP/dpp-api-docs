@@ -3988,15 +3988,6 @@ components:
               response:
                 type: object
                 properties: {}
-    call:
-      description: Example response
-      content:
-        application/json:
-          schema:
-            properties:
-              id:
-                type: string
-      headers: {}
   parameters:
     id:
       name: id
@@ -4020,8 +4011,8 @@ components:
         application/json:
           schema:
             oneOf:
-              - $ref: models/CallRequest.yaml
               - $ref: models/CallRequestRequiredOnly.yaml
+              - $ref: models/CallRequest.yaml
     Contact:
       content:
         application/json:
@@ -4032,7 +4023,7 @@ components:
     Loan:
       content:
         application/json:
-          schema: 
+          schema:
             $ref: '#/components/schemas/Loan'
       description: Loan Object
       required: true
