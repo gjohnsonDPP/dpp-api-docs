@@ -2677,7 +2677,6 @@ paths:
             schema:
               $ref: models/UserRequest.yaml
         description: User Object
-        required: true
       responses:
         '200':
           description: Successfully created User Record
