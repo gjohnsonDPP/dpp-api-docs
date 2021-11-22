@@ -58,12 +58,10 @@ properties:
   title:
     type: string
     example: "Title"
-  assigned_to_id:
-    type: integer
   task_type:
     type: integer
   assigned_to:
-    type: string
+    type: integer
 required:
   - contact_id
   - task_name

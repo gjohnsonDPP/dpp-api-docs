@@ -2221,13 +2221,41 @@ paths:
       tags:
         - Tasks
       summary: Create a Task Record
-      description: Creates a Task Record
+      description: |-
+        Creates a Task Record
+
+        <span><i class="fa fa-info-circle"></i><i style="font-size:12px"> Select the `'Examples'` option to change the content of the request's Body to ONLY contain the required POST Parameters.</i></span>
       operationId: taskCreate
       requestBody:
         content:
           application/json:
             schema:
               $ref: models/TaskRequest.yaml
+            examples:
+              Request:
+                value:
+                  contact_id: 516553837
+                  task_name: Task Name
+                  defined_task: 0
+                  task_due_date: '2019-08-24'
+                  task_note: Task Note
+                  list_id: 123
+                  team_id: 123
+                  task_completion_percentage: 0
+                  task_status: 0
+                  title: Title
+                  assigned_to_id: 516553837
+                  task_type: 0
+                  assigned_to: 382760691
+              Required Parameters Only:
+                value:
+                  contact_id: 516553837
+                  task_name: Task Name
+                  defined_task: 25907
+                  task_due_date: '2019-08-24'
+                  task_note: Task Note
+                  title: Title
+                  assigned_to: 382760691
         description: Task object to be created
         required: true
       responses:
