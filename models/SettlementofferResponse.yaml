@@ -11,6 +11,7 @@ properties:
   id:
     type: integer
     example: 3319980
+    readOnly: true
   acctID:
     type: integer
     example: 3863

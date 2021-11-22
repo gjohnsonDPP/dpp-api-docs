@@ -1880,7 +1880,6 @@ paths:
             examples:
               Request:
                 value:
-                  offer_id: 3319980
                   contact_id: 382760691
                   creditor: 0
                   debt_id: 124504794
