@@ -797,7 +797,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: ./models/ContactRequest.yaml
+              $ref: ./models/ContactResponse.yaml
       parameters:
         - name: id
           in: path
