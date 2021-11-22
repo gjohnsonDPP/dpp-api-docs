@@ -56,7 +56,6 @@ paths:
               $ref: models/CallRequest.yaml
             examples:
               Request:
-                description: "blah blah blah"
                 value:
                   contactID: 516553837
                   activity_id: 608125717
@@ -75,7 +74,7 @@ paths:
                   contactID: 516553837
                   call_type: Outgoing
                   call_result: Busy
-        description: ''
+        description: 'blah blah blah'
       responses:
         '200':
           description: Successfully created a Call Record
