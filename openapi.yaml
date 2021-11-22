@@ -1207,11 +1207,11 @@ paths:
                         parent_id: '0'
                         user_type: '1'
                         created: '2019-10-02 02:41:18'
-                        user_name: Greg
-                        firstname: Greg
-                        lastname: Johnson
+                        user_name: JDoe
+                        firstname: John
+                        lastname: Doe
                         company: ''
-                        email: g.johnson@debtpaypro.com
+                        email: test@test.com
                         active: '1'
                         role: '29399'
                         attorney: '0'
@@ -1254,10 +1254,10 @@ paths:
                         is_active: '1'
                         company_name: Bob's Debt Co.
                         first_name: Bob
-                        last_name: Villa
+                        last_name: Smith
                         address:
                           address1: 101 Debt Way
-                          address2: ''
+                          address2: Suite 2200
                           address3: null
                           city: Chicago
                           state: IL
@@ -1347,11 +1347,11 @@ paths:
                         parent_id: '0'
                         user_type: '1'
                         created: '2019-10-02 02:41:18'
-                        user_name: Greg
-                        firstname: Greg
-                        lastname: Johnson
+                        user_name: JDoe
+                        firstname: John
+                        lastname: Doe
                         company: ''
-                        email: g.johnson@debtpaypro.com
+                        email: test@test.com
                         active: '1'
                         role: '29399'
                         attorney: '0'
@@ -1394,10 +1394,10 @@ paths:
                         is_active: '1'
                         company_name: Bob's Debt Co.
                         first_name: Bob
-                        last_name: Villa
+                        last_name: Smith
                         address:
                           address1: 101 Debt Way
-                          address2: ''
+                          address2: Suite 2200
                           address3: null
                           city: Chicago
                           state: IL
