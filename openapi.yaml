@@ -2666,27 +2666,30 @@ paths:
       tags:
         - Users
       summary: Create a User Record
-      description: Creates a new User Record object
+      description: |-
+        Creates a User Record object
+
+        <span><i class="fa fa-info-circle"></i><i style="font-size:12px"> Select the `'Examples'` option to change the content of the request's Body to ONLY contain the required POST Parameters.</i></span>
       operationId: userCreate
       requestBody:
         content:
           application/json:
             schema:
-              $ref: models/User.yaml
+              $ref: models/UserRequest.yaml
         description: User Object
         required: true
       responses:
         '200':
-          description: Success
+          description: Successfully created User Record
           content:
             application/json:
               schema:
+                type: object
                 properties:
-                  status:
-                    $ref: models/Status.yaml
                   response:
                     type: object
-                type: object
+                  status:
+                    $ref: models/SuccessStatus.yaml
         '400':
           description: Error
           content:
@@ -2694,10 +2697,7 @@ paths:
               schema:
                 properties:
                   status:
-                    $ref: models/Status.yaml
-                  response:
-                    type: object
-                type: object
+                    $ref: models/ErrorStatus.yaml
   '/users/{id}':
     get:
       tags:
