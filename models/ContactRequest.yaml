@@ -13,10 +13,6 @@ properties:
     type: integer
     example: 382760691
     readOnly: true
-  acctID:
-    type: integer
-    example: 3863
-    readOnly: true
   company_id:
     type: integer
     example: 42128

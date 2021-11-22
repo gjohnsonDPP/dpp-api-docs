@@ -12,10 +12,6 @@ properties:
     type: integer
     example: 32549869
     readOnly: true
-  acctID:
-    type: integer
-    example: 2715
-    readOnly: true
   contact_id:
     type: integer
     example: 516553837
@@ -57,7 +53,5 @@ properties:
   title:
     type: string
     example: Title
-  task_type:
-    type: integer
   assigned_to:
     type: integer

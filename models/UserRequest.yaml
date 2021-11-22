@@ -13,15 +13,6 @@ properties:
     type: integer
     example: 6033912
     readOnly: true
-  acctID:
-    title: Account ID
-    type: integer
-    example: 3863
-    readOnly: true
-  guid:
-    title: Group ID
-    type: string
-    example: ba2a29ca-f1d7-f58d-f670-fb92f716e513
   company_id:
     title: Company ID
     type: integer
@@ -89,18 +80,6 @@ properties:
     format: date-time
     example: '2021-01-13 12:47:25'
     readOnly: true
-  pass_reset:
-    title: Password Reset
-    type: boolean
-    example: false
-  master:
-    title: Master Indicator
-    type: boolean
-    example: false
-  billable:
-    title: Billable Indicator
-    type: boolean
-    example: true
 required:
   - user_name
   - user_type

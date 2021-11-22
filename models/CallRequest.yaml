@@ -14,10 +14,6 @@ properties:
     description: ID of the call record
     example: 385319179
     readOnly: true
-  acctID:
-    type: integer
-    example: 2715
-    readOnly: true
   contactID:
     type: integer
     example: 516553837
@@ -25,9 +21,6 @@ properties:
     type: integer
     example: 3028014
     readOnly: true
-  activity_id:
-    type: integer
-    example: 608125717
   sdate:
     type: string
     format: date
@@ -45,9 +38,6 @@ properties:
   call_result:
     type: string
     example: Busy
-  call_dis_id:
-    type: integer
-    example: 2
   notes:
     type: string
     example: Lorem Ipsum
@@ -65,9 +55,6 @@ properties:
   dialer_id:
     type: integer
     example: 2
-  recording_id:
-    type: integer
-    example: 3
 required:
 - contactID
 - call_type
