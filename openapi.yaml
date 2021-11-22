@@ -2013,7 +2013,7 @@ paths:
       tags:
         - Tasks
       summary: Update a Task Record by ID
-      description: Updates a single Task Record object
+      description: Updates a Task Record
       operationId: taskUpdate
       parameters:
         - name: id
@@ -2026,21 +2026,20 @@ paths:
         content:
           application/json:
             schema:
-              $ref: models/Task.yaml
+              $ref: models/TaskResponse.yaml
         description: Task object that needs to be updated
-        required: true
       responses:
         '200':
-          description: default
+          description: Successfully updated a Task Record
           content:
             application/json:
               schema:
-                properties:
-                  status:
-                    $ref: models/Status.yaml
-                  response:
-                    $ref: models/Task.yaml
                 type: object
+                properties:
+                  response:
+                    $ref: models/TaskResponse.yaml
+                  status:
+                    $ref: models/SuccessStatus.yaml
         '400':
           description: Error
           content:
@@ -2050,7 +2049,13 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Task PUT 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
     delete:
       tags:
         - Tasks
