@@ -49,11 +49,7 @@ paths:
       tags:
         - Calls
       requestBody:
-        description: Create a new Call Record
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/requestBodies/CreateCall'
+        $ref: '#/components/requestBodies/Call'
       responses:
         '200':
           description: Successfully created a Call Record
@@ -4019,14 +4015,13 @@ components:
       required: true
       description: Current API Version Number
   requestBodies:
-    CreateCall:
-      description: Create a new Call Object
+    Call:
       content:
         application/json:
           schema:
             oneOf:
-              - $ref: ./models/CallRequest.yaml
-              - $ref: ./models/CallRequestRequiredOnly.yaml
+              - $ref: models/CallRequest.yaml
+              - $ref: models/CallRequestRequiredOnly.yaml
     Contact:
       content:
         application/json:
@@ -4037,7 +4032,7 @@ components:
     Loan:
       content:
         application/json:
-          schema:
+          schema: 
             $ref: '#/components/schemas/Loan'
       description: Loan Object
       required: true
