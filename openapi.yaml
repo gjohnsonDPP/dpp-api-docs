@@ -1093,6 +1093,42 @@ paths:
           application/json:
             schema:
               $ref: models/DebtRequest.yaml
+            examples:
+              Request:
+                value:
+                  original_debt_amount: 10500
+                  current_debt_amount: 9499.5
+                  current_payment: 153
+                  current_rate: 0
+                  verified_debt_amount: 0
+                  creditor: 540
+                  debt_buyer: 17576331
+                  poa_sent_date: '2019-08-24'
+                  legal_account: 'No'
+                  last_payment_date: '2019-08-24'
+                  last_payment_amount: 0
+                  opened_date: '2019-08-24'
+                  available_balance: 0
+                  enrolled: false
+                  enrolled_date: '2019-08-24'
+                  debt_type: 0
+                  debt_status: ''
+                  locked: false
+                  og_account_num: '12345674445'
+                  creditor_account_num: ''
+                  settled: false
+                  settlement_id: 0
+                  client_id: 382760691
+                  settlement_offers:
+                    - string
+                  customs:
+                    - string
+              Required Parameters Only:
+                value:
+                  original_debt_amount: 10500
+                  current_debt_amount: 9499.5
+                  creditor: 540
+                  client_id: 382760691
       responses:
         '200':
           description: Successfully created a Debt Record
@@ -1109,10 +1145,9 @@ paths:
                 Debt POST 200 Response Example:
                   value:
                     response:
-                      id: 0
+                      id: 163287505
                     status:
                       code: 200
-                      message: Debt Record Created
         '400':
           description: Error
           content:
