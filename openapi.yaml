@@ -49,7 +49,11 @@ paths:
       tags:
         - Calls
       requestBody:
-        $ref: '#/components/requestBodies/Call'
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: models/CallRequest.yaml
       responses:
         '200':
           description: Successfully created a Call Record
