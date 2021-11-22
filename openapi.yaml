@@ -74,6 +74,7 @@ paths:
                   contactID: 516553837
                   call_type: Outgoing
                   call_result: Busy
+        description: ''
       responses:
         '200':
           description: Successfully created a Call Record

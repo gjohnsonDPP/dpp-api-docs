@@ -2,7 +2,7 @@ title: Call
 type: object
 description: Call Record Object
 x-tags:
-  - CallUpdate
+  - Call
 properties:
   object:
     type: string
