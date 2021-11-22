@@ -48,9 +48,12 @@ paths:
       operationId: callCreate
       tags:
         - Calls
-      parameters: []
       requestBody:
-        $ref: '#/components/requestBodies/CreateCall'
+        description: Create a new Call Record
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/requestBodies/CreateCall'
       responses:
         '200':
           description: Successfully created a Call Record
