@@ -1195,23 +1195,23 @@ paths:
                   value:
                     response:
                       object: debt
-                      debt_id: '124507509'
+                      debt_id: '163287508'
                       acctID: '3863'
-                      created_at: '2020-02-21 16:30:04'
+                      created_at: '2021-11-22 04:43:57'
                       created_by:
                         object: user
-                        user_id: '4949471'
+                        user_id: '4950368'
                         acctID: '3863'
-                        guid: fe98ddd6-07ac-66a6-72fe-8c55b78e282e
+                        guid: 1d7564d6-c57a-0a3a-9e18-adfe6ff22c01
                         company_id: '42128'
                         parent_id: '0'
                         user_type: '1'
-                        created: '2019-10-01 17:35:49'
-                        user_name: dpp
-                        firstname: Debt
-                        lastname: PayPro
+                        created: '2019-10-02 02:41:18'
+                        user_name: Greg
+                        firstname: Greg
+                        lastname: Johnson
                         company: ''
-                        email: dpp@debtpaypro.com
+                        email: g.johnson@debtpaypro.com
                         active: '1'
                         role: '29399'
                         attorney: '0'
@@ -1219,15 +1219,15 @@ paths:
                         del: '0'
                         delTime: null
                         pass_reset: '0'
-                        master: '1'
+                        master: '0'
                         billable: '1'
-                      modified_at: '2021-10-22 13:09:54'
-                      modified_by: '4950368'
-                      original_debt_amount: '3000.00'
-                      current_debt_amount: '2985.00'
+                      modified_at: null
+                      modified_by: null
+                      original_debt_amount: '10500.00'
+                      current_debt_amount: '9499.50'
                       current_payment: '153.00'
                       current_rate: '0.00'
-                      notes: Greg and Eric Test Note!
+                      notes: null
                       verified_debt_amount: '0.00'
                       creditor:
                         object: creditor
@@ -1263,15 +1263,15 @@ paths:
                           state: IL
                           zip: '60614'
                         phone: '3123839994'
-                      poa_sent_date: '0000-00-00'
+                      poa_sent_date: '2019-08-24'
                       legal_account: 'No'
-                      last_payment_date: '2022-07-03'
+                      last_payment_date: '2019-08-24'
                       last_payment_amount: '0.00'
-                      opened_date: null
+                      opened_date: '2019-08-24'
                       available_balance: '0.00'
-                      enrolled: '1'
-                      enrolled_date: '2020-09-10 07:33:18'
-                      debt_type: null
+                      enrolled: '0'
+                      enrolled_date: '2019-08-24 00:00:00'
+                      debt_type: '0'
                       cash_advance: '0'
                       balance_transfer: '0'
                       heavy_usage: '0'
@@ -1281,7 +1281,7 @@ paths:
                       og_account_num: '12345674445'
                       creditor_account_num: null
                       settled: '0'
-                      settlement_id: null
+                      settlement_id: '0'
                       client_id: '382760691'
                       settlement_offers: []
                       customs: []
@@ -1335,23 +1335,23 @@ paths:
                   value:
                     response:
                       object: debt
-                      debt_id: '124507509'
+                      debt_id: '163287508'
                       acctID: '3863'
-                      created_at: '2020-02-21 16:30:04'
+                      created_at: '2021-11-22 04:43:57'
                       created_by:
                         object: user
-                        user_id: '4949471'
+                        user_id: '4950368'
                         acctID: '3863'
-                        guid: fe98ddd6-07ac-66a6-72fe-8c55b78e282e
+                        guid: 1d7564d6-c57a-0a3a-9e18-adfe6ff22c01
                         company_id: '42128'
                         parent_id: '0'
                         user_type: '1'
-                        created: '2019-10-01 17:35:49'
-                        user_name: dpp
-                        firstname: Debt
-                        lastname: PayPro
+                        created: '2019-10-02 02:41:18'
+                        user_name: Greg
+                        firstname: Greg
+                        lastname: Johnson
                         company: ''
-                        email: dpp@debtpaypro.com
+                        email: g.johnson@debtpaypro.com
                         active: '1'
                         role: '29399'
                         attorney: '0'
@@ -1359,15 +1359,15 @@ paths:
                         del: '0'
                         delTime: null
                         pass_reset: '0'
-                        master: '1'
+                        master: '0'
                         billable: '1'
-                      modified_at: '2021-10-22 13:09:54'
-                      modified_by: '4950368'
-                      original_debt_amount: '3000.00'
-                      current_debt_amount: '2985.00'
+                      modified_at: null
+                      modified_by: null
+                      original_debt_amount: '10500.00'
+                      current_debt_amount: '9499.50'
                       current_payment: '153.00'
                       current_rate: '0.00'
-                      notes: Greg and Eric Test Note!
+                      notes: null
                       verified_debt_amount: '0.00'
                       creditor:
                         object: creditor
@@ -1403,15 +1403,15 @@ paths:
                           state: IL
                           zip: '60614'
                         phone: '3123839994'
-                      poa_sent_date: '0000-00-00'
+                      poa_sent_date: '2019-08-24'
                       legal_account: 'No'
-                      last_payment_date: '2022-07-03'
+                      last_payment_date: '2019-08-24'
                       last_payment_amount: '0.00'
-                      opened_date: null
+                      opened_date: '2019-08-24'
                       available_balance: '0.00'
-                      enrolled: '1'
-                      enrolled_date: '2020-09-10 07:33:18'
-                      debt_type: null
+                      enrolled: '0'
+                      enrolled_date: '2019-08-24 00:00:00'
+                      debt_type: '0'
                       cash_advance: '0'
                       balance_transfer: '0'
                       heavy_usage: '0'
@@ -1421,7 +1421,7 @@ paths:
                       og_account_num: '12345674445'
                       creditor_account_num: null
                       settled: '0'
-                      settlement_id: null
+                      settlement_id: '0'
                       client_id: '382760691'
                       settlement_offers: []
                       customs: []

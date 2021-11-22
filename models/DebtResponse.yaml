@@ -46,13 +46,9 @@ properties:
     type: number
     example: 0.00
   creditor:
-    type: integer
-    example: 540
-    description: ID of Original Creditor
+    $ref: ../models/CreditorResponse.yaml
   debt_buyer:
-    type: integer
-    example: 17576331
-    description: ID of Debt Buyer
+    $ref: ../models/CreditorResponse.yaml
   poa_sent_date:
     type: string
     format: date
