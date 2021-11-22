@@ -145,21 +145,17 @@ paths:
                     response:
                       object: call
                       id: '385319179'
-                      acctID: '2715'
                       contactID: '516553837'
                       userID: '3028014'
-                      activity_id: 608125717
                       sdate: '2019-08-24'
                       created_at: '2019-08-24T14:15:22Z'
                       call_type: Outgoing
                       call_result: Busy
-                      call_dis_id: 2
                       notes: Lorem Ipsum
                       status_change: '274158'
                       duration: '00:01:15'
                       event_id: 8179
                       dialer_id: 2
-                      recording_id: 3
                     status:
                       code: 200
         '400':
@@ -215,21 +211,17 @@ paths:
                     response:
                       object: call
                       id: '385319179'
-                      acctID: '2715'
                       contactID: '516553837'
                       userID: '3028014'
-                      activity_id: 608125717
                       sdate: '2019-08-24'
                       created_at: '2019-08-24T14:15:22Z'
                       call_type: Outgoing
                       call_result: Busy
-                      call_dis_id: 2
                       notes: Lorem Ipsum
                       status_change: '274158'
                       duration: '00:01:15'
                       event_id: 8179
                       dialer_id: 2
-                      recording_id: 3
                     status:
                       code: 200
         '400':
@@ -398,7 +390,6 @@ paths:
                     response:
                       object: campaign
                       id: 177286
-                      acctID: 2715
                       company_id: 21752
                       active: true
                       created_at: '2019-08-24T14:15:22Z'
@@ -471,7 +462,6 @@ paths:
                     response:
                       object: campaign
                       id: 177286
-                      acctID: 2715
                       company_id: 21752
                       active: true
                       created_at: '2019-08-24T14:15:22Z'
@@ -708,7 +698,6 @@ paths:
                     response:
                       object: contact
                       id: 382760691
-                      acctID: 3863
                       company_id: 42128
                       file_type: 1
                       form_id: 18626
@@ -823,7 +812,6 @@ paths:
                     response:
                       object: contact
                       id: 382760691
-                      acctID: 3863
                       company_id: 42128
                       file_type: 1
                       form_id: 18626
@@ -1196,13 +1184,10 @@ paths:
                     response:
                       object: debt
                       debt_id: '163287508'
-                      acctID: '3863'
                       created_at: '2021-11-22 04:43:57'
                       created_by:
                         object: user
                         user_id: '4950368'
-                        acctID: '3863'
-                        guid: 1d7564d6-c57a-0a3a-9e18-adfe6ff22c01
                         company_id: '42128'
                         parent_id: '0'
                         user_type: '1'
@@ -1218,9 +1203,6 @@ paths:
                         payee_id: '0'
                         del: '0'
                         delTime: null
-                        pass_reset: '0'
-                        master: '0'
-                        billable: '1'
                       modified_at: null
                       modified_by: null
                       original_debt_amount: '10500.00'
@@ -1336,13 +1318,10 @@ paths:
                     response:
                       object: debt
                       debt_id: '163287508'
-                      acctID: '3863'
                       created_at: '2021-11-22 04:43:57'
                       created_by:
                         object: user
                         user_id: '4950368'
-                        acctID: '3863'
-                        guid: 1d7564d6-c57a-0a3a-9e18-adfe6ff22c01
                         company_id: '42128'
                         parent_id: '0'
                         user_type: '1'
@@ -1358,9 +1337,6 @@ paths:
                         payee_id: '0'
                         del: '0'
                         delTime: null
-                        pass_reset: '0'
-                        master: '0'
-                        billable: '1'
                       modified_at: null
                       modified_by: null
                       original_debt_amount: '10500.00'
@@ -1676,7 +1652,6 @@ paths:
                     response:
                       object: loan
                       loan_id: '1868335'
-                      acctID: '3863'
                       tp_id: null
                       created_at: '2021-11-22 05:02:09'
                       created_by: '4950368'
@@ -1765,7 +1740,6 @@ paths:
                     response:
                       object: loan
                       loan_id: '1868335'
-                      acctID: '3863'
                       tp_id: null
                       created_at: '2021-11-22 05:02:09'
                       created_by: '4950368'
@@ -1968,8 +1942,7 @@ paths:
                   value:
                     response:
                       object: settlement_offer
-                      offer_id: '4114375'
-                      acctID: '3863'
+                      id: '4114375'
                       contact_id: '485599270'
                       creditor: '0'
                       debt_id: '12345'
@@ -1977,11 +1950,8 @@ paths:
                       created_by:
                         object: user
                         user_id: '4950368'
-                        acctID: '3863'
-                        guid: 1d7564d6-c57a-0a3a-9e18-adfe6ff22c01
                         company_id: '42128'
                         parent_id: '0'
-                        user_type: '1'
                         created: '2019-10-02 02:41:18'
                         user_name: JDoe
                         firstname: John
@@ -1994,19 +1964,13 @@ paths:
                         payee_id: '0'
                         del: '0'
                         delTime: null
-                        pass_reset: '0'
-                        master: '0'
-                        billable: '1'
                       modified_at: null
                       modified_by: null
                       neg_id:
                         object: user
                         user_id: '4950368'
-                        acctID: '3863'
-                        guid: 1d7564d6-c57a-0a3a-9e18-adfe6ff22c01
                         company_id: '42128'
                         parent_id: '0'
-                        user_type: '1'
                         created: '2019-10-02 02:41:18'
                         user_name: BobS
                         firstname: Bob
@@ -2019,9 +1983,6 @@ paths:
                         payee_id: '0'
                         del: '0'
                         delTime: null
-                        pass_reset: '0'
-                        master: '0'
-                        billable: '1'
                       madeby: Negotiator
                       offer_status: null
                       offer_status_date: '2022-03-07'
@@ -2088,8 +2049,7 @@ paths:
                   value:
                     response:
                       object: settlement_offer
-                      offer_id: '4114375'
-                      acctID: '3863'
+                      id: '4114375'
                       contact_id: '485599270'
                       creditor: '0'
                       debt_id: '12345'
@@ -2097,11 +2057,8 @@ paths:
                       created_by:
                         object: user
                         user_id: '4950368'
-                        acctID: '3863'
-                        guid: 1d7564d6-c57a-0a3a-9e18-adfe6ff22c01
                         company_id: '42128'
                         parent_id: '0'
-                        user_type: '1'
                         created: '2019-10-02 02:41:18'
                         user_name: JDoe
                         firstname: John
@@ -2114,19 +2071,13 @@ paths:
                         payee_id: '0'
                         del: '0'
                         delTime: null
-                        pass_reset: '0'
-                        master: '0'
-                        billable: '1'
                       modified_at: null
                       modified_by: null
                       neg_id:
                         object: user
                         user_id: '4950368'
-                        acctID: '3863'
-                        guid: 1d7564d6-c57a-0a3a-9e18-adfe6ff22c01
                         company_id: '42128'
                         parent_id: '0'
-                        user_type: '1'
                         created: '2019-10-02 02:41:18'
                         user_name: BobS
                         firstname: Bob
@@ -2139,9 +2090,6 @@ paths:
                         payee_id: '0'
                         del: '0'
                         delTime: null
-                        pass_reset: '0'
-                        master: '0'
-                        billable: '1'
                       madeby: Negotiator
                       offer_status: null
                       offer_status_date: '2022-03-07'
@@ -2319,6 +2267,46 @@ paths:
                     $ref: models/TaskResponse.yaml
                   status:
                     $ref: models/SuccessStatus.yaml
+              examples:
+                Tasks GET 200 Response Example:
+                  value:
+                    response:
+                      object: task
+                      id: 32549869
+                      contact_id: 516553837
+                      task_created_date: '2019-08-24T14:15:22Z'
+                      task_name: Task Name
+                      defined_task: 0
+                      created_by:
+                        object: user
+                        id: 6033912
+                        company_id: 42128
+                        parent_id: 4950368
+                        created: '2021-01-13 12:47:25'
+                        user_name: QAuser
+                        firstname: QA
+                        lastname: Tester
+                        company: Acme
+                        email: mail@debtpaypro.com
+                        active: true
+                        role: 29399
+                        attorney: true
+                        payee_id: 23006
+                        del: 0
+                        delTime: '2021-01-13 12:47:25'
+                      task_due_date: '2019-08-24'
+                      task_note: Task Note
+                      list_id: 0
+                      team_id: 0
+                      task_completed: 0
+                      task_completed_by: 0
+                      task_completed_date: '2019-08-24T14:15:22Z'
+                      task_completion_percentage: 0
+                      task_status: 0
+                      title: Title
+                      assigned_to: 0
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
@@ -2366,6 +2354,46 @@ paths:
                     $ref: models/TaskResponse.yaml
                   status:
                     $ref: models/SuccessStatus.yaml
+              examples:
+                Task Update 200 Response Example:
+                  value:
+                    response:
+                      object: task
+                      id: 32549869
+                      contact_id: 516553837
+                      task_created_date: '2019-08-24T14:15:22Z'
+                      task_name: Task Name
+                      defined_task: 0
+                      created_by:
+                        object: user
+                        id: 6033912
+                        company_id: 42128
+                        parent_id: 4950368
+                        created: '2021-01-13 12:47:25'
+                        user_name: QAuser
+                        firstname: QA
+                        lastname: Tester
+                        company: Acme
+                        email: mail@debtpaypro.com
+                        active: true
+                        role: 29399
+                        attorney: true
+                        payee_id: 23006
+                        del: 0
+                        delTime: '2021-01-13 12:47:25'
+                      task_due_date: '2019-08-24'
+                      task_note: Task Note
+                      list_id: 0
+                      team_id: 0
+                      task_completed: 0
+                      task_completed_by: 0
+                      task_completed_date: '2019-08-24T14:15:22Z'
+                      task_completion_percentage: 0
+                      task_status: 0
+                      title: Title
+                      assigned_to: 0
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
@@ -2539,7 +2567,6 @@ paths:
                     response:
                       object: team
                       team_id: '20875'
-                      acctID: '3863'
                       company_id: '42128'
                       name: Test
                     status:
@@ -2596,7 +2623,6 @@ paths:
                     response:
                       object: team
                       team_id: '20875'
-                      acctID: '3863'
                       company_id: '42128'
                       name: Test
                     status:
@@ -2766,11 +2792,8 @@ paths:
                     response:
                       object: user
                       id: 6033912
-                      acctID: 3863
-                      guid: ba2a29ca-f1d7-f58d-f670-fb92f716e513
                       company_id: 42128
                       parent_id: 4950368
-                      user_type: 1
                       created: '2021-01-13 12:47:25'
                       user_name: QAuser
                       firstname: QA
@@ -2783,9 +2806,6 @@ paths:
                       payee_id: 23006
                       del: 0
                       delTime: '2021-01-13 12:47:25'
-                      pass_reset: false
-                      master: false
-                      billable: true
                     status:
                       code: 200
         '400':
@@ -2841,11 +2861,8 @@ paths:
                     response:
                       object: user
                       id: 6033912
-                      acctID: 3863
-                      guid: ba2a29ca-f1d7-f58d-f670-fb92f716e513
                       company_id: 42128
                       parent_id: 4950368
-                      user_type: 1
                       created: '2021-01-13 12:47:25'
                       user_name: QAuser
                       firstname: QA
@@ -2858,9 +2875,6 @@ paths:
                       payee_id: 23006
                       del: 0
                       delTime: '2021-01-13 12:47:25'
-                      pass_reset: false
-                      master: false
-                      billable: true
                     status:
                       code: 200
         '400':
