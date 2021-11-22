@@ -2739,7 +2739,7 @@ paths:
       tags:
         - Users
       summary: Find a User Record by ID
-      description: Returns a single User Record object
+      description: Returns a User Record
       operationId: userRead
       parameters:
         - name: id
@@ -2750,14 +2750,16 @@ paths:
             type: integer
       responses:
         '200':
-          description: Success
+          description: Successfully retrieved a User Record
           content:
             application/json:
               schema:
+                type: object
                 properties:
                   response:
-                    $ref: models/User.yaml
-                type: object
+                    $ref: models/ResponseUser.yaml
+                  status:
+                    $ref: models/SuccessStatus.yaml
         '400':
           description: Error
           content:
@@ -2767,12 +2769,12 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
     put:
       tags:
         - Users
       summary: Update a User Record by ID
-      description: Updates a single User Record object
+      description: Updates a User Record
       operationId: userUpdate
       parameters:
         - name: id
@@ -2785,18 +2787,20 @@ paths:
         content:
           application/json:
             schema:
-              $ref: models/User.yaml
+              $ref: models/UserResponse.yaml
         required: true
       responses:
         '200':
-          description: Success
+          description: Successfully Updated User Record
           content:
             application/json:
               schema:
+                type: object
                 properties:
                   response:
-                    $ref: models/User.yaml
-                type: object
+                    $ref: models/UserResponse.yaml
+                  status:
+                    $ref: models/SuccessStatus.yaml
         '400':
           description: Error
           content:
@@ -2806,12 +2810,12 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
     delete:
       tags:
         - Users
       summary: Delete a User Record by ID
-      description: Deletes a single User Record object
+      description: Deletes a User Record
       operationId: userDelete
       parameters:
         - name: id
@@ -2822,16 +2826,14 @@ paths:
             type: integer
       responses:
         '200':
-          description: Success
+          description: Successfully deleted User Record
           content:
             application/json:
               schema:
+                type: object
                 properties:
                   status:
-                    $ref: models/Status.yaml
-                  response:
-                    type: object
-                type: object
+                    $ref: models/SuccessStatus.yaml
         '400':
           description: Error
           content:
@@ -2841,7 +2843,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
   /users/current:
     get:
       tags:
