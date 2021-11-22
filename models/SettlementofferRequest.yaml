@@ -1,0 +1,68 @@
+title: Settlementoffer
+type: object
+description: Settlment Offer Record
+x-tags:
+  - Settlementoffer
+properties:
+  object:
+    type: string
+    readOnly: true
+    example: "settlement_offer"
+  id:
+    type: integer
+    example: 3319980
+    readOnly: true
+  contact_id:
+    type: integer
+    example: 382760691
+  creditor:
+    type: integer
+    title: Original Creditor ID
+  debt_id:
+    type: integer
+    example: 124504794
+  created_at:
+    type: string
+    format: date-time
+    readOnly: true
+  modified_at:
+    type: string
+    format: date-time
+    readOnly: true
+  madeby:
+    type: string
+    readOnly: true
+  offer_status:
+    type: integer
+  offer_status_date:
+    type: string
+    format: date-time
+  offer_valid_date:
+    type: string
+    format: date
+  settlement_type:
+    type: integer
+  debt_amount:
+    type: integer
+    example: 8500.55
+  settlement_amount:
+    type: integer
+  settlement_fee:
+    type: integer
+  notes:
+    type: string
+    example: "Lorem Ipsum"
+  cred_cont_id:
+    type: integer
+  json:
+    type: object
+required:
+  - contact_id
+  - debt_id
+  - debt_amount
+  - settlement_amount
+  - offer_valid_date
+
+
+
+

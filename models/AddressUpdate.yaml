@@ -6,18 +6,13 @@ x-tags:
 properties:
   address1:
     type: string
-    example: 123 Main St.
   address2:
     type: string
-    example: Apt. 4008
   address3:
     type: string
   city:
     type: string
-    example: Chicago
   state:
     type: string
-    example: IL
   zip:
     type: string
-    example: '60612'

@@ -1,0 +1,24 @@
+title: Creditor
+type: object
+description: Creditor Record
+properties:
+  id:
+    type: integer
+  acctID:
+    type: integer
+  tp_id:
+    type: integer
+  is_active:
+    type: integer
+  company_name:
+    type: string
+  first_name:
+    type: string
+  last_name:
+    type: string
+  address:
+    $ref: ../models/Address.yaml
+  phone:
+    type: string
+x-tags:
+  - Creditor

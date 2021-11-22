@@ -1,23 +1,26 @@
 title: Call
 type: object
 description: Call Record Object
+x-tags:
+  - Call
 properties:
+  object:
+    type: string
+    example: call
+    readOnly: true
   id:
     type: integer
+    minLength: 1
     description: ID of the call record
-    readOnly: true
-  acctID:
-    type: integer
+    example: 385319179
     readOnly: true
   contactID:
     type: integer
-    example: 487800700
+    example: 516553837
   userID:
     type: integer
+    example: 3028014
     readOnly: true
-  activity_id:
-    type: integer
-    example: 608125717
   sdate:
     type: string
     format: date
@@ -35,9 +38,6 @@ properties:
   call_result:
     type: string
     example: Busy
-  call_dis_id:
-    type: integer
-    example: 2
   notes:
     type: string
     example: Lorem Ipsum
@@ -47,18 +47,15 @@ properties:
   duration:
     type: string
     format: duration
-    example: 'hh:mm:ss'
+    example: '00:01:15'
+    pattern: YYYY-MM-DD
   event_id:
     type: integer
     example: 8179
   dialer_id:
     type: integer
     example: 2
-  recording_id:
-    type: integer
 required:
-  - contactID
-  - call_type
-  - call_result
-x-tags:
-  - Call
+- contactID
+- call_type
+- call_result

@@ -2,10 +2,11 @@ title: Campaign
 type: object
 description: Campaign Record Object
 properties:
-  id:
-    type: integer
+  object:
+    type: string
+    example: campaign
     readOnly: true
-  acctID:
+  id:
     type: integer
     readOnly: true
   company_id:
@@ -68,11 +69,5 @@ properties:
     type: string
     format: date-time
     readOnly: true
-required:
-  - title
-  - start_date
-  - end_date
-  - cost
-  - media_type
 x-tags:
   - Campaign

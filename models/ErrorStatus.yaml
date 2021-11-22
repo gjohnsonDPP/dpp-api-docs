@@ -8,4 +8,4 @@ properties:
   message:
     type: string
 x-tags:
-  - Status
+  - ErrorStatus

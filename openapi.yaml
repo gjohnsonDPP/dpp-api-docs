@@ -44,29 +44,59 @@ paths:
   /calls:
     post:
       summary: Create a Call Record
-      description: Allows a record to be created and logged for any call made to or by a client
+      description: |-
+        Creates a Call Record and log the call to a client.
+
+        <span><i class="fa fa-info-circle"></i><i style="font-size:12px"> Select the `'Examples'` option to change the content of the request's Body to ONLY contain the required POST Parameters.</i></span>
       operationId: callCreate
       tags:
         - Calls
-      parameters: []
       requestBody:
+        description: ''
         required: true
         content:
           application/json:
             schema:
-              $ref: models/Call.yaml
+              $ref: models/CallRequest.yaml
+            examples:
+              Request:
+                value:
+                  contactID: 516553837
+                  activity_id: 608125717
+                  sdate: '2019-08-24'
+                  call_type: Outgoing
+                  call_result: Busy
+                  call_dis_id: 2
+                  notes: Lorem Ipsum
+                  status_change: '274158'
+                  duration: '00:01:15'
+                  event_id: 8179
+                  dialer_id: 2
+                  recording_id: 3
+              Required Parameters Only:
+                value:
+                  contactID: 516553837
+                  call_type: Outgoing
+                  call_result: Busy
       responses:
         '200':
-          description: Successfully created Call Record
+          description: Successfully created a Call Record
           content:
             application/json:
               schema:
+                type: object
                 properties:
-                  status:
-                    $ref: models/Status.yaml
                   response:
                     type: object
-                type: object
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Call Example 200 POST Response:
+                  value:
+                    response:
+                      id: 385319179
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
@@ -76,13 +106,19 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Call Example 400 Response:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   '/calls/{id}':
     get:
       tags:
         - Calls
       summary: Find a Call Record by ID
-      description: Returns a single Call Record
+      description: Returns a Call Record
       operationId: callRead
       parameters:
         - name: id
@@ -93,27 +129,63 @@ paths:
             type: integer
       responses:
         '200':
-          description: Successfully retrieved Call Record
+          description: Successfully retrieved a Call Record
           content:
             application/json:
               schema:
-                $ref: models/Call.yaml
+                type: object
+                properties:
+                  response:
+                    $ref: models/CallResponse.yaml
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Call GET 200 Response Example:
+                  value:
+                    response:
+                      object: call
+                      id: '385319179'
+                      contactID: '516553837'
+                      userID: '3028014'
+                      sdate: '2019-08-24'
+                      created_at: '2019-08-24T14:15:22Z'
+                      call_type: Outgoing
+                      call_result: Busy
+                      notes: Lorem Ipsum
+                      status_change: '274158'
+                      duration: '00:01:15'
+                      event_id: 8179
+                      dialer_id: 2
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
             application/json:
               schema:
-                required:
-                  - status
+                type: object
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+                required:
+                  - status
+              examples:
+                Call GET 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
     put:
       tags:
         - Calls
       summary: Update a Call Record by ID
-      description: Updates a single Call Record Object
+      description: Updates a Call Record
       operationId: callUpdate
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: models/CallResponse.yaml
       parameters:
         - name: id
           in: path
@@ -123,37 +195,57 @@ paths:
             type: integer
       responses:
         '200':
-          description: Successfully updated Call Record
+          description: Successfully Updated a Call Record
           content:
             application/json:
               schema:
-                $ref: models/Call.yaml
+                type: object
+                properties:
+                  response:
+                    $ref: models/CallResponse.yaml
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Call PUT 200 Response Example:
+                  value:
+                    response:
+                      object: call
+                      id: '385319179'
+                      contactID: '516553837'
+                      userID: '3028014'
+                      sdate: '2019-08-24'
+                      created_at: '2019-08-24T14:15:22Z'
+                      call_type: Outgoing
+                      call_result: Busy
+                      notes: Lorem Ipsum
+                      status_change: '274158'
+                      duration: '00:01:15'
+                      event_id: 8179
+                      dialer_id: 2
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
             application/json:
               schema:
-                $ref: models/Status.yaml
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: models/Call.yaml
-          application/xml:
-            schema:
-              type: object
-              properties: {}
-          multipart/form-data:
-            schema:
-              type: object
-              properties: {}
-        description: Update Call Record object
-        required: true
+                type: object
+                properties:
+                  status:
+                    $ref: models/ErrorStatus.yaml
+                required:
+                  - status
+              examples:
+                Call PUT 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
     delete:
       tags:
         - Calls
       summary: Delete Call Record by ID
-      description: Deletes a single Call Record Object
+      description: Deletes a Call Record
       operationId: callDelete
       parameters:
         - name: id
@@ -164,47 +256,92 @@ paths:
             type: integer
       responses:
         '200':
-          description: Success
+          description: Successfully Deleted a Call Record
           content:
             application/json:
               schema:
+                type: object
                 properties:
                   status:
-                    $ref: models/Status.yaml
-                  response:
-                    type: object
-                type: object
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Calls DELETE 200 Response Example:
+                  value:
+                    status:
+                      code: 200
+                      message: Successfully deleted object
         '400':
           description: Error
           content:
             application/json:
               schema:
-                required:
-                  - status
+                type: object
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+                required:
+                  - status
+              examples:
+                Call DELETE 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   /campaigns/e-mail:
     post:
       tags:
         - Campaigns
       summary: Create a Campaign Record
-      description: Creates a new Campaign Record object
+      description: |-
+        Creates a Campaign Record
+
+        <span><i class="fa fa-info-circle"></i><i style="font-size:12px"> Select the `'Examples'` option to change the content of the request's Body to ONLY contain the required POST Parameters.</i></span>
       operationId: campaignCreate
       requestBody:
-        $ref: '#/components/requestBodies/Campaign'
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: models/CampaignRequest.yaml
+            examples:
+              Request:
+                value:
+                  active: true
+                  title: Campaign Title
+                  start_date: '2019-08-24'
+                  end_date: '2019-08-24'
+                  source_id: 3184
+                  cost: 1984.25
+                  cost_type: 1
+                  priority: 4
+                  media_type: 1
+                  purchase_amount: 42
+              Required Parameters Only:
+                value:
+                  title: Campaign Title
+                  start_date: '2019-08-24'
+                  end_date: '2019-08-24'
+                  cost: 1984.25
+                  media_type: 1
       responses:
         '200':
-          description: Successfully created Campaign Record
+          description: Successfully created a Campaign Record
           content:
             application/json:
               schema:
+                type: object
                 properties:
-                  status:
-                    $ref: models/Status.yaml
                   response:
                     type: object
-                type: object
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Campaign POST 200 Response Example:
+                  value:
+                    response:
+                      id: 152283
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
@@ -214,13 +351,19 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Campaigns POST 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   '/campaigns/e-mail/{id}':
     get:
       tags:
         - Campaigns
       summary: Find a Campaign Record by ID
-      description: Returns a single Campaign Record object
+      description: Returns a Campaign Record
       operationId: campaignRead
       parameters:
         - name: id
@@ -231,14 +374,42 @@ paths:
             type: integer
       responses:
         '200':
-          description: Successfully retrieved Campaign Record
+          description: Successfully retrieved a Campaign Record
           content:
             application/json:
               schema:
+                type: object
                 properties:
                   response:
-                    $ref: models/Campaign.yaml
-                type: object
+                    $ref: models/CampaignResponse.yaml
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Campaign GET 200 Response Example:
+                  value:
+                    response:
+                      object: campaign
+                      id: 177286
+                      company_id: 21752
+                      active: true
+                      created_at: '2019-08-24T14:15:22Z'
+                      created_by: 3028014
+                      token: string
+                      title: Campaign Title
+                      start_date: '2019-08-24'
+                      end_date: '2019-08-24'
+                      source_id: 3184
+                      cost: 1984.25
+                      cost_type: 1
+                      priority: 4
+                      external_id: 0
+                      media_type: 1
+                      purchase_amount: 42
+                      del: false
+                      del_by: 0
+                      deltime: '2019-08-24T14:15:22Z'
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
@@ -248,12 +419,18 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Campaign GET 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
     put:
       tags:
         - Campaigns
       summary: Update a Campaign Record by ID
-      description: Updates a single Campaign Record object
+      description: Updates a Campaign Record
       operationId: campaignUpdate
       parameters:
         - name: id
@@ -263,17 +440,48 @@ paths:
           schema:
             type: integer
       requestBody:
-        $ref: '#/components/requestBodies/Campaign'
+        content:
+          application/json:
+            schema:
+              $ref: models/CampaignResponse.yaml
       responses:
         '200':
-          description: Successfully updated Campaign Record
+          description: Successfully updated a Campaign Record
           content:
             application/json:
               schema:
+                type: object
                 properties:
                   response:
-                    $ref: models/Campaign.yaml
-                type: object
+                    $ref: models/CampaignResponse.yaml
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Campaign PUT 200 Response Example:
+                  value:
+                    response:
+                      object: campaign
+                      id: 177286
+                      company_id: 21752
+                      active: true
+                      created_at: '2019-08-24T14:15:22Z'
+                      created_by: 3028014
+                      token: string
+                      title: Campaign Title
+                      start_date: '2019-08-24'
+                      end_date: '2019-08-24'
+                      source_id: 3184
+                      cost: 1984.25
+                      cost_type: 1
+                      priority: 4
+                      external_id: 0
+                      media_type: 1
+                      purchase_amount: 42
+                      del: false
+                      del_by: 0
+                      deltime: '2019-08-24T14:15:22Z'
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
@@ -283,12 +491,18 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Campaign PUT 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
     delete:
       tags:
         - Campaigns
       summary: Delete a Campaign Record by ID
-      description: Deletes a single Campaign Record object
+      description: Deletes a Campaign Record
       operationId: campaignDelete
       parameters:
         - name: id
@@ -305,10 +519,13 @@ paths:
               schema:
                 properties:
                   status:
-                    $ref: models/Status.yaml
-                  response:
-                    type: object
-                type: object
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Campaign DELETE 200 Response Example:
+                  value:
+                    status:
+                      code: 200
+                      message: Successfully deleted object
         '400':
           description: Error
           content:
@@ -318,28 +535,121 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Campaign DELETE 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   /contacts:
     post:
       tags:
         - Contacts
       summary: Create a Contact Record
-      description: Creates a new Contact Record object
+      description: |-
+        Creates a Contact Record
+
+        <span><i class="fa fa-info-circle"></i><i style="font-size:12px"> Select the `'Examples'` option to change the content of the request's Body to ONLY contain the required POST Parameters.</i></span>
       operationId: contactCreate
       requestBody:
-        $ref: '#/components/requestBodies/Contact'
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: models/ContactRequest.yaml
+            examples:
+              Request:
+                value:
+                  file_type: '1'
+                  form_id: 18626
+                  assigned_to: 6045085
+                  campaign_id: 128312
+                  attorney: 0
+                  attorney_id: 0
+                  attorney_id2: 0
+                  first_name: John
+                  middle_name: E.
+                  last_name: Doe
+                  salutation: Salutation
+                  title: Mr.
+                  phone_number: '12242525887'
+                  phone_extension: 123
+                  cell_phone: '12242525887'
+                  cell_extension: 123
+                  work_phone: '13123839986'
+                  work_extension: 123
+                  address:
+                    address1: 123 Main St.
+                    address2: Apt. 4008
+                    address3: string
+                    city: Chicago
+                    state: IL
+                    zip: '60612'
+                  email: test@debtpaypro.com
+                  social_security_number: '551192922'
+                  date_of_birth: '1941-03-12'
+                  language: 1
+                  submitted: '1'
+                  submitted_by: n/a
+                  submitted_at: n/a
+                  approved_by2: 0
+                  approved_date2: n/a
+                  rejected_by: 0
+                  rejected_notes: n/a
+                  paused_notes: n/a
+                  dropped_reason: 0
+                  grad_date: n/a
+                  total_debt: '0.00'
+                  welcome_sent: '2020-02-21 16:23:29'
+                  paper_statements: '0'
+                  paper_welcome: '0'
+                  gateway_id: 1
+                  gateway_approved_by: 0
+                  gateway_hold: n/a
+                  gateway_hold_reason: 0
+                  gateway_hold_notes: n/a
+                  gateway_auth_received: '0'
+                  gateway_auth_file: 66c29015-debtpaypro_QA_Test_Template_-_Chase_(xxxx4444).pdf
+                  iscoapp: '0'
+                  customs:
+                    - field_id: 0
+                      value: string
+                      label: string
+              Required Parameters Only:
+                value:
+                  first_name: John
+                  last_name: Doe
+                  phone_number: '12242525887'
+                  address:
+                    address1: 123 Main St.
+                    address2: Apt. 4008
+                    address3: string
+                    city: Chicago
+                    state: IL
+                    zip: '60612'
+                  email: test@debtpaypro.com
+                  date_of_birth: '1941-03-12'
       responses:
         '200':
-          description: Success
+          description: Successfully created a Contact Record
           content:
             application/json:
               schema:
+                type: object
                 properties:
-                  status:
-                    $ref: models/Status.yaml
                   response:
                     type: object
-                type: object
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Contact POST 200 Response Example:
+                  value:
+                    response:
+                      id: 418304227
+                    status:
+                      code: 200
+                      message: Client Record Created
         '400':
           description: Error
           content:
@@ -349,13 +659,19 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Contact POST 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   '/contacts/{id}':
     get:
       tags:
         - Contacts
       summary: Find a Contact Record by ID
-      description: Returns a Contact Record object
+      description: Returns a Contact Record
       operationId: contactRead
       parameters:
         - name: id
@@ -366,14 +682,84 @@ paths:
             type: integer
       responses:
         '200':
-          description: Success
+          description: Successfully retrieved a Contact Record
           content:
             application/json:
               schema:
+                type: object
                 properties:
                   response:
-                    $ref: models/Contact.yaml
-                type: object
+                    $ref: models/ContactResponse.yaml
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Contact GET 200 Response Example:
+                  value:
+                    response:
+                      object: contact
+                      id: 382760691
+                      company_id: 42128
+                      file_type: 1
+                      form_id: 18626
+                      created: '2019-08-24T14:15:22Z'
+                      created_by: 4950368
+                      modified: '2019-08-24T14:15:22Z'
+                      modified_by: 4950368
+                      assigned_to: 6515056
+                      campaign_id: 158227
+                      attorney: false
+                      attorney_id: 0
+                      attorney_id2: 0
+                      first_name: John
+                      middle_name: E
+                      last_name: Doe
+                      salutation: Hello
+                      title: Mr.
+                      phone_number: '13123831234'
+                      phone_extension: 123
+                      cell_phone: '13123835678'
+                      cell_extension: 123
+                      work_phone: '13123839753'
+                      work_extension: 123
+                      address:
+                        address1: 123 Main St.
+                        address2: Apt. 4008
+                        address3: string
+                        city: Chicago
+                        state: IL
+                        zip: '60612'
+                      email: test@test.com
+                      social_security_number: 123-45-6789
+                      date_of_birth: '1970-01-01'
+                      language: 1
+                      submitted: false
+                      submitted_by: 0
+                      submitted_at: '2019-08-24T14:15:22Z'
+                      approved_by2: 0
+                      approved_date2: '2019-08-24'
+                      rejected_by: 0
+                      rejected_notes: Rejection Note
+                      paused_notes: Paused Note
+                      dropped_reason: 1
+                      grad_date: '2019-08-24'
+                      total_debt: 13755.9
+                      welcome_sent: '2019-08-24T14:15:22Z'
+                      paper_statements: false
+                      paper_welcome: false
+                      gateway_id: 0
+                      gateway_approved_by: 0
+                      gateway_hold: false
+                      gateway_hold_reason: 0
+                      gateway_hold_notes: string
+                      gateway_auth_received: true
+                      gateway_auth_file: test_gateway_auth_file.pdf
+                      iscoapp: false
+                      customs:
+                        - field_id: 0
+                          value: string
+                          label: string
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
@@ -383,13 +769,24 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Contact GET 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
     put:
       tags:
         - Contacts
       summary: Update a Contact Record by ID
-      description: Updates a single Contact Record object
+      description: Updates a Contact Record
       operationId: contactUpdate
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/ContactResponse.yaml
       parameters:
         - name: id
           in: path
@@ -397,33 +794,108 @@ paths:
           required: true
           schema:
             type: integer
-      requestBody:
-        $ref: '#/components/requestBodies/Contact'
       responses:
         '200':
-          description: Success
+          description: Successfully Updated a Contact Record
           content:
             application/json:
               schema:
+                type: object
                 properties:
                   response:
-                    $ref: models/Contact.yaml
-                type: object
+                    $ref: models/ContactResponse.yaml
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Contact PUT 200 Response Example:
+                  value:
+                    response:
+                      object: contact
+                      id: 382760691
+                      company_id: 42128
+                      file_type: 1
+                      form_id: 18626
+                      created: '2019-08-24T14:15:22Z'
+                      created_by: 4950368
+                      modified: '2019-08-24T14:15:22Z'
+                      modified_by: 4950368
+                      assigned_to: 6515056
+                      campaign_id: 158227
+                      attorney: false
+                      attorney_id: 0
+                      attorney_id2: 0
+                      first_name: John
+                      middle_name: E
+                      last_name: Doe
+                      salutation: Hello
+                      title: Mr.
+                      phone_number: '13123831234'
+                      phone_extension: 123
+                      cell_phone: '13123835678'
+                      cell_extension: 123
+                      work_phone: '13123839753'
+                      work_extension: 123
+                      address:
+                        address1: 123 Main St.
+                        address2: Apt. 4008
+                        address3: string
+                        city: Chicago
+                        state: IL
+                        zip: '60612'
+                      email: test@test.com
+                      social_security_number: 123-45-6789
+                      date_of_birth: '1970-01-01'
+                      language: 1
+                      submitted: false
+                      submitted_by: 0
+                      submitted_at: '2019-08-24T14:15:22Z'
+                      approved_by2: 0
+                      approved_date2: '2019-08-24'
+                      rejected_by: 0
+                      rejected_notes: Rejection Note
+                      paused_notes: Paused Note
+                      dropped_reason: 1
+                      grad_date: '2019-08-24'
+                      total_debt: 13755.9
+                      welcome_sent: '2019-08-24T14:15:22Z'
+                      paper_statements: false
+                      paper_welcome: false
+                      gateway_id: 0
+                      gateway_approved_by: 0
+                      gateway_hold: false
+                      gateway_hold_reason: 0
+                      gateway_hold_notes: string
+                      gateway_auth_received: true
+                      gateway_auth_file: test_gateway_auth_file.pdf
+                      iscoapp: false
+                      customs:
+                        - field_id: 0
+                          value: string
+                          label: string
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
             application/json:
               schema:
-                required:
-                  - status
+                type: object
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+                required:
+                  - status
+              examples:
+                Contact PUT 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
     delete:
       tags:
         - Contacts
       summary: Delete a Contact Record by ID
-      description: Deletes a single Contact Record object
+      description: Deletes a Contact Record
       operationId: contactDelete
       parameters:
         - name: id
@@ -434,16 +906,19 @@ paths:
             type: integer
       responses:
         '200':
-          description: Success
+          description: Successfully deleted a Contact Record
           content:
             application/json:
               schema:
                 properties:
                   status:
-                    $ref: models/Status.yaml
-                  response:
-                    type: object
-                type: object
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Contact DELETE 200 Response Example:
+                  value:
+                    status:
+                      code: 200
+                      message: Successfully deleted object
         '400':
           description: Error
           content:
@@ -453,7 +928,13 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Contact DELETE 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   '/contacts/{id}/form_request':
     post:
       tags:
@@ -589,22 +1070,72 @@ paths:
       tags:
         - Debts
       summary: Create a Debt Record
-      description: Creates a new Debt Record object
+      description: |-
+        Creates a Debt Record
+
+        <span><i class="fa fa-info-circle"></i><i style="font-size:12px"> Select the `'Examples'` option to change the content of the request's Body to ONLY contain the required POST Parameters.</i></span>
       operationId: debtCreate
       requestBody:
-        $ref: '#/components/requestBodies/Debt'
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: models/DebtRequest.yaml
+            examples:
+              Request:
+                value:
+                  original_debt_amount: 10500
+                  current_debt_amount: 9499.5
+                  current_payment: 153
+                  current_rate: 0
+                  verified_debt_amount: 0
+                  creditor: 540
+                  debt_buyer: 17576331
+                  poa_sent_date: '2019-08-24'
+                  legal_account: 'No'
+                  last_payment_date: '2019-08-24'
+                  last_payment_amount: 0
+                  opened_date: '2019-08-24'
+                  available_balance: 0
+                  enrolled: false
+                  enrolled_date: '2019-08-24'
+                  debt_type: 0
+                  debt_status: ''
+                  locked: false
+                  og_account_num: '12345674445'
+                  creditor_account_num: ''
+                  settled: false
+                  settlement_id: 0
+                  client_id: 382760691
+                  settlement_offers:
+                    - string
+                  customs:
+                    - string
+              Required Parameters Only:
+                value:
+                  original_debt_amount: 10500
+                  current_debt_amount: 9499.5
+                  creditor: 540
+                  client_id: 382760691
       responses:
         '200':
-          description: Success
+          description: Successfully created a Debt Record
           content:
             application/json:
               schema:
+                type: object
                 properties:
-                  status:
-                    $ref: models/Status.yaml
                   response:
                     type: object
-                type: object
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Debt POST 200 Response Example:
+                  value:
+                    response:
+                      id: 163287505
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
@@ -614,13 +1145,19 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Debt POST 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   '/debts/{id}':
     get:
       tags:
         - Debts
       summary: Find a Debt Record by ID
-      description: Returns a single Debt Record
+      description: Returns a Debt Record
       operationId: debtRead
       parameters:
         - name: id
@@ -631,49 +1168,107 @@ paths:
             type: integer
       responses:
         '200':
-          description: success
+          description: Successfully retrieved a Debt Record
           content:
             application/json:
               schema:
+                type: object
                 properties:
                   response:
-                    $ref: models/Debt.yaml
-                type: object
-        '400':
-          description: error
-          content:
-            application/json:
-              schema:
-                required:
-                  - status
-                properties:
+                    $ref: models/DebtResponse.yaml
                   status:
-                    $ref: models/Status.yaml
-    put:
-      tags:
-        - Debts
-      summary: Update a Debt Record by ID
-      description: Updates a single Debt Record
-      operationId: debtUpdate
-      parameters:
-        - name: id
-          in: path
-          description: Id of Debt Record to update
-          required: true
-          schema:
-            type: integer
-      requestBody:
-        $ref: '#/components/requestBodies/Debt'
-      responses:
-        '200':
-          description: Success
-          content:
-            application/json:
-              schema:
-                properties:
-                  response:
-                    $ref: models/Debt.yaml
-                type: object
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Debt GET 200 Response Example:
+                  value:
+                    response:
+                      object: debt
+                      debt_id: '163287508'
+                      created_at: '2021-11-22 04:43:57'
+                      created_by:
+                        object: user
+                        user_id: '4950368'
+                        company_id: '42128'
+                        parent_id: '0'
+                        user_type: '1'
+                        created: '2019-10-02 02:41:18'
+                        user_name: JDoe
+                        firstname: John
+                        lastname: Doe
+                        company: ''
+                        email: test@test.com
+                        active: '1'
+                        role: '29399'
+                        attorney: '0'
+                        payee_id: '0'
+                        del: '0'
+                        delTime: null
+                      modified_at: null
+                      modified_by: null
+                      original_debt_amount: '10500.00'
+                      current_debt_amount: '9499.50'
+                      current_payment: '153.00'
+                      current_rate: '0.00'
+                      notes: null
+                      verified_debt_amount: '0.00'
+                      creditor:
+                        object: creditor
+                        creditor_id: '540'
+                        acctID: '0'
+                        tp_id: '0'
+                        is_active: '1'
+                        company_name: Chase
+                        first_name: null
+                        last_name: null
+                        address:
+                          address1: P O Box 15919
+                          address2: ''
+                          address3: null
+                          city: Wilmington
+                          state: Delaware
+                          zip: 19850-0464
+                        phone: 800-444-9370
+                      debt_buyer:
+                        object: creditor
+                        creditor_id: '17576331'
+                        acctID: '3863'
+                        tp_id: '0'
+                        is_active: '1'
+                        company_name: Bob's Debt Co.
+                        first_name: Bob
+                        last_name: Smith
+                        address:
+                          address1: 101 Debt Way
+                          address2: Suite 2200
+                          address3: null
+                          city: Chicago
+                          state: IL
+                          zip: '60614'
+                        phone: '3123839994'
+                      poa_sent_date: '2019-08-24'
+                      legal_account: 'No'
+                      last_payment_date: '2019-08-24'
+                      last_payment_amount: '0.00'
+                      opened_date: '2019-08-24'
+                      available_balance: '0.00'
+                      enrolled: '0'
+                      enrolled_date: '2019-08-24 00:00:00'
+                      debt_type: '0'
+                      cash_advance: '0'
+                      balance_transfer: '0'
+                      heavy_usage: '0'
+                      has_summons: '0'
+                      debt_status: null
+                      locked: '0'
+                      og_account_num: '12345674445'
+                      creditor_account_num: null
+                      settled: '0'
+                      settlement_id: '0'
+                      client_id: '382760691'
+                      settlement_offers: []
+                      customs: []
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
@@ -683,12 +1278,152 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Debt GET 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
+    put:
+      tags:
+        - Debts
+      summary: Update a Debt Record by ID
+      description: Updates a Debt Record
+      operationId: debtUpdate
+      requestBody:
+        $ref: models/DebtResponse.yaml
+      parameters:
+        - name: id
+          in: path
+          description: Id of Debt Record to update
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully Updated a Debt Record
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    $ref: models/DebtResponse.yaml
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Debt PUT 200 Response Example:
+                  value:
+                    response:
+                      object: debt
+                      debt_id: '163287508'
+                      created_at: '2021-11-22 04:43:57'
+                      created_by:
+                        object: user
+                        user_id: '4950368'
+                        company_id: '42128'
+                        parent_id: '0'
+                        user_type: '1'
+                        created: '2019-10-02 02:41:18'
+                        user_name: JDoe
+                        firstname: John
+                        lastname: Doe
+                        company: ''
+                        email: test@test.com
+                        active: '1'
+                        role: '29399'
+                        attorney: '0'
+                        payee_id: '0'
+                        del: '0'
+                        delTime: null
+                      modified_at: null
+                      modified_by: null
+                      original_debt_amount: '10500.00'
+                      current_debt_amount: '9499.50'
+                      current_payment: '153.00'
+                      current_rate: '0.00'
+                      notes: null
+                      verified_debt_amount: '0.00'
+                      creditor:
+                        object: creditor
+                        creditor_id: '540'
+                        acctID: '0'
+                        tp_id: '0'
+                        is_active: '1'
+                        company_name: Chase
+                        first_name: null
+                        last_name: null
+                        address:
+                          address1: P O Box 15919
+                          address2: ''
+                          address3: null
+                          city: Wilmington
+                          state: Delaware
+                          zip: 19850-0464
+                        phone: 800-444-9370
+                      debt_buyer:
+                        object: creditor
+                        creditor_id: '17576331'
+                        acctID: '3863'
+                        tp_id: '0'
+                        is_active: '1'
+                        company_name: Bob's Debt Co.
+                        first_name: Bob
+                        last_name: Smith
+                        address:
+                          address1: 101 Debt Way
+                          address2: Suite 2200
+                          address3: null
+                          city: Chicago
+                          state: IL
+                          zip: '60614'
+                        phone: '3123839994'
+                      poa_sent_date: '2019-08-24'
+                      legal_account: 'No'
+                      last_payment_date: '2019-08-24'
+                      last_payment_amount: '0.00'
+                      opened_date: '2019-08-24'
+                      available_balance: '0.00'
+                      enrolled: '0'
+                      enrolled_date: '2019-08-24 00:00:00'
+                      debt_type: '0'
+                      cash_advance: '0'
+                      balance_transfer: '0'
+                      heavy_usage: '0'
+                      has_summons: '0'
+                      debt_status: null
+                      locked: '0'
+                      og_account_num: '12345674445'
+                      creditor_account_num: null
+                      settled: '0'
+                      settlement_id: '0'
+                      client_id: '382760691'
+                      settlement_offers: []
+                      customs: []
+                    status:
+                      code: 200
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                required:
+                  - status
+                properties:
+                  status:
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Debt PUT 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
     delete:
       tags:
         - Debts
       summary: Delete a Debt Record by ID
-      description: Deletes a single Debt Record object
+      description: Deletes a Debt Record
       operationId: debtDelete
       parameters:
         - name: id
@@ -699,16 +1434,20 @@ paths:
             type: integer
       responses:
         '200':
-          description: Success
+          description: Successfully Deleted Debt Record
           content:
             application/json:
               schema:
+                type: object
                 properties:
                   status:
-                    $ref: models/Status.yaml
-                  response:
-                    type: object
-                type: object
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Debt DELETE 200 Response Example:
+                  value:
+                    status:
+                      code: 200
+                      message: Successfully deleted object
         '400':
           description: Error
           content:
@@ -718,7 +1457,13 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Debt DELETE 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   '/debts/{id}/notes':
     post:
       tags:
@@ -798,22 +1543,67 @@ paths:
       tags:
         - Loans
       summary: Create a Loan Record
-      description: Creates a new Loan Record object
+      description: |-
+        Creates a Loan Record
+
+        <span><i class="fa fa-info-circle"></i><i style="font-size:12px"> Select the `'Examples'` option to change the content of the request's Body to ONLY contain the required POST Parameters.</i></span>
       operationId: loanCreate
       requestBody:
-        $ref: '#/components/requestBodies/Loan'
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: models/LoanRequest.yaml
+            examples:
+              Request:
+                value:
+                  client_id: 382760691
+                  advance_type: ACH
+                  type_id: 1
+                  program_id: 0
+                  loan_class: 1
+                  loan_amount: 4550.72
+                  payback_amount: 0
+                  rate: 0
+                  payment: 0
+                  holdback_percent: .02%
+                  payback_period: 0
+                  frequency: D
+                  freq_int: ''
+                  period_amount: 0
+                  fees: 0
+                  conf_num: '12345'
+                  underwrite_notes: Lorem Ipsum
+                  funded: false
+                  status: 10
+                  lien_pos: 0
+                  ach_on: false
+                  pricing_lock: false
+                  offer_set: 1043077
+              Required Parameters Only:
+                value:
+                  client_id: 382760691
+                  loan_amount: 4550.72
+                  payback_amount: 0
       responses:
         '200':
-          description: Success
+          description: Successfully created a Loan Record
           content:
             application/json:
               schema:
+                type: object
                 properties:
-                  status:
-                    $ref: models/Status.yaml
                   response:
                     type: object
-                type: object
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Loan POST 200 Response Example:
+                  value:
+                    response:
+                      id: 1863358
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
@@ -823,13 +1613,19 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Loans POST 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   '/loans/{id}':
     get:
       tags:
         - Loans
       summary: Find a Loan Record by ID
-      description: Returns a single Loan Record object
+      description: Returns a Loan Record
       operationId: loanRead
       parameters:
         - name: id
@@ -840,14 +1636,58 @@ paths:
             type: integer
       responses:
         '200':
-          description: Success
+          description: Successfully retrieved a Loan Record
           content:
             application/json:
               schema:
+                type: object
                 properties:
                   response:
-                    $ref: models/Loan.yaml
-                type: object
+                    $ref: models/LoanResponse.yaml
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Loan GET 200 Response Example:
+                  value:
+                    response:
+                      object: loan
+                      loan_id: '1868335'
+                      tp_id: null
+                      created_at: '2021-11-22 05:02:09'
+                      created_by: '4950368'
+                      modified_at: null
+                      modified_by: null
+                      client_id: '382760691'
+                      advance_type: ACH
+                      advance_date: null
+                      paid_in_full_date: null
+                      defaulted_date: null
+                      type_id: '1'
+                      program_id: '0'
+                      loan_class: '1'
+                      loan_amount: '4550.72'
+                      payback_amount: '0.00'
+                      rate: '0'
+                      payment: '0.00'
+                      holdback_percent: '0.02'
+                      payback_period: '0.00'
+                      frequency: D
+                      freq_int: ''
+                      period_amount: '0'
+                      fees: '0.00'
+                      conf_num: '12345'
+                      underwriter_notes: ''
+                      contract_date: null
+                      contract_number: ''
+                      funded: '0'
+                      status: '10'
+                      lien_pos: '0'
+                      ach_start_date: null
+                      ach_on: '0'
+                      pricing_lock: '0'
+                      offer_set: '1048066'
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
@@ -857,12 +1697,18 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Loan GET 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
     put:
       tags:
         - Loans
       summary: Update a Loan Record by ID
-      description: Updates a single Loan Record object
+      description: Updates a Loan Record
       operationId: loanUpdate
       parameters:
         - name: id
@@ -872,17 +1718,64 @@ paths:
           schema:
             type: integer
       requestBody:
-        $ref: '#/components/requestBodies/Loan'
+        content:
+          application/json:
+            schema:
+              $ref: models/LoanResponse.yaml
       responses:
         '200':
-          description: Success
+          description: Successfully updated a Loan Record
           content:
             application/json:
               schema:
+                type: object
                 properties:
                   response:
-                    $ref: models/Loan.yaml
-                type: object
+                    $ref: models/LoanResponse.yaml
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Loan PUT 200 Response Example:
+                  value:
+                    response:
+                      object: loan
+                      loan_id: '1868335'
+                      tp_id: null
+                      created_at: '2021-11-22 05:02:09'
+                      created_by: '4950368'
+                      modified_at: null
+                      modified_by: null
+                      client_id: '382760691'
+                      advance_type: ACH
+                      advance_date: null
+                      paid_in_full_date: null
+                      defaulted_date: null
+                      type_id: '1'
+                      program_id: '0'
+                      loan_class: '1'
+                      loan_amount: '4550.72'
+                      payback_amount: '0.00'
+                      rate: '0'
+                      payment: '0.00'
+                      holdback_percent: '0.02'
+                      payback_period: '0.00'
+                      frequency: D
+                      freq_int: ''
+                      period_amount: '0'
+                      fees: '0.00'
+                      conf_num: '12345'
+                      underwriter_notes: ''
+                      contract_date: null
+                      contract_number: ''
+                      funded: '0'
+                      status: '10'
+                      lien_pos: '0'
+                      ach_start_date: null
+                      ach_on: '0'
+                      pricing_lock: '0'
+                      offer_set: '1048066'
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
@@ -892,12 +1785,18 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Loan PUT 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
     delete:
       tags:
         - Loans
       summary: Delete a Loan Record by ID
-      description: Deletes a single Loan Record object
+      description: Deletes a Loan Record
       operationId: loanDelete
       parameters:
         - name: id
@@ -908,16 +1807,19 @@ paths:
             type: integer
       responses:
         '200':
-          description: Success
+          description: Successfully deleted Loan Record
           content:
             application/json:
               schema:
                 properties:
                   status:
-                    $ref: models/Status.yaml
-                  response:
-                    type: object
-                type: object
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Loan DELETE 200 Response Example:
+                  value:
+                    status:
+                      code: 200
+                      message: Successfully deleted object
         '400':
           description: Error
           content:
@@ -927,32 +1829,72 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Loan DELETE 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   /settlement_offers:
     post:
       tags:
         - Settlement_Offers
       summary: Create a Settlement Offer Record
-      description: Creates a new Settlement Offer object
+      description: |-
+        Creates a Settlement Offer
+
+        <span><i class="fa fa-info-circle"></i><i style="font-size:12px"> Select the `'Examples'` option to change the content of the request's Body to ONLY contain the required POST Parameters.</i></span>
       operationId: settlementOfferCreate
       requestBody:
         content:
           application/json:
             schema:
-              $ref: models/Settlementoffer.yaml
+              $ref: models/SettlementofferRequest.yaml
+            examples:
+              Request:
+                value:
+                  contact_id: 382760691
+                  creditor: 0
+                  debt_id: 124504794
+                  offer_status: 0
+                  offer_status_date: '2019-08-24T14:15:22Z'
+                  offer_valid_date: '2019-08-24'
+                  settlement_type: 0
+                  debt_amount: 8500.55
+                  settlement_amount: 0
+                  settlement_fee: 0
+                  notes: Lorem Ipsum
+                  cred_cont_id: 0
+                  json: {}
+              Required Parameters Only:
+                value:
+                  contact_id: 382760691
+                  debt_id: 124504794
+                  offer_valid_date: '2019-08-24'
+                  settlement_type: 0
+                  debt_amount: 8500.55
+                  settlement_amount: 0
         required: true
       responses:
         '200':
-          description: Success
+          description: Successfully created a Settlement Offer
           content:
             application/json:
               schema:
+                type: object
                 properties:
-                  status:
-                    $ref: models/Status.yaml
                   response:
                     type: object
-                type: object
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Settlement Offer POST 200 Response Example:
+                  value:
+                    response:
+                      id: 4114375
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
@@ -962,13 +1904,19 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Settlement Offer 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   '/settlement_offers/{id}':
     get:
       tags:
         - Settlement_Offers
       summary: Find a Settlement Offer Record by ID
-      description: Returns a single Settlement Offer object
+      description: Returns a Settlement Offer
       operationId: settlementOfferRead
       parameters:
         - name: id
@@ -979,16 +1927,75 @@ paths:
             type: integer
       responses:
         '200':
-          description: default
+          description: Successfully retrieved a Settlement Offer Record
           content:
             application/json:
               schema:
-                properties:
-                  status:
-                    $ref: models/Status.yaml
-                  response:
-                    $ref: models/Settlement.yaml
                 type: object
+                properties:
+                  response:
+                    $ref: models/SettlementofferResponse.yaml
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Settlement Offer GET 200 Response Example:
+                  value:
+                    response:
+                      object: settlement_offer
+                      id: '4114375'
+                      contact_id: '485599270'
+                      creditor: '0'
+                      debt_id: '12345'
+                      created_at: '2021-11-18 21:51:21'
+                      created_by:
+                        object: user
+                        user_id: '4950368'
+                        company_id: '42128'
+                        parent_id: '0'
+                        created: '2019-10-02 02:41:18'
+                        user_name: JDoe
+                        firstname: John
+                        lastname: Doe
+                        company: ''
+                        email: test@test.com
+                        active: '1'
+                        role: '29399'
+                        attorney: '0'
+                        payee_id: '0'
+                        del: '0'
+                        delTime: null
+                      modified_at: null
+                      modified_by: null
+                      neg_id:
+                        object: user
+                        user_id: '4950368'
+                        company_id: '42128'
+                        parent_id: '0'
+                        created: '2019-10-02 02:41:18'
+                        user_name: BobS
+                        firstname: Bob
+                        lastname: Smith
+                        company: ''
+                        email: bsmith@test.com
+                        active: '1'
+                        role: '29399'
+                        attorney: '0'
+                        payee_id: '0'
+                        del: '0'
+                        delTime: null
+                      madeby: Negotiator
+                      offer_status: null
+                      offer_status_date: '2022-03-07'
+                      offer_valid_date: '2021-10-24'
+                      settlement_type: '0'
+                      debt_amount: '0.00'
+                      settlement_amount: '0.00'
+                      settlement_fee: '0.00'
+                      notes: Lorem Ipsum
+                      cred_cont_id: '0'
+                      json: []
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
@@ -998,12 +2005,18 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Settlement Offer GET 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
     put:
       tags:
         - Settlement_Offers
       summary: Update a Settlement Offer Record by ID
-      description: Updates a single Settlement Offer Record object
+      description: Updates a Settlement Offer Record
       operationId: settlementOfferUpdate
       parameters:
         - name: id
@@ -1016,21 +2029,80 @@ paths:
         content:
           application/json:
             schema:
-              $ref: models/Settlementoffer.yaml
-        description: Settlement offer object that needs to be updated
+              $ref: models/SettlementofferResponse.yaml
+        description: Settlement offer object that will be updated
         required: true
       responses:
         '200':
-          description: default
+          description: Successfully Updated Settlement Offer
           content:
             application/json:
               schema:
-                properties:
-                  status:
-                    $ref: models/Status.yaml
-                  response:
-                    type: object
                 type: object
+                properties:
+                  response:
+                    $ref: models/SettlementofferResponse.yaml
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                SettlementOffer PUT 200 Response Example:
+                  value:
+                    response:
+                      object: settlement_offer
+                      id: '4114375'
+                      contact_id: '485599270'
+                      creditor: '0'
+                      debt_id: '12345'
+                      created_at: '2021-11-18 21:51:21'
+                      created_by:
+                        object: user
+                        user_id: '4950368'
+                        company_id: '42128'
+                        parent_id: '0'
+                        created: '2019-10-02 02:41:18'
+                        user_name: JDoe
+                        firstname: John
+                        lastname: Doe
+                        company: ''
+                        email: test@test.com
+                        active: '1'
+                        role: '29399'
+                        attorney: '0'
+                        payee_id: '0'
+                        del: '0'
+                        delTime: null
+                      modified_at: null
+                      modified_by: null
+                      neg_id:
+                        object: user
+                        user_id: '4950368'
+                        company_id: '42128'
+                        parent_id: '0'
+                        created: '2019-10-02 02:41:18'
+                        user_name: BobS
+                        firstname: Bob
+                        lastname: Smith
+                        company: ''
+                        email: bsmith@test.com
+                        active: '1'
+                        role: '29399'
+                        attorney: '0'
+                        payee_id: '0'
+                        del: '0'
+                        delTime: null
+                      madeby: Negotiator
+                      offer_status: null
+                      offer_status_date: '2022-03-07'
+                      offer_valid_date: '2021-10-24'
+                      settlement_type: '0'
+                      debt_amount: '0.00'
+                      settlement_amount: '0.00'
+                      settlement_fee: '0.00'
+                      notes: Lorem Ipsum
+                      cred_cont_id: '0'
+                      json: []
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
@@ -1040,12 +2112,18 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                SettlementOffer PUT 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
     delete:
       tags:
         - Settlement_Offers
       summary: Delete a Settlement Offer Record by ID
-      description: Deletes a single Settlement Offer object
+      description: Deletes a Settlement Offer
       operationId: settlementOfferDelete
       parameters:
         - name: id
@@ -1056,16 +2134,20 @@ paths:
             type: integer
       responses:
         '200':
-          description: default
+          description: Successfully Deleted Settlement Offer
           content:
             application/json:
               schema:
+                type: object
                 properties:
                   status:
-                    $ref: models/Status.yaml
-                  response:
-                    type: object
-                type: object
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                SettlementOffer Delete 200 Response Example:
+                  value:
+                    status:
+                      code: 200
+                      message: Successfully deleted object
         '400':
           description: Error
           content:
@@ -1075,37 +2157,74 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                SettlementOffer Delete 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   /tasks:
     post:
       tags:
         - Tasks
       summary: Create a Task Record
-      description: Creates a new Task Record object
+      description: |-
+        Creates a Task Record
+
+        <span><i class="fa fa-info-circle"></i><i style="font-size:12px"> Select the `'Examples'` option to change the content of the request's Body to ONLY contain the required POST Parameters.</i></span>
       operationId: taskCreate
       requestBody:
         content:
           application/json:
             schema:
-              $ref: models/Task.yaml
+              $ref: models/TaskRequest.yaml
+            examples:
+              Request:
+                value:
+                  contact_id: 516553837
+                  task_name: Task Name
+                  defined_task: 0
+                  task_due_date: '2019-08-24'
+                  task_note: Task Note
+                  list_id: 123
+                  team_id: 123
+                  task_completion_percentage: 0
+                  task_status: 0
+                  title: Title
+                  assigned_to_id: 516553837
+                  task_type: 0
+                  assigned_to: 382760691
+              Required Parameters Only:
+                value:
+                  contact_id: 516553837
+                  task_name: Task Name
+                  defined_task: 25907
+                  task_due_date: '2019-08-24'
+                  task_note: Task Note
+                  title: Title
+                  assigned_to: 382760691
         description: Task object to be created
         required: true
       responses:
         '200':
-          description: default
+          description: Successfully created a Task Record
           content:
             application/json:
               schema:
-                properties:
-                  status:
-                    $ref: models/Status.yaml
-                  response:
-                    properties:
-                      id:
-                        type: integer
-                        example: 123
-                    type: object
                 type: object
+                properties:
+                  response:
+                    type: object
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Task POST 200 Response Example:
+                  value:
+                    response:
+                      id: 32549869
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
@@ -1115,13 +2234,19 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Tasks POST 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   '/tasks/{id}':
     get:
       tags:
         - Tasks
       summary: Find a Task Record by ID
-      description: Returns a single Task Record object
+      description: Returns a Task Record
       operationId: taskRead
       parameters:
         - name: id
@@ -1132,16 +2257,56 @@ paths:
             type: integer
       responses:
         '200':
-          description: default
+          description: Successfully retrieved a Task Record
           content:
             application/json:
               schema:
-                properties:
-                  status:
-                    $ref: models/Status.yaml
-                  response:
-                    $ref: models/Task.yaml
                 type: object
+                properties:
+                  response:
+                    $ref: models/TaskResponse.yaml
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Tasks GET 200 Response Example:
+                  value:
+                    response:
+                      object: task
+                      id: 32549869
+                      contact_id: 516553837
+                      task_created_date: '2019-08-24T14:15:22Z'
+                      task_name: Task Name
+                      defined_task: 0
+                      created_by:
+                        object: user
+                        id: 6033912
+                        company_id: 42128
+                        parent_id: 4950368
+                        created: '2021-01-13 12:47:25'
+                        user_name: QAuser
+                        firstname: QA
+                        lastname: Tester
+                        company: Acme
+                        email: mail@debtpaypro.com
+                        active: true
+                        role: 29399
+                        attorney: true
+                        payee_id: 23006
+                        del: 0
+                        delTime: '2021-01-13 12:47:25'
+                      task_due_date: '2019-08-24'
+                      task_note: Task Note
+                      list_id: 0
+                      team_id: 0
+                      task_completed: 0
+                      task_completed_by: 0
+                      task_completed_date: '2019-08-24T14:15:22Z'
+                      task_completion_percentage: 0
+                      task_status: 0
+                      title: Title
+                      assigned_to: 0
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
@@ -1151,12 +2316,18 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Task GET 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
     put:
       tags:
         - Tasks
       summary: Update a Task Record by ID
-      description: Updates a single Task Record object
+      description: Updates a Task Record
       operationId: taskUpdate
       parameters:
         - name: id
@@ -1169,21 +2340,60 @@ paths:
         content:
           application/json:
             schema:
-              $ref: models/Task.yaml
+              $ref: models/TaskResponse.yaml
         description: Task object that needs to be updated
-        required: true
       responses:
         '200':
-          description: default
+          description: Successfully updated a Task Record
           content:
             application/json:
               schema:
-                properties:
-                  status:
-                    $ref: models/Status.yaml
-                  response:
-                    $ref: models/Task.yaml
                 type: object
+                properties:
+                  response:
+                    $ref: models/TaskResponse.yaml
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Task Update 200 Response Example:
+                  value:
+                    response:
+                      object: task
+                      id: 32549869
+                      contact_id: 516553837
+                      task_created_date: '2019-08-24T14:15:22Z'
+                      task_name: Task Name
+                      defined_task: 0
+                      created_by:
+                        object: user
+                        id: 6033912
+                        company_id: 42128
+                        parent_id: 4950368
+                        created: '2021-01-13 12:47:25'
+                        user_name: QAuser
+                        firstname: QA
+                        lastname: Tester
+                        company: Acme
+                        email: mail@debtpaypro.com
+                        active: true
+                        role: 29399
+                        attorney: true
+                        payee_id: 23006
+                        del: 0
+                        delTime: '2021-01-13 12:47:25'
+                      task_due_date: '2019-08-24'
+                      task_note: Task Note
+                      list_id: 0
+                      team_id: 0
+                      task_completed: 0
+                      task_completed_by: 0
+                      task_completed_date: '2019-08-24T14:15:22Z'
+                      task_completion_percentage: 0
+                      task_status: 0
+                      title: Title
+                      assigned_to: 0
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
@@ -1193,12 +2403,18 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Task PUT 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
     delete:
       tags:
         - Tasks
       summary: Delete a Task Record by ID
-      description: Deletes a single Task Record object
+      description: Deletes a Task Record
       operationId: taskDelete
       parameters:
         - name: id
@@ -1209,16 +2425,19 @@ paths:
             type: integer
       responses:
         '200':
-          description: Success
+          description: Successfully deleted Task Record
           content:
             application/json:
               schema:
                 properties:
                   status:
-                    $ref: models/Status.yaml
-                  response:
-                    type: object
-                type: object
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Task Delete 200 Response Example:
+                  value:
+                    status:
+                      code: 200
+                      message: Successfully deleted object
         '400':
           description: Error
           content:
@@ -1228,7 +2447,13 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Task DELETE 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   /teams:
     get:
       tags:
@@ -1271,26 +2496,29 @@ paths:
       tags:
         - Teams
       summary: Create a Team Record
-      description: Creates a new Team Record Object
+      description: Creates a Team Record
       operationId: teamCreate
       requestBody:
-        $ref: '#/components/requestBodies/Team'
+        $ref: models/TeamRequest.yaml
       responses:
         '200':
-          description: after creation
+          description: Successfully created a Team Record
           content:
             application/json:
               schema:
-                properties:
-                  status:
-                    $ref: models/Status.yaml
-                  response:
-                    properties:
-                      id:
-                        type: integer
-                        example: 123
-                    type: object
                 type: object
+                properties:
+                  response:
+                    type: object
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Team POST 200 Response Example:
+                  value:
+                    response:
+                      id: 20872
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
@@ -1300,13 +2528,19 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Teams POST 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   '/teams/{id}':
     get:
       tags:
         - Teams
       summary: Find a Team Record by ID
-      description: Returns a single Team Record object
+      description: Returns a Team Record
       operationId: teamRead
       parameters:
         - name: id
@@ -1317,16 +2551,26 @@ paths:
             type: integer
       responses:
         '200':
-          description: default
+          description: Successfully retrieved team record
           content:
             application/json:
               schema:
-                properties:
-                  status:
-                    $ref: models/Status.yaml
-                  response:
-                    $ref: models/Team.yaml
                 type: object
+                properties:
+                  response:
+                    $ref: models/ResponseTeam.yaml
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Teams GET 200 Response Example:
+                  value:
+                    response:
+                      object: team
+                      team_id: '20875'
+                      company_id: '42128'
+                      name: Test
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
@@ -1336,12 +2580,18 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Teams GET 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
     put:
       tags:
         - Teams
       summary: Update a Team Record by ID
-      description: Updates a single Team Record object
+      description: Updates a Team Record
       operationId: teamUpdate
       parameters:
         - name: id
@@ -1351,19 +2601,32 @@ paths:
           schema:
             type: integer
       requestBody:
-        $ref: '#/components/requestBodies/Team'
+        content:
+          application/json:
+            schema:
+              $ref: models/TeamResponse.yaml
       responses:
         '200':
-          description: Success
+          description: Successfully updated Team Record
           content:
             application/json:
               schema:
-                properties:
-                  status:
-                    $ref: models/Status.yaml
-                  response:
-                    type: object
                 type: object
+                properties:
+                  response:
+                    $ref: models/TeamResponse.yaml
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Teams PUT 200 Response Example:
+                  value:
+                    response:
+                      object: team
+                      team_id: '20875'
+                      company_id: '42128'
+                      name: Test
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
@@ -1373,12 +2636,18 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Teams PUT 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
     delete:
       tags:
         - Teams
       summary: Delete a Team Record by ID
-      description: Deletes a single Team Record object
+      description: Deletes a Team Record
       operationId: teamDelete
       parameters:
         - name: id
@@ -1389,16 +2658,19 @@ paths:
             type: integer
       responses:
         '200':
-          description: Success
+          description: Successfully deleted Team Record
           content:
             application/json:
               schema:
                 properties:
                   status:
-                    $ref: models/Status.yaml
-                  response:
-                    type: object
-                type: object
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Teams Delete 200 Response Example:
+                  value:
+                    status:
+                      code: 200
+                      message: Successfully deleted object
         '400':
           description: Error
           content:
@@ -1408,33 +2680,72 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Teams Delete 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   /users:
     post:
       tags:
         - Users
       summary: Create a User Record
-      description: Creates a new User Record object
+      description: |-
+        Creates a User Record object
+
+        <span><i class="fa fa-info-circle"></i><i style="font-size:12px"> Select the `'Examples'` option to change the content of the request's Body to ONLY contain the required POST Parameters.</i></span>
       operationId: userCreate
       requestBody:
         content:
           application/json:
             schema:
-              $ref: models/User.yaml
+              $ref: models/UserRequest.yaml
+            examples:
+              Request:
+                value:
+                  guid: ba2a29ca-f1d7-f58d-f670-fb92f716e513
+                  parent_id: 4950368
+                  user_type: 1
+                  user_name: QAuser
+                  firstname: QA
+                  lastname: Tester
+                  company: Acme
+                  email: mail@debtpaypro.com
+                  active: true
+                  role: 29399
+                  attorney: true
+                  payee_id: 23006
+                  pass_reset: false
+                  master: false
+                  billable: true
+              Required Parameters Only:
+                value:
+                  user_type: 1
+                  user_name: QAuser
+                  email: mail@debtpaypro.com
+                  active: true
         description: User Object
-        required: true
       responses:
         '200':
-          description: Success
+          description: Successfully created User Record
           content:
             application/json:
               schema:
+                type: object
                 properties:
-                  status:
-                    $ref: models/Status.yaml
                   response:
                     type: object
-                type: object
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Users Post 200 Response Example:
+                  value:
+                    response:
+                      id: 6664975
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
@@ -1442,16 +2753,19 @@ paths:
               schema:
                 properties:
                   status:
-                    $ref: models/Status.yaml
-                  response:
-                    type: object
-                type: object
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Users Post 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   '/users/{id}':
     get:
       tags:
         - Users
       summary: Find a User Record by ID
-      description: Returns a single User Record object
+      description: Returns a User Record
       operationId: userRead
       parameters:
         - name: id
@@ -1462,14 +2776,38 @@ paths:
             type: integer
       responses:
         '200':
-          description: Success
+          description: Successfully retrieved a User Record
           content:
             application/json:
               schema:
+                type: object
                 properties:
                   response:
-                    $ref: models/User.yaml
-                type: object
+                    $ref: models/UserResponse.yaml
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Users GET 200 Response Example:
+                  value:
+                    response:
+                      object: user
+                      id: 6033912
+                      company_id: 42128
+                      parent_id: 4950368
+                      created: '2021-01-13 12:47:25'
+                      user_name: QAuser
+                      firstname: QA
+                      lastname: Tester
+                      company: Acme
+                      email: mail@debtpaypro.com
+                      active: true
+                      role: 29399
+                      attorney: true
+                      payee_id: 23006
+                      del: 0
+                      delTime: '2021-01-13 12:47:25'
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
@@ -1479,12 +2817,18 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                User GET 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
     put:
       tags:
         - Users
       summary: Update a User Record by ID
-      description: Updates a single User Record object
+      description: Updates a User Record
       operationId: userUpdate
       parameters:
         - name: id
@@ -1497,18 +2841,42 @@ paths:
         content:
           application/json:
             schema:
-              $ref: models/User.yaml
+              $ref: models/UserResponse.yaml
         required: true
       responses:
         '200':
-          description: Success
+          description: Successfully Updated User Record
           content:
             application/json:
               schema:
+                type: object
                 properties:
                   response:
-                    $ref: models/User.yaml
-                type: object
+                    $ref: models/UserResponse.yaml
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Users PUT 200 Response Example:
+                  value:
+                    response:
+                      object: user
+                      id: 6033912
+                      company_id: 42128
+                      parent_id: 4950368
+                      created: '2021-01-13 12:47:25'
+                      user_name: QAuser
+                      firstname: QA
+                      lastname: Tester
+                      company: Acme
+                      email: mail@debtpaypro.com
+                      active: true
+                      role: 29399
+                      attorney: true
+                      payee_id: 23006
+                      del: 0
+                      delTime: '2021-01-13 12:47:25'
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
@@ -1518,12 +2886,18 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                User PUT 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
     delete:
       tags:
         - Users
       summary: Delete a User Record by ID
-      description: Deletes a single User Record object
+      description: Deletes a User Record
       operationId: userDelete
       parameters:
         - name: id
@@ -1534,16 +2908,14 @@ paths:
             type: integer
       responses:
         '200':
-          description: Success
+          description: Successfully deleted User Record
           content:
             application/json:
               schema:
+                type: object
                 properties:
                   status:
-                    $ref: models/Status.yaml
-                  response:
-                    type: object
-                type: object
+                    $ref: models/SuccessStatus.yaml
         '400':
           description: Error
           content:
@@ -1553,7 +2925,13 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Users Delete 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   /users/current:
     get:
       tags:
@@ -1717,12 +3095,12 @@ paths:
       tags:
         - Lenders
       summary: Get all Monevo Lenders
-      description: Returns a List of Lenders
+      description: Returns a List of all Loan Offers associated with a Contact
       operationId: getLendersMonevo
       parameters:
         - name: contact_id
           in: path
-          description: Id of Monevo Client
+          description: Id of CRM Contact
           required: true
           schema:
             type: integer
@@ -1732,7 +3110,208 @@ paths:
           content:
             application/json:
               schema:
+                description: ''
                 type: object
+                x-examples:
+                  example-1:
+                    id: '37939'
+                    acctID: '2715'
+                    loan_id: null
+                    created_at: '2021-11-10 13:59:39'
+                    created_by: '3028014'
+                    status_id: '2'
+                    loan_amount: '$18,000.00'
+                    rate: 0
+                    apr: 14.8
+                    term: '36'
+                    payment_amt: $622.21
+                    payback_amt: null
+                    frequency: null
+                    active: null
+                    type: null
+                    label: null
+                    term_unit: months
+                    amortization: null
+                    amortization_unit: null
+                    amortization_method: null
+                    compounding: null
+                    initial_date: null
+                    first_payment_date: null
+                    last_payment_date: null
+                    increment_type: null
+                    increment_value: null
+                    sequence_order: null
+                    meta_data:
+                      id: '17629247'
+                      offer_number: '2'
+                      redirect_url: 'https://usa.monevo.com/redirect?p=YTE4YWJkMjhhMzlhY2ExZDZiN2MxZjcxMzc3OThkNWZiMGI1MDkzNDRlNGJmZGY1ZGE0M2JjN2NkYTdiNGEzYzgyMjUyYzJjZjIyZTU3OGFkYjExN2MwOTcyMjg4YmM1YjBiOTU1MWY1MWUwZjE1NTI2YjVmOTg2ZjM0YmY1MWRiYzVmODNiZjRmMWZmOTk1NmNiOTMwN2YxOTA3OGY3Mw'
+                      loan:
+                        loan_amount: '18000'
+                        apr: '14.80'
+                        term: '36'
+                        fees: '0'
+                        monthly_repayment: '622.21'
+                        total_repayment: '$22,399.00'
+                        cost_of_credit: '4399.56'
+                        type: PERSONAL_LOAN
+                        rapr: 'Our view "With no origination fees, late fees or overdraft fees, as well as very competitive rates, SoFi is a great option."'
+                        features:
+                          feature:
+                            - No origination fees
+                            - ' No pre-payment penalties'
+                            - A+ Better Business Bureau rating
+                            - $30 Billion in funded loans
+                        terms: 'Fixed rates from 5.99% APR to 19.63% APR (with AutoPay). SoFi rate ranges are current as of July 30, 2021 and are subject to change without notice. Not all rates and amounts available in all states. See Personal Loan eligibility details. Not all applicants qualify for the lowest rate. Lowest rates reserved for the most creditworthy borrowers. Your actual rate will be within the range of rates listed above and will depend on a variety of factors, including evaluation of your credit worthiness, income, and other factors. See APR examples and terms. The SoFi 0.25% AutoPay interest rate reduction requires you to agree to make monthly principal and interest payments by an automatic monthly deduction from a savings or checking account. The benefit will discontinue and be lost for periods in which you do not pay by automatic deduction from a savings or checking account.'
+                        prequalified: 'true'
+                        preapproved: 'false'
+                        secured: 'false'
+                      lender:
+                        id: '85'
+                        name: SoFi
+                        description: 'SoFi is a new kind of finance company taking a radical approach to lending and wealth management. From unprecedented products and tools to faster service and open conversations, we’re all about helping our members get ahead and find success. Whether they’re looking to buy a home, save money on student loans, ascend in their careers, or invest in the future, the SoFi community works to empower our members to accomplish the goals they set and achieve financial greatness as a result.'
+                        url: www.sofi.com
+                        phone_number: {}
+                        logo_url: 'https://images.monevo.com/ptusa/lender/pr_sofi-logo1.png'
+                        review:
+                          service: TRUSTPILOT
+                          id: {}
+                properties:
+                  id:
+                    type: string
+                    minLength: 1
+                  acctID:
+                    type: string
+                    minLength: 1
+                  loan_id: {}
+                  created_at:
+                    type: string
+                    minLength: 1
+                  created_by:
+                    type: string
+                    minLength: 1
+                  status_id:
+                    type: string
+                    minLength: 1
+                  loan_amount:
+                    type: string
+                    minLength: 1
+                  rate:
+                    type: number
+                  apr:
+                    type: number
+                  term:
+                    type: string
+                    minLength: 1
+                  payment_amt:
+                    type: string
+                    minLength: 1
+                  payback_amt: {}
+                  frequency: {}
+                  active: {}
+                  type: {}
+                  label: {}
+                  term_unit:
+                    type: string
+                    minLength: 1
+                  amortization: {}
+                  amortization_unit: {}
+                  amortization_method: {}
+                  compounding: {}
+                  initial_date: {}
+                  first_payment_date: {}
+                  last_payment_date: {}
+                  increment_type: {}
+                  increment_value: {}
+                  sequence_order: {}
+                  meta_data:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                        minLength: 1
+                      offer_number:
+                        type: string
+                        minLength: 1
+                      redirect_url:
+                        type: string
+                        minLength: 1
+                      loan:
+                        type: object
+                        properties:
+                          loan_amount:
+                            type: string
+                            minLength: 1
+                          apr:
+                            type: string
+                            minLength: 1
+                          term:
+                            type: string
+                            minLength: 1
+                          fees:
+                            type: string
+                            minLength: 1
+                          monthly_repayment:
+                            type: string
+                            minLength: 1
+                          total_repayment:
+                            type: string
+                            minLength: 1
+                          cost_of_credit:
+                            type: string
+                            minLength: 1
+                          type:
+                            type: string
+                            minLength: 1
+                          rapr:
+                            type: string
+                            minLength: 1
+                          features:
+                            type: object
+                            properties:
+                              feature:
+                                type: array
+                                items:
+                                  type: object
+                          terms:
+                            type: string
+                            minLength: 1
+                          prequalified:
+                            type: string
+                            minLength: 1
+                          preapproved:
+                            type: string
+                            minLength: 1
+                          secured:
+                            type: string
+                            minLength: 1
+                      lender:
+                        type: object
+                        properties:
+                          id:
+                            type: string
+                            minLength: 1
+                          name:
+                            type: string
+                            minLength: 1
+                          description:
+                            type: string
+                            minLength: 1
+                          url:
+                            type: string
+                            minLength: 1
+                          phone_number:
+                            type: object
+                          logo_url:
+                            type: string
+                            minLength: 1
+                          review:
+                            type: object
+                            properties:
+                              service:
+                                type: string
+                                minLength: 1
+                              id:
+                                type: object
         '400':
           description: Error
           content:
@@ -1922,10 +3501,6 @@ components:
           example: 2
         recording_id:
           type: integer
-      required:
-        - contactID
-        - call_type
-        - call_result
     Campaign:
       type: object
       description: ''
@@ -2905,6 +4480,20 @@ components:
         - start
         - limit
   responses:
+    '400':
+      description: Error
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                $ref: models/ErrorStatus.yaml
+          examples:
+            400 Error Response:
+              status:
+                code: 400
+                message: 'Input Parsing Error: unexpected character'
     default:
       description: default
       content:
@@ -2935,11 +4524,38 @@ components:
       required: true
       description: Current API Version Number
   requestBodies:
+    Call:
+      content:
+        application/json:
+          schema:
+            oneOf:
+              - $ref: models/CallRequestRequiredOnly.yaml
+              - $ref: models/CallRequest.yaml
+          examples:
+            Call POST All Parameters Request:
+              value:
+                contactID: 516553837
+                activity_id: 608125717
+                sdate: '2019-08-24'
+                call_type: Outgoing
+                call_result: Busy
+                call_dis_id: 2
+                notes: Lorem Ipsum
+                status_change: '274158'
+                duration: '00:01:15'
+                event_id: 8179
+                dialer_id: 2
+                recording_id: 3
+            Call POST Required Parameters Only Request:
+              value:
+                contactID: 516553837
+                call_type: Outgoing
+                call_result: Busy
     Contact:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Contact'
+            $ref: ./models/ContactResponse.yaml
       description: Contact Object
       required: true
     Loan:
@@ -2956,18 +4572,11 @@ components:
             $ref: '#/components/schemas/Note'
       description: Note Object
       required: true
-    Call:
-      content:
-        application/json:
-          schema:
-            $ref: models/Call.yaml
-      description: ''
-      required: true
     Campaign:
       content:
         application/json:
           schema:
-            $ref: models/Campaign.yaml
+            $ref: models/CampaignRequest.yaml
       description: Campaign Object
       required: true
     Company:
@@ -2981,7 +4590,7 @@ components:
       content:
         application/json:
           schema:
-            $ref: models/Debt.yaml
+            $ref: models/DebtRequest.yaml
       description: Debt Object
       required: true
     Team:
@@ -2996,5 +4605,6 @@ components:
       type: apiKey
       name: Api-Key
       in: header
+  examples: {}
 security:
   - API-Key: []

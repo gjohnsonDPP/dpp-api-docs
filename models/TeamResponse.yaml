@@ -1,0 +1,14 @@
+title: Team
+type: object
+description: Team Record
+properties:
+  id:
+    type: integer
+    readOnly: true
+  company_id:
+    type: integer
+    readOnly: true
+  name:
+    type: string
+x-tags:
+  - Team

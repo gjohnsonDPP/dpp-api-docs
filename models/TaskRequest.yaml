@@ -1,21 +1,27 @@
 title: Task
 type: object
 description: Task Record
+x-tags:
+  - Task
 properties:
-  acctID:
-    type: integer
+  object:
+    type: string
+    example: task
     readOnly: true
   id:
     type: integer
+    example: 32549869
     readOnly: true
   contact_id:
     type: integer
+    example: 516553837
   task_created_date:
     type: string
     format: date-time
     readOnly: true
   task_name:
     type: string
+    example: "Task Name"
   defined_task:
     type: integer
   created_by:
@@ -26,6 +32,7 @@ properties:
     format: date
   task_note:
     type: string
+    example: "Task Note"
   list_id:
     type: integer
   team_id:
@@ -46,11 +53,12 @@ properties:
     type: integer
   title:
     type: string
-  assigned_to_id:
-    type: integer
-  task_type:
-    type: integer
+    example: "Title"
   assigned_to:
-    type: string
-x-tags:
-  - Task
+    type: integer
+required:
+  - contact_id
+  - task_name
+  - defined_task
+  - task_due_date
+  - assigned_to
