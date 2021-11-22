@@ -1923,7 +1923,7 @@ paths:
       tags:
         - Tasks
       summary: Create a Task Record
-      description: Creates a new Task Record object
+      description: Creates a Task Record
       operationId: taskCreate
       requestBody:
         content:
@@ -1934,20 +1934,23 @@ paths:
         required: true
       responses:
         '200':
-          description: default
+          description: Successfully created a Task Record
           content:
             application/json:
               schema:
-                properties:
-                  status:
-                    $ref: models/Status.yaml
-                  response:
-                    properties:
-                      id:
-                        type: integer
-                        example: 123
-                    type: object
                 type: object
+                properties:
+                  response:
+                    type: object
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Task POST 200 Response Example:
+                  value:
+                    response:
+                      id: 32549869
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
@@ -1957,7 +1960,13 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Tasks POST 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   '/tasks/{id}':
     get:
       tags:
@@ -1982,7 +1991,7 @@ paths:
                   status:
                     $ref: models/Status.yaml
                   response:
-                    $ref: models/Task.yaml
+                    $ref: models/TaskResponse.yaml
                 type: object
         '400':
           description: Error
