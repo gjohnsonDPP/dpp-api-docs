@@ -2567,7 +2567,7 @@ paths:
       tags:
         - Teams
       summary: Update a Team Record by ID
-      description: Updates a single Team Record object
+      description: Updates a Team Record
       operationId: teamUpdate
       parameters:
         - name: id
@@ -2577,7 +2577,10 @@ paths:
           schema:
             type: integer
       requestBody:
-        $ref: models/TeamResponse.yaml
+        content:
+          application/json:
+            schema:
+              $ref: models/TeamResponse.yaml
       responses:
         '200':
           description: Successfully updated Team Record
