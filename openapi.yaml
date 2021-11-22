@@ -50,11 +50,12 @@ paths:
         - Calls
       parameters: []
       requestBody:
-        required: true
         content:
           application/json:
             schema:
-              $ref: models/CallRequest.yaml
+              oneOf:
+                - $ref: models/CallRequest.yaml
+                - $ref: models/CampaignRequest.yaml
       responses:
         '200':
           description: Successfully created a Call Record
