@@ -1972,7 +1972,7 @@ paths:
       tags:
         - Tasks
       summary: Find a Task Record by ID
-      description: Returns a single Task Record object
+      description: Returns a Task Record
       operationId: taskRead
       parameters:
         - name: id
@@ -1983,16 +1983,16 @@ paths:
             type: integer
       responses:
         '200':
-          description: default
+          description: Successfully retrieved a Task Record
           content:
             application/json:
               schema:
+                type: object
                 properties:
-                  status:
-                    $ref: models/Status.yaml
                   response:
                     $ref: models/TaskResponse.yaml
-                type: object
+                  status:
+                    $ref: models/SuccessStatus.yaml
         '400':
           description: Error
           content:
@@ -2002,7 +2002,13 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Task GET 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
     put:
       tags:
         - Tasks
