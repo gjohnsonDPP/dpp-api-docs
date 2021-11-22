@@ -20,7 +20,7 @@ properties:
     example: 382760691
   creditor:
     type: integer
-    example: 540
+    title: Original Creditor ID
   debt_id:
     type: integer
     example: 124504794
