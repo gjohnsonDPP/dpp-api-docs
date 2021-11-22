@@ -2,6 +2,10 @@ title: Campaign
 type: object
 description: Campaign Record Object
 properties:
+  object:
+    type: string
+    example: campaign
+    readOnly: true
   id:
     type: integer
     readOnly: true

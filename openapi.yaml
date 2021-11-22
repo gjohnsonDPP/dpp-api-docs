@@ -300,7 +300,10 @@ paths:
       tags:
         - Campaigns
       summary: Create a Campaign Record
-      description: Creates a Campaign Record
+      description: |-
+        Creates a Campaign Record
+
+        <span><i class="fa fa-info-circle"></i><i style="font-size:12px"> Select the `'Examples'` option to change the content of the request's Body to ONLY contain the required POST Parameters.</i></span>
       operationId: campaignCreate
       requestBody:
         required: true
@@ -308,6 +311,26 @@ paths:
           application/json:
             schema:
               $ref: models/CampaignRequest.yaml
+            examples:
+              Request:
+                value:
+                  active: true
+                  title: Campaign Title
+                  start_date: '2019-08-24'
+                  end_date: '2019-08-24'
+                  source_id: 3184
+                  cost: 1984.25
+                  cost_type: 1
+                  priority: 4
+                  media_type: 1
+                  purchase_amount: 42
+              Required Parameters Only:
+                value:
+                  title: Campaign Title
+                  start_date: '2019-08-24'
+                  end_date: '2019-08-24'
+                  cost: 1984.25
+                  media_type: 1
       responses:
         '200':
           description: Successfully created a Campaign Record

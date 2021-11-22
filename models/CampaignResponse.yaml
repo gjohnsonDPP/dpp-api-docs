@@ -4,6 +4,7 @@ description: Campaign Record Object
 properties:
   object:
     type: string
+    example: campaign
     readOnly: true
   id:
     type: integer
