@@ -1,8 +1,8 @@
-title: Call (Required)
+title: Call (Required Post Parameters)
 type: object
 description: Call Record Object
 x-tags:
-  - Call
+  - CallRequired
 properties:
   contactID:
     type: integer
