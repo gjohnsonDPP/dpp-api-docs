@@ -5,6 +5,10 @@ x-tags:
   - Contact
 examples: []
 properties:
+  object:
+    type: string
+    example: contact
+    readOnly: true
   id:
     type: integer
     readOnly: true

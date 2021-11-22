@@ -557,7 +557,10 @@ paths:
       tags:
         - Contacts
       summary: Create a Contact Record
-      description: Creates a Contact Record
+      description: |-
+        Creates a Contact Record
+
+        <span><i class="fa fa-info-circle"></i><i style="font-size:12px"> Select the `'Examples'` option to change the content of the request's Body to ONLY contain the required POST Parameters.</i></span>
       operationId: contactCreate
       requestBody:
         required: true
@@ -565,6 +568,78 @@ paths:
           application/json:
             schema:
               $ref: models/ContactRequest.yaml
+            examples:
+              Request:
+                value:
+                  file_type: '1'
+                  form_id: 18626
+                  assigned_to: 6045085
+                  campaign_id: 128312
+                  attorney: 0
+                  attorney_id: 0
+                  attorney_id2: 0
+                  first_name: John
+                  middle_name: E.
+                  last_name: Doe
+                  salutation: Salutation
+                  title: Mr.
+                  phone_number: '12242525887'
+                  phone_extension: 123
+                  cell_phone: '12242525887'
+                  cell_extension: 123
+                  work_phone: '13123839986'
+                  work_extension: 123
+                  address:
+                    address1: 123 Main St.
+                    address2: Apt. 4008
+                    address3: string
+                    city: Chicago
+                    state: IL
+                    zip: '60612'
+                  email: test@debtpaypro.com
+                  social_security_number: '551192922'
+                  date_of_birth: '1941-03-12'
+                  language: 1
+                  submitted: '1'
+                  submitted_by: n/a
+                  submitted_at: n/a
+                  approved_by2: 0
+                  approved_date2: n/a
+                  rejected_by: 0
+                  rejected_notes: n/a
+                  paused_notes: n/a
+                  dropped_reason: 0
+                  grad_date: n/a
+                  total_debt: '0.00'
+                  welcome_sent: '2020-02-21 16:23:29'
+                  paper_statements: '0'
+                  paper_welcome: '0'
+                  gateway_id: 1
+                  gateway_approved_by: 0
+                  gateway_hold: n/a
+                  gateway_hold_reason: 0
+                  gateway_hold_notes: n/a
+                  gateway_auth_received: '0'
+                  gateway_auth_file: 66c29015-debtpaypro_QA_Test_Template_-_Chase_(xxxx4444).pdf
+                  iscoapp: '0'
+                  customs:
+                    - field_id: 0
+                      value: string
+                      label: string
+              Required Parameters Only:
+                value:
+                  first_name: John
+                  last_name: Doe
+                  phone_number: '12242525887'
+                  address:
+                    address1: 123 Main St.
+                    address2: Apt. 4008
+                    address3: string
+                    city: Chicago
+                    state: IL
+                    zip: '60612'
+                  email: test@debtpaypro.com
+                  date_of_birth: '1941-03-12'
       responses:
         '200':
           description: Successfully created a Contact Record
