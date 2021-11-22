@@ -101,4 +101,8 @@ properties:
     title: Billable Indicator
     type: boolean
     example: true
-readOnly: true
+required:
+  - user_name
+  - active
+  - user_id
+
