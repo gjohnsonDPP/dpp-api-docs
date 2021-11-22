@@ -49,6 +49,7 @@ paths:
       tags:
         - Calls
       requestBody:
+        description: 'Toggle the "Examples" option to set the Request body to contain ONLY the required POST Parameters.'
         required: true
         content:
           application/json:
@@ -72,9 +73,8 @@ paths:
               Required Parameters Only:
                 value:
                   contactID: 516553837
-                  call_type: Outgoing
-                  call_result: Busy
-        description: 'Toggle the "Examples" option to set the Request body to contain ONLY the required POST Parameters.'
+                  call_type: 'Outgoing'
+                  call_result: 'Busy'
       responses:
         '200':
           description: Successfully created a Call Record
