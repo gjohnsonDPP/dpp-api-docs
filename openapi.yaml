@@ -2621,7 +2621,7 @@ paths:
       tags:
         - Teams
       summary: Delete a Team Record by ID
-      description: Deletes a single Team Record object
+      description: Deletes a Team Record
       operationId: teamDelete
       parameters:
         - name: id
