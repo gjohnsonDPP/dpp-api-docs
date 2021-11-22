@@ -103,6 +103,7 @@ properties:
     example: true
 required:
   - user_name
+  - user_type
   - active
   - user_id
 
