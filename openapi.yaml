@@ -1983,11 +1983,11 @@ paths:
                         parent_id: '0'
                         user_type: '1'
                         created: '2019-10-02 02:41:18'
-                        user_name: Greg
-                        firstname: Greg
-                        lastname: Johnson
+                        user_name: JDoe
+                        firstname: John
+                        lastname: Doe
                         company: ''
-                        email: g.johnson@debtpaypro.com
+                        email: test@test.com
                         active: '1'
                         role: '29399'
                         attorney: '0'
@@ -2008,11 +2008,11 @@ paths:
                         parent_id: '0'
                         user_type: '1'
                         created: '2019-10-02 02:41:18'
-                        user_name: Greg
-                        firstname: Greg
-                        lastname: Johnson
+                        user_name: BobS
+                        firstname: Bob
+                        lastname: Smith
                         company: ''
-                        email: g.johnson@debtpaypro.com
+                        email: bsmith@test.com
                         active: '1'
                         role: '29399'
                         attorney: '0'
@@ -2083,6 +2083,78 @@ paths:
                     $ref: models/SettlementofferResponse.yaml
                   status:
                     $ref: models/SuccessStatus.yaml
+              examples:
+                SettlementOffer PUT 200 Response Example:
+                  value:
+                    response:
+                      object: settlement_offer
+                      offer_id: '4114375'
+                      acctID: '3863'
+                      contact_id: '485599270'
+                      creditor: '0'
+                      debt_id: '12345'
+                      created_at: '2021-11-18 21:51:21'
+                      created_by:
+                        object: user
+                        user_id: '4950368'
+                        acctID: '3863'
+                        guid: 1d7564d6-c57a-0a3a-9e18-adfe6ff22c01
+                        company_id: '42128'
+                        parent_id: '0'
+                        user_type: '1'
+                        created: '2019-10-02 02:41:18'
+                        user_name: JDoe
+                        firstname: John
+                        lastname: Doe
+                        company: ''
+                        email: test@test.com
+                        active: '1'
+                        role: '29399'
+                        attorney: '0'
+                        payee_id: '0'
+                        del: '0'
+                        delTime: null
+                        pass_reset: '0'
+                        master: '0'
+                        billable: '1'
+                      modified_at: null
+                      modified_by: null
+                      neg_id:
+                        object: user
+                        user_id: '4950368'
+                        acctID: '3863'
+                        guid: 1d7564d6-c57a-0a3a-9e18-adfe6ff22c01
+                        company_id: '42128'
+                        parent_id: '0'
+                        user_type: '1'
+                        created: '2019-10-02 02:41:18'
+                        user_name: BobS
+                        firstname: Bob
+                        lastname: Smith
+                        company: ''
+                        email: bsmith@test.com
+                        active: '1'
+                        role: '29399'
+                        attorney: '0'
+                        payee_id: '0'
+                        del: '0'
+                        delTime: null
+                        pass_reset: '0'
+                        master: '0'
+                        billable: '1'
+                      madeby: Negotiator
+                      offer_status: null
+                      offer_status_date: '2022-03-07'
+                      offer_valid_date: '2021-10-24'
+                      settlement_type: '0'
+                      debt_amount: '0.00'
+                      settlement_amount: '0.00'
+                      settlement_fee: '0.00'
+                      notes: Lorem Ipsum
+                      cred_cont_id: '0'
+                      json: []
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
