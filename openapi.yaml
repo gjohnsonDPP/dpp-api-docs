@@ -10,7 +10,7 @@ servers:
   - url: 'https://api.debtpaypro.com/v1'
     description: Production Server
   - url: 'https://staging15-api.debtpaypro.com/v1'
-    description: Staging14
+    description: Staging15
 tags:
   - name: Authentication
     description: Authentication
