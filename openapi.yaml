@@ -2632,16 +2632,19 @@ paths:
             type: integer
       responses:
         '200':
-          description: Success
+          description: Successfully deleted Team Record
           content:
             application/json:
               schema:
                 properties:
                   status:
-                    $ref: models/Status.yaml
-                  response:
-                    type: object
-                type: object
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Teams Delete 200 Response Example:
+                  value:
+                    status:
+                      code: 200
+                      message: Successfully deleted object
         '400':
           description: Error
           content:
@@ -2651,7 +2654,13 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Teams Delete 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   /users:
     post:
       tags:
