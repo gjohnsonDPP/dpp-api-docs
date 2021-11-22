@@ -2468,26 +2468,32 @@ paths:
       tags:
         - Teams
       summary: Create a Team Record
-      description: Creates a new Team Record Object
+      description: |-
+        Creates a Team Record
+
+        <span><i class="fa fa-info-circle"></i><i style="font-size:12px"> Select the `'Examples'` option to change the content of the request's Body to ONLY contain the required POST Parameters.</i></span>
       operationId: teamCreate
       requestBody:
-        $ref: '#/components/requestBodies/Team'
+        $ref: models/TeamRequest.yaml
       responses:
         '200':
-          description: after creation
+          description: Successfully created a Team Record
           content:
             application/json:
               schema:
-                properties:
-                  status:
-                    $ref: models/Status.yaml
-                  response:
-                    properties:
-                      id:
-                        type: integer
-                        example: 123
-                    type: object
                 type: object
+                properties:
+                  response:
+                    type: object
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Team POST 200 Response Example:
+                  value:
+                    response:
+                      id: 20872
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
@@ -2497,13 +2503,19 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Teams POST 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   '/teams/{id}':
     get:
       tags:
         - Teams
       summary: Find a Team Record by ID
-      description: Returns a single Team Record object
+      description: Returns a Team Record
       operationId: teamRead
       parameters:
         - name: id
@@ -2514,16 +2526,27 @@ paths:
             type: integer
       responses:
         '200':
-          description: default
+          description: Successfully retrieved team record
           content:
             application/json:
               schema:
-                properties:
-                  status:
-                    $ref: models/Status.yaml
-                  response:
-                    $ref: models/Team.yaml
                 type: object
+                properties:
+                  response:
+                    $ref: models/ResponseTeam.yaml
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Teams GET 200 Response Example:
+                  value:
+                    response:
+                      object: team
+                      team_id: '20875'
+                      acctID: '3863'
+                      company_id: '42128'
+                      name: Test
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
@@ -2533,7 +2556,13 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Teams GET 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
     put:
       tags:
         - Teams
@@ -2548,19 +2577,30 @@ paths:
           schema:
             type: integer
       requestBody:
-        $ref: '#/components/requestBodies/Team'
+        $ref: models/TeamResponse.yaml
       responses:
         '200':
-          description: Success
+          description: Successfully updated Team Record
           content:
             application/json:
               schema:
-                properties:
-                  status:
-                    $ref: models/Status.yaml
-                  response:
-                    type: object
                 type: object
+                properties:
+                  response:
+                    $ref: models/TeamResponse.yaml
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Teams PUT 200 Response Example:
+                  value:
+                    response:
+                      object: team
+                      team_id: '20875'
+                      acctID: '3863'
+                      company_id: '42128'
+                      name: Test
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
@@ -2570,7 +2610,13 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Teams PUT 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
     delete:
       tags:
         - Teams
