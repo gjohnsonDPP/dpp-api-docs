@@ -2,13 +2,20 @@ title: Team
 type: object
 description: Team Record
 properties:
+  object:
+    type: string
+    readOnly: true
+    example: "team"
   id:
     type: integer
+    example: 123
     readOnly: true
   company_id:
     type: integer
+    example: 123
     readOnly: true
   name:
     type: string
+    example: "Team Name"
 x-tags:
   - Team
