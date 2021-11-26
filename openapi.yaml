@@ -2794,39 +2794,34 @@ paths:
       tags:
         - Teams
       summary: Find All Existing Team Records
-      description: Returns a List of Every Team Record object
+      description: Returns a List all Existing Team Records
       operationId: teamsGet
       responses:
         '200':
-          description: default
+          description: Successfully retrieved list of Teams
           content:
             application/json:
               schema:
-                properties:
-                  status:
-                    $ref: models/Status.yaml
-                  response:
-                    description: ''
-                    type: array
-                    items:
-                      properties:
-                        team_id:
-                          description: ''
-                          type: integer
-                        team_name:
-                          description: ''
-                          type: string
                 type: object
+                properties:
+                  response:
+                    type: object
+                  status:
+                    $ref: models/SuccessStatus.yaml
         '400':
           description: Error
           content:
             application/json:
               schema:
-                required:
-                  - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Teams GET 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
     post:
       tags:
         - Teams
