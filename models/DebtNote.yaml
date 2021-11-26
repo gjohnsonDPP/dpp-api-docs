@@ -1,9 +1,11 @@
 title: DebtNote
 type: object
+description: Debt Note Object
 x-tags:
   - Debt
-  - DebtNote
 properties:
+  id:
+    type: integer
   note_id:
     type: integer
     readOnly: true
@@ -16,13 +18,10 @@ properties:
     readOnly: true
   client_id:
     type: integer
-  id:
-    type: integer
   title:
     type: string
   created_by:
-    $ref: ./UserResponse.yaml
-    readOnly: true
+    $ref: ../models/UserResponse.yaml
   content:
     type: string
 required:

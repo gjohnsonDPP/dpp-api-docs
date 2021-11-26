@@ -1771,7 +1771,11 @@ paths:
           schema:
             type: integer
       requestBody:
-        $ref: models/DebtNote.yaml
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: models/DebtNote.yaml
       responses:
         '200':
           description: Successfully created a Debt Note
