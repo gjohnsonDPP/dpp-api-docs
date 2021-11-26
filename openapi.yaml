@@ -1793,17 +1793,15 @@ paths:
                   value:
                     response:
                       object: debt_note
-                      note_id: '22377160'
+                      note_id: '22377190'
                       acctID: '2123'
-                      note_created_date: '2021-11-26 08:43:44'
+                      note_created_date: '2021-11-26 08:49:16'
                       client_id: '475956560'
                       debt_id: '152080478'
-                      title: Test Test
+                      title: API Test D
                       created_by:
                         object: user
                         user_id: '6583363'
-                        acctID: '2123'
-                        guid: 277747b1-e0d1-e513-beac-daaa75b074b7
                         company_id: '12758'
                         parent_id: '0'
                         user_type: '1'
@@ -1819,10 +1817,7 @@ paths:
                         payee_id: '0'
                         del: '0'
                         delTime: null
-                        pass_reset: '0'
-                        master: '0'
-                        billable: '1'
-                      content: Test Test
+                      content: API Test Debt Note
                     status:
                       code: 200
         '400':
