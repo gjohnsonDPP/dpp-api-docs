@@ -969,7 +969,7 @@ paths:
               schema:
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/SuccessStatus.yaml
                   response:
                     type: object
                 type: object
@@ -982,7 +982,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/SuccessStatus.yaml
   '/contacts/{id}/smslog':
     get:
       tags:
@@ -1006,11 +1006,15 @@ paths:
           description: (Optional) This value dictates which SMS Message in the ordered SMS Log to start the Request at.
           schema:
             type: integer
+            default: 1
+          allowEmptyValue: true
         - in: query
           name: _limit
           description: (Optional) This value represents the maximum number of SMS Messages your Request to contain.
           schema:
             type: integer
+            default: 1
+          allowEmptyValue: true
       responses:
         '200':
           description: Successfully retrieved SMS Log
@@ -1018,16 +1022,166 @@ paths:
             application/json:
               schema:
                 type: object
+                properties:
+                  response:
+                    type: object
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                SMS Log GET 200 Response Example:
+                  value:
+                    response:
+                      - id: '65543140'
+                        sdate: '2021-11-26 07:26:07'
+                        body: "Purchase Price: \r\nSpecified Percentage: \r\nSpecific Daily Amount: \r\nReceipts Purchase Amount: "
+                        status: null
+                        client_id: '479244860'
+                        sender:
+                          object: user
+                          user_id: '5367555'
+                          acctID: '155'
+                          guid: 999e3b03-d176-6526-6a31-9e929e0237c6
+                          company_id: '1355'
+                          parent_id: '38859'
+                          user_type: '1'
+                          created: '2020-03-10 14:56:03'
+                          user_name: Greg
+                          firstname: Gregory
+                          lastname: Johnson
+                          company: ''
+                          email: g.johnson@debtpaypro.com
+                          active: '1'
+                          role: '735'
+                          attorney: '0'
+                          payee_id: '0'
+                          del: '0'
+                          delTime: null
+                          pass_reset: '0'
+                          master: '0'
+                          billable: '1'
+                        flag: '1'
+                        schedule_id: '0'
+                        receiver_phone_number: '13123839986'
+                        title: null
+                        from_number: '+16308350712'
+                      - id: '65543134'
+                        sdate: '2021-11-26 07:26:03'
+                        body: "Hello API,\r\n\r\nYour next payment is scheduled for 12/31/1969, in the amount of 0.00. Please reply to this message, or feel free to contact Billing@company.com if you have any questions.\r\n\r\n\r\nDebt PayPro"
+                        status: null
+                        client_id: '479244860'
+                        sender:
+                          object: user
+                          user_id: '5367555'
+                          acctID: '155'
+                          guid: 999e3b03-d176-6526-6a31-9e929e0237c6
+                          company_id: '1355'
+                          parent_id: '38859'
+                          user_type: '1'
+                          created: '2020-03-10 14:56:03'
+                          user_name: Greg
+                          firstname: Gregory
+                          lastname: Johnson
+                          company: ''
+                          email: g.johnson@debtpaypro.com
+                          active: '1'
+                          role: '735'
+                          attorney: '0'
+                          payee_id: '0'
+                          del: '0'
+                          delTime: null
+                          pass_reset: '0'
+                          master: '0'
+                          billable: '1'
+                        flag: '1'
+                        schedule_id: '0'
+                        receiver_phone_number: '13123839986'
+                        title: null
+                        from_number: '+16308350712'
+                      - id: '65543131'
+                        sdate: '2021-11-26 07:25:58'
+                        body: TEST
+                        status: null
+                        client_id: '479244860'
+                        sender:
+                          object: user
+                          user_id: '5367555'
+                          acctID: '155'
+                          guid: 999e3b03-d176-6526-6a31-9e929e0237c6
+                          company_id: '1355'
+                          parent_id: '38859'
+                          user_type: '1'
+                          created: '2020-03-10 14:56:03'
+                          user_name: Greg
+                          firstname: Gregory
+                          lastname: Johnson
+                          company: ''
+                          email: g.johnson@debtpaypro.com
+                          active: '1'
+                          role: '735'
+                          attorney: '0'
+                          payee_id: '0'
+                          del: '0'
+                          delTime: null
+                          pass_reset: '0'
+                          master: '0'
+                          billable: '1'
+                        flag: '1'
+                        schedule_id: '0'
+                        receiver_phone_number: '13123839986'
+                        title: null
+                        from_number: '+16308350712'
+                      - id: '65543128'
+                        sdate: '2021-11-26 07:25:47'
+                        body: "Hello API,\r\n\r\nWelcome to the program. Your first payment is $0, scheduled for . Please contact Customer Services if you have any questions."
+                        status: null
+                        client_id: '479244860'
+                        sender:
+                          object: user
+                          user_id: '5367555'
+                          acctID: '155'
+                          guid: 999e3b03-d176-6526-6a31-9e929e0237c6
+                          company_id: '1355'
+                          parent_id: '38859'
+                          user_type: '1'
+                          created: '2020-03-10 14:56:03'
+                          user_name: Greg
+                          firstname: Gregory
+                          lastname: Johnson
+                          company: ''
+                          email: g.johnson@debtpaypro.com
+                          active: '1'
+                          role: '735'
+                          attorney: '0'
+                          payee_id: '0'
+                          del: '0'
+                          delTime: null
+                          pass_reset: '0'
+                          master: '0'
+                          billable: '1'
+                        flag: '1'
+                        schedule_id: '0'
+                        receiver_phone_number: '13123839986'
+                        title: null
+                        from_number: '+16308350712'
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
             application/json:
               schema:
-                required:
-                  - status
+                type: object
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+                required:
+                  - status
+              examples:
+                SMS Log GET 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   /auth/token:
     post:
       tags:
