@@ -1840,27 +1840,39 @@ paths:
       tags:
         - Debts
       summary: Delete a Debt Note by ID
-      description: Deletes a single Debt Note object
+      description: Deletes a Debt Note
       operationId: debtNoteDelete
       parameters:
         - name: id
           in: path
-          description: Id of debt
+          description: Id of Debt Note
           required: true
           schema:
             type: integer
       responses:
-        default:
-          description: default
+        '200':
+          description: Successfully deleted Debt Note
           content:
             application/json:
               schema:
                 properties:
                   status:
-                    $ref: models/Status.yaml
-                  response:
-                    type: object
+                    $ref: models/SuccessStatus.yaml
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
                 type: object
+                properties:
+                  status:
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Debt Note POST 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   /loans:
     post:
       tags:
