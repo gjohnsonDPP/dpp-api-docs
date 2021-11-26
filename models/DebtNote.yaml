@@ -3,14 +3,14 @@ type: object
 properties:
   note_id:
     type: integer
-    readOnly: 'true'
+    readOnly: true
   acctID:
     type: integer
-    readOnly: 'true'
+    readOnly: true
     example: 4490
   note_created_date:
     type: string
-    readOnly: 'true'
+    readOnly: true
   client_id:
     type: integer
   debt_id:
@@ -19,9 +19,12 @@ properties:
     type: string
   created_by:
     type: object
-    readOnly: 'true'
-    $ref: ../models/User.yaml
+    readOnly: true
+    $ref: ../models/UserResponse.yaml
   content:
     type: string
+required:
+  - debt_id
 x-tags:
+  - Debt
   - DebtNote

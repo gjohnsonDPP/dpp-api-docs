@@ -1761,49 +1761,44 @@ paths:
       tags:
         - Debts
       summary: Create a Debt Note using DebtID
-      description: Creates a new Debt Note object
+      description: Creates a new Debt Note
       operationId: debtNoteCreate
       parameters:
         - in: path
           name: id
-          description: Id of debtnote
+          description: Id of Debt Record to add Note to
           required: true
           schema:
             type: integer
       requestBody:
-        content:
-          application/json:
-            schema:
-              properties:
-                notify_users:
-                  type: object
-                  description: notify users
-                content:
-                  description: notes
-                  type: string
-              type: object
+        $ref: models/DebtNote.yaml
       responses:
         '200':
-          description: Success
+          description: Successfully created a Debt Note
           content:
             application/json:
               schema:
+                type: object
                 properties:
-                  status:
-                    $ref: models/Status.yaml
                   response:
                     type: object
-                type: object
+                  status:
+                    $ref: models/SuccessStatus.yaml
         '400':
           description: Error
           content:
             application/json:
               schema:
-                required:
-                  - status
+                type: object
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Debt Note POST 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   '/debts/notes/{id}':
     delete:
       tags:
