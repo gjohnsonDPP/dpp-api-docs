@@ -1,13 +1,16 @@
 title: DebtNote
 type: object
+x-tags:
+  - Debt
+  - DebtNote
 properties:
   note_id:
     type: integer
     readOnly: true
   acctID:
     type: integer
-    readOnly: true
     example: 4490
+    readOnly: true
   note_created_date:
     type: string
     readOnly: true
@@ -18,13 +21,10 @@ properties:
   title:
     type: string
   created_by:
-    type: object
+    $ref: ./UserResponse.yaml
     readOnly: true
-    $ref: ../models/UserResponse.yaml
   content:
     type: string
 required:
   - id
-x-tags:
-  - Debt
-  - DebtNote
+  - content
