@@ -18,10 +18,9 @@ properties:
     readOnly: true
   client_id:
     type: integer
+    readOnly: true
   title:
     type: string
-  created_by:
-    $ref: ../models/UserResponse.yaml
     readOnly: true
   content:
     type: string
