@@ -1,0 +1,29 @@
+title: DebtNote
+type: object
+description: Debt Note Object
+x-tags:
+  - Debt
+properties:
+  id:
+    type: integer
+    readOnly: true
+  note_id:
+    type: integer
+    readOnly: true
+  acctID:
+    type: integer
+    example: 4490
+    readOnly: true
+  note_created_date:
+    type: string
+    readOnly: true
+  client_id:
+    type: integer
+    readOnly: true
+  title:
+    type: string
+    readOnly: true
+  content:
+    type: string
+  created_by:
+    $ref: ../models/UserResponse.yaml

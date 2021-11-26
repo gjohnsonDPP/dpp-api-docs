@@ -1785,7 +1785,7 @@ paths:
                 type: object
                 properties:
                   response:
-                    type: object
+                    $ref: ./models/DebtNoteResponse.yaml
                   status:
                     $ref: models/SuccessStatus.yaml
               examples:
