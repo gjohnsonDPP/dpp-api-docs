@@ -22,6 +22,7 @@ properties:
     type: string
   created_by:
     $ref: ../models/UserResponse.yaml
+    readOnly: true
   content:
     type: string
 required:
