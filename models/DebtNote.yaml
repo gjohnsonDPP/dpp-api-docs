@@ -13,7 +13,7 @@ properties:
     readOnly: true
   client_id:
     type: integer
-  debt_id:
+  id:
     type: integer
   title:
     type: string
@@ -24,7 +24,7 @@ properties:
   content:
     type: string
 required:
-  - debt_id
+  - id
 x-tags:
   - Debt
   - DebtNote
