@@ -6,6 +6,7 @@ x-tags:
 properties:
   id:
     type: integer
+    readOnly: true
   note_id:
     type: integer
     readOnly: true
@@ -25,5 +26,4 @@ properties:
   content:
     type: string
 required:
-  - id
   - content
