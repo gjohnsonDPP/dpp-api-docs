@@ -16,6 +16,7 @@ properties:
     readOnly: true
   note_created_date:
     type: string
+    format: date-time
     readOnly: true
   client_id:
     type: integer
@@ -23,7 +24,7 @@ properties:
   title:
     type: string
     readOnly: true
+  created_by:
+    $ref: ../models/UserResponse.yaml
   content:
     type: string
-required:
-  - content

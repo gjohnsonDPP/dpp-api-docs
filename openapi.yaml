@@ -26,6 +26,8 @@ tags:
     description: All available actions for Contacts
   - name: Debts
     description: All available actions for Debts
+  - name: Forms
+    description: Actions associated with Forms
   - name: Loans
     description: All available actions for Loans
   - name: Notes
@@ -34,6 +36,8 @@ tags:
     description: All available actions for Packages
   - name: Settlement_Offers
     description: All available actions for Settlement Offers
+  - name: SMS
+    description: Actions associated with SMS Messages
   - name: Tasks
     description: All available actions for Tasks
   - name: Teams
@@ -939,8 +943,9 @@ paths:
     post:
       tags:
         - Contacts
+        - Forms
       summary: Send Form to Contact Email by ID
-      description: Sends a Form to a Contact Email Address by ContactID
+      description: Sends a Form to a Contact via Email Address by ContactID
       operationId: sendForm
       parameters:
         - name: id
@@ -961,37 +966,170 @@ paths:
                 - form_id
       responses:
         '200':
-          description: Success
+          description: Successfully sent Form to Client
           content:
             application/json:
               schema:
+                type: object
                 properties:
-                  status:
-                    $ref: models/Status.yaml
                   response:
                     type: object
-                type: object
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Form Request POST 200 Response Example:
+                  value:
+                    response:
+                      id: '247980032'
+                      acctID: '2123'
+                      company_id: '12758'
+                      parent_acctID: null
+                      tp_id: '88'
+                      customerID: VIDEO-247980032
+                      file_type: '1'
+                      form_id: '0'
+                      created: '2018-08-17 17:28:33'
+                      created_by: '0'
+                      modified: '2021-09-24 15:18:57'
+                      modified_by: '0'
+                      assigned_to: '2272121'
+                      campaign_id: '155880'
+                      attorney: '0'
+                      attorney_id: '0'
+                      attorney_id2: '0'
+                      isAccount: null
+                      account: null
+                      parent_id: null
+                      firstname: Test
+                      middlename: null
+                      lastname: Contact
+                      company: null
+                      salutation: null
+                      department: null
+                      title: ''
+                      address: 36808 Mandrake Way
+                      address2: Suite 200
+                      address3: null
+                      city: Springfield
+                      state: VA
+                      zip: '22156'
+                      country: null
+                      phone: ''
+                      extension: null
+                      phonetype: null
+                      phone2: ''
+                      extension2: null
+                      phone2type: null
+                      phone3: 666-908-8908
+                      extension3: null
+                      phone3type: null
+                      phone4: null
+                      extension4: null
+                      phone4type: null
+                      fax: null
+                      fax2: null
+                      email: g.johnson@debtpaypro.com
+                      email2: ''
+                      messenger: null
+                      mess_type: null
+                      url: null
+                      url2: null
+                      c_status: null
+                      leadstatus: '95663'
+                      c_type: '14582'
+                      c_source: '31745'
+                      unsubscribe: '0'
+                      comments: null
+                      public: '0'
+                      userID: '3471395'
+                      session: null
+                      siteID: null
+                      last_activity: null
+                      activity_type: null
+                      ssn: '333333333'
+                      dob: '0000-00-00'
+                      language: '0'
+                      submitted: '1'
+                      submitted_by: '2272121'
+                      submitted_at: '2018-08-21 17:37:23'
+                      returned: '0'
+                      returned_at: '0000-00-00 00:00:00'
+                      enrolled: '1'
+                      enrolled_date: '2018-08-21'
+                      enrolled_by: '2272121'
+                      approved: '1'
+                      approved_by: '2272121'
+                      approved_date: '2018-08-21'
+                      approved2: '0'
+                      approved_by2: '0'
+                      approved_date2: '0000-00-00'
+                      rejected: '0'
+                      reject_reason: null
+                      rejected_at: '0000-00-00 00:00:00'
+                      rejected_by: '0'
+                      rejected_notes: ''
+                      archived: null
+                      paused: '0'
+                      paused_notes: ''
+                      dropped: '0'
+                      dropped_date: null
+                      dropped_reason: '0'
+                      graduated: '0'
+                      grad_reason: null
+                      grad_date: '0000-00-00'
+                      total_debt: '30000.00'
+                      welcome_sent: '2018-08-21 17:39:24'
+                      paper_statements: '0'
+                      paper_welcome: '0'
+                      gateway_id: '1'
+                      gateway_hold: '1'
+                      gateway_approved_by: '0'
+                      gateway_approved_at: '0000-00-00 00:00:00'
+                      gateway_hold_reason: '15'
+                      gateway_hold_notes: ''
+                      gateway_hold_time: '2018-08-22 11:12:02'
+                      gateway_auth_received: '0'
+                      gateway_auth_file: ''
+                      gateway_auth_time: '0000-00-00 00:00:00'
+                      iscoapp: '0'
+                      del: '0'
+                      del_time: null
+                      del_who: null
+                    status:
+                      code: 200
+                      message: Form Request Sent
         '400':
           description: Error
           content:
             application/json:
               schema:
-                required:
-                  - status
+                type: object
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+                required:
+                  - status
+              examples:
+                Form Request POST 200 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   '/contacts/{id}/smslog':
     get:
       tags:
         - Contacts
+        - SMS
       summary: Get SMS Log Record for a Contact by ID
-      description: Returns a List of Every SMS Message logged for a Contact. By default the SMS Messages are returned in the order Newest to Oldest.
+      description: |-
+        Returns all existing SMS Messages logged for a Contact.
+
+        <span><i class="fa fa-info-circle"></i><i style="font-size:12px"> By default the SMS Messages are returned in order of Newest to Oldest.</i></span>
       operationId: getContactSMSlog
       parameters:
         - name: id
           in: path
-          description: Id of Client whose SMS Messages are to be returned
+          description: Id of Client whose SMS Messages to return
           required: true
           schema:
             type: integer
@@ -1000,11 +1138,15 @@ paths:
           description: (Optional) This value dictates which SMS Message in the ordered SMS Log to start the Request at.
           schema:
             type: integer
+            default: 1
+          allowEmptyValue: true
         - in: query
           name: _limit
           description: (Optional) This value represents the maximum number of SMS Messages your Request to contain.
           schema:
             type: integer
+            default: 1
+          allowEmptyValue: true
       responses:
         '200':
           description: Successfully retrieved SMS Log
@@ -1012,16 +1154,166 @@ paths:
             application/json:
               schema:
                 type: object
+                properties:
+                  response:
+                    type: object
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                SMS Log GET 200 Response Example:
+                  value:
+                    response:
+                      - id: '65543140'
+                        sdate: '2021-11-26 07:26:07'
+                        body: "Purchase Price: \r\nSpecified Percentage: \r\nSpecific Daily Amount: \r\nReceipts Purchase Amount: "
+                        status: null
+                        client_id: '479244860'
+                        sender:
+                          object: user
+                          user_id: '5367555'
+                          acctID: '155'
+                          guid: 999e3b03-d176-6526-6a31-9e929e0237c6
+                          company_id: '1355'
+                          parent_id: '38859'
+                          user_type: '1'
+                          created: '2020-03-10 14:56:03'
+                          user_name: Greg
+                          firstname: Gregory
+                          lastname: Johnson
+                          company: ''
+                          email: g.johnson@debtpaypro.com
+                          active: '1'
+                          role: '735'
+                          attorney: '0'
+                          payee_id: '0'
+                          del: '0'
+                          delTime: null
+                          pass_reset: '0'
+                          master: '0'
+                          billable: '1'
+                        flag: '1'
+                        schedule_id: '0'
+                        receiver_phone_number: '13123839986'
+                        title: null
+                        from_number: '+16308350712'
+                      - id: '65543134'
+                        sdate: '2021-11-26 07:26:03'
+                        body: "Hello API,\r\n\r\nYour next payment is scheduled for 12/31/1969, in the amount of 0.00. Please reply to this message, or feel free to contact Billing@company.com if you have any questions.\r\n\r\n\r\nDebt PayPro"
+                        status: null
+                        client_id: '479244860'
+                        sender:
+                          object: user
+                          user_id: '5367555'
+                          acctID: '155'
+                          guid: 999e3b03-d176-6526-6a31-9e929e0237c6
+                          company_id: '1355'
+                          parent_id: '38859'
+                          user_type: '1'
+                          created: '2020-03-10 14:56:03'
+                          user_name: Greg
+                          firstname: Gregory
+                          lastname: Johnson
+                          company: ''
+                          email: g.johnson@debtpaypro.com
+                          active: '1'
+                          role: '735'
+                          attorney: '0'
+                          payee_id: '0'
+                          del: '0'
+                          delTime: null
+                          pass_reset: '0'
+                          master: '0'
+                          billable: '1'
+                        flag: '1'
+                        schedule_id: '0'
+                        receiver_phone_number: '13123839986'
+                        title: null
+                        from_number: '+16308350712'
+                      - id: '65543131'
+                        sdate: '2021-11-26 07:25:58'
+                        body: TEST
+                        status: null
+                        client_id: '479244860'
+                        sender:
+                          object: user
+                          user_id: '5367555'
+                          acctID: '155'
+                          guid: 999e3b03-d176-6526-6a31-9e929e0237c6
+                          company_id: '1355'
+                          parent_id: '38859'
+                          user_type: '1'
+                          created: '2020-03-10 14:56:03'
+                          user_name: Greg
+                          firstname: Gregory
+                          lastname: Johnson
+                          company: ''
+                          email: g.johnson@debtpaypro.com
+                          active: '1'
+                          role: '735'
+                          attorney: '0'
+                          payee_id: '0'
+                          del: '0'
+                          delTime: null
+                          pass_reset: '0'
+                          master: '0'
+                          billable: '1'
+                        flag: '1'
+                        schedule_id: '0'
+                        receiver_phone_number: '13123839986'
+                        title: null
+                        from_number: '+16308350712'
+                      - id: '65543128'
+                        sdate: '2021-11-26 07:25:47'
+                        body: "Hello API,\r\n\r\nWelcome to the program. Your first payment is $0, scheduled for . Please contact Customer Services if you have any questions."
+                        status: null
+                        client_id: '479244860'
+                        sender:
+                          object: user
+                          user_id: '5367555'
+                          acctID: '155'
+                          guid: 999e3b03-d176-6526-6a31-9e929e0237c6
+                          company_id: '1355'
+                          parent_id: '38859'
+                          user_type: '1'
+                          created: '2020-03-10 14:56:03'
+                          user_name: Greg
+                          firstname: Gregory
+                          lastname: Johnson
+                          company: ''
+                          email: g.johnson@debtpaypro.com
+                          active: '1'
+                          role: '735'
+                          attorney: '0'
+                          payee_id: '0'
+                          del: '0'
+                          delTime: null
+                          pass_reset: '0'
+                          master: '0'
+                          billable: '1'
+                        flag: '1'
+                        schedule_id: '0'
+                        receiver_phone_number: '13123839986'
+                        title: null
+                        from_number: '+16308350712'
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
             application/json:
               schema:
-                required:
-                  - status
+                type: object
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+                required:
+                  - status
+              examples:
+                SMS Log GET 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   /auth/token:
     post:
       tags:
@@ -1469,75 +1761,118 @@ paths:
       tags:
         - Debts
       summary: Create a Debt Note using DebtID
-      description: Creates a new Debt Note object
+      description: Creates a new Debt Note
       operationId: debtNoteCreate
       parameters:
         - in: path
           name: id
-          description: Id of debtnote
+          description: Id of Debt Record to add Note to
           required: true
           schema:
             type: integer
       requestBody:
+        required: true
         content:
           application/json:
             schema:
-              properties:
-                notify_users:
-                  type: object
-                  description: notify users
-                content:
-                  description: notes
-                  type: string
-              type: object
+              $ref: models/DebtNote.yaml
       responses:
         '200':
-          description: Success
+          description: Successfully created a Debt Note
           content:
             application/json:
               schema:
-                properties:
-                  status:
-                    $ref: models/Status.yaml
-                  response:
-                    type: object
                 type: object
+                properties:
+                  response:
+                    $ref: ./models/DebtNoteResponse.yaml
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Debt Note POST 200 Response Example:
+                  value:
+                    response:
+                      object: debt_note
+                      note_id: '22377190'
+                      acctID: '2123'
+                      note_created_date: '2021-11-26 08:49:16'
+                      client_id: '475956560'
+                      debt_id: '152080478'
+                      title: API Test D
+                      created_by:
+                        object: user
+                        user_id: '6583363'
+                        company_id: '12758'
+                        parent_id: '0'
+                        user_type: '1'
+                        created: '2021-10-18 04:12:46'
+                        user_name: Greg
+                        firstname: Greg
+                        lastname: Johnson
+                        company: ''
+                        email: g.johnson@debtpaypro.com
+                        active: '1'
+                        role: '15203'
+                        attorney: '0'
+                        payee_id: '0'
+                        del: '0'
+                        delTime: null
+                      content: API Test Debt Note
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
             application/json:
               schema:
-                required:
-                  - status
+                type: object
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Debt Note POST 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   '/debts/notes/{id}':
     delete:
       tags:
         - Debts
       summary: Delete a Debt Note by ID
-      description: Deletes a single Debt Note object
+      description: Deletes a Debt Note
       operationId: debtNoteDelete
       parameters:
         - name: id
           in: path
-          description: Id of debt
+          description: Id of Debt Note
           required: true
           schema:
             type: integer
       responses:
-        default:
-          description: default
+        '200':
+          description: Successfully deleted Debt Note
           content:
             application/json:
               schema:
                 properties:
                   status:
-                    $ref: models/Status.yaml
-                  response:
-                    type: object
+                    $ref: models/SuccessStatus.yaml
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
                 type: object
+                properties:
+                  status:
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Debt Note POST 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   /loans:
     post:
       tags:
@@ -2459,39 +2794,34 @@ paths:
       tags:
         - Teams
       summary: Find All Existing Team Records
-      description: Returns a List of Every Team Record object
+      description: Returns a List all Existing Team Records
       operationId: teamsGet
       responses:
         '200':
-          description: default
+          description: Successfully retrieved list of Teams
           content:
             application/json:
               schema:
-                properties:
-                  status:
-                    $ref: models/Status.yaml
-                  response:
-                    description: ''
-                    type: array
-                    items:
-                      properties:
-                        team_id:
-                          description: ''
-                          type: integer
-                        team_name:
-                          description: ''
-                          type: string
                 type: object
+                properties:
+                  response:
+                    type: object
+                  status:
+                    $ref: models/SuccessStatus.yaml
         '400':
           description: Error
           content:
             application/json:
               schema:
-                required:
-                  - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Teams GET 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
     post:
       tags:
         - Teams
