@@ -26,6 +26,8 @@ tags:
     description: All available actions for Contacts
   - name: Debts
     description: All available actions for Debts
+  - name: Forms
+    description: Actions associated with Forms
   - name: Loans
     description: All available actions for Loans
   - name: Notes
@@ -941,8 +943,9 @@ paths:
     post:
       tags:
         - Contacts
+        - Forms
       summary: Send Form to Contact Email by ID
-      description: Sends a Form to a Contact Email Address by ContactID
+      description: Sends a Form to a Contact via Email Address by ContactID
       operationId: sendForm
       parameters:
         - name: id
@@ -963,26 +966,155 @@ paths:
                 - form_id
       responses:
         '200':
-          description: Success
+          description: Successfully sent Form to Client
           content:
             application/json:
               schema:
+                type: object
                 properties:
-                  status:
-                    $ref: models/SuccessStatus.yaml
                   response:
                     type: object
-                type: object
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                Form Request POST 200 Response Example:
+                  value:
+                    response:
+                      id: '247980032'
+                      acctID: '2123'
+                      company_id: '12758'
+                      parent_acctID: null
+                      tp_id: '88'
+                      customerID: VIDEO-247980032
+                      file_type: '1'
+                      form_id: '0'
+                      created: '2018-08-17 17:28:33'
+                      created_by: '0'
+                      modified: '2021-09-24 15:18:57'
+                      modified_by: '0'
+                      assigned_to: '2272121'
+                      campaign_id: '155880'
+                      attorney: '0'
+                      attorney_id: '0'
+                      attorney_id2: '0'
+                      isAccount: null
+                      account: null
+                      parent_id: null
+                      firstname: Test
+                      middlename: null
+                      lastname: Contact
+                      company: null
+                      salutation: null
+                      department: null
+                      title: ''
+                      address: 36808 Mandrake Way
+                      address2: Suite 200
+                      address3: null
+                      city: Springfield
+                      state: VA
+                      zip: '22156'
+                      country: null
+                      phone: ''
+                      extension: null
+                      phonetype: null
+                      phone2: ''
+                      extension2: null
+                      phone2type: null
+                      phone3: 666-908-8908
+                      extension3: null
+                      phone3type: null
+                      phone4: null
+                      extension4: null
+                      phone4type: null
+                      fax: null
+                      fax2: null
+                      email: g.johnson@debtpaypro.com
+                      email2: ''
+                      messenger: null
+                      mess_type: null
+                      url: null
+                      url2: null
+                      c_status: null
+                      leadstatus: '95663'
+                      c_type: '14582'
+                      c_source: '31745'
+                      unsubscribe: '0'
+                      comments: null
+                      public: '0'
+                      userID: '3471395'
+                      session: null
+                      siteID: null
+                      last_activity: null
+                      activity_type: null
+                      ssn: '333333333'
+                      dob: '0000-00-00'
+                      language: '0'
+                      submitted: '1'
+                      submitted_by: '2272121'
+                      submitted_at: '2018-08-21 17:37:23'
+                      returned: '0'
+                      returned_at: '0000-00-00 00:00:00'
+                      enrolled: '1'
+                      enrolled_date: '2018-08-21'
+                      enrolled_by: '2272121'
+                      approved: '1'
+                      approved_by: '2272121'
+                      approved_date: '2018-08-21'
+                      approved2: '0'
+                      approved_by2: '0'
+                      approved_date2: '0000-00-00'
+                      rejected: '0'
+                      reject_reason: null
+                      rejected_at: '0000-00-00 00:00:00'
+                      rejected_by: '0'
+                      rejected_notes: ''
+                      archived: null
+                      paused: '0'
+                      paused_notes: ''
+                      dropped: '0'
+                      dropped_date: null
+                      dropped_reason: '0'
+                      graduated: '0'
+                      grad_reason: null
+                      grad_date: '0000-00-00'
+                      total_debt: '30000.00'
+                      welcome_sent: '2018-08-21 17:39:24'
+                      paper_statements: '0'
+                      paper_welcome: '0'
+                      gateway_id: '1'
+                      gateway_hold: '1'
+                      gateway_approved_by: '0'
+                      gateway_approved_at: '0000-00-00 00:00:00'
+                      gateway_hold_reason: '15'
+                      gateway_hold_notes: ''
+                      gateway_hold_time: '2018-08-22 11:12:02'
+                      gateway_auth_received: '0'
+                      gateway_auth_file: ''
+                      gateway_auth_time: '0000-00-00 00:00:00'
+                      iscoapp: '0'
+                      del: '0'
+                      del_time: null
+                      del_who: null
+                    status:
+                      code: 200
+                      message: Form Request Sent
         '400':
           description: Error
           content:
             application/json:
               schema:
-                required:
-                  - status
+                type: object
                 properties:
                   status:
-                    $ref: models/SuccessStatus.yaml
+                    $ref: models/ErrorStatus.yaml
+                required:
+                  - status
+              examples:
+                Form Request POST 200 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   '/contacts/{id}/smslog':
     get:
       tags:
