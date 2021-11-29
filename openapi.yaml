@@ -3658,6 +3658,78 @@ paths:
                 properties:
                   status:
                     $ref: models/Status.yaml
+  /documents/types:
+    get:
+      summary: GET
+      tags: []
+      responses: {}
+      operationId: get-documents-types
+      description: gets all document types from endpoint
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/DocTypes'
+        description: ''
+    post:
+      summary: insert
+      operationId: post-documents-types
+      responses:
+        '200':
+          description: OK
+      description: Adds new type to documentTypes
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              properties:
+                title:
+                  type: string
+                  minLength: 1
+              required:
+                - title
+              x-examples:
+                example-1:
+                  title: Test
+        description: input string title
+  '/documents/types/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+        description: ID of title
+    put:
+      summary: UPDATE
+      operationId: put-documents-types-id
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocTypes'
+      description: ''
+    delete:
+      summary: DELETE
+      operationId: delete-documents-types-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type:
+                  - string
+                  - number
+      description: deletes the endpoint
 components:
   schemas:
     Status:
@@ -4318,6 +4390,21 @@ components:
       type: object
     Docs:
       description: docs data
+      type: object
+      x-examples:
+        example-1:
+          clixsign:
+            - null
+          esigns:
+            - null
+          docusign:
+            - null
+          uploads:
+            - null
+          generated:
+            - null
+          Types:
+            - null
       properties:
         clixsign:
           type: array
@@ -4334,7 +4421,6 @@ components:
         generated:
           type: array
           items: {}
-      type: object
     Loan:
       type: object
       properties:
@@ -4815,6 +4901,32 @@ components:
       required:
         - start
         - limit
+    DocTypes:
+      description: Document types CRUD
+      type: object
+      x-examples:
+        example-1:
+          object: documentTypes
+          id: '1'
+          title: General / Misc.
+      properties:
+        object:
+          type:
+            - string
+            - object
+          minLength: 1
+        id:
+          type:
+            - string
+            - integer
+          minLength: 1
+        title:
+          type: string
+          minLength: 1
+      required:
+        - object
+        - id
+        - title
   responses:
     '400':
       description: Error
