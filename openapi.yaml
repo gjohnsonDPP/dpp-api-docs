@@ -7,8 +7,6 @@ info:
     name: Support
     email: support@debtpaypro.com
 servers:
-  # - url: 'https://api.debtpaypro.com/v1'
-  #   description: Production Server
   - url: 'https://staging15-api.debtpaypro.com/v1'
     description: Staging15
 tags:
@@ -144,7 +142,7 @@ paths:
                   status:
                     $ref: models/SuccessStatus.yaml
               examples:
-                Call GET 200 Response Example:
+                Calls GET 200 Response Example:
                   value:
                     response:
                       object: call
@@ -160,13 +158,29 @@ paths:
                       status_change: '274158'
                       duration: '00:01:15'
                       event_id: 8179
-                      dialer_id: 1
+                      dialer_id: 2
                       recording_url: '"http://example.com"'
-                      call_user:
-                        first_name: John
-                        last_name: Smith
+                      assigned_agent:
+                        object: user
+                        id: 6033912
+                        acctID: 3863
+                        company_id: 42128
+                        parent_id: 4950368
+                        user_type: 1
+                        created: '2021-01-13 12:47:25'
+                        user_name: API_User123
+                        firstname: John
+                        lastname: Doe
+                        company: Acme
+                        email: mail@debtpaypro.com
+                        active: true
+                        role: 29399
+                        attorney: true
+                        payee_id: 23006
+                        del: 0
+                        delTime: '2021-01-13 12:47:25'
                     status:
-                      code: 200
+                      code: 0
         '400':
           description: Error
           content:
@@ -215,7 +229,7 @@ paths:
                   status:
                     $ref: models/SuccessStatus.yaml
               examples:
-                Call PUT 200 Response Example:
+                Calls PUT 200 Response Example:
                   value:
                     response:
                       object: call
@@ -231,13 +245,29 @@ paths:
                       status_change: '274158'
                       duration: '00:01:15'
                       event_id: 8179
-                      dialer_id: 1
+                      dialer_id: 2
                       recording_url: '"http://example.com"'
-                      call_user:
-                        first_name: John
-                        last_name: Smith
+                      assigned_agent:
+                        object: user
+                        id: 6033912
+                        acctID: 3863
+                        company_id: 42128
+                        parent_id: 4950368
+                        user_type: 1
+                        created: '2021-01-13 12:47:25'
+                        user_name: API_User123
+                        firstname: John
+                        lastname: Doe
+                        company: Acme
+                        email: mail@debtpaypro.com
+                        active: true
+                        role: 29399
+                        attorney: true
+                        payee_id: 23006
+                        del: 0
+                        delTime: '2021-01-13 12:47:25'
                     status:
-                      code: 200
+                      code: 0
         '400':
           description: Error
           content:
