@@ -56,6 +56,6 @@ properties:
     type: integer
     example: 2
     enum:
-      - 1
-      - 2
-      - 3
+      - 1 - FIVE9
+      - 2 - BLUEROCK
+      - 3 - CALLFIRE
