@@ -600,6 +600,7 @@ paths:
         <span><i class="fa fa-info-circle"></i><i style="font-size:12px"> Select the `'Examples'` option to change the content of the request's Body to ONLY contain the required POST Parameters.</i></span>
       operationId: contactCreate
       requestBody:
+        description: ''
         required: true
         content:
           application/json:
@@ -647,7 +648,7 @@ paths:
                   paused_notes: n/a
                   dropped_reason: 0
                   grad_date: n/a
-                  total_debt: '0.00'
+                  total_debt: 0.00
                   welcome_sent: '2020-02-21 16:23:29'
                   paper_statements: '0'
                   paper_welcome: '0'
@@ -834,7 +835,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: ./models/ContactResponse.yaml
+              $ref: models/ContactResponse.yaml
       parameters:
         - name: id
           in: path
