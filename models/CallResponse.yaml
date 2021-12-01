@@ -67,12 +67,5 @@ properties:
     type: string
     format: uri
     example: '"http://example.com"'
-  call_user:
-    type: object
-    properties:
-      first_name:
-        type: string
-        example: John
-      last_name:
-        type: string
-        example: Smith
+  assigned_user:
+    $ref: ./UserResponse.yaml
