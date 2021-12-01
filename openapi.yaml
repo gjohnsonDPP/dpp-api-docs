@@ -7,8 +7,8 @@ info:
     name: Support
     email: support@debtpaypro.com
 servers:
-  - url: 'https://api.debtpaypro.com/v1'
-    description: Production Server
+  # - url: 'https://api.debtpaypro.com/v1'
+  #   description: Production Server
   - url: 'https://staging15-api.debtpaypro.com/v1'
     description: Staging15
 tags:
