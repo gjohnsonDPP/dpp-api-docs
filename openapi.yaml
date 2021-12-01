@@ -180,7 +180,7 @@ paths:
                         del: 0
                         delTime: '2021-01-13 12:47:25'
                     status:
-                      code: 0
+                      code: 200
         '400':
           description: Error
           content:
@@ -245,29 +245,30 @@ paths:
                       status_change: '274158'
                       duration: '00:01:15'
                       event_id: 8179
-                      dialer_id: 2
+                      dialer_id: 1
                       recording_url: '"http://example.com"'
                       assigned_agent:
                         object: user
-                        id: 6033912
+                        id: 4950368
                         acctID: 3863
                         company_id: 42128
-                        parent_id: 4950368
-                        user_type: 1
-                        created: '2021-01-13 12:47:25'
-                        user_name: API_User123
+                        parent_id: 0
+                        user_type: '1'
+                        created: '2019-10-02 02:41:18'
+                        user_name: JohnD
                         firstname: John
                         lastname: Doe
-                        company: Acme
-                        email: mail@debtpaypro.com
-                        active: true
-                        role: 29399
-                        attorney: true
-                        payee_id: 23006
-                        del: 0
-                        delTime: '2021-01-13 12:47:25'
+                        company: ''
+                        email: test@test.com
+                        active: '1'
+                        role: '29399'
+                        attorney: '0'
+                        payee_id: 0
+                        del: '0'
+                        delTime: null
+                        pass_reset: '0'
                     status:
-                      code: 0
+                      code: 200
         '400':
           description: Error
           content:
