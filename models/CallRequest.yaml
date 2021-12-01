@@ -55,7 +55,11 @@ properties:
   dialer_id:
     type: integer
     example: 2
+    enum:
+      - 1
+      - 2
+      - 3
 required:
-- contactID
-- call_type
-- call_result
+  - contactID
+  - call_type
+  - call_result
