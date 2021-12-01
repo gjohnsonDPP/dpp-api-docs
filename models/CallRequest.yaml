@@ -62,13 +62,16 @@ properties:
   recording_url:
     type: string
     format: uri
+    example: '"http://example.com"'
   call_user:
     type: object
     properties:
       first_name:
         type: string
+        example: John
       last_name:
         type: string
+        example: Smith
 required:
   - contactID
   - call_type
