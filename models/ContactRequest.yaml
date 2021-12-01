@@ -137,7 +137,7 @@ properties:
     type: string
     format: date
   total_debt:
-    type: double
+    type: number
     example: 13755.90
   welcome_sent:
     type: string
