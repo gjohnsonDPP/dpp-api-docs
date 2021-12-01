@@ -59,6 +59,16 @@ properties:
       - 1 - FIVE9
       - 2 - BLUEROCK
       - 3 - CALLFIRE
+  recording_url:
+    type: string
+    format: uri
+  call_user:
+    type: object
+    properties:
+      first_name:
+        type: string
+      last_name:
+        type: string
 required:
   - contactID
   - call_type
