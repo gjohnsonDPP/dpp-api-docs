@@ -159,7 +159,11 @@ paths:
                       status_change: '274158'
                       duration: '00:01:15'
                       event_id: 8179
-                      dialer_id: 2
+                      dialer_id: 1 - FIVE9
+                      recording_url: '"http://example.com"'
+                      call_user:
+                        first_name: John
+                        last_name: Smith
                     status:
                       code: 200
         '400':
@@ -225,7 +229,11 @@ paths:
                       status_change: '274158'
                       duration: '00:01:15'
                       event_id: 8179
-                      dialer_id: 2
+                      dialer_id: 1 - FIVE9
+                      recording_url: '"http://example.com"'
+                      call_user:
+                        first_name: John
+                        last_name: Smith
                     status:
                       code: 200
         '400':
