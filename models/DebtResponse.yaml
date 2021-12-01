@@ -12,6 +12,10 @@ properties:
     type: integer
     example: 124507509
     readOnly: true
+  acctID:
+    type: integer
+    example: 3863
+    readOnly: true
   created_at:
     type: string
     format: date-time
