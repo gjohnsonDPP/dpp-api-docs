@@ -48,7 +48,7 @@ properties:
     type: string
     format: duration
     example: '00:01:15'
-    pattern: YYYY-MM-DD
+    pattern: 'hh:mm:ss'
   event_id:
     type: integer
     example: 8179
