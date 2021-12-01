@@ -1599,7 +1599,10 @@ paths:
       description: Updates a Debt Record
       operationId: debtUpdate
       requestBody:
-        $ref: models/DebtRequest.yaml
+        content:
+          application/json:
+            schema:
+              $ref: ./models/DebtRequest.yaml
       parameters:
         - name: id
           in: path
