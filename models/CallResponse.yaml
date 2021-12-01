@@ -14,6 +14,10 @@ properties:
     description: ID of the call record
     example: 385319179
     readOnly: true
+  acctID:
+    type: integer
+    example: 3863
+    readOnly: true
   contactID:
     type: integer
     example: 516553837
