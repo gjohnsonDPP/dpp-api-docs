@@ -56,9 +56,9 @@ properties:
     type: integer
     example: 2
     enum:
-      - 1 - FIVE9
-      - 2 - BLUEROCK
-      - 3 - CALLFIRE
+      - 1
+      - 2
+      - 3
   recording_url:
     type: string
     format: uri
