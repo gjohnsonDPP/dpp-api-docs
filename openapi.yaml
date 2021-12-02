@@ -648,7 +648,7 @@ paths:
                   paused_notes: n/a
                   dropped_reason: 0
                   grad_date: n/a
-                  total_debt: 0.00
+                  total_debt: 0
                   welcome_sent: '2020-02-21 16:23:29'
                   paper_statements: '0'
                   paper_welcome: '0'
@@ -2591,7 +2591,9 @@ paths:
                   task_due_date: '2019-08-24'
                   task_note: Task Note
                   title: Title
-                  assigned_to: {}
+                  assigned_to:
+                    object: User
+                    id: 51494
         description: Task object to be created
         required: true
       responses:
@@ -2779,7 +2781,7 @@ paths:
                       task_completed_date: '2019-08-24T14:15:22Z'
                       task_completion_percentage: 0
                       task_status: 0
-                      title: Title 
+                      title: Title
                     status:
                       code: 200
         '400':
