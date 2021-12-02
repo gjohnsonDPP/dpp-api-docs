@@ -2582,9 +2582,7 @@ paths:
                   task_completion_percentage: 0
                   task_status: 0
                   title: Title
-                  assigned_to_id: 516553837
                   task_type: 0
-                  assigned_to: 382760691
               Required Parameters Only:
                 value:
                   contact_id: 516553837
@@ -2593,7 +2591,7 @@ paths:
                   task_due_date: '2019-08-24'
                   task_note: Task Note
                   title: Title
-                  assigned_to: 382760691
+                  assigned_to: {}
         description: Task object to be created
         required: true
       responses:
@@ -2663,6 +2661,7 @@ paths:
                     response:
                       object: task
                       id: 32549869
+                      acctID: 3863
                       contact_id: 516553837
                       task_created_date: '2019-08-24T14:15:22Z'
                       task_name: Task Name
@@ -2694,7 +2693,7 @@ paths:
                       task_completion_percentage: 0
                       task_status: 0
                       title: Title
-                      assigned_to: 0
+                      assigned_to: {}
                     status:
                       code: 200
         '400':
@@ -2750,6 +2749,7 @@ paths:
                     response:
                       object: task
                       id: 32549869
+                      acctID: 3863
                       contact_id: 516553837
                       task_created_date: '2019-08-24T14:15:22Z'
                       task_name: Task Name
@@ -2781,7 +2781,7 @@ paths:
                       task_completion_percentage: 0
                       task_status: 0
                       title: Title
-                      assigned_to: 0
+                      assigned_to: {}
                     status:
                       code: 200
         '400':
