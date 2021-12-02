@@ -42,6 +42,10 @@ properties:
   current_rate:
     type: number
     example: 0.00
+  notes:
+    type: string
+    example: debt note
+    readOnly: true  
   verified_debt_amount:
     type: number
     example: 0.00
