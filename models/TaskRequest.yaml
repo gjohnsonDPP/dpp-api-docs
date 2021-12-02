@@ -57,7 +57,7 @@ properties:
     type: integer
   title:
     type: string
-    example: Title
+    example: Title 
   assigned_to:
     type: array
     items:
@@ -65,32 +65,20 @@ properties:
         - properties:
             object:
               type: string
-              format: uuid
-              default: User
+              example: User
             id:
               type: integer
-              default: 51494
+              example: 51494
         - properties:
             object:
               type: string
-              format: uuid
-              default: Team
+              example: Team
             id:
               type: integer
-              default: 212
+              example: 212
         - properties:
             object:
               type: string
-              format: uuid
-              default: Contact
+              example: Contact
             id:
-              type: string
-              default: '""'
-      type: object
-required:
-  - contact_id
-  - task_name
-  - defined_task
-  - task_due_date
-  - task_note
-  - assigned_to
+              type: integer
