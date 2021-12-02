@@ -59,27 +59,37 @@ properties:
     type: string
     example: Title
   assigned_to:
+    type: object
     oneOf:
-        - properties:
-            object:
-              type: string
-              example: User
-            id:
-              type: integer
-              example: 51494
-        - properties:
-            object:
-              type: string
-              example: Team
-            id:
-              type: integer
-              example: 212
-        - properties:
-            object:
-              type: string
-              example: Contact
-            id:
-              type: integer
+      - type: object
+        title: User
+        properties:
+          object:
+            type: string
+            default: User
+            value: User
+          id:
+            type: integer
+            example: 51494
+      - type: object
+        title: Team
+        properties:
+          object:
+            type: string
+            default: Team
+            value: Team
+          id:
+            type: integer
+            example: 212
+      - type: object
+        title: Contact
+        properties:
+          object:
+            type: string
+            default: Contact
+            value: Contact
+          id:
+            type: integer 
 required:
   - contact_id
   - task_name

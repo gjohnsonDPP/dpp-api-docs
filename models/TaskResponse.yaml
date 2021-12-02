@@ -59,24 +59,20 @@ properties:
     type: string
     example: Title
   assigned_to:
+    type: object
     oneOf:
-      - properties:
-          object:
-            type: string
-            example: User
-          id:
-            type: integer
-            example: 51494
-      - properties:
-          object:
-            type: string
-            example: Team
-          id:
-            type: integer
-            example: 212
-      - properties:
-          object:
-            type: string
-            example: Contact
-          id:
-            type: integer
+      - type: object
+        title: User
+        properties:
+          User:
+            $ref: ./UserResponse.yaml
+      - type: object
+        title: Team
+        properties:
+          Team:
+            $ref: ./TeamResponse.yaml
+      - type: object
+        title: Contact
+        properties:
+          Team:
+            $ref: ./ContactResponse.yaml          
