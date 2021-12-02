@@ -29,23 +29,23 @@ properties:
     readOnly: true
   original_debt_amount:
     type: number
-    example: 10500.00
+    example: 10500
   current_debt_amount:
     type: number
-    example: 9499.50
+    example: 9499.5
   current_payment:
     type: number
-    example: 153.00
+    example: 153
   current_rate:
     type: number
-    example: 0.00
+    example: 0
   notes:
     type: string
     example: debt note
     readOnly: true
   verified_debt_amount:
     type: number
-    example: 0.00
+    example: 0
   creditor:
     type: integer
     example: 540
@@ -59,22 +59,22 @@ properties:
     format: date
   legal_account:
     type: string
-    example: "No"
+    example: 'No'
   last_payment_date:
     type: string
     format: date
   last_payment_amount:
     type: number
-    example: 0.00
+    example: 0
   opened_date:
     type: string
     format: date
   available_balance:
     type: number
-    example: 0.00
+    example: 0
   enrolled:
-    type: integer
     default: false
+    type: boolean
   enrolled_date:
     type: string
     format: date
@@ -83,16 +83,16 @@ properties:
     example: 0
   debt_status:
     type: string
-    example: ""
+    example: ''
   locked:
     type: boolean
     default: false
   og_account_num:
     type: string
-    example: "12345674445"
+    example: '12345674445'
   creditor_account_num:
     type: string
-    example: ""
+    example: ''
   settled:
     type: boolean
     default: false
