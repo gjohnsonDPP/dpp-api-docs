@@ -1542,6 +1542,7 @@ paths:
                         payee_id: 0
                         del: '0'
                         delTime: null
+                        pass_reset: '0'
                       modified_at: null
                       modified_by: null
                       original_debt_amount: 10500
@@ -1680,6 +1681,7 @@ paths:
                         payee_id: 0
                         del: '0'
                         delTime: null
+                        pass_reset: '0'
                       modified_at: null
                       modified_by: null
                       original_debt_amount: 10500

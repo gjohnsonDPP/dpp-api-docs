@@ -39,15 +39,15 @@ properties:
   user_name:
     title: User Name
     type: string
-    example: "API_User123"
+    example: API_User123
   firstname:
     title: First Name
     type: string
-    example: "John"
+    example: John
   lastname:
     title: Last Name
     type: string
-    example: "Doe"
+    example: Doe
   company:
     title: Company Name
     type: string
@@ -84,12 +84,14 @@ properties:
     format: date-time
     example: '2021-01-13 12:47:25'
     readOnly: true
+  pass_reset:
+    type: boolean
+    readOnly: true
 required:
-  - user_name
   - user_type
-  - active
-  - email
+  - user_name
   - firstname
   - lastname
+  - email
+  - active
   - role
-

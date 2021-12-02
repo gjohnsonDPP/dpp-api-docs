@@ -84,3 +84,6 @@ properties:
     format: date-time
     example: '2021-01-13 12:47:25'
     readOnly: true
+  pass_reset:
+    type: boolean
+    readOnly: true
