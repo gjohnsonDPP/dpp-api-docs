@@ -58,29 +58,28 @@ properties:
   title:
     type: string
     example: Title
-  creditor: 
   assigned_to:
     oneOf:
-      - properties:
-          object:
-            type: string
-            example: User
-          id:
-            type: integer
-            example: 51494
-      - properties:
-          object:
-            type: string
-            example: Team
-          id:
-            type: integer
-            example: 212
-      - properties:
-          object:
-            type: string
-            example: Contact
-          id:
-            type: integer
+        - properties:
+            object:
+              type: string
+              example: User
+            id:
+              type: integer
+              example: 51494
+        - properties:
+            object:
+              type: string
+              example: Team
+            id:
+              type: integer
+              example: 212
+        - properties:
+            object:
+              type: string
+              example: Contact
+            id:
+              type: integer
 required:
   - contact_id
   - task_name
