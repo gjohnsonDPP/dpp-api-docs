@@ -2693,7 +2693,6 @@ paths:
                       task_completion_percentage: 0
                       task_status: 0
                       title: Title
-                      assigned_to: {}
                     status:
                       code: 200
         '400':
@@ -2729,7 +2728,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: models/TaskResponse.yaml
+              $ref: models/TaskRequest.yaml
         description: Task object that needs to be updated
       responses:
         '200':
@@ -2780,8 +2779,7 @@ paths:
                       task_completed_date: '2019-08-24T14:15:22Z'
                       task_completion_percentage: 0
                       task_status: 0
-                      title: Title
-                      assigned_to: {}
+                      title: Title 
                     status:
                       code: 200
         '400':
