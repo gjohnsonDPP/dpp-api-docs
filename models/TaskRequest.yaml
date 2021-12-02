@@ -59,17 +59,34 @@ properties:
     type: string
     example: Title
   assigned_to:
-    oneOf:
-      - properties:
-          User:
-            type: string
-            example: '51494'
-          Team:
-            type: string
-            example: '212'
-          Contact:
-            type: string
-    type: object
+    type: array
+    items:
+      oneOf:
+        - properties:
+            object:
+              type: string
+              format: uuid
+              default: User
+            id:
+              type: integer
+              default: 51494
+        - properties:
+            object:
+              type: string
+              format: uuid
+              default: Team
+            id:
+              type: integer
+              default: 212
+        - properties:
+            object:
+              type: string
+              format: uuid
+              default: Contact
+            id:
+              type: string
+              default: '""'
+      type: object
 required:
   - contact_id
   - task_name
