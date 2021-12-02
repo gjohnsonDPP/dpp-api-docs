@@ -2662,39 +2662,63 @@ paths:
                   value:
                     response:
                       object: task
-                      id: 32549869
-                      acctID: 3863
-                      contact_id: 516553837
-                      task_created_date: '2019-08-24T14:15:22Z'
+                      id: '32811025'
+                      acctID: '3863'
+                      contact_id: '516553837'
+                      task_created_date: '2021-12-02 16:12:32'
                       task_name: Task Name
-                      defined_task: 0
+                      defined_task: '25907'
                       created_by:
                         object: user
-                        id: 6033912
-                        company_id: 42128
-                        parent_id: 4950368
-                        created: '2021-01-13 12:47:25'
-                        user_name: QAuser
-                        firstname: QA
-                        lastname: Tester
-                        company: Acme
-                        email: mail@debtpaypro.com
-                        active: true
-                        role: 29399
-                        attorney: true
-                        payee_id: 23006
-                        del: 0
-                        delTime: '2021-01-13 12:47:25'
+                        id: '4950368'
+                        acctID: '3863'
+                        company_id: '42128'
+                        parent_id: '0'
+                        user_type: '1'
+                        created: '2019-10-02 02:41:18'
+                        user_name: Greg
+                        firstname: Greg
+                        lastname: Johnson
+                        company: ''
+                        email: g.johnson@debtpaypro.com
+                        active: '1'
+                        role: '29399'
+                        attorney: '0'
+                        payee_id: '0'
+                        del: '0'
+                        delTime: null
+                        pass_reset: '0'
                       task_due_date: '2019-08-24'
                       task_note: Task Note
-                      list_id: 0
-                      team_id: 0
-                      task_completed: 0
-                      task_completed_by: 0
-                      task_completed_date: '2019-08-24T14:15:22Z'
-                      task_completion_percentage: 0
-                      task_status: 0
-                      title: Title
+                      list_id: '0'
+                      team_id: '0'
+                      task_completed: '0'
+                      task_completed_by: null
+                      task_completed_date: ''
+                      task_completion_percentage: '0'
+                      task_status: '0'
+                      title: Task Name
+                      task_type: '0'
+                      assigned_to:
+                        object: user
+                        id: '51494'
+                        acctID: '5'
+                        company_id: '83'
+                        parent_id: '0'
+                        user_type: '1'
+                        created: '2014-12-23 11:06:46'
+                        user_name: support
+                        firstname: Debt Pay Pro
+                        lastname: Support
+                        company: ''
+                        email: dpp@debtpaypro.com
+                        active: '0'
+                        role: '4990'
+                        attorney: '0'
+                        payee_id: '0'
+                        del: '0'
+                        delTime: null
+                        pass_reset: '0'
                     status:
                       code: 200
         '400':
@@ -2749,39 +2773,63 @@ paths:
                   value:
                     response:
                       object: task
-                      id: 32549869
-                      acctID: 3863
-                      contact_id: 516553837
-                      task_created_date: '2019-08-24T14:15:22Z'
+                      id: '32811025'
+                      acctID: '3863'
+                      contact_id: '516553837'
+                      task_created_date: '2021-12-02 16:12:32'
                       task_name: Task Name
-                      defined_task: 0
+                      defined_task: '25907'
                       created_by:
                         object: user
-                        id: 6033912
-                        company_id: 42128
-                        parent_id: 4950368
-                        created: '2021-01-13 12:47:25'
-                        user_name: QAuser
-                        firstname: QA
-                        lastname: Tester
-                        company: Acme
-                        email: mail@debtpaypro.com
-                        active: true
-                        role: 29399
-                        attorney: true
-                        payee_id: 23006
-                        del: 0
-                        delTime: '2021-01-13 12:47:25'
+                        id: '4950368'
+                        acctID: '3863'
+                        company_id: '42128'
+                        parent_id: '0'
+                        user_type: '1'
+                        created: '2019-10-02 02:41:18'
+                        user_name: Greg
+                        firstname: Greg
+                        lastname: Johnson
+                        company: ''
+                        email: g.johnson@debtpaypro.com
+                        active: '1'
+                        role: '29399'
+                        attorney: '0'
+                        payee_id: '0'
+                        del: '0'
+                        delTime: null
+                        pass_reset: '0'
                       task_due_date: '2019-08-24'
                       task_note: Task Note
-                      list_id: 0
-                      team_id: 0
-                      task_completed: 0
-                      task_completed_by: 0
-                      task_completed_date: '2019-08-24T14:15:22Z'
-                      task_completion_percentage: 0
-                      task_status: 0
-                      title: Title
+                      list_id: '0'
+                      team_id: '0'
+                      task_completed: '0'
+                      task_completed_by: null
+                      task_completed_date: ''
+                      task_completion_percentage: '0'
+                      task_status: '0'
+                      title: Task Name
+                      task_type: '0'
+                      assigned_to:
+                        object: user
+                        id: '51494'
+                        acctID: '5'
+                        company_id: '83'
+                        parent_id: '0'
+                        user_type: '1'
+                        created: '2014-12-23 11:06:46'
+                        user_name: support
+                        firstname: Debt Pay Pro
+                        lastname: Support
+                        company: ''
+                        email: dpp@debtpaypro.com
+                        active: '0'
+                        role: '4990'
+                        attorney: '0'
+                        payee_id: '0'
+                        del: '0'
+                        delTime: null
+                        pass_reset: '0'
                     status:
                       code: 200
         '400':
