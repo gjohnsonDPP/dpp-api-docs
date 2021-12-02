@@ -70,7 +70,7 @@ properties:
             value: User
           id:
             type: integer
-            example: 51494
+            default: 51494
       - type: object
         title: Team
         properties:
@@ -80,7 +80,7 @@ properties:
             value: Team
           id:
             type: integer
-            example: 212
+            default: 212
       - type: object
         title: Contact
         properties:
@@ -89,7 +89,8 @@ properties:
             default: Contact
             value: Contact
           id:
-            type: integer 
+            type: integer
+            default: ''
 required:
   - contact_id
   - task_name
