@@ -12,6 +12,10 @@ properties:
     type: integer
     example: 32549869
     readOnly: true
+  acctID:
+    type: integer
+    example: 3863
+    readOnly: true
   contact_id:
     type: integer
     example: 516553837
@@ -21,18 +25,18 @@ properties:
     readOnly: true
   task_name:
     type: string
-    example: "Task Name"
+    example: Task Name
   defined_task:
     type: integer
+    example: 25907
   created_by:
-    type: integer
-    readOnly: true
+    $ref: ./UserResponse.yaml
   task_due_date:
     type: string
     format: date
   task_note:
     type: string
-    example: "Task Note"
+    example: Task Note
   list_id:
     type: integer
   team_id:
@@ -53,13 +57,23 @@ properties:
     type: integer
   title:
     type: string
-    example: "Title"
+    example: Title
   assigned_to:
-    type: integer
+    oneOf:
+      - properties:
+          User:
+            type: string
+            example: '51494'
+          Team:
+            type: string
+            example: '212'
+          Contact:
+            type: string
+    type: object
 required:
   - contact_id
   - task_name
   - defined_task
   - task_due_date
-  - assigned_to
   - task_note
+  - assigned_to
