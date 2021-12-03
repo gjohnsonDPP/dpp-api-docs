@@ -49,6 +49,7 @@ properties:
     example: 8500.55
   settlement_amount:
     type: integer
+    minimum: 1
   settlement_fee:
     type: integer
   notes:
