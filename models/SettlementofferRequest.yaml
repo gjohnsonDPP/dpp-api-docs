@@ -15,7 +15,7 @@ properties:
   acctID:
     type: integer
     example: 3863
-    readOnly: true  
+    readOnly: true
   contact_id:
     type: integer
     example: 382760691
@@ -41,7 +41,7 @@ properties:
     type: integer
   offer_status_date:
     type: string
-    format: date-time
+    format: date
   offer_valid_date:
     type: string
     format: date

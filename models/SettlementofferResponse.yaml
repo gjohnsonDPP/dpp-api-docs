@@ -6,8 +6,8 @@ x-tags:
 properties:
   object:
     type: string
+    example: settlement_offer
     readOnly: true
-    example: "settlement_offer"
   id:
     type: integer
     example: 3319980
@@ -15,7 +15,7 @@ properties:
   acctID:
     type: integer
     example: 3863
-    readOnly: true  
+    readOnly: true
   contact_id:
     type: integer
     example: 382760691
@@ -37,7 +37,6 @@ properties:
     readOnly: true
   modified_by:
     $ref: ../models/UserResponse.yaml
-    readOnly: true
   neg_id:
     $ref: ../models/UserResponse.yaml
   madeby:
@@ -47,7 +46,7 @@ properties:
     type: integer
   offer_status_date:
     type: string
-    format: date-time
+    format: date
   offer_valid_date:
     type: string
     format: date
@@ -62,7 +61,7 @@ properties:
     type: integer
   notes:
     type: string
-    example: "Lorem Ipsum"
+    example: Lorem Ipsum
   cred_cont_id:
     type: integer
   json:
