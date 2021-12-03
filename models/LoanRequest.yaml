@@ -10,6 +10,10 @@ properties:
     type: integer
     readOnly: true
     example: 1863358
+  acctID:
+    type: integer
+    example: 3863
+    readOnly: true  
   tp_id:
     type: integer
     example: 0

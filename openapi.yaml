@@ -7,8 +7,6 @@ info:
     name: Support
     email: support@debtpaypro.com
 servers:
-  - url: 'https://api.debtpaypro.com/v1'
-    description: Production Server
   - url: 'https://staging15-api.debtpaypro.com/v1'
     description: Staging15
 tags:
@@ -144,13 +142,14 @@ paths:
                   status:
                     $ref: models/SuccessStatus.yaml
               examples:
-                Call GET 200 Response Example:
+                Calls GET 200 Response Example:
                   value:
                     response:
                       object: call
-                      id: '385319179'
-                      contactID: '516553837'
-                      userID: '3028014'
+                      id: 385319179
+                      acctID: 3863
+                      contactID: 516553837
+                      userID: 3028014
                       sdate: '2019-08-24'
                       created_at: '2019-08-24T14:15:22Z'
                       call_type: Outgoing
@@ -160,6 +159,26 @@ paths:
                       duration: '00:01:15'
                       event_id: 8179
                       dialer_id: 2
+                      recording_url: '"http://example.com"'
+                      assigned_agent:
+                        object: user
+                        id: 6033912
+                        acctID: 3863
+                        company_id: 42128
+                        parent_id: 4950368
+                        user_type: 1
+                        created: '2021-01-13 12:47:25'
+                        user_name: API_User123
+                        firstname: John
+                        lastname: Doe
+                        company: Acme
+                        email: mail@debtpaypro.com
+                        active: true
+                        role: 29399
+                        attorney: true
+                        payee_id: 23006
+                        del: 0
+                        delTime: '2021-01-13 12:47:25'
                     status:
                       code: 200
         '400':
@@ -210,13 +229,14 @@ paths:
                   status:
                     $ref: models/SuccessStatus.yaml
               examples:
-                Call PUT 200 Response Example:
+                Calls PUT 200 Response Example:
                   value:
                     response:
                       object: call
-                      id: '385319179'
-                      contactID: '516553837'
-                      userID: '3028014'
+                      id: 385319179
+                      acctID: 3863
+                      contactID: 516553837
+                      userID: 3028014
                       sdate: '2019-08-24'
                       created_at: '2019-08-24T14:15:22Z'
                       call_type: Outgoing
@@ -225,7 +245,28 @@ paths:
                       status_change: '274158'
                       duration: '00:01:15'
                       event_id: 8179
-                      dialer_id: 2
+                      dialer_id: 1
+                      recording_url: '"http://example.com"'
+                      assigned_agent:
+                        object: user
+                        id: 4950368
+                        acctID: 3863
+                        company_id: 42128
+                        parent_id: 0
+                        user_type: '1'
+                        created: '2019-10-02 02:41:18'
+                        user_name: JohnD
+                        firstname: John
+                        lastname: Doe
+                        company: ''
+                        email: test@test.com
+                        active: '1'
+                        role: '29399'
+                        attorney: '0'
+                        payee_id: 0
+                        del: '0'
+                        delTime: null
+                        pass_reset: '0'
                     status:
                       code: 200
         '400':
@@ -394,6 +435,7 @@ paths:
                     response:
                       object: campaign
                       id: 177286
+                      acctID: 3863
                       company_id: 21752
                       active: true
                       created_at: '2019-08-24T14:15:22Z'
@@ -466,6 +508,7 @@ paths:
                     response:
                       object: campaign
                       id: 177286
+                      acctID: 3863
                       company_id: 21752
                       active: true
                       created_at: '2019-08-24T14:15:22Z'
@@ -557,6 +600,7 @@ paths:
         <span><i class="fa fa-info-circle"></i><i style="font-size:12px"> Select the `'Examples'` option to change the content of the request's Body to ONLY contain the required POST Parameters.</i></span>
       operationId: contactCreate
       requestBody:
+        description: ''
         required: true
         content:
           application/json:
@@ -604,7 +648,7 @@ paths:
                   paused_notes: n/a
                   dropped_reason: 0
                   grad_date: n/a
-                  total_debt: '0.00'
+                  total_debt: 0
                   welcome_sent: '2020-02-21 16:23:29'
                   paper_statements: '0'
                   paper_welcome: '0'
@@ -702,6 +746,7 @@ paths:
                     response:
                       object: contact
                       id: 382760691
+                      acctID: 3863
                       company_id: 42128
                       file_type: 1
                       form_id: 18626
@@ -790,7 +835,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: ./models/ContactResponse.yaml
+              $ref: models/ContactResponse.yaml
       parameters:
         - name: id
           in: path
@@ -816,6 +861,7 @@ paths:
                     response:
                       object: contact
                       id: 382760691
+                      acctID: 3863
                       company_id: 42128
                       file_type: 1
                       form_id: 18626
@@ -1475,13 +1521,14 @@ paths:
                   value:
                     response:
                       object: debt
-                      debt_id: '163287508'
+                      id: 163287508
+                      acctID: 3863
                       created_at: '2021-11-22 04:43:57'
                       created_by:
                         object: user
-                        user_id: '4950368'
-                        company_id: '42128'
-                        parent_id: '0'
+                        user_id: 4950368
+                        company_id: 42128
+                        parent_id: 0
                         user_type: '1'
                         created: '2019-10-02 02:41:18'
                         user_name: JDoe
@@ -1492,22 +1539,23 @@ paths:
                         active: '1'
                         role: '29399'
                         attorney: '0'
-                        payee_id: '0'
+                        payee_id: 0
                         del: '0'
                         delTime: null
+                        pass_reset: '0'
                       modified_at: null
                       modified_by: null
-                      original_debt_amount: '10500.00'
-                      current_debt_amount: '9499.50'
-                      current_payment: '153.00'
-                      current_rate: '0.00'
+                      original_debt_amount: 10500
+                      current_debt_amount: 9499.5
+                      current_payment: 153
+                      current_rate: 0
                       notes: null
-                      verified_debt_amount: '0.00'
+                      verified_debt_amount: 0
                       creditor:
                         object: creditor
-                        creditor_id: '540'
-                        acctID: '0'
-                        tp_id: '0'
+                        creditor_id: 540
+                        acctID: 3863
+                        tp_id: 0
                         is_active: '1'
                         company_name: Chase
                         first_name: null
@@ -1522,9 +1570,9 @@ paths:
                         phone: 800-444-9370
                       debt_buyer:
                         object: creditor
-                        creditor_id: '17576331'
-                        acctID: '3863'
-                        tp_id: '0'
+                        creditor_id: 17576331
+                        acctID: 3863
+                        tp_id: 0
                         is_active: '1'
                         company_name: Bob's Debt Co.
                         first_name: Bob
@@ -1540,9 +1588,9 @@ paths:
                       poa_sent_date: '2019-08-24'
                       legal_account: 'No'
                       last_payment_date: '2019-08-24'
-                      last_payment_amount: '0.00'
+                      last_payment_amount: 0
                       opened_date: '2019-08-24'
-                      available_balance: '0.00'
+                      available_balance: 0
                       enrolled: '0'
                       enrolled_date: '2019-08-24 00:00:00'
                       debt_type: '0'
@@ -1555,8 +1603,8 @@ paths:
                       og_account_num: '12345674445'
                       creditor_account_num: null
                       settled: '0'
-                      settlement_id: '0'
-                      client_id: '382760691'
+                      settlement_id: 0
+                      client_id: 382760691
                       settlement_offers: []
                       customs: []
                     status:
@@ -1584,7 +1632,10 @@ paths:
       description: Updates a Debt Record
       operationId: debtUpdate
       requestBody:
-        $ref: models/DebtResponse.yaml
+        content:
+          application/json:
+            schema:
+              $ref: ./models/DebtResponse.yaml
       parameters:
         - name: id
           in: path
@@ -1609,13 +1660,14 @@ paths:
                   value:
                     response:
                       object: debt
-                      debt_id: '163287508'
+                      id: 163287508
+                      acctID: 3863
                       created_at: '2021-11-22 04:43:57'
                       created_by:
                         object: user
-                        user_id: '4950368'
-                        company_id: '42128'
-                        parent_id: '0'
+                        user_id: 4950368
+                        company_id: 42128
+                        parent_id: 0
                         user_type: '1'
                         created: '2019-10-02 02:41:18'
                         user_name: JDoe
@@ -1626,22 +1678,23 @@ paths:
                         active: '1'
                         role: '29399'
                         attorney: '0'
-                        payee_id: '0'
+                        payee_id: 0
                         del: '0'
                         delTime: null
+                        pass_reset: '0'
                       modified_at: null
                       modified_by: null
-                      original_debt_amount: '10500.00'
-                      current_debt_amount: '9499.50'
-                      current_payment: '153.00'
-                      current_rate: '0.00'
+                      original_debt_amount: 10500
+                      current_debt_amount: 9499.5
+                      current_payment: 153
+                      current_rate: 0
                       notes: null
-                      verified_debt_amount: '0.00'
+                      verified_debt_amount: 0
                       creditor:
                         object: creditor
-                        creditor_id: '540'
-                        acctID: '0'
-                        tp_id: '0'
+                        creditor_id: 540
+                        acctID: 3863
+                        tp_id: 0
                         is_active: '1'
                         company_name: Chase
                         first_name: null
@@ -1656,9 +1709,9 @@ paths:
                         phone: 800-444-9370
                       debt_buyer:
                         object: creditor
-                        creditor_id: '17576331'
-                        acctID: '3863'
-                        tp_id: '0'
+                        creditor_id: 17576331
+                        acctID: 3863
+                        tp_id: 0
                         is_active: '1'
                         company_name: Bob's Debt Co.
                         first_name: Bob
@@ -1674,9 +1727,9 @@ paths:
                       poa_sent_date: '2019-08-24'
                       legal_account: 'No'
                       last_payment_date: '2019-08-24'
-                      last_payment_amount: '0.00'
+                      last_payment_amount: 0
                       opened_date: '2019-08-24'
-                      available_balance: '0.00'
+                      available_balance: 0
                       enrolled: '0'
                       enrolled_date: '2019-08-24 00:00:00'
                       debt_type: '0'
@@ -1689,8 +1742,8 @@ paths:
                       og_account_num: '12345674445'
                       creditor_account_num: null
                       settled: '0'
-                      settlement_id: '0'
-                      client_id: '382760691'
+                      settlement_id: 0
+                      client_id: 382760691
                       settlement_offers: []
                       customs: []
                     status:
@@ -1987,6 +2040,7 @@ paths:
                     response:
                       object: loan
                       loan_id: '1868335'
+                      acctID: 3863
                       tp_id: null
                       created_at: '2021-11-22 05:02:09'
                       created_by: '4950368'
@@ -2075,6 +2129,7 @@ paths:
                     response:
                       object: loan
                       loan_id: '1868335'
+                      acctID: 3863
                       tp_id: null
                       created_at: '2021-11-22 05:02:09'
                       created_by: '4950368'
@@ -2207,10 +2262,12 @@ paths:
                   contact_id: 382760691
                   debt_id: 124504794
                   offer_valid_date: '2019-08-24'
-                  settlement_type: 0
+                  settlement_type: 1
                   debt_amount: 8500.55
-                  settlement_amount: 0
+                  settlement_amount: 1
+                  creditor: 540
         required: true
+        description: ''
       responses:
         '200':
           description: Successfully created a Settlement Offer
@@ -2278,8 +2335,9 @@ paths:
                     response:
                       object: settlement_offer
                       id: '4114375'
+                      acctID: 3863
                       contact_id: '485599270'
-                      creditor: '0'
+                      creditor: '540'
                       debt_id: '12345'
                       created_at: '2021-11-18 21:51:21'
                       created_by:
@@ -2385,8 +2443,9 @@ paths:
                     response:
                       object: settlement_offer
                       id: '4114375'
+                      acctID: 3863
                       contact_id: '485599270'
-                      creditor: '0'
+                      creditor: '540'
                       debt_id: '12345'
                       created_at: '2021-11-18 21:51:21'
                       created_by:
@@ -2527,9 +2586,7 @@ paths:
                   task_completion_percentage: 0
                   task_status: 0
                   title: Title
-                  assigned_to_id: 516553837
                   task_type: 0
-                  assigned_to: 382760691
               Required Parameters Only:
                 value:
                   contact_id: 516553837
@@ -2538,7 +2595,9 @@ paths:
                   task_due_date: '2019-08-24'
                   task_note: Task Note
                   title: Title
-                  assigned_to: 382760691
+                  assigned_to:
+                    object: User
+                    id: 51494
         description: Task object to be created
         required: true
       responses:
@@ -2607,39 +2666,63 @@ paths:
                   value:
                     response:
                       object: task
-                      id: 32549869
-                      contact_id: 516553837
-                      task_created_date: '2019-08-24T14:15:22Z'
+                      id: '32811025'
+                      acctID: '3863'
+                      contact_id: '516553837'
+                      task_created_date: '2021-12-02 16:12:32'
                       task_name: Task Name
-                      defined_task: 0
+                      defined_task: '25907'
                       created_by:
                         object: user
-                        id: 6033912
-                        company_id: 42128
-                        parent_id: 4950368
-                        created: '2021-01-13 12:47:25'
-                        user_name: QAuser
-                        firstname: QA
-                        lastname: Tester
-                        company: Acme
-                        email: mail@debtpaypro.com
-                        active: true
-                        role: 29399
-                        attorney: true
-                        payee_id: 23006
-                        del: 0
-                        delTime: '2021-01-13 12:47:25'
+                        id: '4950368'
+                        acctID: '3863'
+                        company_id: '42128'
+                        parent_id: '0'
+                        user_type: '1'
+                        created: '2019-10-02 02:41:18'
+                        user_name: Greg
+                        firstname: Greg
+                        lastname: Johnson
+                        company: ''
+                        email: g.johnson@debtpaypro.com
+                        active: '1'
+                        role: '29399'
+                        attorney: '0'
+                        payee_id: '0'
+                        del: '0'
+                        delTime: null
+                        pass_reset: '0'
                       task_due_date: '2019-08-24'
                       task_note: Task Note
-                      list_id: 0
-                      team_id: 0
-                      task_completed: 0
-                      task_completed_by: 0
-                      task_completed_date: '2019-08-24T14:15:22Z'
-                      task_completion_percentage: 0
-                      task_status: 0
-                      title: Title
-                      assigned_to: 0
+                      list_id: '0'
+                      team_id: '0'
+                      task_completed: '0'
+                      task_completed_by: null
+                      task_completed_date: ''
+                      task_completion_percentage: '0'
+                      task_status: '0'
+                      title: Task Name
+                      task_type: '0'
+                      assigned_to:
+                        object: user
+                        id: '51494'
+                        acctID: '5'
+                        company_id: '83'
+                        parent_id: '0'
+                        user_type: '1'
+                        created: '2014-12-23 11:06:46'
+                        user_name: support
+                        firstname: Debt Pay Pro
+                        lastname: Support
+                        company: ''
+                        email: dpp@debtpaypro.com
+                        active: '0'
+                        role: '4990'
+                        attorney: '0'
+                        payee_id: '0'
+                        del: '0'
+                        delTime: null
+                        pass_reset: '0'
                     status:
                       code: 200
         '400':
@@ -2675,7 +2758,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: models/TaskResponse.yaml
+              $ref: models/TaskRequest.yaml
         description: Task object that needs to be updated
       responses:
         '200':
@@ -2694,39 +2777,63 @@ paths:
                   value:
                     response:
                       object: task
-                      id: 32549869
-                      contact_id: 516553837
-                      task_created_date: '2019-08-24T14:15:22Z'
+                      id: '32811025'
+                      acctID: '3863'
+                      contact_id: '516553837'
+                      task_created_date: '2021-12-02 16:12:32'
                       task_name: Task Name
-                      defined_task: 0
+                      defined_task: '25907'
                       created_by:
                         object: user
-                        id: 6033912
-                        company_id: 42128
-                        parent_id: 4950368
-                        created: '2021-01-13 12:47:25'
-                        user_name: QAuser
-                        firstname: QA
-                        lastname: Tester
-                        company: Acme
-                        email: mail@debtpaypro.com
-                        active: true
-                        role: 29399
-                        attorney: true
-                        payee_id: 23006
-                        del: 0
-                        delTime: '2021-01-13 12:47:25'
+                        id: '4950368'
+                        acctID: '3863'
+                        company_id: '42128'
+                        parent_id: '0'
+                        user_type: '1'
+                        created: '2019-10-02 02:41:18'
+                        user_name: Greg
+                        firstname: Greg
+                        lastname: Johnson
+                        company: ''
+                        email: g.johnson@debtpaypro.com
+                        active: '1'
+                        role: '29399'
+                        attorney: '0'
+                        payee_id: '0'
+                        del: '0'
+                        delTime: null
+                        pass_reset: '0'
                       task_due_date: '2019-08-24'
                       task_note: Task Note
-                      list_id: 0
-                      team_id: 0
-                      task_completed: 0
-                      task_completed_by: 0
-                      task_completed_date: '2019-08-24T14:15:22Z'
-                      task_completion_percentage: 0
-                      task_status: 0
-                      title: Title
-                      assigned_to: 0
+                      list_id: '0'
+                      team_id: '0'
+                      task_completed: '0'
+                      task_completed_by: null
+                      task_completed_date: ''
+                      task_completion_percentage: '0'
+                      task_status: '0'
+                      title: Task Name
+                      task_type: '0'
+                      assigned_to:
+                        object: user
+                        id: '51494'
+                        acctID: '5'
+                        company_id: '83'
+                        parent_id: '0'
+                        user_type: '1'
+                        created: '2014-12-23 11:06:46'
+                        user_name: support
+                        firstname: Debt Pay Pro
+                        lastname: Support
+                        company: ''
+                        email: dpp@debtpaypro.com
+                        active: '0'
+                        role: '4990'
+                        attorney: '0'
+                        payee_id: '0'
+                        del: '0'
+                        delTime: null
+                        pass_reset: '0'
                     status:
                       code: 200
         '400':

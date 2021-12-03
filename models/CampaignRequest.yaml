@@ -9,6 +9,10 @@ properties:
   id:
     type: integer
     readOnly: true
+  acctID:
+    type: integer
+    example: 3863
+    readOnly: true
   company_id:
     type: integer
     readOnly: true
