@@ -2264,7 +2264,7 @@ paths:
                   offer_valid_date: '2019-08-24'
                   settlement_type: ACH
                   debt_amount: 8500.55
-                  settlement_amount: 0
+                  settlement_amount: 1
                   creditor: 540
         required: true
         description: ''
