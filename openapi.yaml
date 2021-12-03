@@ -2262,7 +2262,7 @@ paths:
                   contact_id: 382760691
                   debt_id: 124504794
                   offer_valid_date: '2019-08-24'
-                  settlement_type: ACH
+                  settlement_type: 0
                   debt_amount: 8500.55
                   settlement_amount: 1
                   creditor: 540
