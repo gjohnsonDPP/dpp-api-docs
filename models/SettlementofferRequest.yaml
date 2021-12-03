@@ -47,7 +47,8 @@ properties:
     format: date
   settlement_type:
     type: integer
-    default: ACH
+    default: 1
+    minimum: 1
   debt_amount:
     type: integer
     example: 8500.55
