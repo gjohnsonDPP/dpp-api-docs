@@ -12,6 +12,10 @@ properties:
     type: integer
     example: 3319980
     readOnly: true
+  acctID:
+    type: integer
+    example: 3863
+    readOnly: true  
   contact_id:
     type: integer
     example: 382760691
