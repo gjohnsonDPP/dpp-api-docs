@@ -112,9 +112,61 @@
                   status:
                     $ref: models/ErrorStatus.yaml
               examples:
-                <Demo> POST 400 Response Example:
+                <Demo> GET 400 Response Example:
                   value:
                     status:
                       code: 400
                       message: Bad Request - The system encountered an error.
-                      ```
+  ```
+  #### PUT REQUEST TEMPLATE
+  ```yaml
+      put:
+      tags:
+        - Demos
+      summary: Update a <Demo> Record by ID
+      description: Updates a <Demo> Record
+      operationId: demoUpdate
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: <path to Demo Response Model>
+      parameters:
+        - name: id
+          in: path
+          description: Id of <Demo> Record to update
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully Updated a <Demo> Record
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    $ref: <path to Demo Response Model>
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                <Demo> PUT 200 Response Example:
+                  $ref: <path to example>
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                <Demo> PUT 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: Bad Request - The system encountered an error.
+  ```
+  #### DELETE REQUEST TEMPLATE
