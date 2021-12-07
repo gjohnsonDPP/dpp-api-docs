@@ -1,9 +1,9 @@
  # API Documentation Guide
- 1. Make a branch off of the **Development Branch**.
- 2. Goto the [DebtPayPro API](https://debtpaypro.stoplight.io/docs/dpp-api/ZG9jOjQ2NDA2-introduction) Stoplight Documentation.
+ 1. Make a branch off of the **Development Branch**(Development Branch will always be up to date with *master*).
+ 2. Goto the [DebtPayPro API](https://debtpaypro.stoplight.io/docs/dpp-api/ZG9jOjQ2NDA2-introduction) Documentation on Stoplight. 
  3. Access the web version of *Stoplight Studio* by selecting the **Edit Button**.
- 4. ⚠️Before editing any content, make sure that you are editing YOUR Branch. At the top-center of the page you will see the name of the branch you are editing displayed after the text **DebtPayPro API /**. If you are on the wrong branch you can select the current branch name shown and switch to the correct one.
- 5. The general components of every API Request Documentation include:
+ 4. ⚠️Before editing any content, make sure that you are editing **YOUR** Branch. At the top-center of the page you will see the name of the branch you are editing displayed after the text **DebtPayPro API /**. If you are on the wrong branch, select the current branch name shown and switch to the correct one.
+ 5. The general Documentation Components of every API Request include:
     - Paths
     - Models
     - Examples
