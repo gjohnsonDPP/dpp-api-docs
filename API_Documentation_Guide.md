@@ -170,3 +170,49 @@
                       message: Bad Request - The system encountered an error.
   ```
   #### DELETE REQUEST TEMPLATE
+  ```yaml
+      delete:
+      tags:
+        - Demos
+      summary: Delete <Demo> Record by ID
+      description: Deletes a <Demo> Record
+      operationId: demoDelete
+      parameters:
+        - name: id
+          in: path
+          description: Id of <Demo> Record to be deleted
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully Deleted a <Demo> Record
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                <Demo> DELETE 200 Response Example:
+                  value:
+                    status:
+                      code: 200
+                      message: Successfully Deleted object.
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                <Demo> PUT 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: Bad Request - The system encountered an error.
+   ```
