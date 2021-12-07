@@ -10,7 +10,7 @@
     - Examples
  6. The first component to document is the API Request Path. In *Stoplight Studio*, right-click the **Paths** directory and create a new Path.
  7. To assist in the documentation of the API Path, refer to the section below: ***API Request Path Templates***. When finished with created the API Path, continue to Step 8.  
- 
+ 8. The second component to document is the API Request Models. In *Stoplight Studio*, right-click the **Models** directory and create a new *Request Model*, then create a new *Response Model*. For the *Request Model*, refer to any of the existing Models that include the word *Request* in their name. For the *Response Model*, refer to any of the existing Models that include the word *Response* in their name.
  ## API Request Path Templates
  #### POST REQUEST TEMPLATE
   ```yaml
