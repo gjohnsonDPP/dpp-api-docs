@@ -5064,11 +5064,6 @@ components:
         event_id: 8178
         dialer_id: 2
         recording_id: 3
-        description: /calls POST Request Body Example
-        type: object
-        properties:
-          id:
-            type: string
         required:
          contactID: 516553837
          call_type: "Outgoing"
