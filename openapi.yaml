@@ -61,26 +61,25 @@ paths:
             schema:
               $ref: models/CallRequest.yaml
             examples:
-              value:
-                $ref: '#/components/examples/CallRequest'
-              #   value:
-              #     contactID: 516553837
-              #     activity_id: 608125717
-              #     sdate: '2019-08-24'
-              #     call_type: Outgoing
-              #     call_result: Busy
-              #     call_dis_id: 2
-              #     notes: Lorem Ipsum
-              #     status_change: '274158'
-              #     duration: '00:01:15'
-              #     event_id: 8179
-              #     dialer_id: 2
-              #     recording_id: 3
-              # Required Parameters Only:
-              #   value:
-              #     contactID: 516553837
-              #     call_type: Outgoing
-              #     call_result: Busy
+              Request:
+                value:
+                  contactID: 516553837
+                  activity_id: 608125717
+                  sdate: '2019-08-24'
+                  call_type: Outgoing
+                  call_result: Busy
+                  call_dis_id: 2
+                  notes: Lorem Ipsum
+                  status_change: '274158'
+                  duration: '00:01:15'
+                  event_id: 8179
+                  dialer_id: 2
+                  recording_id: 3
+              Required Parameters Only:
+                value:
+                  contactID: 516553837
+                  call_type: Outgoing
+                  call_result: Busy
       responses:
         '200':
           description: Successfully created a Call Record
@@ -5049,25 +5048,5 @@ components:
       type: apiKey
       name: Api-Key
       in: header
-  examples:
-    CallRequest:
-      value:
-        contactID: 516553837
-        activity_id: 608125717
-        sdate: "2020-01-20"
-        call_type: "Incoming"
-        call_result: "Busy"
-        call_dis_id: 2
-        notes: "Lorem Ipsum"
-        status_change: 274158
-        duration: "00:01:15"
-        event_id: 8178
-        dialer_id: 2
-        recording_id: 3
-        Required Parameters Only:
-          value:
-            contactID: 516553837
-            call_type: "Outgoing"
-            call_result: "Busy" 
 security:
   - API-Key: []
