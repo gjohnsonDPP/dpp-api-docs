@@ -70,4 +70,51 @@
                     status:
                       code: 400
                       message: Bad Request - The system encountered an error
-                  ```
+ ```
+ #### GET REQUEST TEMPLATE
+ ```yaml
+   '/demos/{id}':
+    get:
+      tags:
+        - Demos
+      summary: Find a <demo> Record by ID
+      description: Returns a <demo> Record
+      operationId: demoRead
+      parameters:
+        - name: id
+          in: path
+          description: Id of Demo Record to return
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully retrieved a <Demo> Record
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    $ref: <path to Demo Model>
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                <Demo> GET 200 Response Example:
+                  $ref: <path to example>
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                <Demo> POST 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: Bad Request - The system encountered an error.
+                      ```
