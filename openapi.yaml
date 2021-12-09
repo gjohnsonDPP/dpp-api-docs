@@ -126,26 +126,6 @@ paths:
                     $ref: models/CallResponse.yaml
                   status:
                     $ref: models/SuccessStatus.yaml
-              examples:
-                Calls GET 200 Response Example:
-                  value:
-                    response:
-                      object: call
-                      id: 385319179
-                      acctID: 3863
-                      contactID: 516553837
-                      userID: 3028014
-                      sdate: '2019-08-24'
-                      created_at: '2019-08-24T14:15:22Z'
-                      call_type: Outgoing
-                      call_result: Busy
-                      notes: Lorem Ipsum
-                      status_change: 274158
-                      duration: '00:01:15'
-                      event_id: 8179
-                      dialer_id: 2
-                    status:
-                      code: 200
         '400':
           description: Error
           content:
@@ -170,11 +150,15 @@ paths:
       description: Updates a Call Record
       operationId: callUpdate
       requestBody:
+        description: ''
+        required: true
         content:
           application/json:
             schema:
               $ref: models/CallResponse.yaml
-        description: ''
+            examples:
+              Request:
+                $ref: '#/components/examples/CallPOST'
       parameters:
         - name: id
           in: path
@@ -194,25 +178,6 @@ paths:
                     $ref: models/CallResponse.yaml
                   status:
                     $ref: models/SuccessStatus.yaml
-              examples:
-                Calls PUT 200 Response Example:
-                  value:
-                    response:
-                      object: call
-                      id: 385319179
-                      acctID: 3863
-                      contactID: 516553837
-                      userID: 3028014
-                      sdate: '2019-08-24'
-                      created_at: '2019-08-24T14:15:22Z'
-                      call_type: Outgoing
-                      call_result: Busy
-                      notes: Lorem Ipsum
-                      status_change: 274158
-                      event_id: 8179
-                      dialer_id: 1
-                    status:
-                      code: 200
         '400':
           description: Error
           content:
