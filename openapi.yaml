@@ -140,7 +140,7 @@ paths:
                   status:
                     $ref: models/SuccessStatus.yaml
               examples:
-                Call PUT 200 Response Example:
+                Call GET 200 Response Example:
                   value:
                     response:
                       object: call
