@@ -5203,18 +5203,16 @@ components:
       value:
         contactID: 516553837
         sdate: '2019-08-24'
-        call_type: Outgoing
-        call_result: Busy
-        notes: Lorem Ipsum
+        call_type: 'Outgoing'
+        call_result: 'Busy'
+        notes: 'Lorem Ipsum'
         status_change: 274158
-        duration: '00:01:15'
         event_id: 8179
         dialer_id: 2
-        recording_id: 3
     CallPOSTReqOnly:
       value:
         contactID: 516553837
-        call_type: Outgoing
-        call_result: Busy
+        call_type: 'Outgoing'
+        call_result: 'Busy'
 security:
   - API-Key: []
