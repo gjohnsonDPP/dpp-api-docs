@@ -65,9 +65,9 @@ paths:
                 value:
                   contactID: 516553837
                   sdate: '2019-08-24'
-                  call_type: 'Outgoing'
-                  call_result: 'Busy'
-                  notes: 'Lorem Ipsum'
+                  call_type: Outgoing
+                  call_result: Busy
+                  notes: Lorem Ipsum
                   status_change: 274158
                   duration: '00:01:15'
                   event_id: 8179
@@ -76,8 +76,8 @@ paths:
               Required Parameters Only:
                 value:
                   contactID: 516553837
-                  call_type: 'Outgoing'
-                  call_result: 'Busy'
+                  call_type: Outgoing
+                  call_result: Busy
       responses:
         '200':
           description: Successfully created a Call Record
@@ -139,6 +139,47 @@ paths:
                     $ref: models/CallResponse.yaml
                   status:
                     $ref: models/SuccessStatus.yaml
+              examples:
+                Call PUT 200 Response Example:
+                  value:
+                    response:
+                      object: call
+                      id: '392857759'
+                      acctID: '3863'
+                      contactID: '382760691'
+                      userID: '4950368'
+                      sdate: '2021-12-09'
+                      created_at: '2021-12-09 09:52:21'
+                      call_type: Outgoing
+                      call_result: Busy
+                      notes: Lorem Ipsum
+                      status_change: '274158'
+                      duration: '00:01:15'
+                      event_id: '8179'
+                      dialer_id: '2'
+                      recording_url: 'https://www.testcallrecording.com'
+                      assigned_agent:
+                        object: user
+                        id: '4950368'
+                        acctID: '3863'
+                        company_id: '42128'
+                        parent_id: '0'
+                        user_type: '1'
+                        created: '2019-10-02 02:41:18'
+                        user_name: JohnD
+                        firstname: John
+                        lastname: Doe
+                        company: ''
+                        email: test@debtpaypro.com
+                        active: '1'
+                        role: '29399'
+                        attorney: '0'
+                        payee_id: '0'
+                        del: '0'
+                        delTime: null
+                        pass_reset: '0'
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
