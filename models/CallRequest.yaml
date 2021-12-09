@@ -62,8 +62,10 @@ properties:
       - 2
       - 3
   recording_url:
-    type: string
-    format: uri
+    type:
+      - string
+      - object
+    format: uri-reference
     example: 'https://www.testcallrecording.com'
 required:
   - contactID
