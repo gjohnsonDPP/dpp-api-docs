@@ -6,7 +6,7 @@ x-tags:
 properties:
   object:
     type: string
-    example: call
+    example: 'call'
     readOnly: true
   id:
     type: integer
@@ -37,16 +37,16 @@ properties:
     enum:
       - Outgoing
       - Incoming
-    example: Outgoing
+    example: 'Outgoing'
   call_result:
     type: string
-    example: Busy
+    example: 'Busy'
   notes:
     type: string
-    example: Lorem Ipsum
+    example: 'Lorem Ipsum'
   status_change:
-    type: string
-    example: '274158'
+    example: 274158
+    type: integer
   duration:
     type: string
     format: duration
@@ -63,7 +63,6 @@ properties:
       - 3
   recording_url:
     type: string
-    format: uri
     example: '"http://example.com"'
   assigned_agent:
     $ref: ./UserResponse.yaml
