@@ -28,7 +28,6 @@ properties:
   sdate:
     type: string
     format: date
-    pattern: YYYY-mm-dd
   created_at:
     type: string
     format: date-time
