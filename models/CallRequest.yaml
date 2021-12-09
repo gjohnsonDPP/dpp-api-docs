@@ -63,6 +63,7 @@ properties:
       - 3
   recording_url:
     type: string
+    format: hostname
 required:
   - contactID
   - call_type
