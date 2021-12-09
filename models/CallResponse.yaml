@@ -63,4 +63,5 @@ properties:
       - 3
   recording_url:
     type: string
-    format: hostname
+    format: uri
+    example: 'https://www.testcallrecording.com'
