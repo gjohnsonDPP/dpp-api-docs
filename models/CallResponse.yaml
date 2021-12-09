@@ -62,8 +62,5 @@ properties:
       - 2
       - 3
   recording_url:
-    type:
-      - string
-      - object
-    format: uri-reference
+    type: string
     example: 'https://www.testcallrecording.com'
