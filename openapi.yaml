@@ -181,7 +181,7 @@ paths:
                   duration: '00:01:15'
                   event_id: 8179
                   dialer_id: 1
-                  recording_url: string
+                  recording_url: 'https://www.testcallrecording.com'
       parameters:
         - name: id
           in: path
