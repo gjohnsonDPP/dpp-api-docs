@@ -7,8 +7,6 @@ info:
     name: Support
     email: support@debtpaypro.com
 servers:
-  # - url: 'https://api.debtpaypro.com/v1'
-  #   description: Production
   - url: 'https://staging15-api.debtpaypro.com/v1'
     description: Staging15
 tags:
@@ -142,30 +140,10 @@ paths:
                       call_type: Outgoing
                       call_result: Busy
                       notes: Lorem Ipsum
-                      status_change: '274158'
+                      status_change: 274158
                       duration: '00:01:15'
                       event_id: 8179
                       dialer_id: 2
-                      recording_url: '"http://example.com"'
-                      assigned_agent:
-                        object: user
-                        id: 6033912
-                        acctID: 3863
-                        company_id: 42128
-                        parent_id: 4950368
-                        user_type: 1
-                        created: '2021-01-13 12:47:25'
-                        user_name: API_User123
-                        firstname: John
-                        lastname: Doe
-                        company: Acme
-                        email: mail@debtpaypro.com
-                        active: true
-                        role: 29399
-                        attorney: true
-                        payee_id: 23006
-                        del: 0
-                        delTime: '2021-01-13 12:47:25'
                     status:
                       code: 200
         '400':
@@ -196,6 +174,7 @@ paths:
           application/json:
             schema:
               $ref: models/CallResponse.yaml
+        description: ''
       parameters:
         - name: id
           in: path
@@ -229,31 +208,9 @@ paths:
                       call_type: Outgoing
                       call_result: Busy
                       notes: Lorem Ipsum
-                      status_change: '274158'
-                      duration: '00:01:15'
+                      status_change: 274158
                       event_id: 8179
                       dialer_id: 1
-                      recording_url: '"http://example.com"'
-                      assigned_agent:
-                        object: user
-                        id: 4950368
-                        acctID: 3863
-                        company_id: 42128
-                        parent_id: 0
-                        user_type: '1'
-                        created: '2019-10-02 02:41:18'
-                        user_name: JohnD
-                        firstname: John
-                        lastname: Doe
-                        company: ''
-                        email: test@test.com
-                        active: '1'
-                        role: '29399'
-                        attorney: '0'
-                        payee_id: 0
-                        del: '0'
-                        delTime: null
-                        pass_reset: '0'
                     status:
                       code: 200
         '400':
@@ -3943,7 +3900,7 @@ paths:
                   value:
                     status:
                       code: 400
-                      message: Bad Request - The system encountered an error.  
+                      message: Bad Request - The system encountered an error.
 components:
   schemas:
     Status:
@@ -5245,13 +5202,11 @@ components:
     CallPOST:
       value:
         contactID: 516553837
-        activity_id: 608125717
         sdate: '2019-08-24'
         call_type: Outgoing
         call_result: Busy
-        call_dis_id: 2
         notes: Lorem Ipsum
-        status_change: '274158'
+        status_change: 274158
         duration: '00:01:15'
         event_id: 8179
         dialer_id: 2

@@ -61,8 +61,8 @@ properties:
       - 1
       - 2
       - 3
-  recording_url:
-    type: string
-    example: '"http://example.com"'
-  assigned_agent:
-    $ref: ./UserResponse.yaml
+  # recording_url:
+  #   type: string
+  #   example: '"http://example.com"'
+  # assigned_agent:
+  #   $ref: ./UserResponse.yaml
