@@ -3,6 +3,7 @@ type: object
 description: Call Record Object
 x-tags:
   - Calls
+examples: []
 properties:
   object:
     type: string
@@ -65,9 +66,10 @@ properties:
     type: string
     example: 'https://stairwork.ru/test.mp3'
   assigned_agent:
-    $ref: ./UserResponse.yaml
+    type: integer
+    example: 3028014
+    description: User ID of the DPP Agent that made or took the call with the Client.
 required:
   - contactID
   - call_type
   - call_result
-examples: []
