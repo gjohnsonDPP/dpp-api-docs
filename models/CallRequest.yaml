@@ -2,7 +2,7 @@ title: Call
 type: object
 description: Call Record Object
 x-tags:
-  - Call
+  - Calls
 properties:
   object:
     type: string
@@ -70,3 +70,4 @@ required:
   - contactID
   - call_type
   - call_result
+examples: []
