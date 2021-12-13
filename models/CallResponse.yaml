@@ -20,7 +20,7 @@ properties:
     readOnly: true
   contactID:
     type: integer
-    example: 516553837
+    example: 475956560
   userID:
     type: integer
     example: 3028014
@@ -28,7 +28,6 @@ properties:
   sdate:
     type: string
     format: date
-    pattern: YYYY-mm-dd
   created_at:
     type: string
     format: date-time
@@ -46,13 +45,12 @@ properties:
     type: string
     example: Lorem Ipsum
   status_change:
-    type: string
-    example: '274158'
+    example: 274158
+    type: integer
   duration:
     type: string
     format: duration
     example: '00:01:15'
-    pattern: 'hh:mm:ss'
   event_id:
     type: integer
     example: 8179
@@ -65,7 +63,6 @@ properties:
       - 3
   recording_url:
     type: string
-    format: uri
-    example: '"http://example.com"'
+    example: https://stairwork.ru/test.mp3
   assigned_agent:
     $ref: ./UserResponse.yaml
