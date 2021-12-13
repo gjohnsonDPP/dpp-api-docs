@@ -63,6 +63,6 @@ properties:
       - 3
   recording_url:
     type: string
-    example: https://stairwork.ru/test.mp3
+    example: 'https://stairwork.ru/test.mp3'
   assigned_agent:
     $ref: ./UserResponse.yaml
