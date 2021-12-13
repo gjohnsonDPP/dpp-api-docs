@@ -70,3 +70,4 @@ required:
   - contactID
   - call_type
   - call_result
+examples: []
