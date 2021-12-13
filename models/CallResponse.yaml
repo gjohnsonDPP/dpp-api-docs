@@ -65,7 +65,9 @@ properties:
     type: string
     example: 'https://stairwork.ru/test.mp3'
   assigned_agent:
-    $ref: ./UserResponse.yaml
+    oneOf:
+    - type: integer
+    - $ref: ./UserResponse.yaml
 examples:
   - object: call
     id: 385319179
