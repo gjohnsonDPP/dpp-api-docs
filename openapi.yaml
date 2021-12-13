@@ -73,6 +73,7 @@ paths:
                   event_id: 8179
                   dialer_id: 1
                   recording_url: 'https://stairwork.ru/test.mp3'
+                  assigned_agent: 432156
               Required Parameters Only:
                 value:
                   contactID: 475956560
@@ -209,7 +210,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: models/CallResponse.yaml
+              $ref: ./models/CallRequest.yaml
             examples:
               Request:
                 value:
