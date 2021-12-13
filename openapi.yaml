@@ -9,8 +9,6 @@ info:
 servers:
   - url: 'https://api.debtpaypro.com/v1'
     description: Production
-  - url: 'https://staging13-api.debtpaypro.com/v1'
-    description: Staging13
 tags:
   - name: Authentication
     description: Authentication
@@ -65,7 +63,7 @@ paths:
             examples:
               Request:
                 value:
-                  contactID: 516553837
+                  contactID: 475956560
                   sdate: '2019-08-24'
                   call_type: Outgoing
                   call_result: Busy
@@ -74,10 +72,10 @@ paths:
                   duration: '00:01:15'
                   event_id: 8179
                   dialer_id: 1
-                  recording_url: 'https://www.testcallrecording.com'
+                  recording_url: 'https://stairwork.ru/test.mp3'
               Required Parameters Only:
                 value:
-                  contactID: 516553837
+                  contactID: 475956560
                   call_type: Outgoing
                   call_result: Busy
       responses:
