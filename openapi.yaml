@@ -145,16 +145,16 @@ paths:
                   value:
                     response:
                       object: call
-                      id: '392857759'
-                      acctID: '3863'
-                      contactID: '382760691'
-                      userID: '4950368'
+                      id: 392857759
+                      acctID: 3863
+                      contactID: 382760691
+                      userID: 4950368
                       sdate: '2021-12-09'
                       created_at: '2021-12-09 09:52:21'
                       call_type: Outgoing
                       call_result: Busy
                       notes: Lorem Ipsum
-                      status_change: '274158'
+                      status_change: 274158
                       duration: '00:01:15'
                       event_id: '8179'
                       dialer_id: '2'
@@ -248,16 +248,16 @@ paths:
                   value:
                     response:
                       object: call
-                      id: '392857759'
-                      acctID: '3863'
-                      contactID: '382760691'
-                      userID: '4950368'
+                      id: 392857759
+                      acctID: 3863
+                      contactID: 382760691
+                      userID: 4950368
                       sdate: '2021-12-09'
                       created_at: '2021-12-09 09:52:21'
                       call_type: Outgoing
                       call_result: Busy
                       notes: Lorem Ipsum
-                      status_change: '274158'
+                      status_change: 274158
                       duration: '00:01:15'
                       event_id: '8179'
                       dialer_id: '2'
@@ -624,11 +624,11 @@ paths:
             examples:
               Request:
                 value:
-                  file_type: '1'
+                  file_type: 1
                   form_id: 18626
                   assigned_to: 6045085
                   campaign_id: 128312
-                  attorney: 0
+                  attorney: false
                   attorney_id: 0
                   attorney_id2: 0
                   first_name: John
@@ -653,28 +653,28 @@ paths:
                   social_security_number: '551192922'
                   date_of_birth: '1941-03-12'
                   language: 1
-                  submitted: '1'
-                  submitted_by: n/a
-                  submitted_at: n/a
+                  submitted: false
+                  submitted_by: 4637734
+                  submitted_at: '2020-02-21 16:23:29'
                   approved_by2: 0
-                  approved_date2: n/a
+                  approved_date2: 2020-02-21
                   rejected_by: 0
                   rejected_notes: n/a
                   paused_notes: n/a
                   dropped_reason: 0
-                  grad_date: n/a
+                  grad_date: 2020-05-27
                   total_debt: 0
                   welcome_sent: '2020-02-21 16:23:29'
-                  paper_statements: '0'
-                  paper_welcome: '0'
+                  paper_statements: true
+                  paper_welcome: true
                   gateway_id: 1
                   gateway_approved_by: 0
-                  gateway_hold: n/a
+                  gateway_hold: false
                   gateway_hold_reason: 0
                   gateway_hold_notes: n/a
-                  gateway_auth_received: '0'
+                  gateway_auth_received: true
                   gateway_auth_file: 66c29015-debtpaypro_QA_Test_Template_-_Chase_(xxxx4444).pdf
-                  iscoapp: '0'
+                  iscoapp: false
                   customs:
                     - field_id: 0
                       value: string
@@ -1544,18 +1544,18 @@ paths:
                         user_id: 4950368
                         company_id: 42128
                         parent_id: 0
-                        user_type: '1'
+                        user_type: 1
                         created: '2019-10-02 02:41:18'
                         user_name: JDoe
                         firstname: John
                         lastname: Doe
                         company: ''
                         email: test@test.com
-                        active: '1'
-                        role: '29399'
-                        attorney: '0'
+                        active: true
+                        role: 29399
+                        attorney: false
                         payee_id: 0
-                        del: '0'
+                        del: false
                         delTime: null
                         pass_reset: '0'
                       modified_at: null
@@ -1683,18 +1683,18 @@ paths:
                         user_id: 4950368
                         company_id: 42128
                         parent_id: 0
-                        user_type: '1'
+                        user_type: 1
                         created: '2019-10-02 02:41:18'
                         user_name: JDoe
                         firstname: John
                         lastname: Doe
                         company: ''
                         email: test@test.com
-                        active: '1'
-                        role: '29399'
-                        attorney: '0'
+                        active: true
+                        role: 29399
+                        attorney: false
                         payee_id: 0
-                        del: '0'
+                        del: false
                         delTime: null
                         pass_reset: '0'
                       modified_at: null
@@ -1861,29 +1861,29 @@ paths:
                   value:
                     response:
                       object: debt_note
-                      note_id: '22377190'
-                      acctID: '2123'
+                      note_id: 22377190
+                      acctID: 2123
                       note_created_date: '2021-11-26 08:49:16'
-                      client_id: '475956560'
-                      debt_id: '152080478'
+                      client_id: 475956560
+                      debt_id: 152080478
                       title: API Test D
                       created_by:
                         object: user
-                        user_id: '6583363'
-                        company_id: '12758'
-                        parent_id: '0'
-                        user_type: '1'
+                        user_id: 6583363
+                        company_id: 12758
+                        parent_id: 0
+                        user_type: 1
                         created: '2021-10-18 04:12:46'
                         user_name: Greg
                         firstname: Greg
                         lastname: Johnson
                         company: ''
                         email: g.johnson@debtpaypro.com
-                        active: '1'
-                        role: '15203'
-                        attorney: '0'
-                        payee_id: '0'
-                        del: '0'
+                        active: true
+                        role: 15203
+                        attorney: false
+                        payee_id: 0
+                        del: false
                         delTime: null
                       content: API Test Debt Note
                     status:
@@ -1969,7 +1969,7 @@ paths:
                   payback_amount: 0
                   rate: 0
                   payment: 0
-                  holdback_percent: .02%
+                  holdback_percent: .02
                   payback_period: 0
                   frequency: D
                   freq_int: ''
@@ -2056,40 +2056,39 @@ paths:
                       object: loan
                       loan_id: '1868335'
                       acctID: 3863
-                      tp_id: null
+                      tp_id: 0
                       created_at: '2021-11-22 05:02:09'
-                      created_by: '4950368'
-                      modified_at: null
-                      modified_by: null
-                      client_id: '382760691'
+                      created_by: 4950368
+                      modified_at: '2021-12-12 05:02:09'
+                      modified_by: 0
+                      client_id: 382760691
                       advance_type: ACH
-                      advance_date: null
-                      paid_in_full_date: null
-                      defaulted_date: null
-                      type_id: '1'
-                      program_id: '0'
-                      loan_class: '1'
-                      loan_amount: '4550.72'
-                      payback_amount: '0.00'
-                      rate: '0'
-                      payment: '0.00'
-                      holdback_percent: '0.02'
-                      payback_period: '0.00'
+                      advance_date: '2021-12-25'
+                      paid_in_full_date: '2022-05-25'
+                      type_id: 1
+                      program_id: 0
+                      loan_class: 1
+                      loan_amount: 4550.72
+                      payback_amount: 0.00
+                      rate: 0.02
+                      payment: 0.00
+                      holdback_percent: 0.02
+                      payback_period: 0
                       frequency: D
                       freq_int: ''
-                      period_amount: '0'
-                      fees: '0.00'
+                      period_amount: 0
+                      fees: 0.00
                       conf_num: '12345'
                       underwriter_notes: ''
-                      contract_date: null
+                      contract_date: '2021-12-25'
                       contract_number: ''
-                      funded: '0'
-                      status: '10'
-                      lien_pos: '0'
-                      ach_start_date: null
-                      ach_on: '0'
-                      pricing_lock: '0'
-                      offer_set: '1048066'
+                      funded: true
+                      status: 1
+                      lien_pos: 1
+                      ach_start_date: '2021-12-25'
+                      ach_on: true
+                      pricing_lock: true
+                      offer_set: 1048066
                     status:
                       code: 200
         '400':
@@ -2263,9 +2262,9 @@ paths:
                   creditor: 0
                   debt_id: 124504794
                   offer_status: 0
-                  offer_status_date: '2019-08-24T14:15:22Z'
+                  offer_status_date: '2019-08-24'
                   offer_valid_date: '2019-08-24'
-                  settlement_type: 0
+                  settlement_type: 2
                   debt_amount: 8500.55
                   settlement_amount: 0
                   settlement_fee: 0
@@ -2349,28 +2348,28 @@ paths:
                   value:
                     response:
                       object: settlement_offer
-                      id: '4114375'
+                      id: 4114375
                       acctID: 3863
-                      contact_id: '485599270'
-                      creditor: '540'
-                      debt_id: '12345'
+                      contact_id: 485599270
+                      creditor: 540
+                      debt_id: 12345
                       created_at: '2021-11-18 21:51:21'
                       created_by:
                         object: user
-                        user_id: '4950368'
-                        company_id: '42128'
-                        parent_id: '0'
+                        user_id: 4950368
+                        company_id: 42128
+                        parent_id: 0
                         created: '2019-10-02 02:41:18'
                         user_name: JDoe
                         firstname: John
                         lastname: Doe
                         company: ''
                         email: test@test.com
-                        active: '1'
-                        role: '29399'
-                        attorney: '0'
-                        payee_id: '0'
-                        del: '0'
+                        active: true
+                        role: 29399
+                        attorney: false
+                        payee_id: 0
+                        del: false
                         delTime: null
                       modified_at: null
                       modified_by: null
@@ -2457,28 +2456,28 @@ paths:
                   value:
                     response:
                       object: settlement_offer
-                      id: '4114375'
+                      id: 4114375
                       acctID: 3863
-                      contact_id: '485599270'
-                      creditor: '540'
-                      debt_id: '12345'
+                      contact_id: 485599270
+                      creditor: 540
+                      debt_id: 12345
                       created_at: '2021-11-18 21:51:21'
                       created_by:
                         object: user
-                        user_id: '4950368'
-                        company_id: '42128'
-                        parent_id: '0'
+                        user_id: 4950368
+                        company_id: 42128
+                        parent_id: 0
                         created: '2019-10-02 02:41:18'
                         user_name: JDoe
                         firstname: John
                         lastname: Doe
                         company: ''
                         email: test@test.com
-                        active: '1'
-                        role: '29399'
-                        attorney: '0'
-                        payee_id: '0'
-                        del: '0'
+                        active: true
+                        role: 29399
+                        attorney: false
+                        payee_id: 0
+                        del: false
                         delTime: null
                       modified_at: null
                       modified_by: null
@@ -2602,6 +2601,9 @@ paths:
                   task_status: 0
                   title: Title
                   task_type: 0
+                  assigned_to:
+                    object: User
+                    id: 22721
               Required Parameters Only:
                 value:
                   contact_id: 516553837
@@ -2681,30 +2683,30 @@ paths:
                   value:
                     response:
                       object: task
-                      id: '32811025'
-                      acctID: '3863'
-                      contact_id: '516553837'
+                      id: 32811025
+                      acctID: 3863
+                      contact_id: 516553837
                       task_created_date: '2021-12-02 16:12:32'
                       task_name: Task Name
-                      defined_task: '25907'
+                      defined_task: 25907
                       created_by:
                         object: user
-                        id: '4950368'
-                        acctID: '3863'
-                        company_id: '42128'
-                        parent_id: '0'
-                        user_type: '1'
+                        id: 4950368
+                        acctID: 3863
+                        company_id: 42128
+                        parent_id: 0
+                        user_type: 1
                         created: '2019-10-02 02:41:18'
                         user_name: Greg
                         firstname: Greg
                         lastname: Johnson
                         company: ''
                         email: g.johnson@debtpaypro.com
-                        active: '1'
-                        role: '29399'
-                        attorney: '0'
-                        payee_id: '0'
-                        del: '0'
+                        active: true
+                        role: 29399
+                        attorney: false
+                        payee_id: 0
+                        del: false
                         delTime: null
                         pass_reset: '0'
                       task_due_date: '2019-08-24'
@@ -2792,30 +2794,30 @@ paths:
                   value:
                     response:
                       object: task
-                      id: '32811025'
-                      acctID: '3863'
-                      contact_id: '516553837'
+                      id: 32811025
+                      acctID: 3863
+                      contact_id: 516553837
                       task_created_date: '2021-12-02 16:12:32'
                       task_name: Task Name
-                      defined_task: '25907'
+                      defined_task: 25907
                       created_by:
                         object: user
-                        id: '4950368'
-                        acctID: '3863'
-                        company_id: '42128'
-                        parent_id: '0'
-                        user_type: '1'
+                        id: 4950368
+                        acctID: 3863
+                        company_id: 42128
+                        parent_id: 0
+                        user_type: 1
                         created: '2019-10-02 02:41:18'
                         user_name: Greg
                         firstname: Greg
                         lastname: Johnson
                         company: ''
                         email: g.johnson@debtpaypro.com
-                        active: '1'
-                        role: '29399'
-                        attorney: '0'
-                        payee_id: '0'
-                        del: '0'
+                        active: true
+                        role: 29399
+                        attorney: false
+                        payee_id: 0
+                        del: false
                         delTime: null
                         pass_reset: '0'
                       task_due_date: '2019-08-24'
@@ -3025,8 +3027,8 @@ paths:
                   value:
                     response:
                       object: team
-                      team_id: '20875'
-                      company_id: '42128'
+                      team_id: 20875
+                      company_id: 42128
                       name: Test
                     status:
                       code: 200
@@ -3081,8 +3083,8 @@ paths:
                   value:
                     response:
                       object: team
-                      team_id: '20875'
-                      company_id: '42128'
+                      team_id: 20875
+                      company_id: 42128
                       name: Test
                     status:
                       code: 200
@@ -3541,7 +3543,7 @@ paths:
               schema:
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/SuccessStatus.yaml
                   response:
                     description: Get event records for user
                     type: array
@@ -3779,7 +3781,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/Status.yaml
+                    $ref: models/ErrorStatus.yaml
 components:
   schemas:
     Status:
@@ -3952,8 +3954,7 @@ components:
         duration:
           type: string
           format: duration
-          example: '00:01:15'
-          pattern: 'hh:mm:ss'
+          example: 00:01:15
         event_id:
           type: integer
           example: 8179
@@ -4912,8 +4913,7 @@ components:
         sdate:
           type: string
           format: date
-          pattern: YYYY-mm-dd
-          example: YYYY-mm-dd
+          example: 2021-12-10
         call_type:
           type: string
           enum:
@@ -4961,11 +4961,6 @@ components:
             properties:
               status:
                 $ref: models/ErrorStatus.yaml
-          examples:
-            400 Error Response:
-              status:
-                code: 400
-                message: 'Input Parsing Error: unexpected character'
     default:
       description: default
       content:
@@ -4974,7 +4969,7 @@ components:
             type: object
             properties:
               status:
-                $ref: models/Status.yaml
+                $ref: models/SuccessStatus.yaml
               response:
                 type: object
                 properties: {}
@@ -4996,33 +4991,31 @@ components:
       required: true
       description: Current API Version Number
   requestBodies:
-    Call:
-      content:
-        application/json:
-          schema:
-            oneOf:
-              - $ref: models/CallRequestRequiredOnly.yaml
-              - $ref: models/CallRequest.yaml
-          examples:
-            Call POST All Parameters Request:
-              value:
-                contactID: 516553837
-                activity_id: 608125717
-                sdate: '2019-08-24'
-                call_type: Outgoing
-                call_result: Busy
-                call_dis_id: 2
-                notes: Lorem Ipsum
-                status_change: '274158'
-                duration: '00:01:15'
-                event_id: 8179
-                dialer_id: 2
-                recording_id: 3
-            Call POST Required Parameters Only Request:
-              value:
-                contactID: 516553837
-                call_type: Outgoing
-                call_result: Busy
+    # Call:
+    #   content:
+    #     application/json:
+    #       schema:
+    #         $ref: models/CallRequest.yaml
+    #       examples:
+    #         Call POST All Parameters Request:
+    #           value:
+    #             contactID: 516553837
+    #             activity_id: 608125717
+    #             sdate: '2019-08-24'
+    #             call_type: Outgoing
+    #             call_result: Busy
+    #             call_dis_id: 2
+    #             notes: Lorem Ipsum
+    #             status_change: 274158
+    #             duration: '00:01:15'
+    #             event_id: 8179
+    #             dialer_id: 2
+
+    #         Call POST Required Parameters Only Request:
+    #           value:
+    #             contactID: 516553837
+    #             call_type: Outgoing
+    #             call_result: Busy
     Contact:
       content:
         application/json:
@@ -5069,7 +5062,7 @@ components:
       content:
         application/json:
           schema:
-            $ref: models/Team.yaml
+            $ref: models/TeamRequest.yaml
       description: ''
       required: true
   securitySchemes:
