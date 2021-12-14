@@ -24,6 +24,8 @@ tags:
     description: All available actions for Contacts
   - name: Debts
     description: All available actions for Debts
+  - name: Debt_Tasks
+    description: All available actions for Debt Tasks
   - name: Forms
     description: Actions associated with Forms
   - name: Loans
@@ -69,7 +71,7 @@ paths:
                   call_result: Busy
                   notes: Lorem Ipsum
                   status_change: 274158
-                  duration: 00:01:15
+                  duration: '00:01:15'
                   event_id: 8179
                   dialer_id: 1
                   recording_url: 'https://stairwork.ru/test.mp3'
@@ -657,12 +659,12 @@ paths:
                   submitted_by: 4637734
                   submitted_at: '2020-02-21 16:23:29'
                   approved_by2: 0
-                  approved_date2: 2020-02-21
+                  approved_date2: '2020-02-21'
                   rejected_by: 0
                   rejected_notes: n/a
                   paused_notes: n/a
                   dropped_reason: 0
-                  grad_date: 2020-05-27
+                  grad_date: '2020-05-27'
                   total_debt: 0
                   welcome_sent: '2020-02-21 16:23:29'
                   paper_statements: true
@@ -1824,6 +1826,63 @@ paths:
                     status:
                       code: 400
                       message: 'Input Parsing Error: unexpected character'
+  '/debts/{id}/tasks':
+    post:
+      tags:
+        - Debts
+        - Debt_Tasks
+      summary: Create a Debt Task using DebtID
+      description: Creates a new Debt Task
+      operationId: debtTaskCreate
+      requestBody:
+        content:
+          applicatioin/json:
+            schema:
+              type: object
+              properties:
+                assigned_to:
+                  description: The ID of the User the Debt Task wil be assigned to
+                  type: integer
+                defined_task:
+                  description: ''
+                  type: integer
+                task_name:
+                  description: ''
+                  type: string
+      parameters:
+        - in: path
+          name: id
+          description: Id of Debt Record to create the Task for
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully created a Debt Task
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    $ref: models/TaskResponse.yaml
+                  status:
+                    $ref: models/SuccessStatus.yaml
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Debt Note POST 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'  
   '/debts/{id}/notes':
     post:
       tags:
@@ -1969,7 +2028,7 @@ paths:
                   payback_amount: 0
                   rate: 0
                   payment: 0
-                  holdback_percent: .02
+                  holdback_percent: 0.02
                   payback_period: 0
                   frequency: D
                   freq_int: ''
@@ -2069,15 +2128,15 @@ paths:
                       program_id: 0
                       loan_class: 1
                       loan_amount: 4550.72
-                      payback_amount: 0.00
+                      payback_amount: 0
                       rate: 0.02
-                      payment: 0.00
+                      payment: 0
                       holdback_percent: 0.02
                       payback_period: 0
                       frequency: D
                       freq_int: ''
                       period_amount: 0
-                      fees: 0.00
+                      fees: 0
                       conf_num: '12345'
                       underwriter_notes: ''
                       contract_date: '2021-12-25'
@@ -3954,7 +4013,7 @@ components:
         duration:
           type: string
           format: duration
-          example: 00:01:15
+          example: '00:01:15'
         event_id:
           type: integer
           example: 8179
@@ -4913,7 +4972,7 @@ components:
         sdate:
           type: string
           format: date
-          example: 2021-12-10
+          example: '2021-12-10'
         call_type:
           type: string
           enum:
@@ -4991,31 +5050,6 @@ components:
       required: true
       description: Current API Version Number
   requestBodies:
-    # Call:
-    #   content:
-    #     application/json:
-    #       schema:
-    #         $ref: models/CallRequest.yaml
-    #       examples:
-    #         Call POST All Parameters Request:
-    #           value:
-    #             contactID: 516553837
-    #             activity_id: 608125717
-    #             sdate: '2019-08-24'
-    #             call_type: Outgoing
-    #             call_result: Busy
-    #             call_dis_id: 2
-    #             notes: Lorem Ipsum
-    #             status_change: 274158
-    #             duration: '00:01:15'
-    #             event_id: 8179
-    #             dialer_id: 2
-
-    #         Call POST Required Parameters Only Request:
-    #           value:
-    #             contactID: 516553837
-    #             call_type: Outgoing
-    #             call_result: Busy
     Contact:
       content:
         application/json:
