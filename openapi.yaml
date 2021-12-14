@@ -9,8 +9,6 @@ info:
 servers:
   - url: 'https://api.debtpaypro.com/v1'
     description: Production
-  - url: 'https://staging13-api.debtpaypro.com/v1'
-    description: Staging13
 tags:
   - name: Authentication
     description: Authentication
@@ -71,7 +69,7 @@ paths:
                   call_result: Busy
                   notes: Lorem Ipsum
                   status_change: 274158
-                  duration: '00:01:15'
+                  duration: 00:01:15
                   event_id: 8179
                   dialer_id: 1
                   recording_url: 'https://stairwork.ru/test.mp3'
