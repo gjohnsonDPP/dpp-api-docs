@@ -1841,7 +1841,7 @@ paths:
               type: object
               properties:
                 assigned_to:
-                  description: The ID of the person(s) the Debt Task wil be assigned to. The Debt Task can be assigned to a User, Team, or Contact.
+                  description: 'The ID of the person(s) the Debt Task wil be assigned to. The Debt Task can be assigned to a User, Team, or Contact.'
                   type: integer
                 defined_task:
                   description: ''
@@ -1882,7 +1882,8 @@ paths:
                   value:
                     status:
                       code: 400
-                      message: 'Input Parsing Error: unexpected character'  
+                      message: 'Input Parsing Error: unexpected character'
+      x-internal: true
   '/debts/{id}/notes':
     post:
       tags:
