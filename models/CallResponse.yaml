@@ -101,7 +101,5 @@ properties:
     type: string
     example: 'https://stairwork.ru/test.mp3'
   assigned_agent:
-    oneOf:
-      - type: integer
-      - $ref: ./UserResponse.yaml
+    type: integer
     description: User ID of the DPP Agent that took or made the call to the Client.
