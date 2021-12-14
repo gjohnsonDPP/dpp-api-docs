@@ -58,10 +58,6 @@ properties:
   dialer_id:
     type: integer
     example: 2
-    enum:
-      - 1
-      - 2
-      - 3
   recording_url:
     type: string
     example: 'https://stairwork.ru/test.mp3'

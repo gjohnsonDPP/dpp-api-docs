@@ -93,15 +93,9 @@ properties:
   dialer_id:
     type: integer
     example: 2
-    enum:
-      - 1
-      - 2
-      - 3
   recording_url:
     type: string
     example: 'https://stairwork.ru/test.mp3'
   assigned_agent:
-    oneOf:
-      - type: integer
-      - $ref: ./UserResponse.yaml
+    type: integer
     description: User ID of the DPP Agent that took or made the call to the Client.

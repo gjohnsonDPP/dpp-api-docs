@@ -75,8 +75,8 @@ properties:
     example: 23006
   del:
     title: Del
-    type: integer
     example: 0
+    type: boolean
     readOnly: true
   delTime:
     title: Delete Date
