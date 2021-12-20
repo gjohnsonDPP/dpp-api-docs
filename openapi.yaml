@@ -10,8 +10,6 @@ servers:
   - url: 'https://api.debtpaypro.com/v1'
     description: Production
 tags:
-  - name: Authentication
-    description: Authentication
   - name: Auth
     description: All available actions for Auth
   - name: Calls
@@ -24,6 +22,12 @@ tags:
     description: All available actions for Contacts
   - name: Debts
     description: All available actions for Debts
+  - name: Debt_Tasks
+    description: All available actions for Debt Tasks
+  - name: Documents
+    description: All available actions for Documents
+  - name: DocumentTypes
+    description: All available actions for DocumentTypes
   - name: Forms
     description: Actions associated with Forms
   - name: Loans
@@ -43,6 +47,49 @@ tags:
   - name: Users
     description: All available actions for Users
 paths:
+  /auth/token:
+    post:
+      tags:
+        - Auth
+      summary: Get API Authorization Token
+      description: Receive an API Authorization Token. The Token that is returned can be entered for any API Request that requires an *Api-Key*.
+      operationId: authGetToken
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                client_secret:
+                  type: string
+                client_id:
+                  type: string
+              required:
+                - client_secret
+                - client_id
+      security: []
+      responses:
+        default:
+          description: default
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    $ref: '#/components/schemas/Status'
+                  response:
+                    type: array
+                    description: Get API Authization Token
+                    items:
+                      type: object
+                      properties:
+                        api_key:
+                          type: string
+                          description: API Authorization Token
+                        expires_in:
+                          type: integer
+                          description: Time Until Token Expires
   /calls:
     post:
       summary: Create a Call Record
@@ -69,7 +116,7 @@ paths:
                   call_result: Busy
                   notes: Lorem Ipsum
                   status_change: 274158
-                  duration: 00:01:15
+                  duration: '00:01:15'
                   event_id: 8179
                   dialer_id: 1
                   recording_url: 'https://stairwork.ru/test.mp3'
@@ -657,12 +704,12 @@ paths:
                   submitted_by: 4637734
                   submitted_at: '2020-02-21 16:23:29'
                   approved_by2: 0
-                  approved_date2: 2020-02-21
+                  approved_date2: '2020-02-21'
                   rejected_by: 0
                   rejected_notes: n/a
                   paused_notes: n/a
                   dropped_reason: 0
-                  grad_date: 2020-05-27
+                  grad_date: '2020-05-27'
                   total_debt: 0
                   welcome_sent: '2020-02-21 16:23:29'
                   paper_statements: true
@@ -1375,49 +1422,6 @@ paths:
                     status:
                       code: 400
                       message: 'Input Parsing Error: unexpected character'
-  /auth/token:
-    post:
-      tags:
-        - Auth
-      summary: Get API Authorization Token
-      description: Receive an API Authorization Token. The Token that is returned can be entered for any API Request that requires an *Api-Key*.
-      operationId: authGetToken
-      requestBody:
-        content:
-          multipart/form-data:
-            schema:
-              type: object
-              properties:
-                client_secret:
-                  type: string
-                client_id:
-                  type: string
-              required:
-                - client_secret
-                - client_id
-      security: []
-      responses:
-        default:
-          description: default
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    $ref: '#/components/schemas/Status'
-                  response:
-                    type: array
-                    description: Get API Authization Token
-                    items:
-                      type: object
-                      properties:
-                        api_key:
-                          type: string
-                          description: API Authorization Token
-                        expires_in:
-                          type: integer
-                          description: Time Until Token Expires
   /debts:
     post:
       tags:
@@ -1824,6 +1828,103 @@ paths:
                     status:
                       code: 400
                       message: 'Input Parsing Error: unexpected character'
+  '/debts/{id}/task':
+    post:
+      tags:
+        - Debts
+        - Debt_Tasks
+      summary: Create a Debt Task using DebtID
+      description: Creates a new Debt Task
+      operationId: debtTaskCreate
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                assigned_to:
+                  description: 'The ID of the person(s) the Debt Task wil be assigned to. The Debt Task can be assigned to a User, Team, or Contact.'
+                  type: integer
+                defined_task:
+                  description: ''
+                  type: integer
+                task_name:
+                  description: ''
+                  type: string
+      parameters:
+        - in: path
+          name: id
+          description: Id of Debt Record to create the Task for
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully created a Debt Task
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    $ref: models/TaskResponse.yaml
+                  status:
+                    $ref: models/SuccessStatus.yaml
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Debt Note POST 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
+      x-internal: true
+  '/debts/{id}/tasks':
+    get:
+      tags:
+        - Debts
+        - Debt_Tasks
+      summary: Get List of All Tasks for a Debt Record by DebtID
+      description: |-
+        Returns all existing Tasks associated with a Debt Record.
+
+        <span><i class="fa fa-info-circle"></i><i style="font-size:12px"> By default the SMS Messages are returned in order of Newest to Oldest.</i></span>
+      operationId: getDebtTasks
+      parameters:
+        - name: id
+          in: path
+          description: Id of a unique Debt Record
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully created a Debt Record
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: object
+                  status:
+                    $ref: models/SuccessStatus.yaml
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    $ref: models/ErrorStatus.yaml
   '/debts/{id}/notes':
     post:
       tags:
@@ -1969,7 +2070,7 @@ paths:
                   payback_amount: 0
                   rate: 0
                   payment: 0
-                  holdback_percent: .02
+                  holdback_percent: 0.02
                   payback_period: 0
                   frequency: D
                   freq_int: ''
@@ -2069,15 +2170,15 @@ paths:
                       program_id: 0
                       loan_class: 1
                       loan_amount: 4550.72
-                      payback_amount: 0.00
+                      payback_amount: 0
                       rate: 0.02
-                      payment: 0.00
+                      payment: 0
                       holdback_percent: 0.02
                       payback_period: 0
                       frequency: D
                       freq_int: ''
                       period_amount: 0
-                      fees: 0.00
+                      fees: 0
                       conf_num: '12345'
                       underwriter_notes: ''
                       contract_date: '2021-12-25'
@@ -3782,6 +3883,72 @@ paths:
                 properties:
                   status:
                     $ref: models/ErrorStatus.yaml
+  /documents/types:
+    get:
+      tags:
+        - Documents
+        - DocumentTypes
+      summary: Find All Existing Document Types
+      description: |-
+        Returns all existing Document Types.
+
+        <span><i class="fa fa-info-circle"></i><i style="font-size:12px"> By default the Document Types are returned in order of Newest to Oldest.</i></span>      
+      operationId: docTypesRead
+      responses:
+        '200':
+          description: Successfully retrieved list of Teams
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: object
+                  status:
+                    $ref: models/SuccessStatus.yaml
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                properties:
+                  status:
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Teams GET 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'   
+    post:
+      tags:
+        - Documents
+        - DocumentTypes
+      summary: Create a Document Type
+      description: Creates a Document Type
+      operationId: docTypesCreate
+      responses:
+        '200':
+          description: Successfully created a Team Record
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: object
+                  status:
+                    $ref: models/SuccessStatus.yaml
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                required:
+                  - status
+                properties:
+                  status:
+                    $ref: models/ErrorStatus.yaml
 components:
   schemas:
     Status:
@@ -3954,7 +4121,7 @@ components:
         duration:
           type: string
           format: duration
-          example: 00:01:15
+          example: '00:01:15'
         event_id:
           type: integer
           example: 8179
@@ -4913,7 +5080,7 @@ components:
         sdate:
           type: string
           format: date
-          example: 2021-12-10
+          example: '2021-12-10'
         call_type:
           type: string
           enum:
@@ -4991,31 +5158,6 @@ components:
       required: true
       description: Current API Version Number
   requestBodies:
-    # Call:
-    #   content:
-    #     application/json:
-    #       schema:
-    #         $ref: models/CallRequest.yaml
-    #       examples:
-    #         Call POST All Parameters Request:
-    #           value:
-    #             contactID: 516553837
-    #             activity_id: 608125717
-    #             sdate: '2019-08-24'
-    #             call_type: Outgoing
-    #             call_result: Busy
-    #             call_dis_id: 2
-    #             notes: Lorem Ipsum
-    #             status_change: 274158
-    #             duration: '00:01:15'
-    #             event_id: 8179
-    #             dialer_id: 2
-
-    #         Call POST Required Parameters Only Request:
-    #           value:
-    #             contactID: 516553837
-    #             call_type: Outgoing
-    #             call_result: Busy
     Contact:
       content:
         application/json:
