@@ -10,8 +10,6 @@ servers:
   - url: 'https://api.debtpaypro.com/v1'
     description: Production
 tags:
-  - name: Authentication
-    description: Authentication
   - name: Auth
     description: All available actions for Auth
   - name: Calls
