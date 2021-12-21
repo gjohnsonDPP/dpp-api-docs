@@ -3962,6 +3962,32 @@ paths:
                   type: string
               required:
                 - title
+  /documents/types/{id}:
+    put:
+      tags:
+        - Document_Types
+      summary: Update a Document Type by Doc. Type ID
+      description: Updates a Document Type
+      operationId: docTypesUpdate
+      parameters:
+        - name: id
+          in: path
+          description: Id of Document Type to Update
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully Updated Document Type
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: object
+                  status:
+                    $ref: models/SuccessStatus.yaml
 components:
   schemas:
     Status:
