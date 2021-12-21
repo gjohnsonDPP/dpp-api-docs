@@ -3890,7 +3890,7 @@ paths:
       summary: Find All Existing Document Types
       description: |-
         Returns all existing Document Types.
-        
+
         <span><i class="fa fa-info-circle"></i><i style="font-size:12px"> By default the Document Types are returned in order of Newest to Oldest.</i></span>      
       operationId: docTypesRead
       responses:
@@ -3918,7 +3918,50 @@ paths:
                   value:
                     status:
                       code: 400
-                      message: 'Input Parsing Error: unexpected character' 
+                      message: 'Input Parsing Error: unexpected character'
+    post:
+      tags:
+        - Document_Types
+      summary: Create a New Document Type
+      description: Creates a Document Type
+      operationId: docTypesCreate
+      responses:
+        '200':
+          description: Successfully created a new Document Type
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: object
+                  status:
+                    $ref: models/SuccessStatus.yaml
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                properties:
+                  status:
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Teams GET 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  description: Name to be given to the new Document Type
+                  type: string
+              required:
+                - title
 components:
   schemas:
     Status:
