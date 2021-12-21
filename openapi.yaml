@@ -24,8 +24,6 @@ tags:
     description: All available actions for Contacts
   - name: Debts
     description: All available actions for Debts
-  - name: Debt_Tasks
-    description: All available actions for Debt Tasks
   - name: Document_Types
     description: All available actions for Document Types
   - name: Forms
@@ -1832,32 +1830,46 @@ paths:
     post:
       tags:
         - Debts
-        - Debt_Tasks
-      summary: Create a Debt Task using DebtID
-      description: Creates a new Debt Task
+      summary: Create a Task for a Debt Record
+      description: Creates tasks for a Debt Record by Debt ID
       operationId: debtTaskCreate
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                assigned_to:
-                  description: 'The ID of the person(s) the Debt Task wil be assigned to. The Debt Task can be assigned to a User, Team, or Contact.'
-                  type: integer
-                defined_task:
-                  description: ''
-                  type: integer
-                task_name:
-                  description: ''
-                  type: string
       parameters:
-        - in: path
-          name: id
+        - name: id
+          in: path
           description: Id of Debt Record to create the Task for
           required: true
           schema:
             type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                assigned_to:
+                  description: UserID
+                  type: integer
+                defined_task:
+                  description: Add Debt Task
+                  type: integer
+                task_name:
+                  description: Title for the Task
+                  type: string
+              type: object
+      # requestBody:
+      #   content:
+      #     application/json:
+      #       schema:
+      #         type: object
+      #         properties:
+      #           assigned_to:
+      #             description: 'The ID of the person(s) the Debt Task wil be assigned to. The Debt Task can be assigned to a User, Team, or Contact.'
+      #             type: integer
+      #           defined_task:
+      #             description: ''
+      #             type: integer
+      #           task_name:
+      #             description: ''
+      #             type: string
       responses:
         '200':
           description: Successfully created a Debt Task
@@ -4701,7 +4713,7 @@ components:
           type: array
           items:
             type: string
-      type: object
+      type: object    
     Docs:
       description: docs data
       properties:

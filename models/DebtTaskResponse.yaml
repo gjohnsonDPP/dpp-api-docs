@@ -1,0 +1,16 @@
+title: DebtTask
+type: object
+description: Debt Record
+x-tags:
+  - Debt
+properties:
+  object:
+    type: string
+    example: Debt Task
+    readOnly: true
+  debt:
+    $ref: ./DebtResponse.yaml
+  debt_task_id:
+    type: integer
+  task:
+    $ref: ./TaskResponse.yaml

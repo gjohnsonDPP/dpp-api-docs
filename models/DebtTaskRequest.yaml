@@ -1,0 +1,283 @@
+title: DebtTask
+type: object
+description: Debt Record
+x-tags:
+  - Debt
+properties:
+  object:
+    type: string
+    example: Debt Task
+    readOnly: true
+  debt:
+    type: object
+    properties:
+          debt_id:
+            type: number
+          acctID:
+            type: number
+          created_at:
+            type: string
+            minLength: 1
+          created_by:
+            type: object
+            required:
+              - user_id
+              - acctID
+              - guid
+              - company_id
+              - parent_id
+              - user_type
+              - created
+              - user_name
+              - firstname
+              - lastname
+              - company
+              - email
+              - active
+              - role
+              - attorney
+              - payee_id
+              - del
+              - delTime
+              - pass_reset
+              - master
+              - billable
+            properties:
+              user_id:
+                type: number
+              acctID:
+                type: number
+              guid:
+                type: number
+              company_id:
+                type: number
+              parent_id:
+                type: string
+                minLength: 1
+              user_type:
+                type: number
+              created:
+                type: string
+                minLength: 1
+              user_name:
+                type: string
+                minLength: 1
+              firstname:
+                type: string
+                minLength: 1
+              lastname:
+                type: string
+                minLength: 1
+              company:
+                type: string
+                minLength: 1
+              email:
+                type: string
+                minLength: 1
+              active:
+                type: string
+                minLength: 1
+              role:
+                type: number
+              attorney:
+                type: string
+                minLength: 1
+              payee_id:
+                type: number
+              del:
+                type: number
+              delTime:
+                type: string
+                minLength: 1
+              pass_reset:
+                type: string
+                minLength: 1
+              master:
+                type: string
+                minLength: 1
+              billable:
+                type: string
+                minLength: 1
+          modified_at:
+            type: string
+            minLength: 1
+          modified_by:
+            type: number
+          original_debt_amount:
+            type: number
+          current_debt_amount:
+            type: number
+          current_payment:
+            type: number
+          current_rate:
+            type: number
+          notes:
+            type: string
+            minLength: 1
+          verified_debt_amount:
+            type: number
+          creditor:
+            type: object
+            required:
+              - creditor_id
+              - acctID
+              - tp_id
+              - is_active
+              - company_name
+              - first_name
+              - last_name
+              - address
+              - phone
+            properties:
+              creditor_id:
+                type: number
+              acctID:
+                type: number
+              tp_id:
+                type: number
+              is_active:
+                type: number
+              company_name:
+                type: string
+                minLength: 1
+              first_name:
+                type: string
+                minLength: 1
+              last_name:
+                type: string
+                minLength: 1
+              address:
+                type: object
+                required:
+                  - address1
+                  - address2
+                  - address3
+                  - city
+                  - state
+                  - zip
+                properties:
+                  address1:
+                    type: string
+                    minLength: 1
+                  address2:
+                    type: string
+                    minLength: 1
+                  address3:
+                    type: string
+                    minLength: 1
+                  city:
+                    type: string
+                    minLength: 1
+                  state:
+                    type: string
+                    minLength: 1
+                  zip:
+                    type: string
+                    minLength: 1
+              phone:
+                type: string
+                minLength: 1
+          debt_buyer:
+            type: number
+          poa_sent_date:
+            type: string
+            minLength: 1
+          legal_account:
+            type: string
+            minLength: 1
+          last_payment_date:
+            type: string
+            minLength: 1
+          last_payment_amount:
+            type: number
+          opened_date:
+            type: string
+            minLength: 1
+          available_balance:
+            type: number
+          enrolled:
+            type: string
+            minLength: 1
+          enrolled_date:
+            type: string
+            minLength: 1
+          debt_type:
+            type: string
+            minLength: 1
+          debt_status:
+            type: string
+          locked:
+            type: string
+            minLength: 1
+          og_account_num:
+            type: string
+            minLength: 1
+          creditor_account_num:
+            type: number
+          settled:
+            type: number
+          settlement_id:
+            type: number
+          client_id:
+            type: number
+          settlement_offers:
+            type: number
+          customs:
+            type: array
+            items:
+              type: object
+  debt_task_id:
+    type: integer
+  task:
+    type: object
+    properties:
+          task_id:
+            type: number
+          acctID:
+            type: number
+          contact_id:
+            type: number
+          task_created_date:
+            type: string
+            minLength: 1
+          task_name:
+            type: string
+            minLength: 1
+          defined_task:
+            type: string
+            minLength: 1
+          created_by:
+            type: string
+            minLength: 1
+          task_due_date:
+            type: string
+            minLength: 1
+          task_note:
+            type: string
+            minLength: 1
+          list_id:
+            type: number
+          team_id:
+            type: number
+          task_completed:
+            type: number
+          task_completed_by:
+            type: number
+          task_completed_date:
+            type: string
+            minLength: 1
+          task_completion_percentage:
+            type: number
+          task_status:
+            type: number
+          title:
+            type: string
+            minLength: 1
+          assigned_to_id:
+            type: number
+          task_type:
+            type: number
+          assigned_to:
+            type: string
+            minLength: 1
+
