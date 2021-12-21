@@ -26,6 +26,8 @@ tags:
     description: All available actions for Debts
   - name: Debt_Tasks
     description: All available actions for Debt Tasks
+  - name: Document_Types
+    description: All available actions for Document Types
   - name: Forms
     description: Actions associated with Forms
   - name: Loans
@@ -3881,6 +3883,42 @@ paths:
                 properties:
                   status:
                     $ref: models/ErrorStatus.yaml
+  /documents/types:
+    get:
+      tags:
+        - Document_Types
+      summary: Find All Existing Document Types
+      description: |-
+        Returns all existing Document Types.
+        
+        <span><i class="fa fa-info-circle"></i><i style="font-size:12px"> By default the Document Types are returned in order of Newest to Oldest.</i></span>      
+      operationId: docTypesRead
+      responses:
+        '200':
+          description: Successfully retrieved list of Document Types
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: object
+                  status:
+                    $ref: models/SuccessStatus.yaml    
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                properties:
+                  status:
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Teams GET 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character' 
 components:
   schemas:
     Status:
