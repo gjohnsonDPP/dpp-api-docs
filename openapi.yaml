@@ -3998,6 +3998,39 @@ paths:
                 properties:
                   status:
                     $ref: models/ErrorStatus.yaml
+    delete:
+      tags:
+        - Document_Types
+      summary: Delete a Document Type by Doc. Type ID
+      description: Deletes a Document Type
+      operationId: docTypesDelete
+      parameters:
+        - name: id
+          in: path
+          description: Id of Document Type to Delete
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully deleted Document Type
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    $ref: models/SuccessStatus.yaml
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                required:
+                  - status
+                properties:
+                  status:
+                    $ref: models/ErrorStatus.yaml      
 components:
   schemas:
     Status:
