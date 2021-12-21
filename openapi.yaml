@@ -3988,6 +3988,16 @@ paths:
                     type: object
                   status:
                     $ref: models/SuccessStatus.yaml
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                required:
+                  - status
+                properties:
+                  status:
+                    $ref: models/ErrorStatus.yaml
 components:
   schemas:
     Status:
