@@ -3730,6 +3730,73 @@ paths:
                   - string
                   - number
       description: deletes the endpoint
+  '/contacts/{id}/notes':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Note'
+              examples:
+                example-1:
+                  value: {}
+      operationId: get-contacts-id-notes
+      description: Gets contacts notes.
+  '/contacts/{id}/notes/{note_id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+      - schema:
+          type: string
+        name: note_id
+        in: path
+        required: true
+    delete:
+      summary: ''
+      operationId: delete-contacts-id-notes-id
+      description: Deletes note from contact
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
+        description: id = contact_Id  note_id = contact's note selected for delete operation.
+  /contacts/notes/types:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    title:
+                      type: string
+      operationId: get-contacts-notes-types
 components:
   schemas:
     Status:
