@@ -6,11 +6,15 @@ x-tags:
 properties:
   object:
     type: string
+    example: settlement_offer
     readOnly: true
-    example: "settlement_offer"
   id:
     type: integer
     example: 3319980
+    readOnly: true
+  acctID:
+    type: integer
+    example: 3863
     readOnly: true
   contact_id:
     type: integer
@@ -18,6 +22,7 @@ properties:
   creditor:
     type: integer
     title: Original Creditor ID
+    default: 540
   debt_id:
     type: integer
     example: 124504794
@@ -36,33 +41,34 @@ properties:
     type: integer
   offer_status_date:
     type: string
-    format: date-time
+    format: date
   offer_valid_date:
     type: string
     format: date
   settlement_type:
     type: integer
+    default: 1
+    minimum: 1
   debt_amount:
     type: integer
     example: 8500.55
   settlement_amount:
     type: integer
+    minimum: 1
   settlement_fee:
     type: integer
   notes:
     type: string
-    example: "Lorem Ipsum"
+    example: Lorem Ipsum
   cred_cont_id:
     type: integer
   json:
     type: object
 required:
   - contact_id
+  - creditor
   - debt_id
+  - offer_valid_date
+  - settlement_type
   - debt_amount
   - settlement_amount
-  - offer_valid_date
-
-
-
-

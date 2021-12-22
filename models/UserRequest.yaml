@@ -13,6 +13,10 @@ properties:
     type: integer
     example: 6033912
     readOnly: true
+  acctID:
+    type: integer
+    example: 3863
+    readOnly: true
   company_id:
     title: Company ID
     type: integer
@@ -35,15 +39,15 @@ properties:
   user_name:
     title: User Name
     type: string
-    example: "API_User123"
+    example: API_User123
   firstname:
     title: First Name
     type: string
-    example: "John"
+    example: John
   lastname:
     title: Last Name
     type: string
-    example: "Doe"
+    example: Doe
   company:
     title: Company Name
     type: string
@@ -71,8 +75,8 @@ properties:
     example: 23006
   del:
     title: Del
-    type: integer
     example: 0
+    type: boolean
     readOnly: true
   delTime:
     title: Delete Date
@@ -80,12 +84,14 @@ properties:
     format: date-time
     example: '2021-01-13 12:47:25'
     readOnly: true
+  pass_reset:
+    type: boolean
+    readOnly: true
 required:
-  - user_name
   - user_type
-  - active
-  - email
+  - user_name
   - firstname
   - lastname
+  - email
+  - active
   - role
-
