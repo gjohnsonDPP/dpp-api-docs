@@ -1047,6 +1047,19 @@ paths:
                     status:
                       code: 400
                       message: 'Input Parsing Error: unexpected character'
+  '/contacts/{id}/clixsign':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+    post:
+      summary: Send Clixsign Request
+      tags:
+        - Contacts
+      responses: {}
+      operationId: sendClixsignRequest
   '/contacts/{id}/form_request':
     post:
       tags:
@@ -3919,7 +3932,7 @@ paths:
                   value:
                     status:
                       code: 400
-                      message: 'Input Parsing Error: unexpected character'   
+                      message: 'Input Parsing Error: unexpected character'
     post:
       tags:
         - Documents
