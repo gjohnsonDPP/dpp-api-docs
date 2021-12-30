@@ -1048,19 +1048,25 @@ paths:
                       code: 400
                       message: 'Input Parsing Error: unexpected character'
   '/contacts/{id}/clixsign':
-    parameters:
-      - schema:
-          type: string
-        name: id
-        in: path
-        required: true
     post:
-      summary: Send Clixsign Request
       tags:
         - Contacts
-      responses: {}
+      summary: Send Clixsign Request to Contact Email/SMS by ID
+      description: Sends a Clixsign Request to a Contact via Email and SMS by Contact ID
       operationId: sendClixsignRequest
-      description: Sends a Clixsign Request to a Contact by ContactID
+      parameters:
+        - name: id
+          in: path
+          description: Id of Contact Record to send Clixsign Request
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref:  
+    
   '/contacts/{id}/form_request':
     post:
       tags:
