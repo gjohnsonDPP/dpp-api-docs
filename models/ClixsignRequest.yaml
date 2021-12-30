@@ -1,5 +1,86 @@
-title: ClixsignRequest
+description: ''
 type: object
 properties:
-  id:
+  gen_request_id:
     type: string
+    minLength: 1
+  notifications:
+    type: object
+    properties:
+      email:
+        type: object
+        properties:
+          enabled:
+            type: boolean
+          subject:
+            type: string
+            minLength: 1
+          message:
+            type: string
+            minLength: 1
+        required:
+          - enabled
+          - subject
+          - message
+      sms:
+        type: object
+        properties:
+          enabled:
+            type: boolean
+          from_number:
+            type: string
+            minLength: 1
+          sms_template_id:
+            type: string
+            minLength: 1
+        required:
+          - enabled
+          - from_number
+          - sms_template_id
+    required:
+      - email
+      - sms
+  signers:
+    type: array
+    uniqueItems: true
+    minItems: 1
+    items:
+      required:
+        - type
+        - user_id
+        - name
+        - email
+      properties:
+        type:
+          type: string
+          minLength: 1
+        user_id:
+          type: string
+          minLength: 1
+        name:
+          type: string
+          minLength: 1
+        email:
+          type: string
+          minLength: 1
+required:
+  - gen_request_id
+  - notifications
+  - signers
+x-examples:
+  example-1:
+    gen_request_id: generated doc id from generate endpoint
+    notifications:
+      email:
+        enabled: true
+        subject: STRING
+        message: HTMLSTRING
+      sms:
+        enabled: true
+        from_number: from number id
+        sms_template_id: sms template id
+    signers:
+      - type: contact
+        user_id: string
+        name: string
+        email: string
