@@ -1060,6 +1060,7 @@ paths:
         - Contacts
       responses: {}
       operationId: sendClixsignRequest
+      description: Sends a Clixsign Request to a Contact by ContactID
   '/contacts/{id}/form_request':
     post:
       tags:
