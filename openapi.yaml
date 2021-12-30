@@ -1068,6 +1068,18 @@ paths:
           application/json:
             schema:
               $ref: models/ClixsignRequest.yaml
+      responses:
+        '200':
+          description: Successfully sent Clixsign Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: object
+                  status:
+                    $ref: models/SuccessStatus.yaml
   '/contacts/{id}/form_request':
     post:
       tags:
