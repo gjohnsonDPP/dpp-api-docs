@@ -1065,7 +1065,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref:  
+              $ref: models/ClixsignRequest.yaml
     
   '/contacts/{id}/form_request':
     post:
