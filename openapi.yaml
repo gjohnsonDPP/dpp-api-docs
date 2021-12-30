@@ -1068,7 +1068,6 @@ paths:
           application/json:
             schema:
               $ref: models/ClixsignRequest.yaml
-    
   '/contacts/{id}/form_request':
     post:
       tags:
