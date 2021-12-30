@@ -3919,7 +3919,8 @@ paths:
                   value:
                     status:
                       code: 400
-                      message: 'Input Parsing Error: unexpected character'   
+                      message: 'Input Parsing Error: unexpected character'
+      x-internal: true
     post:
       tags:
         - Documents
