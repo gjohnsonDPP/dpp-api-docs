@@ -1,5 +1,9 @@
-description: ''
+title: ClixsignRequest
 type: object
+description: Clixsign Request Record
+x-tags:
+  - Contact
+examples: []
 properties:
   gen_request_id:
     type: string
