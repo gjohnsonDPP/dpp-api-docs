@@ -1221,6 +1221,48 @@ paths:
                     status:
                       code: 400
                       message: 'Input Parsing Error: unexpected character'
+  '/contacts/{id}/clixsign':
+    post:
+      tags:
+        - Contacts
+      summary: Send a ClixSign Document
+      descriptions: ''
+      operationId: sendClixSignDoc
+      parameters:
+        - name: id
+          in: path
+          description: ID of Contact to send Document to
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: models/ClixSignDocument.yaml
+      responses:
+        '200':
+          description: Successfully sent Clixsign Document
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    $ref: models/SuccessStatus.yaml
+                required:
+                  - status
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    $ref: models/ErrorStatus.yaml
+                required:
+                  - status
   '/contacts/{id}/smslog':
     get:
       tags:
