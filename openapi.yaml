@@ -3882,7 +3882,54 @@ paths:
                   status:
                     $ref: models/ErrorStatus.yaml
   '/documents/{id}':
-    
+    post:
+      tags:
+        - Documents
+      summary: Create a Document Record by Document ID
+      description: |-
+        Creates a Document Record object
+
+        <span><i class="fa fa-info-circle"></i><i style="font-size:12px"> Select the `'Examples'` option to change the content of the request's Body to ONLY contain the required POST Parameters.</i></span>
+      operationId: documentCreate
+      parameters:
+        - name: id
+          in: path
+          description: Id of Document Template
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: models/Document.yaml
+        required: true
+      responses:
+        '200':
+          description: Successfully created a Document
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: object
+                  status:
+                    $ref: models/SuccessStatus.yaml
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                properties:
+                  status:
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Users Post 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   '/documents/document-types':
     get:
       tags:

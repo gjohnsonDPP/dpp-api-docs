@@ -1,0 +1,34 @@
+title: Document
+type: object
+description: ''
+properties:
+  id:
+    type: integer
+    description: ID of Document Template
+    readOnly: true
+  contact_id:
+    type: integer
+    example: 534512161
+  debt_id:
+    type: string
+    example: '124504794'
+  syndication_id:
+    type: string
+  order_id:
+    type: string
+  loan_id:
+    type: string
+  tags:
+    type: array
+    example:
+      - '{FIRSTNAME}': JOHN
+      - '{LASTNAME}': DOE
+    items:
+      type: object
+  signservice:
+    type: string
+    example: clixsign
+required:
+  - id
+  - contact_id
+  - signservice
