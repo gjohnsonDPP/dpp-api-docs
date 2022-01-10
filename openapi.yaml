@@ -3886,7 +3886,10 @@ paths:
       tags:
         - Documents
       summary: Get All Document Types
-      description: Returns a List of all existing document types
+      description: |-
+        Returns all existing Document Types.
+
+        <span><i class="fa fa-info-circle"></i><i style="font-size:12px"> By default the Document Types are returned in order of Newest to Oldest.</i></span>      
       operationId: documentTypesGet
       responses:
         '200':
