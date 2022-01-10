@@ -3885,7 +3885,7 @@ paths:
     post:
       tags:
         - Documents
-      summary: Create a Document Record by Document ID
+      summary: Create a Document by Doc. ID
       description: |-
         Creates a Document Record object
 
@@ -3916,20 +3916,7 @@ paths:
                     type: object
                   status:
                     $ref: models/SuccessStatus.yaml
-        '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: models/ErrorStatus.yaml
-              examples:
-                Users Post 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+                    
   '/documents/document-types':
     get:
       tags:
