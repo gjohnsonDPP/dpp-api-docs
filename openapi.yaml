@@ -26,8 +26,6 @@ tags:
     description: All available actions for Debt Tasks
   - name: Documents
     description: All available actions for Documents
-  - name: DocumentTypes
-    description: All available actions for DocumentTypes
   - name: Forms
     description: Actions associated with Forms
   - name: Loans
@@ -3883,29 +3881,38 @@ paths:
                 properties:
                   status:
                     $ref: models/ErrorStatus.yaml
-  /documents/types:
+  '/documents/document-types':
     get:
       tags:
         - Documents
-        - DocumentTypes
-      summary: Find All Existing Document Types
+      summary: Get All Document Types
       description: |-
         Returns all existing Document Types.
 
         <span><i class="fa fa-info-circle"></i><i style="font-size:12px"> By default the Document Types are returned in order of Newest to Oldest.</i></span>      
-      operationId: docTypesRead
+      operationId: documentTypesGet
       responses:
         '200':
-          description: Successfully retrieved list of Teams
+          description: Successfully retrieved list of document types
           content:
             application/json:
               schema:
                 type: object
                 properties:
-                  response:
-                    type: object
                   status:
                     $ref: models/SuccessStatus.yaml
+                  response:
+                    type: array
+                    description: Get All Document Types
+                    items:
+                      type: object
+                      properties:
+                        key:
+                          type: integer
+                          description: Get All Document Types
+                        title:
+                          type: string
+                          description: Get All Document Types
         '400':
           description: Error
           content:
@@ -3919,37 +3926,74 @@ paths:
                   value:
                     status:
                       code: 400
-                      message: 'Input Parsing Error: unexpected character'
-      x-internal: true
-    post:
-      tags:
-        - Documents
-        - DocumentTypes
-      summary: Create a Document Type
-      description: Creates a Document Type
-      operationId: docTypesCreate
-      responses:
-        '200':
-          description: Successfully created a Team Record
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  response:
-                    type: object
-                  status:
-                    $ref: models/SuccessStatus.yaml
-        '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                required:
-                  - status
-                properties:
-                  status:
-                    $ref: models/ErrorStatus.yaml
+                      message: 'Input Parsing Error: unexpected character'  
+  # /documents/types:
+  #   get:
+  #     tags:
+  #       - Documents
+  #       - DocumentTypes
+  #     summary: Find All Existing Document Types
+  #     description: |-
+  #       Returns all existing Document Types.
+
+  #       <span><i class="fa fa-info-circle"></i><i style="font-size:12px"> By default the Document Types are returned in order of Newest to Oldest.</i></span>      
+  #     operationId: docTypesRead
+  #     responses:
+  #       '200':
+  #         description: Successfully retrieved list of Teams
+  #         content:
+  #           application/json:
+  #             schema:
+  #               type: object
+  #               properties:
+  #                 response:
+  #                   type: object
+  #                 status:
+  #                   $ref: models/SuccessStatus.yaml
+  #       '400':
+  #         description: Error
+  #         content:
+  #           application/json:
+  #             schema:
+  #               properties:
+  #                 status:
+  #                   $ref: models/ErrorStatus.yaml
+  #             examples:
+  #               Teams GET 400 Response Example:
+  #                 value:
+  #                   status:
+  #                     code: 400
+  #                     message: 'Input Parsing Error: unexpected character'
+  #     x-internal: true
+  #   post:
+  #     tags:
+  #       - Documents
+  #       - DocumentTypes
+  #     summary: Create a Document Type
+  #     description: Creates a Document Type
+  #     operationId: docTypesCreate
+  #     responses:
+  #       '200':
+  #         description: Successfully created a Team Record
+  #         content:
+  #           application/json:
+  #             schema:
+  #               type: object
+  #               properties:
+  #                 response:
+  #                   type: object
+  #                 status:
+  #                   $ref: models/SuccessStatus.yaml
+  #       '400':
+  #         description: Error
+  #         content:
+  #           application/json:
+  #             schema:
+  #               required:
+  #                 - status
+  #               properties:
+  #                 status:
+  #                   $ref: models/ErrorStatus.yaml
 components:
   schemas:
     Status:
