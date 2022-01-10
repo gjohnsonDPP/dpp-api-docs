@@ -1,0 +1,14 @@
+title: DocumentType
+type: object
+x-tags:
+  - Documents
+properties:
+  key:
+    type: string
+    example: "1"
+    read-only: true
+  title:
+    type: string
+    example: "Document Title"
+required:
+  - title
