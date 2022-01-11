@@ -74,4 +74,4 @@ properties:
     format: date-time
     readOnly: true
 x-tags:
-  - Campaign
+  - Campaigns

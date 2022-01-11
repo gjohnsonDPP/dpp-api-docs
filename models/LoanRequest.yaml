@@ -129,4 +129,4 @@ required:
   - loan_amount
   - payback_amount
 x-tags:
-  - Loan
+  - Loans

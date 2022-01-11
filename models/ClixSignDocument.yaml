@@ -1,5 +1,7 @@
 title: ClixSignDocument
 type: object
+x-tags:
+  - Contacts
 properties:
   gen_request_id:
     type: integer

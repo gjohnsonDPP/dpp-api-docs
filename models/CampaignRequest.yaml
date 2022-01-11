@@ -80,4 +80,4 @@ required:
   - cost
   - media_type
 x-tags:
-  - Campaign
+  - Campaigns

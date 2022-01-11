@@ -2,7 +2,7 @@ title: Settlementoffer
 type: object
 description: Settlment Offer Record
 x-tags:
-  - Settlementoffer
+  - Settlement_Offers
 properties:
   object:
     type: string

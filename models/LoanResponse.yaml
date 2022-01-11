@@ -125,4 +125,4 @@ properties:
     type: integer
     example: 1043077
 x-tags:
-  - Loan
+  - Loans

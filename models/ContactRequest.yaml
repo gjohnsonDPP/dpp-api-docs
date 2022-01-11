@@ -2,7 +2,7 @@ title: Contact
 type: object
 description: Contact Record
 x-tags:
-  - Contact
+  - Contacts
 examples: []
 properties:
   object:

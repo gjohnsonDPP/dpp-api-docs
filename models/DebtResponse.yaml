@@ -2,7 +2,7 @@ title: Debt
 type: object
 description: Debt Record
 x-tags:
-  - Debt
+  - Debts
 properties:
   object:
     type: string

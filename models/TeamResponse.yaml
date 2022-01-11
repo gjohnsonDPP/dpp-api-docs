@@ -22,4 +22,4 @@ properties:
     type: string
     example: "Team Name"
 x-tags:
-  - Team
+  - Teams

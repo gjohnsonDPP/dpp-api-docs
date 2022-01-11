@@ -1,6 +1,8 @@
 title: Document
 type: object
 description: ''
+x-tags:
+  - Documents
 properties:
   id:
     type: integer
