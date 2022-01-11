@@ -22,8 +22,6 @@ tags:
     description: All available actions for Contacts
   - name: Debts
     description: All available actions for Debts
-  - name: Debt_Tasks
-    description: All available actions for Debt Tasks
   - name: Documents
     description: All available actions for Documents
   - name: Forms
@@ -1874,7 +1872,6 @@ paths:
     post:
       tags:
         - Debts
-        - Debt_Tasks
       summary: Create a Debt Task using DebtID
       description: Creates a new Debt Task
       operationId: debtTaskCreate
@@ -1932,12 +1929,11 @@ paths:
     get:
       tags:
         - Debts
-        - Debt_Tasks
       summary: Get List of All Tasks for a Debt Record by DebtID
       description: |-
         Returns all existing Tasks associated with a Debt Record.
 
-        <span><i class="fa fa-info-circle"></i><i style="font-size:12px"> By default the SMS Messages are returned in order of Newest to Oldest.</i></span>
+        <span><i class="fa fa-info-circle"></i><i style="font-size:12px"> By default the Tasks are returned in order of Newest to Oldest.</i></span>
       operationId: getDebtTasks
       parameters:
         - name: id
