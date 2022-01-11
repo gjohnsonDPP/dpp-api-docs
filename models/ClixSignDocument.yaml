@@ -3,7 +3,7 @@ type: object
 properties:
   gen_request_id:
     type: integer
-    description: The doc_id returned from the 'Create a Document by Doc. ID' endpoint.
+    description: 'The doc_id returned from the [Create a Document by Doc. ID](https://debtpaypro.stoplight.io/docs/dpp-api/b3A6MzUwMjYwNDU-create-a-document-by-doc-id) endpoint.'
     example: '23053225'
   notifications:
     type: object
