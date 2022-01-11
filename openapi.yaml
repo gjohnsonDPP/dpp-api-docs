@@ -3958,7 +3958,6 @@ paths:
                     type: object
                   status:
                     $ref: models/SuccessStatus.yaml
-                    
   '/documents/document-types':
     get:
       tags:
