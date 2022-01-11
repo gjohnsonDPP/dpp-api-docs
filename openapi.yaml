@@ -22,6 +22,8 @@ tags:
     description: All available actions for Contacts
   - name: Debts
     description: All available actions for Debts
+  - name: DebtNotes
+    description: All available actions for DebtNotes
   - name: Documents
     description: All available actions for Documents
   - name: Forms
@@ -1967,6 +1969,7 @@ paths:
     post:
       tags:
         - Debts
+        - DebtNotes
       summary: Create a Debt Note using DebtID
       description: Creates a new Debt Note
       operationId: debtNoteCreate
@@ -2046,6 +2049,7 @@ paths:
     delete:
       tags:
         - Debts
+        - DebtNotes
       summary: Delete a Debt Note by ID
       description: Deletes a Debt Note
       operationId: debtNoteDelete

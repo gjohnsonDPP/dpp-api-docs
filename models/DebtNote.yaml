@@ -3,6 +3,7 @@ type: object
 description: Debt Note Object
 x-tags:
   - Debts
+  - DebtNotes
 properties:
   object:
     type: string
