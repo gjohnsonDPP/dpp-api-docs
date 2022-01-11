@@ -1226,7 +1226,7 @@ paths:
       tags:
         - Contacts
       summary: Send a ClixSign Document
-      descriptions: ''
+      description: 'Sends a ClixSign Document'
       operationId: sendClixSignDoc
       parameters:
         - name: id
@@ -1234,7 +1234,7 @@ paths:
           description: ID of Contact to send Document to
           required: true
           schema:
-            type: integer
+            type: string
       requestBody:
         content:
           application/json:

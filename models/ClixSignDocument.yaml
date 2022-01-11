@@ -1,7 +1,7 @@
 title: ClixSignDocument
 type: object
 properties:
-  id:
+  gen_request_id:
     type: integer
     description: The doc_id returned from the 'Create a Document by Doc. ID' endpoint.
     example: '23053225'
@@ -9,73 +9,76 @@ properties:
     type: object
     properties:
       email:
+        type: object
         properties:
           enabled:
             type: string
-            example: "true"
+            example: 'true'
           subject:
-            type: "email"
-            example: "API Test"
+            type: email
+            example: API Test
           message:
             type: string
-            example: "API Test Lorem ipsum dolor"
-        type: object
+            example: API Test Lorem ipsum dolor
       sms:
+        type: object
         properties:
           enabled:
             type: string
-            example: "true"
+            example: 'true'
           sms_template_id:
             type: string
-            example: "sms_template_id"
-        type: object
+            example: sms_template_id
   signers:
     type: object
     properties:
-      "1":
+      '1':
+        type: object
         properties:
           type:
             type: string
-            example: "contact"
+            example: contact
           enabled:
             type: string
-            example: "true"
+            example: 'true'
+      '2':
         type: object
-      "2":
         properties:
           type:
             type: string
-            example: "assigneduser"
+            example: assigneduser
           enabled:
             type: string
-            example: "true"
+            example: 'true'
+      '3':
         type: object
-      "3":
         properties:
           type:
             type: string
-            example: "user"
+            example: user
           user_id:
             type: string
-            example: "123123"
+            example: '123123'
           enabled:
             type: string
-            example: "true"
+            example: 'true'
+      '4':
         type: object
-      "4":
         properties:
           type:
             type: string
-            example: "other"
+            example: other
           name:
             type: string
-            example: "John Doe"
+            example: John Doe
           email:
             type: string
-            example: "abc@abc.com"
+            example: abc@abc.com
           phone_number:
             type: string
-            example: "3121231234"
+            example: '3121231234'
           enabled:
             type: string
-            example: "true"                 
+            example: 'true'
+required:
+  - gen_request_id
