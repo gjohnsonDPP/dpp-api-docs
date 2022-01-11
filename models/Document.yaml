@@ -7,8 +7,8 @@ properties:
     description: ID of Document Template
     readOnly: true
   contact_id:
-    type: integer
-    example: 534512161
+    type: string
+    example: "534512161"
   debt_id:
     type: string
     example: '124504794'

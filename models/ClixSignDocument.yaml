@@ -1,0 +1,81 @@
+title: ClixSignDocument
+type: object
+properties:
+  id:
+    type: integer
+    description: The doc_id returned from the 'Create a Document by Doc. ID' endpoint.
+    example: '23053225'
+  notifications:
+    type: object
+    properties:
+      email:
+        properties:
+          enabled:
+            type: string
+            example: "true"
+          subject:
+            type: "email"
+            example: "API Test"
+          message:
+            type: string
+            example: "API Test Lorem ipsum dolor"
+        type: object
+      sms:
+        properties:
+          enabled:
+            type: string
+            example: "true"
+          sms_template_id:
+            type: string
+            example: "sms_template_id"
+        type: object
+  signers:
+    type: object
+    properties:
+      "1":
+        properties:
+          type:
+            type: string
+            example: "contact"
+          enabled:
+            type: string
+            example: "true"
+        type: object
+      "2":
+        properties:
+          type:
+            type: string
+            example: "assigneduser"
+          enabled:
+            type: string
+            example: "true"
+        type: object
+      "3":
+        properties:
+          type:
+            type: string
+            example: "user"
+          user_id:
+            type: string
+            example: "123123"
+          enabled:
+            type: string
+            example: "true"
+        type: object
+      "4":
+        properties:
+          type:
+            type: string
+            example: "other"
+          name:
+            type: string
+            example: "John Doe"
+          email:
+            type: string
+            example: "abc@abc.com"
+          phone_number:
+            type: string
+            example: "3121231234"
+          enabled:
+            type: string
+            example: "true"                 
