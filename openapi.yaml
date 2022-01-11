@@ -104,7 +104,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: models/CallRequest.yaml
+              $ref: '#/components/schemas/CallRequest'
             examples:
               Request:
                 value:
@@ -135,7 +135,7 @@ paths:
                   response:
                     type: object
                   status:
-                    $ref: models/SuccessStatus.yaml
+                    $ref: '#/components/schemas/SuccessStatus'
               examples:
                 Call Example 200 POST Response:
                   value:
@@ -152,7 +152,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/ErrorStatus.yaml
+                    $ref: '#/components/schemas/ErrorStatus'
               examples:
                 Call Example 400 Response:
                   value:
@@ -182,9 +182,9 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: models/CallResponse.yaml
+                    $ref: '#/components/schemas/CallResponse'
                   status:
-                    $ref: models/SuccessStatus.yaml
+                    $ref: '#/components/schemas/SuccessStatus'
               examples:
                 Call GET 200 Response Example:
                   value:
@@ -234,7 +234,7 @@ paths:
                 type: object
                 properties:
                   status:
-                    $ref: models/ErrorStatus.yaml
+                    $ref: '#/components/schemas/ErrorStatus'
                 required:
                   - status
               examples:
@@ -255,7 +255,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: ./models/CallRequest.yaml
+              $ref: '#/components/schemas/CallRequest'
             examples:
               Request:
                 value:
@@ -285,9 +285,9 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: models/CallResponse.yaml
+                    $ref: '#/components/schemas/CallResponse'
                   status:
-                    $ref: models/SuccessStatus.yaml
+                    $ref: '#/components/schemas/SuccessStatus'
               examples:
                 Call PUT 200 Response Example:
                   value:
@@ -337,7 +337,7 @@ paths:
                 type: object
                 properties:
                   status:
-                    $ref: models/ErrorStatus.yaml
+                    $ref: '#/components/schemas/ErrorStatus'
                 required:
                   - status
               examples:
@@ -368,7 +368,7 @@ paths:
                 type: object
                 properties:
                   status:
-                    $ref: models/SuccessStatus.yaml
+                    $ref: '#/components/schemas/SuccessStatus'
               examples:
                 Calls DELETE 200 Response Example:
                   value:
@@ -383,7 +383,7 @@ paths:
                 type: object
                 properties:
                   status:
-                    $ref: models/ErrorStatus.yaml
+                    $ref: '#/components/schemas/ErrorStatus'
                 required:
                   - status
               examples:
@@ -407,7 +407,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: models/CampaignRequest.yaml
+              $ref: '#/components/schemas/CampaignRequest'
             examples:
               Request:
                 value:
@@ -439,7 +439,7 @@ paths:
                   response:
                     type: object
                   status:
-                    $ref: models/SuccessStatus.yaml
+                    $ref: '#/components/schemas/SuccessStatus'
               examples:
                 Campaign POST 200 Response Example:
                   value:
@@ -456,7 +456,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/ErrorStatus.yaml
+                    $ref: '#/components/schemas/ErrorStatus'
               examples:
                 Campaigns POST 400 Response Example:
                   value:
@@ -486,9 +486,9 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: models/CampaignResponse.yaml
+                    $ref: '#/components/schemas/CampaignResponse'
                   status:
-                    $ref: models/SuccessStatus.yaml
+                    $ref: '#/components/schemas/SuccessStatus'
               examples:
                 Campaign GET 200 Response Example:
                   value:
@@ -525,7 +525,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/ErrorStatus.yaml
+                    $ref: '#/components/schemas/ErrorStatus'
               examples:
                 Campaign GET 400 Response Example:
                   value:
@@ -549,7 +549,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: models/CampaignResponse.yaml
+              $ref: '#/components/schemas/CampaignResponse'
       responses:
         '200':
           description: Successfully updated a Campaign Record
@@ -559,9 +559,9 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: models/CampaignResponse.yaml
+                    $ref: '#/components/schemas/CampaignResponse'
                   status:
-                    $ref: models/SuccessStatus.yaml
+                    $ref: '#/components/schemas/SuccessStatus'
               examples:
                 Campaign PUT 200 Response Example:
                   value:
@@ -598,7 +598,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/ErrorStatus.yaml
+                    $ref: '#/components/schemas/ErrorStatus'
               examples:
                 Campaign PUT 400 Response Example:
                   value:
@@ -626,7 +626,7 @@ paths:
               schema:
                 properties:
                   status:
-                    $ref: models/SuccessStatus.yaml
+                    $ref: '#/components/schemas/SuccessStatus'
               examples:
                 Campaign DELETE 200 Response Example:
                   value:
@@ -642,7 +642,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/ErrorStatus.yaml
+                    $ref: '#/components/schemas/ErrorStatus'
               examples:
                 Campaign DELETE 400 Response Example:
                   value:
@@ -665,7 +665,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: models/ContactRequest.yaml
+              $ref: '#/components/schemas/ContactRequest'
             examples:
               Request:
                 value:
@@ -749,7 +749,7 @@ paths:
                   response:
                     type: object
                   status:
-                    $ref: models/SuccessStatus.yaml
+                    $ref: '#/components/schemas/SuccessStatus'
               examples:
                 Contact POST 200 Response Example:
                   value:
@@ -767,7 +767,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/ErrorStatus.yaml
+                    $ref: '#/components/schemas/ErrorStatus'
               examples:
                 Contact POST 400 Response Example:
                   value:
@@ -797,9 +797,9 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: models/ContactResponse.yaml
+                    $ref: '#/components/schemas/ContactResponse'
                   status:
-                    $ref: models/SuccessStatus.yaml
+                    $ref: '#/components/schemas/SuccessStatus'
               examples:
                 Contact GET 200 Response Example:
                   value:
@@ -878,7 +878,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/ErrorStatus.yaml
+                    $ref: '#/components/schemas/ErrorStatus'
               examples:
                 Contact GET 400 Response Example:
                   value:
@@ -895,7 +895,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: models/ContactResponse.yaml
+              $ref: '#/components/schemas/ContactResponse'
       parameters:
         - name: id
           in: path
@@ -912,9 +912,9 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: models/ContactResponse.yaml
+                    $ref: '#/components/schemas/ContactResponse'
                   status:
-                    $ref: models/SuccessStatus.yaml
+                    $ref: '#/components/schemas/SuccessStatus'
               examples:
                 Contact PUT 200 Response Example:
                   value:
@@ -992,7 +992,7 @@ paths:
                 type: object
                 properties:
                   status:
-                    $ref: models/ErrorStatus.yaml
+                    $ref: '#/components/schemas/ErrorStatus'
                 required:
                   - status
               examples:
@@ -1022,7 +1022,7 @@ paths:
               schema:
                 properties:
                   status:
-                    $ref: models/SuccessStatus.yaml
+                    $ref: '#/components/schemas/SuccessStatus'
               examples:
                 Contact DELETE 200 Response Example:
                   value:
@@ -1038,7 +1038,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/ErrorStatus.yaml
+                    $ref: '#/components/schemas/ErrorStatus'
               examples:
                 Contact DELETE 400 Response Example:
                   value:
@@ -1081,7 +1081,7 @@ paths:
                   response:
                     type: object
                   status:
-                    $ref: models/SuccessStatus.yaml
+                    $ref: '#/components/schemas/SuccessStatus'
               examples:
                 Form Request POST 200 Response Example:
                   value:
@@ -1212,7 +1212,7 @@ paths:
                 type: object
                 properties:
                   status:
-                    $ref: models/ErrorStatus.yaml
+                    $ref: '#/components/schemas/ErrorStatus'
                 required:
                   - status
               examples:
@@ -1306,7 +1306,7 @@ paths:
                   response:
                     type: object
                   status:
-                    $ref: models/SuccessStatus.yaml
+                    $ref: '#/components/schemas/SuccessStatus'
               examples:
                 SMS Log GET 200 Response Example:
                   value:
@@ -1453,7 +1453,7 @@ paths:
                 type: object
                 properties:
                   status:
-                    $ref: models/ErrorStatus.yaml
+                    $ref: '#/components/schemas/ErrorStatus'
                 required:
                   - status
               examples:
@@ -1477,7 +1477,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: models/DebtRequest.yaml
+              $ref: '#/components/schemas/DebtRequest'
             examples:
               Request:
                 value:
@@ -1525,7 +1525,7 @@ paths:
                   response:
                     type: object
                   status:
-                    $ref: models/SuccessStatus.yaml
+                    $ref: '#/components/schemas/SuccessStatus'
               examples:
                 Debt POST 200 Response Example:
                   value:
@@ -1542,7 +1542,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/ErrorStatus.yaml
+                    $ref: '#/components/schemas/ErrorStatus'
               examples:
                 Debt POST 400 Response Example:
                   value:
@@ -1572,9 +1572,9 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: models/DebtResponse.yaml
+                    $ref: '#/components/schemas/DebtResponse'
                   status:
-                    $ref: models/SuccessStatus.yaml
+                    $ref: '#/components/schemas/SuccessStatus'
               examples:
                 Debt GET 200 Response Example:
                   value:
@@ -1677,7 +1677,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/ErrorStatus.yaml
+                    $ref: '#/components/schemas/ErrorStatus'
               examples:
                 Debt GET 400 Response Example:
                   value:
@@ -1694,7 +1694,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: ./models/DebtResponse.yaml
+              $ref: '#/components/schemas/DebtResponse'
       parameters:
         - name: id
           in: path
@@ -1711,9 +1711,9 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: models/DebtResponse.yaml
+                    $ref: '#/components/schemas/DebtResponse'
                   status:
-                    $ref: models/SuccessStatus.yaml
+                    $ref: '#/components/schemas/SuccessStatus'
               examples:
                 Debt PUT 200 Response Example:
                   value:
@@ -1816,7 +1816,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/ErrorStatus.yaml
+                    $ref: '#/components/schemas/ErrorStatus'
               examples:
                 Debt PUT 400 Response Example:
                   value:
@@ -1845,7 +1845,7 @@ paths:
                 type: object
                 properties:
                   status:
-                    $ref: models/SuccessStatus.yaml
+                    $ref: '#/components/schemas/SuccessStatus'
               examples:
                 Debt DELETE 200 Response Example:
                   value:
@@ -1861,7 +1861,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/ErrorStatus.yaml
+                    $ref: '#/components/schemas/ErrorStatus'
               examples:
                 Debt DELETE 400 Response Example:
                   value:
@@ -1907,9 +1907,9 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: models/TaskResponse.yaml
+                    $ref: '#/components/schemas/TaskResponse'
                   status:
-                    $ref: models/SuccessStatus.yaml
+                    $ref: '#/components/schemas/SuccessStatus'
         '400':
           description: Error
           content:
@@ -1918,7 +1918,7 @@ paths:
                 type: object
                 properties:
                   status:
-                    $ref: models/ErrorStatus.yaml
+                    $ref: '#/components/schemas/ErrorStatus'
               examples:
                 Debt Note POST 400 Response Example:
                   value:
@@ -1955,7 +1955,7 @@ paths:
                   response:
                     type: object
                   status:
-                    $ref: models/SuccessStatus.yaml
+                    $ref: '#/components/schemas/SuccessStatus'
         '400':
           description: Error
           content:
@@ -1964,7 +1964,7 @@ paths:
                 type: object
                 properties:
                   status:
-                    $ref: models/ErrorStatus.yaml
+                    $ref: '#/components/schemas/ErrorStatus'
   '/debts/{id}/notes':
     post:
       tags:
@@ -1984,7 +1984,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: models/DebtNote.yaml
+              $ref: '#/components/schemas/DebtNote'
       responses:
         '200':
           description: Successfully created a Debt Note
@@ -1994,9 +1994,9 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: ./models/DebtNoteResponse.yaml
+                    $ref: '#/components/schemas/DebtNoteResponse'
                   status:
-                    $ref: models/SuccessStatus.yaml
+                    $ref: '#/components/schemas/SuccessStatus'
               examples:
                 Debt Note POST 200 Response Example:
                   value:
@@ -2037,7 +2037,7 @@ paths:
                 type: object
                 properties:
                   status:
-                    $ref: models/ErrorStatus.yaml
+                    $ref: '#/components/schemas/ErrorStatus'
               examples:
                 Debt Note POST 400 Response Example:
                   value:
@@ -2066,7 +2066,7 @@ paths:
               schema:
                 properties:
                   status:
-                    $ref: models/SuccessStatus.yaml
+                    $ref: '#/components/schemas/SuccessStatus'
         '400':
           description: Error
           content:
@@ -2075,7 +2075,7 @@ paths:
                 type: object
                 properties:
                   status:
-                    $ref: models/ErrorStatus.yaml
+                    $ref: '#/components/schemas/ErrorStatus'
               examples:
                 Debt Note POST 400 Response Example:
                   value:
@@ -2097,7 +2097,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: models/LoanRequest.yaml
+              $ref: '#/components/schemas/LoanRequest'
             examples:
               Request:
                 value:
@@ -2140,7 +2140,7 @@ paths:
                   response:
                     type: object
                   status:
-                    $ref: models/SuccessStatus.yaml
+                    $ref: '#/components/schemas/SuccessStatus'
               examples:
                 Loan POST 200 Response Example:
                   value:
@@ -2157,7 +2157,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/ErrorStatus.yaml
+                    $ref: '#/components/schemas/ErrorStatus'
               examples:
                 Loans POST 400 Response Example:
                   value:
@@ -2187,9 +2187,9 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: models/LoanResponse.yaml
+                    $ref: '#/components/schemas/LoanResponse'
                   status:
-                    $ref: models/SuccessStatus.yaml
+                    $ref: '#/components/schemas/SuccessStatus'
               examples:
                 Loan GET 200 Response Example:
                   value:
@@ -2241,7 +2241,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/ErrorStatus.yaml
+                    $ref: '#/components/schemas/ErrorStatus'
               examples:
                 Loan GET 400 Response Example:
                   value:
@@ -2265,7 +2265,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: models/LoanResponse.yaml
+              $ref: '#/components/schemas/LoanResponse'
       responses:
         '200':
           description: Successfully updated a Loan Record
@@ -2275,9 +2275,9 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: models/LoanResponse.yaml
+                    $ref: '#/components/schemas/LoanResponse'
                   status:
-                    $ref: models/SuccessStatus.yaml
+                    $ref: '#/components/schemas/SuccessStatus'
               examples:
                 Loan PUT 200 Response Example:
                   value:
@@ -2330,7 +2330,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/ErrorStatus.yaml
+                    $ref: '#/components/schemas/ErrorStatus'
               examples:
                 Loan PUT 400 Response Example:
                   value:
@@ -2358,7 +2358,7 @@ paths:
               schema:
                 properties:
                   status:
-                    $ref: models/SuccessStatus.yaml
+                    $ref: '#/components/schemas/SuccessStatus'
               examples:
                 Loan DELETE 200 Response Example:
                   value:
@@ -2374,7 +2374,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/ErrorStatus.yaml
+                    $ref: '#/components/schemas/ErrorStatus'
               examples:
                 Loan DELETE 400 Response Example:
                   value:
@@ -2395,7 +2395,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: models/SettlementofferRequest.yaml
+              $ref: '#/components/schemas/SettlementofferRequest'
             examples:
               Request:
                 value:
@@ -2434,7 +2434,7 @@ paths:
                   response:
                     type: object
                   status:
-                    $ref: models/SuccessStatus.yaml
+                    $ref: '#/components/schemas/SuccessStatus'
               examples:
                 Settlement Offer POST 200 Response Example:
                   value:
@@ -2451,7 +2451,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/ErrorStatus.yaml
+                    $ref: '#/components/schemas/ErrorStatus'
               examples:
                 Settlement Offer 400 Response Example:
                   value:
@@ -2481,9 +2481,9 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: models/SettlementofferResponse.yaml
+                    $ref: '#/components/schemas/SettlementofferResponse'
                   status:
-                    $ref: models/SuccessStatus.yaml
+                    $ref: '#/components/schemas/SuccessStatus'
               examples:
                 Settlement Offer GET 200 Response Example:
                   value:
@@ -2553,7 +2553,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/ErrorStatus.yaml
+                    $ref: '#/components/schemas/ErrorStatus'
               examples:
                 Settlement Offer GET 400 Response Example:
                   value:
@@ -2577,7 +2577,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: models/SettlementofferResponse.yaml
+              $ref: '#/components/schemas/SettlementofferResponse'
         description: Settlement offer object that will be updated
         required: true
       responses:
@@ -2589,9 +2589,9 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: models/SettlementofferResponse.yaml
+                    $ref: '#/components/schemas/SettlementofferResponse'
                   status:
-                    $ref: models/SuccessStatus.yaml
+                    $ref: '#/components/schemas/SuccessStatus'
               examples:
                 SettlementOffer PUT 200 Response Example:
                   value:
@@ -2661,7 +2661,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/ErrorStatus.yaml
+                    $ref: '#/components/schemas/ErrorStatus'
               examples:
                 SettlementOffer PUT 400 Response Example:
                   value:
@@ -2690,7 +2690,7 @@ paths:
                 type: object
                 properties:
                   status:
-                    $ref: models/SuccessStatus.yaml
+                    $ref: '#/components/schemas/SuccessStatus'
               examples:
                 SettlementOffer Delete 200 Response Example:
                   value:
@@ -2706,7 +2706,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/ErrorStatus.yaml
+                    $ref: '#/components/schemas/ErrorStatus'
               examples:
                 SettlementOffer Delete 400 Response Example:
                   value:
@@ -2727,7 +2727,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: models/TaskRequest.yaml
+              $ref: '#/components/schemas/TaskRequest'
             examples:
               Request:
                 value:
@@ -2769,7 +2769,7 @@ paths:
                   response:
                     type: object
                   status:
-                    $ref: models/SuccessStatus.yaml
+                    $ref: '#/components/schemas/SuccessStatus'
               examples:
                 Task POST 200 Response Example:
                   value:
@@ -2786,7 +2786,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/ErrorStatus.yaml
+                    $ref: '#/components/schemas/ErrorStatus'
               examples:
                 Tasks POST 400 Response Example:
                   value:
@@ -2816,9 +2816,9 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: models/TaskResponse.yaml
+                    $ref: '#/components/schemas/TaskResponse'
                   status:
-                    $ref: models/SuccessStatus.yaml
+                    $ref: '#/components/schemas/SuccessStatus'
               examples:
                 Tasks GET 200 Response Example:
                   value:
@@ -2892,7 +2892,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/ErrorStatus.yaml
+                    $ref: '#/components/schemas/ErrorStatus'
               examples:
                 Task GET 400 Response Example:
                   value:
@@ -2916,7 +2916,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: models/TaskRequest.yaml
+              $ref: '#/components/schemas/TaskRequest'
         description: Task object that needs to be updated
       responses:
         '200':
@@ -2927,9 +2927,9 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: models/TaskResponse.yaml
+                    $ref: '#/components/schemas/TaskResponse'
                   status:
-                    $ref: models/SuccessStatus.yaml
+                    $ref: '#/components/schemas/SuccessStatus'
               examples:
                 Task Update 200 Response Example:
                   value:
@@ -3003,7 +3003,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/ErrorStatus.yaml
+                    $ref: '#/components/schemas/ErrorStatus'
               examples:
                 Task PUT 400 Response Example:
                   value:
@@ -3031,7 +3031,7 @@ paths:
               schema:
                 properties:
                   status:
-                    $ref: models/SuccessStatus.yaml
+                    $ref: '#/components/schemas/SuccessStatus'
               examples:
                 Task Delete 200 Response Example:
                   value:
@@ -3047,7 +3047,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/ErrorStatus.yaml
+                    $ref: '#/components/schemas/ErrorStatus'
               examples:
                 Task DELETE 400 Response Example:
                   value:
@@ -3072,7 +3072,7 @@ paths:
                   response:
                     type: object
                   status:
-                    $ref: models/SuccessStatus.yaml
+                    $ref: '#/components/schemas/SuccessStatus'
         '400':
           description: Error
           content:
@@ -3080,7 +3080,7 @@ paths:
               schema:
                 properties:
                   status:
-                    $ref: models/ErrorStatus.yaml
+                    $ref: '#/components/schemas/ErrorStatus'
               examples:
                 Teams GET 400 Response Example:
                   value:
@@ -3104,7 +3104,7 @@ paths:
                   response:
                     type: object
                   status:
-                    $ref: models/SuccessStatus.yaml
+                    $ref: '#/components/schemas/SuccessStatus'
               examples:
                 Team POST 200 Response Example:
                   value:
@@ -3121,7 +3121,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/ErrorStatus.yaml
+                    $ref: '#/components/schemas/ErrorStatus'
               examples:
                 Teams POST 400 Response Example:
                   value:
@@ -3132,7 +3132,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: ./models/TeamRequest.yaml
+              $ref: '#/components/schemas/TeamRequest'
             examples:
               Request:
                 value:
@@ -3160,9 +3160,9 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: models/TeamResponse.yaml
+                    $ref: '#/components/schemas/TeamResponse'
                   status:
-                    $ref: models/SuccessStatus.yaml
+                    $ref: '#/components/schemas/SuccessStatus'
               examples:
                 Teams GET 200 Response Example:
                   value:
@@ -3182,7 +3182,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/ErrorStatus.yaml
+                    $ref: '#/components/schemas/ErrorStatus'
               examples:
                 Teams GET 400 Response Example:
                   value:
@@ -3206,7 +3206,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: models/TeamResponse.yaml
+              $ref: '#/components/schemas/TeamResponse'
       responses:
         '200':
           description: Successfully updated Team Record
@@ -3216,9 +3216,9 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: models/TeamResponse.yaml
+                    $ref: '#/components/schemas/TeamResponse'
                   status:
-                    $ref: models/SuccessStatus.yaml
+                    $ref: '#/components/schemas/SuccessStatus'
               examples:
                 Teams PUT 200 Response Example:
                   value:
@@ -3238,7 +3238,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/ErrorStatus.yaml
+                    $ref: '#/components/schemas/ErrorStatus'
               examples:
                 Teams PUT 400 Response Example:
                   value:
@@ -3266,7 +3266,7 @@ paths:
               schema:
                 properties:
                   status:
-                    $ref: models/SuccessStatus.yaml
+                    $ref: '#/components/schemas/SuccessStatus'
               examples:
                 Teams Delete 200 Response Example:
                   value:
@@ -3282,7 +3282,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/ErrorStatus.yaml
+                    $ref: '#/components/schemas/ErrorStatus'
               examples:
                 Teams Delete 400 Response Example:
                   value:
@@ -3303,7 +3303,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: models/UserRequest.yaml
+              $ref: '#/components/schemas/UserRequest'
             examples:
               Request:
                 value:
@@ -3339,7 +3339,7 @@ paths:
                   response:
                     type: object
                   status:
-                    $ref: models/SuccessStatus.yaml
+                    $ref: '#/components/schemas/SuccessStatus'
               examples:
                 Users Post 200 Response Example:
                   value:
@@ -3354,7 +3354,7 @@ paths:
               schema:
                 properties:
                   status:
-                    $ref: models/ErrorStatus.yaml
+                    $ref: '#/components/schemas/ErrorStatus'
               examples:
                 Users Post 400 Response Example:
                   value:
@@ -3384,9 +3384,9 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: models/UserResponse.yaml
+                    $ref: '#/components/schemas/UserResponse'
                   status:
-                    $ref: models/SuccessStatus.yaml
+                    $ref: '#/components/schemas/SuccessStatus'
               examples:
                 Users GET 200 Response Example:
                   value:
@@ -3418,7 +3418,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/ErrorStatus.yaml
+                    $ref: '#/components/schemas/ErrorStatus'
               examples:
                 User GET 400 Response Example:
                   value:
@@ -3442,7 +3442,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: models/UserResponse.yaml
+              $ref: '#/components/schemas/UserResponse'
         required: true
       responses:
         '200':
@@ -3453,9 +3453,9 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: models/UserResponse.yaml
+                    $ref: '#/components/schemas/UserResponse'
                   status:
-                    $ref: models/SuccessStatus.yaml
+                    $ref: '#/components/schemas/SuccessStatus'
               examples:
                 Users PUT 200 Response Example:
                   value:
@@ -3487,7 +3487,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/ErrorStatus.yaml
+                    $ref: '#/components/schemas/ErrorStatus'
               examples:
                 User PUT 400 Response Example:
                   value:
@@ -3516,7 +3516,7 @@ paths:
                 type: object
                 properties:
                   status:
-                    $ref: models/SuccessStatus.yaml
+                    $ref: '#/components/schemas/SuccessStatus'
         '400':
           description: Error
           content:
@@ -3526,7 +3526,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: models/ErrorStatus.yaml
+                    $ref: '#/components/schemas/ErrorStatus'
               examples:
                 Users Delete 400 Response Example:
                   value:
@@ -3684,7 +3684,7 @@ paths:
               schema:
                 properties:
                   status:
-                    $ref: models/SuccessStatus.yaml
+                    $ref: '#/components/schemas/SuccessStatus'
                   response:
                     description: Get event records for user
                     type: array
@@ -4191,7 +4191,7 @@ components:
           type: string
           example: '"http://example.com"'
         assigned_agent:
-          $ref: models/UserResponse.yaml
+          $ref: '#/components/schemas/UserResponse'
       required:
         - contactID
         - call_type
@@ -5173,6 +5173,2029 @@ components:
       required:
         - start
         - limit
+    Address_2:
+      title: Address
+      type: object
+      description: Address Record Object
+      x-tags:
+        - Address
+      properties:
+        address1:
+          type: string
+          example: 123 Main St.
+        address2:
+          type: string
+          example: Apt. 4008
+        address3:
+          type: string
+        city:
+          type: string
+          example: Chicago
+        state:
+          type: string
+          example: IL
+        zip:
+          type: string
+          example: '60612'
+    CallRequest:
+      title: Call
+      type: object
+      description: Call Record Object
+      x-tags:
+        - Calls
+      examples: []
+      properties:
+        object:
+          type: string
+          example: call
+          readOnly: true
+        id:
+          type: integer
+          minLength: 1
+          description: ID of the call record
+          example: 385319179
+          readOnly: true
+        acctID:
+          type: integer
+          example: 3863
+          readOnly: true
+        contactID:
+          type: integer
+          example: 475956560
+        userID:
+          type: integer
+          example: 3028014
+          readOnly: true
+        sdate:
+          type: string
+          format: date
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        call_type:
+          type: string
+          enum:
+            - Outgoing
+            - Incoming
+          example: Outgoing
+        call_result:
+          type: string
+          example: Busy
+        notes:
+          type: string
+          example: Lorem Ipsum
+        status_change:
+          example: 274158
+          type: integer
+        duration:
+          type: string
+          format: duration
+          example: '00:01:15'
+        event_id:
+          type: integer
+          example: 8179
+        dialer_id:
+          type: integer
+          example: 2
+        recording_url:
+          type: string
+          example: 'https://stairwork.ru/test.mp3'
+        assigned_agent:
+          type: integer
+          example: 3028014
+          description: User ID of the DPP Agent that made or took the call with the Client.
+      required:
+        - contactID
+        - call_type
+        - call_result
+    CallResponse:
+      title: Call
+      type: object
+      description: Call Record Object
+      x-tags:
+        - Calls
+      examples:
+        - object: call
+          id: 385319179
+          acctID: 3863
+          contactID: 516553837
+          userID: 3028014
+          sdate: '2019-08-24'
+          created_at: '2019-08-24T14:15:22Z'
+          call_type: Outgoing
+          call_result: Busy
+          notes: Lorem Ipsum
+          status_change: 274158
+          duration: '00:01:15'
+          event_id: 8179
+          dialer_id: 2
+          recording_url: 'https://stairwork.ru/test.mp3'
+          assigned_agent:
+            object: user
+            id: 6033912
+            acctID: 3863
+            company_id: 42128
+            parent_id: 4950368
+            user_type: 1
+            created: '2021-01-13 12:47:25'
+            user_name: API_User123
+            firstname: John
+            lastname: Doe
+            company: Acme
+            email: mail@debtpaypro.com
+            active: true
+            role: 29399
+            attorney: true
+            payee_id: 23006
+            del: 0
+            delTime: '2021-01-13 12:47:25'
+            pass_reset: true
+      properties:
+        object:
+          type: string
+          example: call
+          readOnly: true
+        id:
+          type: integer
+          minLength: 1
+          description: ID of the call record
+          example: 385319179
+          readOnly: true
+        acctID:
+          type: integer
+          example: 3863
+          readOnly: true
+        contactID:
+          type: integer
+          example: 475956560
+        userID:
+          type: integer
+          example: 3028014
+          readOnly: true
+        sdate:
+          type: string
+          format: date
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        call_type:
+          type: string
+          enum:
+            - Outgoing
+            - Incoming
+          example: Outgoing
+        call_result:
+          type: string
+          example: Busy
+        notes:
+          type: string
+          example: Lorem Ipsum
+        status_change:
+          example: 274158
+          type: integer
+        duration:
+          type: string
+          format: duration
+          example: '00:01:15'
+        event_id:
+          type: integer
+          example: 8179
+        dialer_id:
+          type: integer
+          example: 2
+        recording_url:
+          type: string
+          example: 'https://stairwork.ru/test.mp3'
+        assigned_agent:
+          type: integer
+          description: User ID of the DPP Agent that took or made the call to the Client.
+    CampaignRequest:
+      title: Campaign
+      type: object
+      description: Campaign Record Object
+      properties:
+        object:
+          type: string
+          example: campaign
+          readOnly: true
+        id:
+          type: integer
+          readOnly: true
+        acctID:
+          type: integer
+          example: 3863
+          readOnly: true
+        company_id:
+          type: integer
+          readOnly: true
+        active:
+          type: boolean
+          default: true
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        created_by:
+          type: integer
+          readOnly: true
+        token:
+          type: string
+          readOnly: true
+        title:
+          type: string
+          example: Campaign Title
+        start_date:
+          type: string
+          format: date
+          pattern: YYYY-mm-dd
+        end_date:
+          type: string
+          format: date
+          pattern: YYYY-mm-dd
+        source_id:
+          type: integer
+          example: 3184
+        cost:
+          type: number
+          example: 1984.25
+          format: double
+        cost_type:
+          type: integer
+          example: 1
+        priority:
+          type: integer
+          example: 4
+        external_id:
+          type: integer
+          readOnly: true
+        media_type:
+          type: integer
+          example: 1
+        purchase_amount:
+          type: number
+          example: 42
+        del:
+          type: boolean
+          default: false
+          readOnly: true
+        del_by:
+          type: integer
+          readOnly: true
+        deltime:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+        - title
+        - start_date
+        - end_date
+        - cost
+        - media_type
+      x-tags:
+        - Campaign
+    CampaignResponse:
+      title: Campaign
+      type: object
+      description: Campaign Record Object
+      properties:
+        object:
+          type: string
+          example: campaign
+          readOnly: true
+        id:
+          type: integer
+          readOnly: true
+        acctID:
+          type: integer
+          example: 3863
+          readOnly: true
+        company_id:
+          type: integer
+          readOnly: true
+        active:
+          type: boolean
+          default: true
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        created_by:
+          type: integer
+          readOnly: true
+        token:
+          type: string
+          readOnly: true
+        title:
+          type: string
+          example: Campaign Title
+        start_date:
+          type: string
+          format: date
+          pattern: YYYY-mm-dd
+        end_date:
+          type: string
+          format: date
+          pattern: YYYY-mm-dd
+        source_id:
+          type: integer
+          example: 3184
+        cost:
+          type: number
+          example: 1984.25
+          format: double
+        cost_type:
+          type: integer
+          example: 1
+        priority:
+          type: integer
+          example: 4
+        external_id:
+          type: integer
+          readOnly: true
+        media_type:
+          type: integer
+          example: 1
+        purchase_amount:
+          type: number
+          example: 42
+        del:
+          type: boolean
+          default: false
+          readOnly: true
+        del_by:
+          type: integer
+          readOnly: true
+        deltime:
+          type: string
+          format: date-time
+          readOnly: true
+      x-tags:
+        - Campaign
+    ClixSignDocument:
+      title: ClixSignDocument
+      type: object
+      properties:
+        gen_request_id:
+          type: integer
+          description: The doc_id returned from the 'Create a Document by Doc. ID' endpoint.
+          example: '23053225'
+        notifications:
+          type: object
+          properties:
+            email:
+              type: object
+              properties:
+                enabled:
+                  type: string
+                  example: 'true'
+                subject:
+                  type: email
+                  example: API Test
+                message:
+                  type: string
+                  example: API Test Lorem ipsum dolor
+            sms:
+              type: object
+              properties:
+                enabled:
+                  type: string
+                  example: 'true'
+                sms_template_id:
+                  type: string
+                  example: sms_template_id
+        signers:
+          type: object
+          properties:
+            '1':
+              type: object
+              properties:
+                type:
+                  type: string
+                  example: contact
+                enabled:
+                  type: string
+                  example: 'true'
+            '2':
+              type: object
+              properties:
+                type:
+                  type: string
+                  example: assigneduser
+                enabled:
+                  type: string
+                  example: 'true'
+            '3':
+              type: object
+              properties:
+                type:
+                  type: string
+                  example: user
+                user_id:
+                  type: string
+                  example: '123123'
+                enabled:
+                  type: string
+                  example: 'true'
+            '4':
+              type: object
+              properties:
+                type:
+                  type: string
+                  example: other
+                name:
+                  type: string
+                  example: John Doe
+                email:
+                  type: string
+                  example: abc@abc.com
+                phone_number:
+                  type: string
+                  example: '3121231234'
+                enabled:
+                  type: string
+                  example: 'true'
+      required:
+        - gen_request_id
+    ContactRequest:
+      title: Contact
+      type: object
+      description: Contact Record
+      x-tags:
+        - Contact
+      examples: []
+      properties:
+        object:
+          type: string
+          example: contact
+          readOnly: true
+        id:
+          type: integer
+          example: 382760691
+          readOnly: true
+        acctID:
+          type: integer
+          example: 3863
+          readOnly: true
+        company_id:
+          type: integer
+          example: 42128
+          readOnly: true
+        file_type:
+          type: integer
+          example: 1
+        form_id:
+          type: integer
+          example: 18626
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        created_by:
+          type: integer
+          example: 4950368
+          readOnly: true
+        modified:
+          type: string
+          format: date-time
+          readOnly: true
+        modified_by:
+          type: integer
+          example: 4950368
+          readOnly: true
+        assigned_to:
+          type: integer
+          example: 6515056
+        campaign_id:
+          type: integer
+          example: 158227
+        attorney:
+          type: boolean
+          default: false
+        attorney_id:
+          type: integer
+          example: 0
+        attorney_id2:
+          type: integer
+          example: 0
+        first_name:
+          type: string
+          example: John
+        middle_name:
+          type: string
+          example: E
+        last_name:
+          type: string
+          example: Doe
+        salutation:
+          type: string
+          example: Hello
+        title:
+          type: string
+          example: Mr.
+        phone_number:
+          type: string
+          example: '13123831234'
+        phone_extension:
+          type: integer
+          example: 123
+        cell_phone:
+          type: string
+          example: '13123835678'
+        cell_extension:
+          type: integer
+          example: 123
+        work_phone:
+          type: string
+          example: '13123839753'
+        work_extension:
+          type: integer
+          example: 123
+        address:
+          $ref: '#/components/schemas/Address_2'
+        email:
+          type: string
+          example: test@test.com
+        social_security_number:
+          type: string
+          example: 123-45-6789
+        date_of_birth:
+          type: string
+          format: date
+          example: '1970-01-01'
+        language:
+          type: integer
+          example: 1
+        submitted:
+          type: boolean
+          default: false
+        submitted_by:
+          type: integer
+          example: 0
+        submitted_at:
+          type: string
+          format: date-time
+        approved_by2:
+          type: integer
+          example: 0
+        approved_date2:
+          type: string
+          format: date
+        rejected_by:
+          type: integer
+          example: 0
+        rejected_notes:
+          type: string
+          example: Rejection Note
+        paused_notes:
+          type: string
+          example: Paused Note
+        dropped_reason:
+          type: integer
+          example: 1
+        grad_date:
+          type: string
+          format: date
+        total_debt:
+          type: number
+          example: 13755.9
+        welcome_sent:
+          type: string
+          format: date-time
+        paper_statements:
+          type: boolean
+          default: false
+        paper_welcome:
+          type: boolean
+          default: false
+        gateway_id:
+          type: integer
+          example: 0
+        gateway_approved_by:
+          type: integer
+          example: 0
+        gateway_hold:
+          type: boolean
+          default: false
+        gateway_hold_reason:
+          type: integer
+          example: 0
+        gateway_hold_notes:
+          type: string
+        gateway_auth_received:
+          type: boolean
+        gateway_auth_file:
+          type: string
+          example: test_gateway_auth_file.pdf
+        iscoapp:
+          type: boolean
+          default: false
+        customs:
+          type: array
+          items:
+            type: object
+            properties:
+              field_id:
+                type: integer
+              value:
+                type: string
+              label:
+                type: string
+      required:
+        - first_name
+        - last_name
+        - phone_number
+        - address
+        - email
+        - date_of_birth
+    ContactResponse:
+      title: Contact
+      type: object
+      description: Contact Record
+      x-tags:
+        - Contact
+      examples: []
+      properties:
+        object:
+          type: string
+          example: contact
+          readOnly: true
+        id:
+          type: integer
+          example: 382760691
+          readOnly: true
+        acctID:
+          type: integer
+          example: 3863
+          readOnly: true
+        company_id:
+          type: integer
+          example: 42128
+          readOnly: true
+        file_type:
+          type: integer
+          example: 1
+        form_id:
+          type: integer
+          example: 18626
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+        created_by:
+          type: integer
+          example: 4950368
+          readOnly: true
+        modified:
+          type: string
+          format: date-time
+          readOnly: true
+        modified_by:
+          type: integer
+          example: 4950368
+          readOnly: true
+        assigned_to:
+          type: integer
+          example: 6515056
+        campaign_id:
+          type: integer
+          example: 158227
+        attorney:
+          type: boolean
+          default: false
+        attorney_id:
+          type: integer
+          example: 0
+        attorney_id2:
+          type: integer
+          example: 0
+        first_name:
+          type: string
+          example: John
+        middle_name:
+          type: string
+          example: E
+        last_name:
+          type: string
+          example: Doe
+        salutation:
+          type: string
+          example: Hello
+        title:
+          type: string
+          example: Mr.
+        phone_number:
+          type: string
+          example: '13123831234'
+        phone_extension:
+          type: integer
+          example: 123
+        cell_phone:
+          type: string
+          example: '13123835678'
+        cell_extension:
+          type: integer
+          example: 123
+        work_phone:
+          type: string
+          example: '13123839753'
+        work_extension:
+          type: integer
+          example: 123
+        address:
+          $ref: '#/components/schemas/Address_2'
+        email:
+          type: string
+          example: test@test.com
+        social_security_number:
+          type: string
+          example: 123-45-6789
+        date_of_birth:
+          type: string
+          format: date
+          example: '1970-01-01'
+        language:
+          type: integer
+          example: 1
+        submitted:
+          type: boolean
+          default: false
+        submitted_by:
+          type: integer
+          example: 0
+        submitted_at:
+          type: string
+          format: date-time
+        approved_by2:
+          type: integer
+          example: 0
+        approved_date2:
+          type: string
+          format: date
+        rejected_by:
+          type: integer
+          example: 0
+        rejected_notes:
+          type: string
+          example: Rejection Note
+        paused_notes:
+          type: string
+          example: Paused Note
+        dropped_reason:
+          type: integer
+          example: 1
+        grad_date:
+          type: string
+          format: date
+        total_debt:
+          type: number
+          example: 13755.9
+        welcome_sent:
+          type: string
+          format: date-time
+        paper_statements:
+          type: boolean
+          default: false
+        paper_welcome:
+          type: boolean
+          default: false
+        gateway_id:
+          type: integer
+          example: 0
+        gateway_approved_by:
+          type: integer
+          example: 0
+        gateway_hold:
+          type: boolean
+          default: false
+        gateway_hold_reason:
+          type: integer
+          example: 0
+        gateway_hold_notes:
+          type: string
+        gateway_auth_received:
+          type: boolean
+        gateway_auth_file:
+          type: string
+          example: test_gateway_auth_file.pdf
+        iscoapp:
+          type: boolean
+          default: false
+        customs:
+          type: array
+          items:
+            type: object
+            properties:
+              field_id:
+                type: integer
+              value:
+                type: string
+              label:
+                type: string
+    CreditorResponse:
+      title: Creditor
+      type: object
+      description: Creditor Record
+      properties:
+        id:
+          type: integer
+        acctID:
+          type: integer
+        tp_id:
+          type: integer
+        is_active:
+          type: integer
+        company_name:
+          type: string
+        first_name:
+          type: string
+        last_name:
+          type: string
+        address:
+          $ref: '#/components/schemas/Address_2'
+        phone:
+          type: string
+      x-tags:
+        - Creditor
+    DebtNote:
+      title: DebtNote
+      type: object
+      description: Debt Note Object
+      x-tags:
+        - Debt
+      properties:
+        object:
+          type: string
+          example: debt_note
+          readOnly: true
+        debt_id:
+          type: integer
+          readOnly: true
+        note_id:
+          type: integer
+          readOnly: true
+        note_created_date:
+          type: string
+          readOnly: true
+        client_id:
+          type: integer
+          readOnly: true
+        title:
+          type: string
+          readOnly: true
+        content:
+          type: string
+      required:
+        - content
+    DebtNoteResponse:
+      title: DebtNote
+      type: object
+      description: Debt Note Object
+      x-tags:
+        - Debt
+      properties:
+        object:
+          type: string
+          example: debt_note
+          readOnly: true
+        debt_id:
+          type: integer
+          readOnly: true
+        note_id:
+          type: integer
+          readOnly: true
+        note_created_date:
+          type: string
+          format: date-time
+          readOnly: true
+        client_id:
+          type: integer
+          readOnly: true
+        title:
+          type: string
+          readOnly: true
+        created_by:
+          $ref: '#/components/schemas/UserResponse'
+        content:
+          type: string
+    DebtRequest:
+      title: Debt
+      type: object
+      description: Debt Record
+      x-tags:
+        - Debt
+      properties:
+        object:
+          type: string
+          example: debt
+          readOnly: true
+        id:
+          type: integer
+          example: 124507509
+          readOnly: true
+        acctID:
+          type: integer
+          example: 3863
+          readOnly: true
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        modified_at:
+          type: string
+          format: date-time
+          readOnly: true
+        modified_by:
+          type: integer
+          readOnly: true
+        original_debt_amount:
+          type: number
+          example: 10500
+        current_debt_amount:
+          type: number
+          example: 9499.5
+        current_payment:
+          type: number
+          example: 153
+        current_rate:
+          type: number
+          example: 0
+        notes:
+          type: string
+          example: debt note
+          readOnly: true
+        verified_debt_amount:
+          type: number
+          example: 0
+        creditor:
+          type: integer
+          example: 540
+          description: ID of Original Creditor
+        debt_buyer:
+          type: integer
+          example: 17576331
+          description: ID of Debt Buyer
+        poa_sent_date:
+          type: string
+          format: date
+        legal_account:
+          type: string
+          example: 'No'
+        last_payment_date:
+          type: string
+          format: date
+        last_payment_amount:
+          type: number
+          example: 0
+        opened_date:
+          type: string
+          format: date
+        available_balance:
+          type: number
+          example: 0
+        enrolled:
+          default: false
+          type: boolean
+        enrolled_date:
+          type: string
+          format: date
+        debt_type:
+          type: integer
+          example: 0
+        debt_status:
+          type: string
+          example: ''
+        locked:
+          type: boolean
+          default: false
+        og_account_num:
+          type: string
+          example: '12345674445'
+        creditor_account_num:
+          type: string
+          example: ''
+        settled:
+          type: boolean
+          default: false
+        settlement_id:
+          type: integer
+          example: 0
+        client_id:
+          type: integer
+          example: 382760691
+        settlement_offers:
+          type: array
+          items:
+            type: string
+        customs:
+          type: array
+          items:
+            type: string
+      required:
+        - original_debt_amount
+        - current_debt_amount
+        - creditor
+        - client_id
+    DebtResponse:
+      title: Debt
+      type: object
+      description: Debt Record
+      x-tags:
+        - Debt
+      properties:
+        object:
+          type: string
+          example: debt
+          readOnly: true
+        id:
+          type: integer
+          example: 124507509
+          readOnly: true
+        acctID:
+          type: integer
+          example: 3863
+          readOnly: true
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        created_by:
+          $ref: '#/components/schemas/UserResponse'
+        modified_at:
+          type: string
+          format: date-time
+          readOnly: true
+        modified_by:
+          type: integer
+          readOnly: true
+        original_debt_amount:
+          type: number
+          example: 10500
+        current_debt_amount:
+          type: number
+          example: 9499.5
+        current_payment:
+          type: number
+          example: 153
+        current_rate:
+          type: number
+          example: 0
+        notes:
+          type: string
+          example: debt note
+          readOnly: true
+        verified_debt_amount:
+          type: number
+          example: 0
+        creditor:
+          oneOf:
+            - type: integer
+            - $ref: '#/components/schemas/CreditorResponse'
+        debt_buyer:
+          oneOf:
+            - type: integer
+            - $ref: '#/components/schemas/CreditorResponse'
+        poa_sent_date:
+          type: string
+          format: date
+        legal_account:
+          type: string
+          example: 'No'
+        last_payment_date:
+          type: string
+          format: date
+        last_payment_amount:
+          type: number
+          example: 0
+        opened_date:
+          type: string
+          format: date
+        available_balance:
+          type: number
+          example: 0
+        enrolled:
+          default: false
+          type: boolean
+        enrolled_date:
+          type: string
+          format: date
+        debt_type:
+          type: integer
+          example: 0
+        debt_status:
+          type: string
+          example: ''
+        locked:
+          type: boolean
+          default: false
+        og_account_num:
+          type: string
+          example: '12345674445'
+        creditor_account_num:
+          type: string
+          example: ''
+        settled:
+          type: boolean
+          default: false
+        settlement_id:
+          type: integer
+          example: 0
+        client_id:
+          type: integer
+          example: 382760691
+        settlement_offers:
+          type: array
+          items:
+            type: string
+        customs:
+          type: array
+          items:
+            type: string
+    Document:
+      title: Document
+      type: object
+      description: ''
+      properties:
+        id:
+          type: integer
+          description: ID of Document Template
+          readOnly: true
+        contact_id:
+          type: string
+          example: '534512161'
+        debt_id:
+          type: string
+          example: '124504794'
+        syndication_id:
+          type: string
+        order_id:
+          type: string
+        loan_id:
+          type: string
+        tags:
+          type: array
+          example:
+            - '{FIRSTNAME}': JOHN
+            - '{LASTNAME}': DOE
+          items:
+            type: object
+        signservice:
+          type: string
+          example: clixsign
+      required:
+        - id
+        - contact_id
+        - signservice
+    ErrorStatus:
+      title: Status
+      type: object
+      description: Response Status
+      properties:
+        code:
+          type: integer
+          example: 0
+        message:
+          type: string
+      x-tags:
+        - ErrorStatus
+    LoanRequest:
+      title: Loan
+      type: object
+      description: Loan Record
+      properties:
+        object:
+          type: string
+          example: loan
+          readOnly: true
+        id:
+          type: integer
+          readOnly: true
+          example: 1863358
+        acctID:
+          type: integer
+          example: 3863
+          readOnly: true
+        tp_id:
+          type: integer
+          example: 0
+          readOnly: true
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        created_by:
+          type: integer
+          readOnly: true
+        modified_at:
+          type: string
+          format: date-time
+          readOnly: true
+        modified_by:
+          type: integer
+          readOnly: true
+        client_id:
+          type: integer
+          example: 382760691
+        advance_type:
+          type: string
+          example: ACH
+        advance_date:
+          type: string
+          format: date
+          readOnly: true
+        paid_in_full_date:
+          type: string
+          format: date
+          readOnly: true
+        defaulted_date:
+          type: string
+          format: date
+          readOnly: true
+        type_id:
+          type: integer
+          example: 1
+        program_id:
+          type: integer
+          example: 0
+        loan_class:
+          type: integer
+          example: 1
+        loan_amount:
+          type: number
+          example: 4550.72
+        payback_amount:
+          type: number
+          example: 0
+        rate:
+          type: number
+          example: 0
+        payment:
+          type: number
+          example: 0
+        holdback_percent:
+          type: number
+          example: .02%
+        payback_period:
+          type: integer
+          example: 0
+        frequency:
+          type: string
+          example: D
+        freq_int:
+          type: string
+          example: ''
+        period_amount:
+          type: number
+          example: 0
+        fees:
+          type: number
+          example: 0
+        conf_num:
+          type: string
+          example: '12345'
+        underwrite_notes:
+          type: string
+          example: Lorem Ipsum
+        contract_date:
+          type: string
+          format: date
+          readOnly: true
+        contract_number:
+          type: string
+          readOnly: true
+        funded:
+          type: boolean
+          default: false
+        status:
+          type: integer
+          example: 10
+        lien_pos:
+          type: integer
+          example: 0
+        ach_start_date:
+          type: string
+          format: date
+          readOnly: true
+        ach_on:
+          type: boolean
+          default: false
+        pricing_lock:
+          type: boolean
+          default: false
+        offer_set:
+          type: integer
+          example: 1043077
+      required:
+        - client_id
+        - loan_amount
+        - payback_amount
+      x-tags:
+        - Loan
+    LoanResponse:
+      title: Loan
+      type: object
+      description: Loan Record
+      properties:
+        object:
+          type: string
+          example: loan
+          readOnly: true
+        id:
+          type: integer
+          readOnly: true
+          example: 1863358
+        acctID:
+          type: integer
+          example: 3863
+          readOnly: true
+        tp_id:
+          type: integer
+          example: 0
+          readOnly: true
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        created_by:
+          type: integer
+          readOnly: true
+        modified_at:
+          type: string
+          format: date-time
+          readOnly: true
+        modified_by:
+          type: integer
+          readOnly: true
+        client_id:
+          type: integer
+          example: 382760691
+        advance_type:
+          type: string
+          example: ACH
+        advance_date:
+          type: string
+          format: date
+          readOnly: true
+        paid_in_full_date:
+          type: string
+          format: date
+          readOnly: true
+        defaulted_date:
+          type: string
+          format: date
+          readOnly: true
+        type_id:
+          type: integer
+          example: 1
+        program_id:
+          type: integer
+          example: 0
+        loan_class:
+          type: integer
+          example: 1
+        loan_amount:
+          type: number
+          example: 4550.72
+        payback_amount:
+          type: number
+          example: 0
+        rate:
+          type: number
+          example: 0
+        payment:
+          type: number
+          example: 0
+        holdback_percent:
+          type: number
+          example: .02%
+        payback_period:
+          type: integer
+          example: 0
+        frequency:
+          type: string
+          example: D
+        freq_int:
+          type: string
+          example: ''
+        period_amount:
+          type: number
+          example: 0
+        fees:
+          type: number
+          example: 0
+        conf_num:
+          type: string
+          example: '12345'
+        underwrite_notes:
+          type: string
+          example: Lorem Ipsum
+        contract_date:
+          type: string
+          format: date
+          readOnly: true
+        contract_number:
+          type: string
+          readOnly: true
+        funded:
+          type: boolean
+          default: false
+        status:
+          type: integer
+          example: 10
+        lien_pos:
+          type: integer
+          example: 0
+        ach_start_date:
+          type: string
+          format: date
+          readOnly: true
+        ach_on:
+          type: boolean
+          default: false
+        pricing_lock:
+          type: boolean
+          default: false
+        offer_set:
+          type: integer
+          example: 1043077
+      x-tags:
+        - Loan
+    SettlementofferRequest:
+      title: Settlementoffer
+      type: object
+      description: Settlment Offer Record
+      x-tags:
+        - Settlementoffer
+      properties:
+        object:
+          type: string
+          example: settlement_offer
+          readOnly: true
+        id:
+          type: integer
+          example: 3319980
+          readOnly: true
+        acctID:
+          type: integer
+          example: 3863
+          readOnly: true
+        contact_id:
+          type: integer
+          example: 382760691
+        creditor:
+          type: integer
+          title: Original Creditor ID
+          default: 540
+        debt_id:
+          type: integer
+          example: 124504794
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        modified_at:
+          type: string
+          format: date-time
+          readOnly: true
+        madeby:
+          type: string
+          readOnly: true
+        offer_status:
+          type: integer
+        offer_status_date:
+          type: string
+          format: date
+        offer_valid_date:
+          type: string
+          format: date
+        settlement_type:
+          type: integer
+          default: 1
+          minimum: 1
+        debt_amount:
+          type: integer
+          example: 8500.55
+        settlement_amount:
+          type: integer
+          minimum: 1
+        settlement_fee:
+          type: integer
+        notes:
+          type: string
+          example: Lorem Ipsum
+        cred_cont_id:
+          type: integer
+        json:
+          type: object
+      required:
+        - contact_id
+        - creditor
+        - debt_id
+        - offer_valid_date
+        - settlement_type
+        - debt_amount
+        - settlement_amount
+    SettlementofferResponse:
+      title: Settlementoffer
+      type: object
+      description: Settlment Offer Record
+      x-tags:
+        - Settlementoffer
+      properties:
+        object:
+          type: string
+          example: settlement_offer
+          readOnly: true
+        id:
+          type: integer
+          example: 3319980
+          readOnly: true
+        acctID:
+          type: integer
+          example: 3863
+          readOnly: true
+        contact_id:
+          type: integer
+          example: 382760691
+        creditor:
+          type: integer
+          title: Original Creditor ID
+        debt_id:
+          type: integer
+          example: 124504794
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        created_by:
+          $ref: '#/components/schemas/UserResponse'
+        modified_at:
+          type: string
+          format: date-time
+          readOnly: true
+        modified_by:
+          $ref: '#/components/schemas/UserResponse'
+        neg_id:
+          $ref: '#/components/schemas/UserResponse'
+        madeby:
+          type: string
+          readOnly: true
+        offer_status:
+          type: integer
+        offer_status_date:
+          type: string
+          format: date
+        offer_valid_date:
+          type: string
+          format: date
+        settlement_type:
+          type: integer
+        debt_amount:
+          type: integer
+          example: 8500.55
+        settlement_amount:
+          type: integer
+        settlement_fee:
+          type: integer
+        notes:
+          type: string
+          example: Lorem Ipsum
+        cred_cont_id:
+          type: integer
+        json:
+          type: object
+    SuccessStatus:
+      title: Status
+      type: object
+      description: Response Status
+      properties:
+        code:
+          type: integer
+      x-tags:
+        - SuccessStatus
+    TaskRequest:
+      title: Task
+      type: object
+      description: Task Record
+      x-tags:
+        - Task
+      properties:
+        object:
+          type: string
+          example: task
+          readOnly: true
+        id:
+          type: integer
+          example: 32549869
+          readOnly: true
+        acctID:
+          type: integer
+          example: 3863
+          readOnly: true
+        contact_id:
+          type: integer
+          example: 516553837
+        task_created_date:
+          type: string
+          format: date-time
+          readOnly: true
+        task_name:
+          type: string
+          example: Task Name
+        defined_task:
+          type: integer
+          example: 25907
+        created_by:
+          $ref: '#/components/schemas/UserResponse'
+        task_due_date:
+          type: string
+          format: date
+        task_note:
+          type: string
+          example: Task Note
+        list_id:
+          type: integer
+        team_id:
+          type: integer
+        task_completed:
+          type: integer
+          readOnly: true
+        task_completed_by:
+          type: integer
+          readOnly: true
+        task_completed_date:
+          type: string
+          format: date-time
+          readOnly: true
+        task_completion_percentage:
+          type: integer
+        task_status:
+          type: integer
+        title:
+          type: string
+          example: Title
+        assigned_to:
+          type: object
+          oneOf:
+            - type: object
+              title: User
+              properties:
+                object:
+                  type: string
+                  default: User
+                  value: User
+                id:
+                  type: integer
+                  default: 51494
+            - type: object
+              title: Team
+              properties:
+                object:
+                  type: string
+                  default: Team
+                  value: Team
+                id:
+                  type: integer
+                  default: 212
+            - type: object
+              title: Contact
+              properties:
+                object:
+                  type: string
+                  default: Contact
+                  value: Contact
+                id:
+                  type: integer
+                  default: ''
+      required:
+        - contact_id
+        - task_name
+        - defined_task
+        - task_due_date
+        - task_note
+        - assigned_to
+    TaskResponse:
+      title: Task
+      type: object
+      description: Task Record
+      x-tags:
+        - Task
+      properties:
+        object:
+          type: string
+          example: task
+          readOnly: true
+        id:
+          type: integer
+          example: 32549869
+          readOnly: true
+        acctID:
+          type: integer
+          example: 3863
+          readOnly: true
+        contact_id:
+          type: integer
+          example: 516553837
+        task_created_date:
+          type: string
+          format: date-time
+          readOnly: true
+        task_name:
+          type: string
+          example: Task Name
+        defined_task:
+          type: integer
+          example: 25907
+        created_by:
+          $ref: '#/components/schemas/UserResponse'
+        task_due_date:
+          type: string
+          format: date
+        task_note:
+          type: string
+          example: Task Note
+        list_id:
+          type: integer
+        team_id:
+          type: integer
+        task_completed:
+          type: integer
+          readOnly: true
+        task_completed_by:
+          type: integer
+          readOnly: true
+        task_completed_date:
+          type: string
+          format: date-time
+          readOnly: true
+        task_completion_percentage:
+          type: integer
+        task_status:
+          type: integer
+        title:
+          type: string
+          example: Title
+        assigned_to:
+          type: object
+          oneOf:
+            - type: object
+              title: User
+              properties:
+                User:
+                  $ref: '#/components/schemas/UserResponse'
+            - type: object
+              title: Team
+              properties:
+                Team:
+                  $ref: '#/components/schemas/TeamResponse'
+            - type: object
+              title: Contact
+              properties:
+                Team:
+                  $ref: '#/components/schemas/ContactResponse'
+    TeamRequest:
+      title: Team
+      type: object
+      description: Team Record
+      properties:
+        object:
+          type: string
+          readOnly: true
+          example: team
+        id:
+          type: integer
+          example: 123
+          readOnly: true
+        acctID:
+          type: integer
+          example: 3863
+          readOnly: true
+        company_id:
+          type: integer
+          example: 123
+          readOnly: true
+        name:
+          type: string
+          example: Team Name
+      required:
+        - name
+      x-tags:
+        - Team
+    TeamResponse:
+      title: Team
+      type: object
+      description: Team Record
+      properties:
+        object:
+          type: string
+          readOnly: true
+          example: team
+        id:
+          type: integer
+          example: 123
+          readOnly: true
+        acctID:
+          type: integer
+          example: 3863
+          readOnly: true
+        company_id:
+          type: integer
+          example: 123
+          readOnly: true
+        name:
+          type: string
+          example: Team Name
+      x-tags:
+        - Team
+    UserRequest:
+      type: object
+      title: User
+      description: User Record
+      x-tags:
+        - User
+      properties:
+        object:
+          type: string
+          example: user
+          readOnly: true
+        id:
+          title: User ID
+          type: integer
+          example: 6033912
+          readOnly: true
+        acctID:
+          type: integer
+          example: 3863
+          readOnly: true
+        company_id:
+          title: Company ID
+          type: integer
+          example: 42128
+          readOnly: true
+        parent_id:
+          title: Parent ID
+          type: integer
+          example: 4950368
+        user_type:
+          title: User Type
+          type: integer
+          example: 1
+        created:
+          title: Created Date
+          type: string
+          format: date-time
+          example: '2021-01-13 12:47:25'
+          readOnly: true
+        user_name:
+          title: User Name
+          type: string
+          example: API_User123
+        firstname:
+          title: First Name
+          type: string
+          example: John
+        lastname:
+          title: Last Name
+          type: string
+          example: Doe
+        company:
+          title: Company Name
+          type: string
+          example: Acme
+        email:
+          title: Company Email
+          type: string
+          example: mail@debtpaypro.com
+        active:
+          type: boolean
+          title: Active Indicator
+          example: true
+          default: true
+        role:
+          title: Role
+          type: integer
+          example: 29399
+        attorney:
+          title: Attorney Indicator
+          type: boolean
+          example: true
+        payee_id:
+          title: Payee ID
+          type: integer
+          example: 23006
+        del:
+          title: Del
+          example: 0
+          type: boolean
+          readOnly: true
+        delTime:
+          title: Delete Date
+          type: string
+          format: date-time
+          example: '2021-01-13 12:47:25'
+          readOnly: true
+        pass_reset:
+          type: boolean
+          readOnly: true
+      required:
+        - user_type
+        - user_name
+        - firstname
+        - lastname
+        - email
+        - active
+        - role
+    UserResponse:
+      type: object
+      title: User
+      description: User Record
+      x-tags:
+        - User
+      properties:
+        object:
+          type: string
+          example: user
+          readOnly: true
+        id:
+          title: User ID
+          type: integer
+          example: 6033912
+          readOnly: true
+        acctID:
+          type: integer
+          example: 3863
+          readOnly: true
+        company_id:
+          title: Company ID
+          type: integer
+          example: 42128
+          readOnly: true
+        parent_id:
+          title: Parent ID
+          type: integer
+          example: 4950368
+        user_type:
+          title: User Type
+          type: integer
+          example: 1
+        created:
+          title: Created Date
+          type: string
+          format: date-time
+          example: '2021-01-13 12:47:25'
+          readOnly: true
+        user_name:
+          title: User Name
+          type: string
+          example: API_User123
+        firstname:
+          title: First Name
+          type: string
+          example: John
+        lastname:
+          title: Last Name
+          type: string
+          example: Doe
+        company:
+          title: Company Name
+          type: string
+          example: Acme
+        email:
+          title: Company Email
+          type: string
+          example: mail@debtpaypro.com
+        active:
+          type: boolean
+          title: Active Indicator
+          example: true
+          default: true
+        role:
+          title: Role
+          type: integer
+          example: 29399
+        attorney:
+          title: Attorney Indicator
+          type: boolean
+          example: true
+        payee_id:
+          title: Payee ID
+          type: integer
+          example: 23006
+        del:
+          title: Del
+          example: 0
+          type: boolean
+          readOnly: true
+        delTime:
+          title: Delete Date
+          type: string
+          format: date-time
+          example: '2021-01-13 12:47:25'
+          readOnly: true
+        pass_reset:
+          type: boolean
+          readOnly: true
   responses:
     '400':
       description: Error
@@ -5182,7 +7205,7 @@ components:
             type: object
             properties:
               status:
-                $ref: models/ErrorStatus.yaml
+                $ref: '#/components/schemas/ErrorStatus'
     default:
       description: default
       content:
@@ -5191,7 +7214,7 @@ components:
             type: object
             properties:
               status:
-                $ref: models/SuccessStatus.yaml
+                $ref: '#/components/schemas/SuccessStatus'
               response:
                 type: object
                 properties: {}
@@ -5217,7 +7240,7 @@ components:
       content:
         application/json:
           schema:
-            $ref: ./models/ContactResponse.yaml
+            $ref: '#/components/schemas/ContactResponse'
       description: Contact Object
       required: true
     Loan:
@@ -5238,28 +7261,130 @@ components:
       content:
         application/json:
           schema:
-            $ref: models/CampaignRequest.yaml
+            $ref: '#/components/schemas/CampaignRequest'
       description: Campaign Object
       required: true
     Company:
       content:
         application/json:
           schema:
-            $ref: models/Company.yaml
+            title: Company
+            type: object
+            description: Company Record Object
+            properties:
+              id:
+                type: integer
+                readOnly: true
+              acctID:
+                type: integer
+                readOnly: true
+              name:
+                type: string
+              company_code:
+                type: string
+              phone:
+                type: string
+              parent_id:
+                type: integer
+              company_type:
+                type: integer
+              created_at:
+                type: string
+                format: date-time
+                readOnly: true
+              created_by:
+                type: integer
+                readOnly: true
+              contactname:
+                type: string
+              address:
+                type: string
+              address2:
+                type: string
+              city:
+                type: string
+              state:
+                type: string
+              zip:
+                type: string
+              phone2:
+                type: string
+              fax:
+                type: string
+              email:
+                type: string
+              timezone:
+                type: string
+              ein:
+                type: string
+              esign:
+                type: integer
+              domain:
+                type: string
+              gcs_account_num:
+                type: string
+              gcs_policy_group_id:
+                type: string
+              account_num:
+                type: string
+              routing_num:
+                type: string
+              bank_name:
+                type: string
+              account_type:
+                type: string
+              active:
+                type: integer
+              theme:
+                type: string
+              logo_url:
+                type: string
+              additional1:
+                type: string
+              additional2:
+                type: string
+              additional3:
+                type: string
+              additional4:
+                type: string
+              additional5:
+                type: string
+              additional6:
+                type: string
+              account_exec:
+                type: integer
+              docusign_acct:
+                type: string
+              docusign_pass:
+                type: string
+              docusign_user:
+                type: string
+              enroll_charge:
+                type: number
+              charge_payee:
+                type: integer
+            required:
+              - name
+              - company_code
+              - company_type
+              - contactname
+              - email
+            x-tags:
+              - Company
       description: Company Object
       required: true
     Debt:
       content:
         application/json:
           schema:
-            $ref: models/DebtRequest.yaml
+            $ref: '#/components/schemas/DebtRequest'
       description: Debt Object
       required: true
     Team:
       content:
         application/json:
           schema:
-            $ref: models/TeamRequest.yaml
+            $ref: '#/components/schemas/TeamRequest'
       description: ''
       required: true
   securitySchemes:
