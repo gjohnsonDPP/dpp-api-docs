@@ -104,7 +104,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CallRequest'
+              $ref: ./models/CallRequest.yaml
             examples:
               Request:
                 value:
@@ -135,7 +135,7 @@ paths:
                   response:
                     type: object
                   status:
-                    $ref: '#/components/schemas/SuccessStatus'
+                    $ref: ./models/SuccessStatus.yaml
               examples:
                 Call Example 200 POST Response:
                   value:
@@ -182,9 +182,9 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: '#/components/schemas/CallResponse'
+                    $ref: ./models/CallResponse.yaml
                   status:
-                    $ref: '#/components/schemas/SuccessStatus'
+                    $ref: ./models/SuccessStatus.yaml
               examples:
                 Call GET 200 Response Example:
                   value:
@@ -255,7 +255,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CallRequest'
+              $ref: ./models/CallRequest.yaml
             examples:
               Request:
                 value:
@@ -285,9 +285,9 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: '#/components/schemas/CallResponse'
+                    $ref: ./models/CallResponse.yaml
                   status:
-                    $ref: '#/components/schemas/SuccessStatus'
+                    $ref: ./models/SuccessStatus.yaml
               examples:
                 Call PUT 200 Response Example:
                   value:
@@ -368,7 +368,7 @@ paths:
                 type: object
                 properties:
                   status:
-                    $ref: '#/components/schemas/SuccessStatus'
+                    $ref: ./models/SuccessStatus.yaml
               examples:
                 Calls DELETE 200 Response Example:
                   value:
@@ -407,7 +407,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CampaignRequest'
+              $ref: ./models/CampaignRequest.yaml
             examples:
               Request:
                 value:
@@ -439,7 +439,7 @@ paths:
                   response:
                     type: object
                   status:
-                    $ref: '#/components/schemas/SuccessStatus'
+                    $ref: ./models/SuccessStatus.yaml
               examples:
                 Campaign POST 200 Response Example:
                   value:
@@ -486,9 +486,9 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: '#/components/schemas/CampaignResponse'
+                    $ref: ./models/CampaignResponse.yaml
                   status:
-                    $ref: '#/components/schemas/SuccessStatus'
+                    $ref: ./models/SuccessStatus.yaml
               examples:
                 Campaign GET 200 Response Example:
                   value:
@@ -549,7 +549,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CampaignResponse'
+              $ref: ./models/CampaignResponse.yaml
       responses:
         '200':
           description: Successfully updated a Campaign Record
@@ -559,9 +559,9 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: '#/components/schemas/CampaignResponse'
+                    $ref: ./models/CampaignResponse.yaml
                   status:
-                    $ref: '#/components/schemas/SuccessStatus'
+                    $ref: ./models/SuccessStatus.yaml
               examples:
                 Campaign PUT 200 Response Example:
                   value:
@@ -624,9 +624,10 @@ paths:
           content:
             application/json:
               schema:
+                type: object
                 properties:
                   status:
-                    $ref: '#/components/schemas/SuccessStatus'
+                    $ref: ./models/SuccessStatus.yaml
               examples:
                 Campaign DELETE 200 Response Example:
                   value:
@@ -665,7 +666,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ContactRequest'
+              $ref: ./models/ContactRequest.yaml
             examples:
               Request:
                 value:
@@ -749,7 +750,7 @@ paths:
                   response:
                     type: object
                   status:
-                    $ref: '#/components/schemas/SuccessStatus'
+                    $ref: ./models/SuccessStatus.yaml
               examples:
                 Contact POST 200 Response Example:
                   value:
@@ -797,9 +798,9 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: '#/components/schemas/ContactResponse'
+                    $ref: ./models/ContactResponse.yaml
                   status:
-                    $ref: '#/components/schemas/SuccessStatus'
+                    $ref: ./models/SuccessStatus.yaml
               examples:
                 Contact GET 200 Response Example:
                   value:
@@ -895,7 +896,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ContactResponse'
+              $ref: ./models/ContactResponse.yaml
       parameters:
         - name: id
           in: path
@@ -912,9 +913,9 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: '#/components/schemas/ContactResponse'
+                    $ref: ./models/ContactResponse.yaml
                   status:
-                    $ref: '#/components/schemas/SuccessStatus'
+                    $ref: ./models/SuccessStatus.yaml
               examples:
                 Contact PUT 200 Response Example:
                   value:
@@ -1020,9 +1021,10 @@ paths:
           content:
             application/json:
               schema:
+                type: object
                 properties:
                   status:
-                    $ref: '#/components/schemas/SuccessStatus'
+                    $ref: ./models/SuccessStatus.yaml
               examples:
                 Contact DELETE 200 Response Example:
                   value:
@@ -1081,7 +1083,7 @@ paths:
                   response:
                     type: object
                   status:
-                    $ref: '#/components/schemas/SuccessStatus'
+                    $ref: ./models/SuccessStatus.yaml
               examples:
                 Form Request POST 200 Response Example:
                   value:
@@ -1226,7 +1228,7 @@ paths:
       tags:
         - Contacts
       summary: Send a ClixSign Document
-      description: 'Sends a ClixSign Document'
+      description: Sends a ClixSign Document
       operationId: sendClixSignDoc
       parameters:
         - name: id
@@ -1306,7 +1308,7 @@ paths:
                   response:
                     type: object
                   status:
-                    $ref: '#/components/schemas/SuccessStatus'
+                    $ref: ./models/SuccessStatus.yaml
               examples:
                 SMS Log GET 200 Response Example:
                   value:
@@ -1477,7 +1479,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DebtRequest'
+              $ref: ./models/DebtRequest.yaml
             examples:
               Request:
                 value:
@@ -1525,7 +1527,7 @@ paths:
                   response:
                     type: object
                   status:
-                    $ref: '#/components/schemas/SuccessStatus'
+                    $ref: ./models/SuccessStatus.yaml
               examples:
                 Debt POST 200 Response Example:
                   value:
@@ -1572,9 +1574,9 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: '#/components/schemas/DebtResponse'
+                    $ref: ./models/DebtResponse.yaml
                   status:
-                    $ref: '#/components/schemas/SuccessStatus'
+                    $ref: ./models/SuccessStatus.yaml
               examples:
                 Debt GET 200 Response Example:
                   value:
@@ -1694,7 +1696,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DebtResponse'
+              $ref: ./models/DebtResponse.yaml
       parameters:
         - name: id
           in: path
@@ -1711,9 +1713,9 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: '#/components/schemas/DebtResponse'
+                    $ref: ./models/DebtResponse.yaml
                   status:
-                    $ref: '#/components/schemas/SuccessStatus'
+                    $ref: ./models/SuccessStatus.yaml
               examples:
                 Debt PUT 200 Response Example:
                   value:
@@ -1845,7 +1847,7 @@ paths:
                 type: object
                 properties:
                   status:
-                    $ref: '#/components/schemas/SuccessStatus'
+                    $ref: ./models/SuccessStatus.yaml
               examples:
                 Debt DELETE 200 Response Example:
                   value:
@@ -1907,9 +1909,9 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: '#/components/schemas/TaskResponse'
+                    $ref: ./models/TaskResponse.yaml
                   status:
-                    $ref: '#/components/schemas/SuccessStatus'
+                    $ref: ./models/SuccessStatus.yaml
         '400':
           description: Error
           content:
@@ -1955,7 +1957,7 @@ paths:
                   response:
                     type: object
                   status:
-                    $ref: '#/components/schemas/SuccessStatus'
+                    $ref: ./models/SuccessStatus.yaml
         '400':
           description: Error
           content:
@@ -1984,7 +1986,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DebtNote'
+              $ref: ./models/DebtNote.yaml
       responses:
         '200':
           description: Successfully created a Debt Note
@@ -1994,9 +1996,9 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: '#/components/schemas/DebtNoteResponse'
+                    $ref: ./models/DebtNoteResponse.yaml
                   status:
-                    $ref: '#/components/schemas/SuccessStatus'
+                    $ref: ./models/SuccessStatus.yaml
               examples:
                 Debt Note POST 200 Response Example:
                   value:
@@ -2064,9 +2066,10 @@ paths:
           content:
             application/json:
               schema:
+                type: object
                 properties:
                   status:
-                    $ref: '#/components/schemas/SuccessStatus'
+                    $ref: ./models/SuccessStatus.yaml
         '400':
           description: Error
           content:
@@ -2097,7 +2100,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/LoanRequest'
+              $ref: ./models/LoanRequest.yaml
             examples:
               Request:
                 value:
@@ -2140,7 +2143,7 @@ paths:
                   response:
                     type: object
                   status:
-                    $ref: '#/components/schemas/SuccessStatus'
+                    $ref: ./models/SuccessStatus.yaml
               examples:
                 Loan POST 200 Response Example:
                   value:
@@ -2187,9 +2190,9 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: '#/components/schemas/LoanResponse'
+                    $ref: ./models/LoanResponse.yaml
                   status:
-                    $ref: '#/components/schemas/SuccessStatus'
+                    $ref: ./models/SuccessStatus.yaml
               examples:
                 Loan GET 200 Response Example:
                   value:
@@ -2265,7 +2268,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/LoanResponse'
+              $ref: ./models/LoanResponse.yaml
       responses:
         '200':
           description: Successfully updated a Loan Record
@@ -2275,9 +2278,9 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: '#/components/schemas/LoanResponse'
+                    $ref: ./models/LoanResponse.yaml
                   status:
-                    $ref: '#/components/schemas/SuccessStatus'
+                    $ref: ./models/SuccessStatus.yaml
               examples:
                 Loan PUT 200 Response Example:
                   value:
@@ -2356,9 +2359,10 @@ paths:
           content:
             application/json:
               schema:
+                type: object
                 properties:
                   status:
-                    $ref: '#/components/schemas/SuccessStatus'
+                    $ref: ./models/SuccessStatus.yaml
               examples:
                 Loan DELETE 200 Response Example:
                   value:
@@ -2395,7 +2399,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/SettlementofferRequest'
+              $ref: ./models/SettlementofferRequest.yaml
             examples:
               Request:
                 value:
@@ -2434,7 +2438,7 @@ paths:
                   response:
                     type: object
                   status:
-                    $ref: '#/components/schemas/SuccessStatus'
+                    $ref: ./models/SuccessStatus.yaml
               examples:
                 Settlement Offer POST 200 Response Example:
                   value:
@@ -2481,9 +2485,9 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: '#/components/schemas/SettlementofferResponse'
+                    $ref: ./models/SettlementofferResponse.yaml
                   status:
-                    $ref: '#/components/schemas/SuccessStatus'
+                    $ref: ./models/SuccessStatus.yaml
               examples:
                 Settlement Offer GET 200 Response Example:
                   value:
@@ -2577,7 +2581,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/SettlementofferResponse'
+              $ref: ./models/SettlementofferResponse.yaml
         description: Settlement offer object that will be updated
         required: true
       responses:
@@ -2589,9 +2593,9 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: '#/components/schemas/SettlementofferResponse'
+                    $ref: ./models/SettlementofferResponse.yaml
                   status:
-                    $ref: '#/components/schemas/SuccessStatus'
+                    $ref: ./models/SuccessStatus.yaml
               examples:
                 SettlementOffer PUT 200 Response Example:
                   value:
@@ -2690,7 +2694,7 @@ paths:
                 type: object
                 properties:
                   status:
-                    $ref: '#/components/schemas/SuccessStatus'
+                    $ref: ./models/SuccessStatus.yaml
               examples:
                 SettlementOffer Delete 200 Response Example:
                   value:
@@ -2727,7 +2731,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/TaskRequest'
+              $ref: ./models/TaskRequest.yaml
             examples:
               Request:
                 value:
@@ -2769,7 +2773,7 @@ paths:
                   response:
                     type: object
                   status:
-                    $ref: '#/components/schemas/SuccessStatus'
+                    $ref: ./models/SuccessStatus.yaml
               examples:
                 Task POST 200 Response Example:
                   value:
@@ -2816,9 +2820,9 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: '#/components/schemas/TaskResponse'
+                    $ref: ./models/TaskResponse.yaml
                   status:
-                    $ref: '#/components/schemas/SuccessStatus'
+                    $ref: ./models/SuccessStatus.yaml
               examples:
                 Tasks GET 200 Response Example:
                   value:
@@ -2916,7 +2920,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/TaskRequest'
+              $ref: ./models/TaskResponse.yaml
         description: Task object that needs to be updated
       responses:
         '200':
@@ -2927,9 +2931,9 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: '#/components/schemas/TaskResponse'
+                    $ref: ./models/TaskResponse.yaml
                   status:
-                    $ref: '#/components/schemas/SuccessStatus'
+                    $ref: ./models/SuccessStatus.yaml
               examples:
                 Task Update 200 Response Example:
                   value:
@@ -3029,9 +3033,10 @@ paths:
           content:
             application/json:
               schema:
+                type: object
                 properties:
                   status:
-                    $ref: '#/components/schemas/SuccessStatus'
+                    $ref: ./models/SuccessStatus.yaml
               examples:
                 Task Delete 200 Response Example:
                   value:
@@ -3072,7 +3077,7 @@ paths:
                   response:
                     type: object
                   status:
-                    $ref: '#/components/schemas/SuccessStatus'
+                    $ref: ./models/SuccessStatus.yaml
         '400':
           description: Error
           content:
@@ -3104,7 +3109,7 @@ paths:
                   response:
                     type: object
                   status:
-                    $ref: '#/components/schemas/SuccessStatus'
+                    $ref: ./models/SuccessStatus.yaml
               examples:
                 Team POST 200 Response Example:
                   value:
@@ -3132,7 +3137,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/TeamRequest'
+              $ref: ./models/TeamRequest.yaml
             examples:
               Request:
                 value:
@@ -3160,9 +3165,9 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: '#/components/schemas/TeamResponse'
+                    $ref: ./models/TeamResponse.yaml
                   status:
-                    $ref: '#/components/schemas/SuccessStatus'
+                    $ref: ./models/SuccessStatus.yaml
               examples:
                 Teams GET 200 Response Example:
                   value:
@@ -3206,7 +3211,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/TeamResponse'
+              $ref: ./models/TeamResponse.yaml
       responses:
         '200':
           description: Successfully updated Team Record
@@ -3216,9 +3221,9 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: '#/components/schemas/TeamResponse'
+                    $ref: ./models/TeamResponse.yaml
                   status:
-                    $ref: '#/components/schemas/SuccessStatus'
+                    $ref: ./models/SuccessStatus.yaml
               examples:
                 Teams PUT 200 Response Example:
                   value:
@@ -3264,9 +3269,10 @@ paths:
           content:
             application/json:
               schema:
+                type: object
                 properties:
                   status:
-                    $ref: '#/components/schemas/SuccessStatus'
+                    $ref: ./models/SuccessStatus.yaml
               examples:
                 Teams Delete 200 Response Example:
                   value:
@@ -3303,7 +3309,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UserRequest'
+              $ref: ./models/UserRequest.yaml
             examples:
               Request:
                 value:
@@ -3339,7 +3345,7 @@ paths:
                   response:
                     type: object
                   status:
-                    $ref: '#/components/schemas/SuccessStatus'
+                    $ref: ./models/SuccessStatus.yaml
               examples:
                 Users Post 200 Response Example:
                   value:
@@ -3384,9 +3390,9 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: '#/components/schemas/UserResponse'
+                    $ref: ./models/UserResponse.yaml
                   status:
-                    $ref: '#/components/schemas/SuccessStatus'
+                    $ref: ./models/SuccessStatus.yaml
               examples:
                 Users GET 200 Response Example:
                   value:
@@ -3442,7 +3448,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UserResponse'
+              $ref: ./models/UserResponse.yaml
         required: true
       responses:
         '200':
@@ -3453,9 +3459,9 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: '#/components/schemas/UserResponse'
+                    $ref: ./models/UserResponse.yaml
                   status:
-                    $ref: '#/components/schemas/SuccessStatus'
+                    $ref: ./models/SuccessStatus.yaml
               examples:
                 Users PUT 200 Response Example:
                   value:
@@ -3516,7 +3522,7 @@ paths:
                 type: object
                 properties:
                   status:
-                    $ref: '#/components/schemas/SuccessStatus'
+                    $ref: ./models/SuccessStatus.yaml
         '400':
           description: Error
           content:
@@ -3541,6 +3547,17 @@ paths:
       description: Returns the User Record of the Current Active User
       operationId: userCurrent
       responses:
+        '200':
+          description: default
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    $ref: ./models/UserResponse.yaml
+                  status:
+                    $ref: ./models/SuccessStatus.yaml
         '400':
           description: some error
           content:
@@ -3556,17 +3573,6 @@ paths:
                         type: string
                         example: not found
                     type: object
-                type: object
-        default:
-          description: default
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: '#/components/schemas/Status'
-                  response:
-                    $ref: '#/components/schemas/User'
                 type: object
   '/users/{id}/tasks':
     post:
@@ -3598,6 +3604,20 @@ paths:
                   type: integer
               type: object
       responses:
+        '200':
+          description: default
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    description: Get task records for user
+                    type: array
+                    items:
+                      $ref: ./models/TaskResponse.yaml
+                  status:
+                    $ref: ./models/SuccessStatus.yaml
         '400':
           description: some error
           content:
@@ -3613,20 +3633,6 @@ paths:
                         type: string
                         example: not found
                     type: object
-                type: object
-        default:
-          description: default
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: '#/components/schemas/Status'
-                  response:
-                    description: Get task records for user
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Task'
                 type: object
   '/users/{id}/events':
     post:
@@ -3661,6 +3667,20 @@ paths:
                   type: integer
               type: object
       responses:
+        '200':
+          description: default
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    description: Get event records for user
+                    type: array
+                    items:
+                      $ref: ./models/CalEvent.yaml
+                  status:
+                    $ref: ./models/SuccessStatus.yaml
         '400':
           description: some error
           content:
@@ -3676,20 +3696,6 @@ paths:
                         type: string
                         example: not found
                     type: object
-                type: object
-        default:
-          description: default
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: '#/components/schemas/SuccessStatus'
-                  response:
-                    description: Get event records for user
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/CalEvent'
                 type: object
   '/lenders/monevo/{contact_id}/offers':
     get:
@@ -3918,11 +3924,12 @@ paths:
           content:
             application/json:
               schema:
-                required:
-                  - status
+                type: object
                 properties:
                   status:
-                    $ref: models/ErrorStatus.yaml
+                    $ref: ./models/ErrorStatus.yaml
+                required:
+                  - status
   '/documents/{id}':
     post:
       tags:
@@ -4684,7 +4691,7 @@ components:
           type: array
           items:
             type: string
-      type: object    
+      type: object
     Docs:
       description: docs data
       properties:
@@ -5183,7 +5190,6 @@ components:
       required:
         - start
         - limit
-  
   responses:
     '400':
       description: Error
