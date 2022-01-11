@@ -1226,7 +1226,7 @@ paths:
       tags:
         - Contacts
       summary: Send a ClixSign Document
-      description: Sends a ClixSign Document
+      description: 'Sends a ClixSign Document'
       operationId: sendClixSignDoc
       parameters:
         - name: id
@@ -1239,7 +1239,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ClixSignDocument'
+              $ref: models/ClixSignDocument.yaml
       responses:
         '200':
           description: Successfully sent Clixsign Document
@@ -1249,7 +1249,7 @@ paths:
                 type: object
                 properties:
                   status:
-                    $ref: '#/components/schemas/SuccessStatus'
+                    $ref: models/SuccessStatus.yaml
                 required:
                   - status
         '400':
@@ -1260,7 +1260,7 @@ paths:
                 type: object
                 properties:
                   status:
-                    $ref: '#/components/schemas/ErrorStatus'
+                    $ref: models/ErrorStatus.yaml
                 required:
                   - status
   '/contacts/{id}/smslog':
@@ -3922,7 +3922,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/ErrorStatus'
+                    $ref: models/ErrorStatus.yaml
   '/documents/{id}':
     post:
       tags:
@@ -3944,7 +3944,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Document'
+              $ref: models/Document.yaml
         required: true
       responses:
         '200':
@@ -3957,7 +3957,7 @@ paths:
                   response:
                     type: object
                   status:
-                    $ref: '#/components/schemas/SuccessStatus'
+                    $ref: models/SuccessStatus.yaml
   /documents/document-types:
     get:
       tags:
@@ -3977,7 +3977,7 @@ paths:
                 type: object
                 properties:
                   status:
-                    $ref: '#/components/schemas/SuccessStatus'
+                    $ref: models/SuccessStatus.yaml
                   response:
                     type: array
                     description: Get All Document Types
@@ -3997,7 +3997,7 @@ paths:
               schema:
                 properties:
                   status:
-                    $ref: '#/components/schemas/ErrorStatus'
+                    $ref: models/ErrorStatus.yaml
               examples:
                 Teams GET 400 Response Example:
                   value:
