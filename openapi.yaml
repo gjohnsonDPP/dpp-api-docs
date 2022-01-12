@@ -152,7 +152,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/ErrorStatus'
+                    $ref: ./models/ErrorStatus.yaml
               examples:
                 Call Example 400 Response:
                   value:
@@ -234,7 +234,7 @@ paths:
                 type: object
                 properties:
                   status:
-                    $ref: '#/components/schemas/ErrorStatus'
+                    $ref: ./models/ErrorStatus.yaml
                 required:
                   - status
               examples:
@@ -337,7 +337,7 @@ paths:
                 type: object
                 properties:
                   status:
-                    $ref: '#/components/schemas/ErrorStatus'
+                    $ref: ./models/ErrorStatus.yaml
                 required:
                   - status
               examples:
@@ -383,7 +383,7 @@ paths:
                 type: object
                 properties:
                   status:
-                    $ref: '#/components/schemas/ErrorStatus'
+                    $ref: ./models/ErrorStatus.yaml
                 required:
                   - status
               examples:
@@ -456,7 +456,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/ErrorStatus'
+                    $ref: ./models/ErrorStatus.yaml
               examples:
                 Campaigns POST 400 Response Example:
                   value:
@@ -525,7 +525,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/ErrorStatus'
+                    $ref: ./models/ErrorStatus.yaml
               examples:
                 Campaign GET 400 Response Example:
                   value:
@@ -598,7 +598,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/ErrorStatus'
+                    $ref: ./models/ErrorStatus.yaml
               examples:
                 Campaign PUT 400 Response Example:
                   value:
@@ -643,7 +643,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/ErrorStatus'
+                    $ref: ./models/ErrorStatus.yaml
               examples:
                 Campaign DELETE 400 Response Example:
                   value:
@@ -768,7 +768,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/ErrorStatus'
+                    $ref: ./models/ErrorStatus.yaml
               examples:
                 Contact POST 400 Response Example:
                   value:
@@ -879,7 +879,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/ErrorStatus'
+                    $ref: ./models/ErrorStatus.yaml
               examples:
                 Contact GET 400 Response Example:
                   value:
@@ -993,7 +993,7 @@ paths:
                 type: object
                 properties:
                   status:
-                    $ref: '#/components/schemas/ErrorStatus'
+                    $ref: ./models/ErrorStatus.yaml
                 required:
                   - status
               examples:
@@ -1040,7 +1040,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/ErrorStatus'
+                    $ref: ./models/ErrorStatus.yaml
               examples:
                 Contact DELETE 400 Response Example:
                   value:
@@ -1214,7 +1214,7 @@ paths:
                 type: object
                 properties:
                   status:
-                    $ref: '#/components/schemas/ErrorStatus'
+                    $ref: ./models/ErrorStatus.yaml
                 required:
                   - status
               examples:
@@ -1455,7 +1455,7 @@ paths:
                 type: object
                 properties:
                   status:
-                    $ref: '#/components/schemas/ErrorStatus'
+                    $ref: ./models/ErrorStatus.yaml
                 required:
                   - status
               examples:
@@ -1544,7 +1544,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/ErrorStatus'
+                    $ref: ./models/ErrorStatus.yaml
               examples:
                 Debt POST 400 Response Example:
                   value:
@@ -1679,7 +1679,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/ErrorStatus'
+                    $ref: ./models/ErrorStatus.yaml
               examples:
                 Debt GET 400 Response Example:
                   value:
@@ -1818,7 +1818,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/ErrorStatus'
+                    $ref: ./models/ErrorStatus.yaml
               examples:
                 Debt PUT 400 Response Example:
                   value:
@@ -1863,7 +1863,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/ErrorStatus'
+                    $ref: ./models/ErrorStatus.yaml
               examples:
                 Debt DELETE 400 Response Example:
                   value:
@@ -1874,8 +1874,9 @@ paths:
     post:
       tags:
         - Debts
-      summary: Create a Debt Task using DebtID
-      description: Creates a new Debt Task
+        - Tasks
+      summary: Create Debt Task for Debt Record by DebtID
+      description: Creates a Debt Task for a Debt Record
       operationId: debtTaskCreate
       requestBody:
         content:
@@ -1890,12 +1891,12 @@ paths:
                   description: ''
                   type: integer
                 task_name:
-                  description: ''
+                  description: Name for Debt Task
                   type: string
       parameters:
         - in: path
           name: id
-          description: Id of Debt Record to create the Task for
+          description: Id of Debt Record which the Debt Task will be assigned
           required: true
           schema:
             type: integer
@@ -1919,18 +1920,125 @@ paths:
                 type: object
                 properties:
                   status:
-                    $ref: '#/components/schemas/ErrorStatus'
+                    $ref: ./models/ErrorStatus.yaml
               examples:
-                Debt Note POST 400 Response Example:
+                Debt Task POST 400 Response Example:
                   value:
                     status:
                       code: 400
                       message: 'Input Parsing Error: unexpected character'
-      x-internal: true
+      x-internal: false
+  '/debts/{id}/task/{task_id}':
+    put:
+      tags:
+        - Debts
+        - Tasks
+      summary: Update a Debt Task
+      description: Update a Debt Task
+      operationId: debtTaskUpdate
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                assigned_to:
+                  description: 'The ID of the person(s) the Debt Task wil be assigned to. The Debt Task can be assigned to a User, Team, or Contact.'
+                  type: integer
+                defined_task:
+                  description: ''
+                  type: integer
+                task_name:
+                  description: Name for Debt Task
+                  type: string
+      parameters:
+        - name: id
+          in: path
+          description: Id of a unique Debt Record
+          required: true
+          schema:
+            type: integer
+        - name: task_id
+          in: path
+          description: Id of Debt Task
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully Updated Debt Task
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    $ref: ./models/SuccessStatus.yaml
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    $ref: ./models/ErrorStatus.yaml
+              examples:
+                Debt Task PUT 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
+    delete:
+      tags:
+        - Debts
+        - Tasks
+      summary: Delete a Debt Task
+      description: Delete a Debt Task
+      operationId: debtTaskDelete
+      parameters:
+        - name: id
+          in: path
+          description: Id of a unique Debt Record
+          required: true
+          schema:
+            type: integer
+        - name: task_id
+          in: path
+          description: Id of Debt Task
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully Deleted Debt Task
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    $ref: ./models/SuccessStatus.yaml
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    $ref: ./models/ErrorStatus.yaml
+              examples:
+                Debt Task PUT 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   '/debts/{id}/tasks':
     get:
       tags:
         - Debts
+        - Tasks
       summary: Get List of All Tasks for a Debt Record by DebtID
       description: |-
         Returns all existing Tasks associated with a Debt Record.
@@ -1946,7 +2054,7 @@ paths:
             type: integer
       responses:
         '200':
-          description: Successfully created a Debt Record
+          description: Successfully retrieved Tasks for Debt Record
           content:
             application/json:
               schema:
@@ -1964,7 +2072,7 @@ paths:
                 type: object
                 properties:
                   status:
-                    $ref: '#/components/schemas/ErrorStatus'
+                    $ref: ./models/ErrorStatus.yaml
   '/debts/{id}/notes':
     post:
       tags:
@@ -2038,7 +2146,7 @@ paths:
                 type: object
                 properties:
                   status:
-                    $ref: '#/components/schemas/ErrorStatus'
+                    $ref: ./models/ErrorStatus.yaml
               examples:
                 Debt Note POST 400 Response Example:
                   value:
@@ -2078,7 +2186,7 @@ paths:
                 type: object
                 properties:
                   status:
-                    $ref: '#/components/schemas/ErrorStatus'
+                    $ref: ./models/ErrorStatus.yaml
               examples:
                 Debt Note POST 400 Response Example:
                   value:
@@ -2160,7 +2268,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/ErrorStatus'
+                    $ref: ./models/ErrorStatus.yaml
               examples:
                 Loans POST 400 Response Example:
                   value:
@@ -2244,7 +2352,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/ErrorStatus'
+                    $ref: ./models/ErrorStatus.yaml
               examples:
                 Loan GET 400 Response Example:
                   value:
@@ -2333,7 +2441,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/ErrorStatus'
+                    $ref: ./models/ErrorStatus.yaml
               examples:
                 Loan PUT 400 Response Example:
                   value:
@@ -2378,7 +2486,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/ErrorStatus'
+                    $ref: ./models/ErrorStatus.yaml
               examples:
                 Loan DELETE 400 Response Example:
                   value:
@@ -2455,7 +2563,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/ErrorStatus'
+                    $ref: ./models/ErrorStatus.yaml
               examples:
                 Settlement Offer 400 Response Example:
                   value:
@@ -2557,7 +2665,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/ErrorStatus'
+                    $ref: ./models/ErrorStatus.yaml
               examples:
                 Settlement Offer GET 400 Response Example:
                   value:
@@ -2665,7 +2773,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/ErrorStatus'
+                    $ref: ./models/ErrorStatus.yaml
               examples:
                 SettlementOffer PUT 400 Response Example:
                   value:
@@ -2710,7 +2818,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/ErrorStatus'
+                    $ref: ./models/ErrorStatus.yaml
               examples:
                 SettlementOffer Delete 400 Response Example:
                   value:
@@ -2790,7 +2898,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/ErrorStatus'
+                    $ref: ./models/ErrorStatus.yaml
               examples:
                 Tasks POST 400 Response Example:
                   value:
@@ -2896,7 +3004,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/ErrorStatus'
+                    $ref: ./models/ErrorStatus.yaml
               examples:
                 Task GET 400 Response Example:
                   value:
@@ -3007,7 +3115,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/ErrorStatus'
+                    $ref: ./models/ErrorStatus.yaml
               examples:
                 Task PUT 400 Response Example:
                   value:
@@ -3052,7 +3160,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/ErrorStatus'
+                    $ref: ./models/ErrorStatus.yaml
               examples:
                 Task DELETE 400 Response Example:
                   value:
@@ -3085,7 +3193,7 @@ paths:
               schema:
                 properties:
                   status:
-                    $ref: '#/components/schemas/ErrorStatus'
+                    $ref: ./models/ErrorStatus.yaml
               examples:
                 Teams GET 400 Response Example:
                   value:
@@ -3126,7 +3234,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/ErrorStatus'
+                    $ref: ./models/ErrorStatus.yaml
               examples:
                 Teams POST 400 Response Example:
                   value:
@@ -3187,7 +3295,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/ErrorStatus'
+                    $ref: ./models/ErrorStatus.yaml
               examples:
                 Teams GET 400 Response Example:
                   value:
@@ -3243,7 +3351,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/ErrorStatus'
+                    $ref: ./models/ErrorStatus.yaml
               examples:
                 Teams PUT 400 Response Example:
                   value:
@@ -3288,7 +3396,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/ErrorStatus'
+                    $ref: ./models/ErrorStatus.yaml
               examples:
                 Teams Delete 400 Response Example:
                   value:
@@ -3360,7 +3468,7 @@ paths:
               schema:
                 properties:
                   status:
-                    $ref: '#/components/schemas/ErrorStatus'
+                    $ref: ./models/ErrorStatus.yaml
               examples:
                 Users Post 400 Response Example:
                   value:
@@ -3424,7 +3532,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/ErrorStatus'
+                    $ref: ./models/ErrorStatus.yaml
               examples:
                 User GET 400 Response Example:
                   value:
@@ -3493,7 +3601,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/ErrorStatus'
+                    $ref: ./models/ErrorStatus.yaml
               examples:
                 User PUT 400 Response Example:
                   value:
@@ -3532,7 +3640,7 @@ paths:
                   - status
                 properties:
                   status:
-                    $ref: '#/components/schemas/ErrorStatus'
+                    $ref: ./models/ErrorStatus.yaml
               examples:
                 Users Delete 400 Response Example:
                   value:
@@ -5199,7 +5307,7 @@ components:
             type: object
             properties:
               status:
-                $ref: '#/components/schemas/ErrorStatus'
+                $ref: ./models/ErrorStatus.yaml
     default:
       description: default
       content:
