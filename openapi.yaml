@@ -24,6 +24,8 @@ tags:
     description: All available actions for Debts
   - name: DebtNotes
     description: All available actions for DebtNotes
+  - name: DebtTasks
+    description: All available actions for DebtTasks
   - name: Documents
     description: All available actions for Documents
   - name: Forms
@@ -1874,7 +1876,7 @@ paths:
     post:
       tags:
         - Debts
-        - Tasks
+        - DebtTasks
       summary: Create Debt Task for Debt Record by DebtID
       description: Creates a Debt Task for a Debt Record
       operationId: debtTaskCreate
@@ -1932,7 +1934,7 @@ paths:
     put:
       tags:
         - Debts
-        - Tasks
+        - DebtTasks
       summary: Update a Debt Task
       description: Update a Debt Task
       operationId: debtTaskUpdate
@@ -1992,7 +1994,7 @@ paths:
     delete:
       tags:
         - Debts
-        - Tasks
+        - DebtTasks
       summary: Delete a Debt Task
       description: Delete a Debt Task
       operationId: debtTaskDelete
@@ -2038,7 +2040,7 @@ paths:
     get:
       tags:
         - Debts
-        - Tasks
+        - DebtTasks
       summary: Get List of All Tasks for a Debt Record by DebtID
       description: |-
         Returns all existing Tasks associated with a Debt Record.
