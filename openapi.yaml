@@ -4155,7 +4155,7 @@ paths:
         required: true
       responses:
         '200':
-          description: Successfully created Document Type
+          description: Successfully created a Document Type
           content:
             application/json:
               schema:
@@ -4163,8 +4163,6 @@ paths:
                 properties:
                   response:  
                     type: object
-                    items:
-                      $ref: ./models/DocumentType.yaml
                   status:
                     $ref: ./models/SuccessStatus.yaml
         '400':
