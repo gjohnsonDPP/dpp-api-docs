@@ -4134,6 +4134,52 @@ paths:
                     status:
                       code: 400
                       message: 'Input Parsing Error: unexpected character'
+    post:
+      tags:
+        - Documents
+        - DocumentTypes
+      summary: Create a Document Type
+      description: |-
+        Create a Document Type     
+      operationId: documentTypesCreate
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                title:
+                  description: Name of Document Type
+                  type: string
+              type: object
+        required: true
+      responses:
+        '200':
+          description: Successfully created Document Type
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:  
+                    type: object
+                    items:
+                      $ref: ./models/DocumentType.yaml
+                  status:
+                    $ref: ./models/SuccessStatus.yaml
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                properties:
+                  status:
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Teams GET 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
 components:
   schemas:
     Status:
