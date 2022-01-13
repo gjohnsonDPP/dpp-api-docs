@@ -4134,6 +4134,7 @@ paths:
                     status:
                       code: 400
                       message: 'Input Parsing Error: unexpected character'
+    '/documents/types'
     post:
       tags:
         - Documents
