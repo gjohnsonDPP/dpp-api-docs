@@ -4164,7 +4164,7 @@ paths:
                   response:  
                     type: object
                   status:
-                    $ref: ./models/SuccessStatus.yaml
+                    $ref: models/SuccessStatus.yaml
               examples:
                 DocumentType Example 200 POST Response:
                   value:
