@@ -4096,7 +4096,7 @@ paths:
       description: |-
         Returns all existing Document Types.
 
-        <span><i class="fa fa-info-circle"></i><i style="font-size:12px"> By default the Document Types are returned in order of Newest to Oldest.</i></span>      
+        <span><i class="fa fa-info-circle"></i><i style="font-size:12px"> By default the Document Types are returned in order from Oldest to Newest.</i></span>      
       operationId: documentTypesGet
       responses:
         '200':

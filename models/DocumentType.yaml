@@ -4,7 +4,7 @@ x-tags:
   - Documents
   - DocumentTypes
 properties:
-  key:
+  id:
     type: string
     example: "1"
     read-only: true
