@@ -4114,12 +4114,12 @@ paths:
                     items:
                       type: object
                       properties:
-                        id:
+                        key:
                           type: string
-                          description: Get All Document Types
+                          description: Unique Key for Document Type
                         title:
                           type: string
-                          description: Get All Document Types
+                          description: Title of Document Type
         '400':
           description: Error
           content:
