@@ -2,6 +2,7 @@ title: DocumentType
 type: object
 x-tags:
   - Documents
+  - DocumentTypes
 properties:
   key:
     type: string

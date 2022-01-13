@@ -28,6 +28,8 @@ tags:
     description: All available actions for DebtTasks
   - name: Documents
     description: All available actions for Documents
+  - name: DocumentTypes
+    description: All available actions for DocumentTypes
   - name: Forms
     description: Actions associated with Forms
   - name: Loans
@@ -4089,6 +4091,7 @@ paths:
     get:
       tags:
         - Documents
+        - DocumentTypes
       summary: Get All Document Types
       description: |-
         Returns all existing Document Types.
