@@ -4165,6 +4165,14 @@ paths:
                     type: object
                   status:
                     $ref: ./models/SuccessStatus.yaml
+              examples:
+                DocumentType Example 200 POST Response:
+                  value:
+                    response:
+                      key: "1234"
+                      title: "Test Document Type"
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
