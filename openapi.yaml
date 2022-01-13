@@ -4114,8 +4114,8 @@ paths:
                     items:
                       type: object
                       properties:
-                        key:
-                          type: integer
+                        id:
+                          type: string
                           description: Get All Document Types
                         title:
                           type: string
