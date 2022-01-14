@@ -1051,6 +1051,48 @@ paths:
                     status:
                       code: 400
                       message: 'Input Parsing Error: unexpected character'
+  '/contacts/search_by_phone/{phone}':
+    get:
+      tags:
+        - Contacts
+      summary: Find Contact by Phone Number
+      operationId: searchByPhone
+      parameters:
+        - name: phone
+          in: path
+          description: Phone number of the Contact to be returned
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully located and returned Contact Record
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    $ref: ./models/ContactResponse.yaml
+                  status:
+                    $ref: ./models/SuccessStatus.yaml
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    $ref: ./models/ErrorStatus.yaml
+                required:
+                  - status
+              examples:
+                Form Request POST 200 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   '/contacts/{id}/form_request':
     post:
       tags:
