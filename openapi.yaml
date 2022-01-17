@@ -4131,7 +4131,7 @@ paths:
                 properties:
                   status:
                     $ref: models/ErrorStatus.yaml
-  /documents/document-types:
+  /documents/types:
     get:
       tags:
         - Documents
