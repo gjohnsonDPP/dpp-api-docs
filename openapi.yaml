@@ -4131,7 +4131,7 @@ paths:
                 properties:
                   status:
                     $ref: models/ErrorStatus.yaml
-  /documents/types:
+  '/documents/types':
     get:
       tags:
         - Documents
@@ -4178,7 +4178,6 @@ paths:
                     status:
                       code: 400
                       message: 'Input Parsing Error: unexpected character'
-  '/documents/types':
     post:
       tags:
         - Documents
