@@ -4264,7 +4264,7 @@ paths:
                 type: object
                 properties:
                   response:  
-                    type: object
+                    $ref: models/DocumentType.yaml
                   status:
                     $ref: models/SuccessStatus.yaml
               examples:
