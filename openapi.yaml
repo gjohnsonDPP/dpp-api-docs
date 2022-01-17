@@ -4158,9 +4158,9 @@ paths:
                     items:
                       type: object
                       properties:
-                        key:
+                        id:
                           type: string
-                          description: Unique Key for Document Type
+                          description: Unique id for Document Type
                         title:
                           type: string
                           description: Title of Document Type
@@ -4212,7 +4212,7 @@ paths:
                 DocumentType Example 200 POST Response:
                   value:
                     response:
-                      key: "1234"
+                      id: "1234"
                       title: "Test Document Type"
                     status:
                       code: 200
@@ -4271,7 +4271,7 @@ paths:
                 DocumentType Example 200 POST Response:
                   value:
                     response:
-                      key: "1234"
+                      id: "1234"
                       title: "Test Document Type"
                     status:
                       code: 200
