@@ -1145,7 +1145,7 @@ paths:
         - Contacts
         - Documents
       summary: Retrieve Document by ID
-      description: Retrieve a specific document by a unique ID.
+      description: Retrieve a specific document for a Contact by Doc. ID.
       operationId: contactDocsRead
       parameters:
         - name: id
@@ -1183,6 +1183,66 @@ paths:
                     $ref: ./models/ErrorStatus.yaml
                 required:
                   - status
+    put:
+      tags:
+        - Contacts
+        - Documents
+      summary: Update Document by ID
+      description: Update a specific document for a Contact by Doc. ID.
+      operationId: contactDocsUpdate
+      parameters:
+        - name: id
+          in: path
+          description: Id of Contact
+          required: true
+          schema:
+            type: integer
+        - name: doc_id
+          in: path
+          description: Id of Document to retrieve
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                file_name:
+                  type: string
+                description:
+                  type: string
+                doc_type:
+                  type: string
+                debt_id:
+                  type: string
+              required:
+                - file_name
+                - description
+      responses:
+        '200':
+          description: Successfully retrieved document
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: object
+                  status:
+                    $ref: ./models/SuccessStatus.yaml
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    $ref: ./models/ErrorStatus.yaml
+                required:
+                  - status 
   '/contacts/{id}/documents/upload':
     post:
       tags:
