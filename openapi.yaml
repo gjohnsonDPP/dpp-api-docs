@@ -1243,6 +1243,49 @@ paths:
                     $ref: ./models/ErrorStatus.yaml
                 required:
                   - status 
+    delete:
+      tags:
+        - Contacts
+        - Documents
+      summary: Delete Document by ID
+      description: Delete a specific document for a Contact by Doc. ID.
+      operationId: contactDocsDelete
+      parameters:
+        - name: id
+          in: path
+          description: Id of Contact
+          required: true
+          schema:
+            type: integer
+        - name: doc_id
+          in: path
+          description: Id of Document to delete
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully deleted document
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    $ref: ./models/SuccessStatus.yaml
+                required:
+                  - status
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    $ref: ./models/ErrorStatus.yaml
+                required:
+                  - status
   '/contacts/{id}/documents/upload':
     post:
       tags:
