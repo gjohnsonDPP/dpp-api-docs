@@ -1095,6 +1095,50 @@ paths:
                     status:
                       code: 400
                       message: 'Input Parsing Error: unexpected character'
+
+  '/contacts/{id}/documents':
+    get:
+      tags:
+        - Contacts
+      summary: Get Contact's Documents by ID
+      description: Get Contact's Documents by ID
+      operationId: contactDocuments
+      parameters:
+        - name: id
+          in: path
+          description: Id of Contact to retrieve Documents for
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully returned Contact's Documents
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: object
+                  status:
+                    $ref: ./models/SuccessStatus.yaml
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    $ref: ./models/ErrorStatus.yaml
+                required:
+                  - status
+              examples:
+                GET 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   '/contacts/{id}/form_request':
     post:
       tags:
