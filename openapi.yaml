@@ -96,7 +96,7 @@ paths:
                           description: Time Until Token Expires
   /calls:
     post:
-      summary: Create a Call Record
+      summary: Create Call Record
       description: |-
         Creates a Call Record and log the call to a client.
 
@@ -169,7 +169,7 @@ paths:
     get:
       tags:
         - Calls
-      summary: Find a Call Record by ID
+      summary: Get Call Record by ID
       description: Returns a Call Record
       operationId: callRead
       parameters:
@@ -252,7 +252,7 @@ paths:
     put:
       tags:
         - Calls
-      summary: Update a Call Record by ID
+      summary: Update Call Record by ID
       description: Updates a Call Record
       operationId: callUpdate
       requestBody:
@@ -402,7 +402,7 @@ paths:
     post:
       tags:
         - Campaigns
-      summary: Create a Campaign Record
+      summary: Create Campaign Record
       description: |-
         Creates a Campaign Record
 
@@ -473,7 +473,7 @@ paths:
     get:
       tags:
         - Campaigns
-      summary: Find a Campaign Record by ID
+      summary: Get Campaign Record by ID
       description: Returns a Campaign Record
       operationId: campaignRead
       parameters:
@@ -541,7 +541,7 @@ paths:
     put:
       tags:
         - Campaigns
-      summary: Update a Campaign Record by ID
+      summary: Update Campaign Record by ID
       description: Updates a Campaign Record
       operationId: campaignUpdate
       parameters:
@@ -614,7 +614,7 @@ paths:
     delete:
       tags:
         - Campaigns
-      summary: Delete a Campaign Record by ID
+      summary: Delete Campaign Record by ID
       description: Deletes a Campaign Record
       operationId: campaignDelete
       parameters:
@@ -660,7 +660,7 @@ paths:
     post:
       tags:
         - Contacts
-      summary: Create a Contact Record
+      summary: Create Contact Record
       description: |-
         Creates a Contact Record
 
@@ -785,7 +785,7 @@ paths:
     get:
       tags:
         - Contacts
-      summary: Find a Contact Record by ID
+      summary: Get Contact by ID
       description: Returns a Contact Record
       operationId: contactRead
       parameters:
@@ -895,7 +895,7 @@ paths:
     put:
       tags:
         - Contacts
-      summary: Update a Contact Record by ID
+      summary: Update Contact by ID
       description: Updates a Contact Record
       operationId: contactUpdate
       requestBody:
@@ -1011,7 +1011,7 @@ paths:
     delete:
       tags:
         - Contacts
-      summary: Delete a Contact Record by ID
+      summary: Delete Contact by ID
       description: Deletes a Contact Record
       operationId: contactDelete
       parameters:
@@ -1057,7 +1057,7 @@ paths:
     get:
       tags:
         - Contacts
-      summary: Find Contact by Phone Number
+      summary: Get Contact by Phone Number
       operationId: searchByPhone
       parameters:
         - name: phone
@@ -1100,8 +1100,8 @@ paths:
       tags:
         - Contacts
         - Documents
-      summary: Get Contact's Documents by ID
-      description: Get Contact's Documents by ID
+      summary: Get Documents for Contact by ID
+      description: Returns every Document for a Contact by ID
       operationId: contactDocuments
       parameters:
         - name: id
@@ -1144,8 +1144,8 @@ paths:
       tags:
         - Contacts
         - Documents
-      summary: Retrieve Document by ID
-      description: Retrieve a specific document for a Contact by Doc. ID.
+      summary: Get Document by ID
+      description: Retrieves a Specific Document for a Contact by Doc. ID.
       operationId: contactDocsRead
       parameters:
         - name: id
@@ -1188,7 +1188,7 @@ paths:
         - Contacts
         - Documents
       summary: Update Document by ID
-      description: Update a specific document for a Contact by Doc. ID.
+      description: Updates a Specific Document for a Contact by Doc. ID.
       operationId: contactDocsUpdate
       parameters:
         - name: id
@@ -1248,7 +1248,7 @@ paths:
         - Contacts
         - Documents
       summary: Delete Document by ID
-      description: Delete a specific document for a Contact by Doc. ID.
+      description: Delete a Specific Document for a Contact by Doc. ID.
       operationId: contactDocsDelete
       parameters:
         - name: id
@@ -1291,8 +1291,8 @@ paths:
       tags:
         - Contacts
         - Documents
-      summary: Upload Documents to Contact's Dashboard
-      description: Upload Documents to 'Uploaded Docs' section of Contact's Dashboard
+      summary: Upload Document to Contact Dashboard
+      description: Upload Documents to the 'Uploaded Docs' Section on a Contact's Dashboard
       operationId: contactDocsUpload
       parameters:
         - name: id
@@ -1334,7 +1334,7 @@ paths:
       tags:
         - Contacts
         - Forms
-      summary: Send Form to Contact Email by ID
+      summary: Email Form to Contact by ID
       description: Sends a Form to a Contact via Email Address by ContactID
       operationId: sendForm
       parameters:
@@ -1509,7 +1509,7 @@ paths:
     post:
       tags:
         - Contacts
-      summary: Send a ClixSign Document
+      summary: Send ClixSign Document
       description: Sends a ClixSign Document
       operationId: sendClixSignDoc
       parameters:
@@ -1552,7 +1552,7 @@ paths:
       tags:
         - Contacts
         - SMS
-      summary: Get SMS Log Record for a Contact by ID
+      summary: Get SMS Log Records for Contact by ID
       description: |-
         Returns all existing SMS Messages logged for a Contact.
 
@@ -1750,7 +1750,7 @@ paths:
     post:
       tags:
         - Debts
-      summary: Create a Debt Record
+      summary: Create Debt Record
       description: |-
         Creates a Debt Record
 
@@ -1837,7 +1837,7 @@ paths:
     get:
       tags:
         - Debts
-      summary: Find a Debt Record by ID
+      summary: Get Debt Record by ID
       description: Returns a Debt Record
       operationId: debtRead
       parameters:
@@ -1971,7 +1971,7 @@ paths:
     put:
       tags:
         - Debts
-      summary: Update a Debt Record by ID
+      summary: Update Debt Record by ID
       description: Updates a Debt Record
       operationId: debtUpdate
       requestBody:
@@ -2110,7 +2110,7 @@ paths:
     delete:
       tags:
         - Debts
-      summary: Delete a Debt Record by ID
+      summary: Delete Debt Record by ID
       description: Deletes a Debt Record
       operationId: debtDelete
       parameters:
@@ -2157,7 +2157,7 @@ paths:
       tags:
         - Debts
         - DebtTasks
-      summary: Create Debt Task for Debt Record by DebtID
+      summary: Create Task for Debt by ID
       description: Creates a Debt Task for a Debt Record
       operationId: debtTaskCreate
       requestBody:
@@ -2215,7 +2215,7 @@ paths:
       tags:
         - Debts
         - DebtTasks
-      summary: Update a Debt Task
+      summary: Update Debt Task
       description: Update a Debt Task
       operationId: debtTaskUpdate
       requestBody:
@@ -2275,7 +2275,7 @@ paths:
       tags:
         - Debts
         - DebtTasks
-      summary: Delete a Debt Task
+      summary: Delete Debt Task
       description: Delete a Debt Task
       operationId: debtTaskDelete
       parameters:
@@ -2321,7 +2321,7 @@ paths:
       tags:
         - Debts
         - DebtTasks
-      summary: Get List of All Tasks for a Debt Record by DebtID
+      summary: Get Tasks for Debt by ID
       description: |-
         Returns all existing Tasks associated with a Debt Record.
 
@@ -2360,7 +2360,7 @@ paths:
       tags:
         - Debts
         - DebtNotes
-      summary: Create a Debt Note using DebtID
+      summary: Create Debt Note using ID
       description: Creates a new Debt Note
       operationId: debtNoteCreate
       parameters:
@@ -2440,7 +2440,7 @@ paths:
       tags:
         - Debts
         - DebtNotes
-      summary: Delete a Debt Note by ID
+      summary: Delete Debt Note by ID
       description: Deletes a Debt Note
       operationId: debtNoteDelete
       parameters:
@@ -2479,7 +2479,7 @@ paths:
     post:
       tags:
         - Loans
-      summary: Create a Loan Record
+      summary: Create Loan Record
       description: |-
         Creates a Loan Record
 
@@ -2561,7 +2561,7 @@ paths:
     get:
       tags:
         - Loans
-      summary: Find a Loan Record by ID
+      summary: Get Loan Record by ID
       description: Returns a Loan Record
       operationId: loanRead
       parameters:
@@ -2644,7 +2644,7 @@ paths:
     put:
       tags:
         - Loans
-      summary: Update a Loan Record by ID
+      summary: Update Loan Record by ID
       description: Updates a Loan Record
       operationId: loanUpdate
       parameters:
@@ -2733,7 +2733,7 @@ paths:
     delete:
       tags:
         - Loans
-      summary: Delete a Loan Record by ID
+      summary: Delete Loan Record by ID
       description: Deletes a Loan Record
       operationId: loanDelete
       parameters:
@@ -2779,7 +2779,7 @@ paths:
     post:
       tags:
         - Settlement_Offers
-      summary: Create a Settlement Offer Record
+      summary: Create Settlement Offer
       description: |-
         Creates a Settlement Offer
 
@@ -2856,7 +2856,7 @@ paths:
     get:
       tags:
         - Settlement_Offers
-      summary: Find a Settlement Offer Record by ID
+      summary: Get Settlement Offer by ID
       description: Returns a Settlement Offer
       operationId: settlementOfferRead
       parameters:
@@ -2957,7 +2957,7 @@ paths:
     put:
       tags:
         - Settlement_Offers
-      summary: Update a Settlement Offer Record by ID
+      summary: Update Settlement Offer by ID
       description: Updates a Settlement Offer Record
       operationId: settlementOfferUpdate
       parameters:
@@ -3065,7 +3065,7 @@ paths:
     delete:
       tags:
         - Settlement_Offers
-      summary: Delete a Settlement Offer Record by ID
+      summary: Delete Settlement Offer by ID
       description: Deletes a Settlement Offer
       operationId: settlementOfferDelete
       parameters:
@@ -3111,7 +3111,7 @@ paths:
     post:
       tags:
         - Tasks
-      summary: Create a Task Record
+      summary: Create Task Record
       description: |-
         Creates a Task Record
 
@@ -3191,7 +3191,7 @@ paths:
     get:
       tags:
         - Tasks
-      summary: Find a Task Record by ID
+      summary: Get Task Record by ID
       description: Returns a Task Record
       operationId: taskRead
       parameters:
@@ -3296,7 +3296,7 @@ paths:
     put:
       tags:
         - Tasks
-      summary: Update a Task Record by ID
+      summary: Update Task Record by ID
       description: Updates a Task Record
       operationId: taskUpdate
       parameters:
@@ -3407,7 +3407,7 @@ paths:
     delete:
       tags:
         - Tasks
-      summary: Delete a Task Record by ID
+      summary: Delete Task Record by ID
       description: Deletes a Task Record
       operationId: taskDelete
       parameters:
@@ -3453,7 +3453,7 @@ paths:
     get:
       tags:
         - Teams
-      summary: Find All Existing Team Records
+      summary: Get All Teams
       description: Returns a List all Existing Team Records
       operationId: teamsGet
       responses:
@@ -3485,7 +3485,7 @@ paths:
     post:
       tags:
         - Teams
-      summary: Create a Team Record
+      summary: Create Team
       description: Creates a Team Record
       operationId: teamCreate
       responses:
@@ -3536,7 +3536,7 @@ paths:
     get:
       tags:
         - Teams
-      summary: Find a Team Record by ID
+      summary: Get Team by ID
       description: Returns a Team Record
       operationId: teamRead
       parameters:
@@ -3587,7 +3587,7 @@ paths:
     put:
       tags:
         - Teams
-      summary: Update a Team Record by ID
+      summary: Update Team by ID
       description: Updates a Team Record
       operationId: teamUpdate
       parameters:
@@ -3643,7 +3643,7 @@ paths:
     delete:
       tags:
         - Teams
-      summary: Delete a Team Record by ID
+      summary: Delete Team by ID
       description: Deletes a Team Record
       operationId: teamDelete
       parameters:
@@ -3689,7 +3689,7 @@ paths:
     post:
       tags:
         - Users
-      summary: Create a User Record
+      summary: Create User
       description: |-
         Creates a User Record object
 
@@ -3761,7 +3761,7 @@ paths:
     get:
       tags:
         - Users
-      summary: Find a User Record by ID
+      summary: Get User by ID
       description: Returns a User Record
       operationId: userRead
       parameters:
@@ -3824,7 +3824,7 @@ paths:
     put:
       tags:
         - Users
-      summary: Update a User Record by ID
+      summary: Update User by ID
       description: Updates a User Record
       operationId: userUpdate
       parameters:
@@ -3893,7 +3893,7 @@ paths:
     delete:
       tags:
         - Users
-      summary: Delete a User Record by ID
+      summary: Delete User by ID
       description: Deletes a User Record
       operationId: userDelete
       parameters:
@@ -3933,7 +3933,7 @@ paths:
     get:
       tags:
         - Users
-      summary: Find User Record of Current User
+      summary: Get Current User
       description: Returns the User Record of the Current Active User
       operationId: userCurrent
       responses:
@@ -3968,7 +3968,7 @@ paths:
     post:
       tags:
         - Users
-      summary: Find Task Records for User by ID
+      summary: Get Tasks for User by ID
       description: Returns All Existing Task Records for a single User
       operationId: userTasks
       parameters:
@@ -4028,7 +4028,7 @@ paths:
     post:
       tags:
         - Users
-      summary: Find Event Records for User by ID
+      summary: Get Events for User by ID
       description: Returns All Existing Event Records for a single User
       operationId: userEvents
       parameters:
@@ -4091,7 +4091,7 @@ paths:
     get:
       tags:
         - Lenders
-      summary: Get all Monevo Lenders
+      summary: Get All Monevo Lenders
       description: Returns a List of all Loan Offers associated with a Contact
       operationId: getLendersMonevo
       parameters:
@@ -4417,7 +4417,7 @@ paths:
       tags:
         - Documents
         - DocumentTypes
-      summary: Create a Document Type
+      summary: Create Document Type
       description: 'Create a Document Type     '
       operationId: documentTypesCreate
       requestBody:
@@ -4469,7 +4469,7 @@ paths:
       tags:
         - Documents
         - DocumentTypes
-      summary: Update a Document Type by ID
+      summary: Update Document Type by ID
       description: 'Update a Document Type by ID     '
       operationId: documentTypesUpdate
       parameters:
@@ -4526,7 +4526,7 @@ paths:
       tags:
         - Documents
         - DocumentTypes
-      summary: Delete a Document Type by ID
+      summary: Delete Document Type by ID
       description: 'Delete a Document Type by ID    '
       operationId: documentTypesDelete
       parameters:
