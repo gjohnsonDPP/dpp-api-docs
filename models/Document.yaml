@@ -10,10 +10,9 @@ properties:
     readOnly: true
   contact_id:
     type: string
-    example: "534512161"
+    example: '534512161'
   debt_id:
     type: string
-    example: '124504794'
   syndication_id:
     type: string
   order_id:
@@ -22,14 +21,10 @@ properties:
     type: string
   tags:
     type: array
-    example:
-      - '{FIRSTNAME}': JOHN
-      - '{LASTNAME}': DOE
-    items:
-      type: object
+    items: {}
   signservice:
     type: string
-    example: clixsign
+    default: clixsign
 required:
   - id
   - contact_id

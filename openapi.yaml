@@ -4150,7 +4150,7 @@ paths:
     post:
       tags:
         - Documents
-      summary: Create a Document by Doc. ID
+      summary: Create a Document by Doc. Template ID
       description: |-
         Creates a Document Record object
 
