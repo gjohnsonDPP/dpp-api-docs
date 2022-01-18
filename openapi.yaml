@@ -1158,7 +1158,30 @@ paths:
         content:
           application/json:
             schema:
-              
+              $ref: models/Document.yaml
+      responses:
+        '200':
+          description: Successfully uploaded document
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: object
+                  status:
+                    $ref: ./models/SuccessStatus.yaml
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    $ref: ./models/ErrorStatus.yaml
+                required:
+                  - status
   '/contacts/{id}/form_request':
     post:
       tags:
