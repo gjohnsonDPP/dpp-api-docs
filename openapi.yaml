@@ -1095,7 +1095,6 @@ paths:
                     status:
                       code: 400
                       message: 'Input Parsing Error: unexpected character'
-
   '/contacts/{id}/documents':
     get:
       tags:
@@ -4191,7 +4190,8 @@ paths:
                 properties:
                   status:
                     $ref: models/ErrorStatus.yaml
-  '/documents/types':
+      x-internal: true
+  /documents/types:
     get:
       tags:
         - Documents
@@ -4243,8 +4243,7 @@ paths:
         - Documents
         - DocumentTypes
       summary: Create a Document Type
-      description: |-
-        Create a Document Type     
+      description: 'Create a Document Type     '
       operationId: documentTypesCreate
       requestBody:
         content:
@@ -4264,7 +4263,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  response:  
+                  response:
                     type: object
                   status:
                     $ref: models/SuccessStatus.yaml
@@ -4272,8 +4271,8 @@ paths:
                 DocumentType Example 200 POST Response:
                   value:
                     response:
-                      id: "1234"
-                      title: "Test Document Type"
+                      id: '1234'
+                      title: Test Document Type
                     status:
                       code: 200
         '400':
@@ -4296,8 +4295,7 @@ paths:
         - Documents
         - DocumentTypes
       summary: Update a Document Type by ID
-      description: |-
-        Update a Document Type by ID     
+      description: 'Update a Document Type by ID     '
       operationId: documentTypesUpdate
       parameters:
         - name: id
@@ -4323,7 +4321,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  response:  
+                  response:
                     $ref: models/DocumentType.yaml
                   status:
                     $ref: models/SuccessStatus.yaml
@@ -4331,8 +4329,8 @@ paths:
                 DocumentType Example 200 POST Response:
                   value:
                     response:
-                      id: "1234"
-                      title: "Test Document Type"
+                      id: '1234'
+                      title: Test Document Type
                     status:
                       code: 200
         '400':
@@ -4354,8 +4352,7 @@ paths:
         - Documents
         - DocumentTypes
       summary: Delete a Document Type by ID
-      description: |-
-        Delete a Document Type by ID    
+      description: 'Delete a Document Type by ID    '
       operationId: documentTypesDelete
       parameters:
         - name: id
@@ -4372,7 +4369,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  response:  
+                  response:
                     type: object
                   status:
                     $ref: models/SuccessStatus.yaml
