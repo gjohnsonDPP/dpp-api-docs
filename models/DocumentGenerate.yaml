@@ -13,15 +13,18 @@ properties:
     example: '534512161'
   debt_id:
     type: string
+    default: null
   syndication_id:
     type: string
+    default: null
   order_id:
     type: string
+    default: null
   loan_id:
     type: string
+    default: null
   tags:
-    type: array
-    items: {}
+    type: object
   signservice:
     type: string
     default: clixsign
