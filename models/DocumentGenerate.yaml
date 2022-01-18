@@ -1,0 +1,34 @@
+title: Document
+type: object
+description: ''
+x-tags:
+  - Documents
+properties:
+  id:
+    type: integer
+    description: ID of Document Template
+    readOnly: true
+  contact_id:
+    type: string
+    example: '534512161'
+  debt_id:
+    type: string
+    default: null
+  syndication_id:
+    type: string
+    default: null
+  order_id:
+    type: string
+    default: null
+  loan_id:
+    type: string
+    default: null
+  tags:
+    type: object
+  signservice:
+    type: string
+    default: clixsign
+required:
+  - id
+  - contact_id
+  - signservice

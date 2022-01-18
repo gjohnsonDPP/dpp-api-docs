@@ -1095,6 +1095,240 @@ paths:
                     status:
                       code: 400
                       message: 'Input Parsing Error: unexpected character'
+  '/contacts/{id}/documents':
+    get:
+      tags:
+        - Contacts
+        - Documents
+      summary: Get Contact's Documents by ID
+      description: Get Contact's Documents by ID
+      operationId: contactDocuments
+      parameters:
+        - name: id
+          in: path
+          description: Id of Contact to retrieve Documents for
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully returned Contact's Documents
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    $ref: models/Docs.yaml
+                  status:
+                    $ref: ./models/SuccessStatus.yaml
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    $ref: ./models/ErrorStatus.yaml
+                required:
+                  - status
+              examples:
+                GET 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
+  '/contacts/{id}/documents/{doc_id}':
+    get:
+      tags:
+        - Contacts
+        - Documents
+      summary: Retrieve Document by ID
+      description: Retrieve a specific document for a Contact by Doc. ID.
+      operationId: contactDocsRead
+      parameters:
+        - name: id
+          in: path
+          description: Id of Contact
+          required: true
+          schema:
+            type: integer
+        - name: doc_id
+          in: path
+          description: Id of Document to retrieve
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully retrieved document
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: object
+                  status:
+                    $ref: ./models/SuccessStatus.yaml
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    $ref: ./models/ErrorStatus.yaml
+                required:
+                  - status
+    put:
+      tags:
+        - Contacts
+        - Documents
+      summary: Update Document by ID
+      description: Update a specific document for a Contact by Doc. ID.
+      operationId: contactDocsUpdate
+      parameters:
+        - name: id
+          in: path
+          description: Id of Contact
+          required: true
+          schema:
+            type: integer
+        - name: doc_id
+          in: path
+          description: Id of Document to retrieve
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                file_name:
+                  type: string
+                description:
+                  type: string
+                doc_type:
+                  type: string
+                debt_id:
+                  type: string
+              required:
+                - file_name
+                - description
+      responses:
+        '200':
+          description: Successfully retrieved document
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: object
+                  status:
+                    $ref: ./models/SuccessStatus.yaml
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    $ref: ./models/ErrorStatus.yaml
+                required:
+                  - status 
+    delete:
+      tags:
+        - Contacts
+        - Documents
+      summary: Delete Document by ID
+      description: Delete a specific document for a Contact by Doc. ID.
+      operationId: contactDocsDelete
+      parameters:
+        - name: id
+          in: path
+          description: Id of Contact
+          required: true
+          schema:
+            type: integer
+        - name: doc_id
+          in: path
+          description: Id of Document to delete
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully deleted document
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    $ref: ./models/SuccessStatus.yaml
+                required:
+                  - status
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    $ref: ./models/ErrorStatus.yaml
+                required:
+                  - status
+  '/contacts/{id}/documents/upload':
+    post:
+      tags:
+        - Contacts
+        - Documents
+      summary: Upload Documents to Contact's Dashboard
+      description: Upload Documents to 'Uploaded Docs' section of Contact's Dashboard
+      operationId: contactDocsUpload
+      parameters:
+        - name: id
+          in: path
+          description: Id of Contact to Upload Documents to
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: models/Document.yaml
+      responses:
+        '200':
+          description: Successfully uploaded document
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: object
+                  status:
+                    $ref: ./models/SuccessStatus.yaml
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    $ref: ./models/ErrorStatus.yaml
+                required:
+                  - status
   '/contacts/{id}/form_request':
     post:
       tags:
@@ -4090,7 +4324,7 @@ paths:
     post:
       tags:
         - Documents
-      summary: Create a Document by Doc. ID
+      summary: Create a Document by Doc. Template ID
       description: |-
         Creates a Document Record object
 
@@ -4107,7 +4341,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: models/Document.yaml
+              $ref: models/DocumentGenerate.yaml
         required: true
       responses:
         '200':
@@ -4131,7 +4365,8 @@ paths:
                 properties:
                   status:
                     $ref: models/ErrorStatus.yaml
-  '/documents/types':
+      x-internal: true
+  /documents/types:
     get:
       tags:
         - Documents
@@ -4183,8 +4418,7 @@ paths:
         - Documents
         - DocumentTypes
       summary: Create a Document Type
-      description: |-
-        Create a Document Type     
+      description: 'Create a Document Type     '
       operationId: documentTypesCreate
       requestBody:
         content:
@@ -4204,7 +4438,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  response:  
+                  response:
                     type: object
                   status:
                     $ref: models/SuccessStatus.yaml
@@ -4212,8 +4446,8 @@ paths:
                 DocumentType Example 200 POST Response:
                   value:
                     response:
-                      id: "1234"
-                      title: "Test Document Type"
+                      id: '1234'
+                      title: Test Document Type
                     status:
                       code: 200
         '400':
@@ -4236,8 +4470,7 @@ paths:
         - Documents
         - DocumentTypes
       summary: Update a Document Type by ID
-      description: |-
-        Update a Document Type by ID     
+      description: 'Update a Document Type by ID     '
       operationId: documentTypesUpdate
       parameters:
         - name: id
@@ -4263,7 +4496,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  response:  
+                  response:
                     $ref: models/DocumentType.yaml
                   status:
                     $ref: models/SuccessStatus.yaml
@@ -4271,8 +4504,8 @@ paths:
                 DocumentType Example 200 POST Response:
                   value:
                     response:
-                      id: "1234"
-                      title: "Test Document Type"
+                      id: '1234'
+                      title: Test Document Type
                     status:
                       code: 200
         '400':
@@ -4294,8 +4527,7 @@ paths:
         - Documents
         - DocumentTypes
       summary: Delete a Document Type by ID
-      description: |-
-        Delete a Document Type by ID    
+      description: 'Delete a Document Type by ID    '
       operationId: documentTypesDelete
       parameters:
         - name: id
@@ -4312,7 +4544,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  response:  
+                  response:
                     type: object
                   status:
                     $ref: models/SuccessStatus.yaml

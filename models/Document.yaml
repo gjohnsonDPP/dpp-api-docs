@@ -1,36 +1,29 @@
 title: Document
-type: object
-description: ''
-x-tags:
-  - Documents
-properties:
-  id:
-    type: integer
-    description: ID of Document Template
-    readOnly: true
-  contact_id:
-    type: string
-    example: "534512161"
-  debt_id:
-    type: string
-    example: '124504794'
-  syndication_id:
-    type: string
-  order_id:
-    type: string
-  loan_id:
-    type: string
-  tags:
-    type: array
-    example:
-      - '{FIRSTNAME}': JOHN
-      - '{LASTNAME}': DOE
-    items:
-      type: object
-  signservice:
-    type: string
-    example: clixsign
-required:
-  - id
-  - contact_id
-  - signservice
+type: array
+description: Document Object
+uniqueItems: true
+items:
+  type: object
+  properties:
+    file_content:
+      type: string
+      minLength: 1
+      description: base64 encoded file
+    file_name:
+      type: string
+      minLength: 1
+      description: Name of file
+    description:
+      type: string
+      minLength: 1
+      description: Description of file
+    doc_type:
+      type: string
+      description: doctype id - integer passed as string in request
+    debt_id:
+      type: string
+      description: debt id - integer passed as a string in request
+  required:
+    - file_content
+    - file_name
+    - description
