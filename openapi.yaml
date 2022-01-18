@@ -1100,6 +1100,7 @@ paths:
     get:
       tags:
         - Contacts
+        - Documents
       summary: Get Contact's Documents by ID
       description: Get Contact's Documents by ID
       operationId: contactDocuments
@@ -1139,6 +1140,21 @@ paths:
                     status:
                       code: 400
                       message: 'Input Parsing Error: unexpected character'
+  '/contacts/{id}/documents/upload':
+    post:
+      tags:
+        - Contacts
+        - Documents
+      summary: Upload Documents to Contact's Dashboard
+      description: Upload Documents to 'Uploaded Docs' section of Contact's Dashboard
+      operationId: contactDocsUpload
+      parameters:
+        - name: id
+          in: path
+          description: Id of Contact to Upload Documents to
+          required: true
+          schema:
+            type: integer
   '/contacts/{id}/form_request':
     post:
       tags:
