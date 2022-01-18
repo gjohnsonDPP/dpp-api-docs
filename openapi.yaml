@@ -4167,7 +4167,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: models/Document.yaml
+              $ref: models/DocumentGenerate.yaml
         required: true
       responses:
         '200':
