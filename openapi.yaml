@@ -3929,6 +3929,169 @@ paths:
                     status:
                       code: 400
                       message: 'Input Parsing Error: unexpected character'
+  '/users/{user_id}/prefs':
+    post:
+      tags:
+        - Users
+      summary: Set User Default Values 
+      description: Set User Default Values for Preferred Fields 
+      operationId: userPrefSet
+      parameters:
+        - name: user_id
+          in: path
+          description: Id of user to set default values for
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully set default values for Preferred Fields
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: object
+                  status:
+                    $ref: ./models/SuccessStatus.yaml
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                properties:
+                  status:
+                    $ref: ./models/ErrorStatus.yaml
+              examples:
+                Users Post 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
+    get:
+      tags:
+        - Users
+      summary: Retrieve User Default Values 
+      description: Retrieve User Default Values for Preferred Fields 
+      operationId: userPrefGet
+      parameters:
+        - name: user_id
+          in: path
+          description: Id of user to get default values for
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully retrieved a User Record
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    $ref: ./models/UserResponse.yaml
+                  status:
+                    $ref: ./models/SuccessStatus.yaml
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                properties:
+                  status:
+                    $ref: ./models/ErrorStatus.yaml
+              examples:
+                Users Post 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
+    put:
+      tags:
+        - Users
+      summary: Update Values of User Preferred Fields 
+      description: Update Values of User Preferred Fields  
+      operationId: userPrefPut
+      parameters:
+        - name: user_id
+          in: path
+          description: Id of user to update values for
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/UserResponse.yaml
+        required: true
+      responses:
+        '200':
+          description: Successfully Updated User Record
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    $ref: ./models/UserResponse.yaml
+                  status:
+                    $ref: ./models/SuccessStatus.yaml
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                properties:
+                  status:
+                    $ref: ./models/ErrorStatus.yaml
+              examples:
+                Users Post 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
+    delete:
+      tags:
+        - Users
+      summary: Delete Values of User Preferred Fields 
+      description: Delete Values of User Preferred Fields  
+      operationId: userPrefDelete
+      parameters:
+        - name: user_id
+          in: path
+          description: Id of user to delete values for
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully deleted User Record
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    $ref: ./models/SuccessStatus.yaml
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                required:
+                  - status
+                properties:
+                  status:
+                    $ref: ./models/ErrorStatus.yaml
+              examples:
+                Users Delete 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'             
   /users/current:
     get:
       tags:
