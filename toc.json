@@ -1,14 +1,47 @@
 {
   "items": [
     {
+      "type": "divider",
+      "title": "Introduction"
+    },
+    {
       "type":"item",
-      "title": "Introduction",
-      "uri":"docs/Introduction.md"
+      "title": "Overview",
+      "uri":"docs/Overview.md"
     },
     {
       "type": "item",
       "title": "DebtPayPro API",
       "uri": "openapi.yaml"
+    },
+    {
+      "type": "divider",
+      "title": "Models"
+    },
+    {
+      "type": "item",
+      "title": "Address",
+      "uri": "models/Address.yaml"
+    },
+    {
+      "type": "item",
+      "title": "Call",
+      "uri": "models/CallRequest.yaml"
+    },
+    {
+      "type": "item",
+      "title": "Campaign",
+      "uri": "models/CampaignRequest.yaml"
+    },
+    {
+      "type": "item",
+      "title": "Company",
+      "uri": "models/Company.yaml"
+    },
+    {
+      "type": "item",
+      "title": "Contact",
+      "uri": "models/ContactRequest.yaml"
     }
   ]
 }
