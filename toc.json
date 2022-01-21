@@ -36,7 +36,72 @@
           "type": "item",
           "title": "Campaign",
           "uri": "models/CampaignRequest.yaml"
-        }               
+        },
+        {
+          "type": "item",
+          "title": "Company",
+          "uri": "models/Company.yaml"
+        },
+        {
+          "type": "item",
+          "title": "Contact",
+          "uri": "models/ContactRequest.yaml"
+        },
+        {
+          "type": "item",
+          "title": "Creditor",
+          "uri": "models/CreditorRequest.yaml"
+        },
+        {
+          "type": "item",
+          "title": "Debt",
+          "uri": "models/DebtRequest.yaml"
+        },
+        {
+          "type": "item",
+          "title": "Docs",
+          "uri": "models/Docs.yaml"
+        },
+        {
+          "type": "item",
+          "title": "Document",
+          "uri": "models/Document.yaml"
+        },
+        {
+          "type": "item",
+          "title": "Loan",
+          "uri": "models/LoanRequest.yaml"
+        },
+        {
+          "type": "item",
+          "title": "Settlement",
+          "uri": "models/Settlement.yaml"
+        },
+        {
+          "type": "item",
+          "title": "Settlement Offer",
+          "uri": "models/SettlementofferRequest.yaml"
+        },
+        {
+          "type": "item",
+          "title": "Task Item",
+          "uri": "models/TaskItem.yaml"
+        },
+        {
+          "type": "item",
+          "title": "Task",
+          "uri": "models/TaskRequest.yaml"
+        },
+        {
+          "type": "item",
+          "title": "Team",
+          "uri": "models/TeamRequest.yaml"
+        },
+        {
+          "type": "item",
+          "title": "User",
+          "uri": "models/UserRequest.yaml"
+        }
       ]
     }
   ]
