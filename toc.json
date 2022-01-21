@@ -13,6 +13,31 @@
       "type": "item",
       "title": "DebtPayPro API",
       "uri": "openapi.yaml"
+    },
+    {
+      "type":"divider",
+      "title":"Schemas"
+    },
+    {
+      "type": "group",
+      "title": "Models",
+      "items": [
+        {
+          "type": "item",
+          "title": "Address",
+          "uri": "models/Address.yaml"
+        },
+        {
+          "type": "item",
+          "title": "Call",
+          "uri": "models/CallRequest.yaml"
+        },
+        {
+          "type": "item",
+          "title": "Campaign",
+          "uri": "models/CampaignRequest.yaml"
+        }               
+      ]
     }
   ]
 }
