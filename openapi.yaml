@@ -4732,7 +4732,7 @@ components:
   schemas:
     Address:
       type: object
-      title: Address Record Object
+      description: Address Record Object
       properties:
         address1:
           type: string
