@@ -5113,8 +5113,6 @@ components:
     Address:
       type: object
       description: Address Record Object
-      x-tags:
-        - Address
       properties:
         address1:
           type: string
