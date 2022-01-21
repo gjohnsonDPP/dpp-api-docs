@@ -5111,21 +5111,28 @@ components:
         - contactname
         - email
     Address:
-      description: address record
+      type: object
+      description: Address Record Object
+      x-tags:
+        - Address
       properties:
         address1:
           type: string
+          example: 123 Main St.
         address2:
           type: string
+          example: Apt. 4008
         address3:
           type: string
         city:
           type: string
+          example: Chicago
         state:
           type: string
+          example: IL
         zip:
           type: string
-      type: object
+          example: '60612'
     Contact:
       type: object
       properties:

@@ -13,15 +13,6 @@
       "type": "item",
       "title": "DebtPayPro API",
       "uri": "openapi.yaml"
-    },
-    {
-      "type": "divider",
-      "title": "Models"
-    },
-    {
-      "type": "item",
-      "title":"Models",
-      "uri": "openapi.yaml/components/schemas"
     }
   ]
 }
