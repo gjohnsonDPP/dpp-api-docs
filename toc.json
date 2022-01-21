@@ -21,7 +21,7 @@
     {
       "type": "item",
       "title":"Models",
-      "uri":"./models/Address.yaml"
+      "uri": "openapi.yaml/components/schemas"
     }
   ]
 }
