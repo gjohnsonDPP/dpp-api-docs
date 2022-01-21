@@ -4902,12 +4902,12 @@ components:
         - media_type
     Company:
       type: object
-      description: 'Company Record Object'
+      description: Company Record Object
       properties:
         object:
           type: string
           readOnly: true
-          example: "company"
+          example: company
         id:
           type: integer
           readOnly: true
@@ -4918,12 +4918,12 @@ components:
           example: 3863
         name:
           type: string
-          example: "Company ABC"
+          example: Company ABC
         company_code:
           type: string
         phone:
           type: string
-          example: "312-123-1234"
+          example: 312-123-1234
         parent_id:
           type: integer
           example: 12345
@@ -4939,30 +4939,30 @@ components:
           readOnly: true
         contactname:
           type: string
-          example: "John Doe"
+          example: John Doe
         address:
           type: string
-          example: "123 Main St"
+          example: 123 Main St
         address2:
           type: string
-          example: "Suite 321"
+          example: Suite 321
         city:
           type: string
-          example: "Chicago"
+          example: Chicago
         state:
           type: string
-          example: "IL"
+          example: IL
         zip:
           type: string
-          example: "60001"
+          example: '60001'
         phone2:
           type: string
-          example: "123-123-1234"
+          example: 123-123-1234
         fax:
           type: string
         email:
           type: string
-          example: "test@test.com"
+          example: test@test.com
         timezone:
           type: string
         ein:
@@ -5897,6 +5897,7 @@ components:
           example: 0
         recording_id:
           type: integer
+      x-internal: true
     SMS:
       title: SMS
       type: object
