@@ -16,13 +16,12 @@
     },
     {
       "type": "divider",
-      "title": "Models",
-      "uri": "models"
+      "title": "Models"
     },
     {
       "type": "item",
       "title":"Models",
-      "uri":"models"
+      "uri":"./models/Address.yaml"
     }
   ]
 }
