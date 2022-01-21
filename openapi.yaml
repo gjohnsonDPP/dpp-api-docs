@@ -3991,7 +3991,7 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: ./models/UserResponse.yaml
+                    type: object
                   status:
                     $ref: ./models/SuccessStatus.yaml
         '400':
