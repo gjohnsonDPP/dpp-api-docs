@@ -1240,7 +1240,7 @@ paths:
                   status:
                     $ref: ./models/ErrorStatus.yaml
                 required:
-                  - status 
+                  - status
     delete:
       tags:
         - Contacts
@@ -3931,8 +3931,8 @@ paths:
     post:
       tags:
         - Users
-      summary: Set User Default Values 
-      description: Set User Default Values for Preferred Fields 
+      summary: Set User Default Values
+      description: Set User Default Values for Preferred Fields
       operationId: userPrefSet
       parameters:
         - name: user_id
@@ -3970,8 +3970,8 @@ paths:
     get:
       tags:
         - Users
-      summary: Retrieve User Default Values 
-      description: Retrieve User Default Values for Preferred Fields 
+      summary: Retrieve User Default Values
+      description: Retrieve User Default Values for Preferred Fields
       operationId: userPrefGet
       parameters:
         - name: user_id
@@ -4009,8 +4009,8 @@ paths:
     put:
       tags:
         - Users
-      summary: Update Values of User Preferred Fields 
-      description: Update Values of User Preferred Fields  
+      summary: Update Values of User Preferred Fields
+      description: Update Values of User Preferred Fields
       operationId: userPrefPut
       parameters:
         - name: user_id
@@ -4054,8 +4054,8 @@ paths:
     delete:
       tags:
         - Users
-      summary: Delete Values of User Preferred Fields 
-      description: Delete Values of User Preferred Fields  
+      summary: Delete Values of User Preferred Fields
+      description: Delete Values of User Preferred Fields
       operationId: userPrefDelete
       parameters:
         - name: user_id
@@ -4089,7 +4089,7 @@ paths:
                   value:
                     status:
                       code: 400
-                      message: 'Input Parsing Error: unexpected character'             
+                      message: 'Input Parsing Error: unexpected character'
   /users/current:
     get:
       tags:
@@ -4730,6 +4730,184 @@ paths:
                       message: 'Input Parsing Error: unexpected character'
 components:
   schemas:
+    Address:
+      type: object
+      title: Address Record Object
+      properties:
+        address1:
+          type: string
+          example: 123 Main St.
+        address2:
+          type: string
+          example: Apt. 4008
+        address3:
+          type: string
+        city:
+          type: string
+          example: Chicago
+        state:
+          type: string
+          example: IL
+        zip:
+          type: string
+          example: '60612'
+    Call:
+      type: object
+      title: Call Record Object
+      properties:
+        object:
+          type: string
+          example: call
+          readOnly: true
+        id:
+          type: integer
+          minLength: 1
+          description: ID of the call record
+          example: 385319179
+          readOnly: true
+        acctID:
+          type: integer
+          example: 3863
+          readOnly: true
+        contactID:
+          type: integer
+          example: 475956560
+        userID:
+          type: integer
+          example: 3028014
+          readOnly: true
+        sdate:
+          type: string
+          format: date
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        call_type:
+          type: string
+          enum:
+            - Outgoing
+            - Incoming
+          example: Outgoing
+        call_result:
+          type: string
+          example: Busy
+        notes:
+          type: string
+          example: Lorem Ipsum
+        status_change:
+          type: string
+          example: '274158'
+        duration:
+          type: string
+          format: duration
+          example: '00:01:15'
+        event_id:
+          type: integer
+          example: 8179
+        dialer_id:
+          type: integer
+          example: 2
+        recording_url:
+          type: string
+          example: 'https://stairwork.ru/test.mp3'
+        assigned_agent:
+          type: integer
+          example: 3028014
+          description: User ID of the DPP Agent that made or took the call with the Client.
+      required:
+        - contactID
+        - call_type
+        - call_result
+    Campaign:
+      type: object
+      title: Campaign Record Object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        acctID:
+          type: integer
+          readOnly: true
+        company_id:
+          type: integer
+          readOnly: true
+        active:
+          type: boolean
+          default: true
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        created_by:
+          type: integer
+          readOnly: true
+        token:
+          type: string
+          readOnly: true
+        title:
+          type: string
+          example: Campaign Title
+        start_date:
+          type: string
+          format: date
+          pattern: YYYY-mm-dd
+        end_date:
+          type: string
+          format: date
+          pattern: YYYY-mm-dd
+        source_id:
+          type: integer
+          example: 3184
+        cost:
+          type: number
+          example: 1984.25
+          format: double
+        cost_type:
+          type: integer
+          example: 1
+        priority:
+          type: integer
+          example: 4
+        external_id:
+          type: integer
+          readOnly: true
+        media_type:
+          type: integer
+          example: 1
+        purchase_amount:
+          type: number
+          example: 42
+        del:
+          type: boolean
+          default: false
+          readOnly: true
+        del_by:
+          type: integer
+          readOnly: true
+        deltime:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+        - title
+        - start_date
+        - end_date
+        - cost
+        - media_type
+      x-examples:
+        CampaignUpdateExample:
+          active: true
+          title: Campaign Title
+          start_date: '2019-08-24'
+          end_date: '2019-08-24'
+          source_id: 3184
+          cost: 1984.25
+          cost_type: 1
+          priority: 4
+          external_id: 0
+          media_type: 1
+          purchase_amount: 42
     Status:
       description: ''
       properties:
@@ -4848,168 +5026,6 @@ components:
         userfield3:
           type: string
       type: object
-    Call:
-      title: Call
-      type: object
-      description: Call Record Object
-      properties:
-        object:
-          type: string
-          example: call
-          readOnly: true
-        id:
-          type: integer
-          minLength: 1
-          description: ID of the call record
-          example: 385319179
-          readOnly: true
-        acctID:
-          type: integer
-          example: 3863
-          readOnly: true
-        contactID:
-          type: integer
-          example: 516553837
-        userID:
-          type: integer
-          example: 3028014
-          readOnly: true
-        sdate:
-          type: string
-          format: date
-          pattern: YYYY-mm-dd
-        created_at:
-          type: string
-          format: date-time
-          readOnly: true
-        call_type:
-          type: string
-          enum:
-            - Outgoing
-            - Incoming
-          example: Outgoing
-        call_result:
-          type: string
-          example: Busy
-        notes:
-          type: string
-          example: Lorem Ipsum
-        status_change:
-          type: string
-          example: '274158'
-        duration:
-          type: string
-          format: duration
-          example: '00:01:15'
-        event_id:
-          type: integer
-          example: 8179
-        dialer_id:
-          type: integer
-          example: 2
-          enum:
-            - 1
-            - 2
-            - 3
-        recording_url:
-          type: string
-          example: '"http://example.com"'
-        assigned_agent:
-          $ref: models/UserResponse.yaml
-      required:
-        - contactID
-        - call_type
-        - call_result
-    Campaign:
-      type: object
-      description: ''
-      title: ''
-      properties:
-        id:
-          type: integer
-          readOnly: true
-        acctID:
-          type: integer
-          readOnly: true
-        company_id:
-          type: integer
-          readOnly: true
-        active:
-          type: boolean
-          default: true
-        created_at:
-          type: string
-          format: date-time
-          readOnly: true
-        created_by:
-          type: integer
-          readOnly: true
-        token:
-          type: string
-          readOnly: true
-        title:
-          type: string
-          example: Campaign Title
-        start_date:
-          type: string
-          format: date
-          pattern: YYYY-mm-dd
-        end_date:
-          type: string
-          format: date
-          pattern: YYYY-mm-dd
-        source_id:
-          type: integer
-          example: 3184
-        cost:
-          type: number
-          example: 1984.25
-          format: double
-        cost_type:
-          type: integer
-          example: 1
-        priority:
-          type: integer
-          example: 4
-        external_id:
-          type: integer
-          readOnly: true
-        media_type:
-          type: integer
-          example: 1
-        purchase_amount:
-          type: number
-          example: 42
-        del:
-          type: boolean
-          default: false
-          readOnly: true
-        del_by:
-          type: integer
-          readOnly: true
-        deltime:
-          type: string
-          format: date-time
-          readOnly: true
-      required:
-        - title
-        - start_date
-        - end_date
-        - cost
-        - media_type
-      x-examples:
-        CampaignUpdateExample:
-          active: true
-          title: Campaign Title
-          start_date: '2019-08-24'
-          end_date: '2019-08-24'
-          source_id: 3184
-          cost: 1984.25
-          cost_type: 1
-          priority: 4
-          external_id: 0
-          media_type: 1
-          purchase_amount: 42
     Company:
       type: object
       properties:
@@ -5110,27 +5126,6 @@ components:
         - company_type
         - contactname
         - email
-    Address:
-      type: object
-      description: Address Record Object
-      properties:
-        address1:
-          type: string
-          example: 123 Main St.
-        address2:
-          type: string
-          example: Apt. 4008
-        address3:
-          type: string
-        city:
-          type: string
-          example: Chicago
-        state:
-          type: string
-          example: IL
-        zip:
-          type: string
-          example: '60612'
     Contact:
       type: object
       properties:
