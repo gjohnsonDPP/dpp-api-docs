@@ -9,6 +9,8 @@ info:
 servers:
   - url: 'https://api.debtpaypro.com/v1'
     description: Production
+  - url: 'https://staging1-api.debtpaypro.com/v1'
+    description: Staging1
 tags:
   - name: Auth
     description: All available actions for Auth
@@ -1744,6 +1746,103 @@ paths:
                     status:
                       code: 400
                       message: 'Input Parsing Error: unexpected character'
+  '/contacts/{id}/history':
+    get:
+      tags:
+        - Contacts
+      summary: Get Contact History Feed
+      description: Returns a specific quantity of items from a Contact's History Feed.
+      operationId: getContactHistory
+      parameters:
+        - name: id
+          in: path
+          description: Id of Client whose History Feed to return
+          required: true
+          schema:
+            type: integer
+        - in: query
+          name: _offset
+          description: (Optional) This value dictates which History Feed item to start the Request at.
+          schema:
+            type: integer
+            default: 1
+          allowEmptyValue: true
+        - in: query
+          name: _limit
+          description: (Optional) This value represents the maximum number of History Feed Items your Request can contain.
+          schema:
+            type: integer
+            default: 1
+          allowEmptyValue: true
+      responses:
+        '200':
+          description: Successfully retrieved History Feed
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: object
+                  status:
+                    $ref: ./models/SuccessStatus.yaml
+              examples:
+                200 GET History Feed Response:
+                  value:
+                    response:
+                      response:
+                        - object: contacts_log
+                          id: '3094248541'
+                          acctID: '98'
+                          created_at: '2022-01-18 05:26:54'
+                          created_by: '6777715'
+                          contact_id: '534512161'
+                          type: Docs
+                          message: 'PDF Document Generated: Clixsign Test'
+                          del: '0'
+                          user:
+                            uID: '6777715'
+                            guid: a24a9f63-3d32-f0f8-4178-9711939bae56
+                            company_id: '438'
+                            parent_id: '0'
+                            user_type: '1'
+                            acctID: '98'
+                            created: '2022-01-08 10:12:37'
+                            username: QA_Tester
+                            password: 41559f9389e952a89deb234ec6b53d68c79f7b33
+                            firstname: QA
+                            lastname: Tester
+                            company: ''
+                            email: g.johnson@debtpaypro.com
+                            active: '1'
+                            role: '267'
+                            attorney: '0'
+                            payee_id: '0'
+                            del: '0'
+                            delTime: null
+                            pass_reset: '0'
+                            master: '0'
+                            billable: '1'
+                          user_role: Super Admin
+                      count: 1
+                    status:
+                      code: 200
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                required:
+                  - status
+                properties:
+                  status:
+                    $ref: ./models/ErrorStatus.yaml
+              examples:
+                Debt POST 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   /debts:
     post:
       tags:
@@ -2469,6 +2568,253 @@ paths:
                     $ref: ./models/ErrorStatus.yaml
               examples:
                 Debt Note POST 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
+  '/documents/{id}':
+    post:
+      tags:
+        - Documents
+      summary: Create a Document by Doc. Template ID
+      description: |-
+        Creates a Document Record object
+
+        <span><i class="fa fa-info-circle"></i><i style="font-size:12px"> Select the `'Examples'` option to change the content of the request's Body to ONLY contain the required POST Parameters.</i></span>
+      operationId: documentCreate
+      parameters:
+        - name: id
+          in: path
+          description: Id of Document Template
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: models/DocumentGenerate.yaml
+        required: true
+      responses:
+        '200':
+          description: Successfully created a Document
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: object
+                  status:
+                    $ref: models/SuccessStatus.yaml
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                required:
+                  - status
+                properties:
+                  status:
+                    $ref: models/ErrorStatus.yaml
+      x-internal: true
+  /documents/types:
+    get:
+      tags:
+        - Documents
+        - DocumentTypes
+      summary: Get All Document Types
+      description: |-
+        Returns all existing Document Types.
+
+        <span><i class="fa fa-info-circle"></i><i style="font-size:12px"> By default the Document Types are returned in order from Oldest to Newest.</i></span>      
+      operationId: documentTypesGet
+      responses:
+        '200':
+          description: Successfully retrieved list of document types
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    $ref: models/SuccessStatus.yaml
+                  response:
+                    type: array
+                    description: Get All Document Types
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          description: Unique id for Document Type
+                        title:
+                          type: string
+                          description: Title of Document Type
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                properties:
+                  status:
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Teams GET 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
+    post:
+      tags:
+        - Documents
+        - DocumentTypes
+      summary: Create Document Type
+      description: 'Create a Document Type     '
+      operationId: documentTypesCreate
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                title:
+                  description: Name of Document Type
+                  type: string
+              type: object
+        required: true
+      responses:
+        '200':
+          description: Successfully created a Document Type
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: object
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                DocumentType Example 200 POST Response:
+                  value:
+                    response:
+                      id: '1234'
+                      title: Test Document Type
+                    status:
+                      code: 200
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                properties:
+                  status:
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                Teams GET 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
+  '/documents/types/{id}':
+    put:
+      tags:
+        - Documents
+        - DocumentTypes
+      summary: Update Document Type by ID
+      description: 'Update a Document Type by ID     '
+      operationId: documentTypesUpdate
+      parameters:
+        - name: id
+          in: path
+          description: Id of Document Template
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                title:
+                  description: Name of Document Type
+                  type: string
+              type: object
+      responses:
+        '200':
+          description: Successfully Updated a Document Type
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    $ref: models/DocumentType.yaml
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                DocumentType Example 200 POST Response:
+                  value:
+                    response:
+                      id: '1234'
+                      title: Test Document Type
+                    status:
+                      code: 200
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                properties:
+                  status:
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                DocumentType Example PUT 400 Response Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
+    delete:
+      tags:
+        - Documents
+        - DocumentTypes
+      summary: Delete Document Type by ID
+      description: 'Delete a Document Type by ID    '
+      operationId: documentTypesDelete
+      parameters:
+        - name: id
+          in: path
+          description: Id of Document Template
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully Deleted Document Type
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: object
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                DocumentType Example 200 DELETE Response:
+                  value:
+                    status:
+                      code: 200
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                properties:
+                  status:
+                    $ref: models/ErrorStatus.yaml
+              examples:
+                DocumentTypes DELETE 400 Response Example:
                   value:
                     status:
                       code: 400
@@ -4481,253 +4827,6 @@ paths:
                     $ref: ./models/ErrorStatus.yaml
                 required:
                   - status
-  '/documents/{id}':
-    post:
-      tags:
-        - Documents
-      summary: Create a Document by Doc. Template ID
-      description: |-
-        Creates a Document Record object
-
-        <span><i class="fa fa-info-circle"></i><i style="font-size:12px"> Select the `'Examples'` option to change the content of the request's Body to ONLY contain the required POST Parameters.</i></span>
-      operationId: documentCreate
-      parameters:
-        - name: id
-          in: path
-          description: Id of Document Template
-          required: true
-          schema:
-            type: string
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: models/DocumentGenerate.yaml
-        required: true
-      responses:
-        '200':
-          description: Successfully created a Document
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  response:
-                    type: object
-                  status:
-                    $ref: models/SuccessStatus.yaml
-        '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                required:
-                  - status
-                properties:
-                  status:
-                    $ref: models/ErrorStatus.yaml
-      x-internal: true
-  /documents/types:
-    get:
-      tags:
-        - Documents
-        - DocumentTypes
-      summary: Get All Document Types
-      description: |-
-        Returns all existing Document Types.
-
-        <span><i class="fa fa-info-circle"></i><i style="font-size:12px"> By default the Document Types are returned in order from Oldest to Newest.</i></span>      
-      operationId: documentTypesGet
-      responses:
-        '200':
-          description: Successfully retrieved list of document types
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    $ref: models/SuccessStatus.yaml
-                  response:
-                    type: array
-                    description: Get All Document Types
-                    items:
-                      type: object
-                      properties:
-                        id:
-                          type: string
-                          description: Unique id for Document Type
-                        title:
-                          type: string
-                          description: Title of Document Type
-        '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: models/ErrorStatus.yaml
-              examples:
-                Teams GET 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
-    post:
-      tags:
-        - Documents
-        - DocumentTypes
-      summary: Create Document Type
-      description: 'Create a Document Type     '
-      operationId: documentTypesCreate
-      requestBody:
-        content:
-          application/json:
-            schema:
-              properties:
-                title:
-                  description: Name of Document Type
-                  type: string
-              type: object
-        required: true
-      responses:
-        '200':
-          description: Successfully created a Document Type
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  response:
-                    type: object
-                  status:
-                    $ref: models/SuccessStatus.yaml
-              examples:
-                DocumentType Example 200 POST Response:
-                  value:
-                    response:
-                      id: '1234'
-                      title: Test Document Type
-                    status:
-                      code: 200
-        '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: models/ErrorStatus.yaml
-              examples:
-                Teams GET 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
-  '/documents/types/{id}':
-    put:
-      tags:
-        - Documents
-        - DocumentTypes
-      summary: Update Document Type by ID
-      description: 'Update a Document Type by ID     '
-      operationId: documentTypesUpdate
-      parameters:
-        - name: id
-          in: path
-          description: Id of Document Template
-          required: true
-          schema:
-            type: string
-      requestBody:
-        content:
-          application/json:
-            schema:
-              properties:
-                title:
-                  description: Name of Document Type
-                  type: string
-              type: object
-      responses:
-        '200':
-          description: Successfully Updated a Document Type
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  response:
-                    $ref: models/DocumentType.yaml
-                  status:
-                    $ref: models/SuccessStatus.yaml
-              examples:
-                DocumentType Example 200 POST Response:
-                  value:
-                    response:
-                      id: '1234'
-                      title: Test Document Type
-                    status:
-                      code: 200
-        '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: models/ErrorStatus.yaml
-              examples:
-                DocumentType Example PUT 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
-    delete:
-      tags:
-        - Documents
-        - DocumentTypes
-      summary: Delete Document Type by ID
-      description: 'Delete a Document Type by ID    '
-      operationId: documentTypesDelete
-      parameters:
-        - name: id
-          in: path
-          description: Id of Document Template
-          required: true
-          schema:
-            type: string
-      responses:
-        '200':
-          description: Successfully Deleted Document Type
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  response:
-                    type: object
-                  status:
-                    $ref: models/SuccessStatus.yaml
-              examples:
-                DocumentType Example 200 DELETE Response:
-                  value:
-                    status:
-                      code: 200
-        '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: models/ErrorStatus.yaml
-              examples:
-                DocumentTypes DELETE 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
 components:
   schemas:
     Address:
