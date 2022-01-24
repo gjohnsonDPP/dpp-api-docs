@@ -1760,32 +1760,20 @@ paths:
           required: true
           schema:
             type: integer
-        # - in: query
-        #   name: limit
-        #   description: (Optional) This value represents the maximum number of History Feed items your Request to contain.
-        #   schema:
-        #     type: integer
-        #     default: 1
-        #   allowEmptyValue: true
-        # - in: query
-        #   name: page
-        #   description: Pagination
-        #   schema:
-        #     type: integer
-        #     default: 1
-        #   allowEmptyValue: true
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                page:
-                  description: 'page'
-                  type: integer
-                limit:
-                  description: 'limit'
-                  type: integer
+        - in: query
+          name: _offset
+          description: (Optional) This value dictates which History Feed item to start the Request at.
+          schema:
+            type: integer
+            default: 1
+          allowEmptyValue: true
+        - in: query
+          name: _limit
+          description: (Optional) This value represents the maximum number of History Feed Items your Request can contain.
+          schema:
+            type: integer
+            default: 1
+          allowEmptyValue: true
       responses:
         '200':
           description: Successfully retrieved History Feed
