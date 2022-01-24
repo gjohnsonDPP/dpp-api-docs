@@ -1786,6 +1786,12 @@ paths:
                     type: object
                   status:
                     $ref: ./models/SuccessStatus.yaml
+              examples:
+                200 GET Response:
+                  value:
+                    response: {}
+                    status:
+                      code: 0
         '400':
           description: Error
           content:
