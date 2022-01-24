@@ -1787,11 +1787,46 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
               examples:
-                200 GET Response:
+                200 GET History Feed Response:
                   value:
-                    response: {}
+                    response:
+                      response:
+                        - object: contacts_log
+                          id: '3094248541'
+                          acctID: '98'
+                          created_at: '2022-01-18 05:26:54'
+                          created_by: '6777715'
+                          contact_id: '534512161'
+                          type: Docs
+                          message: 'PDF Document Generated: Clixsign Test'
+                          del: '0'
+                          user:
+                            uID: '6777715'
+                            guid: a24a9f63-3d32-f0f8-4178-9711939bae56
+                            company_id: '438'
+                            parent_id: '0'
+                            user_type: '1'
+                            acctID: '98'
+                            created: '2022-01-08 10:12:37'
+                            username: QA_Tester
+                            password: 41559f9389e952a89deb234ec6b53d68c79f7b33
+                            firstname: QA
+                            lastname: Tester
+                            company: ''
+                            email: g.johnson@debtpaypro.com
+                            active: '1'
+                            role: '267'
+                            attorney: '0'
+                            payee_id: '0'
+                            del: '0'
+                            delTime: null
+                            pass_reset: '0'
+                            master: '0'
+                            billable: '1'
+                          user_role: Super Admin
+                      count: 1
                     status:
-                      code: 0
+                      code: 200
         '400':
           description: Error
           content:
