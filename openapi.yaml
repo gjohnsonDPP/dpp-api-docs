@@ -4378,7 +4378,7 @@ paths:
         required: true
       responses:
         '200':
-          description: Successfully Updated User Record
+          description: Successfully Updated User Settings
           content:
             application/json:
               schema:
