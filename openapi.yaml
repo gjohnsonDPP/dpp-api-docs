@@ -4274,50 +4274,6 @@ paths:
                       code: 400
                       message: 'Input Parsing Error: unexpected character'
   '/users/{user_id}/prefs':
-    post:
-      tags:
-        - Users
-      summary: Set User Settings
-      description: Set User Settings
-      operationId: userPrefSet
-      parameters:
-        - name: user_id
-          in: path
-          description: Id of User
-          required: true
-          schema:
-            type: integer
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: ./models/UserSettings.yaml      
-      responses:
-        '200':
-          description: Successfully set Fields
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  response:
-                    type: object
-                  status:
-                    $ref: ./models/SuccessStatus.yaml
-        '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-              examples:
-                Users Post 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
     get:
       tags:
         - Users
@@ -4402,45 +4358,6 @@ paths:
                     status:
                       code: 400
                       message: 'Input Parsing Error: unexpected character'
-    # delete:
-    #   tags:
-    #     - Users
-    #   summary: Delete User Settings
-    #   description: Delete User Settings
-    #   operationId: userPrefDelete
-    #   parameters:
-    #     - name: user_id
-    #       in: path
-    #       description: Id of User
-    #       required: true
-    #       schema:
-    #         type: integer
-    #   responses:
-    #     '200':
-    #       description: Successfully deleted User Settings
-    #       content:
-    #         application/json:
-    #           schema:
-    #             type: object
-    #             properties:
-    #               status:
-    #                 $ref: ./models/SuccessStatus.yaml
-    #     '400':
-    #       description: Error
-    #       content:
-    #         application/json:
-    #           schema:
-    #             required:
-    #               - status
-    #             properties:
-    #               status:
-    #                 $ref: ./models/ErrorStatus.yaml
-    #           examples:
-    #             Users Delete 400 Response Example:
-    #               value:
-    #                 status:
-    #                   code: 400
-    #                   message: 'Input Parsing Error: unexpected character'
   /users/current:
     get:
       tags:
