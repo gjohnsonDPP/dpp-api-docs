@@ -3,7 +3,7 @@ type: object
 properties:
   object:
     type: string
-    example: "userPref"
+    example: userPref
     readOnly: true
   user_id:
     type: integer
@@ -11,42 +11,43 @@ properties:
     readOnly: true
   default_module:
     type: string
-    example: "dashboard"
+    example: dashboard
   layout_type:
     type: string
-    example: "fluid"
+    example: fluid
   theme:
     type: string
-    example: "1"
+    example: '1'
   timezone:
     type: string
-    example: "US/Central"
+    example: US/Central
   lang:
     type: string
-    example: "en-us"
+    example: en-us
   date_format:
     type: string
-    example: "absolute"
+    example: absolute
   phone:
     type: string
-    example: "1112223333"
+    example: '1112223333'
   extension:
     type: string
-    example: "123"
+    example: '123'
   fax:
     type: string
-    example: "1112224444"
+    example: '1112224444'
   mobile_num:
     type: string
-    example: "1112223333"
+    example: '1112223333'
   mobile_on:
     type: boolean
     minLength: 1
   signature:
     type: string
-    example: "John Doe"
+    example: John Doe
   logouttime:
     type: string
+    format: time
     readOnly: true
   docu_acct:
     type: boolean
