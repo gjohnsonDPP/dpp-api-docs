@@ -1,0 +1,65 @@
+description: ''
+type: object
+properties:
+  object:
+    type: string
+    example: "userPref"
+    readOnly: true
+  user_id:
+    type: integer
+    example: 123456
+    readOnly: true
+  default_module:
+    type: string
+    example: "dashboard"
+  layout_type:
+    type: string
+    example: "fluid"
+  theme:
+    type: string
+    example: "1"
+  timezone:
+    type: string
+    example: "US/Central"
+  lang:
+    type: string
+    example: "en-us"
+  date_format:
+    type: string
+    example: "absolute"
+  phone:
+    type: string
+    example: "1112223333"
+  extension:
+    type: string
+    example: "123"
+  fax:
+    type: string
+    example: "1112224444"
+  mobile_num:
+    type: string
+    example: "1112223333"
+  mobile_on:
+    type: boolean
+    minLength: 1
+  signature:
+    type: string
+    example: "John Doe"
+  logouttime:
+    type: string
+    readOnly: true
+  docu_acct:
+    type: boolean
+    minLength: 1
+  docu_user:
+    type: boolean
+    minLength: 1
+  docu_pass:
+    type: boolean
+    minLength: 1
+  tabbed_add:
+    type: boolean
+    minLength: 1
+  email_open:
+    type: boolean
+    minLength: 1
