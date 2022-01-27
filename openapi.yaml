@@ -4374,7 +4374,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: ./models/UserRequest.yaml
+              $ref: ./models/UserSettings.yaml
         required: true
       responses:
         '200':
@@ -4385,7 +4385,7 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: ./models/UserRequest.yaml
+                    $ref: ./models/UserSettings.yaml
                   status:
                     $ref: ./models/SuccessStatus.yaml
         '400':
