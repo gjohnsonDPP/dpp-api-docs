@@ -1,7 +1,12 @@
 title: Document
 type: array
 description: Document Object
-uniqueItems: true
+examples:
+  - - file_content: TWFuIGlzIGRpc3Rpbmd1aXNoZWQsIG5vdCBvbmx5IGJ5IGhpcyByZWFzb24sIGJ1dCAuLi4=
+      file_name: Testdocument.txt
+      description: Description of the file.
+      doc_type: '1'
+      debt_id: '167172217'
 items:
   type: object
   properties:
@@ -27,3 +32,4 @@ items:
     - file_content
     - file_name
     - description
+    - doc_type
