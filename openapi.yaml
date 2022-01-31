@@ -1169,28 +1169,9 @@ paths:
                 type: object
                 properties:
                   response:
-                    type: object
+                    $ref: ./models/ContactFile.yaml
                   status:
                     $ref: ./models/SuccessStatus.yaml
-              examples:
-                GET 200 Response Example:
-                  value:
-                    response:
-                      object: contactFile
-                      doc_id: '234004003'
-                      acctID: '98'
-                      file_name: Testdocument.txt
-                      doc_type: '1'
-                      created_by: null
-                      created_at: '2022-01-31 12:52:20'
-                      description: Description of the file.
-                      refs:
-                        - object: debts
-                          object_id: '167172217'
-                      download: /getfile.php?id=234004003
-                      file_content: 'https://dpp-uploads.s3.amazonaws.com/98/eed79dbc-Testdocument.txt?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAI4QAAJTOXUVV5DFQ%2F20220131%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220131T191150Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Signature=6fa7074ad9e3f047d6795608540ce0db068b905ab1519d2b8282e30476999cc0'
-                    status:
-                      code: 200
         '400':
           description: Error
           content:
@@ -1249,28 +1230,9 @@ paths:
                 type: object
                 properties:
                   response:
-                    type: object
+                    $ref: ./models/ContactFile.yaml
                   status:
                     $ref: ./models/SuccessStatus.yaml
-              examples:
-                PUT 200 Response Example:
-                  value:
-                    response:
-                      object: contactFile
-                      doc_id: '234004003'
-                      acctID: '98'
-                      file_name: Testdocument.txt
-                      doc_type: '19120'
-                      created_by: null
-                      created_at: '2022-01-31 12:52:20'
-                      description: Updated Document Description
-                      refs:
-                        - object: debts
-                          object_id: '167172217'
-                      download: /getfile.php?id=234004003
-                      file_content: 'https://dpp-uploads.s3.amazonaws.com/98/eed79dbc-Testdocument.txt?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAI4QAAJTOXUVV5DFQ%2F20220131%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220131T191621Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Signature=547a481f4690eeef71d97743617ad78391649416e012cc385227d73fb0888c71'
-                    status:
-                      code: 200
         '400':
           description: Error
           content:
