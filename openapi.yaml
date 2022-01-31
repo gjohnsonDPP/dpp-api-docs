@@ -1207,30 +1207,19 @@ paths:
         content:
           application/json:
             schema:
-              type: array
-              items:
-                type: object
-                properties:
-                  file_content:
-                    type: string
-                    minLength: 1
-                    example: TWFuIGlzIGRpc3Rpbmd1aXNoZWQsIG5vdCBvbmx5IGJ5IGhpcyByZWFzb24sIGJ1dCAuLi4=
-                  file_name:
-                    type: string
-                    minLength: 1
-                    example: Testdocument.txt
-                  description:
-                    type: string
-                    minLength: 1
-                    example: Description of the file.
-                  doc_type:
-                    type: string
-                    minLength: 1
-                    example: '1'
-                  debt_id:
-                    type: string
-                    minLength: 1
-                    example: '167172217'
+              type: object
+              properties:
+                file_name:
+                  type: string
+                description:
+                  type: string
+                doc_type:
+                  type: string
+                debt_id:
+                  type: string
+              required:
+                - file_name
+                - description
       responses:
         '200':
           description: Successfully retrieved document
@@ -1301,7 +1290,6 @@ paths:
     post:
       tags:
         - Contacts
-        - Documents
       summary: Upload Document to Contact Dashboard
       description: Upload Documents to the 'Uploaded Docs' Section on a Contact's Dashboard
       operationId: contactDocsUpload
@@ -1316,7 +1304,13 @@ paths:
         content:
           application/json:
             schema:
-              $ref: models/Document.yaml
+              $ref: ./models/Document.yaml
+          application/pdf:
+            schema:
+              $ref: ./models/Document.yaml
+          multipart/form-data:
+            schema:
+              $ref: ./models/Document.yaml
       responses:
         '200':
           description: Successfully uploaded document
