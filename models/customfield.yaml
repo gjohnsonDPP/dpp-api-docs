@@ -1,0 +1,22 @@
+title: customfield
+type: array
+description: Custom Field Array
+items:
+  type: object
+  properties:
+    field_id:
+      type: integer
+      title: Field ID
+      example: 702
+    value:
+      type: string
+      title: Field Value
+      example: "7"
+    label:
+      type: string
+      title: Field Label
+      example: "Status"
+  required:
+    - field_id
+    - value
+    - label
