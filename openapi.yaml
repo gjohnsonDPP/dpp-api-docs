@@ -1209,6 +1209,8 @@ paths:
             schema:
               type: object
               properties:
+                file_content:
+                  type: string
                 file_name:
                   type: string
                 description:
@@ -1217,9 +1219,8 @@ paths:
                   type: string
                 debt_id:
                   type: string
-              required:
-                - file_name
-                - description
+                created_by:
+                  type: string
       responses:
         '200':
           description: Successfully retrieved document
