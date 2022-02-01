@@ -1308,12 +1308,6 @@ paths:
           application/json:
             schema:
               $ref: ./models/Document.yaml
-          application/pdf:
-            schema:
-              $ref: ./models/Document.yaml
-          multipart/form-data:
-            schema:
-              $ref: ./models/Document.yaml
       responses:
         '200':
           description: Successfully uploaded document

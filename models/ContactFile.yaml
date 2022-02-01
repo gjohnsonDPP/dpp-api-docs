@@ -1,46 +1,37 @@
 title: ContactFile
-description: Contact File Object
 type: object
-x-examples:
-  example-1:
-    object: contactFile
-    doc_id: '234004003'
-    acctID: '98'
-    file_name: Testdocument.txt
-    doc_type: '1'
-    created_by: 6777715
-    created_at: '2022-01-31 12:52:20'
-    description: Description of the file.
-    refs:
-      - object: debts
-        object_id: '167172217'
-    download: /getfile.php?id=234004003
-    file_content: 'https://dpp-uploads.s3.amazonaws.com/98/eed79dbc-Testdocument.txt?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAI4QAAJTOXUVV5DFQ%2F20220131%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220131T191150Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Signature=6fa7074ad9e3f047d6795608540ce0db068b905ab1519d2b8282e30476999cc0'
+description: Contact File Object
 properties:
   object:
     type: string
-    minLength: 1
+    example: contactFile
+    readOnly: true
   doc_id:
     type: string
-    minLength: 1
+    example: '234334006'
+    readOnly: true
   acctID:
     type: string
-    minLength: 1
+    example: '98'
+    readOnly: true
   file_name:
     type: string
-    minLength: 1
+    example: testUploadDoc.txt
   doc_type:
     type: string
-    minLength: 1
+    example: '1'
+    description: '<p>This property is an integer value, that is passed as a string. The value set must be one of the pre-existing doc_types available for the Contact to use. The <a href="https://debtpaypro.stoplight.io/docs/dpp-api/b3A6MzI4MjI0NTk-get-all-document-types">"<b>Get All Document Types</b>"</a> API Endpoint can be used to retrieve a list of the existing doc_type.</p>'
   created_by:
     type: integer
+    example: 6777715
     readOnly: true
   created_at:
     type: string
-    minLength: 1
+    readOnly: true
+    format: date-time
   description:
     type: string
-    minLength: 1
+    example: Description of the file...
   refs:
     type: array
     uniqueItems: true
@@ -50,13 +41,13 @@ properties:
       properties:
         object:
           type: string
-          minLength: 1
+          example: debts
         object_id:
           type: string
-          minLength: 1
+          example: '167172217'
   download:
     type: string
-    minLength: 1
+    example: /getfile.php?id=234334006
+    readOnly: true
   file_content:
     type: string
-    minLength: 1
