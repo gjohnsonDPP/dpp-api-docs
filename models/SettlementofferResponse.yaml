@@ -6,7 +6,7 @@ x-tags:
 properties:
   object:
     type: string
-    example: settlement_offer
+    example: "settlement_offer"
     readOnly: true
   id:
     type: integer
@@ -20,8 +20,8 @@ properties:
     type: integer
     example: 382760691
   creditor:
-    type: integer
-    title: Original Creditor ID
+    $ref: ../models/CreditorResponse.yaml
+    readOnly: true
   debt_id:
     type: integer
     example: 124504794
@@ -31,20 +31,23 @@ properties:
     readOnly: true
   created_by:
     $ref: ../models/UserResponse.yaml
+    readOnly: true
   modified_at:
     type: string
     format: date-time
     readOnly: true
   modified_by:
     $ref: ../models/UserResponse.yaml
+    readOnly: true
   neg_id:
     $ref: ../models/UserResponse.yaml
     readOnly: true
   madeby:
     type: string
-    readOnly: true
+    example: "Creditor"
   offer_status:
     type: integer
+    example: 1
   offer_status_date:
     type: string
     format: date
@@ -53,6 +56,7 @@ properties:
     format: date
   settlement_type:
     type: integer
+    example: 1
   debt_amount:
     type: integer
     example: 8500.55
@@ -60,8 +64,9 @@ properties:
     type: integer
   settlement_fee:
     type: integer
+    example: 25
   notes:
     type: string
-    example: Lorem Ipsum
+    example: "Lorem Ipsum"
   cred_cont_id:
     type: integer

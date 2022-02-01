@@ -6,7 +6,7 @@ x-tags:
 properties:
   object:
     type: string
-    example: settlement_offer
+    example: "settlement_offer"
     readOnly: true
   id:
     type: integer
@@ -28,6 +28,9 @@ properties:
   created_at:
     type: string
     format: date-time
+    readOnly: true
+  created_by:
+    $ref: ../models/UserResponse.yaml
     readOnly: true
   modified_at:
     type: string
