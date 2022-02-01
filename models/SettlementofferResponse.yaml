@@ -39,6 +39,7 @@ properties:
     $ref: ../models/UserResponse.yaml
   neg_id:
     $ref: ../models/UserResponse.yaml
+    readOnly: true
   madeby:
     type: string
     readOnly: true
