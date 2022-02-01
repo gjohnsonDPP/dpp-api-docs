@@ -17,10 +17,14 @@ properties:
   file_name:
     type: string
     example: testUploadDoc.txt
+    description: Include the File Type extension in the name of the file. (e.g. .txt, .pdf, etc.)
   doc_type:
     type: string
     example: '1'
-    description: '<p>This property is an integer value, that is passed as a string. The value set must be one of the pre-existing doc_types available for the Contact to use. The <a href="https://debtpaypro.stoplight.io/docs/dpp-api/b3A6MzI4MjI0NTk-get-all-document-types">"<b>Get All Document Types</b>"</a> API Endpoint can be used to retrieve a list of the existing doc_type.</p>'
+    description: '<p>This property is an integer value, that is passed as a string. The value set must be one of the pre-existing doc_types available to the Contact. The <a href="https://debtpaypro.stoplight.io/docs/dpp-api/b3A6MzI4MjI0NTk-get-all-document-types">"<b>Get All Document Types</b>"</a> API Endpoint can be used to retrieve a list of the existing doc_type.</p>'
+  debt_id:
+    type: string
+    example: '167172217'
   created_by:
     type: integer
     example: 6777715
@@ -34,6 +38,7 @@ properties:
     example: Description of the file...
   refs:
     type: array
+    readOnly: true
     uniqueItems: true
     minItems: 1
     items:

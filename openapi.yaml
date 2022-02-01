@@ -1307,7 +1307,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: ./models/Document.yaml
+              $ref: ./models/ContactFile.yaml
       responses:
         '200':
           description: Successfully uploaded document
@@ -1320,6 +1320,13 @@ paths:
                     type: object
                   status:
                     $ref: ./models/SuccessStatus.yaml
+              examples:
+                POST 200 Request Example:
+                  value:
+                    response:
+                      - 234388177
+                    status:
+                      code: 200
         '400':
           description: Error
           content:
@@ -1331,6 +1338,12 @@ paths:
                     $ref: ./models/ErrorStatus.yaml
                 required:
                   - status
+              examples:
+                POST 400 Request Example:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
   '/contacts/{id}/form_request':
     post:
       tags:
