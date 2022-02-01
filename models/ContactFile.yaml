@@ -51,7 +51,7 @@ properties:
     readOnly: true
   file_content:
     type: string
-    description: '[Guide To Setting The "file_content" Property](../assets/images/base64EncodeFileDemo.gif)'
+    description: '[Guide To Setting The "file_content" Property](../assets/images/DemoEncodingFile.gif)'
 required:
   - file_content
   - file_name
