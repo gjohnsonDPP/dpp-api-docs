@@ -2265,6 +2265,12 @@ paths:
       summary: Create Task for Debt by ID
       description: Creates a Debt Task for a Debt Record
       operationId: debtTaskCreate
+      parameters:
+        - in: path
+          name: id
+          description: Id of Debt Record which the Debt Task will be assigned
+          required: true
+          schema: {}
       requestBody:
         content:
           application/json:
@@ -2272,21 +2278,16 @@ paths:
               type: object
               properties:
                 assigned_to:
-                  description: 'The ID of the person(s) the Debt Task wil be assigned to. The Debt Task can be assigned to a User, Team, or Contact.'
-                  type: integer
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    type:
+                      type: string
                 defined_task:
-                  description: ''
                   type: integer
                 task_name:
-                  description: Name for Debt Task
                   type: string
-      parameters:
-        - in: path
-          name: id
-          description: Id of Debt Record which the Debt Task will be assigned
-          required: true
-          schema:
-            type: integer
       responses:
         '200':
           description: Successfully created a Debt Task
@@ -2296,7 +2297,7 @@ paths:
                 type: object
                 properties:
                   response:
-                    type: object
+                    $ref: models/DebtTask.yaml
                   status:
                     $ref: models/SuccessStatus.yaml
         '400':
