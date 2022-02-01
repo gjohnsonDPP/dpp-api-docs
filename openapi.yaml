@@ -2276,7 +2276,7 @@ paths:
                   type: integer
                 defined_task:
                   description: ''
-                  type: boolean
+                  type: integer
                 task_name:
                   description: Name for Debt Task
                   type: string
@@ -2296,9 +2296,9 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: ./models/TaskResponse.yaml
+                    type: object
                   status:
-                    $ref: ./models/SuccessStatus.yaml
+                    $ref: models/SuccessStatus.yaml
         '400':
           description: Error
           content:
@@ -2334,7 +2334,7 @@ paths:
                   type: integer
                 defined_task:
                   description: ''
-                  type: boolean
+                  type: integer
                 task_name:
                   description: Name for Debt Task
                   type: string
