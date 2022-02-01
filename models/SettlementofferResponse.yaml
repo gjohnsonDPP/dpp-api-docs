@@ -65,5 +65,3 @@ properties:
     example: Lorem Ipsum
   cred_cont_id:
     type: integer
-  json:
-    type: object
