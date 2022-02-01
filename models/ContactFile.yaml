@@ -27,8 +27,8 @@ properties:
     readOnly: true
   created_at:
     type: string
-    readOnly: true
     format: date-time
+    readOnly: true
   description:
     type: string
     example: Description of the file...
@@ -51,3 +51,4 @@ properties:
     readOnly: true
   file_content:
     type: string
+    description: '[Guide To Setting The "file_content" Property](../assets/images/base64EncodeFileDemo.gif)'
