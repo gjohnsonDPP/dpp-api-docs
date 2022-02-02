@@ -57,7 +57,6 @@ properties:
   file_content:
     type: string
     description: '![Guide To Setting The "file_content" Property](../assets/images/DemoEncodingFile.gif)'
-    
 required:
   - file_content
   - file_name
