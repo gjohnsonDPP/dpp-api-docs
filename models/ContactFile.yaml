@@ -17,7 +17,7 @@ properties:
   file_name:
     type: string
     example: testUploadDoc.txt
-    description: Include the File Type extension in the name of the file. (e.g. .txt, .pdf, etc.)
+    description: 'Include the File Type extension in the name of the file. (e.g. .txt, .pdf, etc.)'
   doc_type:
     type: string
     example: '1'
@@ -38,7 +38,6 @@ properties:
     example: Description of the file...
   refs:
     type: array
-    readOnly: true
     uniqueItems: true
     minItems: 1
     items:
@@ -50,6 +49,7 @@ properties:
         object_id:
           type: string
           example: '167172217'
+    readOnly: true
   download:
     type: string
     example: /getfile.php?id=234334006
@@ -58,7 +58,7 @@ properties:
     type: string
     description: '![Guide To Setting The "file_content" Property](../assets/images/DemoEncodingFile.gif)'
 required:
-  - file_content
   - file_name
-  - description
   - doc_type
+  - description
+  - file_content
