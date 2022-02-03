@@ -8,6 +8,7 @@ properties:
     readOnly: true
   id:
     type: integer
+    example: 157666
     readOnly: true
   acctID:
     type: integer
@@ -15,6 +16,7 @@ properties:
     readOnly: true
   company_id:
     type: integer
+    example: 57244
     readOnly: true
   active:
     type: boolean
@@ -25,9 +27,11 @@ properties:
     readOnly: true
   created_by:
     type: integer
+    example: 6382111
     readOnly: true
   token:
     type: string
+    example: 765096bf-02ce-9a2f-5420-b8891c7dd74e
     readOnly: true
   title:
     type: string
@@ -55,6 +59,7 @@ properties:
     example: 4
   external_id:
     type: integer
+    example: 12345
     readOnly: true
   media_type:
     type: integer
