@@ -12,7 +12,7 @@ items:
   properties:
     file_content:
       type: string
-      description: '<p><a href="https://drive.google.com/file/d/1Qhh1Gbt9_jIQRf4f0A3KY7xZWzxIdHCD/view?usp=sharing" target="_self">Guide To Setting The file_content Property</a></p>'
+      description: 'Base63 Encoded'
     file_name:
       type: string
       description: 'Name of fileInclude the File Type extension in the name of the file. (e.g. .txt, .pdf, etc.)'
