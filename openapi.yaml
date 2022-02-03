@@ -1313,7 +1313,7 @@ paths:
       tags:
         - Contacts
       summary: Upload Document to Contact Dashboard
-      description: '<a href="https://www.drive.google.com/file/d/1z7Hcf8JMnKqwD97wsCkc_CPyKvD4KM8J/view?usp=sharing">Guide To Setting the <i>file_content</i> Property</a>'
+      description: '<a href="https://www.drive.google.com/file/d/1z7Hcf8JMnKqwD97wsCkc_CPyKvD4KM8J/view?usp=sharing" type="video/mp4">Guide To Setting the <i>file_content</i> Property</a>'
       operationId: contactDocsUpload
       parameters:
         - name: id
