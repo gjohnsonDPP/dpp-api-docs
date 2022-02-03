@@ -56,7 +56,7 @@ properties:
     readOnly: true
   file_content:
     type: string
-    description: '<p><a href="https://drive.google.com/file/d/1Qhh1Gbt9_jIQRf4f0A3KY7xZWzxIdHCD/view?usp=sharing">Guide To Setting The file_content Property</a></p>'
+    description: '<p><a href="https://drive.google.com/file/d/1Qhh1Gbt9_jIQRf4f0A3KY7xZWzxIdHCD/view?usp=sharing" target="_self">Guide To Setting The file_content Property</a></p>'
 required:
   - file_name
   - doc_type
