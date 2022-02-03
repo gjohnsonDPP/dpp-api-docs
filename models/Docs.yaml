@@ -1,21 +1,47 @@
-title: Docs
+description: ''
 type: object
-description: Documentation
 properties:
-  clixsign:
+  esigned:
+    type: object
+    properties:
+      clixsign:
+        type: array
+        items:
+          required: []
+          properties: {}
+      esigns:
+        type: array
+        items:
+          required: []
+          properties: {}
+      docusign:
+        type: array
+        items:
+          required: []
+          properties: {}
+    required:
+      - clixsign
+      - esigns
+      - docusign
+  uploaded:
     type: array
-    items: {}
-  esigns:
-    type: array
-    items: {}
-  docusign:
-    type: array
-    items: {}
-  uploads:
-    type: array
-    items: {}
+    items:
+      required: []
+      properties: {}
   generated:
     type: array
-    items: {}
-x-tags:
-  - Documents
+    items:
+      required: []
+      properties: {}
+required:
+  - esigned
+  - uploaded
+  - generated
+x-examples:
+  example-1:
+    esigned:
+      clixsign: []
+      esigns: []
+      docusign: []
+    uploaded: []
+    generated: []
