@@ -1314,7 +1314,7 @@ paths:
         - Contacts
       summary: Upload Document to Contact Dashboard
       description: |-
-        <span><a href="https://www.awesomescreenshot.com/video/7153553?key=baa27a97cb1eba6be7125778dad85508">Guide To Setting the <i>file_content</i> Property</a></span>
+        <span><a href="DemoEncodingFile.gif">Guide To Setting the <i>file_content</i> Property</a></span>
       operationId: contactDocsUpload
       parameters:
         - name: id
