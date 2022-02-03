@@ -1314,7 +1314,7 @@ paths:
         - Contacts
       summary: Upload Document to Contact Dashboard
       description: |-
-        <span><a href="assets/images/DemoEncodingFile.gif" target="_self" referrerpolicy="origin">Guide To Setting the <i>file_content</i> Property</a></span>
+        <span><a href="DemoEncodingFile.gif" target="_self" referrerpolicy="origin">Guide To Setting the <i>file_content</i> Property</a></span>
       operationId: contactDocsUpload
       parameters:
         - name: id
