@@ -1313,7 +1313,8 @@ paths:
       tags:
         - Contacts
       summary: Upload Document to Contact Dashboard
-      description: <p>This property is an integer value, that is passed as a string. The value set must be one of the pre-existing doc_types available to the Contact. The <a href="https://debtpaypro.stoplight.io/docs/dpp-api/b3A6MzI4MjI0NTk-get-all-document-types">"<b>Get All Document Types</b>"</a> API Endpoint can be used to retrieve a list of the existing doc_type.</p>'Section on a Contact's Dashboard <p><a href="https://drive.google.com/file/d/1Qhh1Gbt9_jIQRf4f0A3KY7xZWzxIdHCD/view?usp=sharing" target="_self">Guide To Setting The file_content Property</a></p>
+      description: |-
+        <span><a href="https://www.awesomescreenshot.com/video/7153553?key=baa27a97cb1eba6be7125778dad85508">Guide To Setting the <i>file_content</i> Property</a></span>
       operationId: contactDocsUpload
       parameters:
         - name: id
