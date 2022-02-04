@@ -148,21 +148,7 @@ paths:
                     status:
                       code: 200
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                required:
-                  - status
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-              examples:
-                Call Example 400 Response:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
   '/calls/{id}':
     get:
       tags:
@@ -452,21 +438,7 @@ paths:
                     status:
                       code: 200
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                required:
-                  - status
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-              examples:
-                Campaigns POST 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
   '/campaigns/e-mail/{id}':
     get:
       tags:
@@ -521,21 +493,7 @@ paths:
                     status:
                       code: 200
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                required:
-                  - status
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-              examples:
-                Campaign GET 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
     put:
       tags:
         - Campaigns
@@ -594,21 +552,7 @@ paths:
                     status:
                       code: 200
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                required:
-                  - status
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-              examples:
-                Campaign PUT 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
     delete:
       tags:
         - Campaigns
@@ -639,21 +583,7 @@ paths:
                       code: 200
                       message: Successfully deleted object
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                required:
-                  - status
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-              examples:
-                Campaign DELETE 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
   /contacts:
     post:
       tags:
@@ -764,21 +694,7 @@ paths:
                       code: 200
                       message: Client Record Created
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                required:
-                  - status
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-              examples:
-                Contact POST 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
   '/contacts/{id}':
     get:
       tags:
@@ -875,21 +791,7 @@ paths:
                     status:
                       code: 200
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                required:
-                  - status
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-              examples:
-                Contact GET 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
     put:
       tags:
         - Contacts
@@ -990,22 +892,7 @@ paths:
                     status:
                       code: 200
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-                required:
-                  - status
-              examples:
-                Contact PUT 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
     delete:
       tags:
         - Contacts
@@ -1036,21 +923,7 @@ paths:
                       code: 200
                       message: Successfully deleted object
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                required:
-                  - status
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-              examples:
-                Contact DELETE 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
   '/contacts/search_by_phone/{phone}':
     get:
       tags:
@@ -1077,22 +950,7 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-                required:
-                  - status
-              examples:
-                Form Request POST 200 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
   '/contacts/{id}/documents':
     get:
       tags:
@@ -1121,22 +979,7 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-                required:
-                  - status
-              examples:
-                GET 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
   '/contacts/{id}/documents/{doc_id}':
     get:
       tags:
@@ -1191,22 +1034,7 @@ paths:
                     status:
                       code: 200
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-                required:
-                  - status
-              examples:
-                GET 400 Request Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
     put:
       tags:
         - Contacts
@@ -1245,22 +1073,7 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-                required:
-                  - status
-              examples:
-                GET 400 Request Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
     delete:
       tags:
         - Contacts
@@ -1294,16 +1107,7 @@ paths:
                 required:
                   - status
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-                required:
-                  - status
+          $ref: '#/components/responses/ERROR_4XX'
   '/contacts/{id}/documents/upload':
     post:
       tags:
@@ -1343,22 +1147,7 @@ paths:
                     status:
                       code: 200
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-                required:
-                  - status
-              examples:
-                POST 400 Request Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
   '/contacts/{id}/form_request':
     post:
       tags:
@@ -1519,22 +1308,7 @@ paths:
                       code: 200
                       message: Form Request Sent
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-                required:
-                  - status
-              examples:
-                Form Request POST 200 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
   '/contacts/{id}/clixsign':
     post:
       tags:
@@ -1567,16 +1341,7 @@ paths:
                 required:
                   - status
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    $ref: models/ErrorStatus.yaml
-                required:
-                  - status
+          $ref: '#/components/responses/ERROR_4XX'
   '/contacts/{id}/smslog':
     get:
       tags:
@@ -1760,22 +1525,7 @@ paths:
                     status:
                       code: 200
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-                required:
-                  - status
-              examples:
-                SMS Log GET 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
   '/contacts/{id}/history':
     get:
       tags:
@@ -1858,21 +1608,7 @@ paths:
                     status:
                       code: 200
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                required:
-                  - status
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-              examples:
-                Debt POST 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
   /debts:
     post:
       tags:
@@ -1945,21 +1681,7 @@ paths:
                     status:
                       code: 200
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                required:
-                  - status
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-              examples:
-                Debt POST 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
   '/debts/{id}':
     get:
       tags:
@@ -2080,21 +1802,7 @@ paths:
                     status:
                       code: 200
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                required:
-                  - status
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-              examples:
-                Debt GET 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
     put:
       tags:
         - Debts
@@ -2219,21 +1927,7 @@ paths:
                     status:
                       code: 200
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                required:
-                  - status
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-              examples:
-                Debt PUT 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
     delete:
       tags:
         - Debts
@@ -2264,21 +1958,7 @@ paths:
                       code: 200
                       message: Successfully deleted object
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                required:
-                  - status
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-              examples:
-                Debt DELETE 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
   '/debts/{id}/task':
     post:
       tags:
@@ -2323,20 +2003,7 @@ paths:
                   status:
                     $ref: models/SuccessStatus.yaml
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-              examples:
-                Debt Task POST 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
       x-internal: false
   '/debts/{id}/task/{task_id}':
     put:
@@ -2385,20 +2052,7 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-              examples:
-                Debt Task PUT 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
     delete:
       tags:
         - Debts
@@ -2432,20 +2086,7 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-              examples:
-                Debt Task PUT 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
   '/debts/{id}/tasks':
     get:
       tags:
@@ -2477,14 +2118,7 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
+          $ref: '#/components/responses/ERROR_4XX'
   '/debts/{id}/notes':
     post:
       tags:
@@ -2551,20 +2185,7 @@ paths:
                     status:
                       code: 200
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-              examples:
-                Debt Note POST 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
   '/debts/notes/{id}':
     delete:
       tags:
@@ -2591,20 +2212,7 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-              examples:
-                Debt Note POST 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
   '/documents/{id}':
     post:
       tags:
@@ -2641,15 +2249,7 @@ paths:
                   status:
                     $ref: models/SuccessStatus.yaml
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                required:
-                  - status
-                properties:
-                  status:
-                    $ref: models/ErrorStatus.yaml
+          $ref: '#/components/responses/ERROR_4XX'
       x-internal: true
   /documents/types:
     get:
@@ -2685,19 +2285,7 @@ paths:
                           type: string
                           description: Title of Document Type
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: models/ErrorStatus.yaml
-              examples:
-                Teams GET 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
     post:
       tags:
         - Documents
@@ -2736,19 +2324,7 @@ paths:
                     status:
                       code: 200
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: models/ErrorStatus.yaml
-              examples:
-                Teams GET 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
   '/documents/types/{id}':
     put:
       tags:
@@ -2794,19 +2370,7 @@ paths:
                     status:
                       code: 200
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: models/ErrorStatus.yaml
-              examples:
-                DocumentType Example PUT 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
     delete:
       tags:
         - Documents
@@ -2839,19 +2403,7 @@ paths:
                     status:
                       code: 200
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: models/ErrorStatus.yaml
-              examples:
-                DocumentTypes DELETE 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
   /loans:
     post:
       tags:
@@ -2919,21 +2471,7 @@ paths:
                     status:
                       code: 200
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                required:
-                  - status
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-              examples:
-                Loans POST 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
   '/loans/{id}':
     get:
       tags:
@@ -3003,21 +2541,7 @@ paths:
                     status:
                       code: 200
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                required:
-                  - status
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-              examples:
-                Loan GET 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
     put:
       tags:
         - Loans
@@ -3092,21 +2616,7 @@ paths:
                     status:
                       code: 200
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                required:
-                  - status
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-              examples:
-                Loan PUT 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
     delete:
       tags:
         - Loans
@@ -3137,21 +2647,7 @@ paths:
                       code: 200
                       message: Successfully deleted object
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                required:
-                  - status
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-              examples:
-                Loan DELETE 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
   /settlement_offers:
     post:
       tags:
@@ -3214,21 +2710,7 @@ paths:
                     status:
                       code: 200
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                required:
-                  - status
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-              examples:
-                Settlement Offer 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
   '/settlement_offers/{id}':
     get:
       tags:
@@ -3336,21 +2818,7 @@ paths:
                     status:
                       code: 200
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                required:
-                  - status
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-              examples:
-                Settlement Offer GET 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
     put:
       tags:
         - Settlement_Offers
@@ -3464,21 +2932,7 @@ paths:
                     status:
                       code: 200
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                required:
-                  - status
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-              examples:
-                SettlementOffer PUT 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
     delete:
       tags:
         - Settlement_Offers
@@ -3509,21 +2963,7 @@ paths:
                       code: 200
                       message: Successfully deleted object
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                required:
-                  - status
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-              examples:
-                SettlementOffer Delete 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
   /tasks:
     post:
       tags:
@@ -3589,21 +3029,7 @@ paths:
                     status:
                       code: 200
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                required:
-                  - status
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-              examples:
-                Tasks POST 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
   '/tasks/{id}':
     get:
       tags:
@@ -3695,21 +3121,7 @@ paths:
                     status:
                       code: 200
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                required:
-                  - status
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-              examples:
-                Task GET 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
     put:
       tags:
         - Tasks
@@ -3806,21 +3218,7 @@ paths:
                     status:
                       code: 200
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                required:
-                  - status
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-              examples:
-                Task PUT 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
     delete:
       tags:
         - Tasks
@@ -3851,21 +3249,7 @@ paths:
                       code: 200
                       message: Successfully deleted object
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                required:
-                  - status
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-              examples:
-                Task DELETE 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
   /teams:
     get:
       tags:
@@ -3886,19 +3270,7 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-              examples:
-                Teams GET 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
     post:
       tags:
         - Teams
@@ -3925,21 +3297,7 @@ paths:
                     status:
                       code: 200
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                required:
-                  - status
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-              examples:
-                Teams POST 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
       requestBody:
         content:
           application/json:
@@ -3986,21 +3344,7 @@ paths:
                     status:
                       code: 200
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                required:
-                  - status
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-              examples:
-                Teams GET 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
     put:
       tags:
         - Teams
@@ -4042,21 +3386,7 @@ paths:
                     status:
                       code: 200
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                required:
-                  - status
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-              examples:
-                Teams PUT 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
     delete:
       tags:
         - Teams
@@ -4087,21 +3417,7 @@ paths:
                       code: 200
                       message: Successfully deleted object
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                required:
-                  - status
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-              examples:
-                Teams Delete 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
   /users:
     post:
       tags:
@@ -4161,19 +3477,7 @@ paths:
                     status:
                       code: 200
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-              examples:
-                Users Post 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
   '/users/{id}':
     get:
       tags:
@@ -4223,21 +3527,7 @@ paths:
                     status:
                       code: 200
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                required:
-                  - status
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-              examples:
-                User GET 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
     put:
       tags:
         - Users
@@ -4292,21 +3582,7 @@ paths:
                     status:
                       code: 200
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                required:
-                  - status
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-              examples:
-                User PUT 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
     delete:
       tags:
         - Users
@@ -4331,21 +3607,7 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                required:
-                  - status
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-              examples:
-                Users Delete 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
   '/users/{user_id}/prefs':
     get:
       tags:
@@ -4373,19 +3635,7 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-              examples:
-                Users Post 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
     put:
       tags:
         - Users
@@ -4418,19 +3668,7 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-              examples:
-                Users Post 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
   /users/current:
     get:
       tags:
@@ -4451,21 +3689,7 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
         '400':
-          description: some error
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    properties:
-                      code:
-                        type: integer
-                        example: 404
-                      message:
-                        type: string
-                        example: not found
-                    type: object
-                type: object
+          $ref: '#/components/responses/ERROR_4XX'
   '/users/{id}/tasks':
     post:
       tags:
@@ -4511,21 +3735,7 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
         '400':
-          description: some error
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    properties:
-                      code:
-                        type: integer
-                        example: 404
-                      message:
-                        type: string
-                        example: not found
-                    type: object
-                type: object
+          $ref: '#/components/responses/ERROR_4XX'
   '/users/{id}/events':
     post:
       tags:
@@ -4574,21 +3784,7 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
         '400':
-          description: some error
-          content:
-            application/json:
-              schema:
-                properties:
-                  status:
-                    properties:
-                      code:
-                        type: integer
-                        example: 404
-                      message:
-                        type: string
-                        example: not found
-                    type: object
-                type: object
+          $ref: '#/components/responses/ERROR_4XX'
   '/lenders/monevo/{contact_id}/offers':
     get:
       tags:
@@ -4812,16 +4008,7 @@ paths:
                               id:
                                 type: object
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-                required:
-                  - status
+          $ref: '#/components/responses/ERROR_4XX'
 components:
   schemas:
     Address:
@@ -6004,6 +5191,15 @@ components:
         - start
         - limit
   responses:
+    ERROR_4XX:
+      description: An error has occurred
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                $ref: ./models/ErrorStatus.yaml
     '400':
       description: Error
       content:
