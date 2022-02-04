@@ -176,46 +176,8 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
               examples:
-                Call GET 200 Response Example:
-                  value:
-                    response:
-                      object: call
-                      id: 392857759
-                      acctID: 3863
-                      contactID: 382760691
-                      userID: 4950368
-                      sdate: '2021-12-09'
-                      created_at: '2021-12-09 09:52:21'
-                      call_type: Outgoing
-                      call_result: Busy
-                      notes: Lorem Ipsum
-                      status_change: 274158
-                      duration: '00:01:15'
-                      event_id: '8179'
-                      dialer_id: '2'
-                      recording_url: 'https://www.testcallrecording.com'
-                      assigned_agent:
-                        object: user
-                        id: '4950368'
-                        acctID: '3863'
-                        company_id: '42128'
-                        parent_id: '0'
-                        user_type: '1'
-                        created: '2019-10-02 02:41:18'
-                        user_name: JohnD
-                        firstname: John
-                        lastname: Doe
-                        company: ''
-                        email: test@debtpaypro.com
-                        active: '1'
-                        role: '29399'
-                        attorney: '0'
-                        payee_id: '0'
-                        del: '0'
-                        delTime: null
-                        pass_reset: '0'
-                    status:
-                      code: 200
+                CallExample:
+                  $ref: '#/components/examples/Call.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
     put:
@@ -264,46 +226,8 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
               examples:
-                Call PUT 200 Response Example:
-                  value:
-                    response:
-                      object: call
-                      id: 392857759
-                      acctID: 3863
-                      contactID: 382760691
-                      userID: 4950368
-                      sdate: '2021-12-09'
-                      created_at: '2021-12-09 09:52:21'
-                      call_type: Outgoing
-                      call_result: Busy
-                      notes: Lorem Ipsum
-                      status_change: 274158
-                      duration: '00:01:15'
-                      event_id: '8179'
-                      dialer_id: '2'
-                      recording_url: 'https://www.testcallrecording.com'
-                      assigned_agent:
-                        object: user
-                        id: '4950368'
-                        acctID: '3863'
-                        company_id: '42128'
-                        parent_id: '0'
-                        user_type: '1'
-                        created: '2019-10-02 02:41:18'
-                        user_name: JohnD
-                        firstname: John
-                        lastname: Doe
-                        company: ''
-                        email: test@debtpaypro.com
-                        active: '1'
-                        role: '29399'
-                        attorney: '0'
-                        payee_id: '0'
-                        del: '0'
-                        delTime: null
-                        pass_reset: '0'
-                    status:
-                      code: 200
+                CallExample:
+                  $ref: '#/components/examples/Call.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
     delete:
@@ -421,32 +345,8 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
               examples:
-                Campaign GET 200 Response Example:
-                  value:
-                    response:
-                      object: campaign
-                      id: 177286
-                      acctID: 3863
-                      company_id: 21752
-                      active: true
-                      created_at: '2019-08-24T14:15:22Z'
-                      created_by: 3028014
-                      token: string
-                      title: Campaign Title
-                      start_date: '2019-08-24'
-                      end_date: '2019-08-24'
-                      source_id: 3184
-                      cost: 1984.25
-                      cost_type: 1
-                      priority: 4
-                      external_id: 0
-                      media_type: 1
-                      purchase_amount: 42
-                      del: false
-                      del_by: 0
-                      deltime: '2019-08-24T14:15:22Z'
-                    status:
-                      code: 200
+                CampaignExample:
+                  $ref: '#/components/examples/Campaign.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
     put:
@@ -480,32 +380,8 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
               examples:
-                Campaign PUT 200 Response Example:
-                  value:
-                    response:
-                      object: campaign
-                      id: 177286
-                      acctID: 3863
-                      company_id: 21752
-                      active: true
-                      created_at: '2019-08-24T14:15:22Z'
-                      created_by: 3028014
-                      token: string
-                      title: Campaign Title
-                      start_date: '2019-08-24'
-                      end_date: '2019-08-24'
-                      source_id: 3184
-                      cost: 1984.25
-                      cost_type: 1
-                      priority: 4
-                      external_id: 0
-                      media_type: 1
-                      purchase_amount: 42
-                      del: false
-                      del_by: 0
-                      deltime: '2019-08-24T14:15:22Z'
-                    status:
-                      code: 200
+                CampaignExample:
+                  $ref: '#/components/examples/Campaign.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
     delete:
@@ -677,74 +553,8 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
               examples:
-                Contact GET 200 Response Example:
-                  value:
-                    response:
-                      object: contact
-                      id: 382760691
-                      acctID: 3863
-                      company_id: 42128
-                      file_type: 1
-                      form_id: 18626
-                      created: '2019-08-24T14:15:22Z'
-                      created_by: 4950368
-                      modified: '2019-08-24T14:15:22Z'
-                      modified_by: 4950368
-                      assigned_to: 6515056
-                      campaign_id: 158227
-                      attorney: false
-                      attorney_id: 0
-                      attorney_id2: 0
-                      first_name: John
-                      middle_name: E
-                      last_name: Doe
-                      salutation: Hello
-                      title: Mr.
-                      phone_number: '13123831234'
-                      phone_extension: 123
-                      cell_phone: '13123835678'
-                      cell_extension: 123
-                      work_phone: '13123839753'
-                      work_extension: 123
-                      address:
-                        address1: 123 Main St.
-                        address2: Apt. 4008
-                        address3: string
-                        city: Chicago
-                        state: IL
-                        zip: '60612'
-                      email: test@test.com
-                      social_security_number: 123-45-6789
-                      date_of_birth: '1970-01-01'
-                      language: 1
-                      submitted: false
-                      submitted_by: 0
-                      submitted_at: '2019-08-24T14:15:22Z'
-                      approved_by2: 0
-                      approved_date2: '2019-08-24'
-                      rejected_by: 0
-                      rejected_notes: Rejection Note
-                      paused_notes: Paused Note
-                      dropped_reason: 1
-                      grad_date: '2019-08-24'
-                      total_debt: 13755.9
-                      welcome_sent: '2019-08-24T14:15:22Z'
-                      paper_statements: false
-                      paper_welcome: false
-                      gateway_id: 0
-                      gateway_approved_by: 0
-                      gateway_hold: false
-                      gateway_hold_reason: 0
-                      gateway_hold_notes: string
-                      gateway_auth_received: true
-                      gateway_auth_file: test_gateway_auth_file.pdf
-                      iscoapp: false
-                      customs:
-                        - field_id: 0
-                          value: string
-                          label: string
-                    status:
-                      code: 200
+                ContactExample:
+                  $ref: '#/components/examples/Contact.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
     put:
@@ -778,74 +588,8 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
               examples:
-                Contact PUT 200 Response Example:
-                  value:
-                    response:
-                      object: contact
-                      id: 382760691
-                      acctID: 3863
-                      company_id: 42128
-                      file_type: 1
-                      form_id: 18626
-                      created: '2019-08-24T14:15:22Z'
-                      created_by: 4950368
-                      modified: '2019-08-24T14:15:22Z'
-                      modified_by: 4950368
-                      assigned_to: 6515056
-                      campaign_id: 158227
-                      attorney: false
-                      attorney_id: 0
-                      attorney_id2: 0
-                      first_name: John
-                      middle_name: E
-                      last_name: Doe
-                      salutation: Hello
-                      title: Mr.
-                      phone_number: '13123831234'
-                      phone_extension: 123
-                      cell_phone: '13123835678'
-                      cell_extension: 123
-                      work_phone: '13123839753'
-                      work_extension: 123
-                      address:
-                        address1: 123 Main St.
-                        address2: Apt. 4008
-                        address3: string
-                        city: Chicago
-                        state: IL
-                        zip: '60612'
-                      email: test@test.com
-                      social_security_number: 123-45-6789
-                      date_of_birth: '1970-01-01'
-                      language: 1
-                      submitted: false
-                      submitted_by: 0
-                      submitted_at: '2019-08-24T14:15:22Z'
-                      approved_by2: 0
-                      approved_date2: '2019-08-24'
-                      rejected_by: 0
-                      rejected_notes: Rejection Note
-                      paused_notes: Paused Note
-                      dropped_reason: 1
-                      grad_date: '2019-08-24'
-                      total_debt: 13755.9
-                      welcome_sent: '2019-08-24T14:15:22Z'
-                      paper_statements: false
-                      paper_welcome: false
-                      gateway_id: 0
-                      gateway_approved_by: 0
-                      gateway_hold: false
-                      gateway_hold_reason: 0
-                      gateway_hold_notes: string
-                      gateway_auth_received: true
-                      gateway_auth_file: test_gateway_auth_file.pdf
-                      iscoapp: false
-                      customs:
-                        - field_id: 0
-                          value: string
-                          label: string
-                    status:
-                      code: 200
+                ContactExample:
+                  $ref: '#/components/examples/Contact.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
     delete:
@@ -904,6 +648,9 @@ paths:
                     $ref: ./models/ContactResponse.yaml
                   status:
                     $ref: ./models/SuccessStatus.yaml
+              examples:
+                ContactExample:
+                  $ref: '#/components/examples/Contact.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/contacts/{id}/documents':
@@ -4055,87 +3802,6 @@ components:
         - contactID
         - call_type
         - call_result
-    Campaign:
-      type: object
-      description: Campaign Record Object
-      properties:
-        object:
-          type: string
-          example: campaign
-          readOnly: true
-        id:
-          type: integer
-          readOnly: true
-        acctID:
-          type: integer
-          example: 3863
-          readOnly: true
-        company_id:
-          type: integer
-          readOnly: true
-        active:
-          type: boolean
-          default: true
-        created_at:
-          type: string
-          format: date-time
-          readOnly: true
-        created_by:
-          type: integer
-          readOnly: true
-        token:
-          type: integer
-          readOnly: true
-        title:
-          type: string
-          example: Campaign Title
-        start_date:
-          type: string
-          format: date
-          example: '2022-01-15'
-        end_date:
-          type: string
-          format: date
-          example: '2022-01-21'
-        source_id:
-          type: integer
-          example: 3184
-        cost:
-          type: number
-          example: 1984.25
-          format: double
-        cost_type:
-          type: integer
-          example: 1
-        priority:
-          type: integer
-          example: 4
-        external_id:
-          type: integer
-          readOnly: true
-        media_type:
-          type: integer
-          example: 1
-        purchase_amount:
-          type: number
-          example: 42
-        del:
-          type: boolean
-          default: false
-          readOnly: true
-        del_by:
-          type: integer
-          readOnly: true
-        deltime:
-          type: string
-          format: date-time
-          readOnly: true
-      required:
-        - title
-        - start_date
-        - end_date
-        - cost
-        - media_type
     Company:
       type: object
       description: Company Record Object
@@ -5146,8 +4812,8 @@ components:
         - start
         - limit
   responses:
-    ERROR_4XX:
-      description: An error has occurred
+    '400':
+      description: Error
       content:
         application/json:
           schema:
@@ -5155,8 +4821,8 @@ components:
             properties:
               status:
                 $ref: ./models/ErrorStatus.yaml
-    '400':
-      description: Error
+    ERROR_4XX:
+      description: An error has occurred
       content:
         application/json:
           schema:
@@ -5219,7 +4885,7 @@ components:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/CampaignRequest'
+            $ref: models/CampaignRequest.yaml
       description: Campaign Object
       required: true
     Company:
@@ -5350,5 +5016,140 @@ components:
       type: apiKey
       name: Api-Key
       in: header
+  examples:
+    Campaign.json:
+      value:
+        response:
+          object: campaign
+          id: 177286
+          acctID: 3863
+          company_id: 21752
+          active: true
+          created_at: '2019-08-24T14:15:22Z'
+          created_by: 3028014
+          token: string
+          title: Campaign Title
+          start_date: '2019-08-24'
+          end_date: '2019-08-24'
+          source_id: 3184
+          cost: 1984.25
+          cost_type: 1
+          priority: 4
+          external_id: 0
+          media_type: 1
+          purchase_amount: 42
+          del: false
+          del_by: 0
+          deltime: '2019-08-24T14:15:22Z'
+        status:
+          code: 200
+    Call.json:
+      value:
+        response:
+          object: call
+          id: 392857759
+          acctID: 3863
+          contactID: 382760691
+          userID: 4950368
+          sdate: '2021-12-09'
+          created_at: '2021-12-09 09:52:21'
+          call_type: Outgoing
+          call_result: Busy
+          notes: Lorem Ipsum
+          status_change: 274158
+          duration: '00:01:15'
+          event_id: '8179'
+          dialer_id: '2'
+          recording_url: 'https://www.testcallrecording.com'
+          assigned_agent:
+            object: user
+            id: '4950368'
+            acctID: '3863'
+            company_id: '42128'
+            parent_id: '0'
+            user_type: '1'
+            created: '2019-10-02 02:41:18'
+            user_name: JohnD
+            firstname: John
+            lastname: Doe
+            company: ''
+            email: test@debtpaypro.com
+            active: '1'
+            role: '29399'
+            attorney: '0'
+            payee_id: '0'
+            del: '0'
+            delTime: null
+            pass_reset: '0'
+        status:
+          code: 200
+    Contact.json:
+      value:
+        response:
+          object: contact
+          id: 382760691
+          acctID: 3863
+          company_id: 42128
+          file_type: 1
+          form_id: 18626
+          created: '2019-08-24T14:15:22Z'
+          created_by: 4950368
+          modified: '2019-08-24T14:15:22Z'
+          modified_by: 4950368
+          assigned_to: 6515056
+          campaign_id: 158227
+          attorney: false
+          attorney_id: 0
+          attorney_id2: 0
+          first_name: John
+          middle_name: E
+          last_name: Doe
+          salutation: Hello
+          title: Mr.
+          phone_number: '13123831234'
+          phone_extension: 123
+          cell_phone: '13123835678'
+          cell_extension: 123
+          work_phone: '13123839753'
+          work_extension: 123
+          address:
+            address1: 123 Main St.
+            address2: Apt. 4008
+            address3: string
+            city: Chicago
+            state: IL
+            zip: '60612'
+          email: test@test.com
+          social_security_number: 123-45-6789
+          date_of_birth: '1970-01-01'
+          language: 1
+          submitted: false
+          submitted_by: 0
+          submitted_at: '2019-08-24T14:15:22Z'
+          approved_by2: 0
+          approved_date2: '2019-08-24'
+          rejected_by: 0
+          rejected_notes: Rejection Note
+          paused_notes: Paused Note
+          dropped_reason: 1
+          grad_date: '2019-08-24'
+          total_debt: 13755.9
+          welcome_sent: '2019-08-24T14:15:22Z'
+          paper_statements: false
+          paper_welcome: false
+          gateway_id: 0
+          gateway_approved_by: 0
+          gateway_hold: false
+          gateway_hold_reason: 0
+          gateway_hold_notes: string
+          gateway_auth_received: true
+          gateway_auth_file: test_gateway_auth_file.pdf
+          iscoapp: false
+          customs:
+            - field_id: 0
+              value: string
+              label: string
+        status:
+          code: 200
 security:
   - API-Key: []
