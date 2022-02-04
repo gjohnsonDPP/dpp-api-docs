@@ -149,6 +149,8 @@ paths:
                       code: 200
         '400':
           $ref: '#/components/responses/ERROR_4XX'
+        '404':
+          $ref: '#/components/responses/ERROR_4XX'
   '/calls/{id}':
     get:
       tags:
@@ -217,22 +219,9 @@ paths:
                     status:
                       code: 200
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-                required:
-                  - status
-              examples:
-                Call GET 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
+        '404':
+          $ref: '#/components/responses/ERROR_4XX'
     put:
       tags:
         - Calls
@@ -320,22 +309,9 @@ paths:
                     status:
                       code: 200
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-                required:
-                  - status
-              examples:
-                Call PUT 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
+        '404':
+          $ref: '#/components/responses/ERROR_4XX'
     delete:
       tags:
         - Calls
@@ -366,22 +342,9 @@ paths:
                       code: 200
                       message: Successfully deleted object
         '400':
-          description: Error
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  status:
-                    $ref: ./models/ErrorStatus.yaml
-                required:
-                  - status
-              examples:
-                Call DELETE 400 Response Example:
-                  value:
-                    status:
-                      code: 400
-                      message: 'Input Parsing Error: unexpected character'
+          $ref: '#/components/responses/ERROR_4XX'
+        '404':
+          $ref: '#/components/responses/ERROR_4XX'
   /campaigns/e-mail:
     post:
       tags:
@@ -439,6 +402,8 @@ paths:
                       code: 200
         '400':
           $ref: '#/components/responses/ERROR_4XX'
+        '404':
+          $ref: '#/components/responses/ERROR_4XX'
   '/campaigns/e-mail/{id}':
     get:
       tags:
@@ -493,6 +458,8 @@ paths:
                     status:
                       code: 200
         '400':
+          $ref: '#/components/responses/ERROR_4XX'
+        '404':
           $ref: '#/components/responses/ERROR_4XX'
     put:
       tags:
@@ -553,6 +520,8 @@ paths:
                       code: 200
         '400':
           $ref: '#/components/responses/ERROR_4XX'
+        '404':
+          $ref: '#/components/responses/ERROR_4XX'
     delete:
       tags:
         - Campaigns
@@ -583,6 +552,8 @@ paths:
                       code: 200
                       message: Successfully deleted object
         '400':
+          $ref: '#/components/responses/ERROR_4XX'
+        '404':
           $ref: '#/components/responses/ERROR_4XX'
   /contacts:
     post:
@@ -695,6 +666,8 @@ paths:
                       message: Client Record Created
         '400':
           $ref: '#/components/responses/ERROR_4XX'
+        '404':
+          $ref: '#/components/responses/ERROR_4XX'
   '/contacts/{id}':
     get:
       tags:
@@ -791,6 +764,8 @@ paths:
                     status:
                       code: 200
         '400':
+          $ref: '#/components/responses/ERROR_4XX'
+        '404':
           $ref: '#/components/responses/ERROR_4XX'
     put:
       tags:
@@ -893,6 +868,8 @@ paths:
                       code: 200
         '400':
           $ref: '#/components/responses/ERROR_4XX'
+        '404':
+          $ref: '#/components/responses/ERROR_4XX'
     delete:
       tags:
         - Contacts
@@ -924,6 +901,8 @@ paths:
                       message: Successfully deleted object
         '400':
           $ref: '#/components/responses/ERROR_4XX'
+        '404':
+          $ref: '#/components/responses/ERROR_4XX'
   '/contacts/search_by_phone/{phone}':
     get:
       tags:
@@ -950,6 +929,8 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
         '400':
+          $ref: '#/components/responses/ERROR_4XX'
+        '404':
           $ref: '#/components/responses/ERROR_4XX'
   '/contacts/{id}/documents':
     get:
@@ -979,6 +960,8 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
         '400':
+          $ref: '#/components/responses/ERROR_4XX'
+        '404':
           $ref: '#/components/responses/ERROR_4XX'
   '/contacts/{id}/documents/{doc_id}':
     get:
@@ -4008,6 +3991,8 @@ paths:
                               id:
                                 type: object
         '400':
+          $ref: '#/components/responses/ERROR_4XX'
+        '404':
           $ref: '#/components/responses/ERROR_4XX'
 components:
   schemas:
