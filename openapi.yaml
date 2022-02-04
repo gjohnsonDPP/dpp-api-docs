@@ -716,25 +716,8 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
               examples:
-                GET 200 Response Example:
-                  value:
-                    response:
-                      object: contactFile
-                      doc_id: '234334006'
-                      acctID: '98'
-                      file_name: testUploadDoc.txt
-                      doc_type: '1'
-                      debt_id: '167172217'
-                      created_by: 6777715
-                      created_at: '2019-08-24T14:15:22Z'
-                      description: Description of the file...
-                      refs:
-                        - object: debts
-                          object_id: '167172217'
-                      download: /getfile.php?id=234334006
-                      file_content: 'https://dpp-uploads.s3.amazonaws.com/98/c89e9570-Testdocument.txt?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAI4QAAJTOXUVV5DFQ%2F20220202%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220202T000126Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Signature=bed96de5de2092615a40b2291efab2f1da341bbcc522be17769598de39f0599d'
-                    status:
-                      code: 200
+                ContactFileExample:
+                  $ref: '#/components/examples/ContactFile.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
     put:
@@ -774,6 +757,9 @@ paths:
                     $ref: ./models/ContactFile.yaml
                   status:
                     $ref: ./models/SuccessStatus.yaml
+              examples:
+                ContactFileExample:
+                  $ref: '#/components/examples/ContactFile.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
     delete:
@@ -5149,6 +5135,25 @@ components:
             - field_id: 0
               value: string
               label: string
+        status:
+          code: 200
+    ContactFile.json:
+      value:
+        response:
+          object: contactFile
+          doc_id: '234334006'
+          acctID: '98'
+          file_name: testUploadDoc.txt
+          doc_type: '1'
+          debt_id: '167172217'
+          created_by: 6777715
+          created_at: '2019-08-24T14:15:22Z'
+          description: Description of the file...
+          refs:
+            - object: debts
+              object_id: '167172217'
+          download: /getfile.php?id=234334006
+          file_content: 'https://dpp-uploads.s3.amazonaws.com/98/c89e9570-Testdocument.txt?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAI4QAAJTOXUVV5DFQ%2F20220202%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220202T000126Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Signature=bed96de5de2092615a40b2291efab2f1da341bbcc522be17769598de39f0599d'
         status:
           code: 200
 security:
