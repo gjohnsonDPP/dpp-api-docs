@@ -1830,7 +1830,7 @@ paths:
       tags:
         - Debts
         - DebtNotes
-      summary: Find Debt Note by ID
+      summary: Find Debt Notes by ID
       description: Returns all Debt Notes associate with a specific Debt Record
       operationId: debtNoteGet
       parameters:
