@@ -610,9 +610,9 @@ paths:
     get:
       tags:
         - Contacts
-      summary: Create Contact Note
-      description: Creates a Note for a Contact by the Contact's ID
-      operationId: contactNoteCreate
+      summary: Find Contact Notes by ID
+      description: Returns all Notes for a Contact by the Contact's ID
+      operationId: contactNoteGet
       parameters:
         - name: contactid
           in: path
@@ -634,7 +634,7 @@ paths:
       #         type: object
       responses:
         '200':
-          description: Successfully created a Contact Note
+          description: Successfully returned Contact Notes
           content:
             application/json:
               schema:
@@ -1896,7 +1896,7 @@ paths:
           allowEmptyValue: true
       responses:
         '200':
-          description: Successfully created a Debt Note
+          description: Successfully returned Debt Notes
           content:
             application/json:
               schema:
