@@ -5152,8 +5152,8 @@ components:
           note_id: '22957924'
           acctID: '98'
           note_created_date: '2022-02-07 14:01:08'
-          client_id: '534512322'
-          debt_id: '167172214'
+          client_id: 534512322
+          debt_id: 167172214
           title: Debt Note Title
           created_by:
             object: user
