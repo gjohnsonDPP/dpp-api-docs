@@ -620,18 +620,6 @@ paths:
           required: true
           schema:
             type: integer
-      # requestBody:
-      #   content:
-      #     application/json:
-      #       schema:
-      #         properties:
-      #           title:
-      #             description: Name of DebtNote
-      #             type: string
-      #           content:
-      #             description: Content of DebtNote
-      #             type: string
-      #         type: object
       responses:
         '200':
           description: Successfully returned Contact Notes
@@ -1961,7 +1949,7 @@ paths:
                 DebtNote Example:
                   $ref: '#/components/examples/DebtNote.json'
         '400':
-          $ref: '#/components/responses/ERROR_4XX'        
+          $ref: '#/components/responses/ERROR_4XX'
     delete:
       tags:
         - Debts
@@ -5280,6 +5268,43 @@ components:
             delTime: null
             pass_reset: '0'
           content: This is a test Debt Note
+        status:
+          code: 200
+    ContactNote.json:
+      value:
+        response:
+          results:
+            - object: contacts_note
+              note_id: '610581415'
+              contact_id: '534512123'
+              acctID: '91'
+              activity_id: '702362434'
+              note_created_date: '2022-01-10 11:45:55'
+              title: false
+              created_by:
+                object: user
+                id: '6777715'
+                acctID: '91'
+                company_id: '438'
+                parent_id: '0'
+                user_type: '1'
+                created: '2022-01-08 10:12:37'
+                user_name: QA_Tester
+                firstname: QA
+                lastname: Tester
+                company: ''
+                email: test@debtpaypro.com
+                active: '1'
+                role: '267'
+                attorney: '0'
+                payee_id: '0'
+                del: '0'
+                delTime: null
+                pass_reset: '0'
+              content: Test Call
+              note_type: Call
+              public: '0'
+          count: '3'
         status:
           code: 200
 security:
