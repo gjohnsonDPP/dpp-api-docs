@@ -13,43 +13,24 @@ servers:
     url: 'https://staging1-api.debtpaypro.com/v1'
 tags:
   - name: Auth
-    description: All available actions for Auth
   - name: Calls
-    description: All available actions for Calls
   - name: Campaigns
-    description: All available actions for Campaigns
   - name: Companies
-    description: All available actions for Companies
   - name: Contacts
-    description: All available actions for Contacts
   - name: Debts
-    description: All available actions for Debts
   - name: DebtNotes
-    description: All available actions for DebtNotes
   - name: DebtTasks
-    description: All available actions for DebtTasks
   - name: Documents
-    description: All available actions for Documents
   - name: DocumentTypes
-    description: All available actions for DocumentTypes
   - name: Forms
-    description: Actions associated with Forms
   - name: Loans
-    description: All available actions for Loans
   - name: Notes
-    description: All available actions for Notes
   - name: Packages
-    description: All available actions for Packages
   - name: Settlement_Offers
-    description: All available actions for Settlement Offers
   - name: SMS
-    description: Actions associated with SMS Messages
   - name: Tasks
-    description: All available actions for Tasks
   - name: Teams
-    description: All available actions for Teams
   - name: Users
-    description: All available actions for Users
 paths:
   /auth/token:
     post:
@@ -1812,15 +1793,15 @@ paths:
   '/debts/{id}/notes':
     post:
       tags:
-        - Debts
         - DebtNotes
-      summary: Create Debt Note using ID
-      description: Creates a new Debt Note
+        - Debts
+      summary: Create Debt Note by ID
+      description: Creates a new Debt Note associated with an existing Debt Record
       operationId: debtNoteCreate
       parameters:
         - in: path
           name: id
-          description: Id of Debt Record to add Note to
+          description: Id of Debt Record
           required: true
           schema:
             type: integer
@@ -1838,54 +1819,54 @@ paths:
               schema:
                 type: object
                 properties:
+                  status:
+                    $ref: ./models/SuccessStatus.yaml
+        '400':
+          $ref: '#/components/responses/ERROR_4XX'
+    get:
+      tags:
+        - DebtNotes
+        - Debts
+      summary: Find Debt Note by ID
+      description: Returns all Debt Notes associate with a specific Debt Record
+      operationId: debtNoteGet
+      parameters:
+        - in: path
+          name: id
+          description: Id of Debt Record
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully created a Debt Note
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
                   response:
                     $ref: ./models/DebtNoteResponse.yaml
                   status:
                     $ref: ./models/SuccessStatus.yaml
-              examples:
-                Debt Note POST 200 Response Example:
-                  value:
-                    response:
-                      object: debt_note
-                      note_id: 22377190
-                      acctID: 2123
-                      note_created_date: '2021-11-26 08:49:16'
-                      client_id: 475956560
-                      debt_id: 152080478
-                      title: API Test D
-                      created_by:
-                        object: user
-                        user_id: 6583363
-                        company_id: 12758
-                        parent_id: 0
-                        user_type: 1
-                        created: '2021-10-18 04:12:46'
-                        user_name: Greg
-                        firstname: Greg
-                        lastname: Johnson
-                        company: ''
-                        email: g.johnson@debtpaypro.com
-                        active: true
-                        role: 15203
-                        attorney: false
-                        payee_id: 0
-                        del: false
-                        delTime: null
-                      content: API Test Debt Note
-                    status:
-                      code: 200
         '400':
-          $ref: '#/components/responses/ERROR_4XX'
-  '/debts/notes/{id}':
+          $ref: '#/components/responses/ERROR_4XX'            
+  '/debts/{debt_id}/notes/{note_id}':
     delete:
       tags:
-        - Debts
         - DebtNotes
+        - Debts
       summary: Delete Debt Note by ID
-      description: Deletes a Debt Note
+      description: Deletes a Debt Note by ID of associated Debt Record and Note ID
       operationId: debtNoteDelete
       parameters:
-        - name: id
+        - name: debt_id
+          in: path
+          description: Id of Debt Record
+          required: true
+          schema:
+            type: integer
+        - name: note_id
           in: path
           description: Id of Debt Note
           required: true

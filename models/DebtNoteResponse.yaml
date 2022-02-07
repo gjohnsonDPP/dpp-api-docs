@@ -2,8 +2,8 @@ title: DebtNote
 type: object
 description: Debt Note Object
 x-tags:
-  - Debts
   - DebtNotes
+  - Debts
 properties:
   object:
     type: string
