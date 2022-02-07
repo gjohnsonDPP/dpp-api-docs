@@ -1858,6 +1858,56 @@ paths:
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/debts/{debt_id}/notes/{note_id}':
+    put:
+      tags:
+        - Debts
+        - DebtNotes
+      summary: Update Debt Note by ID
+      description: Updates a Debt Note by ID of associated Debt Record and Note ID
+      operationId: debtNoteUpdate
+      parameters:
+        - name: debt_id
+          in: path
+          description: Id of Debt Record
+          required: true
+          schema:
+            type: integer
+        - name: note_id
+          in: path
+          description: Id of Debt Note
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                title:
+                  description: Name of DebtNote
+                  type: string
+                content:
+                  description: Content of DebtNote
+                  type: string
+              type: object
+        required: true
+      responses:
+        '200':
+          description: Successfully created a Debt Note
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    $ref: ./models/DebtNoteResponse.yaml
+                  status:
+                    $ref: ./models/SuccessStatus.yaml
+              examples:
+                DebtNote Example:
+                  $ref: '#/components/examples/DebtNote.json'
+        '400':
+          $ref: '#/components/responses/ERROR_4XX'        
     delete:
       tags:
         - Debts
