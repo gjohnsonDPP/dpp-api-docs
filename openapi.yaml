@@ -1793,8 +1793,8 @@ paths:
   '/debts/{id}/notes':
     post:
       tags:
-        - DebtNotes
         - Debts
+        - DebtNotes
       summary: Create Debt Note by ID
       description: Creates a new Debt Note associated with an existing Debt Record
       operationId: debtNoteCreate
@@ -1825,8 +1825,8 @@ paths:
           $ref: '#/components/responses/ERROR_4XX'
     get:
       tags:
-        - DebtNotes
         - Debts
+        - DebtNotes
       summary: Find Debt Note by ID
       description: Returns all Debt Notes associate with a specific Debt Record
       operationId: debtNoteGet
@@ -1854,8 +1854,8 @@ paths:
   '/debts/{debt_id}/notes/{note_id}':
     delete:
       tags:
-        - DebtNotes
         - Debts
+        - DebtNotes
       summary: Delete Debt Note by ID
       description: Deletes a Debt Note by ID of associated Debt Record and Note ID
       operationId: debtNoteDelete
