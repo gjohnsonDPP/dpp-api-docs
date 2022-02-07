@@ -1903,7 +1903,7 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: ./models/DebtNoteResponse.yaml
+                    $ref: ./models/DebtNote.yaml
                   status:
                     $ref: ./models/SuccessStatus.yaml
               examples:
