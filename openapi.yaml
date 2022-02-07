@@ -607,7 +607,7 @@ paths:
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/contacts/{id}/notes':
-    post:
+    put:
       tags:
         - Contacts
       summary: Create Contact Note
