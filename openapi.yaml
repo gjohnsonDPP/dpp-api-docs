@@ -606,6 +606,34 @@ paths:
                       message: Successfully deleted object
         '400':
           $ref: '#/components/responses/ERROR_4XX'
+  '/contacts/{contact_id}/notes':
+    post:
+      tags:
+        - Contacts
+      summary: Create Contact Note
+      description: Creates a Note for a Contact by the Contact's ID
+      operationId: contactNoteCreate
+      parameters:
+        - name: contact_id
+          in: path
+          description: Id of Contact
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully created a Contact Note
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: object
+                  status:
+                    $ref: ./models/SuccessStatus.yaml
+        '400':
+          $ref: '#/components/responses/ERROR_4XX'
   '/contacts/search_by_phone/{phone}':
     get:
       tags:
