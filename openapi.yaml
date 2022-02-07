@@ -1821,6 +1821,9 @@ paths:
                 properties:
                   status:
                     $ref: ./models/SuccessStatus.yaml
+              examples:
+                DebtNote Example:
+                  $ref: '#/components/examples/DebtNote.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
     get:
@@ -1849,8 +1852,11 @@ paths:
                     $ref: ./models/DebtNoteResponse.yaml
                   status:
                     $ref: ./models/SuccessStatus.yaml
+              examples:
+                DebtNote Example:
+                  $ref: '#/components/examples/DebtNote.json'
         '400':
-          $ref: '#/components/responses/ERROR_4XX'            
+          $ref: '#/components/responses/ERROR_4XX'
   '/debts/{debt_id}/notes/{note_id}':
     delete:
       tags:
@@ -5137,6 +5143,39 @@ components:
               object_id: '167172217'
           download: /getfile.php?id=234334006
           file_content: 'https://dpp-uploads.s3.amazonaws.com/98/c89e9570-Testdocument.txt?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAI4QAAJTOXUVV5DFQ%2F20220202%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220202T000126Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Signature=bed96de5de2092615a40b2291efab2f1da341bbcc522be17769598de39f0599d'
+        status:
+          code: 200
+    DebtNote.json:
+      value:
+        response:
+          object: debt_note
+          note_id: '22957924'
+          acctID: '98'
+          note_created_date: '2022-02-07 14:01:08'
+          client_id: '534512322'
+          debt_id: '167172214'
+          title: Debt Note Title
+          created_by:
+            object: user
+            id: '6777883'
+            acctID: '91'
+            company_id: '448'
+            parent_id: '0'
+            user_type: '1'
+            created: '2022-01-08 10:12:37'
+            user_name: QA_Tester
+            firstname: QA
+            lastname: Tester
+            company: ''
+            email: test@debtpaypro.com
+            active: '1'
+            role: '267'
+            attorney: '0'
+            payee_id: '0'
+            del: '0'
+            delTime: null
+            pass_reset: '0'
+          content: This is a test Debt Note
         status:
           code: 200
 security:
