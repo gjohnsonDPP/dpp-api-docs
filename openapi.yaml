@@ -606,7 +606,7 @@ paths:
                       message: Successfully deleted object
         '400':
           $ref: '#/components/responses/ERROR_4XX'
-  '/contacts/{contact_id}/notes':
+  '/contacts/{contactid}/notes':
     post:
       tags:
         - Contacts
@@ -614,7 +614,7 @@ paths:
       description: Creates a Note for a Contact by the Contact's ID
       operationId: contactNoteCreate
       parameters:
-        - name: contact_id
+        - name: contactid
           in: path
           description: Id of Contact
           required: true
