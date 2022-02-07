@@ -1,0 +1,35 @@
+title: ContactNote
+description: ''
+type: object
+properties:
+  results:
+    type: array
+    uniqueItems: true
+    items:
+      type: object
+      properties:
+        object:
+          type: string
+        note_id:
+          type: string
+        contact_id:
+          type: string
+        acctID:
+          type: string
+        activity_id:
+          type: string
+        note_created_date:
+          type: string
+          format: date-time
+        title:
+          type: string
+        created_by:
+          $ref: ./UserResponse.yaml
+        content:
+          type: string
+        note_type:
+          type: string
+        public:
+          type: string
+  count:
+    type: string
