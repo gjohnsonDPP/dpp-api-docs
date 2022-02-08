@@ -642,6 +642,83 @@ paths:
                   $ref: '#/components/examples/ContactNote.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
+  '/contacts/{contact_id}/notes/{note_id}':
+    put:
+      tags:
+        - Contacts
+        - ContactNotes
+      summary: Update Contact Note
+      description: Update a specific Contact Note by the Contact's Id and the Id of the Contact Note.
+      operationId: contactNoteUpdate
+      parameters:
+        - name: contact_id
+          in: path
+          description: Id of Contact
+          required: true
+          schema:
+            type: integer
+        - name: note_id
+          in: path
+          description: Id of Contact Note
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/ContactNote.yaml
+      responses:
+        '200':
+          description: Successfully Updated Contact Note
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    $ref: ./models/ContactNote.yaml
+                  status:
+                    $ref: ./models/SuccessStatus.yaml
+              examples:
+                ContactNotesExample:
+                  $ref: '#/components/examples/ContactNote.json'
+        '400':
+          $ref: '#/components/responses/ERROR_4XX'
+    delete:  
+      tags:
+        - Contacts
+        - ContactNotes
+      summary: Delete Contact Note
+      description: Delete a specific Contact Note by the Contact's Id and the Id of the Contact Note.
+      operationId: contactNoteDelete
+      parameters:
+        - name: contact_id
+          in: path
+          description: Id of Contact
+          required: true
+          schema:
+            type: integer
+        - name: note_id
+          in: path
+          description: Id of Contact Note
+          required: true
+          schema:
+            type: integer  
+      responses:
+        '200':
+          description: Successfully Deleted Contact Note
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: object
+                  status:
+                    $ref: ./models/SuccessStatus.yaml
+        '400':
+          $ref: '#/components/responses/ERROR_4XX'
   '/contacts/search_by_phone/{phone}':
     get:
       tags:
