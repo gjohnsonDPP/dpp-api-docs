@@ -573,6 +573,13 @@ paths:
           required: true
           schema:
             type: integer
+      requestBody:
+        description: ''
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: models/ContactNote.yaml
       responses:
         '200':
           $ref: '#/components/responses/POST_200'

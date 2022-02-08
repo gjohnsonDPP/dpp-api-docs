@@ -10,26 +10,38 @@ properties:
       properties:
         object:
           type: string
+          readOnly: true
         note_id:
           type: string
+          readOnly: true
         contact_id:
           type: string
+          readOnly: true
         acctID:
           type: string
+          readOnly: true
         activity_id:
           type: string
+          readOnly: true
         note_created_date:
           type: string
           format: date-time
+          readOnly: true
         title:
           type: string
         created_by:
           $ref: ./UserResponse.yaml
+          readOnly: true
         content:
           type: string
         note_type:
           type: string
         public:
           type: string
+      required:
+        - content
+        - note_type
+        - public
   count:
     type: string
+    readOnly: true
