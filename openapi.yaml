@@ -54,15 +54,15 @@ paths:
                 - client_id
       security: []
       responses:
-        default:
-          description: default
+        '200':
+          description: Successful Request
           content:
             application/json:
               schema:
                 type: object
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
+                    $ref: 'models/SuccessStatus.yaml'
                   response:
                     type: array
                     description: Get API Authization Token
@@ -75,6 +75,8 @@ paths:
                         expires_in:
                           type: integer
                           description: Time Until Token Expires
+        '400':
+          $ref: '#/components/responses/ERROR_4XX'                  
   /calls:
     post:
       summary: Create Call Record
