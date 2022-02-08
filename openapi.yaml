@@ -1917,47 +1917,8 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
               examples:
-                Loan GET 200 Response Example:
-                  value:
-                    response:
-                      object: loan
-                      loan_id: '1868335'
-                      acctID: 3863
-                      tp_id: 0
-                      created_at: '2021-11-22 05:02:09'
-                      created_by: 4950368
-                      modified_at: '2021-12-12 05:02:09'
-                      modified_by: 0
-                      client_id: 382760691
-                      advance_type: ACH
-                      advance_date: '2021-12-25'
-                      paid_in_full_date: '2022-05-25'
-                      type_id: 1
-                      program_id: 0
-                      loan_class: 1
-                      loan_amount: 4550.72
-                      payback_amount: 0
-                      rate: 0.02
-                      payment: 0
-                      holdback_percent: 0.02
-                      payback_period: 0
-                      frequency: D
-                      freq_int: ''
-                      period_amount: 0
-                      fees: 0
-                      conf_num: '12345'
-                      underwriter_notes: ''
-                      contract_date: '2021-12-25'
-                      contract_number: ''
-                      funded: true
-                      status: 1
-                      lien_pos: 1
-                      ach_start_date: '2021-12-25'
-                      ach_on: true
-                      pricing_lock: true
-                      offer_set: 1048066
-                    status:
-                      code: 200
+                Loan Example:
+                  $ref: '#/components/examples/Loan.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
     put:
@@ -1991,48 +1952,8 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
               examples:
-                Loan PUT 200 Response Example:
-                  value:
-                    response:
-                      object: loan
-                      loan_id: '1868335'
-                      acctID: 3863
-                      tp_id: null
-                      created_at: '2021-11-22 05:02:09'
-                      created_by: '4950368'
-                      modified_at: null
-                      modified_by: null
-                      client_id: '382760691'
-                      advance_type: ACH
-                      advance_date: null
-                      paid_in_full_date: null
-                      defaulted_date: null
-                      type_id: '1'
-                      program_id: '0'
-                      loan_class: '1'
-                      loan_amount: '4550.72'
-                      payback_amount: '0.00'
-                      rate: '0'
-                      payment: '0.00'
-                      holdback_percent: '0.02'
-                      payback_period: '0.00'
-                      frequency: D
-                      freq_int: ''
-                      period_amount: '0'
-                      fees: '0.00'
-                      conf_num: '12345'
-                      underwriter_notes: ''
-                      contract_date: null
-                      contract_number: ''
-                      funded: '0'
-                      status: '10'
-                      lien_pos: '0'
-                      ach_start_date: null
-                      ach_on: '0'
-                      pricing_lock: '0'
-                      offer_set: '1048066'
-                    status:
-                      code: 200
+                Loan Example:
+                  $ref: '#/components/examples/Loan.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
     delete:
@@ -5371,6 +5292,48 @@ components:
           object: documentTypes
           id: '2074'
           title: Updated Document Type
+        status:
+          code: 200
+    Loan.json:
+      value:
+        response:
+          object: loan
+          id: '2204080'
+          acctID: '98'
+          tp_id: null
+          created_at: '2022-02-08 00:30:03'
+          created_by: '6777715'
+          modified_at: '2022-02-08 00:38:19'
+          modified_by: '6777715'
+          client_id: '534512161'
+          advance_type: ACH
+          advance_date: '1969-12-31'
+          paid_in_full_date: null
+          defaulted_date: null
+          type_id: '1'
+          program_id: '1427'
+          loan_class: '1'
+          loan_amount: '5000.00'
+          payback_amount: '6250.00'
+          rate: '1.25'
+          payment: '260.42'
+          holdback_percent: '0'
+          payback_period: '24.00'
+          frequency: M
+          freq_int: '10'
+          period_amount: '0'
+          fees: '0.00'
+          conf_num: ''
+          underwriter_notes: ''
+          contract_date: '2022-01-01'
+          contract_number: '123456'
+          funded: null
+          status: '4'
+          lien_pos: '1'
+          ach_start_date: null
+          ach_on: null
+          pricing_lock: '0'
+          offer_set: '1383814'
         status:
           code: 200
 security:
