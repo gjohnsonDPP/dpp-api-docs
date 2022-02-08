@@ -1556,9 +1556,9 @@ paths:
     post:
       tags:
         - Documents
-      summary: Create a Document by Doc. Template ID
+      summary: Create a Document
       description: |-
-        Creates a Document Record object
+        Uses a Doc. Template ID to create a Document Record object 
 
         <span><i class="fa fa-info-circle"></i><i style="font-size:12px"> Select the `'Examples'` option to change the content of the request's Body to ONLY contain the required POST Parameters.</i></span>
       operationId: documentCreate
