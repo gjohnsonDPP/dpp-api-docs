@@ -559,7 +559,7 @@ paths:
                       message: Successfully deleted object
         '400':
           $ref: '#/components/responses/ERROR_4XX'
-  '/contacts/{contactid}/notes':
+  '/contacts/{contact_id}/notes':
     post:
       tags:
         - Contacts
@@ -567,7 +567,7 @@ paths:
       description: Creates a Note for a Contact using the Contact's ID
       operationId: contactNoteCreate
       parameters:
-        - name: contactid
+        - name: contact_id
           in: path
           description: Id of Contact
           required: true
@@ -585,7 +585,16 @@ paths:
                 - content
       responses:
         '200':
-          $ref: '#/components/responses/POST_200'
+          description: Successfully returned Contact Notes
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: object
+                  status:
+                    $ref: ./models/SuccessStatus.yaml
         '400':
           $ref: '#/components/responses/ERROR_4XX'
     get:
@@ -595,7 +604,7 @@ paths:
       description: Returns all Notes for a Contact by the Contact's ID
       operationId: contactNoteGet
       parameters:
-        - name: contactid
+        - name: contact_id
           in: path
           description: Id of Contact
           required: true
