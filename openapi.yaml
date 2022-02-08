@@ -115,7 +115,7 @@ paths:
                   call_result: Busy
       responses:
         '200':
-          $ref: '#/components/responses/SUCCESS_200'
+          $ref: '#/components/responses/POST_200'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/calls/{id}':
@@ -268,7 +268,7 @@ paths:
                   media_type: 1
       responses:
         '200':
-          $ref: '#/components/responses/SUCCESS_200'
+          $ref: '#/components/responses/POST_200'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/campaigns/e-mail/{id}':
@@ -459,7 +459,7 @@ paths:
                   date_of_birth: '1941-03-12'
       responses:
         '200':
-          $ref: '#/components/responses/SUCCESS_200'
+          $ref: '#/components/responses/POST_200'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/contacts/{id}':
@@ -785,7 +785,7 @@ paths:
               $ref: ./models/Document.yaml
       responses:
         '200':
-          $ref: '#/components/responses/SUCCESS_200'
+          $ref: '#/components/responses/POST_200'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/contacts/{id}/form_request':
@@ -1128,7 +1128,7 @@ paths:
                   client_id: 382760691
       responses:
         '200':
-          $ref: '#/components/responses/SUCCESS_200'
+          $ref: '#/components/responses/POST_200'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/debts/{id}':
@@ -1577,7 +1577,7 @@ paths:
         required: true
       responses:
         '200':
-          $ref: '#/components/responses/SUCCESS_200'
+          $ref: '#/components/responses/POST_200'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
       x-internal: true
@@ -1781,7 +1781,7 @@ paths:
                   payback_amount: 0
       responses:
         '200':
-          $ref: '#/components/responses/SUCCESS_200'
+          $ref: '#/components/responses/POST_200'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/loans/{id}':
@@ -1925,7 +1925,7 @@ paths:
         description: ''
       responses:
         '200':
-          $ref: '#/components/responses/SUCCESS_200'
+          $ref: '#/components/responses/POST_200'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/settlement_offers/{id}':
@@ -2074,7 +2074,7 @@ paths:
         required: true
       responses:
         '200':
-          $ref: '#/components/responses/SUCCESS_200'
+          $ref: '#/components/responses/POST_200'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/tasks/{id}':
@@ -2207,7 +2207,7 @@ paths:
       operationId: teamCreate
       responses:
         '200':
-          $ref: '#/components/responses/SUCCESS_200'
+          $ref: '#/components/responses/POST_200'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
       requestBody:
@@ -2357,7 +2357,7 @@ paths:
         description: User Object
       responses:
         '200':
-          $ref: '#/components/responses/SUCCESS_200'
+          $ref: '#/components/responses/POST_200'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/users/{id}':
