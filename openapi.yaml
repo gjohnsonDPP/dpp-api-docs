@@ -13,43 +13,24 @@ servers:
     url: 'https://staging1-api.debtpaypro.com/v1'
 tags:
   - name: Auth
-    description: All available actions for Auth
   - name: Calls
-    description: All available actions for Calls
   - name: Campaigns
-    description: All available actions for Campaigns
   - name: Companies
-    description: All available actions for Companies
   - name: Contacts
-    description: All available actions for Contacts
   - name: Debts
-    description: All available actions for Debts
   - name: DebtNotes
-    description: All available actions for DebtNotes
   - name: DebtTasks
-    description: All available actions for DebtTasks
   - name: Documents
-    description: All available actions for Documents
   - name: DocumentTypes
-    description: All available actions for DocumentTypes
   - name: Forms
-    description: Actions associated with Forms
   - name: Loans
-    description: All available actions for Loans
   - name: Notes
-    description: All available actions for Notes
   - name: Packages
-    description: All available actions for Packages
   - name: Settlement_Offers
-    description: All available actions for Settlement Offers
   - name: SMS
-    description: Actions associated with SMS Messages
   - name: Tasks
-    description: All available actions for Tasks
   - name: Teams
-    description: All available actions for Teams
   - name: Users
-    description: All available actions for Users
 paths:
   /auth/token:
     post:
@@ -625,6 +606,35 @@ paths:
                       message: Successfully deleted object
         '400':
           $ref: '#/components/responses/ERROR_4XX'
+  '/contacts/{contactid}/notes':
+    get:
+      tags:
+        - Contacts
+      summary: Find Contact Notes by ID
+      description: Returns all Notes for a Contact by the Contact's ID
+      operationId: contactNoteGet
+      parameters:
+        - name: contactid
+          in: path
+          description: Id of Contact
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully returned Contact Notes
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: object
+                  status:
+                    $ref: ./models/SuccessStatus.yaml
+        '400':
+          $ref: '#/components/responses/ERROR_4XX'
+      x-internal: true
   '/contacts/search_by_phone/{phone}':
     get:
       tags:
@@ -1814,13 +1824,13 @@ paths:
       tags:
         - Debts
         - DebtNotes
-      summary: Create Debt Note using ID
-      description: Creates a new Debt Note
+      summary: Create Debt Note by ID
+      description: Creates a new Debt Note associated with an existing Debt Record
       operationId: debtNoteCreate
       parameters:
         - in: path
           name: id
-          description: Id of Debt Record to add Note to
+          description: Id of Debt Record
           required: true
           schema:
             type: integer
@@ -1838,54 +1848,124 @@ paths:
               schema:
                 type: object
                 properties:
+                  status:
+                    $ref: ./models/SuccessStatus.yaml
+              examples:
+                DebtNote Example:
+                  $ref: '#/components/examples/DebtNote.json'
+        '400':
+          $ref: '#/components/responses/ERROR_4XX'
+    get:
+      tags:
+        - Debts
+        - DebtNotes
+      summary: Find Debt Notes by ID
+      description: Returns all Debt Notes associate with a specific Debt Record
+      operationId: debtNoteGet
+      parameters:
+        - in: path
+          name: id
+          description: Id of Debt Record
+          required: true
+          schema:
+            type: integer
+        - in: query
+          name: _offset
+          description: (Optional) This value dictates which Note to start the Request at.
+          schema:
+            type: integer
+            default: 1
+          allowEmptyValue: true
+        - in: query
+          name: _limit
+          description: (Optional) This value represents the maximum number of Notes your Request to contain.
+          schema:
+            type: integer
+            default: 1
+          allowEmptyValue: true
+      responses:
+        '200':
+          description: Successfully returned Debt Notes
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    $ref: ./models/DebtNote.yaml
+                  status:
+                    $ref: ./models/SuccessStatus.yaml
+              examples:
+                DebtNote Example:
+                  $ref: '#/components/examples/DebtNote.json'
+        '400':
+          $ref: '#/components/responses/ERROR_4XX'
+  '/debts/{debt_id}/notes/{note_id}':
+    put:
+      tags:
+        - Debts
+        - DebtNotes
+      summary: Update Debt Note by ID
+      description: Updates a Debt Note by ID of associated Debt Record and Note ID
+      operationId: debtNoteUpdate
+      parameters:
+        - name: debt_id
+          in: path
+          description: Id of Debt Record
+          required: true
+          schema:
+            type: integer
+        - name: note_id
+          in: path
+          description: Id of Debt Note
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                title:
+                  description: Name of DebtNote
+                  type: string
+                content:
+                  description: Content of DebtNote
+                  type: string
+              type: object
+        required: true
+      responses:
+        '200':
+          description: Successfully created a Debt Note
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
                   response:
                     $ref: ./models/DebtNoteResponse.yaml
                   status:
                     $ref: ./models/SuccessStatus.yaml
               examples:
-                Debt Note POST 200 Response Example:
-                  value:
-                    response:
-                      object: debt_note
-                      note_id: 22377190
-                      acctID: 2123
-                      note_created_date: '2021-11-26 08:49:16'
-                      client_id: 475956560
-                      debt_id: 152080478
-                      title: API Test D
-                      created_by:
-                        object: user
-                        user_id: 6583363
-                        company_id: 12758
-                        parent_id: 0
-                        user_type: 1
-                        created: '2021-10-18 04:12:46'
-                        user_name: Greg
-                        firstname: Greg
-                        lastname: Johnson
-                        company: ''
-                        email: g.johnson@debtpaypro.com
-                        active: true
-                        role: 15203
-                        attorney: false
-                        payee_id: 0
-                        del: false
-                        delTime: null
-                      content: API Test Debt Note
-                    status:
-                      code: 200
+                DebtNote Example:
+                  $ref: '#/components/examples/DebtNote.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
-  '/debts/notes/{id}':
     delete:
       tags:
         - Debts
         - DebtNotes
       summary: Delete Debt Note by ID
-      description: Deletes a Debt Note
+      description: Deletes a Debt Note by ID of associated Debt Record and Note ID
       operationId: debtNoteDelete
       parameters:
-        - name: id
+        - name: debt_id
+          in: path
+          description: Id of Debt Record
+          required: true
+          schema:
+            type: integer
+        - name: note_id
           in: path
           description: Id of Debt Note
           required: true
@@ -5156,6 +5236,76 @@ components:
               object_id: '167172217'
           download: /getfile.php?id=234334006
           file_content: 'https://dpp-uploads.s3.amazonaws.com/98/c89e9570-Testdocument.txt?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAI4QAAJTOXUVV5DFQ%2F20220202%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220202T000126Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Signature=bed96de5de2092615a40b2291efab2f1da341bbcc522be17769598de39f0599d'
+        status:
+          code: 200
+    DebtNote.json:
+      value:
+        response:
+          object: debt_note
+          note_id: '22957924'
+          acctID: '98'
+          note_created_date: '2022-02-07 14:01:08'
+          client_id: 534512322
+          debt_id: 167172214
+          title: Debt Note Title
+          created_by:
+            object: user
+            id: '6777883'
+            acctID: '91'
+            company_id: '448'
+            parent_id: '0'
+            user_type: '1'
+            created: '2022-01-08 10:12:37'
+            user_name: QA_Tester
+            firstname: QA
+            lastname: Tester
+            company: ''
+            email: test@debtpaypro.com
+            active: '1'
+            role: '267'
+            attorney: '0'
+            payee_id: '0'
+            del: '0'
+            delTime: null
+            pass_reset: '0'
+          content: This is a test Debt Note
+        status:
+          code: 200
+    ContactNote.json:
+      value:
+        response:
+          results:
+            - object: contacts_note
+              note_id: '610581415'
+              contact_id: '534512123'
+              acctID: '91'
+              activity_id: '702362434'
+              note_created_date: '2022-01-10 11:45:55'
+              title: false
+              created_by:
+                object: user
+                id: '6777715'
+                acctID: '91'
+                company_id: '438'
+                parent_id: '0'
+                user_type: '1'
+                created: '2022-01-08 10:12:37'
+                user_name: QA_Tester
+                firstname: QA
+                lastname: Tester
+                company: ''
+                email: test@debtpaypro.com
+                active: '1'
+                role: '267'
+                attorney: '0'
+                payee_id: '0'
+                del: '0'
+                delTime: null
+                pass_reset: '0'
+              content: Test Call
+              note_type: Call
+              public: '0'
+          count: '3'
         status:
           code: 200
 security:
