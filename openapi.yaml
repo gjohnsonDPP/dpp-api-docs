@@ -2332,6 +2332,9 @@ paths:
                     type: object
                   status:
                     $ref: ./models/SuccessStatus.yaml
+              examples:
+                Teams Example:
+                  $ref: '#/components/examples/AllTeams.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
     post:
@@ -2397,15 +2400,8 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
               examples:
-                Teams GET 200 Response Example:
-                  value:
-                    response:
-                      object: team
-                      team_id: 20875
-                      company_id: 42128
-                      name: Test
-                    status:
-                      code: 200
+                Team Example:
+                  $ref: '#/components/examples/Team.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
     put:
@@ -2439,15 +2435,8 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
               examples:
-                Teams PUT 200 Response Example:
-                  value:
-                    response:
-                      object: team
-                      team_id: 20875
-                      company_id: 42128
-                      name: Test
-                    status:
-                      code: 200
+                Team Example:
+                  $ref: '#/components/examples/Team.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
     delete:
@@ -5266,6 +5255,31 @@ components:
               - label: Co-Applicant
                 field_id: '1237'
                 value: '476723502'
+        status:
+          code: 200
+    AllTeams.json:
+      value:
+        response:
+          - team_id: '123'
+            team_name: Super Admin
+          - team_id: '126'
+            team_name: Sales
+          - team_id: '127'
+            team_name: Underwriting
+          - team_id: '63'
+            team_name: Legal Negotations
+          - team_id: '79'
+            team_name: Non Legal Negotiators
+        status:
+          code: 200
+    Team.json:
+      value:
+        response:
+          object: team
+          id: '21493'
+          acctID: '28'
+          company_id: '238'
+          name: API Demo Team
         status:
           code: 200
 security:
