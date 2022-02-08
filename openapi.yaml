@@ -610,6 +610,20 @@ paths:
           required: true
           schema:
             type: integer
+        - in: query
+          name: _offset
+          description: (Optional) This value dictates which Note to start the Request at.
+          schema:
+            type: integer
+            default: 1
+          allowEmptyValue: true
+        - in: query
+          name: _limit
+          description: (Optional) This value represents the maximum number of Notes your Request to contain.
+          schema:
+            type: integer
+            default: 1
+          allowEmptyValue: true
       responses:
         '200':
           description: Successfully returned Contact Notes
