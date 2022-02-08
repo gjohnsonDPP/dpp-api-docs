@@ -2648,6 +2648,9 @@ paths:
                     $ref: ./models/UserSettings.yaml
                   status:
                     $ref: ./models/SuccessStatus.yaml
+              examples:
+                User Settings Example:
+                  $ref: '#/components/examples/UserSettings.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
     put:
@@ -2681,6 +2684,9 @@ paths:
                     $ref: ./models/UserSettings.yaml
                   status:
                     $ref: ./models/SuccessStatus.yaml
+              examples:
+                User Settings Example:
+                  $ref: '#/components/examples/UserSettings.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   /users/current:
@@ -2702,6 +2708,9 @@ paths:
                     $ref: ./models/UserResponse.yaml
                   status:
                     $ref: ./models/SuccessStatus.yaml
+              examples:
+                User Example:
+                  $ref: '#/components/examples/User.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/users/{id}/tasks':
@@ -5266,6 +5275,31 @@ components:
           del: '0'
           delTime: null
           pass_reset: '0'
+        status:
+          code: 200
+    UserSettings.json:
+      value:
+        response:
+          object: usersPref
+          user_id: '6777123'
+          default_module: dashboard
+          layout_type: fluid
+          theme: '1'
+          timezone: US/Central
+          lang: en-us
+          date_format: absolute
+          phone: '1233214444'
+          extension: '123'
+          fax: '1112225555'
+          mobile_num: 111-222-3333
+          mobile_on: '1'
+          signature: <p>QA TESTER</p>
+          logouttime: '0'
+          docu_acct: ''
+          docu_user: ''
+          docu_pass: ''
+          tabbed_add: '1'
+          email_open: '1'
         status:
           code: 200
 security:
