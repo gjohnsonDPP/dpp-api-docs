@@ -1135,46 +1135,8 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
               examples:
-                200 GET History Feed Response:
-                  value:
-                    response:
-                      response:
-                        - object: contacts_log
-                          id: '3094248541'
-                          acctID: '98'
-                          created_at: '2022-01-18 05:26:54'
-                          created_by: '6777715'
-                          contact_id: '534512161'
-                          type: Docs
-                          message: 'PDF Document Generated: Clixsign Test'
-                          del: '0'
-                          user:
-                            uID: '6777715'
-                            guid: a24a9f63-3d32-f0f8-4178-9711939bae56
-                            company_id: '438'
-                            parent_id: '0'
-                            user_type: '1'
-                            acctID: '98'
-                            created: '2022-01-08 10:12:37'
-                            username: QA_Tester
-                            password: 41559f9389e952a89deb234ec6b53d68c79f7b33
-                            firstname: QA
-                            lastname: Tester
-                            company: ''
-                            email: g.johnson@debtpaypro.com
-                            active: '1'
-                            role: '267'
-                            attorney: '0'
-                            payee_id: '0'
-                            del: '0'
-                            delTime: null
-                            pass_reset: '0'
-                            master: '0'
-                            billable: '1'
-                          user_role: Super Admin
-                      count: 1
-                    status:
-                      code: 200
+                History Feed Example:
+                  $ref: '#/components/examples/ContactHistoryFeed.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   /debts:
@@ -1277,98 +1239,8 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
               examples:
-                Debt GET 200 Response Example:
-                  value:
-                    response:
-                      object: debt
-                      id: 163287508
-                      acctID: 3863
-                      created_at: '2021-11-22 04:43:57'
-                      created_by:
-                        object: user
-                        user_id: 4950368
-                        company_id: 42128
-                        parent_id: 0
-                        user_type: 1
-                        created: '2019-10-02 02:41:18'
-                        user_name: JDoe
-                        firstname: John
-                        lastname: Doe
-                        company: ''
-                        email: test@test.com
-                        active: true
-                        role: 29399
-                        attorney: false
-                        payee_id: 0
-                        del: false
-                        delTime: null
-                        pass_reset: '0'
-                      modified_at: null
-                      modified_by: null
-                      original_debt_amount: 10500
-                      current_debt_amount: 9499.5
-                      current_payment: 153
-                      current_rate: 0
-                      notes: null
-                      verified_debt_amount: 0
-                      creditor:
-                        object: creditor
-                        creditor_id: 540
-                        acctID: 3863
-                        tp_id: 0
-                        is_active: '1'
-                        company_name: Chase
-                        first_name: null
-                        last_name: null
-                        address:
-                          address1: P O Box 15919
-                          address2: ''
-                          address3: null
-                          city: Wilmington
-                          state: Delaware
-                          zip: 19850-0464
-                        phone: 800-444-9370
-                      debt_buyer:
-                        object: creditor
-                        creditor_id: 17576331
-                        acctID: 3863
-                        tp_id: 0
-                        is_active: '1'
-                        company_name: Bob's Debt Co.
-                        first_name: Bob
-                        last_name: Smith
-                        address:
-                          address1: 101 Debt Way
-                          address2: Suite 2200
-                          address3: null
-                          city: Chicago
-                          state: IL
-                          zip: '60614'
-                        phone: '3123839994'
-                      poa_sent_date: '2019-08-24'
-                      legal_account: 'No'
-                      last_payment_date: '2019-08-24'
-                      last_payment_amount: 0
-                      opened_date: '2019-08-24'
-                      available_balance: 0
-                      enrolled: '0'
-                      enrolled_date: '2019-08-24 00:00:00'
-                      debt_type: '0'
-                      cash_advance: '0'
-                      balance_transfer: '0'
-                      heavy_usage: '0'
-                      has_summons: '0'
-                      debt_status: null
-                      locked: '0'
-                      og_account_num: '12345674445'
-                      creditor_account_num: null
-                      settled: '0'
-                      settlement_id: 0
-                      client_id: 382760691
-                      settlement_offers: []
-                      customs: []
-                    status:
-                      code: 200
+                Debt Example:
+                  $ref: '#/components/examples/Debt.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
     put:
@@ -1402,98 +1274,8 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
               examples:
-                Debt PUT 200 Response Example:
-                  value:
-                    response:
-                      object: debt
-                      id: 163287508
-                      acctID: 3863
-                      created_at: '2021-11-22 04:43:57'
-                      created_by:
-                        object: user
-                        user_id: 4950368
-                        company_id: 42128
-                        parent_id: 0
-                        user_type: 1
-                        created: '2019-10-02 02:41:18'
-                        user_name: JDoe
-                        firstname: John
-                        lastname: Doe
-                        company: ''
-                        email: test@test.com
-                        active: true
-                        role: 29399
-                        attorney: false
-                        payee_id: 0
-                        del: false
-                        delTime: null
-                        pass_reset: '0'
-                      modified_at: null
-                      modified_by: null
-                      original_debt_amount: 10500
-                      current_debt_amount: 9499.5
-                      current_payment: 153
-                      current_rate: 0
-                      notes: null
-                      verified_debt_amount: 0
-                      creditor:
-                        object: creditor
-                        creditor_id: 540
-                        acctID: 3863
-                        tp_id: 0
-                        is_active: '1'
-                        company_name: Chase
-                        first_name: null
-                        last_name: null
-                        address:
-                          address1: P O Box 15919
-                          address2: ''
-                          address3: null
-                          city: Wilmington
-                          state: Delaware
-                          zip: 19850-0464
-                        phone: 800-444-9370
-                      debt_buyer:
-                        object: creditor
-                        creditor_id: 17576331
-                        acctID: 3863
-                        tp_id: 0
-                        is_active: '1'
-                        company_name: Bob's Debt Co.
-                        first_name: Bob
-                        last_name: Smith
-                        address:
-                          address1: 101 Debt Way
-                          address2: Suite 2200
-                          address3: null
-                          city: Chicago
-                          state: IL
-                          zip: '60614'
-                        phone: '3123839994'
-                      poa_sent_date: '2019-08-24'
-                      legal_account: 'No'
-                      last_payment_date: '2019-08-24'
-                      last_payment_amount: 0
-                      opened_date: '2019-08-24'
-                      available_balance: 0
-                      enrolled: '0'
-                      enrolled_date: '2019-08-24 00:00:00'
-                      debt_type: '0'
-                      cash_advance: '0'
-                      balance_transfer: '0'
-                      heavy_usage: '0'
-                      has_summons: '0'
-                      debt_status: null
-                      locked: '0'
-                      og_account_num: '12345674445'
-                      creditor_account_num: null
-                      settled: '0'
-                      settlement_id: 0
-                      client_id: 382760691
-                      settlement_offers: []
-                      customs: []
-                    status:
-                      code: 200
+                Debt Example:
+                  $ref: '#/components/examples/Debt.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
     delete:
@@ -5358,6 +5140,164 @@ components:
               receiver_phone_number: '12245771234'
               title: null
               from_number: '+16309341234'
+        status:
+          code: 200
+    ContactHistoryFeed.json:
+      value:
+        response:
+          results:
+            - object: contacts_log
+              id: '3054970123'
+              acctID: '28'
+              created_at: '2022-01-08 12:24:19'
+              created_by: '6777123'
+              contact_id: '534512123'
+              type: General
+              message: Contact created as clone by QA Tester
+              del: '0'
+              user:
+                object: user
+                id: '6777123'
+                acctID: '28'
+                company_id: '238'
+                parent_id: '0'
+                user_type: '1'
+                created: '2022-01-08 10:12:37'
+                user_name: QA_Tester
+                firstname: QA
+                lastname: Tester
+                company: ''
+                email: test@debtpaypro.com
+                active: '1'
+                role: '267'
+                attorney: '0'
+                payee_id: '0'
+                del: '0'
+                delTime: null
+                pass_reset: '0'
+            - object: contacts_log
+              id: '3054971124'
+              acctID: '28'
+              created_at: '2022-01-08 12:25:01'
+              created_by: '6777123'
+              contact_id: '534512123'
+              type: Re-Assign
+              message: Primary Assigned User Changed To QA Tester
+              del: '0'
+              user:
+                object: user
+                id: '6777123'
+                acctID: '28'
+                company_id: '238'
+                parent_id: '0'
+                user_type: '1'
+                created: '2022-01-08 10:12:37'
+                user_name: QA_Tester
+                firstname: QA
+                lastname: Tester
+                company: ''
+                email: test@debtpaypro.com
+                active: '1'
+                role: '267'
+                attorney: '0'
+                payee_id: '0'
+                del: '0'
+                delTime: null
+                pass_reset: '0'
+          count: '121'
+        status:
+          code: 200
+    Debt.json:
+      value:
+        response:
+          object: debt
+          id: '167172123'
+          acctID: '28'
+          created_at: '2021-03-11 10:16:13'
+          created_by:
+            object: user
+            id: '5592123'
+            acctID: '28'
+            company_id: '123'
+            parent_id: '0'
+            user_type: '1'
+            created: '2020-06-29 11:05:13'
+            user_name: dpp
+            firstname: Jane
+            lastname: Doe
+            company: ''
+            email: test@test.com
+            active: '1'
+            role: '267'
+            attorney: '0'
+            payee_id: '0'
+            del: '0'
+            delTime: null
+            pass_reset: '0'
+          modified_at: '2021-03-11 10:16:13'
+          modified_by: '5592102'
+          original_debt_amount: '7500.00'
+          current_debt_amount: '7500.00'
+          current_payment: '0.00'
+          current_rate: '0.00'
+          notes: ''
+          verified_debt_amount: '0.00'
+          creditor:
+            object: creditor
+            id: '123'
+            tp_id: '0'
+            is_active: '1'
+            company_name: Chase
+            first_name: null
+            last_name: null
+            address:
+              address1: P O Box 15919
+              address2: ''
+              address3: null
+              city: Wilmington
+              state: Delaware
+              zip: 19850-0464
+            phone: 800-444-5678
+          debt_buyer:
+            object: creditor
+            creditor_id: 17576123
+            acctID: 3863
+            tp_id: 0
+            is_active: '1'
+            company_name: Test Debt Co.
+            first_name: Test
+            last_name: Buyer
+            address:
+              address1: 101 Debt Way
+              address2: Suite 2200
+              address3: null
+              city: Chicago
+              state: IL
+              zip: '60614'
+            phone: 800-444-1234
+          poa_sent_date: '2019-08-24'
+          legal_account: 'No'
+          last_payment_date: '2019-08-24'
+          last_payment_amount: 0
+          opened_date: '2019-08-24'
+          available_balance: '0.00'
+          enrolled: '1'
+          enrolled_date: '2021-09-29 15:12:00'
+          debt_type: '0'
+          cash_advance: '0'
+          balance_transfer: '0'
+          heavy_usage: '0'
+          has_summons: '0'
+          debt_status: null
+          locked: '0'
+          og_account_num: '12345678'
+          creditor_account_num: null
+          settled: '0'
+          settlement_id: '0'
+          client_id: '534512123'
+          settlement_offers:
+            - '4200123'
+          customs: []
         status:
           code: 200
 security:
