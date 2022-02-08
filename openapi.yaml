@@ -2557,27 +2557,8 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
               examples:
-                Users GET 200 Response Example:
-                  value:
-                    response:
-                      object: user
-                      id: 6033912
-                      company_id: 42128
-                      parent_id: 4950368
-                      created: '2021-01-13 12:47:25'
-                      user_name: QAuser
-                      firstname: QA
-                      lastname: Tester
-                      company: Acme
-                      email: mail@debtpaypro.com
-                      active: true
-                      role: 29399
-                      attorney: true
-                      payee_id: 23006
-                      del: 0
-                      delTime: '2021-01-13 12:47:25'
-                    status:
-                      code: 200
+                User Example:
+                  $ref: '#/components/examples/User.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
     put:
@@ -2612,27 +2593,8 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
               examples:
-                Users PUT 200 Response Example:
-                  value:
-                    response:
-                      object: user
-                      id: 6033912
-                      company_id: 42128
-                      parent_id: 4950368
-                      created: '2021-01-13 12:47:25'
-                      user_name: QAuser
-                      firstname: QA
-                      lastname: Tester
-                      company: Acme
-                      email: mail@debtpaypro.com
-                      active: true
-                      role: 29399
-                      attorney: true
-                      payee_id: 23006
-                      del: 0
-                      delTime: '2021-01-13 12:47:25'
-                    status:
-                      code: 200
+                User Example:
+                  $ref: '#/components/examples/User.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
     delete:
@@ -5280,6 +5242,30 @@ components:
           acctID: '28'
           company_id: '238'
           name: API Demo Team
+        status:
+          code: 200
+    User.json:
+      value:
+        response:
+          object: user
+          id: '6777123'
+          acctID: '28'
+          company_id: '238'
+          parent_id: '0'
+          user_type: '1'
+          created: '2022-01-08 10:12:37'
+          user_name: QA_Tester
+          firstname: QA
+          lastname: Tester
+          company: ''
+          email: test@debtpaypro.com
+          active: '1'
+          role: '267'
+          attorney: '0'
+          payee_id: '0'
+          del: '0'
+          delTime: null
+          pass_reset: '0'
         status:
           code: 200
 security:
