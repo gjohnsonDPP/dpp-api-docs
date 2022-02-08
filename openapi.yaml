@@ -113,16 +113,8 @@ paths:
                   call_result: Busy
       responses:
         '200':
-          description: Successfully created a Call Record
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  response:
-                    type: object
-                  status:
-                    $ref: ./models/SuccessStatus.yaml
+          description: 'Successfully created a Call Record'  
+          $ref: '#/components/responses/SUCCESS_200'
               examples:
                 Call Example 200 POST Response:
                   value:
@@ -149,15 +141,6 @@ paths:
       responses:
         '200':
           description: Successfully retrieved a Call Record
-          # content:
-          #   application/json:
-          #     schema:
-          #       type: object
-          #       properties:
-          #         response:
-          #           $ref: ./models/CallResponse.yaml
-          #         status:
-          #           $ref: ./models/SuccessStatus.yaml
           content:
             application/json:
               schema:
@@ -166,7 +149,7 @@ paths:
                   response:
                     type: object
                   status:
-                    $ref: ./models/SuccessStatus.yaml          
+                    $ref: ./models/SuccessStatus.yaml
               examples:
                 CallExample:
                   $ref: '#/components/examples/Call.json'
@@ -4151,6 +4134,16 @@ components:
             properties:
               status:
                 $ref: ./models/ErrorStatus.yaml
+    SUCCESS_200:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              response:
+                type: object
+              status:
+                $ref: ./models/SuccessStatus.yaml
     ERROR_4XX:
       description: An error has occurred
       content:
