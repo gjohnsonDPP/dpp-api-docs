@@ -692,6 +692,9 @@ paths:
                     $ref: models/Docs.yaml
                   status:
                     $ref: ./models/SuccessStatus.yaml
+              examples:
+                Docs Example:
+                  $ref: '#/components/examples/Docs.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/contacts/{id}/documents/{doc_id}':
@@ -1087,143 +1090,8 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
               examples:
-                SMS Log GET 200 Response Example:
-                  value:
-                    response:
-                      - id: '65543140'
-                        sdate: '2021-11-26 07:26:07'
-                        body: "Purchase Price: \r\nSpecified Percentage: \r\nSpecific Daily Amount: \r\nReceipts Purchase Amount: "
-                        status: null
-                        client_id: '479244860'
-                        sender:
-                          object: user
-                          user_id: '5367555'
-                          acctID: '155'
-                          guid: 999e3b03-d176-6526-6a31-9e929e0237c6
-                          company_id: '1355'
-                          parent_id: '38859'
-                          user_type: '1'
-                          created: '2020-03-10 14:56:03'
-                          user_name: Greg
-                          firstname: Gregory
-                          lastname: Johnson
-                          company: ''
-                          email: g.johnson@debtpaypro.com
-                          active: '1'
-                          role: '735'
-                          attorney: '0'
-                          payee_id: '0'
-                          del: '0'
-                          delTime: null
-                          pass_reset: '0'
-                          master: '0'
-                          billable: '1'
-                        flag: '1'
-                        schedule_id: '0'
-                        receiver_phone_number: '13123839986'
-                        title: null
-                        from_number: '+16308350712'
-                      - id: '65543134'
-                        sdate: '2021-11-26 07:26:03'
-                        body: "Hello API,\r\n\r\nYour next payment is scheduled for 12/31/1969, in the amount of 0.00. Please reply to this message, or feel free to contact Billing@company.com if you have any questions.\r\n\r\n\r\nDebt PayPro"
-                        status: null
-                        client_id: '479244860'
-                        sender:
-                          object: user
-                          user_id: '5367555'
-                          acctID: '155'
-                          guid: 999e3b03-d176-6526-6a31-9e929e0237c6
-                          company_id: '1355'
-                          parent_id: '38859'
-                          user_type: '1'
-                          created: '2020-03-10 14:56:03'
-                          user_name: Greg
-                          firstname: Gregory
-                          lastname: Johnson
-                          company: ''
-                          email: g.johnson@debtpaypro.com
-                          active: '1'
-                          role: '735'
-                          attorney: '0'
-                          payee_id: '0'
-                          del: '0'
-                          delTime: null
-                          pass_reset: '0'
-                          master: '0'
-                          billable: '1'
-                        flag: '1'
-                        schedule_id: '0'
-                        receiver_phone_number: '13123839986'
-                        title: null
-                        from_number: '+16308350712'
-                      - id: '65543131'
-                        sdate: '2021-11-26 07:25:58'
-                        body: TEST
-                        status: null
-                        client_id: '479244860'
-                        sender:
-                          object: user
-                          user_id: '5367555'
-                          acctID: '155'
-                          guid: 999e3b03-d176-6526-6a31-9e929e0237c6
-                          company_id: '1355'
-                          parent_id: '38859'
-                          user_type: '1'
-                          created: '2020-03-10 14:56:03'
-                          user_name: Greg
-                          firstname: Gregory
-                          lastname: Johnson
-                          company: ''
-                          email: g.johnson@debtpaypro.com
-                          active: '1'
-                          role: '735'
-                          attorney: '0'
-                          payee_id: '0'
-                          del: '0'
-                          delTime: null
-                          pass_reset: '0'
-                          master: '0'
-                          billable: '1'
-                        flag: '1'
-                        schedule_id: '0'
-                        receiver_phone_number: '13123839986'
-                        title: null
-                        from_number: '+16308350712'
-                      - id: '65543128'
-                        sdate: '2021-11-26 07:25:47'
-                        body: "Hello API,\r\n\r\nWelcome to the program. Your first payment is $0, scheduled for . Please contact Customer Services if you have any questions."
-                        status: null
-                        client_id: '479244860'
-                        sender:
-                          object: user
-                          user_id: '5367555'
-                          acctID: '155'
-                          guid: 999e3b03-d176-6526-6a31-9e929e0237c6
-                          company_id: '1355'
-                          parent_id: '38859'
-                          user_type: '1'
-                          created: '2020-03-10 14:56:03'
-                          user_name: Greg
-                          firstname: Gregory
-                          lastname: Johnson
-                          company: ''
-                          email: g.johnson@debtpaypro.com
-                          active: '1'
-                          role: '735'
-                          attorney: '0'
-                          payee_id: '0'
-                          del: '0'
-                          delTime: null
-                          pass_reset: '0'
-                          master: '0'
-                          billable: '1'
-                        flag: '1'
-                        schedule_id: '0'
-                        receiver_phone_number: '13123839986'
-                        title: null
-                        from_number: '+16308350712'
-                    status:
-                      code: 200
+                SMS Log Example:
+                  $ref: '#/components/examples/SMSlog.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/contacts/{id}/history':
@@ -5306,6 +5174,190 @@ components:
               note_type: Call
               public: '0'
           count: '3'
+        status:
+          code: 200
+    Docs.json:
+      value:
+        response:
+          esigned:
+            clixsign:
+              - object: base
+                doc_id: '5225428'
+                created_at: '2022-02-04 10:17:35'
+                created_by:
+                  object: user
+                  id: '6777715'
+                  acctID: '98'
+                  company_id: '438'
+                  parent_id: '0'
+                  user_type: '1'
+                  created: '2022-01-08 10:12:37'
+                  user_name: QA_Tester
+                  firstname: QA
+                  lastname: Tester
+                  company: ''
+                  email: g.johnson@debtpaypro.com
+                  active: '1'
+                  role: '267'
+                  attorney: '0'
+                  payee_id: '0'
+                  del: '0'
+                  delTime: null
+                  pass_reset: '0'
+                template_id: '94764'
+                file_name: Clixsign Test - test credi (xxxx)
+                valid_through: '2022-03-06 10:17:35'
+                title: Clixsign Test - test credi (xxxx)
+                status: '1'
+                download: /getfile.php?type=clixsign_doc&id=5225428
+            esigns: []
+            docusign: []
+          uploaded:
+            - object: contactFile
+              doc_id: '235377388'
+              acctID: '98'
+              file_name: Testdocument.txt
+              doc_type: '1'
+              created_by: null
+              created_at: '2022-02-07 12:11:25'
+              description: Description of the file.
+              refs:
+                - object: debts
+                  object_id: '167172217'
+              download: /getfile.php?id=235377388
+              file_content: 'https://dpp-uploads.s3.amazonaws.com/98/d45a212c-Testdocument.txt?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAI4QAAJTOXUVV5DFQ%2F20220208%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220208T053235Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Signature=fbc681ed2ca6f9d804233bbe16df46441af89f8c8b31098c9eafa6dc076ca257'
+            - object: contactFile
+              doc_id: '232079353'
+              acctID: '98'
+              file_name: Clixsign Test - John Doe_Download.pdf
+              doc_type: '1'
+              created_by:
+                object: user
+                id: '6777715'
+                acctID: '98'
+                company_id: '438'
+                parent_id: '0'
+                user_type: '1'
+                created: '2022-01-08 10:12:37'
+                user_name: QA_Tester
+                firstname: QA
+                lastname: Tester
+                company: ''
+                email: g.johnson@debtpaypro.com
+                active: '1'
+                role: '267'
+                attorney: '0'
+                payee_id: '0'
+                del: '0'
+                delTime: null
+                pass_reset: '0'
+              created_at: '2022-01-18 07:29:17'
+              description: API Test - Documents Endpoints
+              refs:
+                - object: debts
+                  object_id: '167172214'
+              download: /getfile.php?id=232079353
+              file_content: 'https://dpp-uploads.s3.amazonaws.com/98/cb36892d-Clixsign%20Test%20-%20John%20Doe_Download.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAI4QAAJTOXUVV5DFQ%2F20220208%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220208T053243Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Signature=d26b8203caf2771aed86bad9d3ae6620eddcda5e071eda7d535397ad40f9030f'
+          generated:
+            - object: base
+              doc_id: '23366872'
+              template_id: '94764'
+              created_at: '2022-02-04 10:11:44'
+              created_by:
+                object: user
+                id: '6777715'
+                acctID: '98'
+                company_id: '438'
+                parent_id: '0'
+                user_type: '1'
+                created: '2022-01-08 10:12:37'
+                user_name: QA_Tester
+                firstname: QA
+                lastname: Tester
+                company: ''
+                email: g.johnson@debtpaypro.com
+                active: '1'
+                role: '267'
+                attorney: '0'
+                payee_id: '0'
+                del: '0'
+                delTime: null
+                pass_reset: '0'
+              download: /getfile.php?type=pdf&id=23366872&cid=534512161
+              file_name: Clixsign Test - test credi (xxxx)
+        status:
+          code: 200
+    SMSlog.json:
+      value:
+        response:
+          count: '11'
+          results:
+            - id: '37534022'
+              sdate: '2020-12-07 12:13:15'
+              body: Hey
+              status: null
+              client:
+                client_id: '90400123'
+                first_name: Jane
+                last_name: Murphy
+              sender:
+                object: user
+                id: '5592123'
+                acctID: '92'
+                company_id: '447'
+                parent_id: '0'
+                user_type: '1'
+                created: '2020-06-29 11:05:13'
+                user_name: dpp
+                firstname: John
+                lastname: Doe
+                company: ''
+                email: test@test.com
+                active: '1'
+                role: '267'
+                attorney: '0'
+                payee_id: '0'
+                del: '0'
+                delTime: null
+                pass_reset: '0'
+              flag: '0'
+              schedule_id: '-4'
+              receiver_phone_number: '12245771234'
+              title: null
+              from_number: '+16309341234'
+            - id: '37533123'
+              sdate: '2020-12-07 12:13:05'
+              body: Hi
+              status: null
+              client:
+                client_id: '90400123'
+                first_name: Jane
+                last_name: Doe
+              sender:
+                object: user
+                id: '5592123'
+                acctID: '92'
+                company_id: '447'
+                parent_id: '0'
+                user_type: '1'
+                created: '2020-06-29 11:05:13'
+                user_name: dpp
+                firstname: John
+                lastname: Doe
+                company: ''
+                email: test@test.com
+                active: '1'
+                role: '267'
+                attorney: '0'
+                payee_id: '0'
+                del: '0'
+                delTime: null
+                pass_reset: '0'
+              flag: '1'
+              schedule_id: '0'
+              receiver_phone_number: '12245771234'
+              title: null
+              from_number: '+16309341234'
         status:
           code: 200
 security:
