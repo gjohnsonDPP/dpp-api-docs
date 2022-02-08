@@ -9,8 +9,8 @@ info:
 servers:
   - url: 'https://api.debtpaypro.com/v1'
     description: Production
-  - description: Staging3
-    url: 'https://staging3-api.debtpaypro.com/v1'
+  - description: Staging1
+    url: 'https://staging1-api.debtpaypro.com/v1'
 tags:
   - name: Auth
   - name: Calls
@@ -560,6 +560,24 @@ paths:
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/contacts/{contactid}/notes':
+    post:
+      tags:
+        - Contacts
+      summary: Create Contact Note by ID
+      description: Creates a Note for a Contact using the Contact's ID
+      operationId: contactNoteCreate
+      parameters:
+        - name: contactid
+          in: path
+          description: Id of Contact
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          $ref: '#/components/responses/POST_200'
+        '400':
+          $ref: '#/components/responses/ERROR_4XX'
     get:
       tags:
         - Contacts
@@ -587,7 +605,6 @@ paths:
                     $ref: ./models/SuccessStatus.yaml
         '400':
           $ref: '#/components/responses/ERROR_4XX'
-      x-internal: true
   '/contacts/search_by_phone/{phone}':
     get:
       tags:
