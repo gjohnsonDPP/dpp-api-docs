@@ -31,7 +31,6 @@ properties:
           type: string
         created_by:
           $ref: ./UserResponse.yaml
-          readOnly: true
         content:
           type: string
         note_type:
@@ -40,8 +39,6 @@ properties:
           type: string
       required:
         - content
-        - note_type
-        - public
   count:
     type: string
     readOnly: true
