@@ -2924,6 +2924,17 @@ components:
             properties:
               status:
                 $ref: ./models/ErrorStatus.yaml
+    GET_200:
+      description: Successful GET Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              response:
+                type: object
+              status:
+                $ref: ./models/SuccessStatus.yaml
   parameters:
     id:
       name: id
