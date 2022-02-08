@@ -17,14 +17,15 @@ tags:
   - name: Campaigns
   - name: Companies
   - name: Contacts
+  - name: ContactDocuments
+  - name: ContactForms
+  - name: ContactNotes
   - name: Debts
   - name: DebtNotes
   - name: DebtTasks
   - name: Documents
   - name: DocumentTypes
-  - name: Forms
   - name: Loans
-  - name: Notes
   - name: Packages
   - name: Settlement_Offers
   - name: SMS
@@ -563,6 +564,7 @@ paths:
     post:
       tags:
         - Contacts
+        - ContactNotes
       summary: Create Contact Note by ID
       description: Creates a Note for a Contact using the Contact's ID
       operationId: contactNoteCreate
@@ -600,6 +602,7 @@ paths:
     get:
       tags:
         - Contacts
+        - ContactNotes
       summary: Find Contact Notes by ID
       description: Returns all Notes for a Contact by the Contact's ID
       operationId: contactNoteGet
@@ -673,7 +676,7 @@ paths:
     get:
       tags:
         - Contacts
-        - Documents
+        - ContactDocuments
       summary: Get Documents for Contact by ID
       description: Returns every Document for a Contact by ID
       operationId: contactDocuments
@@ -705,7 +708,7 @@ paths:
     get:
       tags:
         - Contacts
-        - Documents
+        - ContactDocuments
       summary: Get Document by ID
       description: Retrieves a Specific Document for a Contact by Doc. ID.
       operationId: contactDocsRead
@@ -742,7 +745,7 @@ paths:
     put:
       tags:
         - Contacts
-        - Documents
+        - ContactDocuments
       summary: Update Document by ID
       description: Updates a Specific Document for a Contact by Doc. ID.
       operationId: contactDocsUpdate
@@ -784,7 +787,7 @@ paths:
     delete:
       tags:
         - Contacts
-        - Documents
+        - ContactDocuments
       summary: Delete Document by ID
       description: Delete a Specific Document for a Contact by Doc. ID.
       operationId: contactDocsDelete
@@ -843,7 +846,7 @@ paths:
     post:
       tags:
         - Contacts
-        - Forms
+        - ContactForms
       summary: Email Form to Contact by ID
       description: Sends a Form to a Contact via Email Address by ContactID
       operationId: sendForm
