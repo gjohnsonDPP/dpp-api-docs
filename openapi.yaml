@@ -615,27 +615,28 @@ paths:
           description: (Optional) This value dictates which Note to start the Request at.
           schema:
             type: integer
-            default: 1
           allowEmptyValue: true
         - in: query
           name: _limit
           description: (Optional) This value represents the maximum number of Notes your Request to contain.
           schema:
             type: integer
-            default: 1
           allowEmptyValue: true
       responses:
         '200':
-          description: Successfully returned Contact Notes
+          description: Successfully retrieved a Contact Notes
           content:
             application/json:
               schema:
                 type: object
                 properties:
                   response:
-                    type: object
+                    $ref: models/ContactNote.yaml
                   status:
                     $ref: ./models/SuccessStatus.yaml
+              examples:
+                ContactNotesExample:
+                  $ref: '#/components/examples/ContactNote.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/contacts/search_by_phone/{phone}':
@@ -1493,14 +1494,12 @@ paths:
           description: (Optional) This value dictates which Note to start the Request at.
           schema:
             type: integer
-            default: 1
           allowEmptyValue: true
         - in: query
           name: _limit
           description: (Optional) This value represents the maximum number of Notes your Request to contain.
           schema:
             type: integer
-            default: 1
           allowEmptyValue: true
       responses:
         '200':
