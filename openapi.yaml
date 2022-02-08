@@ -2242,69 +2242,8 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
               examples:
-                Tasks GET 200 Response Example:
-                  value:
-                    response:
-                      object: task
-                      id: 32811025
-                      acctID: 3863
-                      contact_id: 516553837
-                      task_created_date: '2021-12-02 16:12:32'
-                      task_name: Task Name
-                      defined_task: 25907
-                      created_by:
-                        object: user
-                        id: 4950368
-                        acctID: 3863
-                        company_id: 42128
-                        parent_id: 0
-                        user_type: 1
-                        created: '2019-10-02 02:41:18'
-                        user_name: Greg
-                        firstname: Greg
-                        lastname: Johnson
-                        company: ''
-                        email: g.johnson@debtpaypro.com
-                        active: true
-                        role: 29399
-                        attorney: false
-                        payee_id: 0
-                        del: false
-                        delTime: null
-                        pass_reset: '0'
-                      task_due_date: '2019-08-24'
-                      task_note: Task Note
-                      list_id: '0'
-                      team_id: '0'
-                      task_completed: '0'
-                      task_completed_by: null
-                      task_completed_date: ''
-                      task_completion_percentage: '0'
-                      task_status: '0'
-                      title: Task Name
-                      task_type: '0'
-                      assigned_to:
-                        object: user
-                        id: '51494'
-                        acctID: '5'
-                        company_id: '83'
-                        parent_id: '0'
-                        user_type: '1'
-                        created: '2014-12-23 11:06:46'
-                        user_name: support
-                        firstname: Debt Pay Pro
-                        lastname: Support
-                        company: ''
-                        email: dpp@debtpaypro.com
-                        active: '0'
-                        role: '4990'
-                        attorney: '0'
-                        payee_id: '0'
-                        del: '0'
-                        delTime: null
-                        pass_reset: '0'
-                    status:
-                      code: 200
+                Tasks Example:
+                  $ref: '#/components/examples/Task.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
     put:
@@ -2339,69 +2278,8 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
               examples:
-                Task Update 200 Response Example:
-                  value:
-                    response:
-                      object: task
-                      id: 32811025
-                      acctID: 3863
-                      contact_id: 516553837
-                      task_created_date: '2021-12-02 16:12:32'
-                      task_name: Task Name
-                      defined_task: 25907
-                      created_by:
-                        object: user
-                        id: 4950368
-                        acctID: 3863
-                        company_id: 42128
-                        parent_id: 0
-                        user_type: 1
-                        created: '2019-10-02 02:41:18'
-                        user_name: Greg
-                        firstname: Greg
-                        lastname: Johnson
-                        company: ''
-                        email: g.johnson@debtpaypro.com
-                        active: true
-                        role: 29399
-                        attorney: false
-                        payee_id: 0
-                        del: false
-                        delTime: null
-                        pass_reset: '0'
-                      task_due_date: '2019-08-24'
-                      task_note: Task Note
-                      list_id: '0'
-                      team_id: '0'
-                      task_completed: '0'
-                      task_completed_by: null
-                      task_completed_date: ''
-                      task_completion_percentage: '0'
-                      task_status: '0'
-                      title: Task Name
-                      task_type: '0'
-                      assigned_to:
-                        object: user
-                        id: '51494'
-                        acctID: '5'
-                        company_id: '83'
-                        parent_id: '0'
-                        user_type: '1'
-                        created: '2014-12-23 11:06:46'
-                        user_name: support
-                        firstname: Debt Pay Pro
-                        lastname: Support
-                        company: ''
-                        email: dpp@debtpaypro.com
-                        active: '0'
-                        role: '4990'
-                        attorney: '0'
-                        payee_id: '0'
-                        del: '0'
-                        delTime: null
-                        pass_reset: '0'
-                    status:
-                      code: 200
+                Task Example:
+                  $ref: '#/components/examples/Task.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
     delete:
@@ -5281,6 +5159,113 @@ components:
           settlement_fee: '25.00'
           notes: Settlement Offer Note
           cred_cont_id: '0'
+        status:
+          code: 200
+    Task.json:
+      value:
+        response:
+          object: task
+          id: '34180549'
+          acctID: '98'
+          contact_id: '534512123'
+          task_created_date: '2022-02-01 09:38:03'
+          task_name: Test Task
+          defined_task: '2029'
+          created_by:
+            object: user
+            id: '6777123'
+            acctID: '28'
+            company_id: '238'
+            parent_id: '0'
+            user_type: '1'
+            created: '2022-01-08 10:12:37'
+            user_name: QA_Tester
+            firstname: QA
+            lastname: Tester
+            company: ''
+            email: test@debtpaypro.com
+            active: '1'
+            role: '267'
+            attorney: '0'
+            payee_id: '0'
+            del: '0'
+            delTime: null
+            pass_reset: '0'
+          task_due_date: '1969-12-31'
+          task_note: Lorem Ipsum
+          list_id: '0'
+          team_id: '0'
+          task_completed: '0'
+          task_completed_by: null
+          task_completed_date: ''
+          task_completion_percentage: '0'
+          task_status: '0'
+          title: Test Task
+          task_type: '0'
+          assigned_to:
+            object: contact
+            id: '534512123'
+            acctID: '28'
+            company_id: '238'
+            file_type: '1'
+            form_id: '0'
+            created: '2022-01-08 12:24:18'
+            created_by: '6777123'
+            modified: '2022-02-08 00:38:19'
+            modified_by: '6777123'
+            assigned_to: '6777123'
+            campaign_id: '0'
+            attorney: '0'
+            attorney_id: '0'
+            attorney_id2: '0'
+            first_name: John
+            middle_name: E
+            last_name: Doe
+            salutation: Hello
+            title: Mr.
+            phone_number: '3123839992'
+            phone_extension: ''
+            cell_phone: '3123839991'
+            cell_extension: ''
+            work_phone: '3123839993'
+            work_extension: ''
+            address:
+              address1: 200 Test St.
+              address2: Apt 1
+              address3: ''
+              city: Chicago
+              state: IL
+              zip: '60001'
+            email: qatest@debtpaypro.com
+            social_security_number: '444881234'
+            date_of_birth: '1970-01-01'
+            language: '0'
+            submitted: '1'
+            submitted_by: '5592123'
+            submitted_at: '2021-09-29 15:12:03'
+            approved_by2: '0'
+            approved_date2: '0000-00-00'
+            rejected_by: '0'
+            rejected_notes: ''
+            paused_notes: ''
+            dropped_reason: '0'
+            grad_date: '0000-00-00'
+            total_debt: '22500.00'
+            welcome_sent: '2021-09-29 13:41:22'
+            paper_statements: '0'
+            paper_welcome: '0'
+            gateway_id: '1'
+            gateway_approved_by: '0'
+            gateway_hold: '1'
+            gateway_hold_reason: '1'
+            gateway_hold_notes: ''
+            gateway_auth_received: '0'
+            gateway_auth_file: ''
+            iscoapp: '0'
+            customs:
+              - label: Co-Applicant
+                field_id: '1237'
+                value: '476723502'
         status:
           code: 200
 security:
