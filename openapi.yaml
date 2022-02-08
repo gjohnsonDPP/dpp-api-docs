@@ -631,7 +631,7 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: models/ContactNote.yaml
+                    $ref: ./models/ContactNote.yaml
                   status:
                     $ref: ./models/SuccessStatus.yaml
               examples:
