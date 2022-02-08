@@ -149,15 +149,24 @@ paths:
       responses:
         '200':
           description: Successfully retrieved a Call Record
+          # content:
+          #   application/json:
+          #     schema:
+          #       type: object
+          #       properties:
+          #         response:
+          #           $ref: ./models/CallResponse.yaml
+          #         status:
+          #           $ref: ./models/SuccessStatus.yaml
           content:
             application/json:
               schema:
                 type: object
                 properties:
                   response:
-                    $ref: ./models/CallResponse.yaml
+                    type: object
                   status:
-                    $ref: ./models/SuccessStatus.yaml
+                    $ref: ./models/SuccessStatus.yaml          
               examples:
                 CallExample:
                   $ref: '#/components/examples/Call.json'
