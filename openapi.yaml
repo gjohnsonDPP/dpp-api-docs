@@ -1118,8 +1118,6 @@ paths:
                   client_id: 382760691
                   settlement_offers:
                     - string
-                  customs:
-                    - string
               Required Parameters Only:
                 value:
                   original_debt_amount: 10500
@@ -1906,7 +1904,7 @@ paths:
                   offer_status_date: '2019-08-24'
                   offer_valid_date: '2019-08-24'
                   settlement_type: 2
-                  debt_amount: 8500.55
+                  debt_amount: 8500
                   settlement_amount: 0
                   settlement_fee: 0
                   notes: Lorem Ipsum
@@ -1918,7 +1916,7 @@ paths:
                   debt_id: 124504794
                   offer_valid_date: '2019-08-24'
                   settlement_type: 1
-                  debt_amount: 8500.55
+                  debt_amount: 8500
                   settlement_amount: 1
                   creditor: 540
         required: true
@@ -2057,8 +2055,8 @@ paths:
                   title: Title
                   task_type: 0
                   assigned_to:
-                    object: User
-                    id: 22721
+                    object: 'User'
+                    id: 51494
               Required Parameters Only:
                 value:
                   contact_id: 516553837
@@ -2068,7 +2066,7 @@ paths:
                   task_note: Task Note
                   title: Title
                   assigned_to:
-                    object: User
+                    object: 'User'
                     id: 51494
         description: Task object to be created
         required: true
@@ -3994,18 +3992,6 @@ components:
             properties:
               status:
                 $ref: ./models/ErrorStatus.yaml
-    default:
-      description: default
-      content:
-        application/json:
-          schema:
-            type: object
-            properties:
-              status:
-                $ref: '#/components/schemas/SuccessStatus'
-              response:
-                type: object
-                properties: {}
   parameters:
     id:
       name: id
@@ -4028,14 +4014,14 @@ components:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/ContactResponse'
+            $ref: 'models/ContactResponse.yaml'
       description: Contact Object
       required: true
     Loan:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Loan'
+            $ref: 'models/LoanRequest.yaml'
       description: Loan Object
       required: true
     Note:
@@ -4165,14 +4151,14 @@ components:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/DebtRequest'
+            $ref: 'models/DebtRequest.yaml'
       description: Debt Object
       required: true
     Team:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/TeamRequest'
+            $ref: 'models/TeamRequest.yaml'
       description: ''
       required: true
   securitySchemes:
@@ -4337,7 +4323,7 @@ components:
     DebtNote.json:
       value:
         response:
-          object: debt_note
+          object: 'debt_note'
           note_id: '22957924'
           acctID: '98'
           note_created_date: '2022-02-07 14:01:08'
@@ -5124,7 +5110,7 @@ components:
       value:
         response:
           object: usersPref
-          user_id: '6777123'
+          user_id: 6777123
           default_module: dashboard
           layout_type: fluid
           theme: '1'
