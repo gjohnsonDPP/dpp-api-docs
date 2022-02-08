@@ -2863,44 +2863,6 @@ paths:
         '400':
           $ref: '#/components/responses/ERROR_4XX'
 components:
-  schemas:
-    Status:
-      description: ''
-      properties:
-        code:
-          type: integer
-          example: 0
-        message:
-          type: string
-      type: object
-    Note:
-      type: object
-      properties:
-        id:
-          type: integer
-          readOnly: true
-        client_id:
-          type: integer
-        acctID:
-          type: integer
-          readOnly: true
-        created_at:
-          type: string
-          format: date-time
-          readOnly: true
-        created_by:
-          type: integer
-          readOnly: true
-        object_type:
-          type: integer
-          readOnly: true
-        record_id:
-          type: integer
-        note:
-          type: string
-      required:
-        - client_id
-        - note
   responses:
     POST_200:
       description: Successful POST Request
