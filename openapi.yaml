@@ -607,7 +607,7 @@ paths:
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/contacts/{contactid}/notes':
-   get:
+    get:
       tags:
         - Contacts
       summary: Find Contact Notes by ID
@@ -634,6 +634,7 @@ paths:
                     $ref: ./models/SuccessStatus.yaml
         '400':
           $ref: '#/components/responses/ERROR_4XX'
+      x-internal: true
   '/contacts/search_by_phone/{phone}':
     get:
       tags:
