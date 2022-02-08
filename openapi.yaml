@@ -2077,85 +2077,8 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
               examples:
-                Settlement Offer GET 200 Response Example:
-                  value:
-                    response:
-                      object: settlement_offer
-                      id: '4200235'
-                      acctID: '98'
-                      contact_id: '382760691'
-                      creditor:
-                        object: creditor
-                        id: '540'
-                        tp_id: '0'
-                        is_active: '1'
-                        company_name: Chase
-                        first_name: null
-                        last_name: null
-                        address:
-                          address1: P O Box 15919
-                          address2: ''
-                          address3: null
-                          city: Wilmington
-                          state: Delaware
-                          zip: 19850-0464
-                        phone: 800-444-9370
-                      debt_id: '124504794'
-                      created_at: '2022-02-01 02:27:56'
-                      created_by:
-                        object: user
-                        id: '6777715'
-                        acctID: '98'
-                        company_id: '438'
-                        parent_id: '0'
-                        user_type: '1'
-                        created: '2022-01-08 10:12:37'
-                        user_name: QA_Tester
-                        firstname: QA
-                        lastname: Tester
-                        company: ''
-                        email: g.johnson@debtpaypro.com
-                        active: '1'
-                        role: '267'
-                        attorney: '0'
-                        payee_id: '0'
-                        del: '0'
-                        delTime: null
-                        pass_reset: '0'
-                      modified_at: null
-                      modified_by: null
-                      neg_id:
-                        object: user
-                        id: '6777715'
-                        acctID: '98'
-                        company_id: '438'
-                        parent_id: '0'
-                        user_type: '1'
-                        created: '2022-01-08 10:12:37'
-                        user_name: QA_Tester
-                        firstname: QA
-                        lastname: Tester
-                        company: ''
-                        email: g.johnson@debtpaypro.com
-                        active: '1'
-                        role: '267'
-                        attorney: '0'
-                        payee_id: '0'
-                        del: '0'
-                        delTime: null
-                        pass_reset: '0'
-                      madeby: Creditor
-                      offer_status: 1
-                      offer_status_date: '2019-08-24'
-                      offer_valid_date: '2019-08-24'
-                      settlement_type: '1'
-                      debt_amount: '8500.55'
-                      settlement_amount: '5600.00'
-                      settlement_fee: '25.00'
-                      notes: Settlement Offer Note
-                      cred_cont_id: '0'
-                    status:
-                      code: 200
+                Settlement Offer Example:
+                  $ref: '#/components/examples/SettlementOffer.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
     put:
@@ -2191,85 +2114,8 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
               examples:
-                Settlement Offer PUT 200 Response Example:
-                  value:
-                    response:
-                      object: settlement_offer
-                      id: '4200235'
-                      acctID: '98'
-                      contact_id: '382760691'
-                      creditor:
-                        object: creditor
-                        id: '540'
-                        tp_id: '0'
-                        is_active: '1'
-                        company_name: Chase
-                        first_name: null
-                        last_name: null
-                        address:
-                          address1: P O Box 15919
-                          address2: ''
-                          address3: null
-                          city: Wilmington
-                          state: Delaware
-                          zip: 19850-0464
-                        phone: 800-444-9370
-                      debt_id: '124504794'
-                      created_at: '2022-02-01 02:27:56'
-                      created_by:
-                        object: user
-                        id: '6777715'
-                        acctID: '98'
-                        company_id: '438'
-                        parent_id: '0'
-                        user_type: '1'
-                        created: '2022-01-08 10:12:37'
-                        user_name: QA_Tester
-                        firstname: QA
-                        lastname: Tester
-                        company: ''
-                        email: g.johnson@debtpaypro.com
-                        active: '1'
-                        role: '267'
-                        attorney: '0'
-                        payee_id: '0'
-                        del: '0'
-                        delTime: null
-                        pass_reset: '0'
-                      modified_at: null
-                      modified_by: null
-                      neg_id:
-                        object: user
-                        id: '6777715'
-                        acctID: '98'
-                        company_id: '438'
-                        parent_id: '0'
-                        user_type: '1'
-                        created: '2022-01-08 10:12:37'
-                        user_name: QA_Tester
-                        firstname: QA
-                        lastname: Tester
-                        company: ''
-                        email: g.johnson@debtpaypro.com
-                        active: '1'
-                        role: '267'
-                        attorney: '0'
-                        payee_id: '0'
-                        del: '0'
-                        delTime: null
-                        pass_reset: '0'
-                      madeby: Creditor
-                      offer_status: 1
-                      offer_status_date: '2019-08-24'
-                      offer_valid_date: '2019-08-24'
-                      settlement_type: '1'
-                      debt_amount: '8500.55'
-                      settlement_amount: '5600.00'
-                      settlement_fee: '25.00'
-                      notes: Settlement Offer Note
-                      cred_cont_id: '0'
-                    status:
-                      code: 200
+                Settlement Offer Example:
+                  $ref: '#/components/examples/SettlementOffer.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
     delete:
@@ -5334,6 +5180,107 @@ components:
           ach_on: null
           pricing_lock: '0'
           offer_set: '1383814'
+        status:
+          code: 200
+    SettlementOffer.json:
+      value:
+        response:
+          object: settlement_offer
+          id: '253123'
+          acctID: '28'
+          contact_id: '71330123'
+          creditor:
+            object: creditor
+            id: '1875123'
+            tp_id: '0'
+            is_active: '1'
+            company_name: test
+            first_name: null
+            last_name: null
+            address:
+              address1: P.O. Box 9029
+              address2: ''
+              address3: null
+              city: Des Moines
+              state: Idaho
+              zip: 50368-9029
+            phone: 800-244-2970
+          debt_id: '24966123'
+          created_at: '2016-06-30 10:14:44'
+          created_by:
+            object: user
+            id: '4123'
+            acctID: '28'
+            company_id: '238'
+            parent_id: '0'
+            user_type: '1'
+            created: '2010-05-13 11:53:11'
+            user_name: QA_Tester
+            firstname: QA
+            lastname: Tester
+            company: ''
+            email: test@debtpaypro.com
+            active: '1'
+            role: '267'
+            attorney: '0'
+            payee_id: '0'
+            del: '0'
+            delTime: null
+            pass_reset: '0'
+          modified_at: '2017-10-17 10:49:10'
+          modified_by:
+            object: user
+            id: '317123'
+            acctID: '28'
+            company_id: '238'
+            parent_id: '0'
+            user_type: '1'
+            created: '2015-05-28 19:03:00'
+            user_name: dpp
+            firstname: Support
+            lastname: User
+            company: ''
+            email: dpp@debtpaypro.com
+            active: '1'
+            role: '267'
+            attorney: '0'
+            payee_id: '0'
+            del: '0'
+            delTime: null
+            pass_reset: '0'
+          neg_id:
+            object: user
+            id: '4146'
+            acctID: '98'
+            company_id: '438'
+            parent_id: '0'
+            user_type: '1'
+            created: '2010-05-13 11:53:11'
+            user_name: demo
+            firstname: Jane
+            lastname: Doe
+            company: ''
+            email: jdoe@debtpaypro.com
+            active: '0'
+            role: '267'
+            attorney: '0'
+            payee_id: '0'
+            del: '0'
+            delTime: null
+            pass_reset: '0'
+          madeby: Negotiator
+          offer_status:
+            object: base
+            status_id: '1'
+            label: In-Review
+          offer_status_date: '2016-06-30'
+          offer_valid_date: '2016-07-04'
+          settlement_type: '1'
+          debt_amount: '8500.55'
+          settlement_amount: '5500.00'
+          settlement_fee: '25.00'
+          notes: Settlement Offer Note
+          cred_cont_id: '0'
         status:
           code: 200
 security:
