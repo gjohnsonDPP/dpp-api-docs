@@ -54,15 +54,15 @@ paths:
                 - client_id
       security: []
       responses:
-        default:
-          description: default
+        '200':
+          description: Successful Request
           content:
             application/json:
               schema:
                 type: object
                 properties:
                   status:
-                    $ref: '#/components/schemas/Status'
+                    $ref: models/SuccessStatus.yaml
                   response:
                     type: array
                     description: Get API Authization Token
@@ -75,6 +75,8 @@ paths:
                         expires_in:
                           type: integer
                           description: Time Until Token Expires
+        '400':
+          $ref: '#/components/responses/ERROR_4XX'
   /calls:
     post:
       summary: Create Call Record
@@ -113,23 +115,7 @@ paths:
                   call_result: Busy
       responses:
         '200':
-          description: Successfully created a Call Record
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  response:
-                    type: object
-                  status:
-                    $ref: ./models/SuccessStatus.yaml
-              examples:
-                Call Example 200 POST Response:
-                  value:
-                    response:
-                      id: 385319179
-                    status:
-                      code: 200
+          $ref: '#/components/responses/POST_200'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/calls/{id}':
@@ -155,7 +141,7 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: ./models/CallResponse.yaml
+                    type: object
                   status:
                     $ref: ./models/SuccessStatus.yaml
               examples:
@@ -282,23 +268,7 @@ paths:
                   media_type: 1
       responses:
         '200':
-          description: Successfully created a Campaign Record
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  response:
-                    type: object
-                  status:
-                    $ref: ./models/SuccessStatus.yaml
-              examples:
-                Campaign POST 200 Response Example:
-                  value:
-                    response:
-                      id: 152283
-                    status:
-                      code: 200
+          $ref: '#/components/responses/POST_200'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/campaigns/e-mail/{id}':
@@ -489,24 +459,7 @@ paths:
                   date_of_birth: '1941-03-12'
       responses:
         '200':
-          description: Successfully created a Contact Record
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  response:
-                    type: object
-                  status:
-                    $ref: ./models/SuccessStatus.yaml
-              examples:
-                Contact POST 200 Response Example:
-                  value:
-                    response:
-                      id: 418304227
-                    status:
-                      code: 200
-                      message: Client Record Created
+          $ref: '#/components/responses/POST_200'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/contacts/{id}':
@@ -692,6 +645,9 @@ paths:
                     $ref: models/Docs.yaml
                   status:
                     $ref: ./models/SuccessStatus.yaml
+              examples:
+                Docs Example:
+                  $ref: '#/components/examples/Docs.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/contacts/{id}/documents/{doc_id}':
@@ -829,23 +785,7 @@ paths:
               $ref: ./models/Document.yaml
       responses:
         '200':
-          description: Successfully uploaded document
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  response:
-                    type: object
-                  status:
-                    $ref: ./models/SuccessStatus.yaml
-              examples:
-                POST 200 Request Example:
-                  value:
-                    response:
-                      - 234388177
-                    status:
-                      code: 200
+          $ref: '#/components/responses/POST_200'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/contacts/{id}/form_request':
@@ -1087,143 +1027,8 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
               examples:
-                SMS Log GET 200 Response Example:
-                  value:
-                    response:
-                      - id: '65543140'
-                        sdate: '2021-11-26 07:26:07'
-                        body: "Purchase Price: \r\nSpecified Percentage: \r\nSpecific Daily Amount: \r\nReceipts Purchase Amount: "
-                        status: null
-                        client_id: '479244860'
-                        sender:
-                          object: user
-                          user_id: '5367555'
-                          acctID: '155'
-                          guid: 999e3b03-d176-6526-6a31-9e929e0237c6
-                          company_id: '1355'
-                          parent_id: '38859'
-                          user_type: '1'
-                          created: '2020-03-10 14:56:03'
-                          user_name: Greg
-                          firstname: Gregory
-                          lastname: Johnson
-                          company: ''
-                          email: g.johnson@debtpaypro.com
-                          active: '1'
-                          role: '735'
-                          attorney: '0'
-                          payee_id: '0'
-                          del: '0'
-                          delTime: null
-                          pass_reset: '0'
-                          master: '0'
-                          billable: '1'
-                        flag: '1'
-                        schedule_id: '0'
-                        receiver_phone_number: '13123839986'
-                        title: null
-                        from_number: '+16308350712'
-                      - id: '65543134'
-                        sdate: '2021-11-26 07:26:03'
-                        body: "Hello API,\r\n\r\nYour next payment is scheduled for 12/31/1969, in the amount of 0.00. Please reply to this message, or feel free to contact Billing@company.com if you have any questions.\r\n\r\n\r\nDebt PayPro"
-                        status: null
-                        client_id: '479244860'
-                        sender:
-                          object: user
-                          user_id: '5367555'
-                          acctID: '155'
-                          guid: 999e3b03-d176-6526-6a31-9e929e0237c6
-                          company_id: '1355'
-                          parent_id: '38859'
-                          user_type: '1'
-                          created: '2020-03-10 14:56:03'
-                          user_name: Greg
-                          firstname: Gregory
-                          lastname: Johnson
-                          company: ''
-                          email: g.johnson@debtpaypro.com
-                          active: '1'
-                          role: '735'
-                          attorney: '0'
-                          payee_id: '0'
-                          del: '0'
-                          delTime: null
-                          pass_reset: '0'
-                          master: '0'
-                          billable: '1'
-                        flag: '1'
-                        schedule_id: '0'
-                        receiver_phone_number: '13123839986'
-                        title: null
-                        from_number: '+16308350712'
-                      - id: '65543131'
-                        sdate: '2021-11-26 07:25:58'
-                        body: TEST
-                        status: null
-                        client_id: '479244860'
-                        sender:
-                          object: user
-                          user_id: '5367555'
-                          acctID: '155'
-                          guid: 999e3b03-d176-6526-6a31-9e929e0237c6
-                          company_id: '1355'
-                          parent_id: '38859'
-                          user_type: '1'
-                          created: '2020-03-10 14:56:03'
-                          user_name: Greg
-                          firstname: Gregory
-                          lastname: Johnson
-                          company: ''
-                          email: g.johnson@debtpaypro.com
-                          active: '1'
-                          role: '735'
-                          attorney: '0'
-                          payee_id: '0'
-                          del: '0'
-                          delTime: null
-                          pass_reset: '0'
-                          master: '0'
-                          billable: '1'
-                        flag: '1'
-                        schedule_id: '0'
-                        receiver_phone_number: '13123839986'
-                        title: null
-                        from_number: '+16308350712'
-                      - id: '65543128'
-                        sdate: '2021-11-26 07:25:47'
-                        body: "Hello API,\r\n\r\nWelcome to the program. Your first payment is $0, scheduled for . Please contact Customer Services if you have any questions."
-                        status: null
-                        client_id: '479244860'
-                        sender:
-                          object: user
-                          user_id: '5367555'
-                          acctID: '155'
-                          guid: 999e3b03-d176-6526-6a31-9e929e0237c6
-                          company_id: '1355'
-                          parent_id: '38859'
-                          user_type: '1'
-                          created: '2020-03-10 14:56:03'
-                          user_name: Greg
-                          firstname: Gregory
-                          lastname: Johnson
-                          company: ''
-                          email: g.johnson@debtpaypro.com
-                          active: '1'
-                          role: '735'
-                          attorney: '0'
-                          payee_id: '0'
-                          del: '0'
-                          delTime: null
-                          pass_reset: '0'
-                          master: '0'
-                          billable: '1'
-                        flag: '1'
-                        schedule_id: '0'
-                        receiver_phone_number: '13123839986'
-                        title: null
-                        from_number: '+16308350712'
-                    status:
-                      code: 200
+                SMS Log Example:
+                  $ref: '#/components/examples/SMSlog.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/contacts/{id}/history':
@@ -1267,46 +1072,8 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
               examples:
-                200 GET History Feed Response:
-                  value:
-                    response:
-                      response:
-                        - object: contacts_log
-                          id: '3094248541'
-                          acctID: '98'
-                          created_at: '2022-01-18 05:26:54'
-                          created_by: '6777715'
-                          contact_id: '534512161'
-                          type: Docs
-                          message: 'PDF Document Generated: Clixsign Test'
-                          del: '0'
-                          user:
-                            uID: '6777715'
-                            guid: a24a9f63-3d32-f0f8-4178-9711939bae56
-                            company_id: '438'
-                            parent_id: '0'
-                            user_type: '1'
-                            acctID: '98'
-                            created: '2022-01-08 10:12:37'
-                            username: QA_Tester
-                            password: 41559f9389e952a89deb234ec6b53d68c79f7b33
-                            firstname: QA
-                            lastname: Tester
-                            company: ''
-                            email: g.johnson@debtpaypro.com
-                            active: '1'
-                            role: '267'
-                            attorney: '0'
-                            payee_id: '0'
-                            del: '0'
-                            delTime: null
-                            pass_reset: '0'
-                            master: '0'
-                            billable: '1'
-                          user_role: Super Admin
-                      count: 1
-                    status:
-                      code: 200
+                History Feed Example:
+                  $ref: '#/components/examples/ContactHistoryFeed.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   /debts:
@@ -1353,8 +1120,6 @@ paths:
                   client_id: 382760691
                   settlement_offers:
                     - string
-                  customs:
-                    - string
               Required Parameters Only:
                 value:
                   original_debt_amount: 10500
@@ -1363,23 +1128,7 @@ paths:
                   client_id: 382760691
       responses:
         '200':
-          description: Successfully created a Debt Record
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  response:
-                    type: object
-                  status:
-                    $ref: ./models/SuccessStatus.yaml
-              examples:
-                Debt POST 200 Response Example:
-                  value:
-                    response:
-                      id: 163287505
-                    status:
-                      code: 200
+          $ref: '#/components/responses/POST_200'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/debts/{id}':
@@ -1409,98 +1158,8 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
               examples:
-                Debt GET 200 Response Example:
-                  value:
-                    response:
-                      object: debt
-                      id: 163287508
-                      acctID: 3863
-                      created_at: '2021-11-22 04:43:57'
-                      created_by:
-                        object: user
-                        user_id: 4950368
-                        company_id: 42128
-                        parent_id: 0
-                        user_type: 1
-                        created: '2019-10-02 02:41:18'
-                        user_name: JDoe
-                        firstname: John
-                        lastname: Doe
-                        company: ''
-                        email: test@test.com
-                        active: true
-                        role: 29399
-                        attorney: false
-                        payee_id: 0
-                        del: false
-                        delTime: null
-                        pass_reset: '0'
-                      modified_at: null
-                      modified_by: null
-                      original_debt_amount: 10500
-                      current_debt_amount: 9499.5
-                      current_payment: 153
-                      current_rate: 0
-                      notes: null
-                      verified_debt_amount: 0
-                      creditor:
-                        object: creditor
-                        creditor_id: 540
-                        acctID: 3863
-                        tp_id: 0
-                        is_active: '1'
-                        company_name: Chase
-                        first_name: null
-                        last_name: null
-                        address:
-                          address1: P O Box 15919
-                          address2: ''
-                          address3: null
-                          city: Wilmington
-                          state: Delaware
-                          zip: 19850-0464
-                        phone: 800-444-9370
-                      debt_buyer:
-                        object: creditor
-                        creditor_id: 17576331
-                        acctID: 3863
-                        tp_id: 0
-                        is_active: '1'
-                        company_name: Bob's Debt Co.
-                        first_name: Bob
-                        last_name: Smith
-                        address:
-                          address1: 101 Debt Way
-                          address2: Suite 2200
-                          address3: null
-                          city: Chicago
-                          state: IL
-                          zip: '60614'
-                        phone: '3123839994'
-                      poa_sent_date: '2019-08-24'
-                      legal_account: 'No'
-                      last_payment_date: '2019-08-24'
-                      last_payment_amount: 0
-                      opened_date: '2019-08-24'
-                      available_balance: 0
-                      enrolled: '0'
-                      enrolled_date: '2019-08-24 00:00:00'
-                      debt_type: '0'
-                      cash_advance: '0'
-                      balance_transfer: '0'
-                      heavy_usage: '0'
-                      has_summons: '0'
-                      debt_status: null
-                      locked: '0'
-                      og_account_num: '12345674445'
-                      creditor_account_num: null
-                      settled: '0'
-                      settlement_id: 0
-                      client_id: 382760691
-                      settlement_offers: []
-                      customs: []
-                    status:
-                      code: 200
+                Debt Example:
+                  $ref: '#/components/examples/Debt.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
     put:
@@ -1534,98 +1193,8 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
               examples:
-                Debt PUT 200 Response Example:
-                  value:
-                    response:
-                      object: debt
-                      id: 163287508
-                      acctID: 3863
-                      created_at: '2021-11-22 04:43:57'
-                      created_by:
-                        object: user
-                        user_id: 4950368
-                        company_id: 42128
-                        parent_id: 0
-                        user_type: 1
-                        created: '2019-10-02 02:41:18'
-                        user_name: JDoe
-                        firstname: John
-                        lastname: Doe
-                        company: ''
-                        email: test@test.com
-                        active: true
-                        role: 29399
-                        attorney: false
-                        payee_id: 0
-                        del: false
-                        delTime: null
-                        pass_reset: '0'
-                      modified_at: null
-                      modified_by: null
-                      original_debt_amount: 10500
-                      current_debt_amount: 9499.5
-                      current_payment: 153
-                      current_rate: 0
-                      notes: null
-                      verified_debt_amount: 0
-                      creditor:
-                        object: creditor
-                        creditor_id: 540
-                        acctID: 3863
-                        tp_id: 0
-                        is_active: '1'
-                        company_name: Chase
-                        first_name: null
-                        last_name: null
-                        address:
-                          address1: P O Box 15919
-                          address2: ''
-                          address3: null
-                          city: Wilmington
-                          state: Delaware
-                          zip: 19850-0464
-                        phone: 800-444-9370
-                      debt_buyer:
-                        object: creditor
-                        creditor_id: 17576331
-                        acctID: 3863
-                        tp_id: 0
-                        is_active: '1'
-                        company_name: Bob's Debt Co.
-                        first_name: Bob
-                        last_name: Smith
-                        address:
-                          address1: 101 Debt Way
-                          address2: Suite 2200
-                          address3: null
-                          city: Chicago
-                          state: IL
-                          zip: '60614'
-                        phone: '3123839994'
-                      poa_sent_date: '2019-08-24'
-                      legal_account: 'No'
-                      last_payment_date: '2019-08-24'
-                      last_payment_amount: 0
-                      opened_date: '2019-08-24'
-                      available_balance: 0
-                      enrolled: '0'
-                      enrolled_date: '2019-08-24 00:00:00'
-                      debt_type: '0'
-                      cash_advance: '0'
-                      balance_transfer: '0'
-                      heavy_usage: '0'
-                      has_summons: '0'
-                      debt_status: null
-                      locked: '0'
-                      og_account_num: '12345674445'
-                      creditor_account_num: null
-                      settled: '0'
-                      settlement_id: 0
-                      client_id: 382760691
-                      settlement_offers: []
-                      customs: []
-                    status:
-                      code: 200
+                Debt Example:
+                  $ref: '#/components/examples/Debt.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
     delete:
@@ -1987,9 +1556,9 @@ paths:
     post:
       tags:
         - Documents
-      summary: Create a Document by Doc. Template ID
+      summary: Create a Document
       description: |-
-        Creates a Document Record object
+        Uses a Doc. Template ID to create a Document Record object 
 
         <span><i class="fa fa-info-circle"></i><i style="font-size:12px"> Select the `'Examples'` option to change the content of the request's Body to ONLY contain the required POST Parameters.</i></span>
       operationId: documentCreate
@@ -2008,16 +1577,7 @@ paths:
         required: true
       responses:
         '200':
-          description: Successfully created a Document
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  response:
-                    type: object
-                  status:
-                    $ref: models/SuccessStatus.yaml
+          $ref: '#/components/responses/POST_200'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
       x-internal: true
@@ -2054,6 +1614,9 @@ paths:
                         title:
                           type: string
                           description: Title of Document Type
+              examples:
+                DocumentTypes Example:
+                  $ref: '#/components/examples/DocumentTypes.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
     post:
@@ -2132,13 +1695,8 @@ paths:
                   status:
                     $ref: models/SuccessStatus.yaml
               examples:
-                DocumentType Example 200 POST Response:
-                  value:
-                    response:
-                      id: '1234'
-                      title: Test Document Type
-                    status:
-                      code: 200
+                DocumentType Example:
+                  $ref: '#/components/examples/DocumentType.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
     delete:
@@ -2223,23 +1781,7 @@ paths:
                   payback_amount: 0
       responses:
         '200':
-          description: Successfully created a Loan Record
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  response:
-                    type: object
-                  status:
-                    $ref: ./models/SuccessStatus.yaml
-              examples:
-                Loan POST 200 Response Example:
-                  value:
-                    response:
-                      id: 1863358
-                    status:
-                      code: 200
+          $ref: '#/components/responses/POST_200'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/loans/{id}':
@@ -2269,47 +1811,8 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
               examples:
-                Loan GET 200 Response Example:
-                  value:
-                    response:
-                      object: loan
-                      loan_id: '1868335'
-                      acctID: 3863
-                      tp_id: 0
-                      created_at: '2021-11-22 05:02:09'
-                      created_by: 4950368
-                      modified_at: '2021-12-12 05:02:09'
-                      modified_by: 0
-                      client_id: 382760691
-                      advance_type: ACH
-                      advance_date: '2021-12-25'
-                      paid_in_full_date: '2022-05-25'
-                      type_id: 1
-                      program_id: 0
-                      loan_class: 1
-                      loan_amount: 4550.72
-                      payback_amount: 0
-                      rate: 0.02
-                      payment: 0
-                      holdback_percent: 0.02
-                      payback_period: 0
-                      frequency: D
-                      freq_int: ''
-                      period_amount: 0
-                      fees: 0
-                      conf_num: '12345'
-                      underwriter_notes: ''
-                      contract_date: '2021-12-25'
-                      contract_number: ''
-                      funded: true
-                      status: 1
-                      lien_pos: 1
-                      ach_start_date: '2021-12-25'
-                      ach_on: true
-                      pricing_lock: true
-                      offer_set: 1048066
-                    status:
-                      code: 200
+                Loan Example:
+                  $ref: '#/components/examples/Loan.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
     put:
@@ -2343,48 +1846,8 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
               examples:
-                Loan PUT 200 Response Example:
-                  value:
-                    response:
-                      object: loan
-                      loan_id: '1868335'
-                      acctID: 3863
-                      tp_id: null
-                      created_at: '2021-11-22 05:02:09'
-                      created_by: '4950368'
-                      modified_at: null
-                      modified_by: null
-                      client_id: '382760691'
-                      advance_type: ACH
-                      advance_date: null
-                      paid_in_full_date: null
-                      defaulted_date: null
-                      type_id: '1'
-                      program_id: '0'
-                      loan_class: '1'
-                      loan_amount: '4550.72'
-                      payback_amount: '0.00'
-                      rate: '0'
-                      payment: '0.00'
-                      holdback_percent: '0.02'
-                      payback_period: '0.00'
-                      frequency: D
-                      freq_int: ''
-                      period_amount: '0'
-                      fees: '0.00'
-                      conf_num: '12345'
-                      underwriter_notes: ''
-                      contract_date: null
-                      contract_number: ''
-                      funded: '0'
-                      status: '10'
-                      lien_pos: '0'
-                      ach_start_date: null
-                      ach_on: '0'
-                      pricing_lock: '0'
-                      offer_set: '1048066'
-                    status:
-                      code: 200
+                Loan Example:
+                  $ref: '#/components/examples/Loan.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
     delete:
@@ -2443,7 +1906,7 @@ paths:
                   offer_status_date: '2019-08-24'
                   offer_valid_date: '2019-08-24'
                   settlement_type: 2
-                  debt_amount: 8500.55
+                  debt_amount: 8500
                   settlement_amount: 0
                   settlement_fee: 0
                   notes: Lorem Ipsum
@@ -2455,30 +1918,14 @@ paths:
                   debt_id: 124504794
                   offer_valid_date: '2019-08-24'
                   settlement_type: 1
-                  debt_amount: 8500.55
+                  debt_amount: 8500
                   settlement_amount: 1
                   creditor: 540
         required: true
         description: ''
       responses:
         '200':
-          description: Successfully created a Settlement Offer
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  response:
-                    type: object
-                  status:
-                    $ref: ./models/SuccessStatus.yaml
-              examples:
-                Settlement Offer POST 200 Response Example:
-                  value:
-                    response:
-                      id: 4114375
-                    status:
-                      code: 200
+          $ref: '#/components/responses/POST_200'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/settlement_offers/{id}':
@@ -2508,85 +1955,8 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
               examples:
-                Settlement Offer GET 200 Response Example:
-                  value:
-                    response:
-                      object: settlement_offer
-                      id: '4200235'
-                      acctID: '98'
-                      contact_id: '382760691'
-                      creditor:
-                        object: creditor
-                        id: '540'
-                        tp_id: '0'
-                        is_active: '1'
-                        company_name: Chase
-                        first_name: null
-                        last_name: null
-                        address:
-                          address1: P O Box 15919
-                          address2: ''
-                          address3: null
-                          city: Wilmington
-                          state: Delaware
-                          zip: 19850-0464
-                        phone: 800-444-9370
-                      debt_id: '124504794'
-                      created_at: '2022-02-01 02:27:56'
-                      created_by:
-                        object: user
-                        id: '6777715'
-                        acctID: '98'
-                        company_id: '438'
-                        parent_id: '0'
-                        user_type: '1'
-                        created: '2022-01-08 10:12:37'
-                        user_name: QA_Tester
-                        firstname: QA
-                        lastname: Tester
-                        company: ''
-                        email: g.johnson@debtpaypro.com
-                        active: '1'
-                        role: '267'
-                        attorney: '0'
-                        payee_id: '0'
-                        del: '0'
-                        delTime: null
-                        pass_reset: '0'
-                      modified_at: null
-                      modified_by: null
-                      neg_id:
-                        object: user
-                        id: '6777715'
-                        acctID: '98'
-                        company_id: '438'
-                        parent_id: '0'
-                        user_type: '1'
-                        created: '2022-01-08 10:12:37'
-                        user_name: QA_Tester
-                        firstname: QA
-                        lastname: Tester
-                        company: ''
-                        email: g.johnson@debtpaypro.com
-                        active: '1'
-                        role: '267'
-                        attorney: '0'
-                        payee_id: '0'
-                        del: '0'
-                        delTime: null
-                        pass_reset: '0'
-                      madeby: Creditor
-                      offer_status: 1
-                      offer_status_date: '2019-08-24'
-                      offer_valid_date: '2019-08-24'
-                      settlement_type: '1'
-                      debt_amount: '8500.55'
-                      settlement_amount: '5600.00'
-                      settlement_fee: '25.00'
-                      notes: Settlement Offer Note
-                      cred_cont_id: '0'
-                    status:
-                      code: 200
+                Settlement Offer Example:
+                  $ref: '#/components/examples/SettlementOffer.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
     put:
@@ -2622,85 +1992,8 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
               examples:
-                Settlement Offer PUT 200 Response Example:
-                  value:
-                    response:
-                      object: settlement_offer
-                      id: '4200235'
-                      acctID: '98'
-                      contact_id: '382760691'
-                      creditor:
-                        object: creditor
-                        id: '540'
-                        tp_id: '0'
-                        is_active: '1'
-                        company_name: Chase
-                        first_name: null
-                        last_name: null
-                        address:
-                          address1: P O Box 15919
-                          address2: ''
-                          address3: null
-                          city: Wilmington
-                          state: Delaware
-                          zip: 19850-0464
-                        phone: 800-444-9370
-                      debt_id: '124504794'
-                      created_at: '2022-02-01 02:27:56'
-                      created_by:
-                        object: user
-                        id: '6777715'
-                        acctID: '98'
-                        company_id: '438'
-                        parent_id: '0'
-                        user_type: '1'
-                        created: '2022-01-08 10:12:37'
-                        user_name: QA_Tester
-                        firstname: QA
-                        lastname: Tester
-                        company: ''
-                        email: g.johnson@debtpaypro.com
-                        active: '1'
-                        role: '267'
-                        attorney: '0'
-                        payee_id: '0'
-                        del: '0'
-                        delTime: null
-                        pass_reset: '0'
-                      modified_at: null
-                      modified_by: null
-                      neg_id:
-                        object: user
-                        id: '6777715'
-                        acctID: '98'
-                        company_id: '438'
-                        parent_id: '0'
-                        user_type: '1'
-                        created: '2022-01-08 10:12:37'
-                        user_name: QA_Tester
-                        firstname: QA
-                        lastname: Tester
-                        company: ''
-                        email: g.johnson@debtpaypro.com
-                        active: '1'
-                        role: '267'
-                        attorney: '0'
-                        payee_id: '0'
-                        del: '0'
-                        delTime: null
-                        pass_reset: '0'
-                      madeby: Creditor
-                      offer_status: 1
-                      offer_status_date: '2019-08-24'
-                      offer_valid_date: '2019-08-24'
-                      settlement_type: '1'
-                      debt_amount: '8500.55'
-                      settlement_amount: '5600.00'
-                      settlement_fee: '25.00'
-                      notes: Settlement Offer Note
-                      cred_cont_id: '0'
-                    status:
-                      code: 200
+                Settlement Offer Example:
+                  $ref: '#/components/examples/SettlementOffer.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
     delete:
@@ -2765,7 +2058,7 @@ paths:
                   task_type: 0
                   assigned_to:
                     object: User
-                    id: 22721
+                    id: 51494
               Required Parameters Only:
                 value:
                   contact_id: 516553837
@@ -2781,23 +2074,7 @@ paths:
         required: true
       responses:
         '200':
-          description: Successfully created a Task Record
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  response:
-                    type: object
-                  status:
-                    $ref: ./models/SuccessStatus.yaml
-              examples:
-                Task POST 200 Response Example:
-                  value:
-                    response:
-                      id: 32549869
-                    status:
-                      code: 200
+          $ref: '#/components/responses/POST_200'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/tasks/{id}':
@@ -2827,69 +2104,8 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
               examples:
-                Tasks GET 200 Response Example:
-                  value:
-                    response:
-                      object: task
-                      id: 32811025
-                      acctID: 3863
-                      contact_id: 516553837
-                      task_created_date: '2021-12-02 16:12:32'
-                      task_name: Task Name
-                      defined_task: 25907
-                      created_by:
-                        object: user
-                        id: 4950368
-                        acctID: 3863
-                        company_id: 42128
-                        parent_id: 0
-                        user_type: 1
-                        created: '2019-10-02 02:41:18'
-                        user_name: Greg
-                        firstname: Greg
-                        lastname: Johnson
-                        company: ''
-                        email: g.johnson@debtpaypro.com
-                        active: true
-                        role: 29399
-                        attorney: false
-                        payee_id: 0
-                        del: false
-                        delTime: null
-                        pass_reset: '0'
-                      task_due_date: '2019-08-24'
-                      task_note: Task Note
-                      list_id: '0'
-                      team_id: '0'
-                      task_completed: '0'
-                      task_completed_by: null
-                      task_completed_date: ''
-                      task_completion_percentage: '0'
-                      task_status: '0'
-                      title: Task Name
-                      task_type: '0'
-                      assigned_to:
-                        object: user
-                        id: '51494'
-                        acctID: '5'
-                        company_id: '83'
-                        parent_id: '0'
-                        user_type: '1'
-                        created: '2014-12-23 11:06:46'
-                        user_name: support
-                        firstname: Debt Pay Pro
-                        lastname: Support
-                        company: ''
-                        email: dpp@debtpaypro.com
-                        active: '0'
-                        role: '4990'
-                        attorney: '0'
-                        payee_id: '0'
-                        del: '0'
-                        delTime: null
-                        pass_reset: '0'
-                    status:
-                      code: 200
+                Tasks Example:
+                  $ref: '#/components/examples/Task.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
     put:
@@ -2924,69 +2140,8 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
               examples:
-                Task Update 200 Response Example:
-                  value:
-                    response:
-                      object: task
-                      id: 32811025
-                      acctID: 3863
-                      contact_id: 516553837
-                      task_created_date: '2021-12-02 16:12:32'
-                      task_name: Task Name
-                      defined_task: 25907
-                      created_by:
-                        object: user
-                        id: 4950368
-                        acctID: 3863
-                        company_id: 42128
-                        parent_id: 0
-                        user_type: 1
-                        created: '2019-10-02 02:41:18'
-                        user_name: Greg
-                        firstname: Greg
-                        lastname: Johnson
-                        company: ''
-                        email: g.johnson@debtpaypro.com
-                        active: true
-                        role: 29399
-                        attorney: false
-                        payee_id: 0
-                        del: false
-                        delTime: null
-                        pass_reset: '0'
-                      task_due_date: '2019-08-24'
-                      task_note: Task Note
-                      list_id: '0'
-                      team_id: '0'
-                      task_completed: '0'
-                      task_completed_by: null
-                      task_completed_date: ''
-                      task_completion_percentage: '0'
-                      task_status: '0'
-                      title: Task Name
-                      task_type: '0'
-                      assigned_to:
-                        object: user
-                        id: '51494'
-                        acctID: '5'
-                        company_id: '83'
-                        parent_id: '0'
-                        user_type: '1'
-                        created: '2014-12-23 11:06:46'
-                        user_name: support
-                        firstname: Debt Pay Pro
-                        lastname: Support
-                        company: ''
-                        email: dpp@debtpaypro.com
-                        active: '0'
-                        role: '4990'
-                        attorney: '0'
-                        payee_id: '0'
-                        del: '0'
-                        delTime: null
-                        pass_reset: '0'
-                    status:
-                      code: 200
+                Task Example:
+                  $ref: '#/components/examples/Task.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
     delete:
@@ -3039,6 +2194,9 @@ paths:
                     type: object
                   status:
                     $ref: ./models/SuccessStatus.yaml
+              examples:
+                Teams Example:
+                  $ref: '#/components/examples/AllTeams.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
     post:
@@ -3049,23 +2207,7 @@ paths:
       operationId: teamCreate
       responses:
         '200':
-          description: Successfully created a Team Record
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  response:
-                    type: object
-                  status:
-                    $ref: ./models/SuccessStatus.yaml
-              examples:
-                Team POST 200 Response Example:
-                  value:
-                    response:
-                      id: 20872
-                    status:
-                      code: 200
+          $ref: '#/components/responses/POST_200'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
       requestBody:
@@ -3104,15 +2246,8 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
               examples:
-                Teams GET 200 Response Example:
-                  value:
-                    response:
-                      object: team
-                      team_id: 20875
-                      company_id: 42128
-                      name: Test
-                    status:
-                      code: 200
+                Team Example:
+                  $ref: '#/components/examples/Team.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
     put:
@@ -3146,15 +2281,8 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
               examples:
-                Teams PUT 200 Response Example:
-                  value:
-                    response:
-                      object: team
-                      team_id: 20875
-                      company_id: 42128
-                      name: Test
-                    status:
-                      code: 200
+                Team Example:
+                  $ref: '#/components/examples/Team.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
     delete:
@@ -3229,23 +2357,7 @@ paths:
         description: User Object
       responses:
         '200':
-          description: Successfully created User Record
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  response:
-                    type: object
-                  status:
-                    $ref: ./models/SuccessStatus.yaml
-              examples:
-                Users Post 200 Response Example:
-                  value:
-                    response:
-                      id: 6664975
-                    status:
-                      code: 200
+          $ref: '#/components/responses/POST_200'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/users/{id}':
@@ -3275,27 +2387,8 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
               examples:
-                Users GET 200 Response Example:
-                  value:
-                    response:
-                      object: user
-                      id: 6033912
-                      company_id: 42128
-                      parent_id: 4950368
-                      created: '2021-01-13 12:47:25'
-                      user_name: QAuser
-                      firstname: QA
-                      lastname: Tester
-                      company: Acme
-                      email: mail@debtpaypro.com
-                      active: true
-                      role: 29399
-                      attorney: true
-                      payee_id: 23006
-                      del: 0
-                      delTime: '2021-01-13 12:47:25'
-                    status:
-                      code: 200
+                User Example:
+                  $ref: '#/components/examples/User.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
     put:
@@ -3330,27 +2423,8 @@ paths:
                   status:
                     $ref: ./models/SuccessStatus.yaml
               examples:
-                Users PUT 200 Response Example:
-                  value:
-                    response:
-                      object: user
-                      id: 6033912
-                      company_id: 42128
-                      parent_id: 4950368
-                      created: '2021-01-13 12:47:25'
-                      user_name: QAuser
-                      firstname: QA
-                      lastname: Tester
-                      company: Acme
-                      email: mail@debtpaypro.com
-                      active: true
-                      role: 29399
-                      attorney: true
-                      payee_id: 23006
-                      del: 0
-                      delTime: '2021-01-13 12:47:25'
-                    status:
-                      code: 200
+                User Example:
+                  $ref: '#/components/examples/User.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
     delete:
@@ -3404,6 +2478,9 @@ paths:
                     $ref: ./models/UserSettings.yaml
                   status:
                     $ref: ./models/SuccessStatus.yaml
+              examples:
+                User Settings Example:
+                  $ref: '#/components/examples/UserSettings.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
     put:
@@ -3437,6 +2514,9 @@ paths:
                     $ref: ./models/UserSettings.yaml
                   status:
                     $ref: ./models/SuccessStatus.yaml
+              examples:
+                User Settings Example:
+                  $ref: '#/components/examples/UserSettings.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   /users/current:
@@ -3458,6 +2538,9 @@ paths:
                     $ref: ./models/UserResponse.yaml
                   status:
                     $ref: ./models/SuccessStatus.yaml
+              examples:
+                User Example:
+                  $ref: '#/components/examples/User.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/users/{id}/tasks':
@@ -3780,1115 +2863,20 @@ paths:
         '400':
           $ref: '#/components/responses/ERROR_4XX'
 components:
-  schemas:
-    Address:
-      type: object
-      description: Address Record Object
-      properties:
-        address1:
-          type: string
-          example: 123 Main St.
-        address2:
-          type: string
-          example: Apt. 4008
-        address3:
-          type: string
-        city:
-          type: string
-          example: Chicago
-        state:
-          type: string
-          example: IL
-        zip:
-          type: string
-          example: '60612'
-    Call:
-      type: object
-      description: Call Record Object
-      properties:
-        object:
-          type: string
-          example: call
-          readOnly: true
-        id:
-          type: integer
-          minLength: 1
-          description: ID of the call record
-          example: 385319179
-          readOnly: true
-        acctID:
-          type: integer
-          example: 3863
-          readOnly: true
-        contactID:
-          type: integer
-          example: 475956560
-        userID:
-          type: integer
-          example: 3028014
-          readOnly: true
-        sdate:
-          type: string
-          format: date
-        created_at:
-          type: string
-          format: date-time
-          readOnly: true
-        call_type:
-          type: string
-          enum:
-            - Outgoing
-            - Incoming
-          example: Outgoing
-        call_result:
-          type: string
-          example: Busy
-        notes:
-          type: string
-          example: Lorem Ipsum
-        status_change:
-          type: string
-          example: '274158'
-        duration:
-          type: string
-          format: duration
-          example: '00:01:15'
-        event_id:
-          type: integer
-          example: 8179
-        dialer_id:
-          type: integer
-          example: 2
-        recording_url:
-          type: string
-          example: 'https://stairwork.ru/test.mp3'
-        assigned_agent:
-          type: integer
-          example: 3028014
-          description: User ID of the DPP Agent that made or took the call with the Client.
-      required:
-        - contactID
-        - call_type
-        - call_result
-    Company:
-      type: object
-      description: Company Record Object
-      properties:
-        object:
-          type: string
-          readOnly: true
-          example: company
-        id:
-          type: integer
-          readOnly: true
-          example: 42122
-        acctID:
-          type: integer
-          readOnly: true
-          example: 3863
-        name:
-          type: string
-          example: Company ABC
-        company_code:
-          type: string
-        phone:
-          type: string
-          example: 312-123-1234
-        parent_id:
-          type: integer
-          example: 12345
-        company_type:
-          type: integer
-          example: 1
-        created_at:
-          type: string
-          format: date-time
-          readOnly: true
-        created_by:
-          type: integer
-          readOnly: true
-        contactname:
-          type: string
-          example: John Doe
-        address:
-          type: string
-          example: 123 Main St
-        address2:
-          type: string
-          example: Suite 321
-        city:
-          type: string
-          example: Chicago
-        state:
-          type: string
-          example: IL
-        zip:
-          type: string
-          example: '60001'
-        phone2:
-          type: string
-          example: 123-123-1234
-        fax:
-          type: string
-        email:
-          type: string
-          example: test@test.com
-        timezone:
-          type: string
-        ein:
-          type: string
-        esign:
-          type: integer
-        domain:
-          type: string
-        gcs_account_num:
-          type: string
-        gcs_policy_group_id:
-          type: string
-        account_num:
-          type: string
-        routing_num:
-          type: string
-        bank_name:
-          type: string
-        account_type:
-          type: string
-        active:
-          type: integer
-        theme:
-          type: string
-        logo_url:
-          type: string
-        additional1:
-          type: string
-        additional2:
-          type: string
-        additional3:
-          type: string
-        additional4:
-          type: string
-        additional5:
-          type: string
-        additional6:
-          type: string
-        account_exec:
-          type: integer
-        docusign_acct:
-          type: string
-        docusign_pass:
-          type: string
-        docusign_user:
-          type: string
-        enroll_charge:
-          type: number
-        charge_payee:
-          type: integer
-      required:
-        - name
-        - company_code
-        - company_type
-        - contactname
-        - email
-    Status:
-      description: ''
-      properties:
-        code:
-          type: integer
-          example: 0
-        message:
-          type: string
-      type: object
-    Stat:
-      description: stat record
-      properties:
-        gateway:
-          type: integer
-        num_payments_made:
-          type: integer
-        total_num_payments:
-          type: integer
-        total_fees_paid:
-          type: integer
-        total_fees_owed:
-          type: integer
-        num_returns:
-          type: integer
-        num_fees_taken:
-          type: integer
-        total_num_fees:
-          type: integer
-        sum_of_cleared_payments:
-          type: integer
-        sum_of_payments:
-          type: integer
-      type: object
-    CalEvent:
-      description: CalEvent record
-      properties:
-        id:
-          type: integer
-          readOnly: true
-        acctID:
-          type: integer
-          readOnly: true
-        created:
-          type: string
-          format: date-time
-          readOnly: true
-        created_by:
-          type: integer
-          readOnly: true
-        modified:
-          type: string
-          format: date-time
-          readOnly: true
-        modified_by:
-          type: integer
-          readOnly: true
-        assigned_to:
-          type: integer
-        contact_id:
-          type: integer
-        event_type:
-          type: string
-        title:
-          type: string
-        description:
-          type: string
-        location:
-          type: string
-        location_id:
-          type: integer
-        start_date:
-          type: string
-          format: date-time
-        end_date:
-          type: string
-          format: date-time
-        timezone:
-          type: string
-        utc_start:
-          type: string
-          format: date-time
-        utc_end:
-          type: string
-          format: date-time
-        allday:
-          type: integer
-        repeats:
-          type: integer
-        repeatswhen:
-          type: string
-        repeatends:
-          type: string
-        reminder:
-          type: string
-        notify_part:
-          type: integer
-        auto_dismiss:
-          type: integer
-        public:
-          type: integer
-        dismissed:
-          type: integer
-          readOnly: true
-        dismissed_at:
-          type: string
-          format: date-time
-          readOnly: true
-        hidden:
-          type: integer
-        event_result:
-          type: integer
-        userfield1:
-          type: string
-        userfield2:
-          type: string
-        userfield3:
-          type: string
-      type: object
-    Contact:
-      type: object
-      properties:
-        id:
-          type: integer
-          readOnly: true
-        acctID:
-          type: integer
-          readOnly: true
-        company_id:
-          type: integer
-          readOnly: true
-        file_type:
-          type: integer
-        form_id:
-          type: integer
-        created:
-          type: string
-          format: date-time
-          readOnly: true
-        created_by:
-          type: integer
-          readOnly: true
-        assigned_to:
-          type: integer
-        campaign_id:
-          type: integer
-        attorney:
-          type: integer
-        attorney_id:
-          type: integer
-        attorney_id2:
-          type: integer
-        first_name:
-          type: string
-        middle_name:
-          type: string
-        last_name:
-          type: string
-        salutation:
-          type: string
-        title:
-          type: string
-        phone_number:
-          type: string
-        phone_extension:
-          type: string
-        cell_phone:
-          type: string
-        cell_extension:
-          type: string
-        work_phone:
-          type: string
-        work_extension:
-          type: string
-        address:
-          $ref: '#/components/schemas/Address'
-        email:
-          type: string
-        social_security_number:
-          type: string
-        date_of_birth:
-          type: string
-          format: date
-        language:
-          type: integer
-        submitted:
-          type: integer
-        submitted_by:
-          type: integer
-        submitted_at:
-          type: string
-          format: date-time
-        approved_by2:
-          type: integer
-        approved_date2:
-          type: string
-          format: date
-        rejected_by:
-          type: integer
-        rejected_notes:
-          type: string
-        paused_notes:
-          type: string
-        dropped_reason:
-          type: integer
-        grad_date:
-          type: string
-          format: date
-        total_debt:
-          type: number
-        welcome_sent:
-          type: string
-          format: date-time
-        paper_statements:
-          type: integer
-        paper_welcome:
-          type: integer
-        gateway_id:
-          type: integer
-        gateway_approved_by:
-          type: integer
-        gateway_hold:
-          type: integer
-        gateway_hold_reason:
-          type: integer
-        gateway_hold_notes:
-          type: string
-        gateway_auth_received:
-          type: integer
-        gateway_auth_file:
-          type: string
-        iscoapp:
-          type: integer
-        customs:
-          type: array
-          items:
-            type: object
-            properties:
-              field_id:
-                type: integer
-              value:
-                type: string
-              label:
-                type: string
-      required:
-        - first_name
-        - last_name
-        - phone_number
-        - address
-        - email
-        - date_of_birth
-    Creditor:
-      type: object
-      properties:
-        id:
-          type: integer
-        acctID:
-          type: integer
-        tp_id:
-          type: integer
-        is_active:
-          type: integer
-        company_name:
-          type: string
-        first_name:
-          type: string
-        last_name:
-          type: string
-        address:
-          $ref: '#/components/schemas/Address'
-        phone:
-          type: string
-    Note:
-      type: object
-      properties:
-        id:
-          type: integer
-          readOnly: true
-        client_id:
-          type: integer
-        acctID:
-          type: integer
-          readOnly: true
-        created_at:
-          type: string
-          format: date-time
-          readOnly: true
-        created_by:
-          type: integer
-          readOnly: true
-        object_type:
-          type: integer
-          readOnly: true
-        record_id:
-          type: integer
-        note:
-          type: string
-      required:
-        - client_id
-        - note
-    Debt:
-      required:
-        - original_debt_amount
-        - current_debt_amount
-        - client_id
-        - creditor
-      properties:
-        id:
-          type: integer
-          readOnly: true
-        acctID:
-          type: integer
-          readOnly: true
-        created_at:
-          type: string
-          format: date-time
-          readOnly: true
-        created_by:
-          type: array
-          items:
-            $ref: '#/components/schemas/User'
-          readOnly: true
-        modified_at:
-          type: string
-          format: date-time
-          readOnly: true
-        modified_by:
-          type: integer
-          readOnly: true
-        original_debt_amount:
-          type: number
-        current_debt_amount:
-          type: number
-        current_payment:
-          type: number
-        current_rate:
-          type: number
-        notes:
-          type: string
-        verified_debt_amount:
-          type: number
-        creditor:
-          type: array
-          items:
-            $ref: '#/components/schemas/Creditor'
-        debt_buyer:
-          type: string
-        poa_sent_date:
-          type: string
-          format: date
-        legal_account:
-          type: string
-        last_payment_date:
-          type: string
-          format: date
-        last_payment_amount:
-          type: number
-        opened_date:
-          type: string
-          format: date
-        available_balance:
-          type: number
-        enrolled:
-          type: integer
-        enrolled_date:
-          type: string
-          format: date
-        debt_type:
-          type: integer
-        debt_status:
-          type: string
-        locked:
-          type: integer
-        og_account_num:
-          type: string
-        creditor_account_num:
-          type: string
-        settled:
-          type: integer
-        settlement_id:
-          type: integer
-        client_id:
-          type: integer
-        settlement_offers:
-          type: array
-          items:
-            type: string
-        customs:
-          type: array
-          items:
-            type: string
-      type: object
-    Docs:
-      description: docs data
-      properties:
-        clixsign:
-          type: array
-          items: {}
-        esigns:
-          type: array
-          items: {}
-        docusign:
-          type: array
-          items: {}
-        uploads:
-          type: array
-          items: {}
-        generated:
-          type: array
-          items: {}
-      type: object
-    Loan:
-      type: object
-      properties:
-        id:
-          type: integer
-          readOnly: true
-        acctID:
-          type: integer
-          readOnly: true
-        tp_id:
-          type: integer
-        created_at:
-          type: string
-          format: date-time
-          readOnly: true
-        created_by:
-          type: integer
-          readOnly: true
-        modified_at:
-          type: string
-          format: date-time
-          readOnly: true
-        modified_by:
-          type: integer
-          readOnly: true
-        client_id:
-          type: integer
-        advance_type:
-          type: string
-        advance_date:
-          type: string
-          format: date
-        paid_in_full_date:
-          type: string
-          format: date
-        defaulted_date:
-          type: string
-          format: date
-        type_id:
-          type: integer
-        program_id:
-          type: integer
-        loan_class:
-          type: integer
-        loan_amount:
-          type: number
-        payback_amount:
-          type: number
-        rate:
-          type: number
-        payment:
-          type: number
-        holdback_percent:
-          type: number
-        payback_period:
-          type: integer
-        frequency:
-          type: string
-        freq_int:
-          type: string
-        period_amount:
-          type: number
-        fees:
-          type: number
-        conf_num:
-          type: string
-        underwrite_notes:
-          type: string
-        contract_date:
-          type: string
-          format: date
-        contract_number:
-          type: string
-        funded:
-          type: integer
-        status:
-          type: integer
-        lien_pos:
-          type: integer
-        ach_start_date:
-          type: string
-          format: date
-        ach_on:
-          type: integer
-        pricing_lock:
-          type: integer
-        offer_set:
-          type: integer
-      required:
-        - client_id
-        - loan_amount
-        - payback_amount
-    Settlement:
-      description: Settlement record
-      properties:
-        id:
-          type: integer
-          readOnly: true
-        contact_id:
-          type: integer
-        creditor:
-          $ref: '#/components/schemas/Creditor'
-        debt_id:
-          type: integer
-        created_at:
-          type: string
-          format: date-time
-          readOnly: true
-        created_by:
-          type: integer
-          readOnly: true
-        modified_at:
-          type: string
-          format: date-time
-          readOnly: true
-        modified_by:
-          type: integer
-          readOnly: true
-        neg_id:
-          type: integer
-        madeby:
-          type: string
-        offer_status:
-          properties:
-            status_id:
-              type: string
-            label:
-              type: string
-          type: object
-        offer_status_date:
-          type: string
-          format: date
-        offer_valid_date:
-          type: string
-          format: date
-        settlement_type:
-          type: integer
-        debt_amount:
-          type: number
-        settlement_amount:
-          type: number
-        settlement_fee:
-          type: number
-        notes:
-          type: string
-        cred_cont_id:
-          type: integer
-        json:
-          type: object
-      type: object
-    Settlementoffer:
-      title: Settlement Offer
-      type: object
-      properties:
-        offer_id:
-          type: integer
-          title: Offer ID
-          example: 4036117
-          readOnly: true
-        acctID:
-          type: integer
-          title: Account ID
-          example: 3863
-          readOnly: true
-        contact_id:
-          title: Contact ID
-          type: integer
-          example: 485599270
-        creditor:
-          $ref: '#/components/schemas/Creditor'
-        debt_id:
-          title: Debt ID
-          type: integer
-          example: 12345
-        created_at:
-          type: string
-          title: Created Date
-          format: date-time
-          readOnly: true
-        created_by:
-          $ref: '#/components/schemas/User'
-        modified_at:
-          type: string
-          title: Modified Date
-          format: date-time
-          readOnly: true
-        modified_by:
-          type: integer
-          title: Modified By
-          readOnly: true
-        neg_id:
-          title: Neg ID
-          type: integer
-        madeby:
-          title: Made By
-          type: string
-          example: Negotiator
-        offer_status:
-          title: Offer Status
-          example: 3
-          type: integer
-        offer_status_date:
-          title: Offer Status Date
-          format: date
-          example: '2022-03-07'
-          type: string
-        offer_valid_date:
-          title: Offer Valid Date
-          type: string
-          format: date
-          example: '2021-10-24'
-        settlement_type:
-          title: Settlement Type
-          type: integer
-        debt_amount:
-          title: Debt Amount
-          type: number
-          example: 0
-        settlement_amount:
-          title: Settlement Amount
-          type: number
-          example: 0
-        settlement_fee:
-          title: Settlement Fee
-          type: number
-          example: 0
-        notes:
-          title: Notes
-          type: string
-          example: Lorem Ipsum
-        cred_cont_id:
-          title: Cred Cont ID
-          type: integer
-          example: 0
-        json:
-          type: object
-      required:
-        - contact_id
-        - creditor
-        - debt_id
-        - offer_status
-        - offer_status_date
-        - offer_valid_date
-        - settlement_type
-        - debt_amount
-        - settlement_amount
-        - settlement_fee
-    Task:
-      description: task record
-      properties:
-        acctID:
-          type: integer
-          readOnly: true
-        id:
-          type: integer
-          readOnly: true
-        contact_id:
-          type: integer
-        task_created_date:
-          type: string
-          format: date-time
-          readOnly: true
-        task_name:
-          type: string
-        defined_task:
-          type: integer
-        created_by:
-          type: integer
-          readOnly: true
-        task_due_date:
-          type: string
-          format: date
-        task_note:
-          type: string
-        list_id:
-          type: integer
-        team_id:
-          type: integer
-        task_completed:
-          type: integer
-          readOnly: true
-        task_completed_by:
-          type: integer
-          readOnly: true
-        task_completed_date:
-          type: string
-          format: date-time
-          readOnly: true
-        task_completion_percentage:
-          type: integer
-        task_status:
-          type: integer
-        title:
-          type: string
-        assigned_to_id:
-          type: integer
-        task_type:
-          type: integer
-        assigned_to:
-          type: string
-      type: object
-    TaskItem:
-      description: task item
-      properties:
-        task_category:
-          type: integer
-        items:
-          type: array
-          items:
-            properties:
-              id:
-                type: integer
-              title:
-                type: string
-      type: object
-    Team:
-      description: User team record
-      properties:
-        id:
-          type: integer
-          readOnly: true
-        acctID:
-          type: integer
-          readOnly: true
-        company_id:
-          type: integer
-          readOnly: true
-        name:
-          type: string
-      type: object
-    User:
-      type: object
-      description: ''
-      properties:
-        user_id:
-          title: User ID
-          type: integer
-          example: 6033912
-          readOnly: true
-        acctID:
-          title: Account ID
-          type: integer
-          example: 3863
-          readOnly: true
-        guid:
-          title: Group ID
-          type: string
-          example: ba2a29ca-f1d7-f58d-f670-fb92f716e513
-        company_id:
-          title: Company ID
-          type: integer
-          example: 42128
-          readOnly: true
-        parent_id:
-          title: Parent ID
-          type: integer
-          example: 4950368
-        user_type:
-          title: User Type
-          type: integer
-          example: 1
-        created:
-          title: Created Date
-          type: string
-          format: date-time
-          example: '2021-01-13 12:47:25'
-          readOnly: true
-        user_name:
-          title: User Name
-          type: string
-          example: QAuser
-        firstname:
-          title: First Name
-          type: string
-          example: QA
-        lastname:
-          title: Last Name
-          type: string
-          example: Tester
-        company:
-          title: Company Name
-          type: string
-          example: Acme
-        email:
-          title: Company Email
-          type: string
-          example: mail@debtpaypro.com
-        active:
-          title: Active Indicator
-          type: boolean
-          example: true
-        role:
-          title: Role
-          type: integer
-          example: 29399
-        attorney:
-          title: Attorney Indicator
-          type: boolean
-          example: true
-        payee_id:
-          title: Payee ID
-          type: integer
-          example: 23006
-        del:
-          title: Del
-          type: integer
-          example: 0
-          readOnly: true
-        delTime:
-          title: Delete Date
-          type: string
-          format: date-time
-          example: '2021-01-13 12:47:25'
-          readOnly: true
-        pass_reset:
-          title: Password Reset
-          type: boolean
-          example: false
-        master:
-          title: Master Indicator
-          type: boolean
-          example: false
-        billable:
-          title: Billable Indicator
-          type: boolean
-          example: true
-      required:
-        - email
-    Call-Update:
-      title: Call
-      type: object
-      description: ''
-      properties:
-        contactID:
-          type: integer
-        activity_id:
-          type: integer
-          example: 0
-        sdate:
-          type: string
-          format: date
-          example: '2021-12-10'
-        call_type:
-          type: string
-          enum:
-            - Outgoing
-            - Incoming
-        call_result:
-          type: string
-        call_dis_id:
-          type: integer
-          example: 0
-        notes:
-          type: string
-        status_change:
-          type: string
-        duration:
-          type: string
-          format: duration
-          pattern: 'hh:mm:ss'
-        event_id:
-          type: integer
-          example: 0
-        dialer_id:
-          type: integer
-          example: 0
-        recording_id:
-          type: integer
-      x-internal: true
-    SMS:
-      title: SMS
-      type: object
-      properties:
-        start:
-          type: integer
-        limit:
-          type: integer
-      required:
-        - start
-        - limit
   responses:
-    '400':
-      description: Error
+    POST_200:
+      description: Successful POST Request
       content:
         application/json:
           schema:
             type: object
             properties:
+              response:
+                type: object
               status:
-                $ref: ./models/ErrorStatus.yaml
+                $ref: ./models/SuccessStatus.yaml
+          examples:
+            $ref: '#/components/examples/SuccessfulRequest.json'
     ERROR_4XX:
       description: An error has occurred
       content:
@@ -4898,18 +2886,17 @@ components:
             properties:
               status:
                 $ref: ./models/ErrorStatus.yaml
-    default:
-      description: default
+    GET_200:
+      description: Successful GET Request
       content:
         application/json:
           schema:
             type: object
             properties:
-              status:
-                $ref: '#/components/schemas/SuccessStatus'
               response:
                 type: object
-                properties: {}
+              status:
+                $ref: ./models/SuccessStatus.yaml
   parameters:
     id:
       name: id
@@ -4932,14 +2919,14 @@ components:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/ContactResponse'
+            $ref: models/ContactResponse.yaml
       description: Contact Object
       required: true
     Loan:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/Loan'
+            $ref: models/LoanRequest.yaml
       description: Loan Object
       required: true
     Note:
@@ -5069,14 +3056,14 @@ components:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/DebtRequest'
+            $ref: models/DebtRequest.yaml
       description: Debt Object
       required: true
     Team:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/TeamRequest'
+            $ref: models/TeamRequest.yaml
       description: ''
       required: true
   securitySchemes:
@@ -5308,5 +3295,753 @@ components:
           count: '3'
         status:
           code: 200
+    Docs.json:
+      value:
+        response:
+          esigned:
+            clixsign:
+              - object: base
+                doc_id: '5225428'
+                created_at: '2022-02-04 10:17:35'
+                created_by:
+                  object: user
+                  id: '6777715'
+                  acctID: '98'
+                  company_id: '438'
+                  parent_id: '0'
+                  user_type: '1'
+                  created: '2022-01-08 10:12:37'
+                  user_name: QA_Tester
+                  firstname: QA
+                  lastname: Tester
+                  company: ''
+                  email: g.johnson@debtpaypro.com
+                  active: '1'
+                  role: '267'
+                  attorney: '0'
+                  payee_id: '0'
+                  del: '0'
+                  delTime: null
+                  pass_reset: '0'
+                template_id: '94764'
+                file_name: Clixsign Test - test credi (xxxx)
+                valid_through: '2022-03-06 10:17:35'
+                title: Clixsign Test - test credi (xxxx)
+                status: '1'
+                download: /getfile.php?type=clixsign_doc&id=5225428
+            esigns: []
+            docusign: []
+          uploaded:
+            - object: contactFile
+              doc_id: '235377388'
+              acctID: '98'
+              file_name: Testdocument.txt
+              doc_type: '1'
+              created_by: null
+              created_at: '2022-02-07 12:11:25'
+              description: Description of the file.
+              refs:
+                - object: debts
+                  object_id: '167172217'
+              download: /getfile.php?id=235377388
+              file_content: 'https://dpp-uploads.s3.amazonaws.com/98/d45a212c-Testdocument.txt?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAI4QAAJTOXUVV5DFQ%2F20220208%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220208T053235Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Signature=fbc681ed2ca6f9d804233bbe16df46441af89f8c8b31098c9eafa6dc076ca257'
+            - object: contactFile
+              doc_id: '232079353'
+              acctID: '98'
+              file_name: Clixsign Test - John Doe_Download.pdf
+              doc_type: '1'
+              created_by:
+                object: user
+                id: '6777715'
+                acctID: '98'
+                company_id: '438'
+                parent_id: '0'
+                user_type: '1'
+                created: '2022-01-08 10:12:37'
+                user_name: QA_Tester
+                firstname: QA
+                lastname: Tester
+                company: ''
+                email: g.johnson@debtpaypro.com
+                active: '1'
+                role: '267'
+                attorney: '0'
+                payee_id: '0'
+                del: '0'
+                delTime: null
+                pass_reset: '0'
+              created_at: '2022-01-18 07:29:17'
+              description: API Test - Documents Endpoints
+              refs:
+                - object: debts
+                  object_id: '167172214'
+              download: /getfile.php?id=232079353
+              file_content: 'https://dpp-uploads.s3.amazonaws.com/98/cb36892d-Clixsign%20Test%20-%20John%20Doe_Download.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAI4QAAJTOXUVV5DFQ%2F20220208%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220208T053243Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Signature=d26b8203caf2771aed86bad9d3ae6620eddcda5e071eda7d535397ad40f9030f'
+          generated:
+            - object: base
+              doc_id: '23366872'
+              template_id: '94764'
+              created_at: '2022-02-04 10:11:44'
+              created_by:
+                object: user
+                id: '6777715'
+                acctID: '98'
+                company_id: '438'
+                parent_id: '0'
+                user_type: '1'
+                created: '2022-01-08 10:12:37'
+                user_name: QA_Tester
+                firstname: QA
+                lastname: Tester
+                company: ''
+                email: g.johnson@debtpaypro.com
+                active: '1'
+                role: '267'
+                attorney: '0'
+                payee_id: '0'
+                del: '0'
+                delTime: null
+                pass_reset: '0'
+              download: /getfile.php?type=pdf&id=23366872&cid=534512161
+              file_name: Clixsign Test - test credi (xxxx)
+        status:
+          code: 200
+    SMSlog.json:
+      value:
+        response:
+          count: '11'
+          results:
+            - id: '37534022'
+              sdate: '2020-12-07 12:13:15'
+              body: Hey
+              status: null
+              client:
+                client_id: '90400123'
+                first_name: Jane
+                last_name: Murphy
+              sender:
+                object: user
+                id: '5592123'
+                acctID: '92'
+                company_id: '447'
+                parent_id: '0'
+                user_type: '1'
+                created: '2020-06-29 11:05:13'
+                user_name: dpp
+                firstname: John
+                lastname: Doe
+                company: ''
+                email: test@test.com
+                active: '1'
+                role: '267'
+                attorney: '0'
+                payee_id: '0'
+                del: '0'
+                delTime: null
+                pass_reset: '0'
+              flag: '0'
+              schedule_id: '-4'
+              receiver_phone_number: '12245771234'
+              title: null
+              from_number: '+16309341234'
+            - id: '37533123'
+              sdate: '2020-12-07 12:13:05'
+              body: Hi
+              status: null
+              client:
+                client_id: '90400123'
+                first_name: Jane
+                last_name: Doe
+              sender:
+                object: user
+                id: '5592123'
+                acctID: '92'
+                company_id: '447'
+                parent_id: '0'
+                user_type: '1'
+                created: '2020-06-29 11:05:13'
+                user_name: dpp
+                firstname: John
+                lastname: Doe
+                company: ''
+                email: test@test.com
+                active: '1'
+                role: '267'
+                attorney: '0'
+                payee_id: '0'
+                del: '0'
+                delTime: null
+                pass_reset: '0'
+              flag: '1'
+              schedule_id: '0'
+              receiver_phone_number: '12245771234'
+              title: null
+              from_number: '+16309341234'
+        status:
+          code: 200
+    ContactHistoryFeed.json:
+      value:
+        response:
+          results:
+            - object: contacts_log
+              id: '3054970123'
+              acctID: '28'
+              created_at: '2022-01-08 12:24:19'
+              created_by: '6777123'
+              contact_id: '534512123'
+              type: General
+              message: Contact created as clone by QA Tester
+              del: '0'
+              user:
+                object: user
+                id: '6777123'
+                acctID: '28'
+                company_id: '238'
+                parent_id: '0'
+                user_type: '1'
+                created: '2022-01-08 10:12:37'
+                user_name: QA_Tester
+                firstname: QA
+                lastname: Tester
+                company: ''
+                email: test@debtpaypro.com
+                active: '1'
+                role: '267'
+                attorney: '0'
+                payee_id: '0'
+                del: '0'
+                delTime: null
+                pass_reset: '0'
+            - object: contacts_log
+              id: '3054971124'
+              acctID: '28'
+              created_at: '2022-01-08 12:25:01'
+              created_by: '6777123'
+              contact_id: '534512123'
+              type: Re-Assign
+              message: Primary Assigned User Changed To QA Tester
+              del: '0'
+              user:
+                object: user
+                id: '6777123'
+                acctID: '28'
+                company_id: '238'
+                parent_id: '0'
+                user_type: '1'
+                created: '2022-01-08 10:12:37'
+                user_name: QA_Tester
+                firstname: QA
+                lastname: Tester
+                company: ''
+                email: test@debtpaypro.com
+                active: '1'
+                role: '267'
+                attorney: '0'
+                payee_id: '0'
+                del: '0'
+                delTime: null
+                pass_reset: '0'
+          count: '121'
+        status:
+          code: 200
+    Debt.json:
+      value:
+        response:
+          object: debt
+          id: '167172123'
+          acctID: '28'
+          created_at: '2021-03-11 10:16:13'
+          created_by:
+            object: user
+            id: '5592123'
+            acctID: '28'
+            company_id: '123'
+            parent_id: '0'
+            user_type: '1'
+            created: '2020-06-29 11:05:13'
+            user_name: dpp
+            firstname: Jane
+            lastname: Doe
+            company: ''
+            email: test@test.com
+            active: '1'
+            role: '267'
+            attorney: '0'
+            payee_id: '0'
+            del: '0'
+            delTime: null
+            pass_reset: '0'
+          modified_at: '2021-03-11 10:16:13'
+          modified_by: '5592102'
+          original_debt_amount: '7500.00'
+          current_debt_amount: '7500.00'
+          current_payment: '0.00'
+          current_rate: '0.00'
+          notes: ''
+          verified_debt_amount: '0.00'
+          creditor:
+            object: creditor
+            id: '123'
+            tp_id: '0'
+            is_active: '1'
+            company_name: Chase
+            first_name: null
+            last_name: null
+            address:
+              address1: P O Box 15919
+              address2: ''
+              address3: null
+              city: Wilmington
+              state: Delaware
+              zip: 19850-0464
+            phone: 800-444-5678
+          debt_buyer:
+            object: creditor
+            creditor_id: 17576123
+            acctID: 3863
+            tp_id: 0
+            is_active: '1'
+            company_name: Test Debt Co.
+            first_name: Test
+            last_name: Buyer
+            address:
+              address1: 101 Debt Way
+              address2: Suite 2200
+              address3: null
+              city: Chicago
+              state: IL
+              zip: '60614'
+            phone: 800-444-1234
+          poa_sent_date: '2019-08-24'
+          legal_account: 'No'
+          last_payment_date: '2019-08-24'
+          last_payment_amount: 0
+          opened_date: '2019-08-24'
+          available_balance: '0.00'
+          enrolled: '1'
+          enrolled_date: '2021-09-29 15:12:00'
+          debt_type: '0'
+          cash_advance: '0'
+          balance_transfer: '0'
+          heavy_usage: '0'
+          has_summons: '0'
+          debt_status: null
+          locked: '0'
+          og_account_num: '12345678'
+          creditor_account_num: null
+          settled: '0'
+          settlement_id: '0'
+          client_id: '534512123'
+          settlement_offers:
+            - '4200123'
+          customs: []
+        status:
+          code: 200
+    DocumentTypes.json:
+      value:
+        response:
+          system:
+            - object: documentTypes
+              id: '1'
+              title: General / Misc.
+            - object: documentTypes
+              id: '2'
+              title: Custodial Account Application
+            - object: documentTypes
+              id: '3'
+              title: Bank Statements
+            - object: documentTypes
+              id: '4'
+              title: Contract / Agreement
+            - object: documentTypes
+              id: '5'
+              title: Settlement Letter
+            - object: documentTypes
+              id: '6'
+              title: Client Correspondence
+            - object: documentTypes
+              id: '8'
+              title: Creditor Correspondence
+            - object: documentTypes
+              id: '9'
+              title: Audio Recording
+            - object: documentTypes
+              id: '10'
+              title: Legal Document
+            - object: documentTypes
+              id: '13'
+              title: Cancellation Letter
+            - object: documentTypes
+              id: '14'
+              title: Voided Check
+            - object: documentTypes
+              id: '18'
+              title: Power Of Attorney
+            - object: documentTypes
+              id: '20'
+              title: Statement
+            - object: documentTypes
+              id: '29'
+              title: ACH Authorization
+            - object: documentTypes
+              id: '1781'
+              title: Credit Report
+            - object: documentTypes
+              id: '17813'
+              title: Veritas Agreement
+          custom:
+            - object: documentTypes
+              id: '2071'
+              title: asdfasdf
+            - object: documentTypes
+              id: '2074'
+              title: wrwer
+            - object: documentTypes
+              id: '2077'
+              title: werwre
+            - object: documentTypes
+              id: '19120'
+              title: api
+        status:
+          code: 200
+    DocumentType.json:
+      value:
+        response:
+          object: documentTypes
+          id: '2074'
+          title: Updated Document Type
+        status:
+          code: 200
+    Loan.json:
+      value:
+        response:
+          object: loan
+          id: '2204080'
+          acctID: '98'
+          tp_id: null
+          created_at: '2022-02-08 00:30:03'
+          created_by: '6777715'
+          modified_at: '2022-02-08 00:38:19'
+          modified_by: '6777715'
+          client_id: '534512161'
+          advance_type: ACH
+          advance_date: '1969-12-31'
+          paid_in_full_date: null
+          defaulted_date: null
+          type_id: '1'
+          program_id: '1427'
+          loan_class: '1'
+          loan_amount: '5000.00'
+          payback_amount: '6250.00'
+          rate: '1.25'
+          payment: '260.42'
+          holdback_percent: '0'
+          payback_period: '24.00'
+          frequency: M
+          freq_int: '10'
+          period_amount: '0'
+          fees: '0.00'
+          conf_num: ''
+          underwriter_notes: ''
+          contract_date: '2022-01-01'
+          contract_number: '123456'
+          funded: null
+          status: '4'
+          lien_pos: '1'
+          ach_start_date: null
+          ach_on: null
+          pricing_lock: '0'
+          offer_set: '1383814'
+        status:
+          code: 200
+    SettlementOffer.json:
+      value:
+        response:
+          object: settlement_offer
+          id: '253123'
+          acctID: '28'
+          contact_id: '71330123'
+          creditor:
+            object: creditor
+            id: '1875123'
+            tp_id: '0'
+            is_active: '1'
+            company_name: test
+            first_name: null
+            last_name: null
+            address:
+              address1: P.O. Box 9029
+              address2: ''
+              address3: null
+              city: Des Moines
+              state: Idaho
+              zip: 50368-9029
+            phone: 800-244-2970
+          debt_id: '24966123'
+          created_at: '2016-06-30 10:14:44'
+          created_by:
+            object: user
+            id: '4123'
+            acctID: '28'
+            company_id: '238'
+            parent_id: '0'
+            user_type: '1'
+            created: '2010-05-13 11:53:11'
+            user_name: QA_Tester
+            firstname: QA
+            lastname: Tester
+            company: ''
+            email: test@debtpaypro.com
+            active: '1'
+            role: '267'
+            attorney: '0'
+            payee_id: '0'
+            del: '0'
+            delTime: null
+            pass_reset: '0'
+          modified_at: '2017-10-17 10:49:10'
+          modified_by:
+            object: user
+            id: '317123'
+            acctID: '28'
+            company_id: '238'
+            parent_id: '0'
+            user_type: '1'
+            created: '2015-05-28 19:03:00'
+            user_name: dpp
+            firstname: Support
+            lastname: User
+            company: ''
+            email: dpp@debtpaypro.com
+            active: '1'
+            role: '267'
+            attorney: '0'
+            payee_id: '0'
+            del: '0'
+            delTime: null
+            pass_reset: '0'
+          neg_id:
+            object: user
+            id: '4146'
+            acctID: '98'
+            company_id: '438'
+            parent_id: '0'
+            user_type: '1'
+            created: '2010-05-13 11:53:11'
+            user_name: demo
+            firstname: Jane
+            lastname: Doe
+            company: ''
+            email: jdoe@debtpaypro.com
+            active: '0'
+            role: '267'
+            attorney: '0'
+            payee_id: '0'
+            del: '0'
+            delTime: null
+            pass_reset: '0'
+          madeby: Negotiator
+          offer_status:
+            object: base
+            status_id: '1'
+            label: In-Review
+          offer_status_date: '2016-06-30'
+          offer_valid_date: '2016-07-04'
+          settlement_type: '1'
+          debt_amount: '8500.55'
+          settlement_amount: '5500.00'
+          settlement_fee: '25.00'
+          notes: Settlement Offer Note
+          cred_cont_id: '0'
+        status:
+          code: 200
+    Task.json:
+      value:
+        response:
+          object: task
+          id: '34180549'
+          acctID: '98'
+          contact_id: '534512123'
+          task_created_date: '2022-02-01 09:38:03'
+          task_name: Test Task
+          defined_task: '2029'
+          created_by:
+            object: user
+            id: '6777123'
+            acctID: '28'
+            company_id: '238'
+            parent_id: '0'
+            user_type: '1'
+            created: '2022-01-08 10:12:37'
+            user_name: QA_Tester
+            firstname: QA
+            lastname: Tester
+            company: ''
+            email: test@debtpaypro.com
+            active: '1'
+            role: '267'
+            attorney: '0'
+            payee_id: '0'
+            del: '0'
+            delTime: null
+            pass_reset: '0'
+          task_due_date: '1969-12-31'
+          task_note: Lorem Ipsum
+          list_id: '0'
+          team_id: '0'
+          task_completed: '0'
+          task_completed_by: null
+          task_completed_date: ''
+          task_completion_percentage: '0'
+          task_status: '0'
+          title: Test Task
+          task_type: '0'
+          assigned_to:
+            object: contact
+            id: '534512123'
+            acctID: '28'
+            company_id: '238'
+            file_type: '1'
+            form_id: '0'
+            created: '2022-01-08 12:24:18'
+            created_by: '6777123'
+            modified: '2022-02-08 00:38:19'
+            modified_by: '6777123'
+            assigned_to: '6777123'
+            campaign_id: '0'
+            attorney: '0'
+            attorney_id: '0'
+            attorney_id2: '0'
+            first_name: John
+            middle_name: E
+            last_name: Doe
+            salutation: Hello
+            title: Mr.
+            phone_number: '3123839992'
+            phone_extension: ''
+            cell_phone: '3123839991'
+            cell_extension: ''
+            work_phone: '3123839993'
+            work_extension: ''
+            address:
+              address1: 200 Test St.
+              address2: Apt 1
+              address3: ''
+              city: Chicago
+              state: IL
+              zip: '60001'
+            email: qatest@debtpaypro.com
+            social_security_number: '444881234'
+            date_of_birth: '1970-01-01'
+            language: '0'
+            submitted: '1'
+            submitted_by: '5592123'
+            submitted_at: '2021-09-29 15:12:03'
+            approved_by2: '0'
+            approved_date2: '0000-00-00'
+            rejected_by: '0'
+            rejected_notes: ''
+            paused_notes: ''
+            dropped_reason: '0'
+            grad_date: '0000-00-00'
+            total_debt: '22500.00'
+            welcome_sent: '2021-09-29 13:41:22'
+            paper_statements: '0'
+            paper_welcome: '0'
+            gateway_id: '1'
+            gateway_approved_by: '0'
+            gateway_hold: '1'
+            gateway_hold_reason: '1'
+            gateway_hold_notes: ''
+            gateway_auth_received: '0'
+            gateway_auth_file: ''
+            iscoapp: '0'
+            customs:
+              - label: Co-Applicant
+                field_id: '1237'
+                value: '476723502'
+        status:
+          code: 200
+    AllTeams.json:
+      value:
+        response:
+          - team_id: '123'
+            team_name: Super Admin
+          - team_id: '126'
+            team_name: Sales
+          - team_id: '127'
+            team_name: Underwriting
+          - team_id: '63'
+            team_name: Legal Negotations
+          - team_id: '79'
+            team_name: Non Legal Negotiators
+        status:
+          code: 200
+    Team.json:
+      value:
+        response:
+          object: team
+          id: '21493'
+          acctID: '28'
+          company_id: '238'
+          name: API Demo Team
+        status:
+          code: 200
+    User.json:
+      value:
+        response:
+          object: user
+          id: '6777123'
+          acctID: '28'
+          company_id: '238'
+          parent_id: '0'
+          user_type: '1'
+          created: '2022-01-08 10:12:37'
+          user_name: QA_Tester
+          firstname: QA
+          lastname: Tester
+          company: ''
+          email: test@debtpaypro.com
+          active: '1'
+          role: '267'
+          attorney: '0'
+          payee_id: '0'
+          del: '0'
+          delTime: null
+          pass_reset: '0'
+        status:
+          code: 200
+    UserSettings.json:
+      value:
+        response:
+          object: usersPref
+          user_id: 6777123
+          default_module: dashboard
+          layout_type: fluid
+          theme: '1'
+          timezone: US/Central
+          lang: en-us
+          date_format: absolute
+          phone: '1233214444'
+          extension: '123'
+          fax: '1112225555'
+          mobile_num: 111-222-3333
+          mobile_on: '1'
+          signature: <p>QA TESTER</p>
+          logouttime: '0'
+          docu_acct: ''
+          docu_user: ''
+          docu_pass: ''
+          tabbed_add: '1'
+          email_open: '1'
+        status:
+          code: 200
+    SuccessfulRequest.json:
+      value:
+        value:
+          response:
+            id: 123456789
+          status:
+            code: 200
 security:
   - API-Key: []

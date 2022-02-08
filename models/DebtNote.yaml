@@ -7,10 +7,9 @@ x-tags:
 properties:
   object:
     type: string
-    example: debt_note
     readOnly: true
   note_id:
-    type: integer
+    type: string
     readOnly: true
   acctID:
     type: string

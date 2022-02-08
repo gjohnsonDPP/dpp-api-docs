@@ -7,41 +7,20 @@ properties:
       clixsign:
         type: array
         items:
-          required: []
-          properties: {}
+          type: object
       esigns:
         type: array
         items:
-          required: []
-          properties: {}
+          type: object
       docusign:
         type: array
         items:
-          required: []
-          properties: {}
-    required:
-      - clixsign
-      - esigns
-      - docusign
+          type: object
   uploaded:
     type: array
     items:
-      required: []
-      properties: {}
+      type: object
   generated:
     type: array
     items:
-      required: []
-      properties: {}
-required:
-  - esigned
-  - uploaded
-  - generated
-x-examples:
-  example-1:
-    esigned:
-      clixsign: []
-      esigns: []
-      docusign: []
-    uploaded: []
-    generated: []
+      type: object
