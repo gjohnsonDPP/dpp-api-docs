@@ -113,15 +113,7 @@ paths:
                   call_result: Busy
       responses:
         '200':
-          description: 'Successfully created a Call Record'  
           $ref: '#/components/responses/SUCCESS_200'
-              examples:
-                Call Example 200 POST Response:
-                  value:
-                    response:
-                      id: 385319179
-                    status:
-                      code: 200
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/calls/{id}':
@@ -274,23 +266,7 @@ paths:
                   media_type: 1
       responses:
         '200':
-          description: Successfully created a Campaign Record
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  response:
-                    type: object
-                  status:
-                    $ref: ./models/SuccessStatus.yaml
-              examples:
-                Campaign POST 200 Response Example:
-                  value:
-                    response:
-                      id: 152283
-                    status:
-                      code: 200
+          $ref: '#/components/responses/SUCCESS_200'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/campaigns/e-mail/{id}':
@@ -481,24 +457,7 @@ paths:
                   date_of_birth: '1941-03-12'
       responses:
         '200':
-          description: Successfully created a Contact Record
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  response:
-                    type: object
-                  status:
-                    $ref: ./models/SuccessStatus.yaml
-              examples:
-                Contact POST 200 Response Example:
-                  value:
-                    response:
-                      id: 418304227
-                    status:
-                      code: 200
-                      message: Client Record Created
+          $ref: '#/components/responses/SUCCESS_200'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/contacts/{id}':
@@ -824,23 +783,7 @@ paths:
               $ref: ./models/Document.yaml
       responses:
         '200':
-          description: Successfully uploaded document
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  response:
-                    type: object
-                  status:
-                    $ref: ./models/SuccessStatus.yaml
-              examples:
-                POST 200 Request Example:
-                  value:
-                    response:
-                      - 234388177
-                    status:
-                      code: 200
+          $ref: '#/components/responses/SUCCESS_200'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/contacts/{id}/form_request':
@@ -1185,23 +1128,7 @@ paths:
                   client_id: 382760691
       responses:
         '200':
-          description: Successfully created a Debt Record
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  response:
-                    type: object
-                  status:
-                    $ref: ./models/SuccessStatus.yaml
-              examples:
-                Debt POST 200 Response Example:
-                  value:
-                    response:
-                      id: 163287505
-                    status:
-                      code: 200
+          $ref: '#/components/responses/SUCCESS_200'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/debts/{id}':
@@ -1650,16 +1577,7 @@ paths:
         required: true
       responses:
         '200':
-          description: Successfully created a Document
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  response:
-                    type: object
-                  status:
-                    $ref: models/SuccessStatus.yaml
+          $ref: '#/components/responses/SUCCESS_200'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
       x-internal: true
@@ -1863,23 +1781,7 @@ paths:
                   payback_amount: 0
       responses:
         '200':
-          description: Successfully created a Loan Record
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  response:
-                    type: object
-                  status:
-                    $ref: ./models/SuccessStatus.yaml
-              examples:
-                Loan POST 200 Response Example:
-                  value:
-                    response:
-                      id: 1863358
-                    status:
-                      code: 200
+          $ref: '#/components/responses/SUCCESS_200'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/loans/{id}':
@@ -2023,23 +1925,7 @@ paths:
         description: ''
       responses:
         '200':
-          description: Successfully created a Settlement Offer
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  response:
-                    type: object
-                  status:
-                    $ref: ./models/SuccessStatus.yaml
-              examples:
-                Settlement Offer POST 200 Response Example:
-                  value:
-                    response:
-                      id: 4114375
-                    status:
-                      code: 200
+          $ref: '#/components/responses/SUCCESS_200'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/settlement_offers/{id}':
@@ -2188,23 +2074,7 @@ paths:
         required: true
       responses:
         '200':
-          description: Successfully created a Task Record
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  response:
-                    type: object
-                  status:
-                    $ref: ./models/SuccessStatus.yaml
-              examples:
-                Task POST 200 Response Example:
-                  value:
-                    response:
-                      id: 32549869
-                    status:
-                      code: 200
+          $ref: '#/components/responses/SUCCESS_200'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/tasks/{id}':
@@ -2337,23 +2207,7 @@ paths:
       operationId: teamCreate
       responses:
         '200':
-          description: Successfully created a Team Record
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  response:
-                    type: object
-                  status:
-                    $ref: ./models/SuccessStatus.yaml
-              examples:
-                Team POST 200 Response Example:
-                  value:
-                    response:
-                      id: 20872
-                    status:
-                      code: 200
+          $ref: '#/components/responses/SUCCESS_200'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
       requestBody:
@@ -2503,23 +2357,7 @@ paths:
         description: User Object
       responses:
         '200':
-          description: Successfully created User Record
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  response:
-                    type: object
-                  status:
-                    $ref: ./models/SuccessStatus.yaml
-              examples:
-                Users Post 200 Response Example:
-                  value:
-                    response:
-                      id: 6664975
-                    status:
-                      code: 200
+          $ref: '#/components/responses/SUCCESS_200'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/users/{id}':
@@ -4135,6 +3973,7 @@ components:
               status:
                 $ref: ./models/ErrorStatus.yaml
     SUCCESS_200:
+      description: Successful Request
       content:
         application/json:
           schema:
@@ -4144,6 +3983,8 @@ components:
                 type: object
               status:
                 $ref: ./models/SuccessStatus.yaml
+          examples:
+            $ref: '#/components/examples/SuccessfulRequest.json'
     ERROR_4XX:
       description: An error has occurred
       content:
@@ -5304,5 +5145,12 @@ components:
           email_open: '1'
         status:
           code: 200
+    SuccessfulRequest.json:
+      value:
+        value:
+          response:
+            id: 123456789
+          status:
+            code: 200
 security:
   - API-Key: []
