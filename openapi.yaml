@@ -1704,6 +1704,9 @@ paths:
                         title:
                           type: string
                           description: Title of Document Type
+              examples:
+                DocumentTypes Example:
+                  $ref: '#/components/examples/DocumentTypes.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
     post:
@@ -1782,13 +1785,8 @@ paths:
                   status:
                     $ref: models/SuccessStatus.yaml
               examples:
-                DocumentType Example 200 POST Response:
-                  value:
-                    response:
-                      id: '1234'
-                      title: Test Document Type
-                    status:
-                      code: 200
+                DocumentType Example:
+                  $ref: '#/components/examples/DocumentType.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
     delete:
@@ -5298,6 +5296,81 @@ components:
           settlement_offers:
             - '4200123'
           customs: []
+        status:
+          code: 200
+    DocumentTypes.json:
+      value:
+        response:
+          system:
+            - object: documentTypes
+              id: '1'
+              title: General / Misc.
+            - object: documentTypes
+              id: '2'
+              title: Custodial Account Application
+            - object: documentTypes
+              id: '3'
+              title: Bank Statements
+            - object: documentTypes
+              id: '4'
+              title: Contract / Agreement
+            - object: documentTypes
+              id: '5'
+              title: Settlement Letter
+            - object: documentTypes
+              id: '6'
+              title: Client Correspondence
+            - object: documentTypes
+              id: '8'
+              title: Creditor Correspondence
+            - object: documentTypes
+              id: '9'
+              title: Audio Recording
+            - object: documentTypes
+              id: '10'
+              title: Legal Document
+            - object: documentTypes
+              id: '13'
+              title: Cancellation Letter
+            - object: documentTypes
+              id: '14'
+              title: Voided Check
+            - object: documentTypes
+              id: '18'
+              title: Power Of Attorney
+            - object: documentTypes
+              id: '20'
+              title: Statement
+            - object: documentTypes
+              id: '29'
+              title: ACH Authorization
+            - object: documentTypes
+              id: '1781'
+              title: Credit Report
+            - object: documentTypes
+              id: '17813'
+              title: Veritas Agreement
+          custom:
+            - object: documentTypes
+              id: '2071'
+              title: asdfasdf
+            - object: documentTypes
+              id: '2074'
+              title: wrwer
+            - object: documentTypes
+              id: '2077'
+              title: werwre
+            - object: documentTypes
+              id: '19120'
+              title: api
+        status:
+          code: 200
+    DocumentType.json:
+      value:
+        response:
+          object: documentTypes
+          id: '2074'
+          title: Updated Document Type
         status:
           code: 200
 security:
