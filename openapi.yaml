@@ -685,7 +685,7 @@ paths:
                   $ref: '#/components/examples/ContactNote.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
-    delete:  
+    delete:
       tags:
         - Contacts
         - ContactNotes
@@ -704,7 +704,7 @@ paths:
           description: Id of Contact Note
           required: true
           schema:
-            type: integer  
+            type: integer
       responses:
         '200':
           description: Successfully Deleted Contact Note
@@ -1709,7 +1709,7 @@ paths:
           $ref: '#/components/responses/POST_200'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
-      x-internal: true
+      x-internal: false
   /documents/types:
     get:
       tags:
