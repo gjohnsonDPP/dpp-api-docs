@@ -1685,7 +1685,7 @@ paths:
     post:
       tags:
         - Documents
-      summary: Create a Document
+      summary: Generate a Document
       description: |-
         Uses a Doc. Template ID to create a Document Record object 
 
@@ -1716,6 +1716,9 @@ paths:
                     type: object
                   status:
                     $ref: models/SuccessStatus.yaml
+              examples:
+                Generated Document Example:
+                  $ref: '#/components/examples/GeneratedDoc.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
       x-internal: false
@@ -4181,5 +4184,961 @@ components:
             id: 123456789
           status:
             code: 200
+    GeneratedDoc.json:
+      value:
+        response:
+          html: |-
+            <!DOCTYPE html><html><head><meta http-equiv="X-UA-Compatible" content="IE=8" /><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><link rel="stylesheet" type="text/css" href="https://client.debtpaypro.com//style/basic.css" /></head><body><p style="text-align: left;">&nbsp;</p>
+            <p style="text-align: left;"><img title="DPP-logo" src="https://s3.amazonaws.com/dpp-publicstorage/76b4af313073568347147cce5e2705ddb349d2cf/DPP-logo.png" alt="DPP-logo" width="219" height="46" /></p>
+            <p>&nbsp;</p>
+            <p>Feb 09, 2022</p>
+            <p>&nbsp;</p>
+            <p>Dear John,</p>
+            <p>Debt Savior Inc. would like to congratulate you on your decision to work with us to help you manage and eliminate your unsecured debt. We are partnering with you by providing encouragement and resources for you to establish a plan to resolve your debts. Our goal is to be with you throughout the entire settlement process, to help you establish a reasonable spending plan and resolve your debt. Client understands that their full participation in Debt Savior Inc.&rsquo;s negotiation program ensures that the Client will be free of the enrolled debt in a much shorter timeframe than making the usual minimum payments.</p>
+            <p>Below we have summarized all the key factors that were discussed during your initial consultation and have been incorporated into the attached Debt Settlement Agreement.</p>
+            <table style="width: 100%;" border="0">
+            <tbody>
+            <tr>
+            <td style="border: 1px solid #000000;">
+            <p>IMPORTANT INFORMATION FOR YOU TO CONSIDER</p>
+            <p>(1) Our program is not right for all individuals, and you may ask us to provide information about alternative methods and other ways to deal with your debts.<br />(2) Nonpayment of your debts under our program may<br />- have a negative impact your credit rating or credit scores;<br />- lead your creditors to increase finance and other charges; and<br />- lead your creditors to undertake activity, including lawsuits, to collect the debts.<br />(3) Reduction of debt under our program may result in taxable income to you, even though you will not actually receive any money. However, you may be exempt from taxes on the forgiven debt due to insolvency at the time the debt was settled.<br />(4) Balance transfers, cash advances and accounts that are in judgment or summons status may settle out at a higher percentage.</p>
+            <p>&nbsp;</p>
+            </td>
+            </tr>
+            </tbody>
+            </table>
+            <p>Upon your acceptance of the attached Debt Settlement Agreement, we will provide you a &ldquo;Welcome Call&rdquo; and "Welcome Kit" that will help you understand the entire process better. The combined Debt Settlement Agreement and Welcome Kit contain a Schedule of Program Debt, Payment Schedule, Authorization for Recurring Direct Payment and Notice of Right to Cancel, along with further information about the program.</p>
+            <p>Please call if you have any questions. Congratulations for taking the first step towards becoming debt-free!</p>
+            <p>Warmest Regards,</p>
+            <p>QA Tester, Debt Specialist<br />3105 E Guasti Rd <br />Ontario, CA 91761 <br />(866)918-2732 FAX (909) 802-7917</p>
+            <p>Client@DebtSavior.com</p>
+            <p>NOTES: Please be sure to verify all the information in the Debt Settlement Agreement. Sign page 5 and fax back to your Debt Specialist unless you are enrolling via Electronic Signature program.</p>
+            <p><p style="page-break-after: always">&nbsp;</p></p>
+            <p><img style="border: 0px initial initial;" title="DPP-logo" src="https://s3.amazonaws.com/dpp-publicstorage/76b4af313073568347147cce5e2705ddb349d2cf/DPP-logo.png" alt="DPP-logo" width="219" height="46" /></p>
+            <p style="text-align: center;"><strong><span style="font-size: large;">Debt Settlement Agreement</span></strong></p>
+            <p style="text-align: left;">&nbsp;</p>
+            <p style="text-align: center;"><strong>Introduction</strong></p>
+            <p>This Agreement explains the terms of Debt Savior Inc.&rsquo;s debt settlement program. It is important that you fully read and understand this Agreement before signing it. Once you sign this Agreement, we will assume that you have read and fully understand it. Our goal is to see you through the program to successful completion. If you have questions about any part of this Agreement, please contact your Debt Specialist before you sign - we are always available to answer all of your questions.</p>
+            <p style="text-align: center;"><strong>Provisions</strong></p>
+            <p>1. <strong>Parties</strong>. This Debt Settlement Agreement ("Agreement") is made Feb 09, 2022 between Debt Savior Inc., a California company ("Debt Savior Inc.") 3105 E Guasti Rd Ontario, CA 91761 and Consumer John Doe ("Client"). This contract shall become operative on the date executed by both parties.</p>
+            <p>2. <strong>Services</strong>.<br />(a) Client hereby engages, and grants to Debt Savior Inc. the exclusive right to negotiate with Client's creditors, and to settle creditors' claims. Debt Savior Inc. shall not, however, have the right to bind Client to any settlement without Client's prior written consent.</p>
+            <p>(b) Debt Savior Inc. agrees to provide debt settlement services to Client under the terms and conditions of this Agreement (the &ldquo;Service&rdquo;). This Service consists of negotiating with creditors on behalf of Client for reduction of unsecured debt and formulation of a payment plan. Debt Savior Inc. will use commercially reasonable efforts to settle the Program Debt, as defined below. Debt Savior Inc. will timely respond to all Client inquiries. Debt Savior Inc. will maintain the confidentiality of the personal financial information provided by Client.</p>
+            <p>3. <strong>Purpose of Agreement</strong>. The purpose of this Agreement is to enroll Client in Debt Savior Inc.&rsquo;s debt settlement program. The accounts being enrolled in this program are in the attached Schedule A and are referred to as &ldquo;Creditors&rdquo; or &ldquo;Client's Debts.&rdquo; Debt Savior Inc. has the right in its sole discretion to exclude certain debts, and will consult with Client to develop a mutually agreeable list of debts (the &ldquo;Program Debt&rdquo;). A Schedule of Program Debt is incorporated into this contract by reference. This Schedule will contain the name of the creditor, account number and outstanding balance. Debts added to the Program Debt after signing this Agreement will be subject to Additional fees listed in paragraph 6(b). All information provided by Client must be truthful and accurate. Debt Savior Inc. is under no obligation to verify information supplied by Client, but may do so at its sole discretion.</p>
+            <p>4. <strong>Client Obligations</strong>. Client will perform the following obligations:<br />(a) Client must at all times maintain open, honest and direct communications with Debt Savior Inc. Client will satisfy Client&rsquo;s financial obligations to creditors through the process known as debt settlement. Client voluntarily enrolled into a debt settlement program offered by Debt Savior Inc. after being educated on the various options available. The success of the debt settlement is based on the ability of Client to set aside funds, which will allow Debt Savior Inc. to negotiate the settlement of debts.</p>
+            <p>(b) Client shall inform Debt Savior Inc. of any additional debtor, co-signer or guarantor of any of Program Debt. Client is responsible for notifying such additional debtor, co-signer or guarantor of this Debt Settlement Agreement.</p>
+            <p>(c) Client will forward all correspondence from creditors to Debt Savior Inc., including monthly statements, legal notices and collection letters. Client will not discuss his or her financial situation with creditors or discuss settlement.</p>
+            <p>(d) Client will respond to all calls and requests for documentation from Debt Savior Inc. in a timely manner and will promptly advise Debt Savior Inc. of any and all changes to Client contact information (i.e. telephone, address, email, etc.).</p>
+            <p>(e) The monies set aside by Client shall be deposited into an account established on Client&rsquo;s behalf with DebtPayGateway or any third party trust account selected by Debt Savior Inc. The funds in the account will be used only to satisfy settlement of the Program Debt negotiated by Debt Savior Inc. and to pay Debt Savior Inc. its Program Service Fee and other ancillary fees and charges as they arise. The number of months that funds are to be set aside and the amount to be set aside each month will be determined by Debt Savior Inc. from the information contained on the Schedule of Program Debt. The Payment Schedule is incorporated into this Agreement by reference. Client and only Client will be in control of all settlement funds and under no circumstances will Debt Savior Inc. have custody or control of the funds Client set aside to fund debt settlement.</p>
+            <p>(f) Client shall make no further charges to any account listed on the Schedule of Program Debt. Client also agrees to forward any and all Creditor settlement offers to Debt Savior Inc. for review, and Client further agrees not to accept any settlements without first consulting with Debt Savior Inc. Client will not continue to incur debt or open new charge accounts. Upon Debt Savior Inc.'s prior approval, Client may retain and use one charge card for emergency purposes only. Client will immediately inform Debt Savior Inc. of such emergency use. This account shall not be included in the Debt Savior Inc. program and cannot be issued from the same bank as any account submitted in the program.</p>
+            <p>(g) Client will not refinance any real or personal property, without Debt Savior Inc.'s prior approval. The refinance must be for the sole purpose of lowering interest rate or obtaining funds to settle a debt.</p>
+            <p>(h) Client will not generate more than two non-sufficient funds (NSF&rsquo;s) or payment reschedules in a 12-month period.</p>
+            <p>5. <strong>Debt Savior Inc. Obligations</strong>.<br />(a) Debt Savior Inc. agrees to: use its best efforts in negotiating on Client&rsquo;s behalf to achieve a lower debt obligation, which will shorten the time it takes to pay off his or her debt. When acceptable negotiation has been arranged and Client has agreed to the settlement terms, Debt Savior Inc. will facilitate the account payoff process using the services of DebtPayGateway.</p>
+            <p>(b) Debt Savior Inc. will provide Client with online access to view their account activity on a daily basis. Debt Savior Inc. will provide Client with a username and password after the enrollment is complete with the first payment made.</p>
+            <p>6. <strong>Program Fees</strong>. Monthly pay is equal fifty (50%) of total debt accepted into the program divided by the term of payments plus $49.95 per month. Minimum debt amount accepted into the program is $12,000. If client makes additional payments to complete balance of the settlement amount prior to the completion of the term of the contract, the monthly service fee will continue to be collected during the term of the contract. Terms of payments are as follows:</p>
+            <table style="width: 40%;" border="0">
+            <tbody>
+            <tr>
+            <td style="text-align: left;"><strong>Total Debt</strong></td>
+            <td style="width: 50%; text-align: left;"><strong>Term of Payments</strong></td>
+            </tr>
+            <tr>
+            <td>$12,000-$25,000</td>
+            <td>12-30 Months</td>
+            </tr>
+            <tr>
+            <td>$25,001-$39,999</td>
+            <td>24-42 Months</td>
+            </tr>
+            <tr>
+            <td>$40,000-$99,999</td>
+            <td>30-54 Months</td>
+            </tr>
+            <tr>
+            <td>$100,000+</td>
+            <td>66 Months</td>
+            </tr>
+            </tbody>
+            </table>
+            <p><strong>Debt Savior Fees Described as Follows</strong>:</p>
+            <p>Debt Savior Inc. shall receive first three monthly payments as part of its total compensation and shall receive a pro-rated portion of its total compensation over the following 12 months to complete its 15% of total debt entered into the program as its compensation plus $49.95 service fee for the term of the contract.</p>
+            <p>7. <strong>Settlement</strong>. At such time Debt Savior Inc. has received the first payment directed toward the settlement of Program Debt, Debt Savior Inc. will commence the Service. Debt Savior Inc. will not settle any debt without the approval of Client who has the absolute <strong>right to accept or reject any settlement</strong>. Client may accept or decline any settlement offer and at all times shall maintain control and discretion over all settlement funds. Client agrees that all Debt Savior Inc. fees must be paid before the final settlement of the last account listed in this Agreement. When sufficient funds available from Client, Debt Savior Inc. will begin negotiations to facilitate settlement of enrolled program debt as noted in Schedule A of this Agreement. Client understands that Creditor(s) may notify IRS of any debt settlement, and any debt forgiven may be treated as taxable income to Client. Creditor(s) may also file a lawsuit if Client is unwilling to fulfill the terms of their Agreement with Creditors. Client agrees that Debt Savior Inc. has not provided them with any advice or recommendations, either oral or in writing, regarding reduction or termination of payment to Creditor(s) and that Debt Savior Inc. has been engaged for the sole purpose of debt reduction via settlement. Client understands that their accounts will continue to collect penalties and interest until the accounts are settled.</p>
+            <p>(a) In the event Client comes into a lump sum of money and wishes to settle all accounts before original designated completion date, Client must first pay Debt Savior Inc. Program Service Fee in full. The remainder of the lump sum will be utilized in settling Client&rsquo;s unresolved program debt.</p>
+            <p>(b) In the event a settlement offer is reached and Client does not have required funds available (as per Fund Transfer Schedule), one warning will be given. If, for a second time, Client does not have required funds available in settlement account (as per Fund Transfer Schedule), Client may be terminated from program due to breach of contract. No service fees will be refunded.</p>
+            <p>(c) In the event a Term Settlement is entered into by Client, Client will be obligated to have funds available for disbursement to creditor in accordance with the terms of the Term Settlement. A debt that is subject to a Term Settlement will be removed from the Program if Client fails to make or seeks to defer a payment under the Term Settlement.</p>
+            <p>(d) <strong>Debt Savior Inc. does not receive compensation from any of the Client&rsquo;s creditors, banks or third-party collection agencies</strong>.</p>
+            <p>8. <strong>Term</strong>. This Agreement will terminate when each of the credit accounts representing the Program Debt is satisfied or upon termination by either party as provided herein.</p>
+            <p>9. <strong>Authorization to Obtain Information</strong>. Client authorizes Debt Savior Inc. to request and obtain all information from Creditors and third parties related to carrying out this Agreement. Client agrees to indemnify and hold harmless Debt Savior Inc. for any loss, liability or damages resulting from loss, use or misuse of said information.</p>
+            <p>10. <strong>Arbitration</strong>. Both parties agree that if Client feels that a dispute cannot be resolved between parties per the terms of this Agreement, Client will submit a request to AAA (American Arbitration Association) for binding arbitration by an arbitrator. The location of any arbitration shall be in the county Debt Savior Inc. resides in. Client understands that by entering this Agreement, Client is specifically agreeing to binding arbitration and any decision resulting there from, and waiving all rights to avail itself of a judicial proceeding in any state, federal or other governmental court, or any agency proceeding or complaint process. Client and Debt Savior Inc. agree to waive any claim to seek prevailing party attorneys&rsquo; fees or costs, and waive any right to assign or transfer their claims, including to any form of class action proceeding. Client and Debt Savior Inc. agree that the law of the state in which the consumer resides at time of signature shall apply to this agreement</p>
+            <p>11. <strong>Disclaimers and Acknowledgements</strong>. Client expressly acknowledges that Debt Savior Inc. does not provide legal, tax or investment advice and has not encouraged or implied that Client should stop making their creditor payments. Debt Savior Inc. can not stop any collection efforts that may be employed by Creditor(s) including collection calls, letters, lawsuits or garnishments. Client agrees that Debt Savior Inc. has not represented itself as a credit restoration or repair program or that it can stop any correspondence, finance charges or legal proceedings due to Client&rsquo;s debts. Client also understands that Debt Savior Inc.&rsquo;s program is not a debt consolidation program or credit counseling program. Some accounts may not be suitable for this program, even if they are unsecured, and Debt Savior Inc. will make client aware of such and discuss options at time of enrollment. Debt Savior Inc. is a for-profit organization and charges fees for its services. Client understands that their credit rating will be adversely affected should Client default or be delinquent in their payments to their Creditor(s). If Client is actively serving in any branch of military, law enforcement or other employment that requires a clean credit record, Client understands that this program will not improve their credit score. It may, if Client continues to default on payment obligations, negatively affect their credit score. Client should check with their employer and consult legal counsel as necessary to insure this program will not impact any job responsibilities or security clearance.</p>
+            <p>12. <strong>Cancellation and Termination</strong>.<br />a) Client has five (5) days from date of signature of this Agreement to cancel it and receive a full refund, minus third party charges (e.g. DebtPayGateway fees) by sending written notice by certified return receipt US Mail to Debt Savior Inc. Client may cancel this Agreement after five days but Debt Savior Inc. has the right to refuse any refund after the initial refund period. Please contact Debt Savior Inc. directly with any questions or refund requests. Debt Savior Inc. will do its best to address each Client situation with respect and understanding.</p>
+            <p>b) Debt Savior Inc. may immediately terminate this Agreement if Client fails to timely return documents, fails to timely respond to Debt Savior Inc., fails to set aside money in accordance with the Fund Transfer Schedule or fails to pay a Program Service Fee when due.</p>
+            <p>c) Client will be terminated from program immediately if found to have charged or continued to have charged on any credit card, personal loan or debt entered into the program on or after entering the debt settlement program.</p>
+            <p>d) Debt Savior Inc., in its discretion, will collect all unpaid Program Service Fees, from Client&rsquo;s set aside account.</p>
+            <p>13. <strong>Force Majeure</strong>. Debt Savior Inc. shall NOT be responsible for any failure to perform due to unforeseen circumstances or causes beyond either Party&rsquo;s reasonable control such as changes in laws, rules or regulations or changes in Creditor policies or practices relating to negotiation and settlement.</p>
+            <p>14. <strong>Amendment</strong>. This Agreement may not be changed, amended, terminated, rescinded or discharged, except by a writing executed by the parties hereto, except as provided in Paragraph 13 above, and no waiver of any of the provisions or conditions of this Agreement or any of the rights of a party hereto shall be effective or binding unless such waiver shall be in writing and signed by the party claimed to have given such waiver. <strong>NO VERBAL OR WRITTEN STATEMENTS OR PROMISES THAT ARE NOT CONTAINED HEREIN SHOULD BE RELIED UPON AT ANY TIME BY CLIENT. THIS AGREEMENT REPRESENTS THE SOLE AND FINAL AGREEMENT BETWEEN THE PARTIES</strong>.</p>
+            <p>15. <strong>Agreement to Do Business Electronically</strong>. Client agrees and consents to receive, in an electronic format, all information, copies of Agreements and correspondence from Debt Savior Inc. and to also send information in an electronic format unless previously agreed upon with Debt Savior Inc.. Client agrees that Debt Savior Inc. may provide all disclosures, periodic statements, notices, receipts, modifications, amendments, and all other evidence of transactions electronically. All electronic communications will be deemed to be valid and authentic, and Client intends and agrees that those electronic communications will be given the same legal effect as written and signed paper communications. Client has a right to receive a paper copy of any of these electronic records if applicable law specifically requires us to provide such documentation. Client&rsquo;s consent may be withdrawn at anytime upon Debt Savior Inc.&rsquo;s receipt of such withdrawal. Client acknowledges and agrees that the internet is considered inherently insecure. Therefore, Client agrees that Debt Savior Inc. has no liability to Client whatsoever for any loss, claim, or damages arising or in any way related to Debt Savior Inc.&rsquo;s responses to any electronic communication, upon which Debt Savior Inc. has in good faith relied. At all times, Client maintains the sole obligation to insure they can receive Debt Savior Inc.&rsquo;s electronic communications, and access them on a regular and diligent basis.</p>
+            <p>16. <strong>Program Acknowledgement</strong>. Getting you out of debt requires a lot of effort on our part and yours. It also requires that you understand what we can and cannot do for you in order for us to be most effective. Please review this summary to confirm your awareness of what it takes to get you out of debt and avoid bankruptcy.</p>
+            <p>a) I have reviewed and understand the Debt Savior Inc. Agreement.</p>
+            <p>b) Debt Savior Inc.&rsquo;s Debt Settlement program is not a debt-consolidation program or credit-counseling program.</p>
+            <p>c) Debt Savior Inc. does <strong><span style="text-decoration: underline;">not make monthly payments</span></strong> to your creditors.</p>
+            <p>d) Debt Savior Inc.&rsquo;s processing center requires a minimum of 3 business days notice to change any scheduled electronic payment funds transfer (EFT) from my bank account.</p>
+            <p>e) Creditors may add interest charges, late fees and/or other penalties to my accounts. (This has already been estimated in your program calculations).</p>
+            <p>f) Debt Savior Inc. is not a legal firm and does not give legal advice. Creditors may have the right to sue you for non-payment and Debt Savior Inc. advises you to seek legal advice if needed. If you do not seek your own legal advice, alternative options will be made available to you upon your request.</p>
+            <p>g) Delinquent debts will typically be reported to the credit bureaus as &ldquo;charged-off&rdquo; debts.</p>
+            <p>h) Results may vary according to my unique situation. The estimated time, monthly funding and specific reduction of my debt have been estimated based upon averages.</p>
+            <p>i) Debt Savior Inc. has not asked me to breach any agreements or contracts with my creditors and I am choosing to honor my obligations to my creditors through the negotiation process.<br /><br /><p style="page-break-after: always">&nbsp;</p>&nbsp;</p>
+            <p><img style="border: 0px initial initial;" title="DPP-logo" src="https://s3.amazonaws.com/dpp-publicstorage/76b4af313073568347147cce5e2705ddb349d2cf/DPP-logo.png" alt="DPP-logo" width="219" height="46" /></p>
+            <p style="text-align: center;"><span style="font-size: large;"><strong>Client Signatures</strong></span></p>
+            <table style="width: 100%;" border="0">
+            <tbody>
+            <tr>
+            <td style="width: 20%;">Client Name (Print):</td>
+            <td>John Doe<br />______________________________</td>
+            <td style="width: 20%;">Client Signature:</td>
+            <td><span style="color:#fff;"><span style="color:#fff;">{SIGNATURE}</span></span><br />______________________________</td>
+            </tr>
+            <tr>
+            <td>Date:</td>
+            <td><span style="color:#fff;"><span style="color:#fff;">{SIGNDATE}</span></span><br />______________________________</td>
+            <td>Social Security Number:</td>
+            <td>444-88-1234<br />______________________________</td>
+            </tr>
+            <tr>
+            <td>Client Name (Print):</td>
+            <td> <br />______________________________</td>
+            <td>Client Signature:</td>
+            <td><span style="color:#fff;"><span style="color:#fff;">{COSIGNATURE}</span></span><br />______________________________</td>
+            </tr>
+            <tr>
+            <td>Date:</td>
+            <td><span style="color:#fff;"><span style="color:#fff;">{COSIGNDATE}</span></span><br />______________________________</td>
+            <td>Social Security Number:</td>
+            <td><br />______________________________</td>
+            </tr>
+            </tbody>
+            </table>
+            <table style="width: 100%;" border="0">
+            <tbody>
+            <tr>
+            <td style="width: 20%;">Client Address:</td>
+            <td>200 Test St. <br />__________________________________________</td>
+            </tr>
+            </tbody>
+            </table>
+            <table style="width: 100%;" border="0">
+            <tbody>
+            <tr>
+            <td style="width: 20%;">City:</td>
+            <td>Chicago<br />_______________</td>
+            <td>State:</td>
+            <td>IL<br />_______________</td>
+            <td>Zip:</td>
+            <td>60001<br />_______________</td>
+            </tr>
+            </tbody>
+            </table>
+            <table style="width: 100%;" border="0">
+            <tbody>
+            <tr>
+            <td style="width: 20%;">Phone:</td>
+            <td>
+            <p>312-383-9992<br />____________________</p>
+            </td>
+            <td>Fax</td>
+            <td><br />____________________</td>
+            </tr>
+            </tbody>
+            </table>
+            <table style="width: 100%;" border="0">
+            <tbody>
+            <tr>
+            <td style="width: 20%;">Email:</td>
+            <td>g.johnson@debtpaypro.com<br />____________________</td>
+            </tr>
+            </tbody>
+            </table>
+            <p>Please sign and return this page via fax or email to your Debt Specialist listed on page 1 of this Enrollment Kit. If you enrolled via our Electronic Signature program, then it is NOT necessary to return this page.</p>
+            <p><strong>Debt Savior Inc.<br />3105 E. Guasti Rd<br />Ontario, CA 91761</strong></p>
+            <table style="width: 50%;" border="0">
+            <tbody>
+            <tr>
+            <td>Print Name:</td>
+            <td>John Doe<br />______________________________</td>
+            </tr>
+            <tr>
+            <td>Signature:</td>
+            <td><span style="color:#fff;"><span style="color:#fff;">{SIGNATURE}</span></span><br />______________________________</td>
+            </tr>
+            <tr>
+            <td>Title:</td>
+            <td>Debt Specialist<br />______________________________</td>
+            </tr>
+            <tr>
+            <td>Date:</td>
+            <td><span style="color:#fff;"><span style="color:#fff;">{SIGNDATE}</span></span><br />______________________________</td>
+            </tr>
+            </tbody>
+            </table>
+            <p><p style="page-break-after: always">&nbsp;</p></p>
+            <p><img style="border: 0px initial initial;" title="DPP-logo" src="https://s3.amazonaws.com/dpp-publicstorage/76b4af313073568347147cce5e2705ddb349d2cf/DPP-logo.png" alt="DPP-logo" width="219" height="46" /></p>
+            <p style="text-align: center;"><strong><span style="font-size: large;">Limited Power of Attorney</span></strong></p>
+            <p style="text-align: center;"><strong>&nbsp;</strong></p>
+            <p>I / We, John Doe   hereby appoint Debt Savior Inc., and its affiliates as my attorney in fact to represent me with full authority in negotiating the validity, reduction, settlement and payment as may be required of accounts owed to my creditors under the Debt Settlement Agreement.</p>
+            <p>Debt Savior Inc., is hereby authorized to request, contact and receive any information from the Creditors to assist in settling and negotiating my debts.</p>
+            <table style="width: 100%;" border="0">
+            <tbody>
+            <tr>
+            <td style="width: 15%;">Client Name (Print):</td>
+            <td>John Doe<br />_________________________</td>
+            <td style="width: 20%;">Client Signature:</td>
+            <td><span style="color:#fff;"><span style="color:#fff;">{SIGNATURE}</span></span><br /> _________________________</td>
+            </tr>
+            <tr>
+            <td>Date:</td>
+            <td><span style="color:#fff;"><span style="color:#fff;">{SIGNDATE}</span></span><br /> _________________________</td>
+            <td>Social Security Number:</td>
+            <td>444-88-1234<br /> _________________________</td>
+            </tr>
+            <tr>
+            <td>Client Name (Print):</td>
+            <td> <br /> _________________________</td>
+            <td>Client Signature:</td>
+            <td><span style="color:#fff;"><span style="color:#fff;">{COSIGNATURE}</span></span><br /> _________________________</td>
+            </tr>
+            <tr>
+            <td>Date:</td>
+            <td><span style="color:#fff;"><span style="color:#fff;">{COSIGNDATE}</span></span><br /> _________________________</td>
+            <td>Social Security Number:</td>
+            <td><br /> _________________________</td>
+            </tr>
+            </tbody>
+            </table>
+            <p><strong>Please sign this form and fax to us at (909) 802-7917.</strong></p>
+            <p><p style="page-break-after: always">&nbsp;</p></p>
+            <p style="text-align: center;"><span style="font-size: large;"><strong>Creditor List</strong></span></p>
+            <p style="text-align: center;"><div id="tablelist"><table width="100%">
+                          <thead>
+                            <tr>
+                            <th style="text-align:left;">Creditor</th>
+                            <th style="text-align:left;">Account #</th>
+                            <th style="text-align:left;">Debt Balance</th>
+                            </tr>
+                          </thead>
+                          <tbody><tr bgcolor="">
+            <td>Chase</td>
+            <td>12345678</td>
+            <td>$7,500.00</td>
+            </tr><tr bgcolor="#F4F4F4">
+            <td>Bank of America</td>
+            <td>56789008</td>
+            <td>$10,000.00</td>
+            </tr></tbody><tfoot>
+                    <tr bgcolor="#b5b5b5" style="color:black; font-weight:bold;">
+                      <td colspan="2">&nbsp;</td>
+                      <td>$17,500.00</td></tr></tfoot></table></div></p>
+            <p style="text-align: center;"><span style="font-size: large;"><strong>Payment Schedule</strong></span></p>
+            <p style="text-align: center;"><span style="font-size: medium;"><span style="font-size: small;"><div id="tablelist"><table id="payschedule" width="100%">
+                          <thead>
+                            <tr>
+                            <th>#</th>
+                            <th>Date</th><th>Enrollment Fee</th><th>DPG Fee</th><th>Savings</th><th>Total Payment</th></tr>
+                          </thead>
+                          <tbody>
+                          <tr class="tr-1" bgcolor="#F4F4F4"><td class="td_payment_num">1</td><td class="td_payment_date">Sep 30, 2021</td><td class="td_fee_1">$97.22</td><td class="td_fee_4">$9.75</td><td class="td_savings">$228.75</td><td class="td_totalpayment">$335.72</td></tr><tr class="tr-2" bgcolor=""><td class="td_payment_num">2</td><td class="td_payment_date">Nov 01, 2021</td><td class="td_fee_1">$97.22</td><td class="td_fee_4">$9.75</td><td class="td_savings">$228.75</td><td class="td_totalpayment">$335.72</td></tr><tr class="tr-3" bgcolor="#F4F4F4"><td class="td_payment_num">3</td><td class="td_payment_date">Nov 30, 2021</td><td class="td_fee_1">$97.22</td><td class="td_fee_4">$9.75</td><td class="td_savings">$228.75</td><td class="td_totalpayment">$335.72</td></tr><tr class="tr-4" bgcolor=""><td class="td_payment_num">4</td><td class="td_payment_date">Dec 30, 2021</td><td class="td_fee_1">$97.22</td><td class="td_fee_4">$9.75</td><td class="td_savings">$228.75</td><td class="td_totalpayment">$335.72</td></tr><tr class="tr-5" bgcolor="#F4F4F4"><td class="td_payment_num">5</td><td class="td_payment_date">Jan 31, 2022</td><td class="td_fee_1">$97.22</td><td class="td_fee_4">$9.75</td><td class="td_savings">$228.75</td><td class="td_totalpayment">$335.72</td></tr><tr class="tr-6" bgcolor=""><td class="td_payment_num">6</td><td class="td_payment_date">Mar 02, 2022</td><td class="td_fee_1">$97.22</td><td class="td_fee_4">$9.75</td><td class="td_savings">$228.75</td><td class="td_totalpayment">$335.72</td></tr><tr class="tr-7" bgcolor="#F4F4F4"><td class="td_payment_num">7</td><td class="td_payment_date">Mar 30, 2022</td><td class="td_fee_1">$97.22</td><td class="td_fee_4">$9.75</td><td class="td_savings">$228.75</td><td class="td_totalpayment">$335.72</td></tr><tr class="tr-8" bgcolor=""><td class="td_payment_num">8</td><td class="td_payment_date">May 02, 2022</td><td class="td_fee_1">$97.22</td><td class="td_fee_4">$9.75</td><td class="td_savings">$228.75</td><td class="td_totalpayment">$335.72</td></tr><tr class="tr-9" bgcolor="#F4F4F4"><td class="td_payment_num">9</td><td class="td_payment_date">May 31, 2022</td><td class="td_fee_1">$97.22</td><td class="td_fee_4">$9.75</td><td class="td_savings">$228.75</td><td class="td_totalpayment">$335.72</td></tr><tr class="tr-10" bgcolor=""><td class="td_payment_num">10</td><td class="td_payment_date">Jun 30, 2022</td><td class="td_fee_1">$97.22</td><td class="td_fee_4">$9.75</td><td class="td_savings">$228.75</td><td class="td_totalpayment">$335.72</td></tr><tr class="tr-11" bgcolor="#F4F4F4"><td class="td_payment_num">11</td><td class="td_payment_date">Aug 01, 2022</td><td class="td_fee_1">$97.22</td><td class="td_fee_4">$9.75</td><td class="td_savings">$228.75</td><td class="td_totalpayment">$335.72</td></tr><tr class="tr-12" bgcolor=""><td class="td_payment_num">12</td><td class="td_payment_date">Aug 30, 2022</td><td class="td_fee_1">$97.22</td><td class="td_fee_4">$9.75</td><td class="td_savings">$228.75</td><td class="td_totalpayment">$335.72</td></tr><tr class="tr-13" bgcolor="#F4F4F4"><td class="td_payment_num">13</td><td class="td_payment_date">Sep 30, 2022</td><td class="td_fee_1">$97.22</td><td class="td_fee_4">$9.75</td><td class="td_savings">$228.75</td><td class="td_totalpayment">$335.72</td></tr><tr class="tr-14" bgcolor=""><td class="td_payment_num">14</td><td class="td_payment_date">Oct 31, 2022</td><td class="td_fee_1">$97.22</td><td class="td_fee_4">$9.75</td><td class="td_savings">$228.75</td><td class="td_totalpayment">$335.72</td></tr><tr class="tr-15" bgcolor="#F4F4F4"><td class="td_payment_num">15</td><td class="td_payment_date">Nov 30, 2022</td><td class="td_fee_1">$97.22</td><td class="td_fee_4">$9.75</td><td class="td_savings">$228.75</td><td class="td_totalpayment">$335.72</td></tr><tr class="tr-16" bgcolor=""><td class="td_payment_num">16</td><td class="td_payment_date">Dec 30, 2022</td><td class="td_fee_1">$97.22</td><td class="td_fee_4">$9.75</td><td class="td_savings">$228.75</td><td class="td_totalpayment">$335.72</td></tr><tr class="tr-17" bgcolor="#F4F4F4"><td class="td_payment_num">17</td><td class="td_payment_date">Jan 30, 2023</td><td class="td_fee_1">$97.22</td><td class="td_fee_4">$9.75</td><td class="td_savings">$228.75</td><td class="td_totalpayment">$335.72</td></tr><tr class="tr-18" bgcolor=""><td class="td_payment_num">18</td><td class="td_payment_date">Mar 02, 2023</td><td class="td_fee_1">$97.22</td><td class="td_fee_4">$9.75</td><td class="td_savings">$228.75</td><td class="td_totalpayment">$335.72</td></tr><tr class="tr-19" bgcolor="#F4F4F4"><td class="td_payment_num">19</td><td class="td_payment_date">Mar 30, 2023</td><td class="td_fee_1">$97.22</td><td class="td_fee_4">$9.75</td><td class="td_savings">$228.75</td><td class="td_totalpayment">$335.72</td></tr><tr class="tr-20" bgcolor=""><td class="td_payment_num">20</td><td class="td_payment_date">May 01, 2023</td><td class="td_fee_1">$97.22</td><td class="td_fee_4">$9.75</td><td class="td_savings">$228.75</td><td class="td_totalpayment">$335.72</td></tr><tr class="tr-21" bgcolor="#F4F4F4"><td class="td_payment_num">21</td><td class="td_payment_date">May 30, 2023</td><td class="td_fee_1">$97.22</td><td class="td_fee_4">$9.75</td><td class="td_savings">$228.75</td><td class="td_totalpayment">$335.72</td></tr><tr class="tr-22" bgcolor=""><td class="td_payment_num">22</td><td class="td_payment_date">Jun 30, 2023</td><td class="td_fee_1">$97.22</td><td class="td_fee_4">$9.75</td><td class="td_savings">$228.75</td><td class="td_totalpayment">$335.72</td></tr><tr class="tr-23" bgcolor="#F4F4F4"><td class="td_payment_num">23</td><td class="td_payment_date">Jul 31, 2023</td><td class="td_fee_1">$97.22</td><td class="td_fee_4">$9.75</td><td class="td_savings">$228.75</td><td class="td_totalpayment">$335.72</td></tr><tr class="tr-24" bgcolor=""><td class="td_payment_num">24</td><td class="td_payment_date">Aug 30, 2023</td><td class="td_fee_1">$97.22</td><td class="td_fee_4">$9.75</td><td class="td_savings">$228.75</td><td class="td_totalpayment">$335.72</td></tr><tr class="tr-25" bgcolor="#F4F4F4"><td class="td_payment_num">25</td><td class="td_payment_date">Oct 02, 2023</td><td class="td_fee_1">$97.22</td><td class="td_fee_4">$9.75</td><td class="td_savings">$228.75</td><td class="td_totalpayment">$335.72</td></tr><tr class="tr-26" bgcolor=""><td class="td_payment_num">26</td><td class="td_payment_date">Oct 30, 2023</td><td class="td_fee_1">$97.22</td><td class="td_fee_4">$9.75</td><td class="td_savings">$228.75</td><td class="td_totalpayment">$335.72</td></tr><tr class="tr-27" bgcolor="#F4F4F4"><td class="td_payment_num">27</td><td class="td_payment_date">Nov 30, 2023</td><td class="td_fee_1">$97.22</td><td class="td_fee_4">$9.75</td><td class="td_savings">$228.75</td><td class="td_totalpayment">$335.72</td></tr><tr class="tr-28" bgcolor=""><td class="td_payment_num">28</td><td class="td_payment_date">Jan 02, 2024</td><td class="td_fee_1">$97.22</td><td class="td_fee_4">$9.75</td><td class="td_savings">$228.75</td><td class="td_totalpayment">$335.72</td></tr><tr class="tr-29" bgcolor="#F4F4F4"><td class="td_payment_num">29</td><td class="td_payment_date">Jan 30, 2024</td><td class="td_fee_1">$97.22</td><td class="td_fee_4">$9.75</td><td class="td_savings">$228.75</td><td class="td_totalpayment">$335.72</td></tr><tr class="tr-30" bgcolor=""><td class="td_payment_num">30</td><td class="td_payment_date">Mar 01, 2024</td><td class="td_fee_1">$97.22</td><td class="td_fee_4">$9.75</td><td class="td_savings">$228.75</td><td class="td_totalpayment">$335.72</td></tr><tr class="tr-31" bgcolor="#F4F4F4"><td class="td_payment_num">31</td><td class="td_payment_date">Apr 01, 2024</td><td class="td_fee_1">$97.22</td><td class="td_fee_4">$9.75</td><td class="td_savings">$228.75</td><td class="td_totalpayment">$335.72</td></tr><tr class="tr-32" bgcolor=""><td class="td_payment_num">32</td><td class="td_payment_date">Apr 30, 2024</td><td class="td_fee_1">$97.22</td><td class="td_fee_4">$9.75</td><td class="td_savings">$228.75</td><td class="td_totalpayment">$335.72</td></tr><tr class="tr-33" bgcolor="#F4F4F4"><td class="td_payment_num">33</td><td class="td_payment_date">May 30, 2024</td><td class="td_fee_1">$97.22</td><td class="td_fee_4">$9.75</td><td class="td_savings">$228.75</td><td class="td_totalpayment">$335.72</td></tr><tr class="tr-34" bgcolor=""><td class="td_payment_num">34</td><td class="td_payment_date">Jul 01, 2024</td><td class="td_fee_1">$97.22</td><td class="td_fee_4">$9.75</td><td class="td_savings">$228.75</td><td class="td_totalpayment">$335.72</td></tr><tr class="tr-35" bgcolor="#F4F4F4"><td class="td_payment_num">35</td><td class="td_payment_date">Jul 30, 2024</td><td class="td_fee_1">$97.22</td><td class="td_fee_4">$9.75</td><td class="td_savings">$228.75</td><td class="td_totalpayment">$335.72</td></tr><tr class="tr-36" bgcolor=""><td class="td_payment_num">36</td><td class="td_payment_date">Aug 30, 2024</td><td class="td_fee_1">$97.30</td><td class="td_fee_4">$9.75</td><td class="td_savings">$218.75</td><td class="td_totalpayment">$325.80</td></tr>       </tbody>
+                              <tfoot>
+                                <tr style="color:blue; font-weight:bold;">
+                                  <td colspan="2">&nbsp;</td>
+                                  <td>$3,500.00</td><td>$351.00</td><td>$8,225.00</td><td>$12,076.00</td></tr>
+                              </tfoot>
+                        </table></div><input type="hidden" name="progtotal_f1" id="progtotal_f1" value="3500" /><input type="hidden" name="progtotal_f2" id="progtotal_f2" value="0" /><input type="hidden" name="progtotal_f3" id="progtotal_f3" value="0" /><input type="hidden" name="progtotal_f4" id="progtotal_f4" value="351" /><input type="hidden" name="progtotal_f5" id="progtotal_f5" value="0" /><input type="hidden" name="progtotal_f6" id="progtotal_f6" value="0" /><input type="hidden" name="progtotal_f7" id="progtotal_f7" value="0" /><input type="hidden" name="progtotal_total_fees" id="progtotal_total_fees" value="3851" /><input type="hidden" name="progtotal_savings" id="progtotal_savings" value="8225.1555555556" /><input type="hidden" name="progtotal_total" id="progtotal_total" value="12076" /></span></span></p>
+            <p style="text-align: center;"><span style="font-size: medium;"><span style="font-size: small;"><p style="page-break-after: always">&nbsp;</p></span></span></p>
+            <p style="text-align: center;"><html>
+            <head>
+                <style>
+                    @charset "UTF-8";@font-face{font-family:"Helvetica Neue";font-style:normal;font-weight:400;src:url("https://dpp-publicassets.s3.amazonaws.com/fonts/HelveticaNeue/HelveticaNeue.eot");src:url("https://dpp-publicassets.s3.amazonaws.com/fonts/HelveticaNeue/HelveticaNeue.woff") format("woff"),url("https://dpp-publicassets.s3.amazonaws.com/fonts/HelveticaNeue/HelveticaNeue.ttf") format("truetype")}@font-face{font-family:"Helvetica Neue";font-style:normal;font-weight:300;src:url("https://dpp-publicassets.s3.amazonaws.com/fonts/HelveticaNeue/HelveticaNeue-Light.eot");src:url("https://dpp-publicassets.s3.amazonaws.com/fonts/HelveticaNeue/HelveticaNeue-Light.woff") format("woff"),url("https://dpp-publicassets.s3.amazonaws.com/fonts/HelveticaNeue/HelveticaNeue-Light.ttf") format("truetype")}@font-face{font-family:"Helvetica Neue";font-style:normal;font-weight:600;src:url("https://dpp-publicassets.s3.amazonaws.com/fonts/HelveticaNeue/HelveticaNeue-Medium.eot");src:url("https://dpp-publicassets.s3.amazonaws.com/fonts/HelveticaNeue/HelveticaNeue-Medium.woff") format("woff"),url("https://dpp-publicassets.s3.amazonaws.com/fonts/HelveticaNeue/HelveticaNeue-Medium.ttf") format("truetype")}@font-face{font-family:"Helvetica Neue";font-style:normal;font-weight:700;src:url("https://dpp-publicassets.s3.amazonaws.com/fonts/HelveticaNeue/HelveticaNeue-Bold.eot");src:url("https://dpp-publicassets.s3.amazonaws.com/fonts/HelveticaNeue/HelveticaNeue-Bold.woff") format("woff"),url("https://dpp-publicassets.s3.amazonaws.com/fonts/HelveticaNeue/HelveticaNeue-Bold.ttf") format("truetype")}.--brand-color1{color:#2a9dc9}.--brand-color1Bg{background-color:#2a9dc9}.--brand-color1Bd{border-color:#2a9dc9}.--brand-color2{color:#20283f}.--brand-color2Bg{background-color:#20283f}.--brand-color2Bd{border-color:#20283f}.--brand-color3{color:#2a9dc9}.--brand-color3Bg{background-color:#2a9dc9}.--brand-color3Bd{border-color:#2a9dc9}.--light-gray{color:#999999}.--light-grayBg{background-color:#999999}.--light-grayBd{border-color:#999999}.--dove-gray{color:#666666}.--dove-grayBg{background-color:#666666}.--dove-grayBd{border-color:#666666}.--dark-gray{color:#333333}.--dark-grayBg{background-color:#333333}.--dark-grayBd{border-color:#333333}.--striking-silver{color:#cccccc}.--striking-silverBg{background-color:#cccccc}.--striking-silverBd{border-color:#cccccc}.--subtle-gray{color:#eaeaea}.--subtle-grayBg{background-color:#eaeaea}.--subtle-grayBd{border-color:#eaeaea}.--alabaster{color:#fafafa}.--alabasterBg{background-color:#fafafa}.--alabasterBd{border-color:#fafafa}.--catskill-white{color:#f5f8fa}.--catskill-whiteBg{background-color:#f5f8fa}.--catskill-whiteBd{border-color:#f5f8fa}.--gallery{color:#efefef}.--galleryBg{background-color:#efefef}.--galleryBd{border-color:#efefef}.--fruit-salad{color:#2C8A38}.--fruit-saladBg{background-color:#2C8A38}.--fruit-saladBd{border-color:#2C8A38}.--totem-pole{color:#a0270b}.--totem-poleBg{background-color:#a0270b}.--totem-poleBd{border-color:#a0270b}.--lima{color:#81c31a}.--limaBg{background-color:#81c31a}.--limaBd{border-color:#81c31a}.--curious-blue{color:#2a9dc9}.--curious-blueBg{background-color:#2a9dc9}.--curious-blueBd{border-color:#2a9dc9}.--fuel-yellow{color:#F7BC1E}.--fuel-yellowBg{background-color:#F7BC1E}.--fuel-yellowBd{border-color:#F7BC1E}.--alice-blue{color:#f2fbff}.--alice-blueBg{background-color:#f2fbff}.--alice-blueBd{border-color:#f2fbff}.--dark-blue{color:#20283f}.--dark-blueBg{background-color:#20283f}.--dark-blueBd{border-color:#20283f}.flex{display:flex}.--w1{width:1%}.--h1{height:1%}.--w2{width:2%}.--h2{height:2%}.--w3{width:3%}.--h3{height:3%}.--w4{width:4%}.--h4{height:4%}.--w5{width:5%}.--h5{height:5%}.--w6{width:6%}.--h6{height:6%}.--w7{width:7%}.--h7{height:7%}.--w8{width:8%}.--h8{height:8%}.--w9{width:9%}.--h9{height:9%}.--w10{width:10%}.--h10{height:10%}.--w11{width:11%}.--h11{height:11%}.--w12{width:12%}.--h12{height:12%}.--w13{width:13%}.--h13{height:13%}.--w14{width:14%}.--h14{height:14%}.--w15{width:15%}.--h15{height:15%}.--w16{width:16%}.--h16{height:16%}.--w17{width:17%}.--h17{height:17%}.--w18{width:18%}.--h18{height:18%}.--w19{width:19%}.--h19{height:19%}.--w20{width:20%}.--h20{height:20%}.--w21{width:21%}.--h21{height:21%}.--w22{width:22%}.--h22{height:22%}.--w23{width:23%}.--h23{height:23%}.--w24{width:24%}.--h24{height:24%}.--w25{width:25%}.--h25{height:25%}.--w26{width:26%}.--h26{height:26%}.--w27{width:27%}.--h27{height:27%}.--w28{width:28%}.--h28{height:28%}.--w29{width:29%}.--h29{height:29%}.--w30{width:30%}.--h30{height:30%}.--w31{width:31%}.--h31{height:31%}.--w32{width:32%}.--h32{height:32%}.--w33{width:33%}.--h33{height:33%}.--w34{width:34%}.--h34{height:34%}.--w35{width:35%}.--h35{height:35%}.--w36{width:36%}.--h36{height:36%}.--w37{width:37%}.--h37{height:37%}.--w38{width:38%}.--h38{height:38%}.--w39{width:39%}.--h39{height:39%}.--w40{width:40%}.--h40{height:40%}.--w41{width:41%}.--h41{height:41%}.--w42{width:42%}.--h42{height:42%}.--w43{width:43%}.--h43{height:43%}.--w44{width:44%}.--h44{height:44%}.--w45{width:45%}.--h45{height:45%}.--w46{width:46%}.--h46{height:46%}.--w47{width:47%}.--h47{height:47%}.--w48{width:48%}.--h48{height:48%}.--w49{width:49%}.--h49{height:49%}.--w50{width:50%}.--h50{height:50%}.--w51{width:51%}.--h51{height:51%}.--w52{width:52%}.--h52{height:52%}.--w53{width:53%}.--h53{height:53%}.--w54{width:54%}.--h54{height:54%}.--w55{width:55%}.--h55{height:55%}.--w56{width:56%}.--h56{height:56%}.--w57{width:57%}.--h57{height:57%}.--w58{width:58%}.--h58{height:58%}.--w59{width:59%}.--h59{height:59%}.--w60{width:60%}.--h60{height:60%}.--w61{width:61%}.--h61{height:61%}.--w62{width:62%}.--h62{height:62%}.--w63{width:63%}.--h63{height:63%}.--w64{width:64%}.--h64{height:64%}.--w65{width:65%}.--h65{height:65%}.--w66{width:66%}.--h66{height:66%}.--w67{width:67%}.--h67{height:67%}.--w68{width:68%}.--h68{height:68%}.--w69{width:69%}.--h69{height:69%}.--w70{width:70%}.--h70{height:70%}.--w71{width:71%}.--h71{height:71%}.--w72{width:72%}.--h72{height:72%}.--w73{width:73%}.--h73{height:73%}.--w74{width:74%}.--h74{height:74%}.--w75{width:75%}.--h75{height:75%}.--w76{width:76%}.--h76{height:76%}.--w77{width:77%}.--h77{height:77%}.--w78{width:78%}.--h78{height:78%}.--w79{width:79%}.--h79{height:79%}.--w80{width:80%}.--h80{height:80%}.--w81{width:81%}.--h81{height:81%}.--w82{width:82%}.--h82{height:82%}.--w83{width:83%}.--h83{height:83%}.--w84{width:84%}.--h84{height:84%}.--w85{width:85%}.--h85{height:85%}.--w86{width:86%}.--h86{height:86%}.--w87{width:87%}.--h87{height:87%}.--w88{width:88%}.--h88{height:88%}.--w89{width:89%}.--h89{height:89%}.--w90{width:90%}.--h90{height:90%}.--w91{width:91%}.--h91{height:91%}.--w92{width:92%}.--h92{height:92%}.--w93{width:93%}.--h93{height:93%}.--w94{width:94%}.--h94{height:94%}.--w95{width:95%}.--h95{height:95%}.--w96{width:96%}.--h96{height:96%}.--w97{width:97%}.--h97{height:97%}.--w98{width:98%}.--h98{height:98%}.--w99{width:99%}.--h99{height:99%}.--w100{width:100%}.--h100{height:100%}.--wa{width:auto}.--justify-between{justify-content:space-between}.--justify-around{justify-content:space-around}.--justify-evenly{justify-content:space-evenly}.--justify-start{justify-content:start}.--justify-center{justify-content:center}.--align-stretch{align-items:stretch}.--align-center{align-items:center}.--align-start{align-items:start}.--align-end{align-items:end}.--wrap{flex-wrap:wrap}.--no-wrap{flex-wrap:nowrap}.--wrap-reverse{flex-wrap:wrap-reverse}.--row{flex-flow:row}.--row-reverse{flex-flow:row-reverse}.--column{flex-flow:column}.--column-reverse{flex-flow:column-reverse}.--mt0{margin-top:0rem}.--m0{margin:0rem}.--mta{margin-top:auto}.--pt0{padding-top:0rem}.--p0{padding:0rem}.--mb0{margin-bottom:0rem}.--m0{margin:0rem}.--mba{margin-bottom:auto}.--pb0{padding-bottom:0rem}.--p0{padding:0rem}.--ml0{margin-left:0rem}.--m0{margin:0rem}.--mla{margin-left:auto}.--pl0{padding-left:0rem}.--p0{padding:0rem}.--mr0{margin-right:0rem}.--m0{margin:0rem}.--mra{margin-right:auto}.--pr0{padding-right:0rem}.--p0{padding:0rem}.--mt1{margin-top:0.25rem}.--m1{margin:0.25rem}.--mta{margin-top:auto}.--pt1{padding-top:0.25rem}.--p1{padding:0.25rem}.--mb1{margin-bottom:0.25rem}.--m1{margin:0.25rem}.--mba{margin-bottom:auto}.--pb1{padding-bottom:0.25rem}.--p1{padding:0.25rem}.--ml1{margin-left:0.25rem}.--m1{margin:0.25rem}.--mla{margin-left:auto}.--pl1{padding-left:0.25rem}.--p1{padding:0.25rem}.--mr1{margin-right:0.25rem}.--m1{margin:0.25rem}.--mra{margin-right:auto}.--pr1{padding-right:0.25rem}.--p1{padding:0.25rem}.--mt2{margin-top:0.5rem}.--m2{margin:0.5rem}.--mta{margin-top:auto}.--pt2{padding-top:0.5rem}.--p2{padding:0.5rem}.--mb2{margin-bottom:0.5rem}.--m2{margin:0.5rem}.--mba{margin-bottom:auto}.--pb2{padding-bottom:0.5rem}.--p2{padding:0.5rem}.--ml2{margin-left:0.5rem}.--m2{margin:0.5rem}.--mla{margin-left:auto}.--pl2{padding-left:0.5rem}.--p2{padding:0.5rem}.--mr2{margin-right:0.5rem}.--m2{margin:0.5rem}.--mra{margin-right:auto}.--pr2{padding-right:0.5rem}.--p2{padding:0.5rem}.--mt3{margin-top:0.75rem}.--m3{margin:0.75rem}.--mta{margin-top:auto}.--pt3{padding-top:0.75rem}.--p3{padding:0.75rem}.--mb3{margin-bottom:0.75rem}.--m3{margin:0.75rem}.--mba{margin-bottom:auto}.--pb3{padding-bottom:0.75rem}.--p3{padding:0.75rem}.--ml3{margin-left:0.75rem}.--m3{margin:0.75rem}.--mla{margin-left:auto}.--pl3{padding-left:0.75rem}.--p3{padding:0.75rem}.--mr3{margin-right:0.75rem}.--m3{margin:0.75rem}.--mra{margin-right:auto}.--pr3{padding-right:0.75rem}.--p3{padding:0.75rem}.--mt4{margin-top:1rem}.--m4{margin:1rem}.--mta{margin-top:auto}.--pt4{padding-top:1rem}.--p4{padding:1rem}.--mb4{margin-bottom:1rem}.--m4{margin:1rem}.--mba{margin-bottom:auto}.--pb4{padding-bottom:1rem}.--p4{padding:1rem}.--ml4{margin-left:1rem}.--m4{margin:1rem}.--mla{margin-left:auto}.--pl4{padding-left:1rem}.--p4{padding:1rem}.--mr4{margin-right:1rem}.--m4{margin:1rem}.--mra{margin-right:auto}.--pr4{padding-right:1rem}.--p4{padding:1rem}.--mt5{margin-top:1.25rem}.--m5{margin:1.25rem}.--mta{margin-top:auto}.--pt5{padding-top:1.25rem}.--p5{padding:1.25rem}.--mb5{margin-bottom:1.25rem}.--m5{margin:1.25rem}.--mba{margin-bottom:auto}.--pb5{padding-bottom:1.25rem}.--p5{padding:1.25rem}.--ml5{margin-left:1.25rem}.--m5{margin:1.25rem}.--mla{margin-left:auto}.--pl5{padding-left:1.25rem}.--p5{padding:1.25rem}.--mr5{margin-right:1.25rem}.--m5{margin:1.25rem}.--mra{margin-right:auto}.--pr5{padding-right:1.25rem}.--p5{padding:1.25rem}.--mt6{margin-top:1.5rem}.--m6{margin:1.5rem}.--mta{margin-top:auto}.--pt6{padding-top:1.5rem}.--p6{padding:1.5rem}.--mb6{margin-bottom:1.5rem}.--m6{margin:1.5rem}.--mba{margin-bottom:auto}.--pb6{padding-bottom:1.5rem}.--p6{padding:1.5rem}.--ml6{margin-left:1.5rem}.--m6{margin:1.5rem}.--mla{margin-left:auto}.--pl6{padding-left:1.5rem}.--p6{padding:1.5rem}.--mr6{margin-right:1.5rem}.--m6{margin:1.5rem}.--mra{margin-right:auto}.--pr6{padding-right:1.5rem}.--p6{padding:1.5rem}.--mt7{margin-top:1.75rem}.--m7{margin:1.75rem}.--mta{margin-top:auto}.--pt7{padding-top:1.75rem}.--p7{padding:1.75rem}.--mb7{margin-bottom:1.75rem}.--m7{margin:1.75rem}.--mba{margin-bottom:auto}.--pb7{padding-bottom:1.75rem}.--p7{padding:1.75rem}.--ml7{margin-left:1.75rem}.--m7{margin:1.75rem}.--mla{margin-left:auto}.--pl7{padding-left:1.75rem}.--p7{padding:1.75rem}.--mr7{margin-right:1.75rem}.--m7{margin:1.75rem}.--mra{margin-right:auto}.--pr7{padding-right:1.75rem}.--p7{padding:1.75rem}.--mt8{margin-top:2rem}.--m8{margin:2rem}.--mta{margin-top:auto}.--pt8{padding-top:2rem}.--p8{padding:2rem}.--mb8{margin-bottom:2rem}.--m8{margin:2rem}.--mba{margin-bottom:auto}.--pb8{padding-bottom:2rem}.--p8{padding:2rem}.--ml8{margin-left:2rem}.--m8{margin:2rem}.--mla{margin-left:auto}.--pl8{padding-left:2rem}.--p8{padding:2rem}.--mr8{margin-right:2rem}.--m8{margin:2rem}.--mra{margin-right:auto}.--pr8{padding-right:2rem}.--p8{padding:2rem}.--mt9{margin-top:2.25rem}.--m9{margin:2.25rem}.--mta{margin-top:auto}.--pt9{padding-top:2.25rem}.--p9{padding:2.25rem}.--mb9{margin-bottom:2.25rem}.--m9{margin:2.25rem}.--mba{margin-bottom:auto}.--pb9{padding-bottom:2.25rem}.--p9{padding:2.25rem}.--ml9{margin-left:2.25rem}.--m9{margin:2.25rem}.--mla{margin-left:auto}.--pl9{padding-left:2.25rem}.--p9{padding:2.25rem}.--mr9{margin-right:2.25rem}.--m9{margin:2.25rem}.--mra{margin-right:auto}.--pr9{padding-right:2.25rem}.--p9{padding:2.25rem}.--mt10{margin-top:2.5rem}.--m10{margin:2.5rem}.--mta{margin-top:auto}.--pt10{padding-top:2.5rem}.--p10{padding:2.5rem}.--mb10{margin-bottom:2.5rem}.--m10{margin:2.5rem}.--mba{margin-bottom:auto}.--pb10{padding-bottom:2.5rem}.--p10{padding:2.5rem}.--ml10{margin-left:2.5rem}.--m10{margin:2.5rem}.--mla{margin-left:auto}.--pl10{padding-left:2.5rem}.--p10{padding:2.5rem}.--mr10{margin-right:2.5rem}.--m10{margin:2.5rem}.--mra{margin-right:auto}.--pr10{padding-right:2.5rem}.--p10{padding:2.5rem}.--mt11{margin-top:2.75rem}.--m11{margin:2.75rem}.--mta{margin-top:auto}.--pt11{padding-top:2.75rem}.--p11{padding:2.75rem}.--mb11{margin-bottom:2.75rem}.--m11{margin:2.75rem}.--mba{margin-bottom:auto}.--pb11{padding-bottom:2.75rem}.--p11{padding:2.75rem}.--ml11{margin-left:2.75rem}.--m11{margin:2.75rem}.--mla{margin-left:auto}.--pl11{padding-left:2.75rem}.--p11{padding:2.75rem}.--mr11{margin-right:2.75rem}.--m11{margin:2.75rem}.--mra{margin-right:auto}.--pr11{padding-right:2.75rem}.--p11{padding:2.75rem}.--mt12{margin-top:3rem}.--m12{margin:3rem}.--mta{margin-top:auto}.--pt12{padding-top:3rem}.--p12{padding:3rem}.--mb12{margin-bottom:3rem}.--m12{margin:3rem}.--mba{margin-bottom:auto}.--pb12{padding-bottom:3rem}.--p12{padding:3rem}.--ml12{margin-left:3rem}.--m12{margin:3rem}.--mla{margin-left:auto}.--pl12{padding-left:3rem}.--p12{padding:3rem}.--mr12{margin-right:3rem}.--m12{margin:3rem}.--mra{margin-right:auto}.--pr12{padding-right:3rem}.--p12{padding:3rem}.--mt13{margin-top:3.25rem}.--m13{margin:3.25rem}.--mta{margin-top:auto}.--pt13{padding-top:3.25rem}.--p13{padding:3.25rem}.--mb13{margin-bottom:3.25rem}.--m13{margin:3.25rem}.--mba{margin-bottom:auto}.--pb13{padding-bottom:3.25rem}.--p13{padding:3.25rem}.--ml13{margin-left:3.25rem}.--m13{margin:3.25rem}.--mla{margin-left:auto}.--pl13{padding-left:3.25rem}.--p13{padding:3.25rem}.--mr13{margin-right:3.25rem}.--m13{margin:3.25rem}.--mra{margin-right:auto}.--pr13{padding-right:3.25rem}.--p13{padding:3.25rem}.--mt14{margin-top:3.5rem}.--m14{margin:3.5rem}.--mta{margin-top:auto}.--pt14{padding-top:3.5rem}.--p14{padding:3.5rem}.--mb14{margin-bottom:3.5rem}.--m14{margin:3.5rem}.--mba{margin-bottom:auto}.--pb14{padding-bottom:3.5rem}.--p14{padding:3.5rem}.--ml14{margin-left:3.5rem}.--m14{margin:3.5rem}.--mla{margin-left:auto}.--pl14{padding-left:3.5rem}.--p14{padding:3.5rem}.--mr14{margin-right:3.5rem}.--m14{margin:3.5rem}.--mra{margin-right:auto}.--pr14{padding-right:3.5rem}.--p14{padding:3.5rem}.--mt15{margin-top:3.75rem}.--m15{margin:3.75rem}.--mta{margin-top:auto}.--pt15{padding-top:3.75rem}.--p15{padding:3.75rem}.--mb15{margin-bottom:3.75rem}.--m15{margin:3.75rem}.--mba{margin-bottom:auto}.--pb15{padding-bottom:3.75rem}.--p15{padding:3.75rem}.--ml15{margin-left:3.75rem}.--m15{margin:3.75rem}.--mla{margin-left:auto}.--pl15{padding-left:3.75rem}.--p15{padding:3.75rem}.--mr15{margin-right:3.75rem}.--m15{margin:3.75rem}.--mra{margin-right:auto}.--pr15{padding-right:3.75rem}.--p15{padding:3.75rem}.--mt16{margin-top:4rem}.--m16{margin:4rem}.--mta{margin-top:auto}.--pt16{padding-top:4rem}.--p16{padding:4rem}.--mb16{margin-bottom:4rem}.--m16{margin:4rem}.--mba{margin-bottom:auto}.--pb16{padding-bottom:4rem}.--p16{padding:4rem}.--ml16{margin-left:4rem}.--m16{margin:4rem}.--mla{margin-left:auto}.--pl16{padding-left:4rem}.--p16{padding:4rem}.--mr16{margin-right:4rem}.--m16{margin:4rem}.--mra{margin-right:auto}.--pr16{padding-right:4rem}.--p16{padding:4rem}.--mt17{margin-top:4.25rem}.--m17{margin:4.25rem}.--mta{margin-top:auto}.--pt17{padding-top:4.25rem}.--p17{padding:4.25rem}.--mb17{margin-bottom:4.25rem}.--m17{margin:4.25rem}.--mba{margin-bottom:auto}.--pb17{padding-bottom:4.25rem}.--p17{padding:4.25rem}.--ml17{margin-left:4.25rem}.--m17{margin:4.25rem}.--mla{margin-left:auto}.--pl17{padding-left:4.25rem}.--p17{padding:4.25rem}.--mr17{margin-right:4.25rem}.--m17{margin:4.25rem}.--mra{margin-right:auto}.--pr17{padding-right:4.25rem}.--p17{padding:4.25rem}.--mt18{margin-top:4.5rem}.--m18{margin:4.5rem}.--mta{margin-top:auto}.--pt18{padding-top:4.5rem}.--p18{padding:4.5rem}.--mb18{margin-bottom:4.5rem}.--m18{margin:4.5rem}.--mba{margin-bottom:auto}.--pb18{padding-bottom:4.5rem}.--p18{padding:4.5rem}.--ml18{margin-left:4.5rem}.--m18{margin:4.5rem}.--mla{margin-left:auto}.--pl18{padding-left:4.5rem}.--p18{padding:4.5rem}.--mr18{margin-right:4.5rem}.--m18{margin:4.5rem}.--mra{margin-right:auto}.--pr18{padding-right:4.5rem}.--p18{padding:4.5rem}.--mt19{margin-top:4.75rem}.--m19{margin:4.75rem}.--mta{margin-top:auto}.--pt19{padding-top:4.75rem}.--p19{padding:4.75rem}.--mb19{margin-bottom:4.75rem}.--m19{margin:4.75rem}.--mba{margin-bottom:auto}.--pb19{padding-bottom:4.75rem}.--p19{padding:4.75rem}.--ml19{margin-left:4.75rem}.--m19{margin:4.75rem}.--mla{margin-left:auto}.--pl19{padding-left:4.75rem}.--p19{padding:4.75rem}.--mr19{margin-right:4.75rem}.--m19{margin:4.75rem}.--mra{margin-right:auto}.--pr19{padding-right:4.75rem}.--p19{padding:4.75rem}.--mt20{margin-top:5rem}.--m20{margin:5rem}.--mta{margin-top:auto}.--pt20{padding-top:5rem}.--p20{padding:5rem}.--mb20{margin-bottom:5rem}.--m20{margin:5rem}.--mba{margin-bottom:auto}.--pb20{padding-bottom:5rem}.--p20{padding:5rem}.--ml20{margin-left:5rem}.--m20{margin:5rem}.--mla{margin-left:auto}.--pl20{padding-left:5rem}.--p20{padding:5rem}.--mr20{margin-right:5rem}.--m20{margin:5rem}.--mra{margin-right:auto}.--pr20{padding-right:5rem}.--p20{padding:5rem}.--mt21{margin-top:5.25rem}.--m21{margin:5.25rem}.--mta{margin-top:auto}.--pt21{padding-top:5.25rem}.--p21{padding:5.25rem}.--mb21{margin-bottom:5.25rem}.--m21{margin:5.25rem}.--mba{margin-bottom:auto}.--pb21{padding-bottom:5.25rem}.--p21{padding:5.25rem}.--ml21{margin-left:5.25rem}.--m21{margin:5.25rem}.--mla{margin-left:auto}.--pl21{padding-left:5.25rem}.--p21{padding:5.25rem}.--mr21{margin-right:5.25rem}.--m21{margin:5.25rem}.--mra{margin-right:auto}.--pr21{padding-right:5.25rem}.--p21{padding:5.25rem}.--mt22{margin-top:5.5rem}.--m22{margin:5.5rem}.--mta{margin-top:auto}.--pt22{padding-top:5.5rem}.--p22{padding:5.5rem}.--mb22{margin-bottom:5.5rem}.--m22{margin:5.5rem}.--mba{margin-bottom:auto}.--pb22{padding-bottom:5.5rem}.--p22{padding:5.5rem}.--ml22{margin-left:5.5rem}.--m22{margin:5.5rem}.--mla{margin-left:auto}.--pl22{padding-left:5.5rem}.--p22{padding:5.5rem}.--mr22{margin-right:5.5rem}.--m22{margin:5.5rem}.--mra{margin-right:auto}.--pr22{padding-right:5.5rem}.--p22{padding:5.5rem}.--mt23{margin-top:5.75rem}.--m23{margin:5.75rem}.--mta{margin-top:auto}.--pt23{padding-top:5.75rem}.--p23{padding:5.75rem}.--mb23{margin-bottom:5.75rem}.--m23{margin:5.75rem}.--mba{margin-bottom:auto}.--pb23{padding-bottom:5.75rem}.--p23{padding:5.75rem}.--ml23{margin-left:5.75rem}.--m23{margin:5.75rem}.--mla{margin-left:auto}.--pl23{padding-left:5.75rem}.--p23{padding:5.75rem}.--mr23{margin-right:5.75rem}.--m23{margin:5.75rem}.--mra{margin-right:auto}.--pr23{padding-right:5.75rem}.--p23{padding:5.75rem}.--mt24{margin-top:6rem}.--m24{margin:6rem}.--mta{margin-top:auto}.--pt24{padding-top:6rem}.--p24{padding:6rem}.--mb24{margin-bottom:6rem}.--m24{margin:6rem}.--mba{margin-bottom:auto}.--pb24{padding-bottom:6rem}.--p24{padding:6rem}.--ml24{margin-left:6rem}.--m24{margin:6rem}.--mla{margin-left:auto}.--pl24{padding-left:6rem}.--p24{padding:6rem}.--mr24{margin-right:6rem}.--m24{margin:6rem}.--mra{margin-right:auto}.--pr24{padding-right:6rem}.--p24{padding:6rem}.--mt25{margin-top:6.25rem}.--m25{margin:6.25rem}.--mta{margin-top:auto}.--pt25{padding-top:6.25rem}.--p25{padding:6.25rem}.--mb25{margin-bottom:6.25rem}.--m25{margin:6.25rem}.--mba{margin-bottom:auto}.--pb25{padding-bottom:6.25rem}.--p25{padding:6.25rem}.--ml25{margin-left:6.25rem}.--m25{margin:6.25rem}.--mla{margin-left:auto}.--pl25{padding-left:6.25rem}.--p25{padding:6.25rem}.--mr25{margin-right:6.25rem}.--m25{margin:6.25rem}.--mra{margin-right:auto}.--pr25{padding-right:6.25rem}.--p25{padding:6.25rem}.--mt26{margin-top:6.5rem}.--m26{margin:6.5rem}.--mta{margin-top:auto}.--pt26{padding-top:6.5rem}.--p26{padding:6.5rem}.--mb26{margin-bottom:6.5rem}.--m26{margin:6.5rem}.--mba{margin-bottom:auto}.--pb26{padding-bottom:6.5rem}.--p26{padding:6.5rem}.--ml26{margin-left:6.5rem}.--m26{margin:6.5rem}.--mla{margin-left:auto}.--pl26{padding-left:6.5rem}.--p26{padding:6.5rem}.--mr26{margin-right:6.5rem}.--m26{margin:6.5rem}.--mra{margin-right:auto}.--pr26{padding-right:6.5rem}.--p26{padding:6.5rem}.--mt27{margin-top:6.75rem}.--m27{margin:6.75rem}.--mta{margin-top:auto}.--pt27{padding-top:6.75rem}.--p27{padding:6.75rem}.--mb27{margin-bottom:6.75rem}.--m27{margin:6.75rem}.--mba{margin-bottom:auto}.--pb27{padding-bottom:6.75rem}.--p27{padding:6.75rem}.--ml27{margin-left:6.75rem}.--m27{margin:6.75rem}.--mla{margin-left:auto}.--pl27{padding-left:6.75rem}.--p27{padding:6.75rem}.--mr27{margin-right:6.75rem}.--m27{margin:6.75rem}.--mra{margin-right:auto}.--pr27{padding-right:6.75rem}.--p27{padding:6.75rem}.--mt28{margin-top:7rem}.--m28{margin:7rem}.--mta{margin-top:auto}.--pt28{padding-top:7rem}.--p28{padding:7rem}.--mb28{margin-bottom:7rem}.--m28{margin:7rem}.--mba{margin-bottom:auto}.--pb28{padding-bottom:7rem}.--p28{padding:7rem}.--ml28{margin-left:7rem}.--m28{margin:7rem}.--mla{margin-left:auto}.--pl28{padding-left:7rem}.--p28{padding:7rem}.--mr28{margin-right:7rem}.--m28{margin:7rem}.--mra{margin-right:auto}.--pr28{padding-right:7rem}.--p28{padding:7rem}.--mt29{margin-top:7.25rem}.--m29{margin:7.25rem}.--mta{margin-top:auto}.--pt29{padding-top:7.25rem}.--p29{padding:7.25rem}.--mb29{margin-bottom:7.25rem}.--m29{margin:7.25rem}.--mba{margin-bottom:auto}.--pb29{padding-bottom:7.25rem}.--p29{padding:7.25rem}.--ml29{margin-left:7.25rem}.--m29{margin:7.25rem}.--mla{margin-left:auto}.--pl29{padding-left:7.25rem}.--p29{padding:7.25rem}.--mr29{margin-right:7.25rem}.--m29{margin:7.25rem}.--mra{margin-right:auto}.--pr29{padding-right:7.25rem}.--p29{padding:7.25rem}.--mt30{margin-top:7.5rem}.--m30{margin:7.5rem}.--mta{margin-top:auto}.--pt30{padding-top:7.5rem}.--p30{padding:7.5rem}.--mb30{margin-bottom:7.5rem}.--m30{margin:7.5rem}.--mba{margin-bottom:auto}.--pb30{padding-bottom:7.5rem}.--p30{padding:7.5rem}.--ml30{margin-left:7.5rem}.--m30{margin:7.5rem}.--mla{margin-left:auto}.--pl30{padding-left:7.5rem}.--p30{padding:7.5rem}.--mr30{margin-right:7.5rem}.--m30{margin:7.5rem}.--mra{margin-right:auto}.--pr30{padding-right:7.5rem}.--p30{padding:7.5rem}.--mt31{margin-top:7.75rem}.--m31{margin:7.75rem}.--mta{margin-top:auto}.--pt31{padding-top:7.75rem}.--p31{padding:7.75rem}.--mb31{margin-bottom:7.75rem}.--m31{margin:7.75rem}.--mba{margin-bottom:auto}.--pb31{padding-bottom:7.75rem}.--p31{padding:7.75rem}.--ml31{margin-left:7.75rem}.--m31{margin:7.75rem}.--mla{margin-left:auto}.--pl31{padding-left:7.75rem}.--p31{padding:7.75rem}.--mr31{margin-right:7.75rem}.--m31{margin:7.75rem}.--mra{margin-right:auto}.--pr31{padding-right:7.75rem}.--p31{padding:7.75rem}.--mt32{margin-top:8rem}.--m32{margin:8rem}.--mta{margin-top:auto}.--pt32{padding-top:8rem}.--p32{padding:8rem}.--mb32{margin-bottom:8rem}.--m32{margin:8rem}.--mba{margin-bottom:auto}.--pb32{padding-bottom:8rem}.--p32{padding:8rem}.--ml32{margin-left:8rem}.--m32{margin:8rem}.--mla{margin-left:auto}.--pl32{padding-left:8rem}.--p32{padding:8rem}.--mr32{margin-right:8rem}.--m32{margin:8rem}.--mra{margin-right:auto}.--pr32{padding-right:8rem}.--p32{padding:8rem}.--mt33{margin-top:8.25rem}.--m33{margin:8.25rem}.--mta{margin-top:auto}.--pt33{padding-top:8.25rem}.--p33{padding:8.25rem}.--mb33{margin-bottom:8.25rem}.--m33{margin:8.25rem}.--mba{margin-bottom:auto}.--pb33{padding-bottom:8.25rem}.--p33{padding:8.25rem}.--ml33{margin-left:8.25rem}.--m33{margin:8.25rem}.--mla{margin-left:auto}.--pl33{padding-left:8.25rem}.--p33{padding:8.25rem}.--mr33{margin-right:8.25rem}.--m33{margin:8.25rem}.--mra{margin-right:auto}.--pr33{padding-right:8.25rem}.--p33{padding:8.25rem}.--mt34{margin-top:8.5rem}.--m34{margin:8.5rem}.--mta{margin-top:auto}.--pt34{padding-top:8.5rem}.--p34{padding:8.5rem}.--mb34{margin-bottom:8.5rem}.--m34{margin:8.5rem}.--mba{margin-bottom:auto}.--pb34{padding-bottom:8.5rem}.--p34{padding:8.5rem}.--ml34{margin-left:8.5rem}.--m34{margin:8.5rem}.--mla{margin-left:auto}.--pl34{padding-left:8.5rem}.--p34{padding:8.5rem}.--mr34{margin-right:8.5rem}.--m34{margin:8.5rem}.--mra{margin-right:auto}.--pr34{padding-right:8.5rem}.--p34{padding:8.5rem}.--mt35{margin-top:8.75rem}.--m35{margin:8.75rem}.--mta{margin-top:auto}.--pt35{padding-top:8.75rem}.--p35{padding:8.75rem}.--mb35{margin-bottom:8.75rem}.--m35{margin:8.75rem}.--mba{margin-bottom:auto}.--pb35{padding-bottom:8.75rem}.--p35{padding:8.75rem}.--ml35{margin-left:8.75rem}.--m35{margin:8.75rem}.--mla{margin-left:auto}.--pl35{padding-left:8.75rem}.--p35{padding:8.75rem}.--mr35{margin-right:8.75rem}.--m35{margin:8.75rem}.--mra{margin-right:auto}.--pr35{padding-right:8.75rem}.--p35{padding:8.75rem}.--mt36{margin-top:9rem}.--m36{margin:9rem}.--mta{margin-top:auto}.--pt36{padding-top:9rem}.--p36{padding:9rem}.--mb36{margin-bottom:9rem}.--m36{margin:9rem}.--mba{margin-bottom:auto}.--pb36{padding-bottom:9rem}.--p36{padding:9rem}.--ml36{margin-left:9rem}.--m36{margin:9rem}.--mla{margin-left:auto}.--pl36{padding-left:9rem}.--p36{padding:9rem}.--mr36{margin-right:9rem}.--m36{margin:9rem}.--mra{margin-right:auto}.--pr36{padding-right:9rem}.--p36{padding:9rem}.--mt37{margin-top:9.25rem}.--m37{margin:9.25rem}.--mta{margin-top:auto}.--pt37{padding-top:9.25rem}.--p37{padding:9.25rem}.--mb37{margin-bottom:9.25rem}.--m37{margin:9.25rem}.--mba{margin-bottom:auto}.--pb37{padding-bottom:9.25rem}.--p37{padding:9.25rem}.--ml37{margin-left:9.25rem}.--m37{margin:9.25rem}.--mla{margin-left:auto}.--pl37{padding-left:9.25rem}.--p37{padding:9.25rem}.--mr37{margin-right:9.25rem}.--m37{margin:9.25rem}.--mra{margin-right:auto}.--pr37{padding-right:9.25rem}.--p37{padding:9.25rem}.--mt38{margin-top:9.5rem}.--m38{margin:9.5rem}.--mta{margin-top:auto}.--pt38{padding-top:9.5rem}.--p38{padding:9.5rem}.--mb38{margin-bottom:9.5rem}.--m38{margin:9.5rem}.--mba{margin-bottom:auto}.--pb38{padding-bottom:9.5rem}.--p38{padding:9.5rem}.--ml38{margin-left:9.5rem}.--m38{margin:9.5rem}.--mla{margin-left:auto}.--pl38{padding-left:9.5rem}.--p38{padding:9.5rem}.--mr38{margin-right:9.5rem}.--m38{margin:9.5rem}.--mra{margin-right:auto}.--pr38{padding-right:9.5rem}.--p38{padding:9.5rem}.--mt39{margin-top:9.75rem}.--m39{margin:9.75rem}.--mta{margin-top:auto}.--pt39{padding-top:9.75rem}.--p39{padding:9.75rem}.--mb39{margin-bottom:9.75rem}.--m39{margin:9.75rem}.--mba{margin-bottom:auto}.--pb39{padding-bottom:9.75rem}.--p39{padding:9.75rem}.--ml39{margin-left:9.75rem}.--m39{margin:9.75rem}.--mla{margin-left:auto}.--pl39{padding-left:9.75rem}.--p39{padding:9.75rem}.--mr39{margin-right:9.75rem}.--m39{margin:9.75rem}.--mra{margin-right:auto}.--pr39{padding-right:9.75rem}.--p39{padding:9.75rem}.--mt40{margin-top:10rem}.--m40{margin:10rem}.--mta{margin-top:auto}.--pt40{padding-top:10rem}.--p40{padding:10rem}.--mb40{margin-bottom:10rem}.--m40{margin:10rem}.--mba{margin-bottom:auto}.--pb40{padding-bottom:10rem}.--p40{padding:10rem}.--ml40{margin-left:10rem}.--m40{margin:10rem}.--mla{margin-left:auto}.--pl40{padding-left:10rem}.--p40{padding:10rem}.--mr40{margin-right:10rem}.--m40{margin:10rem}.--mra{margin-right:auto}.--pr40{padding-right:10rem}.--p40{padding:10rem}.--bdw0{border-width:0px;border-style:solid}.--bdwt0{border-top-width:0px;border-top-style:solid}.--bdwb0{border-bottom-width:0px;border-bottom-style:solid}.--bdwl0{border-left-width:0px;border-left-style:solid}.--bdwr0{border-right-width:0px;border-right-style:solid}.--bdrtl0{border-top-left-radius:0px}.--bdrtr0{border-top-right-radius:0px}.--bdrbl0{border-bottom-left-radius:0px}.--bdrbr0{border-bottom-right-radius:0px}.--bdw1{border-width:1px;border-style:solid}.--bdwt1{border-top-width:1px;border-top-style:solid}.--bdwb1{border-bottom-width:1px;border-bottom-style:solid}.--bdwl1{border-left-width:1px;border-left-style:solid}.--bdwr1{border-right-width:1px;border-right-style:solid}.--bdrtl1{border-top-left-radius:1px}.--bdrtr1{border-top-right-radius:1px}.--bdrbl1{border-bottom-left-radius:1px}.--bdrbr1{border-bottom-right-radius:1px}.--bdw2{border-width:2px;border-style:solid}.--bdwt2{border-top-width:2px;border-top-style:solid}.--bdwb2{border-bottom-width:2px;border-bottom-style:solid}.--bdwl2{border-left-width:2px;border-left-style:solid}.--bdwr2{border-right-width:2px;border-right-style:solid}.--bdrtl2{border-top-left-radius:2px}.--bdrtr2{border-top-right-radius:2px}.--bdrbl2{border-bottom-left-radius:2px}.--bdrbr2{border-bottom-right-radius:2px}.--bdw3{border-width:3px;border-style:solid}.--bdwt3{border-top-width:3px;border-top-style:solid}.--bdwb3{border-bottom-width:3px;border-bottom-style:solid}.--bdwl3{border-left-width:3px;border-left-style:solid}.--bdwr3{border-right-width:3px;border-right-style:solid}.--bdrtl3{border-top-left-radius:3px}.--bdrtr3{border-top-right-radius:3px}.--bdrbl3{border-bottom-left-radius:3px}.--bdrbr3{border-bottom-right-radius:3px}.--bdw4{border-width:4px;border-style:solid}.--bdwt4{border-top-width:4px;border-top-style:solid}.--bdwb4{border-bottom-width:4px;border-bottom-style:solid}.--bdwl4{border-left-width:4px;border-left-style:solid}.--bdwr4{border-right-width:4px;border-right-style:solid}.--bdrtl4{border-top-left-radius:4px}.--bdrtr4{border-top-right-radius:4px}.--bdrbl4{border-bottom-left-radius:4px}.--bdrbr4{border-bottom-right-radius:4px}.--bdw5{border-width:5px;border-style:solid}.--bdwt5{border-top-width:5px;border-top-style:solid}.--bdwb5{border-bottom-width:5px;border-bottom-style:solid}.--bdwl5{border-left-width:5px;border-left-style:solid}.--bdwr5{border-right-width:5px;border-right-style:solid}.--bdrtl5{border-top-left-radius:5px}.--bdrtr5{border-top-right-radius:5px}.--bdrbl5{border-bottom-left-radius:5px}.--bdrbr5{border-bottom-right-radius:5px}.--bdw6{border-width:6px;border-style:solid}.--bdwt6{border-top-width:6px;border-top-style:solid}.--bdwb6{border-bottom-width:6px;border-bottom-style:solid}.--bdwl6{border-left-width:6px;border-left-style:solid}.--bdwr6{border-right-width:6px;border-right-style:solid}.--bdrtl6{border-top-left-radius:6px}.--bdrtr6{border-top-right-radius:6px}.--bdrbl6{border-bottom-left-radius:6px}.--bdrbr6{border-bottom-right-radius:6px}.--bdw7{border-width:7px;border-style:solid}.--bdwt7{border-top-width:7px;border-top-style:solid}.--bdwb7{border-bottom-width:7px;border-bottom-style:solid}.--bdwl7{border-left-width:7px;border-left-style:solid}.--bdwr7{border-right-width:7px;border-right-style:solid}.--bdrtl7{border-top-left-radius:7px}.--bdrtr7{border-top-right-radius:7px}.--bdrbl7{border-bottom-left-radius:7px}.--bdrbr7{border-bottom-right-radius:7px}.--bdw8{border-width:8px;border-style:solid}.--bdwt8{border-top-width:8px;border-top-style:solid}.--bdwb8{border-bottom-width:8px;border-bottom-style:solid}.--bdwl8{border-left-width:8px;border-left-style:solid}.--bdwr8{border-right-width:8px;border-right-style:solid}.--bdrtl8{border-top-left-radius:8px}.--bdrtr8{border-top-right-radius:8px}.--bdrbl8{border-bottom-left-radius:8px}.--bdrbr8{border-bottom-right-radius:8px}.--bdw9{border-width:9px;border-style:solid}.--bdwt9{border-top-width:9px;border-top-style:solid}.--bdwb9{border-bottom-width:9px;border-bottom-style:solid}.--bdwl9{border-left-width:9px;border-left-style:solid}.--bdwr9{border-right-width:9px;border-right-style:solid}.--bdrtl9{border-top-left-radius:9px}.--bdrtr9{border-top-right-radius:9px}.--bdrbl9{border-bottom-left-radius:9px}.--bdrbr9{border-bottom-right-radius:9px}.--bdw10{border-width:10px;border-style:solid}.--bdwt10{border-top-width:10px;border-top-style:solid}.--bdwb10{border-bottom-width:10px;border-bottom-style:solid}.--bdwl10{border-left-width:10px;border-left-style:solid}.--bdwr10{border-right-width:10px;border-right-style:solid}.--bdrtl10{border-top-left-radius:10px}.--bdrtr10{border-top-right-radius:10px}.--bdrbl10{border-bottom-left-radius:10px}.--bdrbr10{border-bottom-right-radius:10px}.grid{display:grid}.grid.--col1{grid-template-columns:repeat(1,1fr)}.grid.--push1{order:1}.grid.--gap1{grid-gap:1em}.grid.--col2{grid-template-columns:repeat(2,2fr)}.grid.--push2{order:2}.grid.--gap2{grid-gap:2em}.grid.--col3{grid-template-columns:repeat(3,3fr)}.grid.--push3{order:3}.grid.--gap3{grid-gap:3em}.grid.--col4{grid-template-columns:repeat(4,4fr)}.grid.--push4{order:4}.grid.--gap4{grid-gap:4em}.grid.--col5{grid-template-columns:repeat(5,5fr)}.grid.--push5{order:5}.grid.--gap5{grid-gap:5em}.grid.--col6{grid-template-columns:repeat(6,6fr)}.grid.--push6{order:6}.grid.--gap6{grid-gap:6em}.grid.--col7{grid-template-columns:repeat(7,7fr)}.grid.--push7{order:7}.grid.--gap7{grid-gap:7em}.grid.--col8{grid-template-columns:repeat(8,8fr)}.grid.--push8{order:8}.grid.--gap8{grid-gap:8em}.grid.--col9{grid-template-columns:repeat(9,9fr)}.grid.--push9{order:9}.grid.--gap9{grid-gap:9em}.grid.--col10{grid-template-columns:repeat(10,10fr)}.grid.--push10{order:10}.grid.--gap10{grid-gap:10em}.grid.--col11{grid-template-columns:repeat(11,11fr)}.grid.--push11{order:11}.grid.--gap11{grid-gap:11em}.grid.--col12{grid-template-columns:repeat(12,12fr)}.grid.--push12{order:12}.grid.--gap12{grid-gap:12em}.grid.--col13{grid-template-columns:repeat(13,13fr)}.grid.--push13{order:13}.grid.--gap13{grid-gap:13em}.grid.--col14{grid-template-columns:repeat(14,14fr)}.grid.--push14{order:14}.grid.--gap14{grid-gap:14em}.grid.--col15{grid-template-columns:repeat(15,15fr)}.grid.--push15{order:15}.grid.--gap15{grid-gap:15em}.grid.--col16{grid-template-columns:repeat(16,16fr)}.grid.--push16{order:16}.grid.--gap16{grid-gap:16em}.grid.--col17{grid-template-columns:repeat(17,17fr)}.grid.--push17{order:17}.grid.--gap17{grid-gap:17em}.flexgrid.--col1{columns:32px 1;column-gap:2em}.flexgrid.--col2{columns:32px 2;column-gap:2em}.flexgrid.--col3{columns:32px 3;column-gap:2em}.flexgrid.--col4{columns:32px 4;column-gap:2em}.flexgrid.--col5{columns:32px 5;column-gap:2em}.flexgrid.--col6{columns:32px 6;column-gap:2em}.flexgrid.--col7{columns:32px 7;column-gap:2em}.flexgrid.--col8{columns:32px 8;column-gap:2em}.flexgrid.--col9{columns:32px 9;column-gap:2em}.flexgrid.--col10{columns:32px 10;column-gap:2em}.flexgrid.--col11{columns:32px 11;column-gap:2em}.flexgrid.--col12{columns:32px 12;column-gap:2em}.flexgrid.--col13{columns:32px 13;column-gap:2em}.flexgrid.--col14{columns:32px 14;column-gap:2em}.flexgrid.--col15{columns:32px 15;column-gap:2em}.flexgrid.--col16{columns:32px 16;column-gap:2em}.flexgrid.--col17{columns:32px 17;column-gap:2em}.--grid-gap-0{grid-gap:0rem}.--grid-gap-1{grid-gap:1rem}.--grid-gap-2{grid-gap:2rem}.--grid-gap-3{grid-gap:3rem}.--grid-gap-4{grid-gap:4rem}.--grid-gap-5{grid-gap:5rem}.--grid-gap-6{grid-gap:6rem}.--grid-gap-7{grid-gap:7rem}.--grid-gap-8{grid-gap:8rem}.--grid-gap-9{grid-gap:9rem}.--grid-gap-10{grid-gap:10rem}@page{size:"US-Letter";prince-shrink-to-fit:auto;margin:0.4in;@bottom-center{content:"Page " counter(page) " of " counter(pages);font-size:10pt;font-family:"Helvetica",Arial,sans-serif;color:#999;margin:0;padding:0}}#footer{flow:static(footer,start);font-size:7pt;font-family:"Helvetica",Arial,sans-serif;color:#666}.doc{overflow:auto;page-break-before:always}.doc a{color:#333;font-weight:bold;text-decoration:underline}.doc ol{font-family:"Helvetica",Arial,sans-serif}.doc ol li{line-height:1.25;margin-bottom:10px;font-size:13px;color:#666}.doc ol.checklist li{list-style:none;margin-left:2.25em}.doc ol.checklist li:before{content:"";border:1px solid #eaeaea;width:1em;height:1em;display:inline-block;float:left;text-align:left;margin-right:1em;margin-left:-2.25em}.doc ul{color:#666;font-family:"Helvetica",Arial,sans-serif}.doc ul.nobullet{list-style:none}.doc ul li{margin-bottom:10px;font-size:14px}.doc ul li:last-of-type{margin-bottom:0}.doc input{width:99%;border:none;display:block;min-height:18px}.doc textarea{min-height:65px;border:none;outline:none}.doc .checkbox{display:inline-block!important;align-items:center;margin-right:1em}.doc .checkbox input[type=checkbox]{visibility:visible;opacity:0;width:0!important;height:0!important;display:inline}.doc .checkbox input[type=checkbox]:disabled{cursor:not-allowed}.doc .checkbox input[type=checkbox]:disabled+label{color:var(--light-gray,#999)}.doc .checkbox input[type=checkbox]:disabled+label:before{cursor:not-allowed}.doc .checkbox input[type=checkbox]:disabled+label:hover:before{cursor:not-allowed;border:1px solid var(--subtle-gray,#999)}.doc .checkbox input[type=checkbox]:disabled+label{cursor:not-allowed}.doc .checkbox input[type=checkbox]:disabled+label:hover{cursor:not-allowed}.doc .checkbox input[type=checkbox]:checked+label:before{content:"";font-family:"Font Awesome 5 Pro";font-weight:900;border:1px solid transparent;background:var(--brand-color1,#2a9dc9);color:white;line-height:1;text-align:center;transition:all 0.1s ease;vertical-align:middle}.doc .checkbox input[type=checkbox]:focus+label:before{border:1px solid var(--brand-color1,#2a9dc9)}.doc .checkbox label{background:transparent;display:inline-flex;line-height:1.25;padding:0;color:var(--dove-gray,#666);transition:all 0.1s ease;font-family:"Helvetica","Arial",sans-serif;color:#666;font-size:14px;margin:0 1em 0 0}.doc .checkbox label:before{content:"";min-width:15px;min-height:15px;max-width:15px;max-height:15px;border-radius:3px;display:inline-block;margin:0 0.5em 0 0;border:1px solid var(--striking-silver,#ccc);transition:all 0.2s ease;vertical-align:middle;background:white}.doc .checkbox label:hover{cursor:pointer}.doc .checkbox label:hover:before{transition:all 0.2s ease;border:1px solid var(--brand-color1,#2a9dc9)}.doc .input-group{display:block;width:100%;margin:8px 0}.doc .input-group label{font-family:"Helvetica",Arial,sans-serif;font-size:13px;margin:15px 0;display:inline-block;border:none;outline:none;margin-right:20px}.doc .input-group input{width:auto;display:inline-block}.doc .input-group input[type=checkbox]{outline:none}.doc h1,.doc h2,.doc h3,.doc h4,.doc h5,.doc h6{font-family:"Helvetica",Arial,sans-serif;font-weight:bold;margin:25px 0 0 0}.doc h1+p,.doc h2+p,.doc h3+p,.doc h4+p,.doc h5+p,.doc h6+p{margin:5px 0 15px 0}.doc p{font-family:"Helvetica","Arial",sans-serif;color:#666;font-size:13px;margin:12px 0;line-height:1.25;text-align:justify;text-align-last:left}.doc p.helper-hint{font-style:italic;font-size:12px;line-height:auto;color:#999}.doc p u{font-weight:bold;line-height:1.5;color:#333}.doc p input{display:inline-block;width:auto}.doc p input.underlined{border-bottom:1px solid #000}.doc strong{font-family:"Helvetica","Arial",sans-serif;color:black;font-size:13px;text-decoration:underline;display:block;width:auto;margin:5px 0 2px 0;margin:0;padding:0}.doc strong+*{margin-top:0.5em;margin-bottom:1em}.doc .bold,.doc b{color:#333;font-weight:bold;display:inline-block!important}.doc .version{color:#999;font-size:10px}.doc .agreement-terms{margin-top:1.5em;margin-bottom:0.75em;color:#a0270b;font-weight:600}.doc .important{font-family:"Helvetica",Arial,sans-serif;color:#a0270b;text-decoration:underline;font-weight:700}.doc .page-break{overflow:auto;page-break-before:always;opacity:0;height:0}.doc table{width:100%}.doc table li,.doc table td,.doc table tr{font-family:"Helvetica","Arial",sans-serif;font-size:13px}.doc table td{border-color:#ccc!important}.doc table.info-table{border-spacing:0;border-collapse:collapse}.doc table.info-table tr.section-header{font-weight:800;font-size:11px;margin-bottom:5px;background:#eaeaea}.doc table.info-table tr.section-header .label,.doc table.info-table tr.section-header td{color:#333}.doc table.info-table tr td{padding:8px;color:#666;border:1px solid #000000;vertical-align:top}.doc table.info-table tr td.--bd0{border:none}.doc table.info-table tr td .label{font-weight:800;font-size:11px;color:#333;display:block;width:100%;margin-bottom:5px}.doc table.info-table tr td .label.list{line-height:1.4}.doc table.info-table tr td p{margin:5px 0 2px 0}.doc table.info-table tr td[colspan="1"]{width:8.3333%}.doc table.info-table tr td[colspan="2"]{width:16.667%}.doc table.info-table tr td[colspan="3"]{width:25%}.doc table.info-table tr td[colspan="4"]{width:33.333%}.doc table.info-table tr td[colspan="5"]{width:41.667%}.doc table.info-table tr td[colspan="6"]{width:50%}.doc table.info-table tr td[colspan="7"]{width:58.333%}.doc table.info-table tr td[colspan="8"]{width:66.667%}.doc table.info-table tr td[colspan="9"]{width:75%}.doc table.info-table tr td[colspan="10"]{width:83.333%}.doc table.info-table tr td[colspan="11"]{width:91.667%}.doc table.info-table tr td[colspan="12"]{width:100%}.doc table.info-table tr.notifications{text-align:center}.doc table.info-table tr.notifications span{font-size:10px}.doc table.signature{margin-top:35px}.doc .payment_schedule table li,.doc .payment_schedule table td,.doc .payment_schedule table tr{font-family:"Helvetica","Arial",sans-serif;font-size:13px}.doc .payment_schedule table td{border-color:#ccc!important}.doc h4.section-header+table{margin-top:1.5em}.doc .--txAlignCenter{text-align:center}.doc .highlighted{background-color:#fdff32}.doc .flex{display:flex}.doc .--w1{width:1%}.doc .--h1{height:1%}.doc .--w2{width:2%}.doc .--h2{height:2%}.doc .--w3{width:3%}.doc .--h3{height:3%}.doc .--w4{width:4%}.doc .--h4{height:4%}.doc .--w5{width:5%}.doc .--h5{height:5%}.doc .--w6{width:6%}.doc .--h6{height:6%}.doc .--w7{width:7%}.doc .--h7{height:7%}.doc .--w8{width:8%}.doc .--h8{height:8%}.doc .--w9{width:9%}.doc .--h9{height:9%}.doc .--w10{width:10%}.doc .--h10{height:10%}.doc .--w11{width:11%}.doc .--h11{height:11%}.doc .--w12{width:12%}.doc .--h12{height:12%}.doc .--w13{width:13%}.doc .--h13{height:13%}.doc .--w14{width:14%}.doc .--h14{height:14%}.doc .--w15{width:15%}.doc .--h15{height:15%}.doc .--w16{width:16%}.doc .--h16{height:16%}.doc .--w17{width:17%}.doc .--h17{height:17%}.doc .--w18{width:18%}.doc .--h18{height:18%}.doc .--w19{width:19%}.doc .--h19{height:19%}.doc .--w20{width:20%}.doc .--h20{height:20%}.doc .--w21{width:21%}.doc .--h21{height:21%}.doc .--w22{width:22%}.doc .--h22{height:22%}.doc .--w23{width:23%}.doc .--h23{height:23%}.doc .--w24{width:24%}.doc .--h24{height:24%}.doc .--w25{width:25%}.doc .--h25{height:25%}.doc .--w26{width:26%}.doc .--h26{height:26%}.doc .--w27{width:27%}.doc .--h27{height:27%}.doc .--w28{width:28%}.doc .--h28{height:28%}.doc .--w29{width:29%}.doc .--h29{height:29%}.doc .--w30{width:30%}.doc .--h30{height:30%}.doc .--w31{width:31%}.doc .--h31{height:31%}.doc .--w32{width:32%}.doc .--h32{height:32%}.doc .--w33{width:33%}.doc .--h33{height:33%}.doc .--w34{width:34%}.doc .--h34{height:34%}.doc .--w35{width:35%}.doc .--h35{height:35%}.doc .--w36{width:36%}.doc .--h36{height:36%}.doc .--w37{width:37%}.doc .--h37{height:37%}.doc .--w38{width:38%}.doc .--h38{height:38%}.doc .--w39{width:39%}.doc .--h39{height:39%}.doc .--w40{width:40%}.doc .--h40{height:40%}.doc .--w41{width:41%}.doc .--h41{height:41%}.doc .--w42{width:42%}.doc .--h42{height:42%}.doc .--w43{width:43%}.doc .--h43{height:43%}.doc .--w44{width:44%}.doc .--h44{height:44%}.doc .--w45{width:45%}.doc .--h45{height:45%}.doc .--w46{width:46%}.doc .--h46{height:46%}.doc .--w47{width:47%}.doc .--h47{height:47%}.doc .--w48{width:48%}.doc .--h48{height:48%}.doc .--w49{width:49%}.doc .--h49{height:49%}.doc .--w50{width:50%}.doc .--h50{height:50%}.doc .--w51{width:51%}.doc .--h51{height:51%}.doc .--w52{width:52%}.doc .--h52{height:52%}.doc .--w53{width:53%}.doc .--h53{height:53%}.doc .--w54{width:54%}.doc .--h54{height:54%}.doc .--w55{width:55%}.doc .--h55{height:55%}.doc .--w56{width:56%}.doc .--h56{height:56%}.doc .--w57{width:57%}.doc .--h57{height:57%}.doc .--w58{width:58%}.doc .--h58{height:58%}.doc .--w59{width:59%}.doc .--h59{height:59%}.doc .--w60{width:60%}.doc .--h60{height:60%}.doc .--w61{width:61%}.doc .--h61{height:61%}.doc .--w62{width:62%}.doc .--h62{height:62%}.doc .--w63{width:63%}.doc .--h63{height:63%}.doc .--w64{width:64%}.doc .--h64{height:64%}.doc .--w65{width:65%}.doc .--h65{height:65%}.doc .--w66{width:66%}.doc .--h66{height:66%}.doc .--w67{width:67%}.doc .--h67{height:67%}.doc .--w68{width:68%}.doc .--h68{height:68%}.doc .--w69{width:69%}.doc .--h69{height:69%}.doc .--w70{width:70%}.doc .--h70{height:70%}.doc .--w71{width:71%}.doc .--h71{height:71%}.doc .--w72{width:72%}.doc .--h72{height:72%}.doc .--w73{width:73%}.doc .--h73{height:73%}.doc .--w74{width:74%}.doc .--h74{height:74%}.doc .--w75{width:75%}.doc .--h75{height:75%}.doc .--w76{width:76%}.doc .--h76{height:76%}.doc .--w77{width:77%}.doc .--h77{height:77%}.doc .--w78{width:78%}.doc .--h78{height:78%}.doc .--w79{width:79%}.doc .--h79{height:79%}.doc .--w80{width:80%}.doc .--h80{height:80%}.doc .--w81{width:81%}.doc .--h81{height:81%}.doc .--w82{width:82%}.doc .--h82{height:82%}.doc .--w83{width:83%}.doc .--h83{height:83%}.doc .--w84{width:84%}.doc .--h84{height:84%}.doc .--w85{width:85%}.doc .--h85{height:85%}.doc .--w86{width:86%}.doc .--h86{height:86%}.doc .--w87{width:87%}.doc .--h87{height:87%}.doc .--w88{width:88%}.doc .--h88{height:88%}.doc .--w89{width:89%}.doc .--h89{height:89%}.doc .--w90{width:90%}.doc .--h90{height:90%}.doc .--w91{width:91%}.doc .--h91{height:91%}.doc .--w92{width:92%}.doc .--h92{height:92%}.doc .--w93{width:93%}.doc .--h93{height:93%}.doc .--w94{width:94%}.doc .--h94{height:94%}.doc .--w95{width:95%}.doc .--h95{height:95%}.doc .--w96{width:96%}.doc .--h96{height:96%}.doc .--w97{width:97%}.doc .--h97{height:97%}.doc .--w98{width:98%}.doc .--h98{height:98%}.doc .--w99{width:99%}.doc .--h99{height:99%}.doc .--w100{width:100%}.doc .--h100{height:100%}.doc .--wa{width:auto}.doc .--justify-between{justify-content:space-between}.doc .--justify-around{justify-content:space-around}.doc .--justify-evenly{justify-content:space-evenly}.doc .--justify-start{justify-content:start}.doc .--justify-center{justify-content:center}.doc .--align-stretch{align-items:stretch}.doc .--align-center{align-items:center}.doc .--align-start{align-items:start}.doc .--align-end{align-items:end}.doc .--wrap{flex-wrap:wrap}.doc .--no-wrap{flex-wrap:nowrap}.doc .--wrap-reverse{flex-wrap:wrap-reverse}.doc .--row{flex-flow:row}.doc .--row-reverse{flex-flow:row-reverse}.doc .--column{flex-flow:column}.doc .--column-reverse{flex-flow:column-reverse}.doc .--mt0{margin-top:0rem}.doc .--m0{margin:0rem}.doc .--mta{margin-top:auto}.doc .--pt0{padding-top:0rem}.doc .--p0{padding:0rem}.doc .--mb0{margin-bottom:0rem}.doc .--m0{margin:0rem}.doc .--mba{margin-bottom:auto}.doc .--pb0{padding-bottom:0rem}.doc .--p0{padding:0rem}.doc .--ml0{margin-left:0rem}.doc .--m0{margin:0rem}.doc .--mla{margin-left:auto}.doc .--pl0{padding-left:0rem}.doc .--p0{padding:0rem}.doc .--mr0{margin-right:0rem}.doc .--m0{margin:0rem}.doc .--mra{margin-right:auto}.doc .--pr0{padding-right:0rem}.doc .--p0{padding:0rem}.doc .--mt1{margin-top:0.25rem}.doc .--m1{margin:0.25rem}.doc .--mta{margin-top:auto}.doc .--pt1{padding-top:0.25rem}.doc .--p1{padding:0.25rem}.doc .--mb1{margin-bottom:0.25rem}.doc .--m1{margin:0.25rem}.doc .--mba{margin-bottom:auto}.doc .--pb1{padding-bottom:0.25rem}.doc .--p1{padding:0.25rem}.doc .--ml1{margin-left:0.25rem}.doc .--m1{margin:0.25rem}.doc .--mla{margin-left:auto}.doc .--pl1{padding-left:0.25rem}.doc .--p1{padding:0.25rem}.doc .--mr1{margin-right:0.25rem}.doc .--m1{margin:0.25rem}.doc .--mra{margin-right:auto}.doc .--pr1{padding-right:0.25rem}.doc .--p1{padding:0.25rem}.doc .--mt2{margin-top:0.5rem}.doc .--m2{margin:0.5rem}.doc .--mta{margin-top:auto}.doc .--pt2{padding-top:0.5rem}.doc .--p2{padding:0.5rem}.doc .--mb2{margin-bottom:0.5rem}.doc .--m2{margin:0.5rem}.doc .--mba{margin-bottom:auto}.doc .--pb2{padding-bottom:0.5rem}.doc .--p2{padding:0.5rem}.doc .--ml2{margin-left:0.5rem}.doc .--m2{margin:0.5rem}.doc .--mla{margin-left:auto}.doc .--pl2{padding-left:0.5rem}.doc .--p2{padding:0.5rem}.doc .--mr2{margin-right:0.5rem}.doc .--m2{margin:0.5rem}.doc .--mra{margin-right:auto}.doc .--pr2{padding-right:0.5rem}.doc .--p2{padding:0.5rem}.doc .--mt3{margin-top:0.75rem}.doc .--m3{margin:0.75rem}.doc .--mta{margin-top:auto}.doc .--pt3{padding-top:0.75rem}.doc .--p3{padding:0.75rem}.doc .--mb3{margin-bottom:0.75rem}.doc .--m3{margin:0.75rem}.doc .--mba{margin-bottom:auto}.doc .--pb3{padding-bottom:0.75rem}.doc .--p3{padding:0.75rem}.doc .--ml3{margin-left:0.75rem}.doc .--m3{margin:0.75rem}.doc .--mla{margin-left:auto}.doc .--pl3{padding-left:0.75rem}.doc .--p3{padding:0.75rem}.doc .--mr3{margin-right:0.75rem}.doc .--m3{margin:0.75rem}.doc .--mra{margin-right:auto}.doc .--pr3{padding-right:0.75rem}.doc .--p3{padding:0.75rem}.doc .--mt4{margin-top:1rem}.doc .--m4{margin:1rem}.doc .--mta{margin-top:auto}.doc .--pt4{padding-top:1rem}.doc .--p4{padding:1rem}.doc .--mb4{margin-bottom:1rem}.doc .--m4{margin:1rem}.doc .--mba{margin-bottom:auto}.doc .--pb4{padding-bottom:1rem}.doc .--p4{padding:1rem}.doc .--ml4{margin-left:1rem}.doc .--m4{margin:1rem}.doc .--mla{margin-left:auto}.doc .--pl4{padding-left:1rem}.doc .--p4{padding:1rem}.doc .--mr4{margin-right:1rem}.doc .--m4{margin:1rem}.doc .--mra{margin-right:auto}.doc .--pr4{padding-right:1rem}.doc .--p4{padding:1rem}.doc .--mt5{margin-top:1.25rem}.doc .--m5{margin:1.25rem}.doc .--mta{margin-top:auto}.doc .--pt5{padding-top:1.25rem}.doc .--p5{padding:1.25rem}.doc .--mb5{margin-bottom:1.25rem}.doc .--m5{margin:1.25rem}.doc .--mba{margin-bottom:auto}.doc .--pb5{padding-bottom:1.25rem}.doc .--p5{padding:1.25rem}.doc .--ml5{margin-left:1.25rem}.doc .--m5{margin:1.25rem}.doc .--mla{margin-left:auto}.doc .--pl5{padding-left:1.25rem}.doc .--p5{padding:1.25rem}.doc .--mr5{margin-right:1.25rem}.doc .--m5{margin:1.25rem}.doc .--mra{margin-right:auto}.doc .--pr5{padding-right:1.25rem}.doc .--p5{padding:1.25rem}.doc .--mt6{margin-top:1.5rem}.doc .--m6{margin:1.5rem}.doc .--mta{margin-top:auto}.doc .--pt6{padding-top:1.5rem}.doc .--p6{padding:1.5rem}.doc .--mb6{margin-bottom:1.5rem}.doc .--m6{margin:1.5rem}.doc .--mba{margin-bottom:auto}.doc .--pb6{padding-bottom:1.5rem}.doc .--p6{padding:1.5rem}.doc .--ml6{margin-left:1.5rem}.doc .--m6{margin:1.5rem}.doc .--mla{margin-left:auto}.doc .--pl6{padding-left:1.5rem}.doc .--p6{padding:1.5rem}.doc .--mr6{margin-right:1.5rem}.doc .--m6{margin:1.5rem}.doc .--mra{margin-right:auto}.doc .--pr6{padding-right:1.5rem}.doc .--p6{padding:1.5rem}.doc .--mt7{margin-top:1.75rem}.doc .--m7{margin:1.75rem}.doc .--mta{margin-top:auto}.doc .--pt7{padding-top:1.75rem}.doc .--p7{padding:1.75rem}.doc .--mb7{margin-bottom:1.75rem}.doc .--m7{margin:1.75rem}.doc .--mba{margin-bottom:auto}.doc .--pb7{padding-bottom:1.75rem}.doc .--p7{padding:1.75rem}.doc .--ml7{margin-left:1.75rem}.doc .--m7{margin:1.75rem}.doc .--mla{margin-left:auto}.doc .--pl7{padding-left:1.75rem}.doc .--p7{padding:1.75rem}.doc .--mr7{margin-right:1.75rem}.doc .--m7{margin:1.75rem}.doc .--mra{margin-right:auto}.doc .--pr7{padding-right:1.75rem}.doc .--p7{padding:1.75rem}.doc .--mt8{margin-top:2rem}.doc .--m8{margin:2rem}.doc .--mta{margin-top:auto}.doc .--pt8{padding-top:2rem}.doc .--p8{padding:2rem}.doc .--mb8{margin-bottom:2rem}.doc .--m8{margin:2rem}.doc .--mba{margin-bottom:auto}.doc .--pb8{padding-bottom:2rem}.doc .--p8{padding:2rem}.doc .--ml8{margin-left:2rem}.doc .--m8{margin:2rem}.doc .--mla{margin-left:auto}.doc .--pl8{padding-left:2rem}.doc .--p8{padding:2rem}.doc .--mr8{margin-right:2rem}.doc .--m8{margin:2rem}.doc .--mra{margin-right:auto}.doc .--pr8{padding-right:2rem}.doc .--p8{padding:2rem}.doc .--mt9{margin-top:2.25rem}.doc .--m9{margin:2.25rem}.doc .--mta{margin-top:auto}.doc .--pt9{padding-top:2.25rem}.doc .--p9{padding:2.25rem}.doc .--mb9{margin-bottom:2.25rem}.doc .--m9{margin:2.25rem}.doc .--mba{margin-bottom:auto}.doc .--pb9{padding-bottom:2.25rem}.doc .--p9{padding:2.25rem}.doc .--ml9{margin-left:2.25rem}.doc .--m9{margin:2.25rem}.doc .--mla{margin-left:auto}.doc .--pl9{padding-left:2.25rem}.doc .--p9{padding:2.25rem}.doc .--mr9{margin-right:2.25rem}.doc .--m9{margin:2.25rem}.doc .--mra{margin-right:auto}.doc .--pr9{padding-right:2.25rem}.doc .--p9{padding:2.25rem}.doc .--mt10{margin-top:2.5rem}.doc .--m10{margin:2.5rem}.doc .--mta{margin-top:auto}.doc .--pt10{padding-top:2.5rem}.doc .--p10{padding:2.5rem}.doc .--mb10{margin-bottom:2.5rem}.doc .--m10{margin:2.5rem}.doc .--mba{margin-bottom:auto}.doc .--pb10{padding-bottom:2.5rem}.doc .--p10{padding:2.5rem}.doc .--ml10{margin-left:2.5rem}.doc .--m10{margin:2.5rem}.doc .--mla{margin-left:auto}.doc .--pl10{padding-left:2.5rem}.doc .--p10{padding:2.5rem}.doc .--mr10{margin-right:2.5rem}.doc .--m10{margin:2.5rem}.doc .--mra{margin-right:auto}.doc .--pr10{padding-right:2.5rem}.doc .--p10{padding:2.5rem}.doc .--mt11{margin-top:2.75rem}.doc .--m11{margin:2.75rem}.doc .--mta{margin-top:auto}.doc .--pt11{padding-top:2.75rem}.doc .--p11{padding:2.75rem}.doc .--mb11{margin-bottom:2.75rem}.doc .--m11{margin:2.75rem}.doc .--mba{margin-bottom:auto}.doc .--pb11{padding-bottom:2.75rem}.doc .--p11{padding:2.75rem}.doc .--ml11{margin-left:2.75rem}.doc .--m11{margin:2.75rem}.doc .--mla{margin-left:auto}.doc .--pl11{padding-left:2.75rem}.doc .--p11{padding:2.75rem}.doc .--mr11{margin-right:2.75rem}.doc .--m11{margin:2.75rem}.doc .--mra{margin-right:auto}.doc .--pr11{padding-right:2.75rem}.doc .--p11{padding:2.75rem}.doc .--mt12{margin-top:3rem}.doc .--m12{margin:3rem}.doc .--mta{margin-top:auto}.doc .--pt12{padding-top:3rem}.doc .--p12{padding:3rem}.doc .--mb12{margin-bottom:3rem}.doc .--m12{margin:3rem}.doc .--mba{margin-bottom:auto}.doc .--pb12{padding-bottom:3rem}.doc .--p12{padding:3rem}.doc .--ml12{margin-left:3rem}.doc .--m12{margin:3rem}.doc .--mla{margin-left:auto}.doc .--pl12{padding-left:3rem}.doc .--p12{padding:3rem}.doc .--mr12{margin-right:3rem}.doc .--m12{margin:3rem}.doc .--mra{margin-right:auto}.doc .--pr12{padding-right:3rem}.doc .--p12{padding:3rem}.doc .--mt13{margin-top:3.25rem}.doc .--m13{margin:3.25rem}.doc .--mta{margin-top:auto}.doc .--pt13{padding-top:3.25rem}.doc .--p13{padding:3.25rem}.doc .--mb13{margin-bottom:3.25rem}.doc .--m13{margin:3.25rem}.doc .--mba{margin-bottom:auto}.doc .--pb13{padding-bottom:3.25rem}.doc .--p13{padding:3.25rem}.doc .--ml13{margin-left:3.25rem}.doc .--m13{margin:3.25rem}.doc .--mla{margin-left:auto}.doc .--pl13{padding-left:3.25rem}.doc .--p13{padding:3.25rem}.doc .--mr13{margin-right:3.25rem}.doc .--m13{margin:3.25rem}.doc .--mra{margin-right:auto}.doc .--pr13{padding-right:3.25rem}.doc .--p13{padding:3.25rem}.doc .--mt14{margin-top:3.5rem}.doc .--m14{margin:3.5rem}.doc .--mta{margin-top:auto}.doc .--pt14{padding-top:3.5rem}.doc .--p14{padding:3.5rem}.doc .--mb14{margin-bottom:3.5rem}.doc .--m14{margin:3.5rem}.doc .--mba{margin-bottom:auto}.doc .--pb14{padding-bottom:3.5rem}.doc .--p14{padding:3.5rem}.doc .--ml14{margin-left:3.5rem}.doc .--m14{margin:3.5rem}.doc .--mla{margin-left:auto}.doc .--pl14{padding-left:3.5rem}.doc .--p14{padding:3.5rem}.doc .--mr14{margin-right:3.5rem}.doc .--m14{margin:3.5rem}.doc .--mra{margin-right:auto}.doc .--pr14{padding-right:3.5rem}.doc .--p14{padding:3.5rem}.doc .--mt15{margin-top:3.75rem}.doc .--m15{margin:3.75rem}.doc .--mta{margin-top:auto}.doc .--pt15{padding-top:3.75rem}.doc .--p15{padding:3.75rem}.doc .--mb15{margin-bottom:3.75rem}.doc .--m15{margin:3.75rem}.doc .--mba{margin-bottom:auto}.doc .--pb15{padding-bottom:3.75rem}.doc .--p15{padding:3.75rem}.doc .--ml15{margin-left:3.75rem}.doc .--m15{margin:3.75rem}.doc .--mla{margin-left:auto}.doc .--pl15{padding-left:3.75rem}.doc .--p15{padding:3.75rem}.doc .--mr15{margin-right:3.75rem}.doc .--m15{margin:3.75rem}.doc .--mra{margin-right:auto}.doc .--pr15{padding-right:3.75rem}.doc .--p15{padding:3.75rem}.doc .--mt16{margin-top:4rem}.doc .--m16{margin:4rem}.doc .--mta{margin-top:auto}.doc .--pt16{padding-top:4rem}.doc .--p16{padding:4rem}.doc .--mb16{margin-bottom:4rem}.doc .--m16{margin:4rem}.doc .--mba{margin-bottom:auto}.doc .--pb16{padding-bottom:4rem}.doc .--p16{padding:4rem}.doc .--ml16{margin-left:4rem}.doc .--m16{margin:4rem}.doc .--mla{margin-left:auto}.doc .--pl16{padding-left:4rem}.doc .--p16{padding:4rem}.doc .--mr16{margin-right:4rem}.doc .--m16{margin:4rem}.doc .--mra{margin-right:auto}.doc .--pr16{padding-right:4rem}.doc .--p16{padding:4rem}.doc .--mt17{margin-top:4.25rem}.doc .--m17{margin:4.25rem}.doc .--mta{margin-top:auto}.doc .--pt17{padding-top:4.25rem}.doc .--p17{padding:4.25rem}.doc .--mb17{margin-bottom:4.25rem}.doc .--m17{margin:4.25rem}.doc .--mba{margin-bottom:auto}.doc .--pb17{padding-bottom:4.25rem}.doc .--p17{padding:4.25rem}.doc .--ml17{margin-left:4.25rem}.doc .--m17{margin:4.25rem}.doc .--mla{margin-left:auto}.doc .--pl17{padding-left:4.25rem}.doc .--p17{padding:4.25rem}.doc .--mr17{margin-right:4.25rem}.doc .--m17{margin:4.25rem}.doc .--mra{margin-right:auto}.doc .--pr17{padding-right:4.25rem}.doc .--p17{padding:4.25rem}.doc .--mt18{margin-top:4.5rem}.doc .--m18{margin:4.5rem}.doc .--mta{margin-top:auto}.doc .--pt18{padding-top:4.5rem}.doc .--p18{padding:4.5rem}.doc .--mb18{margin-bottom:4.5rem}.doc .--m18{margin:4.5rem}.doc .--mba{margin-bottom:auto}.doc .--pb18{padding-bottom:4.5rem}.doc .--p18{padding:4.5rem}.doc .--ml18{margin-left:4.5rem}.doc .--m18{margin:4.5rem}.doc .--mla{margin-left:auto}.doc .--pl18{padding-left:4.5rem}.doc .--p18{padding:4.5rem}.doc .--mr18{margin-right:4.5rem}.doc .--m18{margin:4.5rem}.doc .--mra{margin-right:auto}.doc .--pr18{padding-right:4.5rem}.doc .--p18{padding:4.5rem}.doc .--mt19{margin-top:4.75rem}.doc .--m19{margin:4.75rem}.doc .--mta{margin-top:auto}.doc .--pt19{padding-top:4.75rem}.doc .--p19{padding:4.75rem}.doc .--mb19{margin-bottom:4.75rem}.doc .--m19{margin:4.75rem}.doc .--mba{margin-bottom:auto}.doc .--pb19{padding-bottom:4.75rem}.doc .--p19{padding:4.75rem}.doc .--ml19{margin-left:4.75rem}.doc .--m19{margin:4.75rem}.doc .--mla{margin-left:auto}.doc .--pl19{padding-left:4.75rem}.doc .--p19{padding:4.75rem}.doc .--mr19{margin-right:4.75rem}.doc .--m19{margin:4.75rem}.doc .--mra{margin-right:auto}.doc .--pr19{padding-right:4.75rem}.doc .--p19{padding:4.75rem}.doc .--mt20{margin-top:5rem}.doc .--m20{margin:5rem}.doc .--mta{margin-top:auto}.doc .--pt20{padding-top:5rem}.doc .--p20{padding:5rem}.doc .--mb20{margin-bottom:5rem}.doc .--m20{margin:5rem}.doc .--mba{margin-bottom:auto}.doc .--pb20{padding-bottom:5rem}.doc .--p20{padding:5rem}.doc .--ml20{margin-left:5rem}.doc .--m20{margin:5rem}.doc .--mla{margin-left:auto}.doc .--pl20{padding-left:5rem}.doc .--p20{padding:5rem}.doc .--mr20{margin-right:5rem}.doc .--m20{margin:5rem}.doc .--mra{margin-right:auto}.doc .--pr20{padding-right:5rem}.doc .--p20{padding:5rem}.doc .--mt21{margin-top:5.25rem}.doc .--m21{margin:5.25rem}.doc .--mta{margin-top:auto}.doc .--pt21{padding-top:5.25rem}.doc .--p21{padding:5.25rem}.doc .--mb21{margin-bottom:5.25rem}.doc .--m21{margin:5.25rem}.doc .--mba{margin-bottom:auto}.doc .--pb21{padding-bottom:5.25rem}.doc .--p21{padding:5.25rem}.doc .--ml21{margin-left:5.25rem}.doc .--m21{margin:5.25rem}.doc .--mla{margin-left:auto}.doc .--pl21{padding-left:5.25rem}.doc .--p21{padding:5.25rem}.doc .--mr21{margin-right:5.25rem}.doc .--m21{margin:5.25rem}.doc .--mra{margin-right:auto}.doc .--pr21{padding-right:5.25rem}.doc .--p21{padding:5.25rem}.doc .--mt22{margin-top:5.5rem}.doc .--m22{margin:5.5rem}.doc .--mta{margin-top:auto}.doc .--pt22{padding-top:5.5rem}.doc .--p22{padding:5.5rem}.doc .--mb22{margin-bottom:5.5rem}.doc .--m22{margin:5.5rem}.doc .--mba{margin-bottom:auto}.doc .--pb22{padding-bottom:5.5rem}.doc .--p22{padding:5.5rem}.doc .--ml22{margin-left:5.5rem}.doc .--m22{margin:5.5rem}.doc .--mla{margin-left:auto}.doc .--pl22{padding-left:5.5rem}.doc .--p22{padding:5.5rem}.doc .--mr22{margin-right:5.5rem}.doc .--m22{margin:5.5rem}.doc .--mra{margin-right:auto}.doc .--pr22{padding-right:5.5rem}.doc .--p22{padding:5.5rem}.doc .--mt23{margin-top:5.75rem}.doc .--m23{margin:5.75rem}.doc .--mta{margin-top:auto}.doc .--pt23{padding-top:5.75rem}.doc .--p23{padding:5.75rem}.doc .--mb23{margin-bottom:5.75rem}.doc .--m23{margin:5.75rem}.doc .--mba{margin-bottom:auto}.doc .--pb23{padding-bottom:5.75rem}.doc .--p23{padding:5.75rem}.doc .--ml23{margin-left:5.75rem}.doc .--m23{margin:5.75rem}.doc .--mla{margin-left:auto}.doc .--pl23{padding-left:5.75rem}.doc .--p23{padding:5.75rem}.doc .--mr23{margin-right:5.75rem}.doc .--m23{margin:5.75rem}.doc .--mra{margin-right:auto}.doc .--pr23{padding-right:5.75rem}.doc .--p23{padding:5.75rem}.doc .--mt24{margin-top:6rem}.doc .--m24{margin:6rem}.doc .--mta{margin-top:auto}.doc .--pt24{padding-top:6rem}.doc .--p24{padding:6rem}.doc .--mb24{margin-bottom:6rem}.doc .--m24{margin:6rem}.doc .--mba{margin-bottom:auto}.doc .--pb24{padding-bottom:6rem}.doc .--p24{padding:6rem}.doc .--ml24{margin-left:6rem}.doc .--m24{margin:6rem}.doc .--mla{margin-left:auto}.doc .--pl24{padding-left:6rem}.doc .--p24{padding:6rem}.doc .--mr24{margin-right:6rem}.doc .--m24{margin:6rem}.doc .--mra{margin-right:auto}.doc .--pr24{padding-right:6rem}.doc .--p24{padding:6rem}.doc .--mt25{margin-top:6.25rem}.doc .--m25{margin:6.25rem}.doc .--mta{margin-top:auto}.doc .--pt25{padding-top:6.25rem}.doc .--p25{padding:6.25rem}.doc .--mb25{margin-bottom:6.25rem}.doc .--m25{margin:6.25rem}.doc .--mba{margin-bottom:auto}.doc .--pb25{padding-bottom:6.25rem}.doc .--p25{padding:6.25rem}.doc .--ml25{margin-left:6.25rem}.doc .--m25{margin:6.25rem}.doc .--mla{margin-left:auto}.doc .--pl25{padding-left:6.25rem}.doc .--p25{padding:6.25rem}.doc .--mr25{margin-right:6.25rem}.doc .--m25{margin:6.25rem}.doc .--mra{margin-right:auto}.doc .--pr25{padding-right:6.25rem}.doc .--p25{padding:6.25rem}.doc .--mt26{margin-top:6.5rem}.doc .--m26{margin:6.5rem}.doc .--mta{margin-top:auto}.doc .--pt26{padding-top:6.5rem}.doc .--p26{padding:6.5rem}.doc .--mb26{margin-bottom:6.5rem}.doc .--m26{margin:6.5rem}.doc .--mba{margin-bottom:auto}.doc .--pb26{padding-bottom:6.5rem}.doc .--p26{padding:6.5rem}.doc .--ml26{margin-left:6.5rem}.doc .--m26{margin:6.5rem}.doc .--mla{margin-left:auto}.doc .--pl26{padding-left:6.5rem}.doc .--p26{padding:6.5rem}.doc .--mr26{margin-right:6.5rem}.doc .--m26{margin:6.5rem}.doc .--mra{margin-right:auto}.doc .--pr26{padding-right:6.5rem}.doc .--p26{padding:6.5rem}.doc .--mt27{margin-top:6.75rem}.doc .--m27{margin:6.75rem}.doc .--mta{margin-top:auto}.doc .--pt27{padding-top:6.75rem}.doc .--p27{padding:6.75rem}.doc .--mb27{margin-bottom:6.75rem}.doc .--m27{margin:6.75rem}.doc .--mba{margin-bottom:auto}.doc .--pb27{padding-bottom:6.75rem}.doc .--p27{padding:6.75rem}.doc .--ml27{margin-left:6.75rem}.doc .--m27{margin:6.75rem}.doc .--mla{margin-left:auto}.doc .--pl27{padding-left:6.75rem}.doc .--p27{padding:6.75rem}.doc .--mr27{margin-right:6.75rem}.doc .--m27{margin:6.75rem}.doc .--mra{margin-right:auto}.doc .--pr27{padding-right:6.75rem}.doc .--p27{padding:6.75rem}.doc .--mt28{margin-top:7rem}.doc .--m28{margin:7rem}.doc .--mta{margin-top:auto}.doc .--pt28{padding-top:7rem}.doc .--p28{padding:7rem}.doc .--mb28{margin-bottom:7rem}.doc .--m28{margin:7rem}.doc .--mba{margin-bottom:auto}.doc .--pb28{padding-bottom:7rem}.doc .--p28{padding:7rem}.doc .--ml28{margin-left:7rem}.doc .--m28{margin:7rem}.doc .--mla{margin-left:auto}.doc .--pl28{padding-left:7rem}.doc .--p28{padding:7rem}.doc .--mr28{margin-right:7rem}.doc .--m28{margin:7rem}.doc .--mra{margin-right:auto}.doc .--pr28{padding-right:7rem}.doc .--p28{padding:7rem}.doc .--mt29{margin-top:7.25rem}.doc .--m29{margin:7.25rem}.doc .--mta{margin-top:auto}.doc .--pt29{padding-top:7.25rem}.doc .--p29{padding:7.25rem}.doc .--mb29{margin-bottom:7.25rem}.doc .--m29{margin:7.25rem}.doc .--mba{margin-bottom:auto}.doc .--pb29{padding-bottom:7.25rem}.doc .--p29{padding:7.25rem}.doc .--ml29{margin-left:7.25rem}.doc .--m29{margin:7.25rem}.doc .--mla{margin-left:auto}.doc .--pl29{padding-left:7.25rem}.doc .--p29{padding:7.25rem}.doc .--mr29{margin-right:7.25rem}.doc .--m29{margin:7.25rem}.doc .--mra{margin-right:auto}.doc .--pr29{padding-right:7.25rem}.doc .--p29{padding:7.25rem}.doc .--mt30{margin-top:7.5rem}.doc .--m30{margin:7.5rem}.doc .--mta{margin-top:auto}.doc .--pt30{padding-top:7.5rem}.doc .--p30{padding:7.5rem}.doc .--mb30{margin-bottom:7.5rem}.doc .--m30{margin:7.5rem}.doc .--mba{margin-bottom:auto}.doc .--pb30{padding-bottom:7.5rem}.doc .--p30{padding:7.5rem}.doc .--ml30{margin-left:7.5rem}.doc .--m30{margin:7.5rem}.doc .--mla{margin-left:auto}.doc .--pl30{padding-left:7.5rem}.doc .--p30{padding:7.5rem}.doc .--mr30{margin-right:7.5rem}.doc .--m30{margin:7.5rem}.doc .--mra{margin-right:auto}.doc .--pr30{padding-right:7.5rem}.doc .--p30{padding:7.5rem}.doc .--mt31{margin-top:7.75rem}.doc .--m31{margin:7.75rem}.doc .--mta{margin-top:auto}.doc .--pt31{padding-top:7.75rem}.doc .--p31{padding:7.75rem}.doc .--mb31{margin-bottom:7.75rem}.doc .--m31{margin:7.75rem}.doc .--mba{margin-bottom:auto}.doc .--pb31{padding-bottom:7.75rem}.doc .--p31{padding:7.75rem}.doc .--ml31{margin-left:7.75rem}.doc .--m31{margin:7.75rem}.doc .--mla{margin-left:auto}.doc .--pl31{padding-left:7.75rem}.doc .--p31{padding:7.75rem}.doc .--mr31{margin-right:7.75rem}.doc .--m31{margin:7.75rem}.doc .--mra{margin-right:auto}.doc .--pr31{padding-right:7.75rem}.doc .--p31{padding:7.75rem}.doc .--mt32{margin-top:8rem}.doc .--m32{margin:8rem}.doc .--mta{margin-top:auto}.doc .--pt32{padding-top:8rem}.doc .--p32{padding:8rem}.doc .--mb32{margin-bottom:8rem}.doc .--m32{margin:8rem}.doc .--mba{margin-bottom:auto}.doc .--pb32{padding-bottom:8rem}.doc .--p32{padding:8rem}.doc .--ml32{margin-left:8rem}.doc .--m32{margin:8rem}.doc .--mla{margin-left:auto}.doc .--pl32{padding-left:8rem}.doc .--p32{padding:8rem}.doc .--mr32{margin-right:8rem}.doc .--m32{margin:8rem}.doc .--mra{margin-right:auto}.doc .--pr32{padding-right:8rem}.doc .--p32{padding:8rem}.doc .--mt33{margin-top:8.25rem}.doc .--m33{margin:8.25rem}.doc .--mta{margin-top:auto}.doc .--pt33{padding-top:8.25rem}.doc .--p33{padding:8.25rem}.doc .--mb33{margin-bottom:8.25rem}.doc .--m33{margin:8.25rem}.doc .--mba{margin-bottom:auto}.doc .--pb33{padding-bottom:8.25rem}.doc .--p33{padding:8.25rem}.doc .--ml33{margin-left:8.25rem}.doc .--m33{margin:8.25rem}.doc .--mla{margin-left:auto}.doc .--pl33{padding-left:8.25rem}.doc .--p33{padding:8.25rem}.doc .--mr33{margin-right:8.25rem}.doc .--m33{margin:8.25rem}.doc .--mra{margin-right:auto}.doc .--pr33{padding-right:8.25rem}.doc .--p33{padding:8.25rem}.doc .--mt34{margin-top:8.5rem}.doc .--m34{margin:8.5rem}.doc .--mta{margin-top:auto}.doc .--pt34{padding-top:8.5rem}.doc .--p34{padding:8.5rem}.doc .--mb34{margin-bottom:8.5rem}.doc .--m34{margin:8.5rem}.doc .--mba{margin-bottom:auto}.doc .--pb34{padding-bottom:8.5rem}.doc .--p34{padding:8.5rem}.doc .--ml34{margin-left:8.5rem}.doc .--m34{margin:8.5rem}.doc .--mla{margin-left:auto}.doc .--pl34{padding-left:8.5rem}.doc .--p34{padding:8.5rem}.doc .--mr34{margin-right:8.5rem}.doc .--m34{margin:8.5rem}.doc .--mra{margin-right:auto}.doc .--pr34{padding-right:8.5rem}.doc .--p34{padding:8.5rem}.doc .--mt35{margin-top:8.75rem}.doc .--m35{margin:8.75rem}.doc .--mta{margin-top:auto}.doc .--pt35{padding-top:8.75rem}.doc .--p35{padding:8.75rem}.doc .--mb35{margin-bottom:8.75rem}.doc .--m35{margin:8.75rem}.doc .--mba{margin-bottom:auto}.doc .--pb35{padding-bottom:8.75rem}.doc .--p35{padding:8.75rem}.doc .--ml35{margin-left:8.75rem}.doc .--m35{margin:8.75rem}.doc .--mla{margin-left:auto}.doc .--pl35{padding-left:8.75rem}.doc .--p35{padding:8.75rem}.doc .--mr35{margin-right:8.75rem}.doc .--m35{margin:8.75rem}.doc .--mra{margin-right:auto}.doc .--pr35{padding-right:8.75rem}.doc .--p35{padding:8.75rem}.doc .--mt36{margin-top:9rem}.doc .--m36{margin:9rem}.doc .--mta{margin-top:auto}.doc .--pt36{padding-top:9rem}.doc .--p36{padding:9rem}.doc .--mb36{margin-bottom:9rem}.doc .--m36{margin:9rem}.doc .--mba{margin-bottom:auto}.doc .--pb36{padding-bottom:9rem}.doc .--p36{padding:9rem}.doc .--ml36{margin-left:9rem}.doc .--m36{margin:9rem}.doc .--mla{margin-left:auto}.doc .--pl36{padding-left:9rem}.doc .--p36{padding:9rem}.doc .--mr36{margin-right:9rem}.doc .--m36{margin:9rem}.doc .--mra{margin-right:auto}.doc .--pr36{padding-right:9rem}.doc .--p36{padding:9rem}.doc .--mt37{margin-top:9.25rem}.doc .--m37{margin:9.25rem}.doc .--mta{margin-top:auto}.doc .--pt37{padding-top:9.25rem}.doc .--p37{padding:9.25rem}.doc .--mb37{margin-bottom:9.25rem}.doc .--m37{margin:9.25rem}.doc .--mba{margin-bottom:auto}.doc .--pb37{padding-bottom:9.25rem}.doc .--p37{padding:9.25rem}.doc .--ml37{margin-left:9.25rem}.doc .--m37{margin:9.25rem}.doc .--mla{margin-left:auto}.doc .--pl37{padding-left:9.25rem}.doc .--p37{padding:9.25rem}.doc .--mr37{margin-right:9.25rem}.doc .--m37{margin:9.25rem}.doc .--mra{margin-right:auto}.doc .--pr37{padding-right:9.25rem}.doc .--p37{padding:9.25rem}.doc .--mt38{margin-top:9.5rem}.doc .--m38{margin:9.5rem}.doc .--mta{margin-top:auto}.doc .--pt38{padding-top:9.5rem}.doc .--p38{padding:9.5rem}.doc .--mb38{margin-bottom:9.5rem}.doc .--m38{margin:9.5rem}.doc .--mba{margin-bottom:auto}.doc .--pb38{padding-bottom:9.5rem}.doc .--p38{padding:9.5rem}.doc .--ml38{margin-left:9.5rem}.doc .--m38{margin:9.5rem}.doc .--mla{margin-left:auto}.doc .--pl38{padding-left:9.5rem}.doc .--p38{padding:9.5rem}.doc .--mr38{margin-right:9.5rem}.doc .--m38{margin:9.5rem}.doc .--mra{margin-right:auto}.doc .--pr38{padding-right:9.5rem}.doc .--p38{padding:9.5rem}.doc .--mt39{margin-top:9.75rem}.doc .--m39{margin:9.75rem}.doc .--mta{margin-top:auto}.doc .--pt39{padding-top:9.75rem}.doc .--p39{padding:9.75rem}.doc .--mb39{margin-bottom:9.75rem}.doc .--m39{margin:9.75rem}.doc .--mba{margin-bottom:auto}.doc .--pb39{padding-bottom:9.75rem}.doc .--p39{padding:9.75rem}.doc .--ml39{margin-left:9.75rem}.doc .--m39{margin:9.75rem}.doc .--mla{margin-left:auto}.doc .--pl39{padding-left:9.75rem}.doc .--p39{padding:9.75rem}.doc .--mr39{margin-right:9.75rem}.doc .--m39{margin:9.75rem}.doc .--mra{margin-right:auto}.doc .--pr39{padding-right:9.75rem}.doc .--p39{padding:9.75rem}.doc .--mt40{margin-top:10rem}.doc .--m40{margin:10rem}.doc .--mta{margin-top:auto}.doc .--pt40{padding-top:10rem}.doc .--p40{padding:10rem}.doc .--mb40{margin-bottom:10rem}.doc .--m40{margin:10rem}.doc .--mba{margin-bottom:auto}.doc .--pb40{padding-bottom:10rem}.doc .--p40{padding:10rem}.doc .--ml40{margin-left:10rem}.doc .--m40{margin:10rem}.doc .--mla{margin-left:auto}.doc .--pl40{padding-left:10rem}.doc .--p40{padding:10rem}.doc .--mr40{margin-right:10rem}.doc .--m40{margin:10rem}.doc .--mra{margin-right:auto}.doc .--pr40{padding-right:10rem}.doc .--p40{padding:10rem}.doc .--bdw0{border-width:0px;border-style:solid}.doc .--bdwt0{border-top-width:0px;border-top-style:solid}.doc .--bdwb0{border-bottom-width:0px;border-bottom-style:solid}.doc .--bdwl0{border-left-width:0px;border-left-style:solid}.doc .--bdwr0{border-right-width:0px;border-right-style:solid}.doc .--bdrtl0{border-top-left-radius:0px}.doc .--bdrtr0{border-top-right-radius:0px}.doc .--bdrbl0{border-bottom-left-radius:0px}.doc .--bdrbr0{border-bottom-right-radius:0px}.doc .--bdw1{border-width:1px;border-style:solid}.doc .--bdwt1{border-top-width:1px;border-top-style:solid}.doc .--bdwb1{border-bottom-width:1px;border-bottom-style:solid}.doc .--bdwl1{border-left-width:1px;border-left-style:solid}.doc .--bdwr1{border-right-width:1px;border-right-style:solid}.doc .--bdrtl1{border-top-left-radius:1px}.doc .--bdrtr1{border-top-right-radius:1px}.doc .--bdrbl1{border-bottom-left-radius:1px}.doc .--bdrbr1{border-bottom-right-radius:1px}.doc .--bdw2{border-width:2px;border-style:solid}.doc .--bdwt2{border-top-width:2px;border-top-style:solid}.doc .--bdwb2{border-bottom-width:2px;border-bottom-style:solid}.doc .--bdwl2{border-left-width:2px;border-left-style:solid}.doc .--bdwr2{border-right-width:2px;border-right-style:solid}.doc .--bdrtl2{border-top-left-radius:2px}.doc .--bdrtr2{border-top-right-radius:2px}.doc .--bdrbl2{border-bottom-left-radius:2px}.doc .--bdrbr2{border-bottom-right-radius:2px}.doc .--bdw3{border-width:3px;border-style:solid}.doc .--bdwt3{border-top-width:3px;border-top-style:solid}.doc .--bdwb3{border-bottom-width:3px;border-bottom-style:solid}.doc .--bdwl3{border-left-width:3px;border-left-style:solid}.doc .--bdwr3{border-right-width:3px;border-right-style:solid}.doc .--bdrtl3{border-top-left-radius:3px}.doc .--bdrtr3{border-top-right-radius:3px}.doc .--bdrbl3{border-bottom-left-radius:3px}.doc .--bdrbr3{border-bottom-right-radius:3px}.doc .--bdw4{border-width:4px;border-style:solid}.doc .--bdwt4{border-top-width:4px;border-top-style:solid}.doc .--bdwb4{border-bottom-width:4px;border-bottom-style:solid}.doc .--bdwl4{border-left-width:4px;border-left-style:solid}.doc .--bdwr4{border-right-width:4px;border-right-style:solid}.doc .--bdrtl4{border-top-left-radius:4px}.doc .--bdrtr4{border-top-right-radius:4px}.doc .--bdrbl4{border-bottom-left-radius:4px}.doc .--bdrbr4{border-bottom-right-radius:4px}.doc .--bdw5{border-width:5px;border-style:solid}.doc .--bdwt5{border-top-width:5px;border-top-style:solid}.doc .--bdwb5{border-bottom-width:5px;border-bottom-style:solid}.doc .--bdwl5{border-left-width:5px;border-left-style:solid}.doc .--bdwr5{border-right-width:5px;border-right-style:solid}.doc .--bdrtl5{border-top-left-radius:5px}.doc .--bdrtr5{border-top-right-radius:5px}.doc .--bdrbl5{border-bottom-left-radius:5px}.doc .--bdrbr5{border-bottom-right-radius:5px}.doc .--bdw6{border-width:6px;border-style:solid}.doc .--bdwt6{border-top-width:6px;border-top-style:solid}.doc .--bdwb6{border-bottom-width:6px;border-bottom-style:solid}.doc .--bdwl6{border-left-width:6px;border-left-style:solid}.doc .--bdwr6{border-right-width:6px;border-right-style:solid}.doc .--bdrtl6{border-top-left-radius:6px}.doc .--bdrtr6{border-top-right-radius:6px}.doc .--bdrbl6{border-bottom-left-radius:6px}.doc .--bdrbr6{border-bottom-right-radius:6px}.doc .--bdw7{border-width:7px;border-style:solid}.doc .--bdwt7{border-top-width:7px;border-top-style:solid}.doc .--bdwb7{border-bottom-width:7px;border-bottom-style:solid}.doc .--bdwl7{border-left-width:7px;border-left-style:solid}.doc .--bdwr7{border-right-width:7px;border-right-style:solid}.doc .--bdrtl7{border-top-left-radius:7px}.doc .--bdrtr7{border-top-right-radius:7px}.doc .--bdrbl7{border-bottom-left-radius:7px}.doc .--bdrbr7{border-bottom-right-radius:7px}.doc .--bdw8{border-width:8px;border-style:solid}.doc .--bdwt8{border-top-width:8px;border-top-style:solid}.doc .--bdwb8{border-bottom-width:8px;border-bottom-style:solid}.doc .--bdwl8{border-left-width:8px;border-left-style:solid}.doc .--bdwr8{border-right-width:8px;border-right-style:solid}.doc .--bdrtl8{border-top-left-radius:8px}.doc .--bdrtr8{border-top-right-radius:8px}.doc .--bdrbl8{border-bottom-left-radius:8px}.doc .--bdrbr8{border-bottom-right-radius:8px}.doc .--bdw9{border-width:9px;border-style:solid}.doc .--bdwt9{border-top-width:9px;border-top-style:solid}.doc .--bdwb9{border-bottom-width:9px;border-bottom-style:solid}.doc .--bdwl9{border-left-width:9px;border-left-style:solid}.doc .--bdwr9{border-right-width:9px;border-right-style:solid}.doc .--bdrtl9{border-top-left-radius:9px}.doc .--bdrtr9{border-top-right-radius:9px}.doc .--bdrbl9{border-bottom-left-radius:9px}.doc .--bdrbr9{border-bottom-right-radius:9px}.doc .--bdw10{border-width:10px;border-style:solid}.doc .--bdwt10{border-top-width:10px;border-top-style:solid}.doc .--bdwb10{border-bottom-width:10px;border-bottom-style:solid}.doc .--bdwl10{border-left-width:10px;border-left-style:solid}.doc .--bdwr10{border-right-width:10px;border-right-style:solid}.doc .--bdrtl10{border-top-left-radius:10px}.doc .--bdrtr10{border-top-right-radius:10px}.doc .--bdrbl10{border-bottom-left-radius:10px}.doc .--bdrbr10{border-bottom-right-radius:10px}.doc .page-heading{border-bottom:1px solid #eaeaea;display:inline-table;padding-bottom:0.5em;margin-bottom:25px;width:100%}.doc .page-heading h1{font-size:21px;margin:0;text-transform:capitalize;font-family:"Helvetica","Arial",sans-serif;font-weight:600;letter-spacing:-0.5px}.doc .page-heading img[title=DPG_LOGO]{width:7.5em}
+                </style>
+            </head>
+            <body class="footer-page-count">
+            <div class="doc">
+            <table>
+            <tbody>
+            <tr class="page-heading">
+            <td>
+            <h1>Account Agreement</h1>
+            <span class="version">04.01.0122</span>
+            </td>
+            <td>
+            <img align="right" src="https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/DPG_LOGO.JPG" title="DPG_LOGO" width="125">
+            </td>
+            </tr>
+            </tbody>
+            </table>
+            <h4 class="section-header --mt0">Client Information Sheet</h4>
+            <p>
+            The individual(s) identified as “Client” or “Co-Client” below (<span class="bold">“You(r)”</span>, <span class="bold">“Client”</span> or <span class="bold">“Co-Client”</span>) and executing this Account Agreement (the <span class="bold">“Account Agreement”</span>), which includes this Client Information Sheet form and the Additional Terms of Service attached hereto, agrees to be bound by the terms and conditions set forth herein.   Debt Pay Gateway, Inc. (<span class="bold">“DPG”</span>) provides transaction management and accounting services (the <span class="bold">“Services”</span>) through a proprietary software platform (the “Platform”), and upon Your submission of this executed Account Agreement, an account (the <span class="bold">“Account”</span>) will be established for the purpose of implementing a written debt settlement program (the <span class="bold">“Program”</span>) that You have approved with a third-party Debt Relief Service Provider (<span class="bold">“DRSP”</span>) that You have retained for that purpose.  DPG does not perform any role in developing, and shall not provide You with any advice concerning, the Program You have approved with Your DRSP.  Other than the DRSP’s use of the Platform, DPG does not have any ownership interest, affiliation, or other financial arrangement with the DRSP.
+            </p>
+            <table class="info-table">
+            <tbody>
+            <tr class="section-header">
+            <td class="label" colspan="12">
+            Client Information
+            </td>
+            </tr>
+            <tr>
+            <td colspan="3">
+            <span class="label">Last Name</span>
+            <p>Doe</p>
+            </td>
+            <td colspan="3">
+            <span class="label">First Name</span>
+            <p>John</p>
+            </td>
+            <td colspan="2">
+            <span class="label">Middle Initial</span>
+            <p></p>
+            </td>
+            <td colspan="2">
+            <span class="label">SSN</span>
+            <p>XXX-XX-1234</p>
+            </td>
+            <td colspan="2">
+            <span class="label">DOB</span>
+            <p>01/01/1970</p>
+            </td>
+            </tr>
+            <tr>
+            <td colspan="6">
+            <span class="label">Address</span>
+            <p>200 Test St. </p>
+            </td>
+            <td colspan="2">
+            <span class="label">City</span>
+            <p>Chicago</p>
+            </td>
+            <td colspan="2">
+            <span class="label">State</span>
+            <p>IL</p>
+            </td>
+            <td colspan="2">
+            <span class="label">Zipcode</span>
+            <p>60001</p>
+            </td>
+            </tr>
+            <tr>
+            <td colspan="6">
+            <span class="label">Phone</span>
+            <p>312-383-9992</p>
+            </td>
+            <td colspan="6">
+            <span class="label">Email Address</span>
+            <p>g.johnson@debtpaypro.com</p>
+            </td>
+            </tr>
+            <tr>
+            <td colspan="12">
+            <span class="label">Account ID</span>
+            <p>DEMO-534512161</p>
+            </td>
+            </tr>
+            <tr class="section-header">
+            <td class="label" colspan="12">
+            Co-Client Information
+            </td>
+            </tr>
+            <tr>
+            <td colspan="3">
+            <span class="label">Last Name</span>
+            <p></p>
+            </td>
+            <td colspan="3">
+            <span class="label">First Name</span>
+            <p></p>
+            </td>
+            <td colspan="2">
+            <span class="label">Middle Initial</span>
+            <p></p>
+            </td>
+            <td colspan="2">
+            <span class="label">SSN</span>
+            <p></p>
+            </td>
+            <td colspan="2">
+            <span class="label">DOB</span>
+            <p></p>
+            </td>
+            </tr>
+            </tbody>
+            </table>
+            <br>
+            <p>You hereby authorize DPG to: (1) open an Account for You, which shall be utilized to hold funds that You deposit; and (2) disburse those funds to: (a) make payments as set forth in Your Program or as directed by Your DRSP; (b) pay the fees in connection with the Services as set forth herein (the <span class="bold">“Service Fees”</span>); and (c) to pay any fees or expenses to Your DRSP pursuant to Your Program (the <span class="bold">“Program Fees”</span>).  You hereby designate the DRSP as Your agent for purposes of authorizing those payments, disbursements, and deposits in accordance with Your Program, and agree that DPG may act upon any instruction from your DRSP as if it had come directly from You.</p>
+            <p>You further authorize DPG to initiate automated clearing house debit transfers/entries from Your designated bank account (the <span class="bold">“Primary Account”</span>) pursuant to Your Program or the instruction of the DRSP.  This authorization is to remain in full force and effect until You have provided DPG with a written or oral notification of Your termination of this Account Agreement no less than three (3) business days in advance of the requested termination date.</p>
+            <table class="info-table signature">
+            <tbody>
+            <tr>
+            <td class="--bd0" colspan="9"></td>
+            <td class="--bd0" colspan="3">
+            <span class="label">Initials</span>
+            <p><span style="color:#fff;"><span style="color:#fff;"><span style="color:#fff;"><span style="color:#fff;">{INITIAL}</span></span></span></span> <span style="color:#fff;"><span style="color:#fff;"><span style="color:#fff;"><span style="color:#fff;">{COINITIAL}</span></span></span></span></p>
+            </td>
+            </tr>
+            </tbody>
+            </table>
+            <div class="page-break"></div>
+            <h4 class="section-header">Service Fees</h4>
+            <p>DPG shall charge the following fees when applicable:</p>
+            <table class="info-table">
+            <tbody>
+            <tr>
+            <td colspan="4">
+            <span class="label list">Setup Fee</span>
+            <span class="label list">Monthly Service Fee</span>
+            <span class="label list">Stop Payment Fee</span>
+            <span class="label list">Client Deposit Fee</span>
+            <span class="label list">Third Party Deposit Fee</span>
+            <span class="label list">Reject Deposit Fee</span>
+            <span class="label list">Returned Item Fee</span>
+            </td>
+            <td colspan="2">
+            <span class="label list">$9.95</span>
+            <span class="label list">$9.95</span>
+            <span class="label list">$35.00</span>
+            <span class="label list">$20.00</span>
+            <span class="label list">$20.00</span>
+            <span class="label list">$40.00</span>
+            <span class="label list">$0.00</span>
+            </td>
+            <td colspan="4">
+            <span class="label list">ACH Debit / Check by Phone</span>
+            <span class="label list">Bank Wire</span>
+            <span class="label list">Check</span>
+            <span class="label list">Check 2nd Day</span>
+            <span class="label list">Check Overnight</span>
+            <span class="label list">Direct Pay</span>
+            </td>
+            <td colspan="2">
+            <span class="label list">$5.00</span>
+            <span class="label list">$25.00</span>
+            <span class="label list">$10.00</span>
+            <span class="label list">$10.00</span>
+            <span class="label list">$25.00</span>
+            <span class="label list">$5.00</span>
+            </td>
+            </tr>
+            </tbody>
+            </table>
+            <h4 class="section-header">Primary Account Information</h4>
+            <table class="info-table">
+            <tbody>
+            <tr>
+            <td colspan="12">
+            <span class="label">Bank Name</span>
+            <p>BANK OF AMERICA, N.A.               </p>
+            </td>
+            </tr>
+            <tr>
+            <td colspan="6">
+            <span class="label">Account Number</span>
+            <p>123456123456</p>
+            </td>
+            <td colspan="3">
+            <span class="label">Routing Number</span>
+            <p>101000035</p>
+            </td>
+            <td colspan="3">
+            <span class="label">Account Type</span>
+            <p>Checking</p>
+            </td>
+            </tr>
+            <tr>
+            <td colspan="12">
+            <span class="label">Authorizing Person's Name (as it appears on check)</span>
+            <p>John Doe</p>
+            </td>
+            </tr>
+            <tr>
+            <td colspan="12">
+            <span class="label">Address, City, State Zip (as it appears on check)</span>
+            <p>   </p>
+            </td>
+            </tr>
+            <tr>
+            <td colspan="6">
+            <span class="label">Recurring Debit Authorization</span>
+            <p>$335.72</p>
+            </td>
+            <td colspan="6">
+            <span class="label">Date of First Debit</span>
+            <p>Sep 30, 2021</p>
+            </td>
+            </tr>
+            </tbody>
+            </table>
+            <p>By signing this Account Agreement, You represent and warrant that: (1) the information that You have provided above is truthful and accurate; (2) You are the owner of the Primary Account; (3) You have the authority to enter into this Account Agreement; and (4) You have read, understood, and hereby agree to the terms of this Account Agreement, which includes the information contained on this form and the Additional Terms of Service below.</p>
+            <table class='info-table signature'>
+            <tbody>
+            <tr>
+            <td colspan='6'>
+            <span class='label'>Client Signature</span>
+            <p><span style="color:#fff;"><span style="color:#fff;"><span style="color:#fff;"><span style="color:#fff;">{SIGNATURE}</span></span></span></span></p>
+            </td>
+            <td colspan='6'>
+            <span class='label'>Date</span>
+            <p><span style="color:#fff;"><span style="color:#fff;"><span style="color:#fff;"><span style="color:#fff;">{SIGNDATE}</span></span></span></span></p>
+            </td>
+            </tr>
+            <tr>
+            <td colspan='6'>
+            <span class='label'>Co-Client Signature</span>
+            <p><span style="color:#fff;"><span style="color:#fff;"><span style="color:#fff;"><span style="color:#fff;">{COSIGNATURE}</span></span></span></span></p>
+            </td>
+            <td colspan='6'>
+            <span class='label'>Date</span>
+            <p><span style="color:#fff;"><span style="color:#fff;"><span style="color:#fff;"><span style="color:#fff;">{COSIGNDATE}</span></span></span></span></p>
+            </td>
+            </tr>
+            <tr class='notifications'>
+            <td colspan='12'>
+            <strong>Notifications To Debt Pay Gateway</strong>
+            <span>1900 E Golf Rd, Suite 550, Schaumburg, IL 60173</span>
+            <br>
+            <span>
+            Email:
+            <a href='mailto:clients@debtpaygateway.com'>clients@debtpaygateway.com</a>
+            | Phone (877) 800-5577 | Fax: (800) 694-3530
+            </span>
+            </td>
+            </tr>
+            </tbody>
+            </table>
+
+            </div>
+            <div class="page-break"></div>
+            <div class="doc">
+            <table>
+            <tbody>
+            <tr class="page-heading">
+            <td>
+            <h1>Payment Schedule</h1>
+            <span class="version">01.0.1120</span>
+            </td>
+            <td>
+            <img align="right" src="https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/DPG_LOGO.JPG" title="DPG_LOGO" width="125">
+            </td>
+            </tr>
+            </tbody>
+            </table>
+            <p>
+              <style type="text/css">
+                table#draftschedule th { font-size:12px; font-weight:bold; text-align:left; }
+                table#draftschedule td { font-size:11px; }
+              </style>
+              <table id="draftschedule" style="width:100%">
+                <thead>
+                  <tr>
+                    <th>Payment #</th>
+                    <th>Process Date</th>
+                    <th>Amount</th>
+                  </tr>
+                </thead>
+                <tbody><tr bgcolor="#EAEAEA"><td>1</td><td>Sep 30, 2021</td><td>$335.72</td></tr><tr bgcolor="#FFFFFF"><td>2</td><td>Nov 01, 2021</td><td>$335.72</td></tr><tr bgcolor="#EAEAEA"><td>3</td><td>Nov 30, 2021</td><td>$335.72</td></tr><tr bgcolor="#FFFFFF"><td>4</td><td>Dec 30, 2021</td><td>$335.72</td></tr><tr bgcolor="#EAEAEA"><td>5</td><td>Jan 31, 2022</td><td>$335.72</td></tr><tr bgcolor="#FFFFFF"><td>6</td><td>Mar 02, 2022</td><td>$335.72</td></tr><tr bgcolor="#EAEAEA"><td>7</td><td>Mar 30, 2022</td><td>$335.72</td></tr><tr bgcolor="#FFFFFF"><td>8</td><td>May 02, 2022</td><td>$335.72</td></tr><tr bgcolor="#EAEAEA"><td>9</td><td>May 31, 2022</td><td>$335.72</td></tr><tr bgcolor="#FFFFFF"><td>10</td><td>Jun 30, 2022</td><td>$335.72</td></tr><tr bgcolor="#EAEAEA"><td>11</td><td>Aug 01, 2022</td><td>$335.72</td></tr><tr bgcolor="#FFFFFF"><td>12</td><td>Aug 30, 2022</td><td>$335.72</td></tr><tr bgcolor="#EAEAEA"><td>13</td><td>Sep 30, 2022</td><td>$335.72</td></tr><tr bgcolor="#FFFFFF"><td>14</td><td>Oct 31, 2022</td><td>$335.72</td></tr><tr bgcolor="#EAEAEA"><td>15</td><td>Nov 30, 2022</td><td>$335.72</td></tr><tr bgcolor="#FFFFFF"><td>16</td><td>Dec 30, 2022</td><td>$335.72</td></tr><tr bgcolor="#EAEAEA"><td>17</td><td>Jan 30, 2023</td><td>$335.72</td></tr><tr bgcolor="#FFFFFF"><td>18</td><td>Mar 02, 2023</td><td>$335.72</td></tr><tr bgcolor="#EAEAEA"><td>19</td><td>Mar 30, 2023</td><td>$335.72</td></tr><tr bgcolor="#FFFFFF"><td>20</td><td>May 01, 2023</td><td>$335.72</td></tr><tr bgcolor="#EAEAEA"><td>21</td><td>May 30, 2023</td><td>$335.72</td></tr><tr bgcolor="#FFFFFF"><td>22</td><td>Jun 30, 2023</td><td>$335.72</td></tr><tr bgcolor="#EAEAEA"><td>23</td><td>Jul 31, 2023</td><td>$335.72</td></tr><tr bgcolor="#FFFFFF"><td>24</td><td>Aug 30, 2023</td><td>$335.72</td></tr><tr bgcolor="#EAEAEA"><td>25</td><td>Oct 02, 2023</td><td>$335.72</td></tr><tr bgcolor="#FFFFFF"><td>26</td><td>Oct 30, 2023</td><td>$335.72</td></tr><tr bgcolor="#EAEAEA"><td>27</td><td>Nov 30, 2023</td><td>$335.72</td></tr><tr bgcolor="#FFFFFF"><td>28</td><td>Jan 02, 2024</td><td>$335.72</td></tr><tr bgcolor="#EAEAEA"><td>29</td><td>Jan 30, 2024</td><td>$335.72</td></tr><tr bgcolor="#FFFFFF"><td>30</td><td>Mar 01, 2024</td><td>$335.72</td></tr><tr bgcolor="#EAEAEA"><td>31</td><td>Apr 01, 2024</td><td>$335.72</td></tr><tr bgcolor="#FFFFFF"><td>32</td><td>Apr 30, 2024</td><td>$335.72</td></tr><tr bgcolor="#EAEAEA"><td>33</td><td>May 30, 2024</td><td>$335.72</td></tr><tr bgcolor="#FFFFFF"><td>34</td><td>Jul 01, 2024</td><td>$335.72</td></tr><tr bgcolor="#EAEAEA"><td>35</td><td>Jul 30, 2024</td><td>$335.72</td></tr><tr bgcolor="#FFFFFF"><td>36</td><td>Aug 30, 2024</td><td>$325.80</td></tr></tbody></table></p>
+            </div>
+            <div class="doc">
+            <table>
+            <tbody>
+            <tr class="page-heading">
+            <td>
+            <h1>Additional Terms of Service</h1>
+            <span class="version">01.0.1220</span>
+            </td>
+            <td>
+            <img align="right" src="https://s3.amazonaws.com/dpp-publicstorage/39b82011dc91cd44964b5c0ef7a748c69a5d3cf3/DPG_LOGO.JPG" title="DPG_LOGO" width="125">
+            </td>
+            </tr>
+            </tbody>
+            </table>
+            <p>You hereby agree to the following Additional Terms of Service (<span class="bold">“TOS”</span>) with respect to the Services and any other dealings with DPG:</p>
+            <ol>
+            <li>
+            <strong>Definitions</strong>
+            In addition to the terms defined in this section, any terms defined elsewhere in the Account Agreement, including the Client Information Sheet and this TOS, shall have the meaning ascribed to them where so defined.
+            <br/><br/>
+            <span class="bold">“Account”, “Account Agreement”, “Client”, “Co-Client”, “DPG”, “DRSP”, “Platform”, “Primary Account”, “Program”, “Program Fees”, “Services”, “Service Fees”</span> and <span class="bold">“You(r)”</span> shall have the meaning attributed to them in the Client Information Sheet.
+            <br/><br/>
+            <span class="bold">“Affiliates”, “JAMS”</span> and <span class="bold">“Rules”</span> shall have the meaning attributed to them in Section 16.
+            <br/><br/>
+            <span class="bold">“Applicable Law(s)”</span> shall mean any and all federal, state, or local statutes, laws, rules, regulations, policies and/or procedures, or any rules, regulations, policies, and/or procedures.
+            <br/><br/>
+            <span class="bold">“Bank”</span> shall have the meaning attributed to it in Section 9.
+            <br/><br/>
+            <span class="bold">“Client Portal”</span> shall mean the software interface through which DPG provides You with online access to certain Information concerning Your Account through the Platform.
+            <br/><br/>
+            <span class="bold">“Creditor(s)”</span> shall mean those individuals or entities to whom You owe a debt or with whom You are attempting to renegotiating, settle, reduce, or otherwise alter the terms of a debt, liability, or claim.
+            <br/><br/>
+            <span class="bold">“Information”</span> means and refers to all information about You, Your Account, Your Account Agreement, and any activity in Your Account.
+            <br/><br/>
+            <span class="bold">“NACHA”</span> shall have the meaning attributed to it in Section 6.
+            <br/><br/>
+            <span class="bold">“Party(ies)”</span> shall mean DPG, Client and/or Co-Client, referred to singularly as a Party and collectively as the Parties.
+            <br/><br/>
+            <span class="bold">“Settlement(s)”</span> shall mean any informal resolution or agreement reached between You and Your Creditors concerning Your debt.
+            <br/><br/>
+            <span class="bold">“Terms of Use”</span> and <span class="bold">“Privacy Policy”</span> shall have the meaning attributed to them in Section 10.
+            <br/><br/>
+            <span class="bold">“TOS”</span> means and refers to these Additional Terms of Service.
+            <br/><br/>
+            </li>
+            <li>
+            <strong>Your Account</strong>
+            <p>DPG will establish an Account upon receipt of a fully executed Account Agreement from You and upon verification that the Information You have provided is accurate.  The Account will not bear interest.  You can make transfers to and from the Account only as provided in this Account Agreement.  Only You, directly or through Your DRSP, have the right to authorize transactions involving Your Account.  All instructions from You concerning the Account must be provided to DPG in writing, unless DPG otherwise agrees to honor oral instructions, in which case said instructions shall be recorded.  DPG is not required to monitor or inquire about the instructions DPG receives from You or Your DRSP, however, DPG may, from time to time, perform an audit of Your Account to ensure that the deposits and disbursements from the Account are consistent with Your Program or the instructions received from Your DRSP.</p>
+            </li>
+            <li>
+            <strong>Deposits/Disbursements/Information</strong>
+            <p>You hereby authorize DPG to: (i) transfer funds from Your Primary Account into Your Account in accordance with Your Program or pursuant to the direction of Your DRSP; (ii) disburse available funds from Your Account to third parties based on instructions received from You or Your DRSP; (iii) disburse available funds from Your Account to pay Service Fees and Program Fees; (iv) share Information with Your DRSP; (v) accept and act upon deposit, transfer, and/or payment instructions that DPG receives from Your DRSP; and (vi) disclose Information to third parties only: (a) where it is necessary for completing transfers to and from Your Account, (b) in order to verify the existence and condition of Your Account for a third party, (c) to comply with government agency or court orders, or (d) as DPG may determine, in its sole discretion, is necessary to perform the Services.  Unless You provide DPG with written notice to the contrary, DPG will treat all instructions received from Your DRSP as having been expressly authorized by You. You may not make in-person withdrawals or write checks against Your Account. You may not use Your Account or the funds therein for any illegal purpose. Other than confirming that all of the conditions for the release of funds from the Account are met before allowing the release of such funds, You agree that DPG shall not be responsible for determining when a disbursement is due or whether a disbursement is for the correct amount or otherwise consistent with the Program. DPG’s sole obligation with respect to deposits into or disbursements from Your Account shall be to execute Your payment instructions (whether conveyed directly by You or by Your DRSP) in a commercially reasonable manner and as soon as practical after receipt of such instructions or after the occurrence of a previously-specified event authorizing the deposit into, or release of a disbursement from, the Account.</p>
+            </li>
+            <li>
+            <strong>Availability of Funds/Cancellation of Instructions</strong>
+            <p>DPG will credit the amount of any transfers to the Account as of the date the funds are received.  Funds that are deposited to Your Account by debit entry from Your Primary Account may be subject to a hold of up to seven (7) days to ensure good funds.  A deposit credit is only temporary and is subject to potential reversal until final payment is confirmed.  If DPG provides You with provisional credit for an ACH transfer, but does not receive final payment, You agree to pay DPG the full amount by other means without prior notice or demand.  DPG will not process disbursements when there are insufficient funds in Your Account.  DPG does not provide back-up funding under this Account Agreement, nor does DPG guarantee that all requested transfers or payments can or will be made when there are insufficient funds in Your Account.  If You or Your DRSP have told DPG to make regular disbursements out of Your Account, You can stop them by calling DPG at 1-877-800-5577, via e-mail to <a href="mailto:clients@debtpaygateway.com">clients@debtpaygateway.com</a> or writing to <span class="bold">Debt Pay Gateway, Inc. 1900 E Golf Rd, Suite 550, Schaumburg, IL 60173</span>, in time for DPG to receive Your request at least three (3) business days before the payment is scheduled to be made.  DPG may charge You a fee as shown in the Service Fees for each stop-payment order You give.</p>
+            </li>
+            <li>
+            <strong>Account Irregularities</strong>
+            <p>If DPG receives conflicting instructions from You or Your DRSP, DPG will seek to obtain, and abide by, Your instruction, or alternatively, contact Your DRSP to resolve the conflict.  If (i) DPG is uncertain regarding the ownership of or authority over Account funds, Your identity, or the authority of any person giving Account instructions, (ii) DPG believes that an Account transaction may be fraudulent or may violate any Applicable Law, (iii) You have breached this Account Agreement, (iv) the funds in Your Account are frozen or subject to lien, order, or garnishment, or (v) for any other reason DPG determines is necessary to protect You, the funds in Your Account, DPG, or DPG’s other customers, DPG may do any of the following: (i) suspend Your Account activity and refuse any further transactions until DPG receives written proof, in form and substance satisfactory to DPG, of each person’s authority over the Account funds; (ii) refuse any particular transaction, including any deposit into or disbursement from Your Account; (iii) require Your signature for the particular transaction; (iv) request instruction from a court of competent jurisdiction; (v) continue to honor previous instructions received from You or Your DRSP pending confirmation or clarification from You or Your DRSP; and/or (vi) close Your Account and return the funds in the Account to Your last known address.</p>
+            </li>
+            <li>
+            <strong>Service Fees</strong>
+            <p>You agree to pay the Service Fees and that such Service Fees may be deducted automatically from Your Account as they are due and owing.  Other fees and charges shall be deemed earned at the time of the transaction or event giving rise to the fee or charge. Subject to the terms of this Account Agreement and Applicable Law, DPG has the right, in its sole discretion, to amend the Service Fees and, from time to time, to increase or add new fees.  DPG shall provide You with written notice of such a change in Service Fees, and You shall have an opportunity to opt out of the Services.  If there are insufficient funds in Your Account to pay Your Service Fees when incurred, You agree to pay them promptly upon request.  Otherwise, DPG may deduct them from the next deposit to Your Account.  You shall also be responsible for paying for any returned debit transactions, transaction reversals or adjustments, or any other warranty or similar claims, fines or expenses arising under the National Automated Clearinghouse Association (<span class="bold">“NACHA”</span>).</p>
+            </li>
+            <li>
+            <strong>Communicating with You</strong>
+            <p>You authorize DPG to listen to and record telephone calls between You and DPG to evaluate the quality of DPG’s services or for any other lawful purpose. You agree to receive emails, prerecorded messages and/or autodialed calls (including text messages) relating to this Account Agreement and the Services. These communications may be made by DPG or its agents, even if Your phone number is registered on any state or federal “Do Not Call” list.  You further authorize DPG to obtain and contact other email addresses and/or phone numbers provided by You directly or obtained through other lawful means.  You agree to notify DPG promptly if any of Your contact information changes. DPG is committed to securing the privacy of Your Information and DPG shares Your Information only with Your consent or as required or permitted by Applicable Law. To help the government fight the funding of terrorism and money laundering activity, federal law requires all financial institutions to obtain, verify and record information that identifies each person who opens an Account.</p>
+            </li>
+            <li>
+            <strong>Authorization of Electronic Transactions/Disclosures</strong>
+            <p>You will be provided with a login name and password for viewing the funds held in Your Account and Your transactions via the Client Portal.  Use of Your password or any other form of identification that You utilize, whether independent of or through the Client Portal, will be accepted as Your electronic signature, as that term is used in the Federal Electronic Signature in Global and National Commerce law and other Applicable Laws.  You hereby agree that all disclosures, Account activity, notifications and any other communications related to the Services, including but not limited to monthly statements concerning Your Account, may be distributed to You by electronic mail or through the Client Portal.  You acknowledge that You are able to electronically receive, download and print such information and communications.  If You are unable to communicate electronically for any reason, You agree to notify DPG immediately, and reasonable alternative means of communication will be established or DPG may elect to terminate this Account Agreement.  DPG may amend, delete or change the terms of this Account Agreement at any time, in DPG’s sole discretion, by providing You with electronic notice of said changes, which shall be binding upon You and Your use of the Services.</p>
+            </li>
+            <li>
+            <strong>Termination/Suspension and Amendment</strong>
+            <p>You or DPG may terminate or suspend this Account Agreement with or without cause at any time by providing at least three (3) days written notice to DPG at <span class="bold">Debt Pay Gateway, Inc. 1900 E Golf Rd, Suite 550, Schaumburg, IL 60173</span> or <a href="mailto:clients@debtpaygateway.com">clients@debtpaygateway.com</a>. Upon termination of Your Account, any funds remaining will be returned to You, after the deduction of any accrued Service Fees, Program Fees, or other obligations that You have previously authorized.  In lieu of terminating Your Account, DPG may, in its sole discretion, elect to suspend the Services and Your access to the Account if DPG is uncertain as to anyone’s authority to give Account instructions on Your behalf or if any terms of this Account Agreement are breached.  If DPG decides to amend or terminate this Account Agreement, cease providing the Services to You, and/or close Your Account, You hereby authorize DPG to: (i) close Your Account; (ii) transmit the funds in Your Account to Your last known address; (iii) transfer the funds to Your Primary Account; and/or (iv) transfer the funds in Your Account to a federally insured deposit corporation (a <span class="bold">“Bank”</span>) of DPG’s choosing, and place the account in Your name, or the name of DPG, for the benefit of You.  If Your Account is suspended or closed, DPG shall have no obligation to continue to make payments to Your Creditors or to perform the terms of Your Settlements, which shall remain Your sole and exclusive responsibility.</p>
+            </li>
+            <li>
+            <strong>Client Portal</strong>
+            <p>DPG may provide You with access to the Client Portal.  Your use of the Client Portal shall be regarded as Your continuing consent and agreement to: (i) receive the Services; and (ii) the terms and conditions of this Account Agreement.  As part of Your access to the Client Portal, You shall be asked to consent and agree to certain written terms of use (<span class="bold">“Terms of Use”</span>), which can be found at <a href="https://www.debtpaygateway.com/client-portal-terms-of-service">https://www.debtpaygateway.com/client-portal-terms-of-service</a> and DPG’s privacy policy (<span class="bold">“Privacy Policy”</span>) which can be found at <a href="https://www.debtpaygateway.com/privacy-policy">https://www.debtpaygateway.com/privacy-policy</a>.  The Terms of Use and Privacy Policy are expressly incorporated herein by reference.    If there is any conflict between the Terms of Use and Privacy Policy, on the one hand, and this Account Agreement, on the other, this Account Agreement shall control. You acknowledge and agree that DPG may modify, revise, or update its Terms of Use or Privacy Policy from time to time, and that You shall be bound by any such changes.</p>
+            </li>
+            <li>
+            <strong>Dispute Resolution Procedures</strong>
+            <p>Should You believe that a deposit, disbursement, or any other transaction has been made to Your Account in error, or if there is any other issue concerning Your Account which You believe is inaccurate or improper, You shall promptly notify DPG in writing.  Your written notification shall include, at a minimum: (i) Your name; (ii) Your Account Number; (iii) the date and amount of the transaction or issue in dispute; (iv) a detailed description of the error or issue that You believe has taken place: and (v) how You believe the error or issue should be resolved. Should You fail to notify DPG of the purported error or issue in writing, along with the above required information, within sixty (60) days of its occurrence, You shall forever waive all claims associated with, and shall release DPG from all liability or damages arising from or related to, such error or transaction.</p>
+            </li>
+            <li>
+            <strong>Third Party Service Provider</strong>
+            <p>You understand and hereby acknowledge that DPG is a third-party service provider.  DPG is not a state or federally approved or licensed financial institution.  DPG holds the funds in Your Account in a deposit account with a Bank for Your benefit.  You hereby acknowledge, agree, and authorize DPG to transfer the funds in Your account to any Bank of its choosing.  You acknowledge and agree that: (i) DPG is not a party to any agreements between You and Your DRSP; (ii) DPG has no involvement in, nor any responsibility with respect to, Your Program or the results that You expect from Your Program; and (iii) DPG does not negotiate debts with Your Creditors. You further hereby acknowledge and agree that: (i) DPG is not a party to any negotiations or agreements between You and Your Creditors; and (ii) DPG shall not be responsible for performing, or ensuring that timely payments are made under, the Settlements between You and Your Creditors.  Should Your Account be suspended or terminated, or should there be insufficient funds in Your Account, DPG shall cease any payments to Your Creditors, and You may be held in breach of Your Settlements.  It is solely Your responsibility to ensure the timely and complete performance of Your Settlements.</p>
+            </li>
+            <li>
+            <strong>Notification/Legal Action</strong>
+            <p>You agree to notify DPG promptly of any erroneous or unauthorized transactions involving Your Account funds. Unless otherwise required by Applicable Law, an action or proceeding by You to enforce an obligation, duty or right arising under this Account Agreement or by law with respect to Your Account funds or the Services must be commenced no later than one (1) year after the day the cause of action accrues.</p>
+            </li>
+            <li>
+            <strong>Garnishment Orders</strong>
+            <p>You hereby acknowledge and agree that: (i) DPG shall comply with any order or judgment from a court of competent jurisdiction seeking to seize, lien or otherwise secure the funds located in Your Account; (ii) DPG shall not be required to challenge the order; (iii) DPG shall not be liable for complying with such an order; and (iv) You shall reimburse DPG for any and all expenses incurred in complying with the order.</p>
+            </li>
+            <li>
+            <strong>Limitation of Liability/Indemnification</strong>
+            <p>DPG will not be responsible, or liable, for any reason, and whether as a direct result of DPG’s conduct or not, for any consequential, nominal, punitive or exemplary damages.  Moreover, in no case shall DPG be liable for more than the total amount of funds that You have deposited into the Account, which You hereby agree is a fair and reasonable estimate of the total amount of damage that You could ever sustain as a result of DPG’s provision of the Services.  DPG will not be responsible for any damage You incur as a result of You not having sufficient funds in Your Account to make the transfer or circumstances beyond DPG’s control preventing the transfer.  You agree to indemnify, defend and hold DPG and its  officers, directors, agents and employees harmless from any and all claims, demands, actions, charges, fines, penalties and damages arising out of or related to the actions or omissions of Your DRSP, Your Creditors or third parties, or any actions DPG takes at Your request or in accordance with this Account Agreement, and/or Your actions and/or omissions.  Your obligations in this section shall survive the termination of Your Account.</p>
+            </li>
+            <li>
+            <strong>Arbitration of Claims</strong>
+            <p>You agree to submit all disputes, claims or controversies arising out of, relating to, or otherwise connected to the Services, this Account Agreement, or any other dealings between You, on the one hand, and DPG, on the other, to final and binding arbitration before JAMS ADR Services, Inc. (<span class="bold">“JAMS”</span>), or its successor, in San Diego County, California. You understand, and hereby acknowledge, that this Account Agreement will be performed in California, and the Services will be rendered from San Diego, California.  Notwithstanding anything herein to the contrary, this agreement to arbitrate shall be subject to and governed by the Federal Arbitration Act.  DPG, in addition to DPG’s officers and directors, employees, representatives, agents and affiliates, past, present or future (<span class="bold">“Affiliates”</span>), are intended to be bound by, and beneficiaries of, this agreement to arbitrate.  The Affiliates will have the same rights and obligations under this arbitration agreement as the Parties hereto, to the extent that these arbitration agreement beneficiaries are named as respondents in any dispute, claim or controversy subject to or arising from the Services or this Account Agreement, or could have been so named.  Any Party may commence the arbitration process by filing a written demand for arbitration with JAMS in San Diego County, California, with a copy to the other Party(ies).</p>
+            <p><span class="bold">The Rules</span>.  Except as otherwise provided herein, the arbitration shall be conducted in accordance with the JAMS Comprehensive Arbitration Rules and Procedures which are in effect at the time of Your execution of this Account Agreement (the <span class="bold">“Rules”</span>).  Discovery may be taken by the Parties only in the manner prescribed by the Rules.  In the discretion of the arbitrator(s), pre-arbitration conferences and hearings may be telephonic. You can find the Rules on JAMS’ website: <a href="www.jamsadr.com">www.jamsadr.com</a>. You can also obtain copies of the Rules and information concerning current administrative and arbitrator fees by calling JAMS at 800-352-5267 and ADR at 949-863-9800. You should review the Rules, and the arbitration fees which the Parties will be charged.  You should also be aware that the Rules and the arbitration fees may change from time to time, and that arbitration fees at the time of any dispute may be higher than at the time You entered into this Account Agreement.</p>
+            <p><span class="bold">The Arbitrator</span>.  The Parties agree that a single arbitrator shall be selected to adjudicate all disputes unless otherwise provided for in this Account Agreement. The selection and replacement of an arbitrator or arbitrators shall be in accordance with the Rules of the selected arbitration forum and that each arbitrator shall be a retired judge of either the California Superior Court or a United States District Court located in California.  The arbitration shall be final, conclusive and binding on the Parties and the award of the arbitrator(s) shall be enforceable in any court of competent jurisdiction.</p>
+            <p><span class="bold">Fees</span>.  Each side (i.e., claimant(s), on the one hand, and respondent(s), on the other) agrees that all administrative and arbitration fees and costs, including the arbitrator’s fees, shall be split equally between them.  The attorney’s fees and costs incurred shall be borne by the Parties, and the arbitrator shall not have the discretion to award the arbitration fees, attorney’s fees, or any other costs to the prevailing Party in any such arbitration.</p>
+            <p><span class="bold">Appeal</span>.  Any Party may appeal the arbitration award pursuant to the JAMS Appeal Procedure published on the JAMS’ website <a href="www.jamsadr.com">www.jamsadr.com</a>, except that the Party requesting the appeal shall be solely responsible for all administrative and arbitration fees and costs associated with the appeal, including the arbitrator’s fees.</p>
+            <p><span class="bold">No Class Certification</span>.  The Parties agree that each may bring claims against the other only in his/her/its individual capacity, and not as a plaintiff or class member in any purported class or representative proceeding.  If it is determined that the foregoing provision is unenforceable for any reason, and that a Party’s claims may proceed as a class or representative action, then the Parties further agree that all subsequent matters including, but not limited to, issues of class representation, class certification, class notice and a decision on the merits, shall be determined in arbitration before JAMS, as chosen by You, according to the chosen arbitration organization’s Rules and applicable procedures, and by an arbitration panel of three arbitrators selected in accordance with the other provisions of this Account Agreement.</p>
+            <p><span class="bold">Voluntary Agreement</span>.  Your agreement to arbitrate is voluntary. You may revoke Your agreement to mandatory arbitration herein by written notice delivered to <span class="bold">Debt Pay Gateway, Inc. 1900 E Golf Rd, Suite 550, Schaumburg, IL 60173</span> or <a href="mailto:clients@debtpaygateway.com">clients@debtpaygateway.com</a> within thirty (30) days of Your signing or otherwise consenting to this Account Agreement, or the first transaction that takes place in Your account, whichever occurs sooner.  DPG will confirm such revocation in writing to You or elect to terminate this Account Agreement.</p>
+            </li>
+            <li>
+            <strong>Notice</strong>
+            <p>You may provide DPG with any required notices under this Account Agreement by mail or electronically as follows:</p>
+            Mail: Debt Pay Gateway, Inc.<br/>
+            1900 E Golf Rd, Suite 550,<br/>
+            Schaumburg, IL 60173<br/>
+            Email: <a href="clients@debtpaygateway.com">clients@debtpaygateway.com</a>  <br/>
+            Phone: (877) 800-5577<br/>
+            Fax: (800) 694-3530<br/>
+            </li>
+            <li>
+            <strong>General Provisions</strong>
+            <p><span class="bold">Entire Agreement</span>.  This Account Agreement sets forth the entire agreement among the Parties pertaining to the subject matter hereof and supersedes all prior agreements, understandings, negotiations and discussions, whether oral or written, among the Parties hereto, and there are no warranties, representations or agreements between the Parties in connection with the subject matter hereof except as expressly set forth in this Account Agreement.  All prior agreements, negotiations, correspondence, understandings and communications among the Parties, whether written or oral, respecting the subject matter hereof, are waived, merged herein, and superseded hereby.</p>
+            <span class="bold">Applicable Law/Severability</span>.  Except as otherwise provided herein, this Account Agreement and all actions arising out of or in connection with this Account Agreement shall be governed by and construed in accordance with the laws of the State of California without regard to the conflicts of law provisions of the State of California or of any other state.  If any provision of this Account Agreement shall be judicially determined to be invalid or unenforceable, the validity and enforceability of the remaining provisions shall not in any way be affected or impaired thereby.
+            <span class="bold">Assignment</span>.  This Account Agreement shall not be assigned by You without the express written consent of DPG, provided however, that DPG may assign this Agreement as part of the acquisition, financing, or sale of its business, or as part of any agreement with a Bank or other organization intended to assist DPG in providing the Services.  Subject to the foregoing restriction, the rights and obligations of the Parties hereto shall be binding upon and benefit the successors, assigns, heirs, administrators, and transferees of the Parties.
+            <span class="bold">Interpretation</span>.  The Parties hereto agree that the normal rule of construction to the effect that any ambiguities are to be resolved against the drafting Party shall not be employed in the interpretation of this Account Agreement and instead this Account Agreement shall be construed fairly as to all Parties such that the application of <u>California Civil Code</u> Section 1654, providing “[i]n cases of uncertainty not removed by the preceding rules, the language of a contract should be interpreted most strongly against the party who caused the uncertainty to exist,” is hereby waived.
+            </li>
+            </ol>
+            <p class="important">I agree to the terms of this Agreement.</p>
+            <table class='info-table signature'>
+            <tbody>
+            <tr>
+            <td colspan='6'>
+            <span class='label'>Client Signature</span>
+            <p><span style="color:#fff;"><span style="color:#fff;"><span style="color:#fff;"><span style="color:#fff;">{SIGNATURE}</span></span></span></span></p>
+            </td>
+            <td colspan='6'>
+            <span class='label'>Date</span>
+            <p><span style="color:#fff;"><span style="color:#fff;"><span style="color:#fff;"><span style="color:#fff;">{SIGNDATE}</span></span></span></span></p>
+            </td>
+            </tr>
+            <tr>
+            <td colspan='6'>
+            <span class='label'>Co-Client Signature</span>
+            <p><span style="color:#fff;"><span style="color:#fff;"><span style="color:#fff;"><span style="color:#fff;">{COSIGNATURE}</span></span></span></span></p>
+            </td>
+            <td colspan='6'>
+            <span class='label'>Date</span>
+            <p><span style="color:#fff;"><span style="color:#fff;"><span style="color:#fff;"><span style="color:#fff;">{COSIGNDATE}</span></span></span></span></p>
+            </td>
+            </tr>
+            <tr class='notifications'>
+            <td colspan='12'>
+            <strong>Notifications To Debt Pay Gateway</strong>
+            <span>1900 E Golf Rd, Suite 550, Schaumburg, IL 60173</span>
+            <br>
+            <span>
+            Email:
+            <a href='mailto:clients@debtpaygateway.com'>clients@debtpaygateway.com</a>
+            | Phone (877) 800-5577 | Fax: (800) 694-3530
+            </span>
+            </td>
+            </tr>
+            </tbody>
+            </table>
+
+            </div>
+            </body>
+            </html>&nbsp;<p style="page-break-after: always">&nbsp;</p></p>
+            <p><img style="border: 0px initial initial;" title="DPP-logo" src="https://s3.amazonaws.com/dpp-publicstorage/76b4af313073568347147cce5e2705ddb349d2cf/DPP-logo.png" alt="DPP-logo" width="219" height="46" /></p>
+            <p style="text-align: center;"><strong><span style="font-size: large;">&ldquo;RIGHT TO CANCEL CONTRACT&rdquo;</span></strong></p>
+            <p>&nbsp;</p>
+            <p>YOU MAY CANCEL THIS CONTRACT WITHOUT ANY PENALTY OR OBLIGATION, AT ANY TIME BEFORE MIDNIGHT OF THE 5th DAY WHICH BEGINS THE DAY AFTER THE CONTRACT IS SIGNED BY YOU.</p>
+            <p>TO CANCEL THIS CONTRACT, MAIL OR FAX A SIGNED COPY OF THIS CANCELLATION NOTICE TO DEBT SAVIOR INC. FINANCIAL DEBT SETTLEMENT AT 3105 E Guasti Rd., Ontario CA 91761 OR FAX TO 888-200-1917 ext 115 BEFORE MIDNIGHT OF THE 5th DAY.</p>
+            <p>I HEREBY CANCEL THIS DEBT SETTLEMENT AGREEMENT.</p>
+            <p>&nbsp;</p>
+            <p>DATE: _________________</p>
+            <p><br />______________________________<br />CLIENT&rsquo;S SIGNATURE</p>
+            <p><br />______________________________<br />CLIENT&rsquo;S SIGNATURE</p>
+            <p>&nbsp;</p>
+            <p style="text-align: center;">DEBT SAVIOR INC. DEBT SETTLEMENT<br />3105 E. Guasti Rd Ontario, CA 91761<br />PHONE: (866) 918-2732 FAX: (909) 802-7917</p></body></html>
+          doc_id: 23423833
+          doc_data:
+            pages:
+              - width: 612
+                height: 792
+              - width: 612
+                height: 792
+              - width: 612
+                height: 792
+              - width: 612
+                height: 792
+              - width: 612
+                height: 792
+              - width: 612
+                height: 792
+              - width: 612
+                height: 792
+              - width: 612
+                height: 792
+              - width: 612
+                height: 792
+              - width: 612
+                height: 792
+              - width: 612
+                height: 792
+              - width: 612
+                height: 792
+              - width: 612
+                height: 792
+              - width: 612
+                height: 792
+              - width: 612
+                height: 792
+              - width: 612
+                height: 792
+              - width: 612
+                height: 792
+              - width: 612
+                height: 792
+              - width: 612
+                height: 792
+              - width: 612
+                height: 792
+              - width: 612
+                height: 792
+            signers:
+              '1':
+                signatures:
+                  - x: 408.871
+                    'y': 145.115
+                    width: 74.418
+                    height: 7.973
+                    type: SIGNATURE
+                    signed: false
+                    page: 7
+                    required: true
+                  - x: 129.439
+                    'y': 175.758
+                    width: 67.122
+                    height: 7.973
+                    type: SIGNDATE
+                    signed: false
+                    page: 7
+                    required: false
+                  - x: 94.418
+                    'y': 555.875
+                    width: 74.418
+                    height: 7.973
+                    type: SIGNATURE
+                    signed: false
+                    page: 7
+                    required: true
+                  - x: 94.418
+                    'y': 617.16
+                    width: 67.122
+                    height: 7.973
+                    type: SIGNDATE
+                    signed: false
+                    page: 7
+                    required: false
+                  - x: 405.953
+                    'y': 249.447
+                    width: 74.418
+                    height: 7.973
+                    type: SIGNATURE
+                    signed: false
+                    page: 8
+                    required: true
+                  - x: 112.658
+                    'y': 280.089
+                    width: 67.122
+                    height: 7.973
+                    type: SIGNDATE
+                    signed: false
+                    page: 8
+                    required: false
+                  - x: 451.917
+                    'y': 666.476
+                    width: 35.75
+                    height: 6.81
+                    type: INITIAL
+                    signed: false
+                    page: 11
+                    required: true
+                  - x: 32.403
+                    'y': 557.037
+                    width: 59.826
+                    height: 6.81
+                    type: SIGNATURE
+                    signed: false
+                    page: 12
+                    required: true
+                  - x: 311.836
+                    'y': 557.037
+                    width: 53.26
+                    height: 6.81
+                    type: SIGNDATE
+                    signed: false
+                    page: 12
+                    required: false
+                  - x: 32.403
+                    'y': 702.955
+                    width: 59.826
+                    height: 6.81
+                    type: SIGNATURE
+                    signed: false
+                    page: 18
+                    required: true
+                  - x: 311.836
+                    'y': 702.955
+                    width: 53.26
+                    height: 6.81
+                    type: SIGNDATE
+                    signed: false
+                    page: 18
+                    required: false
+                signer_type: ''
+                signature_type: auto
+              '2':
+                signatures:
+                  - x: 408.871
+                    'y': 206.401
+                    width: 91.199
+                    height: 7.973
+                    type: SIGNATURE
+                    signed: false
+                    page: 7
+                    required: true
+                  - x: 129.439
+                    'y': 237.044
+                    width: 83.903
+                    height: 7.973
+                    type: SIGNDATE
+                    signed: false
+                    page: 7
+                    required: false
+                  - x: 405.953
+                    'y': 310.732
+                    width: 91.199
+                    height: 7.973
+                    type: SIGNATURE
+                    signed: false
+                    page: 8
+                    required: true
+                  - x: 112.658
+                    'y': 341.375
+                    width: 83.903
+                    height: 7.973
+                    type: SIGNDATE
+                    signed: false
+                    page: 8
+                    required: false
+                  - x: 490.586
+                    'y': 666.476
+                    width: 49.612
+                    height: 6.81
+                    type: INITIAL
+                    signed: false
+                    page: 11
+                    required: true
+                  - x: 32.403
+                    'y': 596.435
+                    width: 73.689
+                    height: 6.81
+                    type: SIGNATURE
+                    signed: false
+                    page: 12
+                    required: true
+                  - x: 311.836
+                    'y': 596.435
+                    width: 67.122
+                    height: 6.81
+                    type: SIGNDATE
+                    signed: false
+                    page: 12
+                    required: false
+                  - x: 32.403
+                    'y': 742.353
+                    width: 73.689
+                    height: 6.81
+                    type: SIGNATURE
+                    signed: false
+                    page: 18
+                    required: true
+                  - x: 311.836
+                    'y': 742.353
+                    width: 67.122
+                    height: 6.81
+                    type: SIGNDATE
+                    signed: false
+                    page: 18
+                    required: false
+                signer_type: ''
+                signature_type: auto
+        status:
+          code: 200
 security:
   - API-Key: []
