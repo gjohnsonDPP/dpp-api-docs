@@ -1706,7 +1706,16 @@ paths:
         required: true
       responses:
         '200':
-          $ref: '#/components/responses/POST_200'
+          description: Successfully created a Document
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: object
+                  status:
+                    $ref: models/SuccessStatus.yaml
         '400':
           $ref: '#/components/responses/ERROR_4XX'
       x-internal: false
