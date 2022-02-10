@@ -647,7 +647,7 @@ paths:
       tags:
         - Contacts
         - ContactNotes
-      summary: Update Contact Note
+      summary: Update Contact Note by ID
       description: Update a specific Contact Note by the Contact's Id and the Id of the Contact Note.
       operationId: contactNoteUpdate
       parameters:
@@ -667,7 +667,22 @@ paths:
         content:
           application/json:
             schema:
-              $ref: ./models/ContactNote.yaml
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  content: string
+                  note_type: 3
+                  public: 1
+              properties:
+                content:
+                  type: string
+                  minLength: 1
+                  example: Lorem Ipsum
+                note_type:
+                  type: integer
+                public:
+                  type: boolean
       responses:
         '200':
           description: Successfully Updated Contact Note
