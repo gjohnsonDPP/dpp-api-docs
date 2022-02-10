@@ -565,7 +565,7 @@ paths:
       tags:
         - Contacts
         - ContactNotes
-      summary: Create Contact Note by ID
+      summary: Create Contact Note
       description: Creates a Note for a Contact using the Contact's ID
       operationId: contactNoteCreate
       parameters:
@@ -603,7 +603,7 @@ paths:
       tags:
         - Contacts
         - ContactNotes
-      summary: Find Contact Notes by ID
+      summary: Get All Contact Notes
       description: Returns all Notes for a Contact by the Contact's ID
       operationId: contactNoteGet
       parameters:
@@ -647,7 +647,7 @@ paths:
       tags:
         - Contacts
         - ContactNotes
-      summary: Update Contact Note by ID
+      summary: Update Contact Note
       description: Update a specific Contact Note by the Contact's Id and the Id of the Contact Note.
       operationId: contactNoteUpdate
       parameters:
