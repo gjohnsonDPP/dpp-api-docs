@@ -39,6 +39,8 @@ properties:
           type: string
       required:
         - content
+        - note_type
+        - public
   count:
     type: string
     readOnly: true
