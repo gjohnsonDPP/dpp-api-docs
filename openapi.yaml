@@ -3446,7 +3446,7 @@ components:
                 delTime: null
                 pass_reset: '0'
               content: Test Call
-              note_type: Call
+              note_type: 2
               public: '0'
           count: '3'
         status:

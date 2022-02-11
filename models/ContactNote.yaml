@@ -34,7 +34,7 @@ properties:
         content:
           type: string
         note_type:
-          type: string
+          type: integer
         public:
           type: string
       required:
