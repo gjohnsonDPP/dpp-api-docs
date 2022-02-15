@@ -2797,6 +2797,52 @@ paths:
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/lenders/monevo/{contact_id}/offers':
+    post:
+      tags:
+        - Lenders
+      summary: Add Monevo Loan Offers On Contact
+      description: 'Pushes Loan Offers onto a Client. '
+      operationId: pushLendersMonevo
+      parameters:
+        - name: contact_id
+          in: path
+          description: Id of CRM Contact
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully Sent POST Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: object
+                  status:
+                    $ref: ./models/SuccessStatus.yaml
+        '400':
+          $ref: '#/components/responses/ERROR_4XX'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              x-examples:
+                example-1:
+                  requested_amount: '12312'
+                  monevo_response: {}
+              properties:
+                Example Request Body:
+                  type: object
+                  description: "The following codeblock is an example Request Body:\n```json\n{\n  \"requested_amount\": \"10000\",\n  \"monevo_response\": {\n    \"result\": \"20\",\n    \"results_expired\": \"false\",\n    \"offer_results\": {\n      \"accepted\": \"24\",\n      \"rejected\": \"0\",\n      \"awaiting_response\": \"0\"\n    },\n    \"reference\": \"105311681\",\n    \"message\": \"Accepted\",\n    \"offers\": {\n      \"offer\": [\n        {\n          \"id\": \"19934377\",\n          \"offer_number\": \"2\",\n          \"redirect_url\": \"https://usa.monevo.com/redirect?p=NTY4NzhjMTFkNmQ1YmRiOGYxYmUwNzAwNmJhZWJkMGNiOTQ0MDVkZTkxMmY0YTgyYWQwYTg5Nzc1MjVjYmE2YTNhOWNmOWZmOWQzMzhmZTRmYTc5ZDExMmI5NTdhNmE1YzIyM2E2Yjc5OWJiMmYyMGJhZmFmZWMzYTU1YmViNTBkYjUwMGFkYzlkYTZmNGYxNGNkYzIzMTI3NzgyNmMwNA\",\n          \"loan\": {\n            \"loan_amount\": \"25000\",\n            \"apr\": \"10.44\",\n            \"term\": \"36\",\n            \"fees\": \"0\",\n            \"monthly_repayment\": \"811.85\",\n            \"total_repayment\": \"29226.00\",\n            \"cost_of_credit\": \"4226.60\",\n            \"type\": \"PERSONAL_LOAN\",\n            \"rapr\": \"Our view \\\"Prosper has facilitated more than $18 billion in loans.\\\"\",\n            \"features\": {\n              \"feature\": [\n                \"$18+ billion loans funded\",\n                \"funds available as soon as 1 business day after approval*\"\n              ]\n            },\n            \"terms\": \"For example, a three-year $10,000 personal loan would have an interest rate of 11.74% and a 5.00% origination fee for an annual percentage rate (APR) of 15.34% APR. You would receive $9,500 and make 36 scheduled monthly payments of $330.90. A five-year $10,000 personal loan would have an interest rate of 11.99% and a 5.00% origination fee with a 14.27% APR. You would receive $9,500 and make 60 scheduled monthly payments of $222.39. Origination fees vary between 2.41%-5%. Personal loan APRs through Prosper range from 7.95% to 35.99%, with the lowest rates for the most creditworthy borrowers.\\n\\nEligibility for personal loans up to $40,000 depends on the information provided by the applicant in the application form. Eligibility for personal loans is not guaranteed, and requires that a sufficient number of investors commit funds to your account and that you meet credit and other conditions. Refer to Borrower Registration Agreement for details and all terms and conditions. All personal loans made by WebBank, Member FDIC.\\n\\n*You may receive your funds one business day following your acceptance of the loan offer, completion of all necessary verification steps and final approval. One business day funding is also dependent on your bank’s ability to quickly process the transaction.\",\n            \"prequalified\": \"true\",\n            \"preapproved\": \"false\",\n            \"secured\": \"false\"\n          },\n          \"lender\": {\n            \"id\": \"81\",\n            \"name\": \"Prosper\",\n            \"description\": \"Prosper’s mission is to advance your financial well-being. We provide access to affordable fixed-rate, fixed-term personal loans to help you out with things like consolidating debt, financing a home improvement project or even paying off medical expenses.\_Get your money as soon as 1 business day* plus your monthly payment stays the same. All loans made by WebBank, Member FDIC. Please click continue to proceed with your loan offer through Prosper.\",\n            \"url\": \"www.prosper.com\",\n            \"phone_number\": \"8666156319\",\n            \"logo_url\": \"https://images.monevo.com/ptusa/lender/pr_prosper.png\",\n            \"review\": {\n              \"service\": \"TRUSTPILOT\",\n              \"id\": {}\n            }\n          }\n        }\n      ]\n    },\n    \"disclaimer\": \"<p>The offers above that have been produced by the loan eligibility service are based on the information you provided when completing the form on the introducing site and the information in your credit file. The operator of this service is not a lender or party to any loan or other transaction, does not broker loans to lenders, and does not make loans or credit decisions.</p>\\n\\n\\n<p>The offers are conditional and are subject to change at the point of proceeding with the lender, after verification of the information you provided, as well as other conditions as determined by the lender you proceed with and your state’s laws.\\nPlease remember that your credit was not affected by checking your rates while using the loan eligibility service. You are under no obligation to proceed with any of the offers you have received. At the point of application with the lender, you may be subject to a full credit check.</p>\\n\\n\\n<p>You may receive a ‘Notice of Adverse Action’ from lenders who declined your loan request explaining why you didn’t get an offer.\\nYou may receive email, paper mail, and phone (including SMS) communications from the lenders you have received offers from. To opt out at any time please contact supportusa@monevo.com</p>\",\n    \"error\": {\n      \"code\": {},\n      \"desc\": {}\n    }\n  }\n}\n```"
+            examples:
+              POST Request Example Body:
+                value:
+                  requested_amount: '12312'
+                  monevo_response: {}
+        description: ''  
     get:
       tags:
         - Lenders
