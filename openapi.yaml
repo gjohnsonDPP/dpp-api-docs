@@ -164,7 +164,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: ./models/CallRequest.yaml
+              $ref: ./models/CallResponse.yaml
             examples:
               Request:
                 value:

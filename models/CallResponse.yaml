@@ -62,4 +62,6 @@ properties:
     example: 'https://stairwork.ru/test.mp3'
   assigned_agent:
     type: integer
-    description: User ID of the DPP Agent that took or made the call to the Client.
+    example: 3028014
+    readOnly: true
+    description: User ID of the DPP Agent that made or took the call with the Client.
