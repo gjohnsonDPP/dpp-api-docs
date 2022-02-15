@@ -1942,6 +1942,7 @@ paths:
           $ref: '#/components/responses/POST_200'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
+      x-internal: true
   '/loans/{id}':
     get:
       tags:
@@ -1973,6 +1974,7 @@ paths:
                   $ref: '#/components/examples/Loan.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
+      x-internal: true
     put:
       tags:
         - Loans
@@ -2008,6 +2010,7 @@ paths:
                   $ref: '#/components/examples/Loan.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'
+      x-internal: true
     delete:
       tags:
         - Loans
@@ -2039,6 +2042,7 @@ paths:
                       message: Successfully deleted object
         '400':
           $ref: '#/components/responses/ERROR_4XX'
+      x-internal: true
   /settlement_offers:
     post:
       tags:
@@ -2842,7 +2846,7 @@ paths:
                 value:
                   requested_amount: '12312'
                   monevo_response: {}
-        description: ''  
+        description: ''
     get:
       tags:
         - Lenders
