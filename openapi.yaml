@@ -92,8 +92,8 @@ paths:
                         expires_in:
                           type: integer
                           description: Time Until Token Expires
-  calls:
-    $ref: /definitions/calls.yaml          
+  /calls:
+    $ref: 'definitions/call.yaml'          
   /campaigns/e-mail:
     post:
       tags:
