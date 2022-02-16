@@ -1,0 +1,304 @@
+/calls:
+    post:
+      summary: Create a Call Record
+      description: |-
+        Creates a Call Record and log the call to a client.
+
+        <span><i class="fa fa-info-circle"></i><i style="font-size:12px"> Select the `'Examples'` option to change the content of the request's Body to ONLY contain the required POST Parameters.</i></span>
+      operationId: callCreate
+      tags:
+        - Calls
+      requestBody:
+        description: ''
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: models/CallRequest.yaml
+            examples:
+              Request:
+                value:
+                  contactID: 475956560
+                  sdate: '2019-08-24'
+                  call_type: Outgoing
+                  call_result: Busy
+                  notes: Lorem Ipsum
+                  status_change: 274158
+                  duration: '00:01:15'
+                  event_id: 8179
+                  dialer_id: 1
+                  recording_url: 'https://stairwork.ru/test.mp3'
+                  assigned_agent: 432156
+              Required Parameters Only:
+                value:
+                  contactID: 475956560
+                  call_type: Outgoing
+                  call_result: Busy
+      responses:
+        '200':
+          description: Successfully created a Call Record
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: object
+                  status:
+                    $ref: '#/components/schemas/SuccessStatus'
+              examples:
+                Call Example 200 POST Response:
+                  value:
+                    response:
+                      id: 385319179
+                    status:
+                      code: 200
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                required:
+                  - status
+                properties:
+                  status:
+                    $ref: '#/components/schemas/ErrorStatus'
+              examples:
+                Call Example 400 Response:
+                  value:
+                    status:
+                      code: 400
+                      message: 'Input Parsing Error: unexpected character'
+'/calls/{id}':
+  get:
+    tags:
+      - Calls
+    summary: Find a Call Record by ID
+    description: Returns a Call Record
+    operationId: callRead
+    parameters:
+      - name: id
+        in: path
+        description: Id of Call Record to return
+        required: true
+        schema:
+          type: integer
+    responses:
+      '200':
+        description: Successfully retrieved a Call Record
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                response:
+                  $ref: models/CallResponse.yaml
+                status:
+                  $ref: models/SuccessStatus.yaml
+            examples:
+              Call GET 200 Response Example:
+                value:
+                  response:
+                    object: call
+                    id: 392857759
+                    acctID: 3863
+                    contactID: 382760691
+                    userID: 4950368
+                    sdate: '2021-12-09'
+                    created_at: '2021-12-09 09:52:21'
+                    call_type: Outgoing
+                    call_result: Busy
+                    notes: Lorem Ipsum
+                    status_change: 274158
+                    duration: '00:01:15'
+                    event_id: '8179'
+                    dialer_id: '2'
+                    recording_url: 'https://www.testcallrecording.com'
+                    assigned_agent:
+                      object: user
+                      id: '4950368'
+                      acctID: '3863'
+                      company_id: '42128'
+                      parent_id: '0'
+                      user_type: '1'
+                      created: '2019-10-02 02:41:18'
+                      user_name: JohnD
+                      firstname: John
+                      lastname: Doe
+                      company: ''
+                      email: test@debtpaypro.com
+                      active: '1'
+                      role: '29399'
+                      attorney: '0'
+                      payee_id: '0'
+                      del: '0'
+                      delTime: null
+                      pass_reset: '0'
+                  status:
+                    code: 200
+      '400':
+        description: Error
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                status:
+                  $ref: '#/components/schemas/ErrorStatus'
+              required:
+                - status
+            examples:
+              Call GET 400 Response Example:
+                value:
+                  status:
+                    code: 400
+                    message: 'Input Parsing Error: unexpected character'
+  put:
+    tags:
+      - Calls
+    summary: Update a Call Record by ID
+    description: Updates a Call Record
+    operationId: callUpdate
+    requestBody:
+      description: ''
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: models/CallRequest.yaml
+          examples:
+            Request:
+              value:
+                contactID: 516553837
+                sdate: '2019-08-24'
+                call_type: Outgoing
+                call_result: Busy
+                notes: Lorem Ipsum
+                status_change: 274158
+                duration: '00:01:15'
+                event_id: 8179
+                dialer_id: 1
+                recording_url: 'https://www.testcallrecording.com'
+    parameters:
+      - name: id
+        in: path
+        description: Id of Call Record to update
+        required: true
+        schema:
+          type: integer
+    responses:
+      '200':
+        description: Successfully Updated a Call Record
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                response:
+                  $ref: '#/components/schemas/CallResponse'
+                status:
+                  $ref: '#/components/schemas/SuccessStatus'
+            examples:
+              Call PUT 200 Response Example:
+                value:
+                  response:
+                    object: call
+                    id: 392857759
+                    acctID: 3863
+                    contactID: 382760691
+                    userID: 4950368
+                    sdate: '2021-12-09'
+                    created_at: '2021-12-09 09:52:21'
+                    call_type: Outgoing
+                    call_result: Busy
+                    notes: Lorem Ipsum
+                    status_change: 274158
+                    duration: '00:01:15'
+                    event_id: '8179'
+                    dialer_id: '2'
+                    recording_url: 'https://www.testcallrecording.com'
+                    assigned_agent:
+                      object: user
+                      id: '4950368'
+                      acctID: '3863'
+                      company_id: '42128'
+                      parent_id: '0'
+                      user_type: '1'
+                      created: '2019-10-02 02:41:18'
+                      user_name: JohnD
+                      firstname: John
+                      lastname: Doe
+                      company: ''
+                      email: test@debtpaypro.com
+                      active: '1'
+                      role: '29399'
+                      attorney: '0'
+                      payee_id: '0'
+                      del: '0'
+                      delTime: null
+                      pass_reset: '0'
+                  status:
+                    code: 200
+      '400':
+        description: Error
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                status:
+                  $ref: '#/components/schemas/ErrorStatus'
+              required:
+                - status
+            examples:
+              Call PUT 400 Response Example:
+                value:
+                  status:
+                    code: 400
+                    message: 'Input Parsing Error: unexpected character'
+  delete:
+    tags:
+      - Calls
+    summary: Delete Call Record by ID
+    description: Deletes a Call Record
+    operationId: callDelete
+    parameters:
+      - name: id
+        in: path
+        description: Id of Call Record to be deleted
+        required: true
+        schema:
+          type: integer
+    responses:
+      '200':
+        description: Successfully Deleted a Call Record
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                status:
+                  $ref: models/SuccessStatus.yaml
+            examples:
+              Calls DELETE 200 Response Example:
+                value:
+                  status:
+                    code: 200
+                    message: Successfully deleted object
+      '400':
+        description: Error
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                status:
+                  $ref: models/ErrorStatus.yaml
+              required:
+                - status
+            examples:
+              Call DELETE 400 Response Example:
+                value:
+                  status:
+                    code: 400
+                    message: 'Input Parsing Error: unexpected character'
