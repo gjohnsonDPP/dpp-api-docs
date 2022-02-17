@@ -172,16 +172,6 @@ properties:
     default: false
   customs:
     $ref: ../models/customfield.yaml
-    # type: array
-    # items:
-    #   type: object
-    #   properties:
-    #     field_id:
-    #       type: integer
-    #     value:
-    #       type: string
-    #     label:
-    #       type: string
 required:
   - first_name
   - last_name

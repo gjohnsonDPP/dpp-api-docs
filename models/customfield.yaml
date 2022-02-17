@@ -24,15 +24,6 @@ items:
     type:
       type: string
       minLength: 1
-x-examples:
-  example-1:
-    - field_id: '2085'
-      value:
-        - enrolled
-        - invalidated
-        - waiting for credit bureau
-      label: Account Status
-      type: Multiple Select
 examples:
   - - field_id: '2085'
       value:

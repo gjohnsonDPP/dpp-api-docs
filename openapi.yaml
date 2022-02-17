@@ -445,9 +445,13 @@ paths:
                   gateway_auth_file: 66c29015-debtpaypro_QA_Test_Template_-_Chase_(xxxx4444).pdf
                   iscoapp: false
                   customs:
-                    - field_id: 0
-                      value: string
-                      label: string
+                    - field_id: '2085'
+                      value:
+                        - enrolled
+                        - invalidated
+                        - waiting for credit bureau
+                      label: Account Status
+                      type: Multiple Select
               Required Parameters Only:
                 value:
                   first_name: John
@@ -3352,68 +3356,145 @@ components:
       value:
         response:
           object: contact
-          id: 382760691
-          acctID: 3863
-          company_id: 42128
-          file_type: 1
-          form_id: 18626
-          created: '2019-08-24T14:15:22Z'
-          created_by: 4950368
-          modified: '2019-08-24T14:15:22Z'
-          modified_by: 4950368
-          assigned_to: 6515056
-          campaign_id: 158227
-          attorney: false
-          attorney_id: 0
-          attorney_id2: 0
+          id: '534512161'
+          acctID: '98'
+          company_id: '438'
+          file_type: '1'
+          form_id: '0'
+          created: '2022-01-08 12:24:18'
+          created_by: '6777715'
+          modified: '2022-02-15 15:52:45'
+          modified_by: '6777715'
+          assigned_to: '6777715'
+          campaign_id: '0'
+          attorney: '0'
+          attorney_id: '0'
+          attorney_id2: '0'
           first_name: John
-          middle_name: E
+          middle_name: ''
           last_name: Doe
-          salutation: Hello
-          title: Mr.
-          phone_number: '13123831234'
-          phone_extension: 123
-          cell_phone: '13123835678'
-          cell_extension: 123
-          work_phone: '13123839753'
-          work_extension: 123
+          salutation: ''
+          title: ''
+          phone_number: '3123839992'
+          phone_extension: ''
+          cell_phone: '3123839986'
+          cell_extension: ''
+          work_phone: '3123839993'
+          work_extension: ''
           address:
-            address1: 123 Main St.
-            address2: Apt. 4008
-            address3: string
+            address1: 200 Test St.
+            address2: ''
+            address3: ''
             city: Chicago
             state: IL
-            zip: '60612'
-          email: test@test.com
-          social_security_number: 123-45-6789
+            zip: '60001'
+          email: g.johnson@debtpaypro.com
+          social_security_number: '444881234'
           date_of_birth: '1970-01-01'
-          language: 1
-          submitted: false
-          submitted_by: 0
-          submitted_at: '2019-08-24T14:15:22Z'
-          approved_by2: 0
-          approved_date2: '2019-08-24'
-          rejected_by: 0
-          rejected_notes: Rejection Note
-          paused_notes: Paused Note
-          dropped_reason: 1
-          grad_date: '2019-08-24'
-          total_debt: 13755.9
-          welcome_sent: '2019-08-24T14:15:22Z'
-          paper_statements: false
-          paper_welcome: false
-          gateway_id: 0
-          gateway_approved_by: 0
-          gateway_hold: false
-          gateway_hold_reason: 0
-          gateway_hold_notes: string
-          gateway_auth_received: true
-          gateway_auth_file: test_gateway_auth_file.pdf
-          iscoapp: false
+          language: '0'
+          submitted: '1'
+          submitted_by: '5592102'
+          submitted_at: '2021-09-29 15:12:03'
+          approved_by2: '0'
+          approved_date2: '0000-00-00'
+          rejected_by: '0'
+          rejected_notes: ''
+          paused_notes: ''
+          dropped_reason: '0'
+          grad_date: '0000-00-00'
+          total_debt: '22500.00'
+          welcome_sent: '2021-09-29 13:41:22'
+          paper_statements: '0'
+          paper_welcome: '0'
+          gateway_id: '1'
+          gateway_approved_by: '0'
+          gateway_hold: '1'
+          gateway_hold_reason: '1'
+          gateway_hold_notes: ''
+          gateway_auth_received: '0'
+          gateway_auth_file: ''
+          iscoapp: '0'
           customs:
-            - field_id: 0
-              value: string
-              label: string
+            - label: Co-Applicant
+              field_id: '1237'
+              value: '476723502'
+              type: Contact Relationship
+            - label: Employer Name
+              field_id: '1240'
+              value: Lincoln Park High School
+              type: Text
+            - label: Position
+              field_id: '1242'
+              value: History Teacher
+              type: Text
+            - label: Occupation
+              field_id: '1249'
+              value: Teacher
+              type: Text
+            - label: Employed Since
+              field_id: '1252'
+              value: 12/17
+              type: Text
+            - label: Middle Initial
+              field_id: '1253'
+              value: E
+              type: Text
+            - label: Marital Status
+              field_id: '1255'
+              value: 'No'
+              type: Multiple Choice
+            - label: Credit Rating
+              field_id: '2203'
+              value: Fair
+              type: Multiple Choice
+            - label: Best Time To Reach
+              field_id: '2204'
+              value: '12:22 PM'
+              type: Multiple Choice
+            - label: Position
+              field_id: '37555'
+              value: Biostatistician I
+              type: Text
+            - label: Referred By
+              field_id: '37669'
+              value: asdfasdf
+              type: Text
+            - label: Lead Debt Amount
+              field_id: '37684'
+              value: '23000.00'
+              type: Price
+            - label: MY Field
+              field_id: '93301'
+              value: A
+              type: Multiple Choice
+            - label: EIN
+              field_id: '161079'
+              value: 61-4451306
+              type: Text
+            - label: Est Debt
+              field_id: '161085'
+              value: '51230.08'
+              type: Price
+            - label: My Custom Status
+              field_id: '183197'
+              value: Low Risk
+              type: Multiple Choice
+            - label: Negotiators
+              field_id: '183206'
+              value: '6777715'
+              type: User
+            - label: Hardship
+              field_id: '241970'
+              value: Divorce
+              type: Multiple Choice
+            - label: Email Opt In
+              field_id: '241979'
+              value: 'Yes'
+              type: Multiple Choice
+            - label: SMS Opt In
+              field_id: '241985'
+              value: 'Yes'
+              type: Multiple Choice
         status:
           code: 200
     ContactFile.json:
