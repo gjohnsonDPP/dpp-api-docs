@@ -38,8 +38,3 @@ items:
         - Text
         - True/False
         - User
-  required:
-    - field_id
-    - value
-    - label
-    - type
