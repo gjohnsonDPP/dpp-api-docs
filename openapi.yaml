@@ -1646,14 +1646,11 @@ paths:
         content:
           application/json:
             schema:
+              type: object
               properties:
-                title:
-                  description: Name of DebtNote
-                  type: string
                 content:
                   description: Content of DebtNote
                   type: string
-              type: object
         required: true
       responses:
         '200':

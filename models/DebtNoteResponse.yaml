@@ -16,7 +16,7 @@ properties:
     readOnly: true
   note_created_date:
     type: string
-    readOnly: true
+    format: date-time
   client_id:
     type: integer
     readOnly: true
@@ -28,4 +28,3 @@ properties:
     readOnly: true
   content:
     type: string
-
