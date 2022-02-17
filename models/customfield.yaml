@@ -21,6 +21,23 @@ items:
     type:
       type: string
       minLength: 1
+      enum:
+        - Attachment
+        - Checkbox
+        - Date
+        - Date/Time
+        - Day of Month
+        - Integer
+        - Multiple Choice
+        - Multiple Select
+        - Number
+        - Paragraph
+        - Price
+        - Radio Buttons
+        - State
+        - Text
+        - True/False
+        - User
   required:
     - field_id
     - value
