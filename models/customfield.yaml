@@ -1,22 +1,43 @@
-title: customfield
 type: array
-description: Custom Field Array
+description: ''
+minItems: 1
+uniqueItems: true
 items:
   type: object
-  properties:
-    field_id:
-      type: integer
-      title: Field ID
-      example: 702
-    value:
-      type: string
-      title: Field Value
-      example: "7"
-    label:
-      type: string
-      title: Field Label
-      example: "Status"
   required:
     - field_id
     - value
     - label
+    - type
+  properties:
+    field_id:
+      type: string
+      minLength: 1
+    value:
+      type: array
+      items:
+        required: []
+        properties: {}
+    label:
+      type: string
+      minLength: 1
+    type:
+      type: string
+      minLength: 1
+x-examples:
+  example-1:
+    - field_id: '2085'
+      value:
+        - enrolled
+        - invalidated
+        - waiting for credit bureau
+      label: Account Status
+      type: Multiple Select
+examples:
+  - - field_id: '2085'
+      value:
+        - enrolled
+        - invalidated
+        - waiting for credit bureau
+      label: Account Status
+      type: Multiple Select
