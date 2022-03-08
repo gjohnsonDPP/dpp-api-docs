@@ -568,6 +568,18 @@ paths:
                       message: Successfully deleted object
         '400':
           $ref: '#/components/responses/ERROR_4XX'
+  /contacts/note-types:
+    get:
+      tags:
+        - Contacts
+      summary: Get Note Types
+      description: Returns all Existing Types of Notes
+      operationId: getNoteTypes
+      responses:
+        '200':
+          $ref: '#/components/responses/GET_200'
+        '400':
+          $ref: '#/components/responses/ERROR_4XX'
   '/contacts/{contact_id}/notes':
     post:
       tags:
