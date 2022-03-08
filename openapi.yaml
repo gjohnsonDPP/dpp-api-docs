@@ -577,9 +577,26 @@ paths:
       operationId: getNoteTypes
       responses:
         '200':
-          $ref: '#/components/responses/GET_200'
+          description: Successfully Returned Note Types
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: object
+                  status:
+                    $ref: models/SuccessStatus.yaml
         '400':
-          $ref: '#/components/responses/ERROR_4XX'
+          description: Error
+          content:
+            application/json:
+              schema:
+                required:
+                  - status
+                properties:
+                  status:
+                    $ref: models/ErrorStatus.yaml
   '/contacts/{contact_id}/notes':
     post:
       tags:
