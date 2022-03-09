@@ -568,7 +568,7 @@ paths:
                       message: Successfully deleted object
         '400':
           $ref: '#/components/responses/ERROR_4XX'
-  /contacts/note-types:
+  '/contacts/notes/types':
     get:
       tags:
         - Contacts
