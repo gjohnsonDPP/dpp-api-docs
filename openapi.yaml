@@ -587,6 +587,9 @@ paths:
                     type: object
                   status:
                     $ref: models/SuccessStatus.yaml
+              examples:
+                NotesType:
+                  $ref: '#/components/examples/NoteTypes.json'
         '400':
           description: Error
           content:
@@ -5314,6 +5317,26 @@ components:
                     required: false
                 signer_type: ''
                 signature_type: auto
+        status:
+          code: 200
+    NoteTypes.json:
+      value:
+        response:
+          '1': General
+          '2': Call
+          '3': Creditor
+          '4': Settlement
+          '5': Attorney
+          '6': Compliance
+          '7': Sales
+          '8': Legal
+          '10': Document
+          '11': Payment
+          '16': Accounting
+          '17': Cal Event
+          '25': Email
+          '103': Schedule Change
+          '277': Customer Portal
         status:
           code: 200
 security:
