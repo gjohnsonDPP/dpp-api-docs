@@ -9,8 +9,8 @@ info:
 servers:
   - url: 'https://api.debtpaypro.com/v1'
     description: Production
-  - description: Staging1
-    url: 'https://staging1-api.debtpaypro.com/v1'
+  - description: Staging2
+    url: 'https://staging2-api.debtpaypro.com/v1'
   - url: 'https://staging5-api.debtpaypro.com/v1'
     description: Staging5
   - url: 'https://staging4-api.debtpaypro.com/v1'
@@ -568,6 +568,38 @@ paths:
                       message: Successfully deleted object
         '400':
           $ref: '#/components/responses/ERROR_4XX'
+  '/contacts/notes/types':
+    get:
+      tags:
+        - Contacts
+      summary: Get Note Types
+      description: Returns all Existing Types of Notes
+      operationId: getNoteTypes
+      responses:
+        '200':
+          description: Successfully Returned Note Types
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: object
+                  status:
+                    $ref: models/SuccessStatus.yaml
+              examples:
+                NotesType:
+                  $ref: '#/components/examples/NoteTypes.json'
+        '400':
+          description: Error
+          content:
+            application/json:
+              schema:
+                required:
+                  - status
+                properties:
+                  status:
+                    $ref: models/ErrorStatus.yaml
   '/contacts/{contact_id}/notes':
     post:
       tags:
@@ -5285,6 +5317,26 @@ components:
                     required: false
                 signer_type: ''
                 signature_type: auto
+        status:
+          code: 200
+    NoteTypes.json:
+      value:
+        response:
+          '1': General
+          '2': Call
+          '3': Creditor
+          '4': Settlement
+          '5': Attorney
+          '6': Compliance
+          '7': Sales
+          '8': Legal
+          '10': Document
+          '11': Payment
+          '16': Accounting
+          '17': Cal Event
+          '25': Email
+          '103': Schedule Change
+          '277': Customer Portal
         status:
           code: 200
 security:
