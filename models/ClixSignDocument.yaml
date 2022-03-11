@@ -22,6 +22,9 @@ properties:
           message:
             type: string
             example: API Test Lorem ipsum dolor
+          template_id:
+            type: string
+            example: '123847'
       sms:
         type: object
         properties:
