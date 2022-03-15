@@ -12,7 +12,6 @@ properties:
   id:
     type: integer
     minLength: 1
-    description: ID of the call record
     example: 385319179
     readOnly: true
   acctID:
