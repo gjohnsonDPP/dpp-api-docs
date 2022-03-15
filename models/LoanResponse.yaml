@@ -92,7 +92,7 @@ properties:
   conf_num:
     type: string
     example: "12345"
-  underwrite_notes:
+  underwriter_notes:
     type: string
     example: "Lorem Ipsum"
   contract_date:
@@ -125,4 +125,4 @@ properties:
     type: integer
     example: 1043077
 x-tags:
-  - Loan
+  - Loans

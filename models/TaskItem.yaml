@@ -13,4 +13,4 @@ properties:
         title:
           type: string
 x-tags:
-  - TaskItem
+  - Tasks

@@ -1,6 +1,6 @@
-title: Status
+title: ErrorStatus
 type: object
-description: Response Status
+description: Error Response Status
 properties:
   code:
     type: integer

@@ -3,42 +3,6 @@ type: object
 description: Call Record Object
 x-tags:
   - Calls
-examples:
-  - object: call
-    id: 385319179
-    acctID: 3863
-    contactID: 516553837
-    userID: 3028014
-    sdate: '2019-08-24'
-    created_at: '2019-08-24T14:15:22Z'
-    call_type: Outgoing
-    call_result: Busy
-    notes: Lorem Ipsum
-    status_change: 274158
-    duration: '00:01:15'
-    event_id: 8179
-    dialer_id: 2
-    recording_url: 'https://stairwork.ru/test.mp3'
-    assigned_agent:
-      object: user
-      id: 6033912
-      acctID: 3863
-      company_id: 42128
-      parent_id: 4950368
-      user_type: 1
-      created: '2021-01-13 12:47:25'
-      user_name: API_User123
-      firstname: John
-      lastname: Doe
-      company: Acme
-      email: mail@debtpaypro.com
-      active: true
-      role: 29399
-      attorney: true
-      payee_id: 23006
-      del: 0
-      delTime: '2021-01-13 12:47:25'
-      pass_reset: true
 properties:
   object:
     type: string
@@ -98,4 +62,6 @@ properties:
     example: 'https://stairwork.ru/test.mp3'
   assigned_agent:
     type: integer
-    description: User ID of the DPP Agent that took or made the call to the Client.
+    example: 3028014
+    readOnly: true
+    description: User ID of the DPP Agent that made or took the call with the Client.

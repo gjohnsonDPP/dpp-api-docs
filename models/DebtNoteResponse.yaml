@@ -1,30 +1,30 @@
-title: DebtNote
+title: DebtNoteResponse
 type: object
 description: Debt Note Object
 x-tags:
-  - Debt
+  - Debts
+  - DebtNotes
 properties:
   object:
     type: string
-    example: debt_note
-    readOnly: true
-  debt_id:
-    type: integer
     readOnly: true
   note_id:
-    type: integer
+    type: string
+    readOnly: true
+  acctID:
+    type: string
     readOnly: true
   note_created_date:
     type: string
     format: date-time
-    readOnly: true
   client_id:
+    type: integer
+    readOnly: true
+  debt_id:
     type: integer
     readOnly: true
   title:
     type: string
     readOnly: true
-  created_by:
-    $ref: ../models/UserResponse.yaml
   content:
     type: string

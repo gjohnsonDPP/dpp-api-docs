@@ -2,11 +2,11 @@ title: Settlementoffer
 type: object
 description: Settlment Offer Record
 x-tags:
-  - Settlementoffer
+  - Settlement_Offers
 properties:
   object:
     type: string
-    example: settlement_offer
+    example: "settlement_offer"
     readOnly: true
   id:
     type: integer
@@ -21,8 +21,7 @@ properties:
     example: 382760691
   creditor:
     type: integer
-    title: Original Creditor ID
-    default: 540
+    example: 540
   debt_id:
     type: integer
     example: 124504794
@@ -30,15 +29,22 @@ properties:
     type: string
     format: date-time
     readOnly: true
+  created_by:
+    $ref: ../models/UserResponse.yaml
+    readOnly: true
   modified_at:
     type: string
     format: date-time
     readOnly: true
+  neg_id:
+    type: string
+    example: "6033912"
   madeby:
     type: string
-    readOnly: true
+    example: "Creditor"
   offer_status:
     type: integer
+    example: 1
   offer_status_date:
     type: string
     format: date
@@ -47,23 +53,20 @@ properties:
     format: date
   settlement_type:
     type: integer
-    default: 1
-    minimum: 1
+    example: 1
   debt_amount:
     type: integer
     example: 8500.55
   settlement_amount:
     type: integer
-    minimum: 1
   settlement_fee:
     type: integer
+    example: 25
   notes:
     type: string
     example: Lorem Ipsum
   cred_cont_id:
     type: integer
-  json:
-    type: object
 required:
   - contact_id
   - creditor

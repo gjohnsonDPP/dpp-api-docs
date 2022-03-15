@@ -21,4 +21,4 @@ properties:
   phone:
     type: string
 x-tags:
-  - Creditor
+  - Creditors

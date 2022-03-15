@@ -2,7 +2,7 @@ title: Debt
 type: object
 description: Debt Record
 x-tags:
-  - Debt
+  - Debts
 properties:
   object:
     type: string
@@ -107,9 +107,7 @@ properties:
     items:
       type: string
   customs:
-    type: array
-    items:
-      type: string
+    $ref: ../models/customfield.yaml
 required:
   - original_debt_amount
   - current_debt_amount

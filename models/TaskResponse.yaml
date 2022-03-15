@@ -2,7 +2,7 @@ title: Task
 type: object
 description: Task Record
 x-tags:
-  - Task
+  - Tasks
 properties:
   object:
     type: string

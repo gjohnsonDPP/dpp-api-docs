@@ -1,0 +1,89 @@
+title: ClixSignDocument
+type: object
+x-tags:
+  - Contacts
+properties:
+  gen_request_id:
+    type: integer
+    description: 'The doc_id returned from the [Create a Document by Doc. ID](https://debtpaypro.stoplight.io/docs/dpp-api/b3A6MzUwMjYwNDU-create-a-document-by-doc-id) endpoint.'
+    example: '23053225'
+  notifications:
+    type: object
+    properties:
+      email:
+        type: object
+        properties:
+          enabled:
+            type: string
+            example: 'true'
+          subject:
+            type: email
+            example: API Test
+          message:
+            type: string
+            example: API Test Lorem ipsum dolor
+          template_id:
+            type: string
+            example: '123847'
+      sms:
+        type: object
+        properties:
+          enabled:
+            type: string
+            example: 'true'
+          sms_template_id:
+            type: string
+            example: sms_template_id
+  signers:
+    type: object
+    properties:
+      '1':
+        type: object
+        properties:
+          type:
+            type: string
+            example: contact
+          enabled:
+            type: string
+            example: 'true'
+      '2':
+        type: object
+        properties:
+          type:
+            type: string
+            example: assigneduser
+          enabled:
+            type: string
+            example: 'true'
+      '3':
+        type: object
+        properties:
+          type:
+            type: string
+            example: user
+          user_id:
+            type: string
+            example: '123123'
+          enabled:
+            type: string
+            example: 'true'
+      '4':
+        type: object
+        properties:
+          type:
+            type: string
+            example: other
+          name:
+            type: string
+            example: John Doe
+          email:
+            type: string
+            example: abc@abc.com
+          phone_number:
+            type: string
+            example: '3121231234'
+          enabled:
+            type: string
+            example: 'true'
+required:
+  - gen_request_id

@@ -1,0 +1,32 @@
+title: Document
+type: array
+description: Document Object
+examples:
+  - - file_content: TWFuIGlzIGRpc3Rpbmd1aXNoZWQsIG5vdCBvbmx5IGJ5IGhpcyByZWFzb24sIGJ1dCAuLi4=
+      file_name: Testdocument.txt
+      description: Description of the file.
+      doc_type: '1'
+      debt_id: '167172217'
+items:
+  type: object
+  properties:
+    file_content:
+      type: string
+      description: 'Base64 Encoded'
+    file_name:
+      type: string
+      description: 'Name of fileInclude the File Type extension in the name of the file. (e.g. .txt, .pdf, etc.)'
+    description:
+      type: string
+      description: Description of file
+    doc_type:
+      type: string
+      description: '<p>This property is an integer value, that is passed as a string. The value set must be one of the pre-existing doc_types available to the Contact. The <a href="https://debtpaypro.stoplight.io/docs/dpp-api/b3A6MzI4MjI0NTk-get-all-document-types">"<b>Get All Document Types</b>"</a> API Endpoint can be used to retrieve a list of the existing doc_type.</p>'
+    debt_id:
+      type: string
+      description: debt id - integer passed as a string in request
+  required:
+    - file_content
+    - file_name
+    - description
+    - doc_type

@@ -2,7 +2,7 @@ type: object
 title: User
 description: User Record
 x-tags:
-  - User
+  - Users
 properties:
   object:
     type: string

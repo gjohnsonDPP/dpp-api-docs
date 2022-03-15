@@ -24,4 +24,4 @@ properties:
 required:
   - name
 x-tags:
-  - Team
+  - Teams

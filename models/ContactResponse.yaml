@@ -2,7 +2,7 @@ title: Contact
 type: object
 description: Contact Record
 x-tags:
-  - Contact
+  - Contacts
 examples: []
 properties:
   object:
@@ -171,13 +171,4 @@ properties:
     type: boolean
     default: false
   customs:
-    type: array
-    items:
-      type: object
-      properties:
-        field_id:
-          type: integer
-        value:
-          type: string
-        label:
-          type: string
+    $ref: ../models/customfield.yaml

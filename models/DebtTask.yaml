@@ -1,0 +1,10 @@
+title: DebtTask
+type: object
+properties:
+  debt:
+    $ref: ../models/DebtRequest.yaml
+  debt_task_id:
+    type: integer
+  task:
+    $ref: ../models/TaskRequest.yaml
+
