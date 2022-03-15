@@ -94,7 +94,7 @@ paths:
     post:
       summary: Create a Call Record
       description: |-
-        Creates a Call Record and log the call to a client.
+        Creates a Call Record
 
         <span><i class="fa fa-info-circle"></i><i style="font-size:12px"> Select the `'Examples'` option to change the content of the request's Body to ONLY contain the required POST Parameters.</i></span>
       operationId: callCreate
