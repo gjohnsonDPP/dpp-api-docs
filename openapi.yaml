@@ -1218,7 +1218,7 @@ paths:
       tags:
         - Contacts
       summary: Get Contact History Feed
-      description: Returns a specific quantity of items from a Contact's History Feed.
+      description: Returns a specified set of log records from a Contact's History Feed.
       operationId: getContactHistory
       parameters:
         - name: id
@@ -1241,6 +1241,28 @@ paths:
             type: integer
             default: 1
           allowEmptyValue: true
+        - in: query
+          name: _orderdir
+          description: (Optional) This value sets the direction the History Feed Items are ordered in.
+          schema:
+            type: string
+            default: desc
+            enum:
+              - asc
+              - desc
+        - in: query
+          name: _orderby
+          description: (Optional) This value provides the option to order the History Feed items by the following Allowed Parameters
+          schema:
+            type: string
+            default: created_at
+            enum:
+              - id
+              - acctID
+              - created_at
+              - created_by
+              - contact_id
+              - type
       responses:
         '200':
           description: Successfully retrieved History Feed
