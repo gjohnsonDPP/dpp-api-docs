@@ -564,7 +564,7 @@ paths:
                       message: Successfully deleted object
         '400':
           $ref: '#/components/responses/ERROR_4XX'
-  '/contacts/notes/types':
+  /contacts/notes/types:
     get:
       tags:
         - Contacts
@@ -1240,6 +1240,28 @@ paths:
           schema:
             type: integer
             default: 1
+          allowEmptyValue: true
+        - in: query
+          name: _orderdir
+          description: (Optional) This value sets the direction the History Feed Items are ordered in.
+          schema:
+            type: string
+            enum:
+              - asc
+              - desc
+            default: desc
+        - in: query
+          name: _orderby
+          description: (Optional) This value provides the option to order the History Feed items by the following Allowed Parameters
+          schema:
+            type: string
+            enum:
+              - id
+              - acctID
+              - created_at
+              - created_by
+              - contact_id
+              - type
           allowEmptyValue: true
       responses:
         '200':
