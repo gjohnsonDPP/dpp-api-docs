@@ -564,25 +564,6 @@ paths:
                       message: Successfully deleted object
         '400':
           $ref: '#/components/responses/ERROR_4XX'
-  '/contacts/{id}/coapp':
-    get:
-      tags:
-        - Contacts
-      summary: Get Contact Coapp
-      description: ''
-      operationId: getContactCoapp
-      parameters:
-        - name: id
-          in: path
-          description: Id of Contact
-          required: true
-          schema:
-            type: integer      
-      responses:
-        '200':
-          $ref: '#/components/responses/GET_200'
-        '400':
-          $ref: '#/components/responses/ERROR_4XX'
   /contacts/notes/types:
     get:
       tags:
