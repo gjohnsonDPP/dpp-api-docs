@@ -1218,7 +1218,7 @@ paths:
       tags:
         - Contacts
       summary: Get Contact History Feed
-      description: Returns a specific quantity of items from a Contact's History Feed.
+      description: Returns a specified set of log records from a Contact's History Feed.
       operationId: getContactHistory
       parameters:
         - name: id
