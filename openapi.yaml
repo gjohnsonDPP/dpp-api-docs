@@ -1262,7 +1262,7 @@ paths:
               - created_by
               - contact_id
               - type
-          allowEmptyValue: true
+            default: created_at
       responses:
         '200':
           description: Successfully retrieved History Feed
