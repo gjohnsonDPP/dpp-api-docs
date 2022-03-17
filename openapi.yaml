@@ -1246,15 +1246,16 @@ paths:
           description: (Optional) This value sets the direction the History Feed Items are ordered in.
           schema:
             type: string
+            default: desc
             enum:
               - asc
               - desc
-            default: desc
         - in: query
           name: _orderby
           description: (Optional) This value provides the option to order the History Feed items by the following Allowed Parameters
           schema:
             type: string
+            default: created_at
             enum:
               - id
               - acctID
@@ -1262,7 +1263,6 @@ paths:
               - created_by
               - contact_id
               - type
-            default: created_at
       responses:
         '200':
           description: Successfully retrieved History Feed
