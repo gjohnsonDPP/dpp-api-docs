@@ -440,6 +440,7 @@ paths:
                   gateway_auth_received: true
                   gateway_auth_file: 66c29015-debtpaypro_QA_Test_Template_-_Chase_(xxxx4444).pdf
                   iscoapp: false
+                  linked_coapp: 123123123
                   customs:
                     - field_id: '2085'
                       value:
@@ -3461,6 +3462,7 @@ components:
           gateway_auth_received: '0'
           gateway_auth_file: ''
           iscoapp: '0'
+          linked_coapp: '123123123'
           customs:
             - label: Co-Applicant
               field_id: '1237'
