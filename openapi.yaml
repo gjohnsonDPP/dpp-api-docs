@@ -3129,8 +3129,8 @@ paths:
     get:
       tags:
         - Creditors
-      summary: Get Creditor by CreditorID
-      description: Returns Creditor associated with the CreditorID
+      summary: Get Creditor by Creditor ID
+      description: Returns Creditor associated with the Creditor ID
       operationId: get-creditors-id
       parameters:
         - name: id
