@@ -19,6 +19,7 @@ tags:
   - name: Contacts
   - name: ContactDocuments
   - name: ContactForms
+  - name: Creditors
   - name: ContactNotes
   - name: Debts
   - name: DebtNotes
@@ -3124,6 +3125,48 @@ paths:
                                 type: object
         '400':
           $ref: '#/components/responses/ERROR_4XX'
+  '/creditors/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+    get:
+      summary: Get Creditors
+      tags:
+        - Creditor
+      responses: {}
+      operationId: get-creditors-id
+      description: Returns Creditors for a Contact
+
+    get:
+      tags:
+        - Calls
+      summary: Get Creditors by ID
+      description: Returns Creditors for a Contact
+      operationId: get-creditors-id
+      parameters:
+        - name: id
+          in: path
+          description: Id of Contact
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully retrieved Creditors
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    $ref: ./models/CreditorResponse.yaml
+                  status:
+                    $ref: ./models/SuccessStatus.yaml
+        '400':
+          $ref: '#/components/responses/ERROR_4XX'      
 components:
   responses:
     POST_200:
