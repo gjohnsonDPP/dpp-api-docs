@@ -3128,7 +3128,7 @@ paths:
   '/creditors/{id}':
     get:
       tags:
-        - Calls
+        - Creditors
       summary: Get Creditors by ID
       description: Returns Creditors for a Contact
       operationId: get-creditors-id
@@ -3148,9 +3148,11 @@ paths:
                 type: object
                 properties:
                   response:
-                    $ref: ./models/CreditorResponse.yaml
+                    type: object
                   status:
                     $ref: ./models/SuccessStatus.yaml
+              examples:
+                $ref: '#/components/examples/SuccessfulRequest.json'
         '400':
           $ref: '#/components/responses/ERROR_4XX'      
 components:
