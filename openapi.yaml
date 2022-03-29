@@ -3126,20 +3126,6 @@ paths:
         '400':
           $ref: '#/components/responses/ERROR_4XX'
   '/creditors/{id}':
-    parameters:
-      - schema:
-          type: string
-        name: id
-        in: path
-        required: true
-    get:
-      summary: Get Creditors
-      tags:
-        - Creditor
-      responses: {}
-      operationId: get-creditors-id
-      description: Returns Creditors for a Contact
-
     get:
       tags:
         - Calls
