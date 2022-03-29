@@ -3145,8 +3145,12 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items: {}
+                type: object
+                properties:
+                  response:
+                    type: object
+                  status:
+                    $ref: ./models/SuccessStatus.yaml
               examples:
                 $ref: '#/components/examples/SuccessfulRequest.json'
         '400':
