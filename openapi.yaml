@@ -3129,32 +3129,28 @@ paths:
     get:
       tags:
         - Creditors
-      summary: Get Creditors by ID
-      description: Returns Creditors for a Contact
+      summary: Get Creditor by CreditorID
+      description: Returns Creditor associated with the CreditorID
       operationId: get-creditors-id
       parameters:
         - name: id
           in: path
-          description: Id of Contact
+          description: Id of Creditor
           required: true
           schema:
             type: integer
       responses:
         '200':
-          description: Successfully retrieved Creditors
+          description: Successfully retrieved Creditor
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  response:
-                    type: object
-                  status:
-                    $ref: ./models/SuccessStatus.yaml
+                type: array
+                items: {}
               examples:
                 $ref: '#/components/examples/SuccessfulRequest.json'
         '400':
-          $ref: '#/components/responses/ERROR_4XX'      
+          $ref: '#/components/responses/ERROR_4XX'
 components:
   responses:
     POST_200:
