@@ -19,6 +19,7 @@ tags:
   - name: Contacts
   - name: ContactDocuments
   - name: ContactForms
+  - name: Creditors
   - name: ContactNotes
   - name: Debts
   - name: DebtNotes
@@ -440,6 +441,7 @@ paths:
                   gateway_auth_received: true
                   gateway_auth_file: 66c29015-debtpaypro_QA_Test_Template_-_Chase_(xxxx4444).pdf
                   iscoapp: false
+                  linked_coapp: 123123123
                   customs:
                     - field_id: '2085'
                       value:
@@ -3123,6 +3125,36 @@ paths:
                                 type: object
         '400':
           $ref: '#/components/responses/ERROR_4XX'
+  '/creditors/{id}':
+    get:
+      tags:
+        - Creditors
+      summary: Get Creditor by Creditor ID
+      description: Returns Creditor associated with the Creditor ID
+      operationId: get-creditors-id
+      parameters:
+        - name: id
+          in: path
+          description: Id of Creditor
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully retrieved Creditor
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response:
+                    type: object
+                  status:
+                    $ref: ./models/SuccessStatus.yaml
+              examples:
+                $ref: '#/components/examples/SuccessfulRequest.json'
+        '400':
+          $ref: '#/components/responses/ERROR_4XX'
 components:
   responses:
     POST_200:
@@ -3461,6 +3493,7 @@ components:
           gateway_auth_received: '0'
           gateway_auth_file: ''
           iscoapp: '0'
+          linked_coapp: '123123123'
           customs:
             - label: Co-Applicant
               field_id: '1237'
